@@ -417,10 +417,10 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.0 2001/08/09 16:51:06 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.1 2001/12/06 19:07:51 jaalto Exp $
         .$Keywords: procmail sendmail formail mail UBE UCE spam filter $
-        .$URL: http://www.procmail.org/jari/ $
-        .$Contactid: jari.aalto@poboxes.com $
+        .$URL: http://pm-doc.sourceforge.net/ $
+        .$Contactid: jaalto@W2KPICASSO $
         .$UrlLinksLastChecked: 1999-04-30 $
 
         This is a procmail tips page: a collection of procmail recipes,
@@ -455,17 +455,10 @@ Table of contents
         errors or things to improve in this document, please go ahead and
         send mail to this document's [maintainer].
 
-        Author's homepage is hopefully redirections link below. If you want
-        to have automatic notification whenever any page changes, visit a
-        free service link below. To get nicely formatted netmind messages,
-        see procmail module `pm-janetmind.rc'.
-
-            http://poboxes.com/jari.aalto/  e.g homepage.html
-            http://minder.netmind.com/
-
-        If a mentioned URL is not alive, you may still be able to
+        If any mentioned URL is not alive, you may still be able to
         successfully find it using the ftp search located at
-        http://ftpsearch.ntnu.no/ or WWW search such as http://www.google.com/
+        http://ftpsearch.ntnu.no/ or WWW search such as
+        http://www.google.com/
 
     1.2 What is Procmail?
 
@@ -519,8 +512,22 @@ Table of contents
         o   <<text>> Text has been rephrased or modified that
             does not exist in the original source.
 
-        Thank you for the following people:
+        A big Thank you goes all these people:
 
+        o   1999-06-16 Mark Seiden <mis@seiden.com> Did a enermous work to
+            proofread the v1.74. He sent a massive 105k wpatch ith many
+            editorial corrections. My wholeheart thank you to you, Mark.
+        o   1999-01-08 Steven Alexander <stevena@teleport.com> thought that
+            a small perl script would help me to fix spelling mistakes more
+            easily. The script has been much better correction program than
+            that I myself. Thank you. (Being a perl programmer myself, I
+            should have thought thia laready *smile*)
+        o   1999 <Guido.Van.Hoecke@se.bel.alcatel.be> took 1.48 and sent a huge
+            55k patch to correct many English language typos. Thank you
+            very much Guido.
+        o   1998-10-28 Richard Kabel  <rkabel@sequent.com> sent massive patch
+            to correct language and provided excellent improvement comments.
+            Thank you Guido for spending the time with it.
         o   1998 Era Eriksson proof read the v1.12 and sent numerous corrections.
         o   Karl E. Vogel <vogelke@c17mis.region2.wpafb.af.mil>
             sent numerous new anti-spam links to be added to the document.
@@ -529,66 +536,53 @@ Table of contents
             this tips file.
         o   1998 Tim Potter <tpot@zip.com.au> had a spare moment with v1.27 and
             sent lot of spelling corrections. Thank you.
-        o   1999 <Guido.Van.Hoecke@se.bel.alcatel.be> took 1.48 and sent a huge
-            55k patch to correct many English language typos. Thank you
-            very much Guido.
-        o   1998-10-28 Richard Kabel  <rkabel@sequent.com> sent massive patch
-            to correct language and provided excellent improvement comments.
-            Thank you Guido for spending the time with it.
-        o   1999-01-08 Steven Alexander <stevena@teleport.com> thought that
-            a small perl script would help me to fix spelling mistakes more
-            easily. The script has been much better correction program than
-            that I myself. Thank you. (Being a perl programmer myself, I
-            should have thought thia laready *smile*)
-        o   1999-06-16 Mark Seiden <mis@seiden.com> Did a enermous work to
-            proofread the v1.74. He sent a massive 105k wpatch ith many
-            editorial corrections. My wholeheart thank you to you, Mark.
 
     1.4 Version information
 
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
-            v1.01   1997-09-13  46 (k)
-            v1.05   1997-09-14  53
-            v1.5    1997-09-16  76
-            v1.6    1997-09-18  94
-            v1.8    1997-10-01  127
-            v1.9    1997-10-11  142
-            v1.10   1997-10-13  181  archive file 1995-10's tips included
-            v1.13   1997-11-08  218  Era's correction suggestions.
-            v1.14   1997-11-25  260
-            v1.17   1997-12-09  343  up till archive 1996-07 now included
-            v1.24   1997-12-30  415  up till 1996-12 is now included
-            v1.29   1998-01-30  429  "regexp" section rewrite.
-            v1.31   1998-03-10  469  Better ordering: ORing rules discussed
-            v1.32   1998-03-23  471  All recipes checked (by eye)
-            v1.34   1998-04-02  488  ORing and supreme scoring added
-            v1.36   1998-04-03  493  Includerc rewritten, plus addressing
-            v1.41   1998-06-17  510  How to disable recipe quickly with
-            v1.44   1998-06-19  516  Detecting mailing lists with pm-jalist.rc
-            v1.45   1998-06-23  521  All recipes checked by eye. Many fixes.
-            v1.46   1998-06-24  526  Added live urls to procmail archive
-            v1.49   1998-08-10  529  Guido.Van.Hoeck's 55k patch applied
-            v1.51   1998-08-18  541  Small changes. MIME notes
-            v1.52   1998-08-24  553  Flag c forking study, procmail wish list
-            v1.53   1998-08-24  554  Procmail doesn't pass 8bit characters
-            v1.55   1998-08-29  565  Fetching fields with formail -x
-            v1.57   1998-10-06  575  PLUS addr. Convert HTML body to text
-            v1.58   1998-10-12  583  SmartList and other MLM software discussed
-            v1.60   1998-10-21  591  UMASK, .forward if procmail already is LDA
-            v1.63   1998-10-30  595  Richard's english correction patch
-            v1.64   1998-11-26  602  More Richard's comments integrated
-            v1.66   1998-12-14  578  Philip took care of bugs/patches listing
-            v1.67   1998-01-07  579  Eli's procmail recipes in module section
-            v1.68   1998-01-29  587  Added "Lua" language pointer
-            v1.69   1999-02-23  590  RFC and using MIME in usenet postings
-            v1.70   1999-02-26  592  procmail's Y2K compliance
-            v1.71   1999-03-29  597  Ricochet -- Perl script to fight UBE
-            v1.72   1999-04-21  597  Links corrected
-            v1.74   1999-04-26  599  document moved to www.procmail.org
+            v2.0    2001-08-09  608  http://pm-doc.sourceforge.net opened.
+            v1.77   1999-12-27  603  Netscape spam filters added
             v1.76   1999-10-01  602  Mark Seiden's patch applied. Now under CVS.
-            v2.1    1999-12-27  603  Netscape spam filters added
+            v1.74   1999-04-26  599  document moved to www.procmail.org
+            v1.72   1999-04-21  597  Links corrected
+            v1.71   1999-03-29  597  Ricochet -- Perl script to fight UBE
+            v1.70   1999-02-26  592  procmail's Y2K compliance
+            v1.69   1999-02-23  590  RFC and using MIME in usenet postings
+            v1.68   1998-01-29  587  Added "Lua" language pointer
+            v1.67   1998-01-07  579  Eli's procmail recipes in module section
+            v1.66   1998-12-14  578  Philip took care of bugs/patches listing
+            v1.64   1998-11-26  602  More Richard's comments integrated
+            v1.63   1998-10-30  595  Richard's english correction patch
+            v1.60   1998-10-21  591  UMASK, .forward if procmail already is LDA
+            v1.58   1998-10-12  583  SmartList and other MLM software discussed
+            v1.57   1998-10-06  575  PLUS addr. Convert HTML body to text
+            v1.55   1998-08-29  565  Fetching fields with formail -x
+            v1.53   1998-08-24  554  Procmail doesn't pass 8bit characters
+            v1.52   1998-08-24  553  Flag c forking study, procmail wish list
+            v1.51   1998-08-18  541  Small changes. MIME notes
+            v1.49   1998-08-10  529  Guido.Van.Hoeck's 55k patch applied
+            v1.46   1998-06-24  526  Added live urls to procmail archive
+            v1.45   1998-06-23  521  All recipes checked by eye. Many fixes.
+            v1.44   1998-06-19  516  Detecting mailing lists with pm-jalist.rc
+            v1.41   1998-06-17  510  How to disable recipe quickly with
+            v1.36   1998-04-03  493  Includerc rewritten, plus addressing
+            v1.34   1998-04-02  488  ORing and supreme scoring added
+            v1.32   1998-03-23  471  All recipes checked (by eye)
+            v1.31   1998-03-10  469  Better ordering: ORing rules discussed
+            v1.29   1998-01-30  429  "regexp" section rewrite.
+            v1.24   1997-12-30  415  up till 1996-12 is now included
+            v1.17   1997-12-09  343  up till archive 1996-07 now included
+            v1.14   1997-11-25  260
+            v1.13   1997-11-08  218  Era's correction suggestions.
+            v1.10   1997-10-13  181  archive file 1995-10's tips included
+            v1.9    1997-10-11  142
+            v1.8    1997-10-01  127
+            v1.6    1997-09-18  94
+            v1.5    1997-09-16  76
+            v1.05   1997-09-14  53
+            v1.01   1997-09-13  46 (k)
 
     1.5 Document layout and maintenance
 
@@ -608,11 +602,13 @@ Table of contents
             *tinytf.el* (automatic TOC, indentation control, fontifying)
             http://tiny-tools.sourceforge.net/
         o   Perl (See for Unix http://www.perl.com/ and for Win32
-            http://www.activestate.com) and text-to-html conversion program
-            *t2html.pl* at nearest CPAN (Comprehensive Perl Archive Network)
-            http://cpan.perl.com/ => *scripts*. Funny marks or indentation
-            in the text version due the minimalistic amd natural, markup
-            language which the *t2html.pl* offers over the other tools.
+            http://www.activestate.com and text-to-html conversion program
+            *t2html.pl* at nearest CPAN (Comprehensive Perl Archive
+            Network) at
+            http://www.cpan.org/modules/by-authors/id/J/JA/JARIAALTO/ Funny
+            marks or indentation in the text version due the minimalistic
+            amd natural, markup language which the *t2html.pl* offers over
+            the other tools.
 
         Text version of this file was converted into HTML with following
         command. You need Perl interpreter 5.4 or newer to call *t2html.pl*
@@ -622,16 +618,16 @@ Table of contents
         text to these tools so that someone can get an overview of your
         supplied files
 
-            % perl5.004_04 -S t2html.pl                                     \
+            % perl5.004 -S t2html.pl                                        \
               --html-frame                                                  \
               --title   "Procmail tips page"                                \
               --author  "Jari Aalto"                                        \
               --email   jari.aalto@poboxes.com                              \
               --meta-keywords "procmail, sendmail, mail, filter, faq, ube"  \
               --meta-description "Procmail tips page"                       \
-              --base     http://www.procmail.org/jari                       \
-              --document http://www.procmail.org/jari                       \
-              --url      http://www.procmail.org/jari                       \
+              --base      http://pm-doc.sourceforge.net                     \
+              --document  http://pm-doc.sourceforge.net                     \
+              --url       http://pm-doc.sourceforge.net                     \
               --html-body "LANG=en"                                         \
               --Out                                                         \
               pm-tips.txt
@@ -992,9 +988,9 @@ Table of contents
         The UBE stop procmail modules are not listed here. See pointers in
         "procmail code" section later.
 
-        o   All pm-ja*.rc modules are in Jari's procmail kit.
-            The Procmail code library page is at
-            http://www.procmail.org/jari/pm-code.html
+        o   2001-08-08 All pm-ja*.rc modules are available at
+            Procmail Module Project page
+            http://pm-lib.sourceforge.net/
 
         o   Other modules are by Alan Stebbens
             http: //reality.sgi.com/aks/
@@ -1265,8 +1261,8 @@ Table of contents
         Send subject "send procmail library" to Alan Stebbens
         <alan.stebbens@software.com> http://reality.sgi.com/aks/
 
-       "pm-code, Jari's Procmail modules"
-        http://www.procmail.org/jari/ --> See pm-code.zip or similar.
+       "pm-lib, Jari's Procmail modules"
+        http://pm-lib.sourceforge.net/
 
        "Concordia scripts"
         http://alcor.concordia.ca/topics/email/auto/procmail/
@@ -5029,29 +5025,31 @@ Table of contents
                 SUBJECT = $MATCH
             }
 
-        No shell subprocess called. This is 10x faster and consumes fewer
-        resources, while it may need more typing. Use it and your your sysadm
-        is happy with your well behaving procmail recipes that don't load
-        the CPU unnecessarily. There are cases where you need to launch
-        `formail', eg let's derive the address of the sender and store it
-        to variable:
+        No shell subprocess called. This is much faster and consumes
+        fewer resources, while it may need more typing. Use it and
+        your your sysadm is happy with your well behaving procmail
+        recipes that don't load the CPU unnecessarily. The equivalent
+        with `formail' might be more secure, because it contains full
+        RFC-compliant parser. The traditional way of deriving the
+        address with `formail' is:
 
-            FROM = `$FORMAIL -rtzxTo:`
+            FROM = `$FORMAIL -rtzxFrom:`
 
         But you can still make this more efficient. Here is one example where
         you actually want to use "old" `=|' style variable assignment,
         make sure there are _no_ extra spaces:
 
             :0 hw
-            FROM=|$FORMAIL -rtzxTo:
+            FROM=|$FORMAIL -rtzxFrom:
 
         That way only the _header_ gets fed into formail, whereas the
-        previous backtick fed the _whole_ message. Also, you can then check
-        the return code of formail with `a' or `A' recipe after this one.
+        previous backtick fed the _whole_ message. Another benefit is,
+        that you can then check the return code of formail with `a' or
+        `A' recipe after this one.
 
     10.2 Always use formail's -rt switch
 
-       [Philip] As of version 3.14 you should now usually leave out the -t. To
+        [Philip] As of version 3.14 you should now usually leave out the -t. To
         quote the formail manpage:
 
           By default, when generating an auto-reply header procmail selects
@@ -8119,7 +8117,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.0 2001/08/09 16:51:06 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.1 2001/12/06 19:07:51 jaalto Exp $
             #
             #   File id
             #
@@ -10507,9 +10505,7 @@ Table of contents
         Procmail mode for Emacs (which can also lint
         procmail recipes) is available. People familiar with C-coding know lint,
         which is a rigorous code syntax checker. You can read about this
-        Emacs mode from
-
-             http://poboxes.com/jari.aalto/tiny-tools.tar.gz
+        Emacs mode from http://tiny-tools.sourceforge.net/
 
     22.3 Emacs and lining up backslashes
 
@@ -10562,15 +10558,14 @@ Table of contents
 
     22.4 Emacs and browsing mailbox files
 
-        If you use Gnus as your MUA, then you already can browse mailboxes.
-        If you just want to read some arbitrary mailbox without firing up
-        Gnus, then you can use package `tinymbx.el' It defines a special
-        mailbox reading minor mode that is activated when you visit mailbox
+        If you use Gnus as your MUA, then you already can browse
+        mailboxes.  If you just want to read some arbitrary mailbox without
+        firing up Gnus, then you can use package `tinymbx.el', in kit
+        http://tiny-tools.sourceforge.net/ It defines a special mailbox
+        reading minor mode that is activated when you visit mailbox
         file. You can copy, file, delete messages or mail the author of the
-        current message. There is no separate summary buffer as in RMAIL, but
-        you move from message to another with PgUp and PgDown keys.
-
-            #URL-BASE/tiny-tools.tar.gz
+        current message. There is no separate summary buffer as in RMAIL,
+        but you move from message to another with PgUp and PgDown keys.
 
     22.5 Emacs and live-mode.el
 
@@ -13928,7 +13923,7 @@ Table of contents
     29.18 Software: TinyGnus - Emacs Gnus plug-in
 
         ._Availability:_ <jari.aalto@poboxes.com>
-        http://poboxes.com/jari.aalto/emacs-tiny-tools.html
+        .http://tiny-tools.sourceforge.net/
         ._Platform:_ win32 and Unix Emacs versions.
 
         *TinyGnus* Is Emacs lisp extension package that integrates directly
