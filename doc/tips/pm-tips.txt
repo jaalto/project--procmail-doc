@@ -413,7 +413,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.28 2004/10/06 13:55:39 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.29 2004/11/12 08:39:57 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -4348,10 +4348,9 @@ Table of contents
         rule to every recipe, so that the sink message [sunk-somewhere] is
         recorded after incoming message headers.
 
-        I use this one-liner log in my Emacs window which is updated by
-        `live-mode' process all the time (See the Emacs tools section
-        later). It gives a nice overview of mail messages the I'm receiving:
-        it's my biff(1) equivalent in Emacs.
+        Emacs can display the file in one buffer window and keep it updated
+        with `M-x' `auto-revert-mode'. It gives a nice overview of arriving
+        mail messages and is equivalent to `biff(1)'.
 
             # this requires that HH and MM have been setup before,
             # see pm-jadate.rc
@@ -4362,7 +4361,7 @@ Table of contents
             $NULL   = $SPOOL/junk.null.spool    # /dev/null is dangerous
             BIFF    = $PMSRC/pm-biff.log
 
-            # or if you prefer a log per day (easy for cleanup):
+            # If you prefer a log per day (easy for cleanup):
             # BIFF   = $PMSRC/pm-biff.log.$YYYY$MM$DD
 
             # .............................................. headers ...
@@ -4387,11 +4386,8 @@ Table of contents
             # ............................................. incoming ...
             #  record log of incoming mail
 
-            # or if you use a biff file per day, you could have:
-            # echo "$NOW $FROM $SUBJ" >> $BIFF
-
             :0 hwic:
-            |  echo "$TODAY $FROM $SUBJ" >> $BIFF
+            |  echo "$TODAY $FROM $SUBJECT" >> $BIFF
 
             # ......................................... null recipe ...
             # Now, this is how you add the "message" what happened
@@ -8031,7 +8027,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.28 2004/10/06 13:55:39 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.29 2004/11/12 08:39:57 jaalto Exp $
             #
             #   File id
             #
