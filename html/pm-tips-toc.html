@@ -20,17 +20,18 @@
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Thu,  4 Apr 2002 23:45:35 GMT">
+  <META HTTP-EQUIV="Expires" CONTENT="Mon,  9 Sep 2002 15:57:20 GMT">
 
 
 
   <META NAME="Generator"
-	CONTENT="2002-02-04 01:45 Perl 5 program t2html.pl v2002.0204 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
+	CONTENT="2002-07-11 18:57 Perl 5 program t2html.pl v2002.0607 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
 
 
   <BASE TARGET="body">
 
     <STYLE TYPE="text/css">
+    <!--  BEGIN: Hide from older browsers
 
 
         /*
@@ -157,7 +158,7 @@
 
         a.toc
         {
-	    font-family: "verdana", sans-serif;
+	    font-family: verdana, sans-serif;
             font-style: normal;
         }
 
@@ -171,7 +172,7 @@
         a.btn-toc:link
         {
             font-style: normal;
-	    font-family: "verdana", sans-serif;
+	    font-family: verdana, sans-serif;
             /* font-size:  0.7em; */
         }
 
@@ -306,7 +307,17 @@
 
         p.column6
         {
-            color: #809F69;   /* Forest green */
+	    /* #809F69 is Forest green
+	       But web safe colors are:
+	       Lighter  ForestGreen: 66CC00
+	       ForestGreen: #999966 669900 339900 669966
+
+            color: #669900;
+	    font-family: "Goudy Old Style"
+	    */
+	    margin-left: 4em;
+	    font-family: Georgia;
+	    font-size:  0.9em;
         }
 
             /* This is so called 3rd heading */
@@ -382,7 +393,7 @@
 	     #  Browser will pick the one that is supported
 	     */
 
-             font-family: lucida, lucida sans unicode, verdana, arial, helvetica, sans-serif;
+             font-family: lucida, lucida sans unicode, verdana, arial, "Trebuchet MS", helvetica, sans-serif;
 	     background-color: #ffefff;
 	     font-size:   0.8em;
         }
@@ -397,7 +408,7 @@
         p.column11
         {
 	    font-family: arial, verdana, helvetica, sans-serif;
-            font-size: 0.8em;
+            font-size: 0.9em;
             font-style: italic;
             color: Fuchsia;
         }
@@ -421,6 +432,16 @@
             /* font-size:      0.8em; */
 	}
 
+        span.super
+        {
+	    /* superscripts */
+	    color: teal;
+	    vertical-align: super;
+	    font-family: Verdana, Arial, sans-serif;
+	    font-size: 0.8em;
+        }
+
+
         span.word-ref
         {
 	    color: teal;
@@ -435,7 +456,8 @@
         span.word-small
 	{
 	    color: #CC66FF;
-	    font-size: 0.9em;
+	    font-family: Verdana, Arial, sans-serif;
+	    font-size: 0.8em;
 	}
 
         /* /////////////////////////////////////////////// Format other */
@@ -446,6 +468,7 @@
         {
             /* color: Green; */
             /* font-style: italic; */
+		font-family: Verdana;
             font-weigh: bold;
 	    font-size: 1.2em;
         }
@@ -472,6 +495,11 @@
             font-size: 0.9em;
         }
 
+	END: Hide from older browsers
+
+
+
+    END HIDING -->
     </STYLE>
 
 
@@ -1339,8 +1367,8 @@
 
 <UL>
 <LI>
-           <A HREF="pm-tips-body.html#saving_mh_folders__numbered_messages" class="toc" >
-               13.1 Saving: MH folders -- numbered messages
+           <A HREF="pm-tips-body.html#saving_mh_folders_ndash_numbered" class="toc" >
+               13.1 Saving: MH folders &ndash; numbered messages
     </A>
            <BR>
 <LI>
@@ -1369,8 +1397,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#service_file_server__send_file" class="toc" >
-               13.7 Service: File server -- send file as attachments upon request
+           <A HREF="pm-tips-body.html#service_file_server_ndash_send" class="toc" >
+               13.7 Service: File server &ndash; send file as attachments upon request
     </A>
            <BR>
 <LI>
@@ -1921,11 +1949,6 @@
                21.2 Elm and pgp support (Mutt is the successor to elm.)
     </A>
            <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mh_sites" class="toc" >
-               21.3 MH sites
-    </A>
-           <BR>
 </UL>
 <A HREF="pm-tips-body.html#additional_procmail_software_for_emacs" class="toc" >
                22.0 Additional procmail software for Emacs
@@ -1991,8 +2014,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#emacs_and_gnus__fiddling_with" class="toc" >
-               23.5 Emacs and Gnus -- Fiddling with spool files
+           <A HREF="pm-tips-body.html#emacs_and_gnus_ndash_fiddling" class="toc" >
+               23.5 Emacs and Gnus &ndash; Fiddling with spool files
     </A>
            <BR>
 <LI>
@@ -2258,28 +2281,23 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_the_net_abuse_page" class="toc" >
-               29.8 Software: the net abuse page
+           <A HREF="pm-tips-body.html#software_adcomplain_ndash_perl_junk" class="toc" >
+               29.9 Software: adcomplain &ndash; Perl junk mail report
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_adcomplain__perl_junk_mail" class="toc" >
-               29.9 Software: adcomplain -- Perl junk mail report
+           <A HREF="pm-tips-body.html#software_ricochet_ndash_perl_junk" class="toc" >
+               29.10 Software: Ricochet &ndash; Perl junk mail report
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_ricochet__perl_junk_mail" class="toc" >
-               29.10 Software: Ricochet -- Perl junk mail report
+           <A HREF="pm-tips-body.html#software_yell_ndash_perl" class="toc" >
+               29.11 Software: yell &ndash; perl
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_yell__perl" class="toc" >
-               29.11 Software: yell -- perl
-    </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#software_rbl_lookup_tool__c" class="toc" >
-               29.12 Software: RBL lookup tool -- C
+           <A HREF="pm-tips-body.html#software_rbl_lookup_tool_ndash" class="toc" >
+               29.12 Software: RBL lookup tool &ndash; C
     </A>
            <BR>
 <LI>

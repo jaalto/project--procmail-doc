@@ -23,7 +23,7 @@ No title
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Thu,  4 Apr 2002 22:34:04 GMT">
+  <META HTTP-EQUIV="Expires" CONTENT="Mon,  9 Sep 2002 15:57:02 GMT">
 
 
   <META HTTP-EQUIV="Made"
@@ -31,7 +31,7 @@ No title
 
 
   <META NAME="Generator"
-	CONTENT="2002-02-04 00:34 Perl 5 program t2html.pl v2002.0203 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
+	CONTENT="2002-07-11 18:57 Perl 5 program t2html.pl v2002.0607 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
 
 
 
@@ -42,6 +42,7 @@ No title
 
 
     <STYLE TYPE="text/css">
+    <!--  BEGIN: Hide from older browsers
 
 
         /*
@@ -168,7 +169,7 @@ No title
 
         a.toc
         {
-	    font-family: "verdana", sans-serif;
+	    font-family: verdana, sans-serif;
             font-style: normal;
         }
 
@@ -182,7 +183,7 @@ No title
         a.btn-toc:link
         {
             font-style: normal;
-	    font-family: "verdana", sans-serif;
+	    font-family: verdana, sans-serif;
             /* font-size:  0.7em; */
         }
 
@@ -317,7 +318,17 @@ No title
 
         p.column6
         {
-            color: #809F69;   /* Forest green */
+	    /* #809F69 is Forest green
+	       But web safe colors are:
+	       Lighter  ForestGreen: 66CC00
+	       ForestGreen: #999966 669900 339900 669966
+
+            color: #669900;
+	    font-family: "Goudy Old Style"
+	    */
+	    margin-left: 4em;
+	    font-family: Georgia;
+	    font-size:  0.9em;
         }
 
             /* This is so called 3rd heading */
@@ -393,7 +404,7 @@ No title
 	     #  Browser will pick the one that is supported
 	     */
 
-             font-family: lucida, lucida sans unicode, verdana, arial, helvetica, sans-serif;
+             font-family: lucida, lucida sans unicode, verdana, arial, "Trebuchet MS", helvetica, sans-serif;
 	     background-color: #ffefff;
 	     font-size:   0.8em;
         }
@@ -408,7 +419,7 @@ No title
         p.column11
         {
 	    font-family: arial, verdana, helvetica, sans-serif;
-            font-size: 0.8em;
+            font-size: 0.9em;
             font-style: italic;
             color: Fuchsia;
         }
@@ -432,6 +443,16 @@ No title
             /* font-size:      0.8em; */
 	}
 
+        span.super
+        {
+	    /* superscripts */
+	    color: teal;
+	    vertical-align: super;
+	    font-family: Verdana, Arial, sans-serif;
+	    font-size: 0.8em;
+        }
+
+
         span.word-ref
         {
 	    color: teal;
@@ -446,7 +467,8 @@ No title
         span.word-small
 	{
 	    color: #CC66FF;
-	    font-size: 0.9em;
+	    font-family: Verdana, Arial, sans-serif;
+	    font-size: 0.8em;
 	}
 
         /* /////////////////////////////////////////////// Format other */
@@ -457,6 +479,7 @@ No title
         {
             /* color: Green; */
             /* font-style: italic; */
+		font-family: Verdana;
             font-weigh: bold;
 	    font-size: 1.2em;
         }
@@ -483,6 +506,11 @@ No title
             font-size: 0.9em;
         }
 
+	END: Hide from older browsers
+
+
+
+    END HIDING -->
     </STYLE>
 
 
@@ -858,7 +886,7 @@ No title
 
 <P class="column8">
         If you print something to file, then the shell redirection tokens
-        &gt; and &gt;&gt; must have surrounding spaces, otherwise they are not
+        &gt; and > must have surrounding spaces, otherwise they are not
         found in the procmail code. (because &gt; can be used in regexps)
 
 
@@ -958,10 +986,10 @@ the copyright holder. (VI.B LICENSE OPTIONS)
 </P>
 <P>
 This file has been automatically generated from plain text file
-with Perl script <STRONG>t2html.pl 2002.0203</STRONG><BR>
+with Perl script <STRONG>t2html.pl 2002.0607</STRONG><BR>
 Document author: Jari Aalto<BR>
 Contact: &lt;<A HREF="mailto:jari.aalto@poboxes.com">jari.aalto@poboxes.com</A>&gt;<BR>
-Html date: 2002-02-04 00:34<BR>
+Html date: 2002-07-11 18:57<BR>
 </EM    class="footer">
 </BODY>
 </HTML>

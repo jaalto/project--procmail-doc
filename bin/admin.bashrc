@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.7 2002/02/03 22:22:42 jaalto Exp $
+#   $Id: admin.bashrc,v 1.8 2002/07/11 16:14:56 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -154,6 +154,7 @@ function sfpmdochtmlall ()
     #	If filesize if bigger than 15K, generate Framed HTML page.
 
     local id="sfpmdochtmlall"
+    echo "$id: started."
 
     if [ "$SF_PM_DOC_ROOT" = "" ]; then
        echo "$id: Where is the project root? Define SF_PM_DOC_ROOT"
