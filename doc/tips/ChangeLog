@@ -1,3 +1,26 @@
+2002-12-30 Mon    <jari.aalto@poboxes.com>
+
+        * pm-tips.txt (2.5 Procmail module library project): 2.16
+        Removed David's Hunt's URL http://www.west.net/~dh which
+        is invalid.
+        Removed Alan Stebben's Procmail module note
+        <alan.stebbens@software.com> or <alan.stebbens@openwave.com>m,
+        since are available at http://pm-lib.sourceforge.net/
+        There is no modules at Concordia University. Moved link to the
+        general area.
+        (2.5.18 Mailing list modules): Microlist by David Hunt
+        removed. No longer available.
+        (2.6 Procmail code to filter UBE): 2.16 Removed Daniel's spam
+        filter. No longer available at
+        ftp://ftp.bristol.nl/pub/users/DanS/spamcheck
+        Removed `Protect yourself from spam: A practical guide to
+        procmail' article at
+        http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html
+        no longer available.
+        (4.5 Check and set PATH): 2.16 Shortened chapter. Removed
+        Richard's comment about multiple directories in PATH, which may
+        be dangerous.
+
 2002-09-01 Sun  Jari Aalto  <jari.aalto@poboxes.com>
 
         * pm-tips.txt

@@ -414,7 +414,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.16 2002/09/01 13:50:17 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.17 2002/12/30 13:50:28 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -601,19 +601,19 @@ Table of contents
             *tinytf.el* (automatic TOC, indentation control, fontifying)
             http://tiny-tools.sourceforge.net/
         o   Perl  text-to-HTML conversion program
-            *t2HTML.pl* project is at
+            *t2html.pl* project is at
             http://perl-text2html.sourceforge.net/
 
         Text version of this file was converted into HTML with following
-        command. You need Perl interpreter 5.4 or newer to call *t2HTML.pl*
+        command. You need Perl interpreter 5.4 or newer to call *t2html.pl*
         script. The `--Out' option generates file pm-tips.html in current
         directory. Please also familiarize yourself with GNU RCS ident(1),
         if you have it available. It is important that you mark interesting
         text to these tools so that someone can get an overview of your
         supplied files
 
-            % perl5.004 -S t2HTML.pl                                        \
-              --HTML-frame                                                  \
+            % perl5.004 -S t2html.pl                                        \
+              --html-frame                                                  \
               --title   "Procmail tips page"                                \
               --author  "Jari Aalto"                                        \
               --email   jari.aalto@poboxes.com                              \
@@ -622,7 +622,7 @@ Table of contents
               --base      http://pm-doc.sourceforge.net                     \
               --document  http://pm-doc.sourceforge.net                     \
               --url       http://pm-doc.sourceforge.net                     \
-              --HTML-body "LANG=en"                                         \
+              --html-body "LANG=en"                                         \
               --Out                                                         \
               pm-tips.txt
 
@@ -768,12 +768,12 @@ Table of contents
         that reads these files as mail spool files (like Emacs Gnus), then
         this directory is typically ~/Mail/spool or similar.
 
-        _MY_XLOOP_ = Used to prevent re-sending messages that have already
+        _MYXLOOP_ = Used to prevent re-sending messages that have already
         been handled. Typically `$LOGNAME@$HOST', but this can be any user
         chosen string. Make it it unique to your address. In this document
         the definition is:
 
-            MY_XLOOP = "X-Loop: $LOGNAME@$HOST"
+            MYXLOOP = "X-Loop: $LOGNAME@$HOST"
 
         _SENDMAIL_ = Program to deliver composed mail. Usually standard
         Unix `sendmail(1)', but it must have some switches with it. See man
@@ -909,7 +909,7 @@ Table of contents
         Articles from procmail mailing list: covers from 1994-08 to 1995-05
         (A .gz file: ~2Meg when uncompressed)
 
-        And latest articles can be found here, hosted by Achim Bohnet
+        More later  articles can be found from Achim Bohnet's server.
         Covers from 1995-10 to the present day.
         <ach@mpe.mpg.de>. The www page has nice search capabilities.
         http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
@@ -917,13 +917,8 @@ Table of contents
 
        "Era's Procmail FAQ and link collection"
         http://www.iki.fi/~era/procmail
-        Also available by mail, the ITEM can be: links.html, mini-FAQ.html,
-        procmail-FAQ
 
-            To: <era+pr@iki.fi>
-            Subject: send ITEM
-
-       "Professor Timo Salmis's Procmail page -- EXELLENT"
+       "Professor Timo Salmis's Procmail page"
         http://www.uwasa.fi/~ts/info/proctips.html
 
        "Joe Gross's short Procmail tutorial"
@@ -936,21 +931,16 @@ Table of contents
         http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/
 
        "Eli on Procmail"
-        1998-12-08 Eli the Bearded <*@qz.to> announced in comp.mail.misc
-        that he had made his procmail modules available at
-        http://www.faqs.org/faqs/mail/addressing/ You may find interesting
-        procmail code there but the modules themselves are not general
-        purpose *plug-in* modules that you could use right away. Some
-        functionality included:
+        See Eli the Bearded's <*@qz.to> addressing tips at
+        http://www.faqs.org/faqs/mail/addressing/
 
-            Inline decoding of MIME text attachments        (rc.mime-decode)
-            Cleansing of obscure "Re:" formats in subject   (rc.pre-list)
-            Nifty autoresponder                             (rc.qz-2)
-            Sophisticated duplicate mail catching           (rc.dupes)
-            Example of using my mail bouncer                (rc.lists-out)
-            Detection of some classes of autoreplies        (rc.daemon)
-            Various junk mail filtering                     (rc.filter)
-            Daily log files                                 (rc.vars)
+       "Concordia University's procmail page"
+        http://alcor.concordia.ca/topics/email/auto/procmail/
+        ...People often ask how to avoid receiving "spam" mail, or how
+        to bounce mail from someone who is annoying them. These pages
+        tell you how to install procmail; you can then tailor it to do
+        all those things, or whatever else you want.
+        <webdoc@alcor.concordia.ca>
 
     2.4 Procmail mode for Emacs
 
@@ -968,27 +958,12 @@ Table of contents
 
     2.5 Procmail module library project
 
-       2.5.1 Where to get the modules
+       2.5.1 Where to get various modules
 
        "Procmail module library"
         Hosted at sourceforge CVS server and open for anyone to
-        participate. Visit http://pm-lib.sourceforge.net/
-
-       "Alan's procmail modules"
-        Send subject "send procmail library" to Alan Stebbens
+        participate. Visit <http://pm-lib.sourceforge.net/>.
         <alan.stebbens@software.com> or <alan.stebbens@openwave.com>
-
-       "Concordia scripts"
-        http://alcor.concordia.ca/topics/email/auto/procmail/
-        ...We provide sample sets of recipes to get you started. The great
-        thing about the concordia scripts is the fact that they are
-        designed to run from a central location and be called from a
-        .procmailrc installed in the user's ~/home directory.
-        <webdoc@alcor.concordia.ca>
-
-        "David's" David Hunt <dh@west.net>
-        ...My .procmailrc and .forward files can be viewed at
-        http://www.west.net/~dh/homedir/pmdir/
 
        2.5.2 Terminology
 
@@ -1214,15 +1189,6 @@ Table of contents
 
        2.5.18 Mailing list modules
 
-        o   *Microlist* a small mailing list module by david hunt
-            <dh@west.net> ...This version contains vars set for my
-            environment and needs, and requires resetting of those
-            vars before use. Its exact function and use will remain a
-            mystery until I get a readme file written for it. If
-            anyone wants to use it, I suggest you write to me first.
-            If anyone has any suggestions or criticisms (no matter how
-            harsh) please write
-            http://www.west.net/~dh/homedir/microlist/microlist4.3
         o   *pm-jalist.rc* -- Subroutine to extract mailing list name from
             message. Do you need to add a new recipe to your .procmailrc
             every time you subscribe to new mailing list? If you do,
@@ -1243,13 +1209,6 @@ Table of contents
           such bogus addresses at the SMTP level before the message is
           received.
 
-       "Daniel's spam filter"
-        1997-09-13 Daniel Smith <DanS@bristol.com> sent excellent spam filter
-        called `spamc.rc'. It used some nice heuristics and filters from
-        various people, including [david] and [philip].
-        Later Dan made substantial changes to it and the new version is
-        available from ftp://ftp.bristol.nl/pub/users/DanS/spamcheck
-
        "pm-jaube.rc - Procmail module library's UBE filter"
         After Daniel Smith posted his spam recipes to procmail mailing
         list, the code was adopted and more generalized to handle lot more
@@ -1267,16 +1226,9 @@ Table of contents
         as possible. These recipes can be used as shared recipes for a
         whole system, or by an individual for their own mailbox only.
 
-       "Protect yourself from spam: A practical guide to procmail"
-        http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html
-        ...take you, step by step, through everything you need to know in
-        order to enlist the aid of a Unix host in filtering unwanted e-mail
-        traffic. This page is excellent to get you started with procmail
-        and filtering with simple recipes and how to store messages to
-        folders. Recommended for newcomers to Procmail.
-
        "Junkfilter" by Gregory Sutter <gsutter@pobox.com>
-        http://www.pobox.com/~gsutter/junkfilter/
+        http://www.pobox.com/~gsutter/junkfilter/ and
+        http://sourceforge.net/projects/junkfilter
         ...Junkfilter is a user-configurable procmail-based filter system
         for electronic mail. Recipes include checks for forged headers,
         key words, common spam domains, relay servers and many others.
@@ -1295,18 +1247,18 @@ Table of contents
 
 3.0 Dry run testing
 
-    3.1 What is dry run testing
+    3.1 What is dry run testing?
 
         It means that you call your procmail test script directly with sample
         test mail
 
             % procmail $HOME/pm/pm-test.rc < $HOME/tmp/test-mail.txt
 
-        The script pm-test.rc has the procmail recipe you're testing or
-        improving. The test-mail.txt is any valid mail message containing
-        the headers and body. You can make one with any text editor, e.g.
-        `vi', `pico' or `emacs' in your Unix system. Here's a
-        simple test mail skeleton:
+        The script pm-test.rc has the procmail recipe you're testing
+        or improving. The test-mail.txt is any valid mail message
+        containing the headers and body. You can make one with any
+        text editor, e.g. `vi', `pico', `nano', `emacs' or `xemacs'.
+        Here's a simple test mail skeleton. Copy verbatim:
 
             From: me@here.com
             To: me@here.com (self test)
@@ -1326,33 +1278,32 @@ Table of contents
         like to get it all dumped to screen. No problem, first find out
         your tty value by calling `tty' at shell prompt and pass
         that on the command line. Here the default LOGFILE is directed
-        to take care of redirecting "LOG=" commands and statement
-        "MYTEST_LOG=${MYTEST_LOG:-$HOME/pm/pm-test.log}"
+        to take care of redirecting "LOG=" commands and statement:
 
             #  `tty' tells what to fill in /dev/..
 
-            % procmail VERBOSE=on DEFAULT=/dev/null                         \
-                LOGFILE=/dev/pts/0 MYTEST_LOG=/dev/pts/0                    \
+            % procmail VERBOSE=on DEFAULT=/dev/null   \
+                LOGFILE=/dev/pts/0                    \
                 ~/pm/pm-test.rc < ~/txt/test-mail.txt
 
-    3.2 Why the From field is not okay after dry run
+    3.2 Why the From field is not okay after dry run?
 
-          It now says "From foo@bar Mon Sep 8 14:38:06 1997"
+          Why it now says "From foo@bar Mon Sep 8 14:38:06 1997"?
 
-        [philip] Don't worry about this. It's a side-effect of running the
-        message through formail after having generated any auto-reply --
-        the auto-reply generated by "formail -rt" doesn't have a "From "
-        header (it's pointless for outgoing messages), so the second
-        formail adds one, not knowing that it'll just be ignored by
-        sendmail later (well, sendmail will extract the date from it, but
-        that's ignorable). You only see it because you're saving to a
-        folder instead of the mailing it.
+        Don't worry about this. It's a side-effect of running the
+        message through formail after having generated any auto-reply
+        -- the auto-reply generated by "formail -rt" doesn't have a
+        "From " header (it's pointless for outgoing messages), so the
+        second formail adds one, not knowing that it'll just be
+        ignored by sendmail later (well, sendmail will extract the
+        date from it, but that's ignorable). You only see it because
+        you're saving to a folder instead of the mailing it.
 
     3.3 Getting default value of a procmail variable
 
-        [david] There's always this way to learn a variable's
-        initial value (note the strong quotes), which Stephen uses to get
-        procmail's value for $SENDMAIL in the scripts that build SmartList:
+        There's always this way to learn a variable's initial value
+        (note the strong quotes), which Stephen uses to get procmail's
+        value for $SENDMAIL in the scripts that build SmartList:
 
             procmail LOG='$PATH' DEFAULT=/dev/null /dev/null < /dev/null
 
@@ -1382,25 +1333,23 @@ Table of contents
 
     4.3 Be sure to write the recipe starting right
 
-        The recipe starts with `:0' or just with `:' but the latter one is
-        somewhat dangerous and easy to miss. Beware writing it `0:' as it
-        happens easily. The Procmail code checker, Lint, also requires that
-        you use the `:0' recipe start convention.
-
-        [philip] Always put a zero after the colon that begins the recipe. In
-        the first versions of procmail, you would put the number of
-        conditions, with a default of 1. That was annoying, and the computer
-        can do the counting easier, so Stephen made it so that a count of 0
-        indicates that the conditions are all the lines beginning with a `*'.
-        The default is one, unless the `a', `A' , `e', or `E' flags is given,
-        in which case the default is zero. *ALWAYS* *START* a *RECIPE* *WITH*
-        `:0'.
+        The recipe starts with `:0' or just with `:' but the latter
+        one is somewhat dangerous and easy to miss. Beware writing it
+        `0:' as it happens easily. Always put a zero after the colon
+        that begins the recipe. In the first versions of procmail, you
+        would put the number of conditions, with a default of 1. That
+        was annoying, and the computer can do the counting easier, so
+        Stephen made it so that a count of 0 indicates that the
+        conditions are all the lines beginning with a `*'. The default
+        is one, unless the `a', `A' , `e', or `E' flags is given, in
+        which case the default is zero. *ALWAYS* *START* a *RECIPE*
+        *WITH* `:0'.
 
     4.4 Always set SHELL
 
-        [FAQ] If your login shell is a C shell (csh or tcsh), avoid
-        havoc: as a precaution, always put following at the top of
-        your .procmailrc.
+        If your login shell is a C shell (csh or tcsh), avoid havoc:
+        as a precaution, always put following at the top of your
+        `$HOME/.procmailrc.'
 
             SHELL = /bin/sh
 
@@ -1462,32 +1411,20 @@ Table of contents
 
     4.5 Check and set PATH
 
-        [jari] It is very likely that the default PATH environment variable
-        that your .procmailrc sees it not enough. To play safe, so that all
-        the needed binaries can be found when escaping to shell in
-        .procmailrc, set the `PATH' variable as a very first statement.
-        Here is one example that I use for HP-9 HP-10 and in SUN-OS.
-        You can add paths that don't exist, that way you can use the
-        same .procmail on multiple servers (On HP and SUN as I do)
+        It is very likely that the default PATH environment variable
+        that your `$HOME/.procmailrc' sees it not enough. To play
+        safe, so that all the needed binaries can be found when
+        escaping to shell in .procmailrc, set the `PATH' variable as a
+        very first statement. Adding paths that don't exist in another
+        system but does exists in the other makes it possible to use
+        the same `$HOME/.procmail' on multiple servers (Like HP, SUN,
+        IBM, Linux)
 
-            PATH        = $HOME/bin:\
+            PATH = $HOME/bin:\
             /usr/contrib/bin:\
             /bin:/usr/bin:/usr/lib:/usr/ucb:/usr/sbin:\
             /usr/local/bin:/opt/local/bin:\
             /vol/bin:/vol/lib:/vol/local/bin:${PATH}
-
-        [Richard] It is dangerous to have many directories in the PATH,
-        especially if you do not control the content of any of them. A
-        sysadmin could put a newer, incompatible version of a program you
-        rely upon in one of them and you cause difficult-to-diagnose
-        problems. It may make more sense to link the binaries you need into
-        your own ~/bin directory and include just that in your PATH.
-
-        [jari] In principle I agree with Richard's advice, but in practice
-        the newer version of the program seldom breaks the procmail code
-        you have written. It depends on your "threat level": be more
-        cautious and use Rik's advice; alternatively trust the system and
-        adapt to (rare) changes. Your call.
 
     4.6 Keep the log on all the time
 
@@ -1504,20 +1441,20 @@ Table of contents
 
     4.7 Never add a trailing slash for directories
 
-        [philip] Drop the trailing slash: it'll choke if you ever end up on
-        Apollo's DomainOS where double slashes are network references. If
-        the directory has a trailing slash, it will choke
-        on most OSes (they treat it like "/.").
+        Drop the trailing slash: it'll choke if you ever end up on
+        Apollo's DomainOS where double slashes are network references.
+        If the directory has a trailing slash, it will choke on most
+        OSes (they treat it like "/.").
 
             DIR         = /full/path/to/www/directory/    # Wait...
             FILE        = $ARCHIVEDIR/file                # Ouch !
 
     4.8 Remember what term DELIVERED means
 
-        [alan] When procmail delivers a piece of mail, whether to a
-        file or a pipe-command, if the write succeeds, then the mail is
-        considered to have been delivered, and processing stops with that
-        recipe file. Here is the relevant text from man page:
+        When procmail delivers a piece of mail, whether to a file or a
+        pipe-command, if the write succeeds, then the mail is
+        considered to have been delivered, and processing stops with
+        that recipe file. Here is the relevant text from man page:
 
           ...There are two kinds of recipes: delivering and non-delivering
           recipes. If a delivering recipe is found to match, procmail
@@ -1527,7 +1464,7 @@ Table of contents
           match, processing of the rcfile will continue after the action
           line of this recipe has been executed.
 
-    4.9 Beware putting comment in wrong place
+    4.9 Beware putting comment in wrong places
 
         You like commenting a lot, sticking them everywhere possible?
         Yes, I do that too, and got into trouble because one is not that
@@ -1546,15 +1483,14 @@ Table of contents
                 /dev/null   # comment ok
             }               # comment ok
 
-        So, the place to watch is the *condition* line. Some later procmail
-        versions promised to correct this misfeature, but it never came
-        true. No procmail exists yet that allows putting comments
-        on the same line with a condition clause.
+        So, the place to watch is the *condition* line. Later procmail
+        versions may understand those, but if you intend to share your
+        recipe, play it safe and think about backward portability.
 
     4.10 Brace placement
 
         Be careful with your braces and remember that old procmail
-        versions aren't as forgiving as newest version. Below you see
+        versions aren't as forgiving as newer versions. Below you see
         classical "Test OK condition first, and if that fails then do
         something else". See the side comments.
 
@@ -1587,9 +1523,9 @@ Table of contents
 
         Note that in delivering recipes where you manually write the
         content, you must use local lock file with `>' token, because
-        procmail can't determine lock by itself. It can only determine the
-        lock file from the `>>' token. [stephen] However, putting a
-        lock file on a recipe like this is, of course, utterly useless. So
+        procmail can't determine lock by itself. It can only determine
+        the lock file from the `>>' token. However, putting a lock
+        file on a recipe like this is, of course, utterly useless. So
         you might as well omit the locking entirely.
 
             #   Save last body of message to file mail.body
@@ -1605,10 +1541,10 @@ Table of contents
             procmail run the same command) that might run at the same time,
             the local lock file is unnecessary.
 
-        [philip] Watch this too. A nesting block that does not launch
-        a clone cannot take a local lock file on the recipe that starts the
-        braces. A nesting block that does launch a clone can. (see
-        the error)
+        Watch this too. A nesting block that does not launch a clone
+        cannot take a local lock file on the recipe that starts the
+        braces. A nesting block that does launch a clone can. (see the
+        error)
 
             :0: file$LOCKEXT
             {
@@ -1646,10 +1582,10 @@ Table of contents
 
     4.12 Global lockfile
 
-        [david] If you want to block everything while the recipe runs, even
+        If you want to block everything while the recipe runs, even
         during the _conditions_, use global lock. For example in this
-        construct the `formail' which updates the message-id cache file
-        must be protected with a global lock file.
+        construct the `formail' which updates the message-id cache
+        file must be protected with a global lock file.
 
             MID_CACHE_LEN   = 8192
             MID_CACHE_FILE  = $PMSRC/msgid.cache
@@ -1713,7 +1649,7 @@ Table of contents
             *$ ?      $IS_EXIST $FILE
             *         VARIABLE ?? set
 
-    4.14 Sending automatic reply, use X-loop header
+    4.14 If you Send an automatic reply, use X-loop header
 
         Do not send automatic reply without checking "! ^FROM_DAEMON"
         condition and always include `X-Loop' header and check its existence
@@ -1721,11 +1657,11 @@ Table of contents
 
             :0
             *    conditions-for-auto-reply
-            *$ ! ^$MY_XLOOP
+            *$ ! ^$MYXLOOP
             *  ! ^FROM_DAEMON
             | $FORMAIL -A "$MY-XLOOP" ...other-headers...
 
-    4.15 Avoid extra shell layer (check command for SHELLMETAS)
+    4.15 Avoid extra shell layer and check command for SHELLMETAS
 
         [dan] It is very important to study your shell command calls and try to
         save the overload of the extra layer of shell. It may be extra work
@@ -1773,22 +1709,24 @@ Table of contents
 
     4.16 Think what shell commands you use
 
-        For every message, procmail launches the processes you have put into
-        your .procmailrc. If you haven't paid attention to optimization
-        before, now it's serious time to take a magnifying glass and check
-        every recipe and the processes in them. When you write you private
-        shell scripts, the performance hit is not so important, but for
-        mail delivery, the matter is totally different. First, let's see
-        some programs and sizes: The following is from HP-UX 10, where the
-        binaries seem to include debug and symbol table code.
+        For every message, procmail launches the processes you have
+        put into your `$HOME/.procmailrc'. If you haven't paid
+        attention to optimization before, now it's serious time to
+        take a magnifying glass and check every recipe and the
+        processes in them. When you write you private shell scripts,
+        the performance hit is not so important, but for mail
+        delivery, the matter is totally different. First, let's see
+        some programs and sizes: The following is from one Unix
+        system, where the binaries include debug and symbol table
+        code.
 
-            131072 Aug 21  1996 /usr/bin/awk
-            196608 Oct  1  1996 /usr/bin/sort
-            245760 Jun 10  1996 /usr/bin/grep
-            262144 Jun 10  1996 /usr/bin/sed
-            303552 Dec  7  1995 /usr/local/bin/gawk
-            544768 Jun 10  1996 /usr/contrib/bin/perl       [perl 4.36]
-            822232 Aug 25 13:58 /opt/local/bin/perl5.00401
+            131072  /usr/bin/awk
+            196608  /usr/bin/sort
+            245760  /usr/bin/grep
+            262144  /usr/bin/sed
+            303552  /usr/local/bin/gawk
+            544768  /usr/contrib/bin/perl       [perl 4.36]
+            822232  /opt/local/bin/perl5.00401
 
                     text    data     bss
             awk:    72727 + 51316 +  15317   = 139360
@@ -1799,19 +1737,19 @@ Table of contents
             perl5: 633812 + 69612 +   2385   = 705809
             gawk:  160018 +  5264 +   7168   = 172450
 
-        The binary siszes above are not the typical cases: these are from
+        The binary sizes above are not the typical cases: these are from
         another system
 
-                 4 Sep 28 14:25 /usr/local/bin/awk -> gawk
-             32768 Nov 16  1996 /usr/bin/grep
-             49152 Nov 16  1996 /usr/bin/sed
-            114688 Oct 20  1996 /usr/local/contrib/gnu/bin/grep
-            155648 Nov 16  1996 /usr/bin/awk
-            155648 Nov 16  1996 /usr/bin/nawk
-            221184 Nov 16  1996 /usr/bin/gawk
-            311296 Jan 27  1997 /usr/local/bin/gawk
-            958464 Nov  2 16:34 /usr/local/contrib/bin/perl
-            1196032 Sep 14  1996 /usr/local/bin/perl
+                 4 Sep 28  /usr/local/bin/awk -> gawk
+             32768 Nov 16  /usr/bin/grep
+             49152 Nov 16  /usr/bin/sed
+            114688 Oct 20  /usr/local/contrib/gnu/bin/grep
+            155648 Nov 16  /usr/bin/awk
+            155648 Nov 16  /usr/bin/nawk
+            221184 Nov 16  /usr/bin/gawk
+            311296 Jan 27  /usr/local/bin/gawk
+            958464 Nov  2  /usr/local/contrib/bin/perl
+            1196032 Sep 14 /usr/local/bin/perl
 
         Stan Ryckman <stanr@sunspot.tiac.net> wants you to know that:
 
@@ -3944,7 +3882,7 @@ Table of contents
 
             :0 hw
             * ! ^X-Loop: moo$
-            | ($FORMAIL -rt -A "$MY_XLOOP"; echo "$MESSAGE") | $SENDMAIL
+            | ($FORMAIL -rt -A "$MYXLOOP"; echo "$MESSAGE") | $SENDMAIL
 
     7.20 Getting headers into a variable.
 
@@ -4366,7 +4304,7 @@ Table of contents
                 | $FORMAIL -rt                                              \
                            -A "Precedence: junk"                            \
                            -I "Subject: Requested .procmailrc";             \
-                           -I "$MY_XLOOP"
+                           -I "$MYXLOOP"
 
                 :0 a hwic
                 | ( cat - $HOME/.procmailrc ) | $SENDMAIL
@@ -5259,7 +5197,7 @@ Table of contents
                 :0 fhb
                 | $FORMAIL -rtk -p '>'   \
                   -I "From: me@here.com" \
-                  -I "$MY_XLOOP"
+                  -I "$MYXLOOP"
 
                 :0 fhw
                 | cat -; echo "added message at the start of body"
@@ -5373,8 +5311,8 @@ Table of contents
             *  ^From [-_+.@a-z0-9]+  (Sun|Mon|Tue|Wed|Thu|Fri|Sat)
             *  ^From:
             *  ^TO
-            *$ ! H ?? ^$MY_XLOOP
-            | $FORMAIL -A "$MY_XLOOP" -m4s procmail
+            *$ ! H ?? ^$MYXLOOP
+            | $FORMAIL -A "$MYXLOOP" -m4s procmail
 
     10.13 Mailbox: Splitting to individual files
 
@@ -6229,12 +6167,12 @@ Table of contents
 
             :0
             *$   ^Subject:$s+GetPage:()\/.*
-            *$ ! ^$MY_XLOOP
+            *$ ! ^$MYXLOOP
             |   ($FORMAIL                                                   \
                     -rt                                                     \
                     -I "Precedence: junk"                                   \
                     -I "Subject: Requested page: $MATCH"                    \
-                    -I "$MY_XLOOP" ;                                        \
+                    -I "$MYXLOOP" ;                                         \
                  lynx -dump "http://$MATCH"                                 \
                 )| $SENDMAIL
 
@@ -6617,8 +6555,8 @@ Table of contents
 
             :0 fhw
             *    FORWARDTO ?? @
-            * ! ^$MY_XLOOP
-            | $FORMAIL -A "$MY_XLOOP"
+            * ! ^$MYXLOOP
+            | $FORMAIL -A "$MYXLOOP"
 
               :0 a
               ! $FORWARDTO
@@ -7551,7 +7489,7 @@ Table of contents
 
             :0
             * $   ^To:.*$LOGNAME(@|[^0-9a-z]|$)
-            * $ ! ^$MY_XLOOP
+            * $ ! ^$MYXLOOP
             {
                 # now let's encrypt the body using mimencode
 
@@ -7566,7 +7504,7 @@ Table of contents
                 #   and mark it so we don't loop
 
                 :0 fhw
-                | $FORMAIL   -I"Resent-To: $FORWARD_EMAIL" -I"$MY_XLOOP"
+                | $FORMAIL   -I"Resent-To: $FORWARD_EMAIL" -I"$MYXLOOP"
 
                 :0
                 ! $FORWARD_EMAIL
@@ -8073,7 +8011,7 @@ Table of contents
                 :0
                 *    condition
                 *  ! ^FROM_DAEMON
-                *$ ! ^$MY_XLOOP
+                *$ ! ^$MYXLOOP
                 {
                     # Ok, now we're clear to send an automated reply
                 }
@@ -8092,7 +8030,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.16 2002/09/01 13:50:17 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.17 2002/12/30 13:50:28 jaalto Exp $
             #
             #   File id
             #
@@ -10391,13 +10329,13 @@ Table of contents
             :0
             *  ! ^FROM_DAEMON
             *  ! ^FROM_MAILER
-            *$ ! $MY_XLOOP_LIST
+            *$ ! $MYXLOOP_LIST
             | ($FORMAIL -rtk                                                    \
-               -A "$MY_XLOOP_LIST"                                              \
+               -A "$MYXLOOP_LIST"                                               \
                -A "Precedence: junk";                                           \
             echo "Your post to mylist@magic.geol.ucsb.edu was not successful\n" \
                  "because the mailing list is restricted to submissions\n"      \
-                 "from only certain individuals and groups. Sorry.\n"          \
+                 "from only certain individuals and groups. Sorry.\n"           \
             ) | $SENDMAIL -oi -t
 
 21.0 Additional procmail or MUA software
