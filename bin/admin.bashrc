@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.5 2002/01/02 01:22:49 jaalto Exp $
+#   $Id: admin.bashrc,v 1.6 2002/01/05 17:19:06 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -136,7 +136,6 @@ function sfpmdochtml ()
 	  --email  "$SF_PM_DOC_EMAIL"                               \
 	  --meta-keywords "$SF_PM_DOC_KWD"                          \
 	  --meta-description "$SF_PM_DOC_DESC"                      \
-	  --name-uniq                                               \
 	  --Out                                                     \
 	  $input
 
