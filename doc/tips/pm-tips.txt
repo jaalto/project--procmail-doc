@@ -408,7 +408,7 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.3 2002/01/13 22:45:57 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.4 2002/01/31 00:18:17 jaalto Exp $
         .$Keywords: procmail sendmail formail mail UBE UCE spam filter $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$Contactid: jari.aalto@poboxes.com $
@@ -442,13 +442,12 @@ Table of contents
         before this page. Especially Era's link page contains an excellent
         collection of useful procmail links and pointers to unix programs
         that deal with mail (e.g Perl *MHonArc* Email hyperarchiver at
-        http://www.oac.uci.edu/indiv/ehood/mhonarc.html). If you find
+        <http://www.oac.uci.edu/indiv/ehood/mhonarc.html>). If you find
         errors or things to improve in this document, please go ahead and
         send mail to this document's [maintainer].
 
         If any mentioned URL is not alive, you may still be able to
-        successfully find it using the ftp search located at
-        http://ftpsearch.ntnu.no/ or WWW search such as
+        successfully find it using the WWW search such as
         http://www.google.com/
 
     1.2 What is Procmail?
@@ -8077,7 +8076,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.3 2002/01/13 22:45:57 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.4 2002/01/31 00:18:17 jaalto Exp $
             #
             #   File id
             #

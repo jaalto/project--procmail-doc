@@ -1,3 +1,13 @@
+2002-01-25 Fri  Jari Aalto  <jari.aalto@poboxes.com>
+
+	* pm-tips.txt (1.1 General): 2.3 Added <> arounf `mhonarc' URL.
+	(1.1 General): 2.3 Removed `http://ftpsearch.ntnu.no/' which no
+	longer responds.
+
+	* pm-index.txt (Jari's Procmail resources): 1.1 Updated
+	Tiny Tools project link.
+	(Jari's Procmail resources): 1.1 Misspelled procmail.org site.
+
 2002-01-01 Tue  Jari Aalto  <jari.aalto@poboxes.com>
 
 	* pm-tips.txt (Where is procmail developed): 2.1 Removed
