@@ -28,7 +28,7 @@ Procmail Tips
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Wed, 16 Jul 2003 17:13:55 GMT">
+  <META HTTP-EQUIV="Expires" CONTENT="Wed, 10 Mar 2004 10:10:06 GMT">
 
 
   <META HTTP-EQUIV="Made"
@@ -36,7 +36,7 @@ Procmail Tips
 
 
   <META NAME="Generator"
-	CONTENT="2003-05-17 20:13 Perl program t2html.pl v2003.0502 http://perl-text2html.sourceforge.net/ ">
+	CONTENT="2004-01-10 10:10 Perl program t2html.pl v2003.1111 http://perl-text2html.sourceforge.net/ ">
 
 
 
@@ -120,6 +120,30 @@ Procmail Tips
             And wish that some newer browser will render it right.
 
         */
+
+        /*   ///////////////////////////////////////////////// HEADINGS */
+
+        h1.default
+        {
+            font-family: bold x-large Arial,helvetica,Sans-serif;
+            padding-top: 10pt;
+        }
+
+
+        h2.default
+        {
+            font-family: bold large Arial,Helvetica,Sans-serif;
+        }
+
+        h3.default
+        {
+            font-family: bold medium Arial,Helvetica,Sans-serif;
+        }
+
+        h4.default
+        {
+            font-family: medium Arial,Helvetica,Sans-serif;
+        }
 
 
         /*   ////////////////////////// Make pointing AHREF more visual */
@@ -352,7 +376,9 @@ Procmail Tips
 
         .shade-note-attrib
         {
-            background: #E0E0F0;
+            /*  darker is #E0E0F0; */
+            /* background: #E5ECF3; */
+            background: #E5ECF3;
         }
 
         /* ..................................... colors ................. */
@@ -452,7 +478,7 @@ Procmail Tips
             font-family: "Goudy Old Style"
             */
             margin-left: 3em;
-            font-family: Georgia, Arial;
+            font-family: Georgia, Palatino, Verdana, Arial, Helvetica;
             font-size:  0.9em;
         }
 
@@ -553,7 +579,8 @@ Procmail Tips
 
         em.word
         {
-            color: #809F69;  /*Forest green */
+            /* #809F69 Forest green */
+            color: #80B06A;  /*Darker Forest green */
         }
 
         strong.word
@@ -563,7 +590,8 @@ Procmail Tips
 
         samp.word
         {
-            color: Blue;
+            color: #4C9CD4;
+            font-weight: bold;
             font-family:    "Courier New", monospace;
             /* font-size:      0.8em; */
         }
@@ -688,7 +716,7 @@ Procmail Tips
 
 
 <P class="column8">
-        <EM><STRONG>$Id: pm-tips-body.html,v 1.9 2003/05/17 18:41:49 jaalto Exp $</STRONG></EM><BR>
+        <EM><STRONG>$Id: pm-tips-body.html,v 1.10 2004/01/10 10:09:16 jaalto Exp $</STRONG></EM><BR>
         $URL: <A HREF="http://pm-doc.sourceforge.net/" target="_top">http://pm-doc.sourceforge.net/</A> $<BR>
         $UrlLinksLastChecked: 2002-07-11 $<BR>
 
@@ -1679,7 +1707,7 @@ Procmail Tips
 
 <P class="column8">
 <SPAN class="quote7">Eli on Procmail</SPAN><BR>
-        See Eli the Bearded's <EM><A HREF="mailto:*@qz.to" >*@qz.to</A></EM> addressing tips at
+        See Eli the Bearded's addressing tips at
         <A HREF="http://www.faqs.org/faqs/mail/addressing/" target="_top">http://www.faqs.org/faqs/mail/addressing/</A>
 
 
@@ -2178,15 +2206,6 @@ Procmail Tips
         ...Junkfilter is a user-configurable procmail-based filter system
         for electronic mail. Recipes include checks for forged headers,
         key words, common spam domains, relay servers and many others.
-
-
-<P class="column8">
-<SPAN class="quote7">SpamDunk</SPAN><BR>
-        <A HREF="http://www.waltdnes.org/email/spamdunk/" target="_top">http://www.waltdnes.org/email/spamdunk/</A>
-        ...This webpage shows a commented example of a working .procmailrc
-        file that works for me. I have tried to make things as generic as
-        possible, but there are no guarantees that it will work for anyone
-        else.
 
 
 <P class="column8">
@@ -3920,7 +3939,7 @@ Procmail Tips
 <P class="column10"><EM class="quote10">
           The <SAMP class="word">w</SAMP> tells Procmail to hang around and wait for the script to
           finish. Hm, Wouldn't you think this ought to be implied by the <SAMP class="word">f</SAMP>
-          flag already? Not so.</EM>
+          flag already?</EM>
 
 
 
@@ -10305,8 +10324,8 @@ Procmail Tips
 
 
 
-        <SPAN class="word-ref">[Philip]</SPAN> As of version 3.14 you should now usually leave out the -t. To
-        quote the formail manpage:
+        <SPAN class="word-ref">[Philip]</SPAN> As of version 3.14 you should now usually leave out the
+        <SAMP class="word">-t</SAMP>. To quote the formail manpage:
 
 
 <P class="column10"><EM class="quote10">
@@ -10706,9 +10725,11 @@ Procmail Tips
 
 
 
-        Collin Park <EM><A HREF="mailto:collin@cup.hp.com" >collin@cup.hp.com</A></EM> suggests that you can grab the
-        content to a variable and then use variable HDRS as you wish. This
-        This code doesn't modify original header, just put a few fields in $RH
+        The idea is that you first capture whole header in a
+        variable, then add it to the body of message. Here a
+        custom message is added to the beginning and the headers next.
+        Notice that the orginal body is already added by <SAMP class="word">rtk</SAMP>. Be
+        sure to have that space inside braces; they are important.
 
 <P>
 <TABLE  class="shade-normal"
@@ -10719,34 +10740,13 @@ Procmail Tips
         >
     <TR>
     <TD class="shade-normal-attrib" valign="top">
-    <PRE>      :0hi
-      HDRS=|formail -rt &quot;-IPrecedence: junk&quot;        \
-                    &quot;-AX-Loop: lewst@corp.com&quot;      \
-                    &quot;-IFrom: postmaster@corp.com&quot;
-    </TD>
-    </TR>
-</TABLE>
+    <PRE>      #todo:
 
-
-<P class="column8">
-        <SPAN class="word-ref">[david]</SPAN> ...It does require that the entire head fit into sed's hold
-        space, but it almost always will; exceptions are cases where the
-        sender messed around and added a bunch of uninformative (and
-        usually self-congratulatory) additional headers or when the message
-        got caught in a loop for a while but finally escaped before being
-        bounced for too many hops.
-
-<P>
-<TABLE  class="shade-normal"
-        width="94%"
-        border="0"
-        cellpadding="10"
-        cellspacing="0"
-        >
-    <TR>
-    <TD class="shade-normal-attrib" valign="top">
-    <PRE>      :0 fhw r
-      | sed -e H -e '$ G'
+      :0
+      * ^^\/(.+$)+$
+      {
+          header=&quot;$MATCH&quot;
+      }
 
       :0 fhw
       | $FORMAIL -rt; ... now generate reply ...
@@ -14878,7 +14878,7 @@ Procmail Tips
           TAG = &quot;info&quot;
       }
 
-      :0E
+      :0 E
       * $ ${HEADERS}check@foo.com
       {
           TAG = &quot;check&quot;
@@ -15811,9 +15811,9 @@ Procmail Tips
 
 
 </P>
-  <A name="using_you_can_call_rc" id="using_you_can_call_rc"></A>
+  <A name="using_call_rc_file_conditionally" id="using_call_rc_file_conditionally"></A>
   <H2>
-      16.2 Using: You can call rc file conditionally
+      16.2 Using: call rc file conditionally
       
   </H2>
 
@@ -15938,9 +15938,9 @@ Procmail Tips
 
 
 </P>
-  <A name="autoloading_an_rc_file" id="autoloading_an_rc_file"></A>
+  <A name="using_autoloading_an_rc_file" id="using_autoloading_an_rc_file"></A>
   <H2>
-      16.3 Autoloading an rc file
+      16.3 Using: autoloading an rc file
       
   </H2>
 
@@ -15948,8 +15948,8 @@ Procmail Tips
 
 
         Now when you know that includerc can be called conditionally, let's
-        discuss about &quot;autoloading of module&quot;. For example I use following
-        statement in nearly all my modules to import predefined variables
+        discuss about &quot;autoloading of a module&quot;. For example you may see
+        following statement modules which import predefined variables:
 
 <P>
 <TABLE  class="shade-normal"
@@ -15973,9 +15973,9 @@ Procmail Tips
 <P class="column8">
         It says that &quot;If variable WSPC does not contain space, then load
         module&quot;. If the module has already been loaded by some other rc
-        file, the WSPC would exist. If it does not exist yet, then we load
-        the module. This is classical example of conditionally loading
-        functions or variables into current module:
+        file, the WSPC would exist. If it does not exist yet, then the
+        module is loaded. This is classical example of conditionally
+        loading functions or variables into current module:
 
 <P>
 <TABLE  class="shade-normal"
@@ -15994,7 +15994,7 @@ Procmail Tips
 
 <P class="column8">
         Justin Lloyd <EM><A HREF="mailto:jlloyd@harris.com" >jlloyd@harris.com</A></EM> suggest a general way of caching
-        the included rc files. We use top-level script that records every
+        the included rc files. Use top-level script that records every
         module that was included. The module is loaded only if it it not
         yet included:
 
@@ -16022,10 +16022,10 @@ Procmail Tips
 
 
 <P class="column8">
-        This different approach then the previous one. Instead of checking
-        features, the presense of module is checked. Two sides of the coin
-        which can be used for the same thing. You can pick either solution
-        but to my opinion
+        This is different approach then the previous one. Instead of
+        checking features, the presense of module is checked. Two sides of
+        the coin which can be used for the same thing. You can pick either
+        solution but here are some thoughts:
 
 <UL>
 	<LI>Adding extra top level INCLUDE_CACHE is extra work. Procmail
@@ -16050,8 +16050,8 @@ Procmail Tips
 
 <UL>
 	<LI>If feature already existed, you would still have to open the
-            pm-xximport.rc file for every call to find it out. Eg. Here you
-            pm-xximport.rc is called 3 times no matter if 1,2,3 were
+            pm-xximport.rc file for every call to find it out. E. g. here you
+            pm-xximport.rc is called 3 times no matter if 1, 2, 3 were
 	            already present
 </UL>
 
@@ -16073,12 +16073,10 @@ Procmail Tips
     </TR>
 </TABLE>
 
-<UL>
-	<LI>With simple feature test, procmail can evaluate the condition
-	            in place without the need of opening separate file.
-</UL>
 
-
+<P class="column8">
+        With previous simple feature test, procmail can evaluate the
+        condition in place without the need of opening separate file:
 
 <P>
 <TABLE  class="shade-normal"
@@ -16102,8 +16100,9 @@ Procmail Tips
 <P class="column8">
         Note however, that both suggestions accomplish the same thing; the
         implementation is only different. If the typical count of including
-        RC files per module were big enough, I'd use justin's way. Currently
-        the typical count is only 1-2 (VAR,DATE).
+        RC files per module were big enough, I'd use justin's way. Usually
+        it's around few, say one or two, whose purpose is to define
+        variables of get date information.
 
 
 </P>
@@ -16117,10 +16116,10 @@ Procmail Tips
 
 
         When you write an rc file, think whether or not it could be
-        generalized so that others could use it. I have adopted style where
-        all procmail files start with prefix <SAMP class="word">pm</SAMP>, so that I can stack
-        other files as well to the same directory. If I simply named them
-        as <SAMP class="word">rc.*</SAMP>, look what happens:
+        generalized so that others could use it. You could adopt a style
+        where all procmail files start with prefix <SAMP class="word">pm</SAMP>, so that they can
+        be stacked with other files in the same directory. If you simply
+        named them as <SAMP class="word">rc.*</SAMP>, look what happens:
 
 <P>
 <TABLE  class="shade-normal"
@@ -16138,9 +16137,8 @@ Procmail Tips
 
 
 <P class="column8">
-        but I wold like to print all procmail relates files and backup
-        them with one command, so this would print all procmail relates
-        files
+        but If you  would like to print all procmail relates files and backup
+        them with one command, the starting prefix is better:
 
 <P>
 <TABLE  class="shade-normal"
@@ -16165,11 +16163,12 @@ Procmail Tips
 
 
 <P class="column8">
-        I usually use a name like <SAMP class="word">pm-xxSCRIPT-NAME.rc</SAMP> for a rc file where
-        <SAMP class="word">xx</SAMP> is my initials from first name and surname, like (J)ari
-        (A)alto. These scripts are product versions, that can be
-        distributed. I also have private scripts that handle my mailing
-        lists, work messages and so on and they have prefix <SAMP class="word">my</SAMP>.
+        A name foramt could be <SAMP class="word">pm-xxSCRIPT-NAME.rc</SAMP> for a rc file where
+        <SAMP class="word">xx</SAMP> is the initials of first name and surname, like (J)ohn (D)oe.
+        These scripts are product versions, that can be distributed. There
+        also is usually private scripts that handle other things, like
+        mailing lists, work messages and so on. They vould have a prefix
+        <SAMP class="word">my</SAMP>.
 
 <P>
 <TABLE  class="shade-normal"
@@ -16180,7 +16179,7 @@ Procmail Tips
         >
     <TR>
     <TD class="shade-normal-attrib" valign="top">
-    <PRE>      pm-jascript.rc
+    <PRE>      pm-jdscript.rc
       pm-myscript.rc      &lt;&lt; private version
     </TD>
     </TR>
@@ -16188,8 +16187,8 @@ Procmail Tips
 
 
 <P class="column8">
-        and when I download someone else's script I would like to see it
-        named so that it's unique to the person who did it.
+        When downloading someone else's script it would be good if it's name
+        were unique according to person who made it:
 
 <P>
 <TABLE  class="shade-normal"
@@ -16200,7 +16199,7 @@ Procmail Tips
         >
     <TR>
     <TD class="shade-normal-attrib" valign="top">
-    <PRE>      pm-jdscript.rc      # John Doe's script.
+    <PRE>      pm-ajscript.rc      # Average Joe's script.
     </TD>
     </TR>
 </TABLE>
@@ -16435,7 +16434,12 @@ Procmail Tips
             the includerc and explain what it does. If you don't include
             docs, people may skip your extraordinary useful script. Also,
             remember that the script lives in the Net and passes through many
-            hands long after you have been disconnected.
+	            hands long after you have been disconnected.
+</UL>
+
+
+
+<UL>
 	<LI>Keep the layout like this: the user interface variables must all
             be in capital letters. Familiarize yourself with what(1) tags
             too. Notice the first and last lines: if you keep the format
@@ -16456,7 +16460,7 @@ Procmail Tips
         >
     <TR>
     <TD class="shade-normal-attrib" valign="top">
-    <PRE>          # @(#) pm-xxScript.rc -- procmail script for ...
+    <PRE>          # pm-xxScript.rc -- procmail script for ...
           # DOCS
 
           USER VARIABLES
@@ -16473,7 +16477,12 @@ Procmail Tips
 <UL>
 	<LI>Always include version number or last modification date somewhere.
             Prefer some version control tool, like RCS, VCS, ClearCase,
-            whatever you have at hand.
+	            whatever you have at hand.
+</UL>
+
+
+
+<UL>
 	<LI>Use a variable name like <SAMP class="word">dummy</SAMP> in appropriate places to tell
             what's happening in the code. Remember that the <EM class="word">VERBOSE</EM>
             setting isn't much help if you can't tell by looking at the
@@ -16640,8 +16649,8 @@ Procmail Tips
         >
     <TR>
     <TD class="shade-normal-attrib" valign="top">
-    <PRE>      # @(#) pm-xxscript.rc -- one line description string here
-      # @(#) &lt;EM&gt;&lt;STRONG&gt;$Id: pm-tips-body.html,v 1.9 2003/05/17 18:41:49 jaalto Exp $&lt;/STRONG&gt;&lt;/EM&gt;
+    <PRE>      # pm-xxscript.rc -- one line description string here
+      # &lt;EM&gt;&lt;STRONG&gt;$Id: pm-tips-body.html,v 1.10 2004/01/10 10:09:16 jaalto Exp $&lt;/STRONG&gt;&lt;/EM&gt;
       #
       #   File id
       #
@@ -16734,6 +16743,26 @@ Procmail Tips
     </H1>
 <BLOCKQUOTE>
 
+<P>
+<TABLE  class="shade-normal"
+        width="94%"
+        border="0"
+        cellpadding="10"
+        cellspacing="0"
+        >
+    <TR>
+    <TD class="shade-normal-attrib" valign="top">
+    <PRE>      Note: These examples are for ad-hoc lists. Procmail language is not
+      suitable for handling complex mailing list administration
+      although there is Procmail based MLM called *Smartlist*. The de
+      facto MLM software with web based interface is nowadays Python
+      based GNU *Mailman*.
+    </TD>
+    </TR>
+</TABLE>
+
+
+<P class="column8">
         Simple Mailing list server
 
 <P>
@@ -20041,7 +20070,7 @@ Procmail Tips
         >
     <TR>
     <TD class="shade-normal-attrib" valign="top">
-    <PRE>      From: &quot;jester@fun.house&quot; fool@aol.com
+    <PRE>      From: &quot;jester@fun.house&quot; &lt;EM&gt;<A HREF="mailto:fool@aol.com" >fool@aol.com</A>&lt;/EM&gt;
     </TD>
     </TR>
 </TABLE>
@@ -20770,386 +20799,9 @@ Procmail Tips
 </P>
 </BLOCKQUOTE>
 <HR>
-    <A name="smartlist"  id="smartlist"></A>
+    <A name="procmail_software_for_emacs"  id="procmail_software_for_emacs"></A>
     <H1>
-    20.0 Smartlist
-    
-    </H1>
-<BLOCKQUOTE>
-
-
-</P>
-  <A name="mlm_rfc" id="mlm_rfc"></A>
-  <H2>
-      20.1 MLM RFC
-      
-  </H2>
-
-
-
-
-<SPAN class="quote7">Smartlist FAQ</SPAN><BR>
-        <A HREF="http://www.hartzler.net/smartlist/SmartList-FAQ.html" target="_top">http://www.hartzler.net/smartlist/SmartList-FAQ.html</A>
-
-
-<P class="column8">
-        Mailing list managers and Header fields are controlled by rfc2369
-        &quot;The Use of URLs as Meta-Syntax for Core Mail List Commands and
-        their Transport through Message Header Fields&quot;.
-        <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc2369.html" target="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc2369.html</A>
-
-
-</P>
-  <A name="other_mailing_list_software" id="other_mailing_list_software"></A>
-  <H2>
-      20.2 Other mailing list software
-      
-  </H2>
-
-
-
-
-<SPAN class="quote7">ezmlm</SPAN><BR>
-
-
-<P class="column8">
-        <A HREF="http://www.ezmlm.org/" target="_top">http://www.ezmlm.org/</A> and <A HREF="http://www.qmail.org/" target="_top">http://www.qmail.org/</A>
-
-
-<P class="column8">
-        ..SmartList development is dead and in the long term it is difficult
-        to manage and improve. I've moved the vast majority of my lists to
-        ezmlm, which is built upon qmail. They are both packages based in
-        part or in whole on DJB code. Performance is great. Extensibility
-        is terrific. Development is active. Using ezmlm requires that you
-        use qmail as your MTA.
-
-
-<P class="column10"><EM class="quote10">
-          ...indeed, this will keep me from using ezmlm, as I use exim
-          (www.exim.org) as my MTA and much prefer it over qmail (which
-          I've also used).</EM>
-
-
-
-<P class="column10"><EM class="quote10">
-          ...I use qmail concurrently with Sendmail but it is the qmail
-          'way' to lure you in with the idea it is a painless drop-in
-          replacement for Sendmail. Before long you realize you need to
-          convert your entire mail server over to qmail. Qmail seems to
-          disdain anything not qmail, Unix itself, in pretty harsh terms.</EM>
-
-
-
-
-<P class="column10"><EM class="quote10">
-          ...exim is the descendant of smail3, and has copious
-          configuration capability... more extensive filtering than
-          sendmail.. and is a drop-in replacement for sendmail (unlike
-          qmail). I found qmail's installation quite different from that to
-          which I had become accustomed.. (e.g. the multiple entries in
-          passwd). I know the linux community uses and likes qmail so I'm
-          sure it's pretty good. qmail is a drop in replacement for
-          sendmail as well</EM>
-
-
-
-
-<P class="column8">
-<SPAN class="quote7">SmartList limitations</SPAN><BR>
-
-
-<P class="column8">
-        [1998-10-08 SL-L <EM><A HREF="mailto:cueman@cue.com" >cueman@cue.com</A></EM>] ...The trouble with rapid
-        delivery MTA's and SmartList(is not!) is multigram and the bounced
-        mail processing feature and large lists. If you run small lists
-        it's not so bad. But with 30k+ subscriber monthly announcement
-        lists, I have to redirect bouncing mail someplace else. The faster
-        the mail is delivered the faster the bounces come in. The larger
-        the list, the more multigram bogs down and the more procmail
-        processes accumulate and then you get file table overflows and all
-        that stuff from the load being sky high and hundreds of processes
-        hanging around. Also because alot of mail servers don't behave the
-        way we would like them to and return to us proprietary bounced
-        mail messages that SmartList can't understand, the bounce feature
-        is only able to successfully remove a portion of the offensive
-        mail addresses, requiring the listowner or some one to manually go
-        through it all anyway.
-
-
-<P class="column8">
-        SmartList is not covered by the GNU GPL &ndash; the copyright notice in
-        the docs do say that changes/modifications can be made if they are
-        'marked'.
-
-
-<P class="column8">
-        Personally, I think the bounced mail removal system needs to be
-        entirely redone if SmartList(is not!) is to be able to look forward
-        to the future enough to merit further development.
-
-
-<P class="column8">
-<SPAN class="quote7">Other MLM software</SPAN><BR>
-
-<UL>
-	<LI>majordomo uses Perl
-	<LI>Mailman uses Python <A HREF="http://www.list.org/" target="_top">http://www.list.org/</A>
-	<LI>SmartList uses scripts/procmail
-	<LI>Listar Mailing List Package (free): <A HREF="http://www.listar.org/" target="_top">http://www.listar.org/</A>
-	<LI>L-Soft international, Inc. (non-free): <A HREF="http://www.lsoft.com/" target="_top">http://www.lsoft.com/</A>
-	<LI>The Petidomo Mailing List Processor and Manager (non-free):
-            <A HREF="http://cryp.to/" target="_top">http://cryp.to/</A>
-	<LI>BeroList (free): <A HREF="http://freshmeat.net/projects/berolist/" target="_top">http://freshmeat.net/projects/berolist/</A>
-</UL>
-
-
-
-
-</P>
-  <A name="smartlist_code_mailing_list_implementation" id="smartlist_code_mailing_list_implementation"></A>
-  <H2>
-      20.3 SmartList code (mailing list implementation with procmail)
-      
-  </H2>
-
-
-
-
-<SPAN class="quote7">Smartlist 'FAQ'</SPAN><BR>
-        <A HREF="http://www.hartzler.net/smartlist/SmartList-FAQ.html" target="_top">http://www.hartzler.net/smartlist/SmartList-FAQ.html</A>
-
-
-<P class="column8">
-<SPAN class="quote7">Mark's Smartlist add-ons</SPAN><BR>
-        Mark David mcCreary <EM><A HREF="mailto:mdm@internet-tools.com" >mdm@internet-tools.com</A></EM>
-        <A HREF="ftp://ftp.mail-list.com/" target="_top">ftp://ftp.mail-list.com/</A>
-
-
-<P class="column10"><EM class="quote10">
-          ...front-end for Smartlist mailing lists, and allows people to
-          mail to list-on@domain.com and list-off@domain.com, which then
-          creates and sends a properly formatted subscribe/unsubscribe
-          message to the list-request address.</EM>
-
-
-
-<P class="column10"><EM class="quote10">
-          It also handles change of address, switches to/from digest lists,
-          moderated subscriptions, and a few other things.</EM>
-
-
-
-<P class="column10"><EM class="quote10">
-          My experience is that if you are planning on running lots of
-          lists, then eliminating questions/problems from subscribers is of
-          paramount importance, and those procmail recipes may be worth the
-          time to learn/tweak. --Mark</EM>
-
-
-
-<P class="column8">
-<SPAN class="quote7">Michelle's (SmartList add-ons) Confirmation cookie</SPAN><BR>
-        <A HREF="ftp://ftp.fatfree.com/" target="_top">ftp://ftp.fatfree.com/</A> confirm-1.1.tar.gz
-        <A HREF="ftp://ftp.rahul.net/pub2/artemis/" target="_top">ftp://ftp.rahul.net/pub2/artemis/</A> confirm-1.1.tar.gz
-        To add subscription confirmation to smartlist
-
-
-<P class="column8">
-<SPAN class="quote7">The mail-list.com front-end for Smartlist Mailing Lists</SPAN><BR>
-        <A HREF="ftp://ftp.mail-list.com" target="_top">ftp://ftp.mail-list.com</A>   mark david mcCreary &lt;mdm@internet-tools.com
-        ...This is a front end to Smartlist mailing lists. It provides easy to
-        use addresses for subscribers of the list. It also allows list owners
-        to concatenate many Smartlist commands into one mail message, which
-        is then broken up and sent in as separate messages to Smartlist.
-
-
-<P class="column8">
-        These scripts can accept messages for any mailing list, extract the
-        name of the list, and then format the appropriate commands that are
-        then forwarded on to the standard Smartlist list-request address.
-        These scripts do not directly alter the Smartlist dist file.
-
-
-<P class="column8">
-        A discussion group mailing list is available for support.
-        Please send a blank message to <EM><A HREF="mailto:front-end-on@mail-list.com" >front-end-on@mail-list.com</A></EM> to
-        start the subscription process.
-
-
-<P class="column8">
-<SPAN class="quote7">Moderated lists &ndash; Perl script</SPAN><BR>
-        <A HREF="http://www.mjolner.com/~lbr/moderate/" target="_top">http://www.mjolner.com/~lbr/moderate/</A>
-
-
-</P>
-  <A name="installation_trouble_getparams" id="installation_trouble_getparams"></A>
-  <H2>
-      20.4 Installation trouble: getparams
-      
-  </H2>
-
-
-
-
-        Does anyone out there know what the error means when it occurs when
-        installing Smartlist? Procmail is already installed on the system
-        (by the sysops)
-
-<P>
-<TABLE  class="shade-normal"
-        width="94%"
-        border="0"
-        cellpadding="10"
-        cellspacing="0"
-        >
-    <TR>
-    <TD class="shade-normal-attrib" valign="top">
-    <PRE>      make: *** No rule to make target `getparams'
-    </TD>
-    </TR>
-</TABLE>
-
-
-<P class="column8">
-        <SPAN class="word-ref">[Hal Wine]</SPAN> Yes, it means that you haven't built procmail yet. Build
-        procmail first, then execute Smartlist's install.sh script. You
-        need to get and untar the procmail sources in your own directory,
-        then get and untar the corresponding Smartlist sources in the same
-        directory tree.
-
-
-<P class="column8">
-        Then build (but don't install) procmail, then install Smartlist
-        using the install.sh script. Smartlist uses and builds files in
-        the Procmail source tree, so that has to be done first
-
-
-<P class="column10"><EM class="quote10">
-          <SPAN class="word-ref">[sysops]</SPAN> don't have the time to mess with getting Smartlist
-          running. Obviously,when I attempt to install Smartlist, it's not
-          finding Procmail. What do I have to do to get the install
-          program to find Procmail?</EM>
-
-
-
-<P class="column8">
-        If the sysops aren't going to install Smartlist, read all the
-        sections in Manual about non-root use of Smartlist (it works fine).
-
-
-<P class="column8">
-        You should make sure that smartlist, when invoked, uses the
-        matching version of procmail. This means either use the version of
-        Smartlist that matches the sysop installed version of procmail, or
-        set up your PATH such that you use the version you built. If you
-        use your own version, make sure it uses the same locking strategies
-        as the &quot;official&quot; version.
-
-
-</P>
-  <A name="accepting_mail_only_from_users" id="accepting_mail_only_from_users"></A>
-  <H2>
-      20.5 Accepting mail only from users in whitelist(s)
-      
-  </H2>
-
-
-
-
-        1998-10-08 PM-L <EM><A HREF="mailto:dave@magic.geol.ucsb.edu" >dave@magic.geol.ucsb.edu</A></EM> Dave Robbins.
-
-<P>
-<TABLE  class="shade-normal"
-        width="94%"
-        border="0"
-        cellpadding="10"
-        cellspacing="0"
-        >
-    <TR>
-    <TD class="shade-normal-attrib" valign="top">
-    <PRE>      ML          = /usr/local/lib/aliases
-      ACCEPTLIST  = &quot;$ML/mylist.accept $ML/everyone $ML/others&quot;
-      FROM        = `$FORMAIL -rtzxTo:`
-
-      :0
-      * ? echo &quot;$FROM&quot; | $EGREP -i -f $ACCEPTLIST
-      * ? test -r $ACCEPTLIST -a -s $ACCEPTLIST
-      {
-              :0 HB
-              ! `cat $ML/mylist`
-      }
-
-      :0
-      *  ! ^FROM_DAEMON
-      *  ! ^FROM_MAILER
-      *$ ! $MYXLOOP_LIST
-      | ($FORMAIL -rtk                                                    \
-         -A &quot;$MYXLOOP_LIST&quot;                                               \
-         -A &quot;Precedence: junk&quot;;                                           \
-      echo &quot;Your post to mylist@magic.geol.ucsb.edu was not successful\n&quot; \
-           &quot;because the mailing list is restricted to submissions\n&quot;      \
-           &quot;from only certain individuals and groups. Sorry.\n&quot;           \
-      ) | $SENDMAIL -oi -t
-    </TD>
-    </TR>
-</TABLE>
-
-</P>
-</BLOCKQUOTE>
-<HR>
-    <A name="additional_procmail_or_mua_software"  id="additional_procmail_or_mua_software"></A>
-    <H1>
-    21.0 Additional procmail or MUA software
-    
-    </H1>
-<BLOCKQUOTE>
-
-
-</P>
-  <A name="comstat_to_handle_multiple_mailboxes" id="comstat_to_handle_multiple_mailboxes"></A>
-  <H2>
-      21.1 Comstat to handle multiple mailboxes
-      
-  </H2>
-
-
-
-
-        <A HREF="ftp://ftp.belwue.de/pub/Unix/xcomsat.tar.gz" target="_top">ftp://ftp.belwue.de/pub/Unix/xcomsat.tar.gz</A>
-
-
-</P>
-  <A name="elm_and_pgp_support_mutt" id="elm_and_pgp_support_mutt"></A>
-  <H2>
-      21.2 Elm and pgp support (Mutt is the successor to elm.)
-      
-  </H2>
-
-
-
-
-        Mutt's primary site is <A HREF="ftp://ftp.guug.de/pub/mutt/" target="_top">ftp://ftp.guug.de/pub/mutt/</A> with various
-        mirrors outside the US to avoid the crypto distribution problem.
-        If you want elm, see <A HREF="http://www.elm.org/" target="_top">http://www.elm.org/</A>
-
-
-<P class="column8">
-        <SPAN class="word-ref">[Liviu Daia <EM><A HREF="mailto:daia@stoilow.imar.ro" >daia@stoilow.imar.ro</A></EM> mentions that]</SPAN> ...Provided that
-        you configure it correctly, it will use lynx to convert HTML
-        attachments to plain text automatically, and display them in its
-        pager. You can reply in plain text to those attachments, and you
-        can also do the same thing with any kind of attachment for which
-        you give it a way to convert to plain text. It's definitely not
-        aimed at the beginner level like Pine, but it's far more powerful
-        too. Also GPL-ed.
-
-</P>
-</BLOCKQUOTE>
-<HR>
-    <A name="additional_procmail_software_for_emacs"  id="additional_procmail_software_for_emacs"></A>
-    <H1>
-    22.0 Additional procmail software for Emacs
+    20.0 Procmail software for Emacs
     
     </H1>
 <BLOCKQUOTE>
@@ -21158,7 +20810,7 @@ Procmail Tips
 </P>
   <A name="what_is_emacs" id="what_is_emacs"></A>
   <H2>
-      22.1 What is Emacs
+      20.1 What is Emacs
       
   </H2>
 
@@ -21176,56 +20828,39 @@ Procmail Tips
 <P class="column8">
         <STRONG class="word">Emacs</STRONG> refers to a programming platform (it's not only a text
         editor, or a programming editor, but it does almost everything you
-        tell it to do except make your coffee) which can be found almost
-        in any Unix platform. Nowadays Emacs is also available for the PC
+        tell it to do except make your coffee) which can be found almost in
+        any Unix platform. Nowadays Emacs is also available for the PC
         platform too. There are two flavors to choose from: Emacs,
         maintained by the FSF (Free Software Foundation), and XEmacs,
         sometimes called &quot;Emacs the next generation&quot;, because it has a
         better graphical user interface (gui) and internally advanced OO
         design (it can highlight on tty, whereas Emacs can't). XEmacs is
-        being maintained by group of programming wizards.
-
-<P>
-<TABLE  class="shade-normal"
-        width="94%"
-        border="0"
-        cellpadding="10"
-        cellspacing="0"
-        >
-    <TR>
-    <TD class="shade-normal-attrib" valign="top">
-    <PRE>      See /elisp.html
-    </TD>
-    </TR>
-</TABLE>
-
-
-<P class="column8">
-        Emacs add-in packages are lisp and the lisp file extension is
-        <EM class="word">.el</EM>. Inside each package one finds instructions how to use and
-        how to install the package into Emacs.
+        being maintained by group of programming wizards. Emacs add-in
+        packages are lisp and the lisp file extension is <EM class="word">.el</EM>. Inside each
+        package one finds instructions how to use and how to install the
+        package into Emacs.
 
 
 </P>
   <A name="emacs_and_procmail_mode_and" id="emacs_and_procmail_mode_and"></A>
   <H2>
-      22.2 Emacs and procmail mode and Lint
+      20.2 Emacs and procmail mode and Lint
       
   </H2>
 
 
 
 
-        Procmail mode for Emacs (which can also lint
-        procmail recipes) is available. People familiar with C-coding know lint,
-        which is a rigorous code syntax checker. You can read about this
-        Emacs mode from <A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A>
+        Procmail mode for Emacs (which can also lint procmail recipes) is
+        available. People familiar with C-coding know lint, which is a
+        rigorous code syntax checker. You can read about this Emacs mode
+        from <A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A>
 
 
 </P>
   <A name="emacs_and_lining_up_backslashes" id="emacs_and_lining_up_backslashes"></A>
   <H2>
-      22.3 Emacs and lining up backslashes
+      20.3 Emacs and lining up backslashes
       
   </H2>
 
@@ -21280,9 +20915,8 @@ Procmail Tips
       (defun my-backslash-default-column (&amp;optional arg)
         &quot;Col 76.&quot;
         (interactive &quot;*P&quot;)
-        (autoload 'timy-backslash-fix-paragraph &quot;tinymy&quot; t t)
-        (timy-backslash-fix-paragraph (or arg 76) 'verb)
-        )
+        (autoload 'tinymy-backslash-fix-paragraph &quot;tinymy&quot; t t)
+        (tinymy-backslash-fix-paragraph (or arg 76) 'verb))
     </TD>
     </TR>
 </TABLE>
@@ -21316,65 +20950,36 @@ Procmail Tips
 
 
 <P class="column8">
-        Guys, Emacs is available for every platform, even for Windows95 and
+        Emacs is available for every platform, even for Windows95 and
         WindowsNT. So, go ahead and install one if you haven't already.
         Setting up your personalized Emacs may require steep learning curve,
-        but it's well worth the effort :-)
+        but it's well worth the effort.
 
 
 </P>
   <A name="emacs_and_browsing_mailbox_files" id="emacs_and_browsing_mailbox_files"></A>
   <H2>
-      22.4 Emacs and browsing mailbox files
+      20.4 Emacs and browsing mailbox files
       
   </H2>
 
 
 
 
-        If you use Gnus as your MUA, then you already can browse
-        mailboxes.  If you just want to read some arbitrary mailbox without
-        firing up Gnus, then you can use package <SAMP class="word">tinymbx.el</SAMP>, in kit
-        <A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A> It defines a special mailbox
-        reading minor mode that is activated when you visit mailbox
-        file. You can copy, file, delete messages or mail the author of the
+        If you use Gnus as your MUA, then you already can browse mailboxes.
+        If you just want to read some arbitrary mailbox without firing up
+        Gnus, then you can use package <SAMP class="word">tinymailbox.el</SAMP>, in kit
+        &lt;<A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A>&gt;. It defines a special mailbox
+        reading minor mode that is activated when you visit mailbox file.
+        You can copy, file, delete messages or mail the author of the
         current message. There is no separate summary buffer as in RMAIL,
         but you move from message to another with PgUp and PgDown keys.
 
 
 </P>
-  <A name="emacs_and_livemode.el" id="emacs_and_livemode.el"></A>
-  <H2>
-      22.5 Emacs and live-mode.el
-      
-  </H2>
-
-
-
-
-        <A HREF="http://www.zanshin.com/~bobg/" target="_top">http://www.zanshin.com/~bobg/</A>
-        from <EM><A HREF="mailto:bobg@ipost.com" >bobg@ipost.com</A></EM>               Bob Glickstein 1997
-
-
-<P class="column8">
-        ...`live-mode' is a minor mode that works like the &quot;tail -f&quot; Unix
-        command. If the file grows (or changes in any other way) on the
-        disk, then the buffer copy is periodically updated to show the new
-        file contents. This makes <SAMP class="word">live-mode</SAMP> ideal for viewing such things
-        as log files. --Bob
-
-
-<P class="column8">
-        You definitely want this if you browse procmail log files. This
-        package updates the log file buffers whenever they change on disk.
-        You can think it like <EM class="word">biff</EM> if you record incoming file to short
-        <SAMP class="word">$BIFF</SAMP> log.
-
-
-</P>
   <A name="emacs_and_fontlock.el" id="emacs_and_fontlock.el"></A>
   <H2>
-      22.6 Emacs and font-lock.el
+      20.5 Emacs and font-lock.el
       
   </H2>
 
@@ -21402,10 +21007,7 @@ Procmail Tips
       (defun 'my-find-file-hooks ()
         (require 'cl)
 
-        ;;   colors are available to Emacs only under X window
-
-        (when (and window-system
-                   (fboundp 'font-lock-mode)) ;; make sure this is present
+        (when (fboundp 'font-lock-mode) ;; make sure this is present
           (cond
            ((string-match &quot;procmailrc&quot; buffer-file-name)
             (setq font-lock-keywords
@@ -21445,9 +21047,9 @@ Procmail Tips
 </P>
 </BLOCKQUOTE>
 <HR>
-    <A name="procmail_emacs_and_gnus"  id="procmail_emacs_and_gnus"></A>
+    <A name="procmail_and_emacs_mail_and"  id="procmail_and_emacs_mail_and"></A>
     <H1>
-    23.0 Procmail, Emacs and Gnus
+    21.0 Procmail and Emacs mail and newsreader Gnus
     
     </H1>
 <BLOCKQUOTE>
@@ -21456,7 +21058,7 @@ Procmail Tips
 </P>
   <A name="gnus_pointers" id="gnus_pointers"></A>
   <H2>
-      23.1 Gnus pointers
+      21.1 Gnus pointers
       
   </H2>
 
@@ -21472,7 +21074,7 @@ Procmail Tips
 </P>
   <A name="why_use_procmail_with_gnus" id="why_use_procmail_with_gnus"></A>
   <H2>
-      23.2 Why use procmail with Gnus
+      21.2 Why use procmail with Gnus
       
   </H2>
 
@@ -21566,7 +21168,7 @@ Procmail Tips
 </P>
   <A name="setting_up_gnus_for_procmail" id="setting_up_gnus_for_procmail"></A>
   <H2>
-      23.3 Setting up gnus for procmail - Basics
+      21.3 Setting up Gnus for procmail - Basics
       
   </H2>
 
@@ -21671,9 +21273,9 @@ Procmail Tips
 
 
 </P>
-  <A name="gnus_for_procmail_more_gnus" id="gnus_for_procmail_more_gnus"></A>
+  <A name="gnus_for_procmail_more_about" id="gnus_for_procmail_more_about"></A>
   <H2>
-      23.4 Gnus for procmail - More gnus
+      21.4 Gnus for procmail - More about it
       
   </H2>
 
@@ -21863,7 +21465,7 @@ Procmail Tips
 </P>
   <A name="emacs_and_gnus_fiddling_with" id="emacs_and_gnus_fiddling_with"></A>
   <H2>
-      23.5 Emacs and Gnus &ndash; Fiddling with spool files
+      21.5 Emacs and Gnus &ndash; Fiddling with spool files
       
   </H2>
 
@@ -21934,9 +21536,9 @@ Procmail Tips
 
 
 </P>
-  <A name="gnus_and_article_snippets" id="gnus_and_article_snippets"></A>
+  <A name="gnus_article_snippets" id="gnus_article_snippets"></A>
   <H2>
-      23.6 Gnus and article snippets
+      21.6 Gnus article snippets
       
   </H2>
 
@@ -22077,7 +21679,7 @@ Procmail Tips
 </P>
   <A name="emacs_gnus_pop_procmail" id="emacs_gnus_pop_procmail"></A>
   <H2>
-      23.7 Emacs GNUS - POP - Procmail
+      21.7 Emacs GNUS - POP - Procmail
       
   </H2>
 
@@ -22330,7 +21932,7 @@ Procmail Tips
 <HR>
     <A name="rfc_request_for_comments"  id="rfc_request_for_comments"></A>
     <H1>
-    24.0 RFC, Request for comments
+    22.0 RFC, Request for comments
     
     </H1>
 <BLOCKQUOTE>
@@ -22339,7 +21941,7 @@ Procmail Tips
 </P>
   <A name="rfcs_and_their_jurisdiction_munged" id="rfcs_and_their_jurisdiction_munged"></A>
   <H2>
-      24.1 RFCs and their jurisdiction (munged Addresses)
+      22.1 RFCs and their jurisdiction (munged Addresses)
       
   </H2>
 
@@ -22521,7 +22123,7 @@ Procmail Tips
 </P>
   <A name="comments_about_addresses_munging" id="comments_about_addresses_munging"></A>
   <H2>
-      24.2 Comments about addresses munging
+      22.2 Comments about addresses munging
       
   </H2>
 
@@ -22578,7 +22180,7 @@ Procmail Tips
 </P>
   <A name="rfc_and_valid_mail_address" id="rfc_and_valid_mail_address"></A>
   <H2>
-      24.3 RFC and valid mail address characters
+      22.3 RFC and valid mail address characters
       
   </H2>
 
@@ -22627,7 +22229,7 @@ Procmail Tips
 </P>
   <A name="rfc_and_loginname" id="rfc_and_loginname"></A>
   <H2>
-      24.4 RFC and login-name@fdqn
+      22.4 RFC and login-name@fdqn
       
   </H2>
 
@@ -22790,7 +22392,7 @@ Procmail Tips
 </P>
   <A name="rfcs_and_messages_signature" id="rfcs_and_messages_signature"></A>
   <H2>
-      24.5 RFCs and messages signature
+      22.5 RFCs and messages signature
       
   </H2>
 
@@ -22833,7 +22435,7 @@ Procmail Tips
 </P>
   <A name="rfc_and_using_mime_in" id="rfc_and_using_mime_in"></A>
   <H2>
-      24.6 RFC and using MIME in Usenet newsgroups
+      22.6 RFC and using MIME in Usenet newsgroups
       
   </H2>
 
@@ -22884,7 +22486,7 @@ Procmail Tips
 </P>
   <A name="some_rfc_pointers" id="some_rfc_pointers"></A>
   <H2>
-      24.7 Some RFC Pointers
+      22.7 Some RFC Pointers
       
   </H2>
 
@@ -22933,7 +22535,7 @@ Procmail Tips
 <HR>
     <A name="introduction_to_email_headers"  id="introduction_to_email_headers"></A>
     <H1>
-    25.0 Introduction to E-mail Headers
+    23.0 Introduction to E-mail Headers
     
     </H1>
 <BLOCKQUOTE>
@@ -22942,7 +22544,7 @@ Procmail Tips
 </P>
   <A name="to_find_out_more_about" id="to_find_out_more_about"></A>
   <H2>
-      25.1 To find out more about mail (Resources)
+      23.1 To find out more about mail (Resources)
       
   </H2>
 
@@ -23118,7 +22720,7 @@ Procmail Tips
 </P>
   <A name="lecture_by_alan_stebbens" id="lecture_by_alan_stebbens"></A>
   <H2>
-      25.2 Lecture by Alan Stebbens
+      23.2 Lecture by Alan Stebbens
       
   </H2>
 
@@ -23351,7 +22953,7 @@ Procmail Tips
 </P>
   <A name="applied_to_received_messages" id="applied_to_received_messages"></A>
   <H2>
-      25.3 Applied to received messages
+      23.3 Applied to received messages
       
   </H2>
 
@@ -23467,7 +23069,7 @@ Procmail Tips
 </P>
   <A name="bcc_lecture_by_alan_stebbens" id="bcc_lecture_by_alan_stebbens"></A>
   <H2>
-      25.4 Bcc lecture by Alan Stebbens
+      23.4 Bcc lecture by Alan Stebbens
       
   </H2>
 
@@ -23567,7 +23169,7 @@ Procmail Tips
 </P>
   <A name="bcc_lecture_by_philip_guenther" id="bcc_lecture_by_philip_guenther"></A>
   <H2>
-      25.5 Bcc lecture by Philip Guenther
+      23.5 Bcc lecture by Philip Guenther
       
   </H2>
 
@@ -23673,7 +23275,7 @@ Procmail Tips
 <HR>
     <A name="message_headers"  id="message_headers"></A>
     <H1>
-    26.0 Message headers
+    24.0 Message headers
     
     </H1>
 <BLOCKQUOTE>
@@ -23682,7 +23284,7 @@ Procmail Tips
 </P>
   <A name="what_is_correct_from_address" id="what_is_correct_from_address"></A>
   <H2>
-      26.1 What is correct From address syntax
+      24.1 What is correct From address syntax
       
   </H2>
 
@@ -23774,7 +23376,7 @@ Procmail Tips
 </P>
   <A name="whats_that_xuidl_header" id="whats_that_xuidl_header"></A>
   <H2>
-      26.2 What's that X-UIDL header?
+      24.2 What's that X-UIDL header?
       
   </H2>
 
@@ -23830,7 +23432,7 @@ Procmail Tips
 </P>
   <A name="what_is_that_first_from_" id="what_is_that_first_from_"></A>
   <H2>
-      26.3 What is that first From_ header?
+      24.3 What is that first From_ header?
       
   </H2>
 
@@ -23911,7 +23513,7 @@ Procmail Tips
 </P>
   <A name="messageid_header" id="messageid_header"></A>
   <H2>
-      26.4 Message-Id header
+      24.4 Message-Id header
       
   </H2>
 
@@ -24109,7 +23711,7 @@ Procmail Tips
 </P>
   <A name="received_header" id="received_header"></A>
   <H2>
-      26.5 Received header
+      24.5 Received header
       
   </H2>
 
@@ -24193,7 +23795,7 @@ Procmail Tips
 </P>
   <A name="returnpath" id="returnpath"></A>
   <H2>
-      26.6 Return-Path
+      24.6 Return-Path
       
   </H2>
 
@@ -24313,7 +23915,7 @@ Procmail Tips
 </P>
   <A name="errorsto" id="errorsto"></A>
   <H2>
-      26.7 Errors-To
+      24.7 Errors-To
       
   </H2>
 
@@ -24345,7 +23947,7 @@ Procmail Tips
 </P>
   <A name="xsubscriptioninfo" id="xsubscriptioninfo"></A>
   <H2>
-      26.8 X-Subscription-Info
+      24.8 X-Subscription-Info
       
   </H2>
 
@@ -24362,7 +23964,7 @@ Procmail Tips
 </P>
   <A name="replyto_header" id="replyto_header"></A>
   <H2>
-      26.9 Reply-To header
+      24.9 Reply-To header
       
   </H2>
 
@@ -24643,7 +24245,7 @@ Procmail Tips
 </P>
   <A name="mailcopiesto_header" id="mailcopiesto_header"></A>
   <H2>
-      26.10 Mail-Copies-To header
+      24.10 Mail-Copies-To header
       
   </H2>
 
@@ -24852,7 +24454,7 @@ Procmail Tips
 </P>
   <A name="mailfollowupto_and_replytopersonal_headers" id="mailfollowupto_and_replytopersonal_headers"></A>
   <H2>
-      26.11 Mail-Followup-To and Reply-To-Personal headers
+      24.11 Mail-Followup-To and Reply-To-Personal headers
       
   </H2>
 
@@ -24887,7 +24489,7 @@ Procmail Tips
 </P>
   <A name="contentlength_header_and_from_specification" id="contentlength_header_and_from_specification"></A>
   <H2>
-      26.12 Content-Length header and From_ specification
+      24.12 Content-Length header and From_ specification
       
   </H2>
 
@@ -24979,7 +24581,7 @@ Procmail Tips
 </P>
   <A name="moral_about_cc_copies_in" id="moral_about_cc_copies_in"></A>
   <H2>
-      26.13 Moral about CC copies in Usenet
+      24.13 Moral about CC copies in Usenet
       
   </H2>
 
@@ -25137,157 +24739,9 @@ Procmail Tips
 </P>
 </BLOCKQUOTE>
 <HR>
-    <A name="other_interesting_code"  id="other_interesting_code"></A>
-    <H1>
-    27.0 Other interesting code
-    
-    </H1>
-<BLOCKQUOTE>
-
-
-</P>
-  <A name="misc_mail_related_pointers" id="misc_mail_related_pointers"></A>
-  <H2>
-      27.1 Misc mail related pointers
-      
-  </H2>
-
-
-
-
-<SPAN class="quote7">ProcLog</SPAN><BR>
-        <A HREF="http://synfin.net/aturner/proclog/" target="_top">http://synfin.net/aturner/proclog/</A>
-        Aaron Turner <EM><A HREF="mailto:aturner@pobox.com" >aturner@pobox.com</A></EM>
-        ...ProcLog is a set of Unix shell and Perl 5 scripts that
-        provide an easy to use and fast reporting tool for detailing where
-        mail goes after Procmail sorts it. ProcLog reports on current mail
-        in your Procmail Log file, any new mail that has come in since
-        ProcLog was last run, and the size of your Procmail log file. What
-        makes ProcLog unique is its ability to help you keep track of
-        mail you've read.
-
-
-<P class="column8">
-<SPAN class="quote7">Xbuffy &ndash; biff log</SPAN><BR>
-        <A HREF="http://www.fiction.net/blong/programs/#xbuffy" target="_top">http://www.fiction.net/blong/programs/#xbuffy</A>
-
-
-</P>
-  <A name="expire_mail_pointers" id="expire_mail_pointers"></A>
-  <H2>
-      27.2 Expire mail pointers
-      
-  </H2>
-
-
-
-
-<SPAN class="quote7">Sh expire mail</SPAN><BR>
-        &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/</A>
-        1996-09/msg00141.html&gt; This script will delete messages older than
-        $AGE days from the mailbox specified on the command line. It
-        requires that you have formail installed on your system, and if
-        formail is in a directory other than /usr/bin, you must change the
-        value of $FORMAIL. <EM><A HREF="mailto:wravery@wravery.student.princeton.edu" >wravery@wravery.student.princeton.edu</A></EM>
-
-
-<P class="column8">
-<SPAN class="quote7">Gawk expire mail</SPAN><BR>
-        by Roman Czyborra <EM><A HREF="mailto:czyborra@cs.tu-berlin.de" >czyborra@cs.tu-berlin.de</A></EM>
-        ...Using GNU version 2.15 of awk: This filter deletes all messages
-        older than expire days from a Unix mailbox. Sample call: gawk -f
-        expire.awk expire=21 box &gt; new &amp;&amp; mv new box
-        <SPAN class="word-ref">[See old procmail archive, BestOfProcmail]</SPAN>
-
-
-<P class="column8">
-<SPAN class="quote7">pick &ndash; Auto deleting old messages</SPAN><BR>
-        <SPAN class="word-ref">[Brian Dockter <EM><A HREF="mailto:brian@nds.com" >brian@nds.com</A></EM>]</SPAN> ...Once the messages were in the
-        correct folder, I would suggest using cron and mush. mush is able
-        to manipulate messages on a wide variety of criteria, but works
-        with them once they are already in the folder. Here is a command
-        which would delete all messages that are one week old or more:
-
-<P>
-<TABLE  class="shade-normal"
-        width="94%"
-        border="0"
-        cellpadding="10"
-        cellspacing="0"
-        >
-    <TR>
-    <TD class="shade-normal-attrib" valign="top">
-    <PRE>      pick -ago -1w | delete
-    </TD>
-    </TR>
-</TABLE>
-
-
-<P class="column8">
-        IMHO, with procmail to do the pre-processing, and mush to do the
-        post-processing, I have an unbeatable mail combination.
-
-
-</P>
-  <A name="code_sh_remove_matching_lines" id="code_sh_remove_matching_lines"></A>
-  <H2>
-      27.3 Code: Sh remove matching lines from file
-      
-  </H2>
-
-
-
-
-        <SPAN class="word-ref">[era]</SPAN> The name &quot;gred&quot; is rather obscure if you don't know what
-        &quot;grep&quot; stands for. Anyway, this is also really too specialized a
-        script to get such a general-sounding name. Incidentally, I timed this
-        against a Perl one-liner on my /usr/dict/words (which is rather small,
-        though; some 25,000 lines) and found the shell version to be quicker,
-        even with the locking. A good citizen would take care to remove the
-        temp files when done, but since Wotan thought it would be valuable to
-        keep them around for backup, I left implementing that as an exercise.
-        (Hint: they should be cleaned up even if the script is interrupted
-        with ctrl-C.)
-
-<P>
-<TABLE  class="shade-normal"
-        width="94%"
-        border="0"
-        cellpadding="10"
-        cellspacing="0"
-        >
-    <TR>
-    <TD class="shade-normal-attrib" valign="top">
-    <PRE>      #!/bin/sh
-      # gred -- like grep, but remove matching lines
-      # syntax: gred regex file
-      # locks file while gredding using dotlocking
-      #
-      case &quot;$#&quot; in
-          2) ;;
-          *) echo &quot;Syntax: gred regex file&quot; &gt;&amp;2 ; exit 1 ;;
-      esac
-
-      LOCK=&quot;$2.lock&quot;
-      TMP=/tmp/$$.temp
-
-      if lockfile &quot;$LOCK&quot;; then
-          mv &quot;$2&quot; &quot;$TMP&quot;
-          grep -v &quot;$1&quot; &quot;$TMP&quot; &gt;&quot;$2&quot;
-          rm -f &quot;$LOCK&quot;
-      fi
-      #
-      # end of file
-    </TD>
-    </TR>
-</TABLE>
-
-</P>
-</BLOCKQUOTE>
-<HR>
     <A name="ube_in_internet"  id="ube_in_internet"></A>
     <H1>
-    28.0 UBE in Internet
+    25.0 UBE in Internet
     
     </H1>
 <BLOCKQUOTE>
@@ -25296,7 +24750,7 @@ Procmail Tips
 </P>
   <A name="terms_used_and_foreword" id="terms_used_and_foreword"></A>
   <H2>
-      28.1 Terms used and foreword
+      25.1 Terms used and foreword
       
   </H2>
 
@@ -25338,7 +24792,7 @@ Procmail Tips
 </P>
   <A name="ube_strategies" id="ube_strategies"></A>
   <H2>
-      28.2 UBE strategies
+      25.2 UBE strategies
       
   </H2>
 
@@ -25349,7 +24803,7 @@ Procmail Tips
 
 
 <P class="column7"><EM><STRONG>
-       28.2.1 4g. I asked to be &quot;removed&quot; - guess what? I got another U*E</STRONG></EM>
+       25.2.1 4g. I asked to be &quot;removed&quot; - guess what? I got another U*E</STRONG></EM>
 
 
 
@@ -25371,7 +24825,7 @@ Procmail Tips
 
 
 <P class="column7"><EM><STRONG>
-       28.2.2 4h. I asked to be &quot;removed&quot; - guess what? The message bounced</STRONG></EM>
+       25.2.2 4h. I asked to be &quot;removed&quot; - guess what? The message bounced</STRONG></EM>
 
 
 
@@ -25387,7 +24841,7 @@ Procmail Tips
 </P>
   <A name="ube_and_bouncing_message_back" id="ube_and_bouncing_message_back"></A>
   <H2>
-      28.3 UBE and bouncing message back
+      25.3 UBE and bouncing message back
       
   </H2>
 
@@ -25468,7 +24922,7 @@ Procmail Tips
 </P>
   <A name="ube_and_i_dont_mind" id="ube_and_i_dont_mind"></A>
   <H2>
-      28.4 UBE and &quot;I don't mind&quot; attitude
+      25.4 UBE and &quot;I don't mind&quot; attitude
       
   </H2>
 
@@ -25734,7 +25188,7 @@ Procmail Tips
 </P>
   <A name="we_need_a_law_against" id="we_need_a_law_against"></A>
   <H2>
-      28.5 We need a law against UBE
+      25.5 We need a law against UBE
       
   </H2>
 
@@ -25824,7 +25278,7 @@ Procmail Tips
 <HR>
     <A name="antiube_pointers"  id="antiube_pointers"></A>
     <H1>
-    29.0 Anti-UBE pointers
+    26.0 Anti-UBE pointers
     
     </H1>
 <BLOCKQUOTE>
@@ -25833,15 +25287,16 @@ Procmail Tips
 </P>
   <A name="nocem_cauce_and_others" id="nocem_cauce_and_others"></A>
   <H2>
-      29.1 NoCEM, CAUCE and others
+      26.1 NoCEM, CAUCE and others
       
   </H2>
 
 
 
 
-<SPAN class="quote7">The war of spam &ndash; pointers to reseurces</SPAN><BR>
-        <A HREF="http://spam.gunters.org/links.html" target="_top">http://spam.gunters.org/links.html</A>
+<SPAN class="quote7">Google's Spam resources and Spam-L FAQ</SPAN><BR>
+        <A HREF="http://directory.google.com/Top/Computers/Internet/Abuse/Spam/Tracking/" target="_top">http://directory.google.com/Top/Computers/Internet/Abuse/Spam/Tracking/</A>
+        <A HREF="http://www.claws-and-paws.com/spam-l/" target="_top">http://www.claws-and-paws.com/spam-l/</A>
 
 
 <P class="column8">
@@ -25894,7 +25349,7 @@ Procmail Tips
 </P>
   <A name="general_filtering_pages_more_than" id="general_filtering_pages_more_than"></A>
   <H2>
-      29.2 General Filtering pages (more than procmail)
+      26.2 General Filtering pages (more than procmail)
       
   </H2>
 
@@ -25916,7 +25371,7 @@ Procmail Tips
 </P>
   <A name="junk_mail_and_spam" id="junk_mail_and_spam"></A>
   <H2>
-      29.3 Junk mail and spam
+      26.3 Junk mail and spam
       
   </H2>
 
@@ -25935,31 +25390,27 @@ Procmail Tips
 
 
 <P class="column8">
-<SPAN class="quote7">Get that spammer &ndash; A VERY GOOD LINK</SPAN><BR>
+<SPAN class="quote7">Get that spammer</SPAN><BR>
         <A HREF="http://www.toppoint.de/~zoc/gspam.html" target="_top">http://www.toppoint.de/~zoc/gspam.html</A>
         ...All about Spam; traceroute, netabuse etc. Full of links and docs
 
 
 <P class="column8">
-<SPAN class="quote7">Spam Spade Tools &ndash; Track down that spammer!</SPAN><BR>
+<SPAN class="quote7">Sam Spade Tools &ndash; Track down that spammer</SPAN><BR>
+        <A HREF="http://www.samspade.org/" target="_top">http://www.samspade.org/</A>
         Includes address digger, obfuscated URLs, reverse DNS, traceroute,
         whois, rwhois, Dejanews author search, USPIS,
         blackhole list check
 
 
 <P class="column8">
-<SPAN class="quote7">Fight Spam on the Internet!</SPAN><BR>
+<SPAN class="quote7">Fight Spam on the Internet</SPAN><BR>
         <A HREF="http://spam.abuse.net/" target="_top">http://spam.abuse.net/</A>
 
 
 <P class="column8">
 <SPAN class="quote7">Whois</SPAN><BR>
         <A HREF="http://www.networksolutions.com/cgi-bin/whois/whois/" target="_top">http://www.networksolutions.com/cgi-bin/whois/whois/</A>
-
-
-<P class="column8">
-<SPAN class="quote7">Advertising on Usenet: How To Do It, How Not To Do It</SPAN><BR>
-        <A HREF="ftp://rtfm.mit.edu/pub/Usenet/advertising/" target="_top">ftp://rtfm.mit.edu/pub/Usenet/advertising/</A>
 
 
 <P class="column8">
@@ -26079,7 +25530,7 @@ Procmail Tips
 </P>
   <A name="comprehensive_list_of_spammers" id="comprehensive_list_of_spammers"></A>
   <H2>
-      29.4 Comprehensive list of spammers
+      26.4 Comprehensive list of spammers
       
   </H2>
 
@@ -26110,7 +25561,7 @@ Procmail Tips
 </P>
   <A name="misc_pointers" id="misc_pointers"></A>
   <H2>
-      29.5 Misc pointers
+      26.5 Misc pointers
       
   </H2>
 
@@ -26182,7 +25633,7 @@ Procmail Tips
 
 <P class="column8">
 <SPAN class="quote7">Qmail</SPAN><BR>
-        <A HREF="http://pobox.com/~djb/qmail.html" target="_top">http://pobox.com/~djb/qmail.html</A>
+        <A HREF="http://cr.yp.to/qmail.html" target="_top">http://cr.yp.to/qmail.html</A>
         <A HREF="http://www.qmail.org/" target="_top">http://www.qmail.org/</A>
 
 
@@ -26207,7 +25658,7 @@ Procmail Tips
 </P>
   <A name="ube_related_newsgroups_or_mailing" id="ube_related_newsgroups_or_mailing"></A>
   <H2>
-      29.6 UBE related newsgroups or mailing lists
+      26.6 UBE related newsgroups or mailing lists
       
   </H2>
 
@@ -26264,11 +25715,21 @@ Procmail Tips
         owner, the convention is the same as with all listserv lists. Just
         send e-mail to <EM><A HREF="mailto:spam-l-request@peach.ease.lsoft.com" >spam-l-request@peach.ease.lsoft.com</A></EM>
 
+</P>
+</BLOCKQUOTE>
+<HR>
+    <A name="mail_and_spam_software"  id="mail_and_spam_software"></A>
+    <H1>
+    27.0 Mail and Spam software
+    
+    </H1>
+<BLOCKQUOTE>
+
 
 </P>
-  <A name="software_adcomplain_perl_junk_mail" id="software_adcomplain_perl_junk_mail"></A>
+  <A name="adcomplain_perl_junk_mail_report" id="adcomplain_perl_junk_mail_report"></A>
   <H2>
-      29.7 Software: adcomplain &ndash; Perl junk mail report
+      27.1 Adcomplain &ndash; Perl junk mail report
       
   </H2>
 
@@ -26307,9 +25768,9 @@ Procmail Tips
 
 
 </P>
-  <A name="software_ricochet_perl_junk_mail" id="software_ricochet_perl_junk_mail"></A>
+  <A name="ricochet_perl_junk_mail_report" id="ricochet_perl_junk_mail_report"></A>
   <H2>
-      29.8 Software: Ricochet (Perl junk mail report)
+      27.2 Ricochet (Perl junk mail report)
       
   </H2>
 
@@ -26340,9 +25801,9 @@ Procmail Tips
 
 
 </P>
-  <A name="software_rbl_lookup_tool_c" id="software_rbl_lookup_tool_c"></A>
+  <A name="rbl_lookup_tool_c_language" id="rbl_lookup_tool_c_language"></A>
   <H2>
-      29.9 Software: RBL lookup tool (C language)
+      27.3 RBL lookup tool (C language)
       
   </H2>
 
@@ -26570,9 +26031,9 @@ Procmail Tips
 
 
 </P>
-  <A name="software_mapson" id="software_mapson"></A>
+  <A name="mapson" id="mapson"></A>
   <H2>
-      29.10 Software: mapSoN
+      27.4 mapSoN
       
   </H2>
 
@@ -26662,9 +26123,37 @@ Procmail Tips
 
 
 </P>
-  <A name="software_spamgard" id="software_spamgard"></A>
+  <A name="ask_active_spam_killer_optin" id="ask_active_spam_killer_optin"></A>
   <H2>
-      29.11 Software: spamgard
+      27.5 ASK - Active Spam Killer (opt-in whitelist)
+      
+  </H2>
+
+
+
+
+        <A HREF="http://www.paganini.net/ask/" target="_top">http://www.paganini.net/ask/</A> Marco Paganini <EM><A HREF="mailto:paganini@paganini.net" >paganini@paganini.net</A></EM>
+
+
+<P class="column8">
+        This program (Active Spam Killer, or ASK for short) takes an
+        &quot;Active&quot; approach in solving the problem: Everytime an email is
+        received, a message is sent back to the sender asking for
+        confirmation. If that sender does not confirm the message, it
+        remains queued for delivery. If the sender confirms, the message is
+        delivered and removed from the queue. The &quot;confirmed&quot; senders will
+        be added to your &quot;whitelist&quot; and will never be sent another
+        confirmation. Messages from these emails will always be delivered
+        immediately . You can also specify an &quot;ignorelist&quot; for emails that
+        should be always ignored and a &quot;blacklist&quot; that will cause a
+        nastygram to be sent back to the sender everytime an email is
+        received.
+
+
+</P>
+  <A name="spamgard" id="spamgard"></A>
+  <H2>
+      27.6 Spamgard
       
   </H2>
 
@@ -26690,16 +26179,15 @@ Procmail Tips
 
 
 </P>
-  <A name="software_spam_be_gone" id="software_spam_be_gone"></A>
+  <A name="spam_be_gone" id="spam_be_gone"></A>
   <H2>
-      29.12 Software: Spam Be Gone
+      27.7 Spam Be Gone
       
   </H2>
 
 
 
 
-<SPAN class="quote7">Spam Be Gone</SPAN><BR>
         <A HREF="http://www.internz.com/SpamBeGone/" target="_top">http://www.internz.com/SpamBeGone/</A> (open source)
         ...uses machine learning and artificial intelligence technologies
         to examine incoming mail messages and determine their
@@ -26764,21 +26252,16 @@ Procmail Tips
 
 
 </P>
-  <A name="software_tinygnus_emacs_gnus_plugin" id="software_tinygnus_emacs_gnus_plugin"></A>
+  <A name="tinygnus_emacs_gnus_plugin" id="tinygnus_emacs_gnus_plugin"></A>
   <H2>
-      29.13 Software: TinyGnus - Emacs Gnus plug-in
+      27.8 TinyGnus - Emacs Gnus plug-in
       
   </H2>
 
 
 
 
-        <STRONG class="word">Availability:</STRONG> <EM><A HREF="mailto:jari.aalto@poboxes.com" >jari.aalto@poboxes.com</A></EM><BR>
-        <A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A><BR>
-        <STRONG class="word">Platform:</STRONG> Win32 and Unix Emacs versions.<BR>
-
-
-<P class="column8">
+        <A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A>
         <EM class="word">TinyGnus</EM> Is Emacs lisp extension package that integrates directly
         to Gnus mail/newsreaders. It includes simple but efective UBE
         fighting hotkeys that make it possible to complain bunch of UBE
@@ -26788,13 +26271,48 @@ Procmail Tips
 <UL>
 	<LI>USER MUST DECIDE and hand select WHICH IS <EM class="word">ube</EM> MAIL. No software
             can decide 100% which mail is UBE, so the responsibility is on
-            the Human user.
+            the human user.
 	<LI>User selects messages that are ube with Gnus select commands,
             like (#, select current message)
 	<LI>Hotkey C-c ' u examines messages' headers and runs <SAMP class="word">nslookup(1)</SAMP>
             for each Received header to determine <EM class="word">abuse</EM> <EM class="word">spam</EM> and
 	            <EM class="word">postmaster</EM> addresses where to send the complaint.
 </UL>
+
+
+
+
+</P>
+  <A name="proclog_procmail_log_reporting_tool" id="proclog_procmail_log_reporting_tool"></A>
+  <H2>
+      27.9 ProcLog - Procmail log reporting tool
+      
+  </H2>
+
+
+
+
+        <A HREF="http://synfin.net/code.html" target="_top">http://synfin.net/code.html</A> Aaron Turner <EM><A HREF="mailto:aturner@pobox.com" >aturner@pobox.com</A></EM>
+        ...ProcLog is a set of Unix shell and Perl 5 scripts that provide
+        an easy to use and fast reporting tool for detailing where mail
+        goes after Procmail sorts it. ProcLog reports on current mail in
+        your Procmail Log file, any new mail that has come in since ProcLog
+        was last run, and the size of your Procmail log file. What makes
+        ProcLog unique is its ability to help you keep track of mail you've
+        read.
+
+
+</P>
+  <A name="xbuffy_a_multi_folder_biff" id="xbuffy_a_multi_folder_biff"></A>
+  <H2>
+      27.10 Xbuffy &ndash; A multi folder biff for X
+      
+  </H2>
+
+
+
+
+        <A HREF="http://www.fiction.net/blong/programs/#xbuffy" target="_top">http://www.fiction.net/blong/programs/#xbuffy</A>
 
 
 
@@ -26810,8 +26328,8 @@ Procmail Tips
 <EM    class="footer">
 <P>
 This file has been automatically generated from plain text file
-with Perl script <STRONG>t2html.pl v2003.0502</STRONG><BR>
-Last updated: 2003-05-17 20:13<BR>
+with Perl script <STRONG>t2html.pl v2003.1111</STRONG><BR>
+Last updated: 2004-01-10 10:10<BR>
 </EM    class="footer">
 </BODY>
 </HTML>

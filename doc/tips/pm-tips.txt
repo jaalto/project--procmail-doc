@@ -414,7 +414,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.21 2003/09/02 09:49:14 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.22 2004/01/10 10:09:16 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -8021,7 +8021,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.21 2003/09/02 09:49:14 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.22 2004/01/10 10:09:16 jaalto Exp $
             #
             #   File id
             #
@@ -12849,7 +12849,7 @@ Table of contents
           _much_ faster than sendmail. So far, I'm quite impressed.
 
        "Qmail"
-        http://pobox.com/~djb/qmail.html
+        http://cr.yp.to/qmail.html
         http://www.qmail.org/
 
        "Sendmail"

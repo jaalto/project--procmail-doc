@@ -1,7 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN"
           "http://www.w3.org/TR/REC-html40/frameset.dtd">
 
-
 <HTML>
 
 <HEAD>
@@ -23,12 +22,12 @@
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Wed, 16 Jul 2003 17:13:55 GMT">
+  <META HTTP-EQUIV="Expires" CONTENT="Wed, 10 Mar 2004 10:10:06 GMT">
 
 
 
   <META NAME="Generator"
-	CONTENT="2003-05-17 20:13 Perl program t2html.pl v2003.0502 http://perl-text2html.sourceforge.net/ ">
+	CONTENT="2004-01-10 10:10 Perl program t2html.pl v2003.1111 http://perl-text2html.sourceforge.net/ ">
 
 
   <BASE TARGET="body">
@@ -107,6 +106,30 @@
             And wish that some newer browser will render it right.
 
         */
+
+        /*   ///////////////////////////////////////////////// HEADINGS */
+
+        h1.default
+        {
+            font-family: bold x-large Arial,helvetica,Sans-serif;
+            padding-top: 10pt;
+        }
+
+
+        h2.default
+        {
+            font-family: bold large Arial,Helvetica,Sans-serif;
+        }
+
+        h3.default
+        {
+            font-family: bold medium Arial,Helvetica,Sans-serif;
+        }
+
+        h4.default
+        {
+            font-family: medium Arial,Helvetica,Sans-serif;
+        }
 
 
         /*   ////////////////////////// Make pointing AHREF more visual */
@@ -339,7 +362,9 @@
 
         .shade-note-attrib
         {
-            background: #E0E0F0;
+            /*  darker is #E0E0F0; */
+            /* background: #E5ECF3; */
+            background: #E5ECF3;
         }
 
         /* ..................................... colors ................. */
@@ -439,7 +464,7 @@
             font-family: "Goudy Old Style"
             */
             margin-left: 3em;
-            font-family: Georgia, Arial;
+            font-family: Georgia, Palatino, Verdana, Arial, Helvetica;
             font-size:  0.9em;
         }
 
@@ -540,7 +565,8 @@
 
         em.word
         {
-            color: #809F69;  /*Forest green */
+            /* #809F69 Forest green */
+            color: #80B06A;  /*Darker Forest green */
         }
 
         strong.word
@@ -550,7 +576,8 @@
 
         samp.word
         {
-            color: Blue;
+            color: #4C9CD4;
+            font-weight: bold;
             font-family:    "Courier New", monospace;
             /* font-size:      0.8em; */
         }
@@ -1708,13 +1735,13 @@
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#using_you_can_call_rc" class="toc" >
-               16.2 Using: You can call rc file conditionally
+           <A HREF="pm-tips-body.html#using_call_rc_file_conditionally" class="toc" >
+               16.2 Using: call rc file conditionally
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#autoloading_an_rc_file" class="toc" >
-               16.3 Autoloading an rc file
+           <A HREF="pm-tips-body.html#using_autoloading_an_rc_file" class="toc" >
+               16.3 Using: autoloading an rc file
            </A>
            <BR>
 <LI>
@@ -2021,403 +2048,349 @@
            </A>
            <BR>
 </UL>
-<A HREF="pm-tips-body.html#smartlist" class="toc" >
-               20.0 Smartlist
-           </A>
-           <BR>
-
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#mlm_rfc" class="toc" >
-               20.1 MLM RFC
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#other_mailing_list_software" class="toc" >
-               20.2 Other mailing list software
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#smartlist_code_mailing_list_implementation" class="toc" >
-               20.3 SmartList code (mailing list implementation with procmail)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#installation_trouble_getparams" class="toc" >
-               20.4 Installation trouble: getparams
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#accepting_mail_only_from_users" class="toc" >
-               20.5 Accepting mail only from users in whitelist(s)
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#additional_procmail_or_mua_software" class="toc" >
-               21.0 Additional procmail or MUA software
-           </A>
-           <BR>
-
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#comstat_to_handle_multiple_mailboxes" class="toc" >
-               21.1 Comstat to handle multiple mailboxes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#elm_and_pgp_support_mutt" class="toc" >
-               21.2 Elm and pgp support (Mutt is the successor to elm.)
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#additional_procmail_software_for_emacs" class="toc" >
-               22.0 Additional procmail software for Emacs
+<A HREF="pm-tips-body.html#procmail_software_for_emacs" class="toc" >
+               20.0 Procmail software for Emacs
            </A>
            <BR>
 
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#what_is_emacs" class="toc" >
-               22.1 What is Emacs
+               20.1 What is Emacs
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#emacs_and_procmail_mode_and" class="toc" >
-               22.2 Emacs and procmail mode and Lint
+               20.2 Emacs and procmail mode and Lint
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#emacs_and_lining_up_backslashes" class="toc" >
-               22.3 Emacs and lining up backslashes
+               20.3 Emacs and lining up backslashes
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#emacs_and_browsing_mailbox_files" class="toc" >
-               22.4 Emacs and browsing mailbox files
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#emacs_and_livemode.el" class="toc" >
-               22.5 Emacs and live-mode.el
+               20.4 Emacs and browsing mailbox files
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#emacs_and_fontlock.el" class="toc" >
-               22.6 Emacs and font-lock.el
+               20.5 Emacs and font-lock.el
            </A>
            <BR>
 </UL>
-<A HREF="pm-tips-body.html#procmail_emacs_and_gnus" class="toc" >
-               23.0 Procmail, Emacs and Gnus
+<A HREF="pm-tips-body.html#procmail_and_emacs_mail_and" class="toc" >
+               21.0 Procmail and Emacs mail and newsreader Gnus
            </A>
            <BR>
 
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#gnus_pointers" class="toc" >
-               23.1 Gnus pointers
+               21.1 Gnus pointers
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#why_use_procmail_with_gnus" class="toc" >
-               23.2 Why use procmail with Gnus
+               21.2 Why use procmail with Gnus
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#setting_up_gnus_for_procmail" class="toc" >
-               23.3 Setting up gnus for procmail - Basics
+               21.3 Setting up Gnus for procmail - Basics
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#gnus_for_procmail_more_gnus" class="toc" >
-               23.4 Gnus for procmail - More gnus
+           <A HREF="pm-tips-body.html#gnus_for_procmail_more_about" class="toc" >
+               21.4 Gnus for procmail - More about it
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#emacs_and_gnus_fiddling_with" class="toc" >
-               23.5 Emacs and Gnus -- Fiddling with spool files
+               21.5 Emacs and Gnus -- Fiddling with spool files
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#gnus_and_article_snippets" class="toc" >
-               23.6 Gnus and article snippets
+           <A HREF="pm-tips-body.html#gnus_article_snippets" class="toc" >
+               21.6 Gnus article snippets
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#emacs_gnus_pop_procmail" class="toc" >
-               23.7 Emacs GNUS - POP - Procmail
+               21.7 Emacs GNUS - POP - Procmail
            </A>
            <BR>
 </UL>
 <A HREF="pm-tips-body.html#rfc_request_for_comments" class="toc" >
-               24.0 RFC, Request for comments
+               22.0 RFC, Request for comments
            </A>
            <BR>
 
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#rfcs_and_their_jurisdiction_munged" class="toc" >
-               24.1 RFCs and their jurisdiction (munged Addresses)
+               22.1 RFCs and their jurisdiction (munged Addresses)
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#comments_about_addresses_munging" class="toc" >
-               24.2 Comments about addresses munging
+               22.2 Comments about addresses munging
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#rfc_and_valid_mail_address" class="toc" >
-               24.3 RFC and valid mail address characters
+               22.3 RFC and valid mail address characters
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#rfc_and_loginname" class="toc" >
-               24.4 RFC and login-name@fdqn
+               22.4 RFC and login-name@fdqn
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#rfcs_and_messages_signature" class="toc" >
-               24.5 RFCs and messages signature
+               22.5 RFCs and messages signature
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#rfc_and_using_mime_in" class="toc" >
-               24.6 RFC and using MIME in Usenet newsgroups
+               22.6 RFC and using MIME in Usenet newsgroups
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#some_rfc_pointers" class="toc" >
-               24.7 Some RFC Pointers
+               22.7 Some RFC Pointers
            </A>
            <BR>
 </UL>
 <A HREF="pm-tips-body.html#introduction_to_email_headers" class="toc" >
-               25.0 Introduction to E-mail Headers
+               23.0 Introduction to E-mail Headers
            </A>
            <BR>
 
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#to_find_out_more_about" class="toc" >
-               25.1 To find out more about mail (Resources)
+               23.1 To find out more about mail (Resources)
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#lecture_by_alan_stebbens" class="toc" >
-               25.2 Lecture by Alan Stebbens
+               23.2 Lecture by Alan Stebbens
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#applied_to_received_messages" class="toc" >
-               25.3 Applied to received messages
+               23.3 Applied to received messages
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#bcc_lecture_by_alan_stebbens" class="toc" >
-               25.4 Bcc lecture by Alan Stebbens
+               23.4 Bcc lecture by Alan Stebbens
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#bcc_lecture_by_philip_guenther" class="toc" >
-               25.5 Bcc lecture by Philip Guenther
+               23.5 Bcc lecture by Philip Guenther
            </A>
            <BR>
 </UL>
 <A HREF="pm-tips-body.html#message_headers" class="toc" >
-               26.0 Message headers
+               24.0 Message headers
            </A>
            <BR>
 
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#what_is_correct_from_address" class="toc" >
-               26.1 What is correct From address syntax
+               24.1 What is correct From address syntax
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#whats_that_xuidl_header" class="toc" >
-               26.2 What's that X-UIDL header?
+               24.2 What's that X-UIDL header?
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#what_is_that_first_from_" class="toc" >
-               26.3 What is that first From_ header?
+               24.3 What is that first From_ header?
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#messageid_header" class="toc" >
-               26.4 Message-Id header
+               24.4 Message-Id header
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#received_header" class="toc" >
-               26.5 Received header
+               24.5 Received header
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#returnpath" class="toc" >
-               26.6 Return-Path
+               24.6 Return-Path
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#errorsto" class="toc" >
-               26.7 Errors-To
+               24.7 Errors-To
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#xsubscriptioninfo" class="toc" >
-               26.8 X-Subscription-Info
+               24.8 X-Subscription-Info
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#replyto_header" class="toc" >
-               26.9 Reply-To header
+               24.9 Reply-To header
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#mailcopiesto_header" class="toc" >
-               26.10 Mail-Copies-To header
+               24.10 Mail-Copies-To header
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#mailfollowupto_and_replytopersonal_headers" class="toc" >
-               26.11 Mail-Followup-To and Reply-To-Personal headers
+               24.11 Mail-Followup-To and Reply-To-Personal headers
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#contentlength_header_and_from_specification" class="toc" >
-               26.12 Content-Length header and From_ specification
+               24.12 Content-Length header and From_ specification
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#moral_about_cc_copies_in" class="toc" >
-               26.13 Moral about CC copies in Usenet
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#other_interesting_code" class="toc" >
-               27.0 Other interesting code
-           </A>
-           <BR>
-
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#misc_mail_related_pointers" class="toc" >
-               27.1 Misc mail related pointers
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#expire_mail_pointers" class="toc" >
-               27.2 Expire mail pointers
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#code_sh_remove_matching_lines" class="toc" >
-               27.3 Code: Sh remove matching lines from file
+               24.13 Moral about CC copies in Usenet
            </A>
            <BR>
 </UL>
 <A HREF="pm-tips-body.html#ube_in_internet" class="toc" >
-               28.0 UBE in Internet
+               25.0 UBE in Internet
            </A>
            <BR>
 
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#terms_used_and_foreword" class="toc" >
-               28.1 Terms used and foreword
+               25.1 Terms used and foreword
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#ube_strategies" class="toc" >
-               28.2 UBE strategies
+               25.2 UBE strategies
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#ube_and_bouncing_message_back" class="toc" >
-               28.3 UBE and bouncing message back
+               25.3 UBE and bouncing message back
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#ube_and_i_dont_mind" class="toc" >
-               28.4 UBE and &quot;I don't mind&quot; attitude
+               25.4 UBE and &quot;I don't mind&quot; attitude
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#we_need_a_law_against" class="toc" >
-               28.5 We need a law against UBE
+               25.5 We need a law against UBE
            </A>
            <BR>
 </UL>
 <A HREF="pm-tips-body.html#antiube_pointers" class="toc" >
-               29.0 Anti-UBE pointers
+               26.0 Anti-UBE pointers
            </A>
            <BR>
 
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#nocem_cauce_and_others" class="toc" >
-               29.1 NoCEM, CAUCE and others
+               26.1 NoCEM, CAUCE and others
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#general_filtering_pages_more_than" class="toc" >
-               29.2 General Filtering pages (more than procmail)
+               26.2 General Filtering pages (more than procmail)
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#junk_mail_and_spam" class="toc" >
-               29.3 Junk mail and spam
+               26.3 Junk mail and spam
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#comprehensive_list_of_spammers" class="toc" >
-               29.4 Comprehensive list of spammers
+               26.4 Comprehensive list of spammers
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#misc_pointers" class="toc" >
-               29.5 Misc pointers
+               26.5 Misc pointers
            </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#ube_related_newsgroups_or_mailing" class="toc" >
-               29.6 UBE related newsgroups or mailing lists
+               26.6 UBE related newsgroups or mailing lists
+           </A>
+           <BR>
+</UL>
+<A HREF="pm-tips-body.html#mail_and_spam_software" class="toc" >
+               27.0 Mail and Spam software
+           </A>
+           <BR>
+
+<UL>
+<LI>
+           <A HREF="pm-tips-body.html#adcomplain_perl_junk_mail_report" class="toc" >
+               27.1 Adcomplain -- Perl junk mail report
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_adcomplain_perl_junk_mail" class="toc" >
-               29.7 Software: adcomplain -- Perl junk mail report
+           <A HREF="pm-tips-body.html#ricochet_perl_junk_mail_report" class="toc" >
+               27.2 Ricochet (Perl junk mail report)
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_ricochet_perl_junk_mail" class="toc" >
-               29.8 Software: Ricochet (Perl junk mail report)
+           <A HREF="pm-tips-body.html#rbl_lookup_tool_c_language" class="toc" >
+               27.3 RBL lookup tool (C language)
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_rbl_lookup_tool_c" class="toc" >
-               29.9 Software: RBL lookup tool (C language)
+           <A HREF="pm-tips-body.html#mapson" class="toc" >
+               27.4 mapSoN
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_mapson" class="toc" >
-               29.10 Software: mapSoN
+           <A HREF="pm-tips-body.html#ask_active_spam_killer_optin" class="toc" >
+               27.5 ASK - Active Spam Killer (opt-in whitelist)
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_spamgard" class="toc" >
-               29.11 Software: spamgard
+           <A HREF="pm-tips-body.html#spamgard" class="toc" >
+               27.6 Spamgard
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_spam_be_gone" class="toc" >
-               29.12 Software: Spam Be Gone
+           <A HREF="pm-tips-body.html#spam_be_gone" class="toc" >
+               27.7 Spam Be Gone
            </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#software_tinygnus_emacs_gnus_plugin" class="toc" >
-               29.13 Software: TinyGnus - Emacs Gnus plug-in
+           <A HREF="pm-tips-body.html#tinygnus_emacs_gnus_plugin" class="toc" >
+               27.8 TinyGnus - Emacs Gnus plug-in
+           </A>
+           <BR>
+<LI>
+           <A HREF="pm-tips-body.html#proclog_procmail_log_reporting_tool" class="toc" >
+               27.9 ProcLog - Procmail log reporting tool
+           </A>
+           <BR>
+<LI>
+           <A HREF="pm-tips-body.html#xbuffy_a_multi_folder_biff" class="toc" >
+               27.10 Xbuffy -- A multi folder biff for X
            </A>
            <BR>
 </DIV>
