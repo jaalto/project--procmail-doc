@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.6 2002/01/05 17:19:06 jaalto Exp $
+#   $Id: admin.bashrc,v 1.7 2002/02/03 22:22:42 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -130,7 +130,6 @@ function sfpmdochtml ()
 
     perl -S t2html.pl                                               \
 	  $opt                                                      \
-	  --button-top "$SF_PM_DOC_HTML_TARGET"                     \
 	  --title  "$SF_PM_DOC_TITLE"                               \
 	  --author "$SF_PM_DOC_USER_NAME"                           \
 	  --email  "$SF_PM_DOC_EMAIL"                               \
