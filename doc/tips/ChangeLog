@@ -13,11 +13,11 @@
         (2.2 Procmail resources): 2.25 Procmail archive URL updated.
         (5.1 The order of the flags): 2.25 Added ULR link to the 3.22 HB bug
 
-2004-08-23  root  <root@cajon.cante.net>
-
         * pm-tips.txt: (5.1 Flags HB at top of recipe (warning)): New topic.
         (Procmail resources): Moved ancy McGough's pointer here.
         (About procmail's Y2K compliance): Removed. outdated.
+        * pm-tips.txt (1.3 Abbreviations and thanks): 2.24 David W. Tamkin's
+        email address updated.
 
 2004-01-10 Sat  Jari Aalto  <jari aalto A T poboxes dt com>
 

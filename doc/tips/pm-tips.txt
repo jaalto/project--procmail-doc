@@ -413,7 +413,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.26 2004/08/23 11:38:16 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.27 2004/08/25 18:39:33 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -477,15 +477,15 @@ Table of contents
         .[aaron]      Aaron Schrab        aaron+procmail A T schrab com
         .[alan]       Alan K. Stebbens    alan.stebbens A T openwave com
         .[dan]        Daniel Smith        J.Daniel.Smith A T WriteMe dt com
-        .[david]      David W. Tamkin     dattier A T mcs net
-        .[ed]         Edward J. Sabol     sabol A T alderaan.gsfc.nasa gov
-        .[elijah]     Eli the Bearded     process A T qz.little-neck.ny us
-        .[hal]        Hal Wine            hal A T @dtor.com
+        .[david]      David W. Tamkin     dattier A T panix com
+        .[ed]         Edward J. Sabol     sabol A T alderaan gsfc nasa gov
+        .[elijah]     Eli the Bearded     process A T qz little-neck ny us
+        .[hal]        Hal Wine            hal A T dtor com
         .[jari]       Jari Aalto          jari aalto A T poboxes dt com
         .[philip]     Philip Guenther     guenther A T gac edu
         .[richard]    Richard Kabel       rkabel A T sequent com
-        .[sean]       Sean B. Straw       PSE-L A T mail.professional org
-        .[timothy]    Timothy J Luoma     luomat+procmail A T luomat.peak org
+        .[sean]       Sean B. Straw       PSE-L A T mail professional org
+        .[timothy]    Timothy J Luoma     luomat+procmail A T luomat peak org
         .[walter]     Walter Dnes         waltdnes A T interlog com
 
         .[FAQ]        Procmail FAQ        era A T iki.fi
@@ -7997,7 +7997,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.26 2004/08/23 11:38:16 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.27 2004/08/25 18:39:33 jaalto Exp $
             #
             #   File id
             #
