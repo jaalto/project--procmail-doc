@@ -414,7 +414,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.18 2003/04/26 14:33:44 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.19 2003/05/17 18:41:47 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -931,7 +931,7 @@ Table of contents
         http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/
 
        "Eli on Procmail"
-        See Eli the Bearded's <*@qz.to> addressing tips at
+        See Eli the Bearded's addressing tips at
         http://www.faqs.org/faqs/mail/addressing/
 
        "Concordia University's procmail page"
@@ -1232,13 +1232,6 @@ Table of contents
         ...Junkfilter is a user-configurable procmail-based filter system
         for electronic mail. Recipes include checks for forged headers,
         key words, common spam domains, relay servers and many others.
-
-       "SpamDunk"
-        http://www.waltdnes.org/email/spamdunk/
-        ...This webpage shows a commented example of a working .procmailrc
-        file that works for me. I have tried to make things as generic as
-        possible, but there are no guarantees that it will work for anyone
-        else.
 
        "Nonplussed Spambouncer"
         http://www.cs.mu.OZ.AU/~amb/
@@ -8030,7 +8023,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.18 2003/04/26 14:33:44 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.19 2003/05/17 18:41:47 jaalto Exp $
             #
             #   File id
             #
@@ -10225,7 +10218,6 @@ Table of contents
         o   majordomo uses Perl
         o   Mailman uses Python http://www.list.org/
         o   SmartList uses scripts/procmail
-        o   Listar Mailing List Package (free): http://www.listar.org/
         o   L-Soft international, Inc. (non-free): http://www.lsoft.com/
         o   The Petidomo Mailing List Processor and Manager (non-free):
             http://cryp.to/
