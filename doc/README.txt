@@ -2,7 +2,7 @@ Description
 
     Preface
 
-        $Id: README.txt,v 1.5 2002/07/24 20:08:14 jaalto Exp $
+        $Id: README.txt,v 1.6 2004/04/05 00:32:53 jaalto Exp $
 
         This is README.txt of Procmail Documentation Project at
         http://pm-doc.sourceforge.net/
@@ -14,7 +14,7 @@ Description
         the CVS server directly, but if you do not have time for that,
         please at least contact
 
-            <jari.aalto@poboxes.com>
+             jari aalto A T poboxes dt com
 
         And send any of your favourite procmail related material and it
         will be integrated to the project. Even your sample procmailrc

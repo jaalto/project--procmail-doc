@@ -407,14 +407,13 @@ Table of contents
     1.1 General
 
         #T2HTML-AUTHOR Jari Aalto
-        #T2HTML-EMAIL jari.aalto@poboxes.com
         #T2HTML-TITLE Procmail Tips
         #T2HTML-OPTION --html-frame
         #T2HTML-OPTION --css-code-bg
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.22 2004/01/10 10:09:16 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.23 2004/04/05 00:32:54 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -475,21 +474,21 @@ Table of contents
         lack of time he nominated Philip Guenther to the head of Procmail
         development.
 
-        .[aaron]      Aaron Schrab        <aaron+procmail@schrab.com>
-        .[alan]       Alan K. Stebbens    <alan.stebbens@openwave.com>
-        .[dan]        Daniel Smith        <J.Daniel.Smith@WriteMe.com>
-        .[david]      David W. Tamkin     <dattier@mcs.net>
-        .[ed]         Edward J. Sabol     <sabol@alderaan.gsfc.nasa.gov>
-        .[elijah]     Eli the Bearded     <process@qz.little-neck.ny.us>
-        .[hal]        Hal Wine            <hal@dtor.com>
-        .[jari]       Jari Aalto          <jari.aalto@poboxes.com>
-        .[philip]     Philip Guenther     <guenther@gac.edu>
-        .[richard]    Richard Kabel       <rkabel@sequent.com>
-        .[sean]       Sean B. Straw       <PSE-L@mail.professional.org>
-        .[timothy]    Timothy J Luoma     <luomat+procmail@luomat.peak.org>
-        .[walter]     Walter Dnes         <waltdnes@interlog.com>
+        .[aaron]      Aaron Schrab        aaron+procmail A T schrab com
+        .[alan]       Alan K. Stebbens    alan.stebbens A T openwave com
+        .[dan]        Daniel Smith        J.Daniel.Smith A T WriteMe dt com
+        .[david]      David W. Tamkin     dattier A T mcs net
+        .[ed]         Edward J. Sabol     sabol A T alderaan.gsfc.nasa gov
+        .[elijah]     Eli the Bearded     process A T qz.little-neck.ny us
+        .[hal]        Hal Wine            hal A T @dtor.com
+        .[jari]       Jari Aalto          jari aalto A T poboxes dt com
+        .[philip]     Philip Guenther     guenther A T gac edu
+        .[richard]    Richard Kabel       rkabel A T sequent com
+        .[sean]       Sean B. Straw       PSE-L A T mail.professional org
+        .[timothy]    Timothy J Luoma     luomat+procmail A T luomat.peak org
+        .[walter]     Walter Dnes         waltdnes A T interlog com
 
-        .[FAQ]        Procmail FAQ        <era@iki.fi>
+        .[FAQ]        Procmail FAQ        era A T iki.fi
         .[manual]     Quote from some procmail manual page
         .[maintainer] As of 2000-09 the maintainer is [jari]
         .#broken-link  Link does not exist any more. A replacement is needed
@@ -616,7 +615,6 @@ Table of contents
               --html-frame                                                  \
               --title   "Procmail tips page"                                \
               --author  "Jari Aalto"                                        \
-              --email   jari.aalto@poboxes.com                              \
               --meta-keywords "procmail, sendmail, mail, filter, FAQ, ube"  \
               --meta-description "Procmail tips page"                       \
               --base      http://pm-doc.sourceforge.net                     \
@@ -2058,7 +2056,7 @@ Table of contents
 
     5.6 Flag h and sinking to /dev/null
 
-        When you drop something to /dev/null, use the h flag so that
+        When you drop something to /dev/null, use the `h' flag so that
         procmail does not unnecessarily try to feed whole message there.
 
             :0 h
@@ -2067,16 +2065,15 @@ Table of contents
 
         [philip] Procmail knows that it shouldn't create a local lock on
         /dev/null and that it shouldn't kernel lock /dev/null, and it knows
-        to write it "raw" (no "From " escaping or appended newline).  This
-        means that procmail simply opens /dev/null, does its write with
-        one system call, and closes it.
-
-        I'm not sure if adding the `h' flag makes a real difference on
-        modern UNIX kernels. I suppose it depends on how optimized the
-        write() data is and in particular, whether a user-space to
-        kernel-space copy is _required_, or whether it's delayed. If it's
-        delayed then the code for handling /dev/null would presumably not
-        do it, and the size of the write wouldn't actually matter.
+        to write it "raw" (no "From " escaping or appended newline). This
+        means that procmail simply opens /dev/null, does its write with one
+        system call, and closes it. I'm not sure if adding the `h' flag
+        makes a real difference on modern UNIX kernels. I suppose it
+        depends on how optimized the write() data is and in particular,
+        whether a user-space to kernel-space copy is required, or whether
+        it's delayed. If it's delayed then the code for handling /dev/null
+        would presumably not do it, and the size of the write wouldn't
+        actually matter.
 
     5.7 Flag i and pipe flag f
 
@@ -8021,12 +8018,11 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.22 2004/01/10 10:09:16 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.23 2004/04/05 00:32:54 jaalto Exp $
             #
             #   File id
             #
             #       .Copyright (C)  1997-98 Foo Bar
-            #       .$Contactid:    jari.aalto@poboxes.com $
             #       .$Created:      YYYY-MM $
             #       .$keywords:     procmail [subroutine|recipe] whatItDoes $
             #

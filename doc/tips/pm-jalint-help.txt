@@ -2,13 +2,7 @@ Experimental procmail lint service via email
 
     Document id
 
-        @(#) Jari's mail based Procmail Lint service help page
-        @(#) $Docid: 1998-08-28 Jari Aalto $
-
-        To get File Server help, send following message
-
-            To: <jari.aalto@poboxes.com>
-            Subject: send help
+        Procmail Lint service help page
 
     To download Procmail code writing minor mode (and Lint) for Emacs
 
@@ -45,7 +39,7 @@ Experimental procmail lint service via email
 
         But for now, you can try the Lint with command
 
-            To: <jari.aalto@poboxes.com>
+            To: address@example.com
             Subject: pm-lint
 
             BODY-CONTAINS-PROCMAIL-CODE-TO-LINT
