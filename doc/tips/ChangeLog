@@ -1,3 +1,9 @@
+2002-07-24  Jari Aalto  <jaalto@W2KPICASSO>
+
+	* pm-index.txt (Introduction): Bullets rewritten.
+	Oleg Danilov <dov@sparc.spb.su> reported error in url
+	www.prcomail.org => www.procmail.org
+
 2002-07-11  Jari Aalto  <jari.aalto@poboxes.com>
 
 	* pm-tips.txt (1.3 Abbreviations and thanks): FAQ-L

@@ -1,31 +1,27 @@
-Document id
+Introduction
 
-        .@(#) $Id: pm-index.txt,v 1.2 2002/01/31 00:18:17 jaalto Exp $
-        .$Contactid: jari.aalto@poboxes.com $
-        .$URL: http://www.netforward.com/poboxes/?jari.aalto $
-        .$Keywords: procmail library includerc subroutine recipe $
+        $Id: pm-index.txt,v 1.3 2002/07/24 20:08:15 jaalto Exp $
+        $Contactid: jari.aalto@poboxes.com $
 
-Jari's Procmail resources
+        Hi, here are couple of links to the world of the procmail, please
+        select from the list below:
 
-        Hi, here are links to my world of the procmail, please select
-        from the list below:
-
-        o   #URL-BASE/pm-tips.html and text version under name
-            #URL-BASE/pm-tips.txt
-            This is a document containing all the relevant wisdom about
-            procmail and what you need to know to use it efectively. The
-            document also contains related topics like: Email headers,
-            Anti Spam (aka UBE, UCE) discussion, tools (sendmail, Perl,
-            relay) to fight against unsolicited Email.
-        o   #URL-BASE/pm-code.html
-            My contribution to the world of procmail. A
-            plug-in procmail module library that can be used like
-            callable `functions'. Download at #URL-BASE/pm-code.zip
-        o   I've written an *Emacs* minor mode *tinypm.el* that helps
+        o   pm-tips.html includes documents sharing tips
+            and discussing procmail module design and all that what you
+            need to know to use procmail effectively. The document also
+            contains related topics like: Email headers, Anti Spam (aka
+            UBE, UCE) discussion, tools (sendmail, Perl, relay) to fight
+            against unsolicited Email.
+        o   pm-code.html
+            Jari's contribution to the world of procmail. A
+            plug-in procmail modules that can be used like
+            callable `functions'.
+        o   There is also an *Emacs* minor mode *tinyprocmail.el* that helps
             writing procmail files. The mode contains rather extensive lint
             (code checker) that can find mistakes from your procmail recipes.
-            The package *tinypm.el* in included in my tiny-tools kit
-            <http://tiny-tools.sourceforge.net>
+            The Emacs package is in included in separate project at
+            <http://tiny-tools.sourceforge.net>. Here is output of test
+            code check:
 
             *** 1997-11-24 22:13 (pm.lint) 3.11pre7 tinypm.el 1.80
             cd /users/jaalto/junk/
@@ -35,8 +31,8 @@ Jari's Procmail resources
             pm.lint:062: Warning, recipe with "|" may need `w' flag.
             pm.lint:073: Warning, Formail used but no `f' flag found.
 
-        I hope you the very best in the world of procmail and Philip
-        Guenter for his always so helpful advices and hosting the
-        http://www.procmail.org/ .
+        I hope you the very best in the world of procmail and my sincere
+        thanks to Philip Guenter for his always so helpful advices and
+        hosting the <http://www.procmail.org/>
 
 End
