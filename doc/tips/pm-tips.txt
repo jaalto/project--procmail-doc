@@ -408,7 +408,7 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.2 2002/01/01 11:26:04 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.3 2002/01/13 22:45:57 jaalto Exp $
         .$Keywords: procmail sendmail formail mail UBE UCE spam filter $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$Contactid: jari.aalto@poboxes.com $
@@ -3454,7 +3454,13 @@ Table of contents
         Remember to include the double quotes when you send variables'
         values to the shell programs. Below you see a mistake,
         because the content of the SUBJECT is not quoted and
-        thus not available from perl variable $ARGV[1].
+        thus not available from perl variable `$ARGV[1]'.
+
+            :0                          # Use procmail match feature
+            * ^Subject:\/.*
+            {
+                SUBJECT = "$MATCH"
+            }
 
             :0
             * condition
@@ -3463,9 +3469,9 @@ Table of contents
         There is also another way. If your script can access environment
         variables (almost all programs can), then you do not need to pass
         the variables on the command line. Above, the SUBJECT is already
-        in the environment and in perl you can get it.
+        in the environment and in Perl you can get it with:
 
-            $SUBJECT = $ENV{SUBJECT};   # or "use Env;" and you see $SUBJECT
+            $SUBJECT = $ENV{SUBJECT};
 
         Next, do you know what is the difference between these two recipes?
 
@@ -4231,7 +4237,7 @@ Table of contents
 
             # case 1: print to BiffLog
 
-            dummy = `echo "message: $FROM $SUBJECT" >> $biff `
+            dummy = `echo "message: $FROM $SUBJECT" >> $biff`
 
         [david] Problems you get no locking on the destination file, and
         unless you put it inside braces you have to run it on every message
@@ -8071,7 +8077,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.2 2002/01/01 11:26:04 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.3 2002/01/13 22:45:57 jaalto Exp $
             #
             #   File id
             #
