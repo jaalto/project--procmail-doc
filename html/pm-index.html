@@ -1,12 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML>
 <!--
-        See unix what(1) and ident(1) why those funny tags
-        @(#) Document: 
-        @(#) Contact :  jari.aalto@poboxes.com
-        The LINK tags are used by advanced browsers. The BASE signifies
-        true location of the original document, and mirrored site
-        location. It is where the #TAG go when you define them.
+        See unix what(1) and RCS ident(1) why these funny tags
+        @(#) $Document:  $
+        @(#) $Contact:  jari.aalto@poboxes.com $
+        Note: the LINK tags are used by advanced browsers.
 -->
 <HEAD>
 <TITLE>
@@ -20,10 +18,16 @@ No title
     ......................................................................
 -->
 
+  <META HTTP-EQUIV="description"
+	CONTENT="">
+
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Mon,  9 Sep 2002 15:57:00 GMT">
+  <META HTTP-EQUIV="Expires" CONTENT="Sat, 12 Oct 2002 01:23:44 GMT">
+
+  <META HTTP-EQUIV="Author"
+	CONTENT="">
 
 
   <META HTTP-EQUIV="Made"
@@ -31,7 +35,7 @@ No title
 
 
   <META NAME="Generator"
-	CONTENT="2002-07-11 18:57 Perl 5 program t2html.pl v2002.0607 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
+	CONTENT="2002-08-13 04:23 Perl program t2html.pl v2002.0813 http://perl-text2html.sourceforge.net/ ">
 
 
 
@@ -42,7 +46,6 @@ No title
 
 
     <STYLE TYPE="text/css">
-    <!--  BEGIN: Hide from older browsers
 
 
         /*
@@ -122,8 +125,8 @@ No title
 
         body
         {
-            font-family: "Times New Roman", serif;;
-            font-size: "font-size: 12pt; /* points */";
+            font-family: "Times New Roman", serif;
+            
 
             /*
                 More readable font, Like Arial in MS Word
@@ -267,6 +270,24 @@ No title
 	table.shade
 	{
 		font-family:    "Courier New", monospace;
+
+		/* font-size:      0.8em; */
+
+		color:          Navy;
+
+		/* font-family:	sans-serif; /*
+		/* background:	#F7DE9C; */
+
+		/* border-top:	1px #999999 solid; */
+		/* border-left:	1px #999999 solid; */
+		/* border-right:	4px #666666 solid; */
+		/* border-bottom:	3px #666666 solid; */
+		/* line-height:	105%; */
+	}
+
+	table.shade2
+	{
+		font-family:    "Courier New", monospace;
 		font-size:      0.8em;
 
 		color:          Navy;
@@ -281,9 +302,10 @@ No title
 		/* line-height:	105%; */
 	}
 
+
 	.shade-attrib
 	{
-	    background: /* #EAEAEA; */
+	    background: #EFEFEF;  /* #EAEAEA; */
 	}
 
 
@@ -326,7 +348,7 @@ No title
             color: #669900;
 	    font-family: "Goudy Old Style"
 	    */
-	    margin-left: 4em;
+	    margin-left: 3em;
 	    font-family: Georgia;
 	    font-size:  0.9em;
         }
@@ -510,14 +532,12 @@ No title
 
 
 
-    END HIDING -->
     </STYLE>
 
 
     <!-- ...................................................... Java code -->
 
     <SCRIPT TYPE="text/javascript">
-    <!-- HIDE FROM OLD BROWSERS
 
         function MakeVisual(obj)
         {
@@ -536,7 +556,6 @@ No title
 
         window.onerror = IgnoreErrors;
 
-    END HIDING -->
     </SCRIPT>
 
 </HEAD>
@@ -560,12 +579,8 @@ No title
 <BLOCKQUOTE>
 
 
-<A HREF="#document_id" class="toc" >
-               Document id
-    </A>
-           <BR>
-<A HREF="#jaris_procmail_resources" class="toc" >
-               Jari's Procmail resources
+<A HREF="#introduction" class="toc" >
+               Introduction
     </A>
            <BR>
 </BLOCKQUOTE>
@@ -582,48 +597,38 @@ No title
 </P>
            </BLOCKQUOTE>
            <HR>
-               <A name="document_id"  id="document_id"></A>
+               <A name="introduction"  id="introduction"></A>
                <H1>
-               Document id
+               Introduction
                
                </H1>
            <BLOCKQUOTE>
 
-        @(#) <EM><STRONG>$Id: pm-index.html,v 1.5 2002/07/11 16:14:57 jaalto Exp $</STRONG></EM><BR>
-        $Contactid: jari.aalto@poboxes.com $<BR>
-        $URL: <A HREF="http://www.netforward.com/poboxes/?jari.aalto" target="_top">http://www.netforward.com/poboxes/?jari.aalto</A> $<BR>
-        $Keywords: procmail library includerc subroutine recipe $<BR>
+        <EM><STRONG>$Id: pm-index.html,v 1.6 2002/08/13 01:29:01 jaalto Exp $</STRONG></EM>
+        $Contactid: jari.aalto@poboxes.com $
 
-</P>
-           </BLOCKQUOTE>
-           <HR>
-               <A name="jaris_procmail_resources"  id="jaris_procmail_resources"></A>
-               <H1>
-               Jari's Procmail resources
-               
-               </H1>
-           <BLOCKQUOTE>
 
-        Hi, here are links to my world of the procmail, please select
-        from the list below:
+<P class="column8">
+        Hi, here are couple of links to the world of the procmail, please
+        select from the list below:
 
 <P><UL>
-	<LI>/pm-tips.html and text version under name
-            /pm-tips.txt
-            This is a document containing all the relevant wisdom about
-            procmail and what you need to know to use it efectively. The
-            document also contains related topics like: Email headers,
-            Anti Spam (aka UBE, UCE) discussion, tools (sendmail, Perl,
-            relay) to fight against unsolicited Email.
-	<LI>/pm-code.html
-            My contribution to the world of procmail. A
-            plug-in procmail module library that can be used like
-            callable <SAMP class="word">functions</SAMP>. Download at /pm-code.zip
-	<LI>I've written an <EM class="word">Emacs</EM> minor mode <EM class="word">tinypm.el</EM> that helps
+	<LI>pm-tips.html includes documents sharing tips
+            and discussing procmail module design and all that what you
+            need to know to use procmail effectively. The document also
+            contains related topics like: Email headers, Anti Spam (aka
+            UBE, UCE) discussion, tools (sendmail, Perl, relay) to fight
+            against unsolicited Email.
+	<LI>pm-code.html
+            Jari's contribution to the world of procmail. A
+            plug-in procmail modules that can be used like
+            callable <SAMP class="word">functions</SAMP>.
+	<LI>There is also an <EM class="word">Emacs</EM> minor mode <EM class="word">tinyprocmail.el</EM> that helps
             writing procmail files. The mode contains rather extensive lint
             (code checker) that can find mistakes from your procmail recipes.
-            The package <EM class="word">tinypm.el</EM> in included in my tiny-tools kit
-	            &lt;<A HREF="http://tiny-tools.sourceforge.net" target="_top">http://tiny-tools.sourceforge.net</A>&gt;
+            The Emacs package is in included in separate project at
+            &lt;<A HREF="http://tiny-tools.sourceforge.net" target="_top">http://tiny-tools.sourceforge.net</A>&gt;. Here is output of test
+	            code check:
 </UL>
 
 
@@ -641,9 +646,9 @@ No title
 
 
 <P class="column8">
-        I hope you the very best in the world of procmail and Philip
-        Guenter for his always so helpful advices and hosting the
-        <A HREF="http://www.procmail.org/" target="_top">http://www.procmail.org/</A> .
+        I hope you the very best in the world of procmail and my sincere
+        thanks to Philip Guenter for his always so helpful advices and
+        hosting the &lt;<A HREF="http://www.procmail.org/" target="_top">http://www.procmail.org/</A>&gt;
 
 
 
@@ -667,10 +672,10 @@ the copyright holder. (VI.B LICENSE OPTIONS)
 </P>
 <P>
 This file has been automatically generated from plain text file
-with Perl script <STRONG>t2html.pl 2002.0607</STRONG><BR>
+with Perl script <STRONG>t2html.pl v2002.0813</STRONG><BR>
 Document author: Jari Aalto<BR>
 Contact: &lt;<A HREF="mailto:jari.aalto@poboxes.com">jari.aalto@poboxes.com</A>&gt;<BR>
-Html date: 2002-07-11 18:57<BR>
+Html date: 2002-08-13 04:23<BR>
 </EM    class="footer">
 </BODY>
 </HTML>
