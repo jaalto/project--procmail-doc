@@ -413,7 +413,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.25 2004/08/12 21:42:46 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.26 2004/08/23 11:38:16 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -442,10 +442,10 @@ Table of contents
         http://www.cygwin.com/
 
         You may want to read *Nancy's* and *Era's* procmail FAQ pages
-        before this page. Especially Era's link page contains an excellent
-        collection of useful procmail links and pointers to Unix programs
-        that deal with mail If you find errors or things to improve in this
-        document, please send mail to this document's Maintainer.
+        before this page. Ther are wealth of useful procmail links and
+        pointers to Unix programs that deal with mail. If you find
+        errors or things to improve in this document, please send mail
+        to this document's Maintainer.
 
         If any mentioned URL is not alive, you may still be able to
         successfully find it using the WWW search such as
@@ -494,10 +494,8 @@ Table of contents
         .#broken-link  Link does not exist any more. A replacement is needed
 
         o   PM-L, Procmail mailing list
-            <http://MailMan.RWTH-Aachen.DE/mailman/listinfo/procmail> and
-            SmartList
-            <http://MailMan.RWTH-Aachen.DE/mailman/listinfo/smartlist> See
-            also http://www.procmail.org/era/lists.html
+            <http://mailman.rwth-aachen.de/mailman/listinfo/procmail>
+            See also http://www.procmail.org/era/lists.html
         o   FAQ-L, Faq Maintainers mailing list
             http://www.faqs.org/faq-maintainers
         o   DING-L, Emacs Gnus mail/newsreader mailing list (ding).
@@ -611,7 +609,7 @@ Table of contents
         text to these tools so that someone can get an overview of your
         supplied files
 
-            % perl5.004 -S t2html.pl                                        \
+            % per -S t2html.pl                                              \
               --html-frame                                                  \
               --title   "Procmail tips page"                                \
               --author  "Jari Aalto"                                        \
@@ -694,7 +692,7 @@ Table of contents
         in details.
 
             # Erm, all stuck]      # This may be visually more clear
-            :0ABDc:                :0 A BDc:
+            :0ABDc:                :0 A BD c:
 
     1.7 Variables used in recipes
 
@@ -868,52 +866,21 @@ Table of contents
 
             http://www.voicenet.com/~dfma/intro.html
 
-    2.2 About procmail's Y2K compliance
-
-        Please consult Philip Guenther <guenther@gac.edu> for more up to date
-        details. Philip is the Procmail maintainer currently.
-
-        [1998-09-23 Bennett Todd <bet@mordor.net> in Message-Id:
-        <19980923164230.C30594@fcmc.com>] Well, from a simple
-        grep over the sources, it looks like there may be a Y2038 problem
-        in the autoconf test code: unsigned otimet = time(). And another,
-        possibly less likely to express itself, in formail.c: unsigned long
-        h1 = time(). Those could express themselves when 32-bit signed
-        time_t wraps; long before then the time_t define should have been
-        changed to something that is bigger, even if it's "long long". The
-        above type-mixes may fail to profit from a suitably redefined
-        time_t, and so may overflow on 2038.
-
-        I don't see any Y2K problems, though. And mail headers use
-        four-digit years pretty consistently, so that should all be cool.
-        This estimation doesn't constitute an in-depth Y2k audit of
-        procmail, but the source code to procmail is ... kinda dense for
-        in-depth auditing.
-
-        [1998-09-25 Bennett Todd Message-Id:
-        <19980925093902.B12428@fcmc.com>] As I see it there are at least
-        three measures that a whole mail system, taken in aggregate, could
-        use for Y2K checking. First, capture a vast cross-section of
-        traffic and make sure no mail software is using 2-digit years. I
-        don't recall having seen any, but it's still worth checking.
-        Second, generate a load of traffic with 2000 and 2001 dates and
-        shove it through all the channels. And third, run all the systems
-        end-to-end with their system clocks rolling over the millennium.
-
-    2.3 Procmail resources
+    2.2 Procmail resources
 
         Procmail is discussed in Usenet newsgroup *comp.mail.misc*.
 
        "Procmail archive"
         ftp://ftp.informatik.rwth-aachen.de:/pub/packages/procmail/
         Articles from procmail mailing list: covers from 1994-08 to 1995-05
-        (A .gz file: ~2Meg when uncompressed)
-
-        More later  articles can be found from Achim Bohnet's server.
-        Covers from 1995-10 to the present day.
-        <ach@mpe.mpg.de>. The www page has nice search capabilities.
+        (A .gz file: ~2Meg when uncompressed) More later articles can be
+        found at <http://mailman.rwth-aachen.de/pipermail/procmail/>.
+        Search page is at
         http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        http://www.rosat.mpe-garching.mpg.de/~ach/exmh/archive/procmail/
+
+       "Nancy McGough <nm@noadsplease.ii.com> - Prcmail Quick start"
+        .http://www.ii.com/internet/robots/procmail/qs/
+        .http://www.ii.com/internet/faqs/launchers/mail/filtering-faq/
 
        "Era's Procmail FAQ and link collection"
         http://www.iki.fi/~era/procmail
@@ -942,7 +909,7 @@ Table of contents
         all those things, or whatever else you want.
         <webdoc@alcor.concordia.ca>
 
-    2.4 Procmail mode for Emacs
+    2.3 Procmail mode for Emacs
 
         If you use Emacs, See Procmail programming mode *tinypm.el*
         at <http://tiny-tools.sourceforge.net/> and it can be used
@@ -956,16 +923,16 @@ Table of contents
             pm.lint:062: Warning, recipe with "|" may need `w' flag.
             pm.lint:073: Warning, Formail used but no `f' flag found.
 
-    2.5 Procmail module library project
+    2.4 Procmail module library project
 
-       2.5.1 Where to get various modules
+       2.4.1 Where to get various modules
 
        "Procmail module library"
         Hosted at sourceforge CVS server and open for anyone to
         participate. Visit <http://pm-lib.sourceforge.net/>.
         <alan.stebbens@software.com> or <alan.stebbens@openwave.com>
 
-       2.5.2 Terminology
+       2.4.2 Terminology
 
         *subroutine* = A piece of code that gets something in `INPUT' and
         responds with `OUTPUT'. Subroutine is not message specific.
@@ -974,7 +941,7 @@ Table of contents
         It reads something from the message or does something
         according to matches in message. Recipe may be message-specific.
 
-       2.5.3 Foreword to using modules
+       2.4.3 Foreword to using modules
 
         In the module listing, some of the modules are recipes and some can
         be considered subroutines. Let's take the address exploder module
@@ -1012,7 +979,7 @@ Table of contents
         the above will clarify a bit the Procmail module/subroutine/recipe
         concept.
 
-       2.5.4 Header file modules
+       2.4.4 Header file modules
 
         These are like #include .h files in C, they define common
         variables, but do not contain actual code.
@@ -1022,7 +989,7 @@ Table of contents
         o   headers.rc -- From Alan's procmail-lib. Define standard regexp
             and macros: address, from, to, cc, list_precedence
 
-       2.5.5 General modules
+       2.4.5 General modules
 
         o   *pm-jafrom.rc* -- Derive FROM field without calling `formail'
             unnecessarily. If all else fails, use formail.
@@ -1037,7 +1004,7 @@ Table of contents
             Supports single mboxes, ".gz" mbox files, directory files and
             MH folders with rcvstore.
 
-       2.5.6 Low-level Date and time handling
+       2.4.6 Low-level Date and time handling
 
         For these, you get the date string from somewhere, then feed
         it to some of these subroutines:
@@ -1055,7 +1022,7 @@ Table of contents
             values. You usually use this subroutine if you can't get the date
             anywhere else.
 
-       2.5.7 Higher-level Date and time handling
+       2.4.7 Higher-level Date and time handling
 
         You use these recipes to get the date directly from the message:
 
@@ -1065,7 +1032,7 @@ Table of contents
             From Alan's procmail-lib: parse date or from headers
             Resent-Date:, Date, and From
 
-       2.5.8 Forwarding and account modules
+       2.4.8 Forwarding and account modules
 
         o   *pm-japop3.rc* -- Pop3 movemail implemented with procmail. You can
             send a "pop3" request to move your messages from account X to
@@ -1084,7 +1051,7 @@ Table of contents
             address, and, at the same time, educate their correspondents
             about it by CC'ing them with the mail.
 
-       2.5.9 Vacation modules
+       2.4.9 Vacation modules
 
         o   *pm-javac.rc* -- A framework for your vacation replies. This
             recipe will handle the vacation cache and compose an initial
@@ -1094,7 +1061,7 @@ Table of contents
             acknowledge mail (with either a  vacation message, or an
             acknowledgment)
 
-       2.5.10 Message-id based modules
+       2.4.10 Message-id based modules
 
         o   *pm-jadup.rc* -- Handle duplicate messages by Message-Id.
             Store duplicate message in separate folder.
@@ -1103,7 +1070,7 @@ Table of contents
             causing duplicate messages to be dropped. Can use MD5 hash in
             cache.
 
-       2.5.11 Cron modules
+       2.4.11 Cron modules
 
         o   *pm-jacron.rc* -- A framework for your daily cron tasks. This
             recipe contains all the needed checks to ensure that your
@@ -1111,7 +1078,7 @@ Table of contents
             subject to messages you receive). Your own cron includerc is
             run once a day.
 
-       2.5.12 Backup modules
+       2.4.12 Backup modules
 
         o   *pm-jabup.rc* -- Save messages to backup directory and keep only N
             messages per day. Idea by John Gianni, packaged by Jari. Note:
@@ -1121,7 +1088,7 @@ Table of contents
             the messages' backup directory only once a day, and not every time
             a message arrives.
 
-       2.5.13 Confirmation modules
+       2.4.13 Confirmation modules
 
         o   *pm-jacookie.rc* -- Handle cookie (unique id) confirmations.
             Also known as Procmail authentication service (PAS).
@@ -1132,22 +1099,8 @@ Table of contents
             who won't send the cookie back to you to "validate" themselves.
             Uses subroutine pm-jacookie1.rc, which generates the unique
             cookie; CRC 32 by default.
-        o   See also Michelle's confirmation module for SmartList
 
-       2.5.14 File Servers
-
-        o   *pm-jasrv.rc* -- A Mime Procmail file server (MPFS) It contains
-            all the instructions and supports several MIME encoding types:
-            text/plain and gzip. The keyword SEND is configurable. You
-            can set up as many file servers as you need to different
-            directories by changing the SEND keyword. MPFS supports
-            password for file access.
-        o   *commands.rc* -- From Alan's procmail-lib, check for commands
-            in the subject line. Handles commands (send|get)
-            [help|info|procmail info|procmail lib|procmailrc] and a few
-            others.
-
-       2.5.15 Mime modules
+       2.4.14 Mime modules
 
         o   *pm-jamime.rc* -- Subroutine to read MIME headers and put the
             mime version, boundary string, content-type information to
@@ -1164,7 +1117,7 @@ Table of contents
             recipe can save it in a separate directory. The content is
             also decoded (base64,qp) while saving.
 
-       2.5.16 Filtering message body or headers
+       2.4.15 Filtering message body or headers
 
         o   *pm-jadaemon.rc* -- Handle DAEMON messages by changing subject to
             reflect a) the error reason b) to whom the message was originally
@@ -1175,7 +1128,7 @@ Table of contents
         o   *pm-janetmind.rc* -- Reformat http://minder.netmind.com/ messages,
             The default 4k message is shortened to a few important lines.
 
-       2.5.17 Miscellaneous modules
+       2.4.16 Miscellaneous modules
 
         o   *pm-jaempty.rc* -- check if message body is empty (nothing
             relevant). Define variable BODY_EMPTY to "yes" or "no" if
@@ -1187,7 +1140,7 @@ Table of contents
         o   *guess-mua.rc* -- Guess the Mail User Agent and set MUA:
             MH,PINE,MAIL
 
-       2.5.18 Mailing list modules
+       2.4.17 Mailing list modules
 
         o   *pm-jalist.rc* -- Subroutine to extract mailing list name from
             message. Do you need to add a new recipe to your .procmailrc
@@ -1198,7 +1151,7 @@ Table of contents
             correct folders. No more hand work and manual storing
             of mailing list messages.
 
-    2.6 Procmail code to filter UBE
+    2.5 Procmail code to filter UBE
 
           _Sysadms_ _remember_ : Spam filtering is much more
           efficiently done in the MTA, especially if you are just
@@ -1615,13 +1568,13 @@ Table of contents
     4.13 Gee, where do I put all those ! * $ ??
 
         Ahem. I can't tell you exactly what to do or how to write your own
-        procmail recipes, but I can tell how I'm writing them. Here is my
-        condition line token order:
+        procmail recipes, but I can sow you an example. Here is one possible
+        style for condition line token order:
 
-            * $ ! ? BH VAR ?? test
+            *$ ! ? BH VAR ?? test
 
-        That won't say much unless I give you something to compare with.
-        Here is one perfectly valid rule, but not my style
+        That won't say much unless you see something to compare with. Here
+        is one perfectly valid rule, but like the above style.
 
             :0
             *$ ^Subject:.*$VAR
@@ -1630,10 +1583,10 @@ Table of contents
             *$? $IS_EXIST $FILE
             *VARIABLE ?? set
 
-        I prefer lining up things in the condition lines. The first column is
-        reserved for dollar sign, the second for *not* operator and so on.
-        The important thing is that I can see at a glance if I have set the
-        variable expansion dollar in the line (leftmost).
+        It might be better to line up things in condition lines. The first
+        column is reserved for dollar sign, the second for *not* operator
+        and so on. The key here is, that it is possible to see at a glance
+        if I variable expansion dollar in the line (leftmost).
 
             :0
             *$       ^Subject:.*$VAR
@@ -1641,6 +1594,14 @@ Table of contents
             *  ! B ?? match-the-string-in-body
             *$ ?      $IS_EXIST $FILE
             *         VARIABLE ?? set
+             | | |
+             | | |
+             | | What is matched: (H)eader portion, (B)ody or (HB) both.
+             | | The (??) associative operator is required.
+             | |
+             | Not operator (!) or shell call (?)
+             |
+             Variable expansion (important)
 
     4.14 If you Send an automatic reply, use X-loop header
 
@@ -1719,7 +1680,7 @@ Table of contents
             262144  /usr/bin/sed
             303552  /usr/local/bin/gawk
             544768  /usr/contrib/bin/perl       [perl 4.36]
-            822232  /opt/local/bin/perl5.00401
+            822232  /opt/local/bin/perl
 
                     text    data     bss
             awk:    72727 + 51316 +  15317   = 139360
@@ -1973,6 +1934,8 @@ Table of contents
                |    |   |   (w)ait and other flags
                |    |   (f)ilter flag and to filter what: (h)ead or (b)ody
                |    (H)eader and (B)ody match, possibly case sensitive (D)
+               |    Note: Procmail 3.22 bug
+               |   <http://mailman.rwth-aachen.de/pipermail/procmail/2002-February/008355.html>
                The `process' flags first. (A)nd or (E)lse recipe
 
         You can write the flags side by side
@@ -1980,12 +1943,35 @@ Table of contents
             :0Afhw:$MYLOCK$LOCKEXT
 
         Or, as suggested, leave flags in their own slot for more
-        distinctive separation. Note that $LOCKEXT must be next to $MYLOCK,
-        because it contains string ".lock".
+        distinctive separation. Note that procmail variable `$LOCKEXT' must be next to
+        $MYLOCK, because it contains string ".lock".
 
             :0 A fhw: $MYLOCK$LOCKEXT
 
-    5.2 Flag w and recipe with |
+    5.2 Flags HB at top of recipe (warning)
+
+        [Philip] Version 3.22 has a bug that keeps the 'H' flag from
+        being cleared, such that once you use it, it never gets
+        cleared. Using the 'H' flag will therefore cause problems with
+        latter recipes that use just the 'B' but not the 'H' flag.
+        Either way, the only time you should use the 'H' flag is on
+        recipes that needs to match against both the header and the
+        body. If you want a recipe to match only against the body and
+        you're using 3.22, use the "B ??" modifier on the conditions.
+        See message
+        <http://mailman.rwth-aachen.de/pipermail/procmail/2002-February/008355.html>.
+        So to be most pportable possible, convert all previously used
+        condition lines from:
+
+            :0 B
+            * body-check-here
+
+        to use this format:
+
+            :0
+            * B ?? body-check-here
+
+    5.3 Flag w and recipe with |
 
         [alan] If the filter program exits with a 0 status (0 == okay), then
         procmail will replace the original input body with the output of the
@@ -2015,7 +2001,7 @@ Table of contents
         a write error in such a case if the mail is long enough and does not
         fit in the pipe buffer that's in the kernel (typically 10KB).
 
-    5.3 Flag w, lock file and recipe with |
+    5.4 Flag w, lock file and recipe with |
 
         [manual] In order to make sure the lock file is not removed until the
         pipe has finished, you have to specify option `w' otherwise the
@@ -2028,7 +2014,7 @@ Table of contents
             * !^FROM_MAILER
             | uncompress headc.Z; cat >> headc; compress headc
 
-    5.4 Flag f and w together
+    5.5 Flag f and w together
 
           The `w' tells Procmail to hang around and wait for the script to
           finish. Hm, Wouldn't you think this ought to be implied by the `f'
@@ -2043,7 +2029,7 @@ Table of contents
         hand, with `W' or `w' sed will respond to a non-zero exit code by
         recovering the unfiltered text.
 
-    5.5 Flags h and b
+    5.6 Flags h and b
 
         [david] `hb' is the default; you need to use `h' only when you
         don't want `b' or vice versa. You can think of it this way: `h'
@@ -2056,7 +2042,7 @@ Table of contents
         specify `HB' or `BH' if you want to test a condition against the
         entire message.
 
-    5.6 Flag h and sinking to /dev/null
+    5.7 Flag h and sinking to /dev/null
 
         When you drop something to /dev/null, use the `h' flag so that
         procmail does not unnecessarily try to feed whole message there.
@@ -2077,7 +2063,7 @@ Table of contents
         would presumably not do it, and the size of the write wouldn't
         actually matter.
 
-    5.7 Flag i and pipe flag f
+    5.8 Flag i and pipe flag f
 
           Flag `i' is useless in mailbox deliveries.
 
@@ -2107,7 +2093,7 @@ Table of contents
             :0 fbwi
             | head -2
 
-    5.8 Flag r
+    5.9 Flag r
 
         [philip] Procmail automatically turns on the `r' (raw mode) flag for
         deliveries to /dev/null, so there's no need to do it yourself.
@@ -2131,7 +2117,7 @@ Table of contents
         for all recipes without affecting other users. (Then perhaps we'd
         need a reverse `r' flag to undo raw mode for one recipe at a time?)
 
-    5.9 Flag c's background
+    5.10 Flag c's background
 
           ...Interesting. My vision of `c' is to think of CONTINUE
           with message processing afterwards even if conditions matched.
@@ -2169,7 +2155,7 @@ Table of contents
         think of it as "continue", but since the introduction of clones,
         that is not a good way to look at it. "Copy" is much safer.
 
-    5.10 Flag c before nested block forks a child
+    5.11 Flag c before nested block forks a child
 
         [alan] The combination of a nested block and the `c' flag causes
         procmail to fork a child process for the nested block, while the
@@ -2177,7 +2163,7 @@ Table of contents
         necessarily stop unless a *delivering* recipe (without the `c' flag)
         action succeeds.
 
-    5.11 Flag c and understanding possible forking penalty
+    5.12 Flag c and understanding possible forking penalty
 
           ... I run shell commands that need not to be serialized, so
           instead of doing the standard way:
@@ -2209,7 +2195,7 @@ Table of contents
         above two, as procmail has to not only wait for the command to
         complete but also save the output into the named variable.
 
-    5.12 Flags before nested block
+    5.13 Flags before nested block
 
         Given the following recipe, let's examine the flag part
 
@@ -2228,7 +2214,7 @@ Table of contents
         there is no `c', then `w' `W' and a local lock file are invalid at
         the opening of a braced block.
 
-    5.13 Flags aAeE tutorial
+    5.14 Flags aAeE tutorial
 
         [david] `AaEe' are mutually exclusive and no more than one should
         ever appear on a single recipe. [philip] Actually, this is not
@@ -2520,8 +2506,8 @@ Table of contents
         put a dollar sign there unless you really want a newline, use period
         that matches all but newline:
 
-            :0 B
-            * ^Search-string: \/.+
+            :0
+            * B ?? ^Search-string: \/.+
 
     6.4 Headers are unfolded before matching
 
@@ -2909,8 +2895,8 @@ Table of contents
             #   something which'll match any message which has "<HTML>"
             #   in the body
 
-            :0 B:
-            *$ $s*<HTML>
+            :0 :
+            *$ B ?? $s*<HTML>
             HTML.mbox
 
         The condition test is applied to the entire body. If you want to
@@ -2923,8 +2909,8 @@ Table of contents
             #   trap spam where the *very* first line of the body started with
             #   <HTML>
 
-            :0 B:
-            *$ ^^$s*<HTML>
+            :0 :
+            *$ B ?? ^^$s*<HTML>
             HTML.mbox
 
           What, exactly, does "Anchor the expression at the very start of
@@ -4083,8 +4069,8 @@ Table of contents
         less than fifty) is not going to be very pretty, but it saves launching
         an extra process.
 
-            :0 B
-            * $ ^^$SPCNL*\/$NSPC.*$(.*$)?(.*$)? ... etc, the rest of the lines
+            :0
+            *$ B ?? ^^$SPCNL*\/$NSPC.*$(.*$)?(.*$)?
             {
                 toplines =  $MATCH
             }
@@ -4097,7 +4083,7 @@ Table of contents
 
             #  But if N=30, sed ${N}q if you don't have head
 
-            :0 Bi
+            :0 i
             {
                 toplines = `head -$N`
             }
@@ -4279,13 +4265,12 @@ Table of contents
     8.9 Make your own .procmailrc available to others
 
         There is never too much to learn about procmail and the best source
-        is the rc files that people have done. Remember to comment
-        your .procmailrc file well before you put it available. Below
-        is a recipe
-        for sending your .procmailrc upon request. If you want to send
-        anything more that one or two files (many times you want to put
-        other files available too), then please do not use this code but a
-        general file server module.
+        is the rc files that people have done. Remember to comment your
+        .procmailrc file well before you put it available. Below is a
+        recipe for sending your .procmailrc upon request. If you want to
+        send anything more that one or two files (many times you want to
+        put other files available too), then please do not use this code
+        but a general file server module.
 
             :0
             * ! ^Subject:.Re:
@@ -4353,7 +4338,7 @@ Table of contents
 
     8.11 Keep simple header log
 
-        Here is a simple strategy: Record all what comes in and record all what
+        Here is a simple strategy: record all what comes in and record all what
         happened to that message. See how brief info is constantly recorded to
         *BIFF* folder. You can now check the *BIFF* log every day to
         see if the messages were sunk to right folders: Remember to add *BIFF*
@@ -4406,7 +4391,8 @@ Table of contents
             |  echo "$TODAY $FROM $SUBJ" >> $BIFF
 
             # ......................................... null recipe ...
-            # spam-like addresses - let friends@planetall.com fall through
+            # Now, this is how you add the "message" what happened
+            # to that mail. See "?" shell call in the recipe
 
             :0 :
             * From:.*(remove|delete|free|friend@)
@@ -4780,9 +4766,9 @@ Table of contents
         score counts every character, and the second score sums up every
         line (that is: newlines are added).
 
-            :0 HB                       # use B to measure body only
-            *    1^1 .
-            *    1^1 ^.*$
+            :0 H                        # use B to measure body only
+            *    1^1 B ?? .
+            *    1^1 B ?? ^.*$
             {
                 textsize = $=
 
@@ -4806,7 +4792,7 @@ Table of contents
         header.
 
             :0
-            * $ 1^1 ^Received:.*by$s+\/.*
+            *$ 1^1 ^Received:.*by$s+\/.*
             action
 
     9.8 How to add Content-Length header
@@ -4836,16 +4822,16 @@ Table of contents
         line. To test *only* the body,
 
             :0                      # Note: this is in BYTES
-            * $ B ?? < $NBR
+            *$ B ?? < $NBR
             {
                 ...whatever when fewer bytes
             }
 
         This syntax would obey a B flag on the flag line:
 
-            :0 B                    # Note: this is in LINES
-            * -1^1 .
-            * -1^1 ^.*$
+            :0                      # Note: this counts LINES
+            * -1^1 B ?? .
+            * -1^1 B ?? ^.*$
             *$ $NBR^0
             {
                 ...whatever when fewer lines
@@ -4885,11 +4871,11 @@ Table of contents
             :0
             *             1^1 ^(resent|apparently-)?(to|b?cc):\/.*
             *             1^1 MATCH ??,
-            * $ -$MAX_RECIP^0
+            *$ -$MAX_RECIP^0
             {
                 :0
-                * $         $=^0
-                * $ $MAX_RECIP^0
+                *$         $=^0
+                *$ $MAX_RECIP^0
                 {
                     RESULT = "Count of commas is $="
                 }
@@ -5288,16 +5274,16 @@ Table of contents
         automatically as single messages if that we call procmail
         recursively. First Call formail to split the mail when headerfields
         are contained in the body, calling procmail again as the
-        output-program of formail. insertion of X-Loop makes it possible to
-        reuse .procmailrc for the separate messages.
+        output-program of formail. Insertion of X-Loop makes it possible to
+        reuse `~/.procmailrc' for the separate messages.
 
-            #   If it looks like more than one mail, send to formail for
+            #   If it more than one mail, send to formail for
             #   splitting, then send back to procmail for sorting again.
 
-            :0 B
-            *  ^From [-_+.@a-z0-9]+  (Sun|Mon|Tue|Wed|Thu|Fri|Sat)
-            *  ^From:
-            *  ^TO
+            :0
+            *    B ?? ^From [-_+.@a-z0-9]+  (Sun|Mon|Tue|Wed|Thu|Fri|Sat)
+            *    B ?? ^From:
+            *    B ?? ^TO
             *$ ! H ?? ^$MYXLOOP
             | $FORMAIL -A "$MYXLOOP" -m4s procmail
 
@@ -5429,8 +5415,8 @@ Table of contents
             *$ ^Message-Id:.*$NSPC
             | $FORMAIL -D $cache_size $cache_name
 
-            :0 E BbW    # If not but there's one the body, try body.
-            *$ ^Message-Id:.*$NSPC
+            :0 E bW    # If not but there's one the body, try body.
+            *$ B ^Message-Id:.*$NSPC
             | $FORMAIL -D $cache_size $cache_name
 
         You might want to copy a `Message-Id' from the body to the head in
@@ -5770,7 +5756,7 @@ Table of contents
                 #  Save it to folder.
 
                 :0 :
-                * $COMMENT_PLUS ?? [a-z]
+                * COMMENT_PLUS ?? [a-z]
                 $COMMENT_PLUS
             }
 
@@ -5841,8 +5827,8 @@ Table of contents
             LISTS = "(foo|bar|procmail)"
 
             :0:
-            * $ ^TO_()\/$LISTS
-            * $ LISTS ?? ()\/$\MATCH
+            *$ ^TO_()\/$LISTS
+            *$ LISTS ?? ()\/$\MATCH
             list.$MATCH
 
     11.6 Using Return-Path to detect mailing lists
@@ -5892,9 +5878,9 @@ Table of contents
             #   3) Note: preserves capitalization of the string
 
             :0
-            * $ ^TO_()\/$LISTS\>
-            * $ MATCH ?? \/$LISTS
-            * $ LISTS ?? ()\/$\MATCH
+            *$ ^TO_()\/$LISTS\>
+            *$ MATCH ?? \/$LISTS
+            *$ LISTS ?? ()\/$\MATCH
             {
                 M = $MATCH
                 <action>
@@ -5906,14 +5892,14 @@ Table of contents
             what = "(moo|bar|baz)"
 
             :0                              # Search what from VAR
-            * $ VAR ?? ()\/$what
+            *$ VAR ?? ()\/$what
             {
                 #  Now; what is was that really matched, there were several
                 #  choices: moo,bar,bar
                 #  Beware: $MATCH must not contain regexp characters
 
                 :0
-                * $ what ?? ()\/$MATCH
+                *$ what ?? ()\/$MATCH
                 { }                         # no-op
 
                 # Fine, New MATCH contains moo
@@ -6009,7 +5995,7 @@ Table of contents
             :0:
             *$ ^Content-Type:$s*multipart/(mixed|alternative);\
                $SPCNL*boundary="?\/[^;"]+
-            * $ B ?? ^--$\MATCH\$([-a-z]+:.*)*Content-type:$s*text/HTML
+            *$ B ?? ^--$\MATCH\$([-a-z]+:.*)*Content-type:$s*text/HTML
             junk.html.mbox
 
         Some more examples can be found from section: 'Explaning  ^^ and ^'
@@ -6031,11 +6017,11 @@ Table of contents
 
             TXT_NO_HTML = $HOME/noHTML.txt
 
-            :0 BH
-            *  ! ^FROM_DAEMON
-            *$ ! ^$XLOOP
-            *    ^Content.Type.+multipart.alternative
-            *    ^Content.Type.+text.html
+            :0
+            *  ! H  ?? ^FROM_DAEMON
+            *$ ! H  ?? ^$XLOOP
+            *    HB ?? ^Content.Type.+multipart.alternative
+            *    HB ?? ^Content.Type.+text.html
             {
                     LOG = "$NL --TRASH: multi-part HTML $NL"
 
@@ -6070,9 +6056,9 @@ Table of contents
         HTML. It would be probably a good idea to check mime headers which
         indicate HTML encoding here as well.
 
-            :0 B
-            * ()<HTML>
-            * ()</HTML>
+            :0
+            * B ?? ()<HTML>
+            * B ?? ()</HTML>
             {
                 conversion = "lynx"     # or select this conditionally
 
@@ -6174,10 +6160,6 @@ Table of contents
         (especially part 6) is a good place to look for info.
         http://www.faqs.org/faqs/by-newsgroup/comp/comp.mail.mime.html
 
-        [jari] See procmail module list at the beginning of this
-        document for procmail based MIME file servers.
-        (Note: #REF #procmail_module_list ;Procmail module list;)
-
 13.0 Simple recipe examples
 
     13.1 Saving: MH folders -- numbered messages
@@ -6262,22 +6244,22 @@ Table of contents
         from the beginning of message and from the end of message, you can
         do this, if the entire body fits into `LINEBUF'
 
-            :0 B fbw
-            * ^^$*\/.(.|$)*.$
+            :0 fbw
+            * B ?? ^^$*\/.(.|$)*.$
             | echo "$MATCH" # trailing extra newline intended
 
         If your version of cat is BSD-ish,
 
             # SysV's cat has a different meaning for -s and cannot do this
 
-            :0 B fbw
-            * $$$
+            :0 fbw
+            * B ?? $$$
             | cat -s
 
         otherwise, it can be done with a very simple sed filter:
 
-            :0 B fbw
-            * ^^($)|$$$
+            :0 fbw
+            * B ?? ^^($)|$$$
             | sed /./,/^$/!d
 
         Note that cat -s has slightly different results from the others: if
@@ -6361,8 +6343,8 @@ Table of contents
         [elijah] Here is piece of code that responds to empty
         messages.
 
-            :0 B
-            * ! ...
+            :0
+            * ! B ?? ...
             | (echo "From: me@here.com" ;                                   \
               $FORMAIL -r -A"Precedence: junk"                              \
               -A"X-Loop: me@here.com" ;                                     \
@@ -6374,12 +6356,7 @@ Table of contents
                    "this has been an automated response\n"                  \
               ) | $SENDMAIL
 
-    13.7 Service: File server -- send file as attachments upon request
-
-        This section is here only for indexing purposes. The File servers
-        are described in the #REF #procmail_module_list; Procmail module list;
-
-    13.8 Service: Ping responder
+    13.7 Service: Ping responder
 
         Sometimes I'm on the road and I don't seem to get access to the
         site where my messages are. The telnet connection fails and
@@ -6408,7 +6385,7 @@ Table of contents
                 $PING_SPOOL
             }
 
-    13.9 Service: simple vacation with procmail
+    13.8 Service: simple vacation with procmail
 
         Don't forget to look into procmailex(5) man pages which also has
         vacation example. The ones presented below may not work for you.
@@ -6441,7 +6418,7 @@ Table of contents
 
             |/usr/ucb/vacation","exec /usr/local/bin/procmail -f- ||exit 75 #abc
 
-    13.10 Service: vacation code example
+    13.9 Service: vacation code example
 
         [By Eric Black <eric@Mirador.COM>] Here is the procmail part
 
@@ -6483,7 +6460,7 @@ Table of contents
             I see it sooner.
             --Eric
 
-    13.11 Service: Auto-forwarding
+    13.10 Service: Auto-forwarding
 
         [timothy] I have my .procmailrc setup to forward mail to another
         (mail only) account. When I am not going to be at the account, I
@@ -6518,7 +6495,7 @@ Table of contents
             * ^Subject: forward-on
             | $NICE mv -f $FILE.off $FILE
 
-    13.12 Service: forward only specific messages
+    13.11 Service: forward only specific messages
 
         Here is piece of code that triggers forwarding according to
         addresses. If you have lot of these kind of forwarding,
@@ -6548,7 +6525,7 @@ Table of contents
               :0 a
               ! $FORWARDTO
 
-    13.13 Service: Making digests
+    13.12 Service: Making digests
 
             # By <jimo@eskimo.com>
             # Add this message to the digest accumulator
@@ -6559,11 +6536,11 @@ Table of contents
             # Check size of digest, and send it off if it's big enough
 
             :0
-            * $       -$DIGSIZE     ^0
-            * $ `wc -l <$DIGEST`    ^0
+            *$       -$DIGSIZE     ^0
+            *$ `wc -l <$DIGEST`    ^0
             | $NICE send-digest $DIGEST
 
-    13.14 Kill: killing advertisement headers and footers
+    13.13 Kill: killing advertisement headers and footers
 
           A mailing list that I subscribe recently began adding a block of
           "boiler plate" text to the beginning and end of every message
@@ -6605,7 +6582,7 @@ Table of contents
             * -4^0
             | sed -e 1,5d -e "$="q
 
-    13.15 Kill: simple kill file recipe with procmail
+    13.14 Kill: simple kill file recipe with procmail
 
         Kill files are widely used with news readers to delete uninteresting
         posts when you enter a newsgroup. A kill file usually contains one
@@ -6642,7 +6619,7 @@ Table of contents
             mv $file.tmp $file
             rm -f $lock
 
-    13.16 Kill: duplicate messages
+    13.15 Kill: duplicate messages
 
         [Lars Kellogg-Stedman <lars@bu.edu>] Put this as a first entry in
         your .procmailrc and you won't see any duplicates as long as the 8K
@@ -6704,7 +6681,7 @@ Table of contents
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
         1997-05/msg00599.html> where several of the replies are also helpful.
 
-    13.17 Kill: spam filter with simple recipes
+    13.16 Kill: spam filter with simple recipes
 
         [Ed McGuire <emcguire@i2.com>] Seeing several junk mail filters
         posted recently, varying from the simple to the complex, I thought
@@ -6783,7 +6760,7 @@ Table of contents
             Emerald@earthstar.com
             FreeWay@dm1.com
 
-    13.18 Kill: (un)subscribe messages
+    13.17 Kill: (un)subscribe messages
 
           I'm getting tired of those pesky (un)subscribe messages that
           certain "other" mailing lists seem to pass through to the list at
@@ -6814,14 +6791,14 @@ Table of contents
         Then multiple occurrences get some weight too, up to a point. Then I
         count the words in the message against all that.
 
-            :0 B
+            :0
             *  1^0
             *  30^0 H ?? ^Subject: +(un)?subscribe\>
             *  20^0 H ?? ^Subject:.*\<(un)?subscribe\>
-            *$ 20^0   ^^$SPCNL*(un)?subscribe\>
-            *$ 10^0    ^$SPC*(un)?subscribe\>
-            *  8^.4   \\<(un)?subscribe\>
-            * -.4^1  \\<$a+\>
+            *$ 20^0 B ?? ^^$SPCNL*(un)?subscribe\>
+            *$ 10^0 B ?? ^$SPC*(un)?subscribe\>
+            *  8^.4 B ?? \\<(un)?subscribe\>
+            * -.4^1 B ?? \\<$a+\>
             junk.misc.mbox
 
         [Adam Shostack <adam@bwh.harvard.edu>] How about looking for sub &
@@ -6830,8 +6807,8 @@ Table of contents
         the only word on the line. I think it has to do with broken list
         management packages.
 
-            | :0B
-            | *  1^0
+            | :0
+            | * 1^0
             | * 30^0 H ?? ^Subject: +(un)?subscribe\>
 
             * 20^0 H ?? ^Subject: +(un)?sub?(scribe)?\>
@@ -6850,10 +6827,10 @@ Table of contents
         first non-blank thing in the body is "unsubscribe" at the end of a
         line, where there are five lines or fewer in the body?
 
-            :0 B
-            *$ ^^$SPCNL*unsubscribe$
-            * 7^0
-            * -1^1 ^.*$
+            :0
+            *$ B ??       ^^$SPCNL*unsubscribe$
+            *        7^0
+            *  B ?? -1^1  ^.*$
             junk.misc.mbox
 
         ^.*$ always counts one line too many, so a five-line body will be
@@ -6865,7 +6842,7 @@ Table of contents
         unsubscribe requests with long signatures or attachments at the
         bottom of a previous message will get through.
 
-    13.19 Time: Once a day cron-like job
+    13.18 Time: Once a day cron-like job
 
         [Bill Moseley <moseley@netcom.com>] If you want to do something only
         once a day, they you have to store the date somewhere and check
@@ -6889,7 +6866,7 @@ Table of contents
                 ...do the cron jobs..
             }
 
-    13.20 Time: Running a recipe at a given time
+    13.19 Time: Running a recipe at a given time
 
           If I put a program to my recipes, it will be executed every time
           message arrives. That's a problem, and I'm not allowed to use cron
@@ -6910,7 +6887,7 @@ Table of contents
         the seconds so that the expression for testing the 07-22 range can
         match only on the hour.
 
-    13.21 Time: Triggering mail and using cron
+    13.20 Time: Triggering mail and using cron
 
         [david] Put something like the following entries in your personal
         crontab for your userid (and not knowing if you particular cron
@@ -6955,7 +6932,7 @@ Table of contents
             * ^From .*some-address.* (0[0-6]|23):[0-5][0-9]:
             | command
 
-    13.22 Decoding: Uudecode
+    13.21 Decoding: Uudecode
 
         [philip] here is piece of code to do uudecode match when certain
         condition is matched. The magic string here is "begin ...file",
@@ -6968,7 +6945,7 @@ Table of contents
             * B ?? ^begin 644 file.tar.gz
             | my_uudecode_program
 
-    13.23 Decoding: MIME
+    13.22 Decoding: MIME
 
             #   by Peter Galbraith <galbraith@mixing.qc.dfo.ca>
             #   MIME filtering of accented characters and split lines.
@@ -7013,13 +6990,13 @@ Table of contents
               | mmencode -u -q
             }
 
-    13.24 How to send commands in the message's body
+    13.23 How to send commands in the message's body
 
             :0 b
             * ^Subject: ARCHIVE
             | sed -e '/$s*[^a-zA-Z]/,$ d' | sh
 
-    13.25 Matching two words on a line, but not one
+    13.24 Matching two words on a line, but not one
 
         How does one write a recipe that will do this: Put mail in mailbox
         which has a line with two string (one and two) like:
@@ -7040,12 +7017,12 @@ Table of contents
             # local lock file -- if mailbox is a directory then you don't need
             # it. The brackets in the condition contain a space and a tab.
 
-            :0 B:
-            *$ one$s*two
+            :0 :
+            *$ B ?? one$s*two
             default.mbox
 
-            :0 B:
-            * one
+            :0 :
+            * B ?? one
             error.mbox
 
         Now, the above will match even if "one" or "two" is part of another
@@ -7053,15 +7030,15 @@ Table of contents
         case of "two").  If you don't want that then you'll need to change
         the recipes to read:
 
-            :0 B:
-            *$ ()\<one$s*two\>
+            :0 :
+            *$ B ?? ()\<one$s*two\>
             default.mbox
 
-            :0 B:
-            * ()\<one\>
+            :0 :
+            * B ?? ()\<one\>
             error.mbox
 
-    13.26 How to define personal XX macros?
+    13.25 How to define personal XX macros?
 
         By macro, I'm referring to the procmail's FROM_DAEMON, TO and TO_
         that you can use in matches. Here is one way to make one's own macro
@@ -7091,7 +7068,7 @@ Table of contents
             (From|Reply-To|Sender):(.*\<)?|\
             ^From $NSPC+)"}
 
-    13.27 How to change subject by body match
+    13.26 How to change subject by body match
 
         Suppose you to change the mail's subject when there is a match in
         the body. The desired outcome would be this:
@@ -7108,7 +7085,7 @@ Table of contents
             *$ B ?? ^$s*\/Fault: [0-9a-f]+ in program block.*
             | $FORMAIL -I "Subject: $MATCH"
 
-    13.28 How to change Subject according to some other header
+    13.27 How to change Subject according to some other header
 
         Suppose you want to change the subject when mail comes to some
         particular address; or when some other header field. Here is one
@@ -7121,13 +7098,13 @@ Table of contents
             TAG = ""
 
             :0
-            * $ ${HEADERS}info@foo.com
+            *$ ${HEADERS}info@foo.com
             {
                 TAG = "info"
             }
 
             :0 E
-            * $ ${HEADERS}check@foo.com
+            *$ ${HEADERS}check@foo.com
             {
                 TAG = "check"
             }
@@ -7166,7 +7143,7 @@ Table of contents
         This method will work even if someone Bcc:s a message to
         foo@some.com.
 
-    13.29 How to call program with parameters
+    13.28 How to call program with parameters
 
           ...now, suppose I want to call `program' with parameter $FOUND,
           and get the result back in RESULT, how do I do it ?
@@ -7288,15 +7265,15 @@ Table of contents
                 # - non-blank, non-quoted lines
                 # - completely blank lines
 
-                :0B
-                *$  10^1 ^$s*>
-                *$ -15^1 ^$s*[^>$WSPC]
-                *$ -15^1 ^$s*$
+                :0
+                *$  10^1 B ?? ^$s*>
+                *$ -15^1 B ?? ^$s*[^>$WSPC]
+                *$ -15^1 B ?? ^$s*$
                 {
-                    # You don't need to repeat the original condition here
-                    # You also don't really need to extract SENDER
-                    # Generate a reply with appropriate headers and the
-                    # body quoted
+                    #   You don't need to repeat the original condition here
+                    #   You also don't really need to extract SENDER
+                    #   Generate a reply with appropriate headers and the
+                    #   body quoted
 
                     :0 fhw
                     | $FORMAIL -rtk -A "Bcc: $COPY_ADDRESS"
@@ -7475,8 +7452,8 @@ Table of contents
             FORWARD_EMAIL   = "foo@bar.com"
 
             :0
-            * $   ^To:.*$LOGNAME(@|[^0-9a-z]|$)
-            * $ ! ^$MYXLOOP
+            *$   ^To:.*$LOGNAME(@|[^0-9a-z]|$)
+            *$ ! ^$MYXLOOP
             {
                 # now let's encrypt the body using mimencode
 
@@ -7659,7 +7636,7 @@ Table of contents
 
         One way to get the best of both worlds is this:
 
-            * $ ! ()\/(^TO_$LOGNAME|procmail|list-(ABC|123|XYZ))
+            *$ ! ()\/(^TO_$LOGNAME|procmail|list-(ABC|123|XYZ))
 
         because then, if the regexp matches (and thus the negated condition
         fails and you don't detour into $PMSRC/checkspam.rc), MATCH is
@@ -7677,7 +7654,7 @@ Table of contents
 
             :0
             * ! ()\/(procmail|list-(ABC|123|XYZ))
-            * $ ! ^TO_$LOGNAME
+            *$ ! ^TO_$LOGNAME
             {
                 INCLUDERC=$PMSRC/pm-ubecheck.rc
             }
@@ -8020,7 +7997,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.25 2004/08/12 21:42:46 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.26 2004/08/23 11:38:16 jaalto Exp $
             #
             #   File id
             #
@@ -8115,8 +8092,8 @@ Table of contents
             MAJORDOM = "majordomo-(users|docs|workers)"
 
             :0 w
-            * $ ^(Sender|To|Cc):.*\/$MAJORDOM
-            * $  MAJORDOM ?? ()\/$\MATCH
+            *$ ^(Sender|To|Cc):.*\/$MAJORDOM
+            *$  MAJORDOM ?? ()\/$\MATCH
             | $APPNMAIL $LISTS/$MATCH
 
         Here is another, by Brock Rozen <brozen@torah.org> with ideas
@@ -9686,8 +9663,8 @@ Table of contents
 
             NUL=`/usr/5bin/echo "\000"`
 
-            :0 HB
-            * $ $\NUL
+            :0
+            *$ HB ?? $\NUL
             {
                 LOG = "Caught NUL"
             }
@@ -12668,10 +12645,6 @@ Table of contents
 
     26.2 General Filtering pages (more than procmail)
 
-       "Nancy McGough <nm@noadsplease.ii.com> - Mail Filtering FAQ"
-        .http://www.ii.com/internet/robots/procmail/qs/
-        .http://www.ii.com/internet/faqs/launchers/mail/filtering-faq/
-
        "Information Filtering Resources"
         http://www.ee.umd.edu/medlab/filter/ Doug Oard <oard@glue.umd.edu>
         ...This page lists all known internet-accessible information
@@ -13020,9 +12993,9 @@ Table of contents
             #   Received: <anything> [<ip address>]) by <local server>
 
             :0
-            * $ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${BACKUPSERVER}
-            * $ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${VIRTSERVER}
-            * $ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${LOCALSERVER}
+            *$ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${BACKUPSERVER}
+            *$ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${VIRTSERVER}
+            *$ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${LOCALSERVER}
             {
                 IP = $MATCH
 
