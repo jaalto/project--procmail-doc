@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.1 2001/08/09 17:30:02 jaalto Exp $
+#   $Id: admin.bashrc,v 1.2 2001/08/09 17:34:30 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -21,7 +21,7 @@
 #   Include this file to your $HOME/.bashrc and make the necessary
 #   modifications
 #
-#	SF_PM_DOC_USER=<sf-user-name>
+#	SF_PM_DOC_USER=<sourceforge-login-name>
 #	SF_PM_DOC_USER_NAME="FirstName LastName"
 #	SF_PM_DOC_EMAIL=<email address>
 #	SF_PM_DOC_LOC=~/cvs-projects/pm-doc/doc/tips
