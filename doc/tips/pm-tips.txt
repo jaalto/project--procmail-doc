@@ -406,7 +406,7 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.9 2002/07/11 16:14:56 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.10 2002/07/14 06:29:20 jaalto Exp $
         .$Keywords: procmail, sendmail, formail, mail, UBE, UCE, spam, filter $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$Contactid: jari.aalto@poboxes.com $
@@ -516,12 +516,13 @@ Table of contents
         o   1998-10-28 Richard Kabel  <rkabel@sequent.com> sent massive patch
             to correct language and provided excellent improvement comments.
             Thank you Guido for spending the time with it.
-        o   1998 Era Eriksson proof read the v1.12 and sent numerous corrections.
-        o   Karl E. Vogel <vogelke@c17mis.region2.wpafb.af.mil>
-            sent numerous new anti-spam links to be added to the document.
-        o   1998 John Gianni <jjg@cadence.com> send some nice recipes: one is now
-            in the procmail module list and the other ideas I have added to
-            this tips file.
+        o   1998 Era Eriksson proof read the v1.12 and sent numerous
+            corrections.
+        o   Karl E. Vogel <vogelke@c17mis.region2.wpafb.af.mil> sent
+            numerous new anti-spam links to be added to the document.
+        o   1998 John Gianni <jjg@cadence.com> send some nice recipes:
+            one is now in the procmail module list and the other ideas
+            I have added to this tips file.
         o   1998 Tim Potter <tpot@zip.com.au> had a spare moment with v1.27 and
             sent lot of spelling corrections. Thank you.
 
@@ -1279,10 +1280,10 @@ Table of contents
         possible, but there are no guarantees that it will work for anyone
         else.
 
-       "Procmail include file for bouncing spam."
-        2002-07-01 Requires sendmail with plussed users. Code by
-        Aaron Burnham <amb+m2@cs.mu.OZ.AU>
+       "Nonplussed Spambouncer"
         http://www.cs.mu.OZ.AU/~amb/
+        ...Procmail include file for bouncing spam. Requires sendmail with
+        plussed users.
 
 3.0 Dry run testing
 
@@ -5688,7 +5689,7 @@ Table of contents
         sysadm to activate the plus addressing. Procmail gets `bar' in `$1'
         automatically.
 
-        http://www.FAQs.org/FAQs/mail/addressing/
+        http://www.faqs.org/faqs/mail/addressing/
 
         [Bennett Todd <bet@mordor.net>] The PLUS feature has also been
         Implemented in *qmail* and *Postfix* (nee VMailer). By default
@@ -8083,7 +8084,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.9 2002/07/11 16:14:56 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.10 2002/07/14 06:29:20 jaalto Exp $
             #
             #   File id
             #
@@ -12114,7 +12115,7 @@ Table of contents
         a lot more about that than I do (and way, way more than I could
         tell you without making mistakes).
 
-        [1998-11-11 Gnus-L Karl Kleinpaste <karl@jprc.com>] With regard to
+        [1998-11-11 Gnus-L Karl Kleinpaste] With regard to
         the standards for Return-Path, RFC822 observes that it should be a
         _route_ back to the originator, i.e., it should show relay hops;
         RFC1123 in turn says that failure notifications should be sent back
