@@ -2,8 +2,14 @@ Description
 
     Preface
 
+        $Id: README.txt,v 1.2 2001/08/09 17:26:07 jaalto Exp $
+
         This is README.txt which documents project pm-doc at
         http://pm-doc.sourceforge.net/
+
+    Page index.html
+
+        This is the main entry page of http://pm-doc.sourceforge.net/
 
     Directory tips/
 
