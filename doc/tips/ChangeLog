@@ -1,4 +1,157 @@
-2004-10-06 Wed  Jari Aalto  <jari dot aalto A T cante dt net>
+2004-12-28  Jari Aalto  <jari dot aalto A T cante dot net>
+
+	* pm-jaube-prg-spamprobe.rc (JA_UBE_SPAMPROBE_FORCE): 
+	Removed lockfile.
+
+2004-12-17  Jari Aalto  <jari dot aalto A T cante dot net>
+
+	* pm-janslookup.rc (JA_NSLOOKUP_CACHE): Added anchor ^ in
+	cache grep regexp. Use EGREP, not GREP. Tightened regexp.
+
+2004-12-16 Thu  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * Makefile: 1.2 CODEDIR changed to DATADIR.
+
+2004-12-15 Wed  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube-prg-spamassassin.rc: New module.
+
+        * pm-jaube-prg-bogofilter.rc: New module.
+
+        * pm-jaube-prg-annoyance-filter.rc: 1.3 
+	(JA_UBE_ANNOYANCE_SPAM_DB_OPT):
+        Fast dictonary option --fread is no longer the default.
+
+        * pm-javar.rc (RC_UBE_BOGOFILTER): New variable.
+
+        * pm-jaube-prg-runall.rc: 1.14 (spamasassin): Rmeoved
+        duplicate `JA_UBE_SPAMASSASSIN_PRG' variable test.
+        Added 100 character test for SA.
+        (bogofilter): Code removed and moved to separate file.
+        (spamassassin): Code removed and moved to separate file.
+
+        * pm-jaube-prg-bmf.rc (Rearrange headers): 1.20 Typo
+        in 'dummy' message: X-Spambmf => X-Spam-Bmf.
+
+2004-11-04 Thu  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jadaemon.rc: 2.9 (JA_DAEMON_SAVE). New user variable.
+        Save old subject. Suggested by 'Balu'.
+        (JA_DAEMON_REGEXP): Added missing newline. Fixed SF-pm-lib
+        bug 1046370.
+
+2004-10-27  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube-keywords.rc (subjectKeywordsOnly): Added missing
+        backslash after 'keywords'.
+        (keywords): Added missing backslash
+
+2004-10-24 Sun  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jasubject.rc: (top level) 2.6 Removed 'id' variable.
+        Removed 'NL' variables. Moved 'public' portion upward.
+        Removed extra empty lines.
+        (awk): Improved subject detection so that it can now take into
+        account long backets like in '[this is long bracket]'. Everything
+        up till 'bracket]' word is deleted. Bug reported by
+        Markus Hubig <mhubig A T web de>
+        (LINEBUF): Value is now saved and restored. Need bigger value.
+
+2004-10-21  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube-keywords.rc (keywords): More mutable
+        Cialis and Viagra traps added. 'size matters'
+        also improved. (like s|ze).
+
+2004-10-19  Jari Aalto <jari dot aalto A T cante dot net>
+
+        * pm-jaube-keywords.rc: Added missing (#)
+        to the 1st line.
+        (Marketing-SelectedBigLetterWords): Removed some
+        words that are likely to occur in email.
+        (JA_UBE_CAPS_OK): Variable is set to empty
+        string. This is now disabled by default,
+        because there are too many valid messages
+        with acronyms.
+
+2004-10-18  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        - In pm-jaube-* files ERROR variables are now
+          'killed', and not just set to empty strings.
+
+        * pm-jaube-keywords.rc
+        (jaubeKwdLinebufOld): New. Save value of
+        LINEBUG, increase it and restore it at the end.
+        (ERROR_STATUS): No longer contains word 'Good'.
+        Only word 'Bad' if ERROR is set. This avoids
+        calling formail. Only spam messages are tagged.
+        (keywords): Regexp
+        '(sav(ing|e)|buy|see|web)' was too lose (second word
+        had '?'), and matched legal dovuments. Made stricter.
+        (JA_UBE_KEYWORD_HEADER): simplified formail recipe.
+
+2004-10-17  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube-keywords.rc (end of file): Display
+        ERROR and ERROR_STATUS on exit by assigning value
+        to 'dummy'.
+        (JA_UBE_KEYWORD_HEADER): Improved formail call.
+        The header included 'Good  ' with two spaces
+        at the end. Removed.
+
+        * pm-jaube.rc
+        (doc::Return values) Added list of ERROR codes.
+        (regexpBody): Put virus regexp
+        variable definitions  inside recipe block, so that
+        no unnecessary messages are recorded to the log file.
+
+2004-10-16  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube.rc
+        (HeaderCharacters-Illegal): Missing '$'
+        from '${ERROR+:}'. Added.
+        (HeaderMimeCharset-Illegal): Moved
+        below the other header charset tests.
+        (BodyMimeCharset-Illegal):  Moved
+        below the other header charset tests.
+
+2004-10-15  Jari Aalto  <jari.aalto@poboxes.com>
+
+        * Makefile (exec_prefix): Change from /usr/share to
+        /usr/local/share, because 3rd party packages that are not
+        included with the OS, should install under /usr/local
+        by default.
+        (INSTALL_CODE_DIR): Renamed. Was PMDIR
+        (include common.mk): Moved definitions to separate file.
+
+2004-10-14  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube-keywords.rc (subjectKeywordsOnly): Added few more
+        keywords, like 'see.*this.*(web|site|page)' etc.
+        (HeaderMimeCharset-Illegal): All charcter set tests are
+        now run unconditionally, no matter if previous tests already
+        set ERROR e.g. to BodyAttachment-FileIllegalAdditional. The
+        charset error is simply appended to the previous error.
+
+        * pm-jaube.rc (regexpHeader): Added Virus message detection.
+        New rules: VirusHeader, VirusBody
+
+2004-10-07  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube.rc (Attachments): Moved rule to the top. They are more
+        important than the AddrInvalid-To
+
+        * pm-jalist.rc
+        (trigger): added words 'apps', like in mailing
+        list cygwin-apps.
+        (cc): Added cc_* variables to check message sent to mailing
+        list with CC header.
+
+2004-10-06  Jari Aalto  <jari dot aalto A T cante dot net>
+
+        * pm-jaube-prg-runall.rc (bsfilter): New. Now supported.
+
+        * pm-javar.rc (RC_UBE_BSFILTER): New.
 
         * pm-tips.txt
         - Document streamlined. Only more or less directly procmail related
