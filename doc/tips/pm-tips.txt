@@ -407,14 +407,14 @@ Table of contents
     1.1 General
 
         #T2HTML-AUTHOR Jari Aalto
-	#T2HTML-EMAIL jari.aalto@poboxes.com
+        #T2HTML-EMAIL jari.aalto@poboxes.com
         #T2HTML-TITLE Procmail Tips
         #T2HTML-OPTION --html-frame
         #T2HTML-OPTION --css-code-bg
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
-	#T2HTML-METADESCRIPTION Procmail documentation
+        #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.14 2002/08/13 01:29:01 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.15 2002/09/01 13:35:10 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -537,7 +537,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
-	    v2.13   2002-08-13  596  Removed old UBE pointers.
+            v2.13   2002-08-13  596  Removed old UBE pointers.
             v2.5    2002-02-01  608  Spelling checked with Emacs ispell
             v2.2    2002-01-28  608  URL links checked and updated
             v2.0    2001-08-09  608  http://pm-doc.sourceforge.net opened.
@@ -8091,12 +8091,12 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.14 2002/08/13 01:29:01 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.15 2002/09/01 13:35:10 jaalto Exp $
             #
             #   File id
             #
             #       .Copyright (C)  1997-98 Foo Bar
-            #       .$Contactid:    jari.aalto@poboxes.com $
+            #       .$Contactid:    jaalto@W2KPICASSO $
             #       .$Created:      YYYY-MM $
             #       .$keywords:     procmail [subroutine|recipe] whatItDoes $
             #
@@ -12629,26 +12629,7 @@ Table of contents
         IMHO, with procmail to do the pre-processing, and mush to do the
         post-processing, I have an unbeatable mail combination.
 
-    27.3 Usenet News related pointers
-
-        "Perl Get News (perl4)"
-         ftp://pittige-tijden.ml.org/pub/procmail/pgnews.gz
-
-    27.4 Code: Perl Extract procmail man pages from 3.11pre7.tar.gz
-
-        Contact: <jari.aalto@poboxes.com> for code.
-        Procmail-3.11pre7.tar.gz has some .man files that can't be used
-        right away. You have to run the whole make process before you can get
-        the ready man pages. However, this small perl script takes care of
-        only creating the man pages if that is the only thing you want to
-        grab from the tgz kit.
-
-        Be in the procmail tar.gz kit's "man" directory and run this script
-        with command below and the *.1 pages will appear in the directory.
-
-            % pm-man.pl *.man
-
-    27.5 Code: Sh remove matching lines from file
+    27.3 Code: Sh remove matching lines from file
 
         [era] The name "gred" is rather obscure if you don't know what
         "grep" stands for. Anyway, this is also really too specialized a
@@ -13057,33 +13038,8 @@ Table of contents
        "Spamcop - report bulk mail intrucions here"
         http://www.spamcop.net/
 
-       "Obtuse smtpd for UNIX"
-        http://www.obtuse.com/smtpd.html
-        Main (configurable) features:
-
-        o   deny unauthorized relay (no more relay rape!)
-        o   permit selective relay exceptions (e.g UUCP downstream)
-        o   regex() filtering [block those spamming dialins!]
-        o   deny access for no MX, no PTR, etc.
-        o   defeat % hack
-        o   support MAPS, ORBS, DUL, IMRSS, etc RBLs plus your local RBL
-        o   support exception list for domains for which you will accept mail
-        o   support selective tarpit'ing on refused connections
-        o   individually configurable rejection messages
-        o   precedence and override ordering
-        o   informative log summary scripts
-
        "Lot of good articles about spam"
         http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html
-
-        "(anti-spam Law) US Representative Chris Smith's statement on junk
-        e-mail"
-        http://www.sun.com/sunworldonline/swol-08-1997/swol-08-junkemail.html
-        ...considerable variation in the approaches at the federal level,
-        and state legislation varies widely as well. Professor David Sorkin
-        of John Marshall Law School, who summarized and provided links to
-        the major spam-related lawsuits noted above, also provides status
-        summaries and links to state and federal legislation
 
        "Select mail court cases -- Lots of them"
         http://www.jmls.edu/cyber/cases/spam.html
@@ -13114,6 +13070,11 @@ Table of contents
        "Get that spammer -- A VERY GOOD LINK"
         http://www.toppoint.de/~zoc/gspam.html
         ...All about Spam; traceroute, netabuse etc. Full of links and docs
+
+       "Spam Spade Tools -- Track down that spammer!"
+        Includes address digger, obfuscated URLs, reverse DNS, traceroute,
+        whois, rwhois, Dejanews author search, USPIS,
+        blackhole list check
 
        "Fight Spam on the Internet!"
         http://spam.abuse.net/
@@ -13246,7 +13207,7 @@ Table of contents
 
             ftp://ftp.gac.edu/pub/guenther/
 
-       "IBM's Secure Mailer -- open source"
+       "IBM's Secure Mailer: postfix - open source"
         http://www.postfix.org/
 
           [1998-12-15 PM-L Matthew McGehrin <matthew@reverse.net>] The
@@ -13283,49 +13244,7 @@ Table of contents
         http://freshmeat.net/projects/maildrop/
         ...Alternative to procmail
 
-       "Lua"
-        http://www.tecgraf.puc-rio.br/lua/ <lua@tecgraf.puc-rio.br>
-        [possible replacement for procmail language] ... *Lua* is a
-        programming language originally designed for extending
-        applications, but also frequently used as a general-purpose,
-        stand-alone language. Lua combines simple procedural syntax
-        (similar to Pascal) with powerful data description constructs based
-        on associative arrays and extensible semantics. Lua is dynamically
-        typed, interpreted from bytecodes, and has automatic memory
-        management with garbage collection, making it ideal for
-        configuration, scripting, and rapid prototyping.
-
-    29.6 Questionable UBE stop services
-
-       "IEMMC: Internet E-Mail Marketing Council Formed 1997-03"
-
-        The IEMMC was formed to provide an industry wide trade association
-        for the purpose of promoting responsible e-mail marketing, and to
-        establish an industry standard code of procedures and ethics which
-        will internally regulate and govern the commercial e-mail marketing
-        industry....Under this system, all e-mail of a commercial,
-        unsolicited nature must pass through a universal filtration system
-        which will block the sending of any and all commercial e-mail to the
-        address on the list. Bulk e-mailers will be required to join the
-        organization
-
-        Others have commented that:
-
-          ...IEMMC is a joke. you are probably not doing yourself any favors
-
-          ...Don't take that IEMMC seriously! Many people registered with
-          them and got as many or even more spam as before. After all,
-          Cyberpromo (the operator of IEMMC) knows that the registered
-          addresses will be valid for some time, so they can use and sell
-          this valuable list to other junk mailers.
-
-       "Spammer blacklist"
-        http://www.netchem.com/
-        ...<remove@netchem.com> Dear Sir/Madam, Your mail address may be on
-        many spammers' lists. We are compiling a *remove* list. Forward the
-        original junk to <list@netchem.com>
-
-    29.7 UBE related newsgroups or mailing lists
+    29.6 UBE related newsgroups or mailing lists
 
         alt.kill.spammers
         alt.hackers.malicous
@@ -13369,7 +13288,7 @@ Table of contents
         owner, the convention is the same as with all listserv lists. Just
         send e-mail to <spam-l-request@peach.ease.lsoft.com>
 
-    29.9 Software: adcomplain -- Perl junk mail report
+    29.7 Software: adcomplain -- Perl junk mail report
 
         <billmc@agora.rdrop.com>
         http://www.rdrop.com/users/billmc/adcomplain.html
@@ -13392,7 +13311,7 @@ Table of contents
           lists with strange Received-Headers also can present problems in
           tracing
 
-    29.10 Software: Ricochet -- Perl junk mail report
+    29.8 Software: Ricochet (Perl junk mail report)
 
         http://www.vipul.net/ricochet/
         <ricochet@vipul.net> Vipul Ved Prakash
@@ -13412,16 +13331,7 @@ Table of contents
         Detailed description of its workings can be found in the README
         file that comes with the package.
 
-    29.11 Software: yell -- perl
-
-        ftp://ftp.netcom.com/pub/bo/bobmacd/yell  (57k)
-        Bob MacDowell <bobmacd+cmhcmm032598@netcom.com>
-
-        yell - auto-responds to "spam" e-mail. Scans for site names, e-mail
-        addresses and Web site names and sends appropriate messages to
-        users, postmasters and Webmasters.
-
-    29.12 Software: RBL lookup tool -- C
+    29.9 Software: RBL lookup tool (C language)
 
         [1997-12-04 PM-L Edward S. Marshall <emarshal@logic.net>]
 
@@ -13555,7 +13465,7 @@ Table of contents
         this: you can compile sendmail -DTCPWRAPPERS and let it run as a
         daemon
 
-    29.13 Software: mapSoN
+    29.10 Software: mapSoN
 
           Note: You can do exactly the same as below with procmail with one
           of the listed procmail modules: pm-jacookie.rc. See the code.
@@ -13609,7 +13519,7 @@ Table of contents
         either delete the spooled mails, or send them to a special folder,
         or whatever you prefer.
 
-    29.14 Software: spamgard
+    29.11 Software: spamgard
 
         [similar to MapSon]
         ftp://ftp.netcom.com/pub/wj/wje/release/sg-howto
@@ -13626,7 +13536,7 @@ Table of contents
         be on, there are provisions for accepting all mail from a set of
         mailing lists that you specify.
 
-    29.15 Software: Spam Be Gone
+    29.12 Software: Spam Be Gone
 
        "Spam Be Gone"
         http://www.internz.com/SpamBeGone/ (open source)
@@ -13674,11 +13584,11 @@ Table of contents
           (X-Advertisement comes to mind) that would be assests for killing
           SPAM.
 
-    29.16 Software: TinyGnus - Emacs Gnus plug-in
+    29.13 Software: TinyGnus - Emacs Gnus plug-in
 
         ._Availability:_ <jari.aalto@poboxes.com>
         .http://tiny-tools.sourceforge.net/
-        ._Platform:_ win32 and Unix Emacs versions.
+        ._Platform:_ Win32 and Unix Emacs versions.
 
         *TinyGnus* Is Emacs lisp extension package that integrates directly
         to Gnus mail/newsreaders. It includes simple but efective UBE
@@ -13694,7 +13604,5 @@ Table of contents
         o   Hotkey C-c ' u examines messages' headers and runs `nslookup(1)'
             for each Received header to determine *abuse* *spam* and
             *postmaster* addresses where to send the complaint.
-
-
 
 End

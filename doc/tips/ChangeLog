@@ -1,124 +1,138 @@
+2002-09-01 Sun  Jari Aalto  <jari.aalto@poboxes.com>
+
+        * pm-tips.txt
+        (27.4 Code: Perl Extract procmail man pages from 3.11pre7.tar.gz):
+        Obsolete, removed.
+        (27.3 Usenet News related pointers): 2.14 Obsolete. Removed.
+        (29.5 Misc pointers): 2.14 Removed `Lua', too exotic language.
+        (29.6 Questionable UBE stop services): 2.14 Topic removed.
+        (29.11 Software: yell -- perl): 2.14 Removed, old.
+        ftp://ftp.netcom.com/pub/bo/bobmacd/yell  (57k)
+        Bob MacDowell <bobmacd+cmhcmm032598@netcom.com>
+        (29.1 NoCEM, CAUCE and others): 2.14 Removed (Obtuse smtpd for
+        UNIX), not generally useful http://www.obtuse.com/smtpd.html
+
 2002-08-13  Jari Aalto  <jari.aalto@poboxes.com>
 
-	* pm-tips.txt: Added New #T2HTML directives.
+        * pm-tips.txt: Added New #T2HTML directives.
 
 2002-07-24  Jari Aalto  <jari.aalto@poboxes.com>
 
-	* pm-index.txt (Introduction): Bullets rewritten.
-	Oleg Danilov <dov@sparc.spb.su> reported error in url
-	www.prcomail.org => www.procmail.org
+        * pm-index.txt (Introduction): Bullets rewritten.
+        Oleg Danilov <dov@sparc.spb.su> reported error in url
+        www.prcomail.org => www.procmail.org
 
 2002-07-11  Jari Aalto  <jari.aalto@poboxes.com>
 
-	* pm-tips.txt (1.3 Abbreviations and thanks): FAQ-L
-	Moved to http://www.faqs.org/faq-maintainers
-	(21.3 MH sites): Removed.
+        * pm-tips.txt (1.3 Abbreviations and thanks): FAQ-L
+        Moved to http://www.faqs.org/faq-maintainers
+        (21.3 MH sites): Removed.
 
 2002-03-30  Jari Aalto  <jari.aalto@poboxes.com>
 
-	* pm-tips.txt (29.15 Software: Spam Be Gone): Updated information.
-	Now this is open source and now binary any more.
+        * pm-tips.txt (29.15 Software: Spam Be Gone): Updated information.
+        Now this is open source and now binary any more.
 
 2002-01-25 Fri  Jari Aalto  <jari.aalto@poboxes.com>
 
-	* pm-tips.txt (1.1 General): 2.3 Added <> arounf `mhonarc' URL.
-	(1.1 General): 2.3 Removed `http://ftpsearch.ntnu.no/' which no
-	longer responds.
+        * pm-tips.txt (1.1 General): 2.3 Added <> arounf `mhonarc' URL.
+        (1.1 General): 2.3 Removed `http://ftpsearch.ntnu.no/' which no
+        longer responds.
 
-	* pm-index.txt (Jari's Procmail resources): 1.1 Updated
-	Tiny Tools project link.
-	(Jari's Procmail resources): 1.1 Misspelled procmail.org site.
+        * pm-index.txt (Jari's Procmail resources): 1.1 Updated
+        Tiny Tools project link.
+        (Jari's Procmail resources): 1.1 Misspelled procmail.org site.
 
 2002-01-01 Tue  Jari Aalto  <jari.aalto@poboxes.com>
 
-	* pm-tips.txt (Where is procmail developed): 2.1 Removed
-	invalid link http://www.gac.edu/~guenther/procmail/.
-	(Procmail resources): 'Catherine Hampton's Getting Started With Procmail'
-	is no longer available. Removed.
-	(Procmail code to filter UBE): Spambouncer URL updated.
-	(Unixworld - setting up procmail): URL is no longer available. Removed.
-	(Unix manpages): URL is no longer available. Removed.
-	(Eli on Procmail): URL corrected. location chnaged
-	(Alan Stebbens): URL link to procmail modules is no longer available.
-	Adde new email address, but don't know if it's valid.
-	(2.5.14 File Servers): send-file.rc is no longer available. Removed.
-	(2.6 Procmail code to filter UBE): http://www.telebyte.com/stopspamr is
-	no longer available. Removed.
-	(2.6 Procmail code to filter UBE): spamdunk URL updated.
-	(17.0 Mailing list server): 2.1 'Meng on procmail' URL is no longer
-	available. Removed.
-	(18.11 Qmail: how to make it work with procmail): URL no longer
-	available. Removed text 'If you are trying to get procmail to deliver to
-	maildir format as well, take a look at rhi for patches:
-	http://www.qcc.sk.ca/~bguenter/distrib/procmail-maildir/
-	(20.2 Other mailing list software): 2.1 URL no longer available.
-	Removed http://www.htp.org/qmail/ezfaq/FAQ.html
-	(20.2 Other mailing list software): Other MLM software - Listar URL
-	updated
-	(20.2 Other mailing list software): Other MLM software - petidomo
-	URL updated
-	(20.2 Other mailing list software): Other MLM software - mailagent
-	URL no longer available. Removed
-	http://www.foretune.co.jp/people/shigeya/mailagent/
-	(20.2 Other mailing list software): Other MLM software - Berolist
-	URL updated.
-	(20.3 SmartList code): URL not responding.
-	Removed http://www.mindwell.com/smartlist/
-	(20.3 SmartList code): Auto respond to 'help - URL no longer available. Removed
-	http://www2.inow.com/~conover/ rel.tar.zip
-	(21.2 Elm and pgp support): updated elm URL.
-	(21.3 MH sites): Removed ftp://ftp.math.gatech.edu/pub/nmh/nmh.tar.gz
-	(23.1 Gnus pointers): Removed 'Gnus Hypertext search archive'.
-	(24.6 RFC and using MIME in usenet newsgroups): Link removed
-	http://www.ietf.org/internet-drafts/draft-ietf-usefor-article-01.txt
-	(24.7 Some RFC Pointers): Removed http://ds.internic.net/rfc/
-	(27.1 Misc mail related pointers): Proclog URL updated.
-	(25.1 To find out more about mail): The Unix MBOX, Berkeley, format -
-	removed URL link http://systems.binghamton.edu/Pine/low-level.html
-	(25.1 To find out more about mail): Listspec -- Removed
-	http://www.ietf.org/internet-drafts/draft-chandhok-listid-03.txt
-	(27.2 Expire mail pointers): Perl mail expire - Removed
-	Phil Male <phil@compnews.co.uk>
-	http://www.oasis.leo.org/perl/scripts/net/mail/expire_mail.dsc.html
-	(29.1 NoCEM, CAUCE and others): Dougal's NoCeM-E - Removed.
-	http://advicom.net/~dougal/antispam/
-	(29.1 NoCEM, CAUCE and others): Anti-Spam Directory of
-	Information and Resources - Removed.
-	(29.1 NoCEM, CAUCE and others): Ethical Marketing Using FREE
-	Resources - Removed.
-	http://www.ao.net/waytosuccess/index.html
-	(29.1 NoCEM, CAUCE and others):
-	FREE - The Forum for Responsible and Ethical E-mail - Removed.
-	http://www.spamfree.org/
-	(29.2 General Filtering pages (more than procmail):
-	Nancy McGough <nm@noadsplease.ii.com> - Mail Filtering FAQ - Removed
-	http://ssil.uoregon.edu/~trenton/autopage/page7547.html
-	(29.3 Junk mail and spam): Get that spammer -- A VERY GOOD LINK -
-	updated.
-	(29.3 Junk mail and spam): Dealing with Junk Email - updated.
-	(29.3 Junk mail and spam): How to fight back - Removed
-	http://www.oeonline.com/~edog/spamstop.html
-	(29.3 Junk mail and spam): Spam -- stop that! - Removed.
-	http://com.primenet.com/spamking/buyerbeware.html
-	(29.3 Junk mail and spam): The Campaign to stop junk email web site
-	- Removed http://www.mcs.com/~jcr/junkmail.html
-	(29.3 Junk mail and spam): news.admin.net-abuse.* Homepage - updated.
-	(29.3 Junk mail and spam): The automated spamhandler beta information heap
-	- Removed http://www.halcyon.com/natew/
-	(29.3 Junk mail and spam): maildrop - updated.
-	(29.3 Junk mail and spam): No Junk E-Mail database - Removed.
-	(29.12 Software: ifile - Perl): Removed.
-	http://www.cs.cmu.edu/~jr6b/ifile/  Jason Daniel Rennie <jr6b@andrew.cmu.edu>
-	(29.17 Software: ClearMail): 2.1 Removed
-	http://www.clearmail.com/ Scott R Carter <scarter@world.std.com>
+        * pm-tips.txt (Where is procmail developed): 2.1 Removed
+        invalid link http://www.gac.edu/~guenther/procmail/.
+        (Procmail resources): 'Catherine Hampton's Getting Started With Procmail'
+        is no longer available. Removed.
+        (Procmail code to filter UBE): Spambouncer URL updated.
+        (Unixworld - setting up procmail): URL is no longer available. Removed.
+        (Unix manpages): URL is no longer available. Removed.
+        (Eli on Procmail): URL corrected. location chnaged
+        (Alan Stebbens): URL link to procmail modules is no longer available.
+        Adde new email address, but don't know if it's valid.
+        (2.5.14 File Servers): send-file.rc is no longer available. Removed.
+        (2.6 Procmail code to filter UBE): http://www.telebyte.com/stopspamr is
+        no longer available. Removed.
+        (2.6 Procmail code to filter UBE): spamdunk URL updated.
+        (17.0 Mailing list server): 2.1 'Meng on procmail' URL is no longer
+        available. Removed.
+        (18.11 Qmail: how to make it work with procmail): URL no longer
+        available. Removed text 'If you are trying to get procmail to deliver to
+        maildir format as well, take a look at rhi for patches:
+        http://www.qcc.sk.ca/~bguenter/distrib/procmail-maildir/
+        (20.2 Other mailing list software): 2.1 URL no longer available.
+        Removed http://www.htp.org/qmail/ezfaq/FAQ.html
+        (20.2 Other mailing list software): Other MLM software - Listar URL
+        updated
+        (20.2 Other mailing list software): Other MLM software - petidomo
+        URL updated
+        (20.2 Other mailing list software): Other MLM software - mailagent
+        URL no longer available. Removed
+        http://www.foretune.co.jp/people/shigeya/mailagent/
+        (20.2 Other mailing list software): Other MLM software - Berolist
+        URL updated.
+        (20.3 SmartList code): URL not responding.
+        Removed http://www.mindwell.com/smartlist/
+        (20.3 SmartList code): Auto respond to 'help - URL no longer available. Removed
+        http://www2.inow.com/~conover/ rel.tar.zip
+        (21.2 Elm and pgp support): updated elm URL.
+        (21.3 MH sites): Removed ftp://ftp.math.gatech.edu/pub/nmh/nmh.tar.gz
+        (23.1 Gnus pointers): Removed 'Gnus Hypertext search archive'.
+        (24.6 RFC and using MIME in usenet newsgroups): Link removed
+        http://www.ietf.org/internet-drafts/draft-ietf-usefor-article-01.txt
+        (24.7 Some RFC Pointers): Removed http://ds.internic.net/rfc/
+        (27.1 Misc mail related pointers): Proclog URL updated.
+        (25.1 To find out more about mail): The Unix MBOX, Berkeley, format -
+        removed URL link http://systems.binghamton.edu/Pine/low-level.html
+        (25.1 To find out more about mail): Listspec -- Removed
+        http://www.ietf.org/internet-drafts/draft-chandhok-listid-03.txt
+        (27.2 Expire mail pointers): Perl mail expire - Removed
+        Phil Male <phil@compnews.co.uk>
+        http://www.oasis.leo.org/perl/scripts/net/mail/expire_mail.dsc.html
+        (29.1 NoCEM, CAUCE and others): Dougal's NoCeM-E - Removed.
+        http://advicom.net/~dougal/antispam/
+        (29.1 NoCEM, CAUCE and others): Anti-Spam Directory of
+        Information and Resources - Removed.
+        (29.1 NoCEM, CAUCE and others): Ethical Marketing Using FREE
+        Resources - Removed.
+        http://www.ao.net/waytosuccess/index.html
+        (29.1 NoCEM, CAUCE and others):
+        FREE - The Forum for Responsible and Ethical E-mail - Removed.
+        http://www.spamfree.org/
+        (29.2 General Filtering pages (more than procmail):
+        Nancy McGough <nm@noadsplease.ii.com> - Mail Filtering FAQ - Removed
+        http://ssil.uoregon.edu/~trenton/autopage/page7547.html
+        (29.3 Junk mail and spam): Get that spammer -- A VERY GOOD LINK -
+        updated.
+        (29.3 Junk mail and spam): Dealing with Junk Email - updated.
+        (29.3 Junk mail and spam): How to fight back - Removed
+        http://www.oeonline.com/~edog/spamstop.html
+        (29.3 Junk mail and spam): Spam -- stop that! - Removed.
+        http://com.primenet.com/spamking/buyerbeware.html
+        (29.3 Junk mail and spam): The Campaign to stop junk email web site
+        - Removed http://www.mcs.com/~jcr/junkmail.html
+        (29.3 Junk mail and spam): news.admin.net-abuse.* Homepage - updated.
+        (29.3 Junk mail and spam): The automated spamhandler beta information heap
+        - Removed http://www.halcyon.com/natew/
+        (29.3 Junk mail and spam): maildrop - updated.
+        (29.3 Junk mail and spam): No Junk E-Mail database - Removed.
+        (29.12 Software: ifile - Perl): Removed.
+        http://www.cs.cmu.edu/~jr6b/ifile/  Jason Daniel Rennie <jr6b@andrew.cmu.edu>
+        (29.17 Software: ClearMail): 2.1 Removed
+        http://www.clearmail.com/ Scott R Carter <scarter@world.std.com>
 
 2001-08-09 Thu  Jari Aalto  <jari.aalto@poboxes.com>
 
-	* pm-tips.txt
-	Changed all references from www.procmail.org/jari =>
-	pm-doc.sourceforge.net
-	(A big Thank you goes all these people:): 2.0
-	Rearranged entries so that the latest are put first.
-	(Here is version and file size log of the text file,
-	which gives you): 2.0 Rearranged entries so that the latest
-	are put first.
+        * pm-tips.txt
+        Changed all references from www.procmail.org/jari =>
+        pm-doc.sourceforge.net
+        (A big Thank you goes all these people:): 2.0
+        Rearranged entries so that the latest are put first.
+        (Here is version and file size log of the text file,
+        which gives you): 2.0 Rearranged entries so that the latest
+        are put first.
