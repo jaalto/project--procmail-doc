@@ -1,4 +1,8 @@
-2002-07-24  Jari Aalto  <jaalto@W2KPICASSO>
+2002-08-13  Jari Aalto  <jari.aalto@poboxes.com>
+
+	* pm-tips.txt: Added New #T2HTML directives.
+
+2002-07-24  Jari Aalto  <jari.aalto@poboxes.com>
 
 	* pm-index.txt (Introduction): Bullets rewritten.
 	Oleg Danilov <dov@sparc.spb.su> reported error in url
