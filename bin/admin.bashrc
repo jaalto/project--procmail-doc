@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.4 2002/01/01 11:26:04 jaalto Exp $
+#   $Id: admin.bashrc,v 1.5 2002/01/02 01:22:49 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -24,7 +24,7 @@
 #	SF_PM_DOC_USER=<sourceforge-login-name>
 #	SF_PM_DOC_USER_NAME="FirstName LastName"
 #	SF_PM_DOC_EMAIL=<email address>
-#	SF_PM_DOC_LOC=~/cvs-projects/pm-doc/doc/tips
+#	SF_PM_DOC_ROOT=~/cvs-projects/pm-doc/doc/tips
 #	SF_PM_DOC_HTML_TARGET=http://pm-doc.sourceforge.net/
 #
 #	source ~/cvs-projects/pm-doc/bin/admin.bashrc
@@ -42,27 +42,27 @@ function sfpmdocinit ()
     SF_PM_DOC_KWD=${SF_PM_DOC_KWD:-"procmail, sendmail, programming, faq"}
     SF_PM_DOC_DESC=${SF_PM_DOC_DESC:-"Procmail documentation"}
     SF_PM_DOC_TITLE=${SF_PM_DOC_TITLE:-"$SF_PM_DOC_DESC"}
-    SF_PM_DOC_LOC=${SF_PM_DOC_LOC:-""}
+    SF_PM_DOC_ROOT=${SF_PM_DOC_ROOT:-""}
 
-    if [ "$SF_PM_DOCS_USER" == "" ]; then
-       echo "$id: Identity \$SF_PM_DOCS_USER unknown."
+    if [ "$SF_PM_DOCS_USER" = "" ]; then
+       echo "$id: Identity SF_PM_DOCS_USER unknown."
     fi
 
-
-    if [ "$SF_PM_DOCS_USER_NAME" == "" ]; then
-       echo "$id: Identity \$SF_PM_DOCS_USER_NAME unknown."
+    if [ "$SF_PM_DOCS_USER_NAME" = "" ]; then
+       echo "$id: Identity SF_PM_DOCS_USER_NAME unknown."
     fi
 
-    if [ "$SF_PM_DOCS_EMAIL" == "" ]; then
-       echo "$id: Address \$SF_PM_DOCS_EMAIL unknown."
+    if [ "$SF_PM_DOCS_EMAIL" = "" ]; then
+       echo "$id: Address SF_PM_DOCS_EMAIL unknown."
     fi
 }
 
 
-function Date ()
+function sfpmdocdate ()
 {
-    date "+%Y.%M%d"
+    date "+%Y.%m%d"
 }
+
 
 function sfpmdocfilesize ()
 {
@@ -88,8 +88,8 @@ function sfpmdocscp ()
     local sfuser=$SF_PM_DOC_USER
     local sfproject=p/pm/pm-doc
 
-    if [ "$SF_PM_DOC_USER" == "" ]; then
-	echo "$id: identity \$SF_PM_LIB_USER unknown, can't scp files."
+    if [ "$SF_PM_DOC_USER" = "" ]; then
+	echo "$id: identity SF_PM_DOC_USER unknown, can't scp files."
 	return
     fi
 
@@ -115,7 +115,7 @@ function sfpmdochtml ()
 
     local input="$1"
 
-    if [ "$input" == "" ]; then
+    if [ "$input" = "" ]; then
         echo "$id: usage FILE [html-options]"
         return
     fi
@@ -138,15 +138,15 @@ function sfpmdochtml ()
 	  --meta-description "$SF_PM_DOC_DESC"                      \
 	  --name-uniq                                               \
 	  --Out                                                     \
-	  $input;
+	  $input
 
-	if [ -d "../../html/"  ]; then
-	    mv *.html ../../html/
-	elif [ -d "../html/"  ]; then
-	    mv *.html ../html/
-	else
-	    echo "Can't move generated HTML to ../../html/"
-	fi
+    if [ -d "../../html/"  ]; then
+	mv *.html ../../html/
+    elif [ -d "../html/"  ]; then
+	mv *.html ../html/
+    else
+	echo "Can't move generated HTML to ../../html/"
+    fi
 
 }
 
@@ -156,35 +156,104 @@ function sfpmdochtmlall ()
     #	If filesize if bigger than 15K, generate Framed HTML page.
 
     local id="sfpmdochtmlall"
-    local size
-    local opt
 
-    if [ "$SF_PM_DOC_LOC" = "" ]; then
-       echo "$id: Where is the project root? Define SF_PM_DOC_LOC"
-       return;
+    if [ "$SF_PM_DOC_ROOT" = "" ]; then
+       echo "$id: Where is the project root? Define SF_PM_DOC_ROOT"
+       return
     fi
 
 
     (
-	cd $SF_PM_DOC_LOC || return;
+	cd $SF_PM_DOC_ROOT/doc/tips || return
 
 	for file in *.txt;
 	do
-	     size=$(sfpmdocfilesize $file);
-	     if [ $size -gt 15000 ]; then
+	    local size=$(sfpmdocfilesize $file)
+	    local opt
+	    if [ $size -gt 15000 ]; then
 	       opt=--html-frame
-	     fi;
+	    fi
 
-	     sfpmdochtml $file "$opt"
+	    sfpmdochtml $file "$opt"
 
-	 done;
+	 done
     )
 
     echo "$id: done."
 }
 
 
-dummy=$(sfpmdocinit);			# Run initializer
+function sfpmdoc_release ()
+{
+    local id="sfpmdoc_release"
+
+    local dir=/tmp
+
+    if [ ! -d $dir ]; then
+	echo "$id: Can't make release. No directory [$dir]"
+	return
+    fi
+
+    if [ ! -d "$SF_PM_DOC_ROOT" ]; then
+	echo "$id: No SF_PM_DOC_ROOT [$SF_PM_DOC_ROOT]"
+	return
+    fi
+
+
+    local opt=-9
+    local cmd=gzip
+    local ext1=.tar
+    local ext2=.gz
+
+    local base=procmail-doc
+    local ver=$(sfpmdocdate)
+    local tar="$base-$ver$ext1"
+    local file="$base-$ver$ext1$ext2"
+
+    if [ -f $dir/$file ]; then
+	echo "$id: Removing old archive $dir/$file"
+	rm $dir/$file
+    fi
+
+
+    (
+
+	local todir=$base-$ver
+        local tmp=$dir/$todir
+
+	if [ -d $tmp ]; then
+	    echo "$id: Removing old archive directory $tmp"
+	    rm -rf $tmp
+	fi
+
+	cp -r $SF_PM_DOC_ROOT $dir/$todir
+
+	cd $dir
+
+	find $todir -type f                     \
+	    \( -name "*[#~]*"                   \
+	       -o -name ".*[#~]"                \
+	       -o -name ".#*"                   \
+	       -o -name "*elc"                  \
+	       -o -name "*tar"                  \
+	       -o -name "*gz"                   \
+	       -o -name "*bz2"                  \
+	       -o -name .cvsignore              \
+	    \) -prune                           \
+	    -o -type d \( -name CVS \) -prune   \
+	    -o -type f -print                   \
+	    | xargs tar cvf $dir/$tar
+
+	echo "$id: Running $cmd $opt $dir/$tar"
+
+	$cmd $opt $dir/$tar
+
+	echo "$id: Made release $dir/$file"
+	ls -l $dir/$file
+    )
+}
+
+dummy=$(sfpmdocinit)			# Run initializer
 
 export SF_PM_DOCS_HTML_TARGET
 export SF_PM_DOCS_KWD
