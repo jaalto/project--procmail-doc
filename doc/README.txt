@@ -2,10 +2,25 @@ Description
 
     Preface
 
-        $Id: README.txt,v 1.2 2001/08/09 17:26:07 jaalto Exp $
+        $Id: README.txt,v 1.3 2002/01/02 00:05:29 jaalto Exp $
 
         This is README.txt which documents project pm-doc at
         http://pm-doc.sourceforge.net/
+
+        Welcome to the Procmail documentation project. Procmail needs more
+        experienced users and people that help each others, so please
+        join in if you have any procmail code examples, tips, documentation
+        or compiling instructions to share. The ideal woudl be if you
+        joined the sourceforge and could access the CVs server directly,
+        but if you do not have time for that, please at least contact
+
+            jari.aalto@poboxes.com
+
+        And send any of your favourite procmail related material and it
+        will be integrated to the project. Even your sample procmailrc
+        would a great help for beginners.
+
+        Let's help people to get to know the wolrd of procmail.
 
     Page index.html
 
