@@ -408,7 +408,7 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.6 2002/02/03 23:37:51 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.7 2002/02/14 20:29:52 jaalto Exp $
         .$Keywords: procmail, sendmail, formail, mail, UBE, UCE, spam, filter $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$Contactid: jari.aalto@poboxes.com $
@@ -3943,7 +3943,7 @@ Table of contents
         [david] Here are several ways to get the entire header into a variable:
 
             HEADER = `$FORMAIL -X ""` # The space after the X is vital.
-            HEADER = `sed /^$/q` # also writable as   HEADER=`sed /./!q`
+            HEADER = `sed /^$/q`      # also writable as  HEADER=`sed /./!q`
 
             :0 h
             HEADER=|cat -
@@ -5128,14 +5128,14 @@ Table of contents
 
             account --> virtual-address --> Local-address
 
-        In this chain I was sending message from my University account to
-        my official work address, the *virtual-address* delivers
+        In this chain I was sending message from my one account to
+        another address, the *virtual-address* delivers
         the mail to right local domain. There is only one problem with this
-        picture. When I generated response from *Local-address* with
+        picture. When a response is generated from *Local-address* with
         `formail' `-rt', the generated address pointed back to
-        *virtual-address, which pointed back to *Local-address* of
-        course. A loop back was ready, I never got route traveling to
-        original address *account*
+        *virtual-address*, which pointed back to *Local-address* of
+        course. A loop back was ready, you could not get the route to travel to
+        original address: *account*
 
         What was happening here was that the mail server that handled the
         virtual-address, didn't *forward* the message, but instead
@@ -5152,7 +5152,7 @@ Table of contents
             Message-Id: <199710151904.WAA05050@account-domain>
             From: <account-domain>
 
-        And now when the formail -rt command was used, it picked up the
+        And now when the formail `-rt' command was used, it picked up the
         `Resent-From' added destination where the message should be returned.
         Surprising, but according to procmail, 100% correct. `Resent-From'
         has higher priority than `From'.
@@ -5160,7 +5160,7 @@ Table of contents
         The Resent-* headers are considered *informative*, and should never
         be used when automatically generating a response. The problem here
         is the middleman, it should not _resend_ a message, but rather
-        _forward_ it. So I put this into my .procmail to handle the broken
+        _forward_ it. So I put this into my .procmailrc to handle the broken
         middleman in our site.
 
             #   Remove that misleading Resent-From if it was added by our
@@ -8084,7 +8084,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.6 2002/02/03 23:37:51 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.7 2002/02/14 20:29:52 jaalto Exp $
             #
             #   File id
             #
