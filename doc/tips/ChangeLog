@@ -1,3 +1,9 @@
+2003-08-22 Fri  Jari Aalto  <jari.aalto@poboxes.com>
+
+        * pm-tips.txt (16.0 Includerc usage): 2.20 Wording corrections.
+        (20.0 Smartlist): 2.20 Removed. Not relevant any more.
+        THe MLM manager Mailman etc. are much better.
+
 2003-06-29 Sun  Jari Aalto  <jari.aalto@poboxes.com>
 
         * pm-tips.txt (26.2 Expire mail pointers): 2.19 Removed
