@@ -406,14 +406,16 @@ Table of contents
 
     1.1 General
 
+        #T2HTML-AUTHOR Jari Aalto
+	£T2HTML-EMAIL jari.aalto@poboxes.com
         #T2HTML-TITLE Procmail Tips
         #T2HTML-OPTION --html-frame
         #T2HTML-OPTION --css-code-bg
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
+	#T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.12 2002/08/13 01:14:31 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.13 2002/08/13 01:19:27 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
-        .$Contactid: jari.aalto@poboxes.com $
         .$UrlLinksLastChecked: 2002-07-11 $
 
         This is a Procmail Tips page: a collection of procmail recipes,
@@ -8088,12 +8090,12 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.12 2002/08/13 01:14:31 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.13 2002/08/13 01:19:27 jaalto Exp $
             #
             #   File id
             #
             #       .Copyright (C)  1997-98 Foo Bar
-            #       .$Contactid:    <foo@bar.com> $
+            #       .$Contactid:    jari.aalto@poboxes.com $
             #       .$Created:      YYYY-MM $
             #       .$keywords:     procmail [subroutine|recipe] whatItDoes $
             #

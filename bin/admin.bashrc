@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.8 2002/07/11 16:14:56 jaalto Exp $
+#   $Id: admin.bashrc,v 1.9 2002/08/13 01:22:47 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -25,7 +25,6 @@
 #	SF_PM_DOC_USER_NAME="FirstName LastName"
 #	SF_PM_DOC_EMAIL=<email address>
 #	SF_PM_DOC_ROOT=~/cvs-projects/pm-doc/doc/tips
-#	SF_PM_DOC_HTML_TARGET=http://pm-doc.sourceforge.net/
 #
 #	source ~/cvs-projects/pm-doc/bin/admin.bashrc
 #
@@ -36,12 +35,6 @@ function sfpmdocinit ()
 {
     local id="sfpmdocinit"
 
-    local url=http://pm-doc.sourceforge.net/
-
-    SF_PM_DOC_HTML_TARGET=${SF_PM_DOC_HTML_TARGET:-$url}
-    SF_PM_DOC_KWD=${SF_PM_DOC_KWD:-"procmail, sendmail, programming, faq"}
-    SF_PM_DOC_DESC=${SF_PM_DOC_DESC:-"Procmail documentation"}
-    SF_PM_DOC_TITLE=${SF_PM_DOC_TITLE:-"$SF_PM_DOC_DESC"}
     SF_PM_DOC_ROOT=${SF_PM_DOC_ROOT:-""}
 
     if [ "$SF_PM_DOCS_USER" = "" ]; then
@@ -130,11 +123,7 @@ function sfpmdochtml ()
 
     perl -S t2html.pl                                               \
 	  $opt                                                      \
-	  --title  "$SF_PM_DOC_TITLE"                               \
-	  --author "$SF_PM_DOC_USER_NAME"                           \
-	  --email  "$SF_PM_DOC_EMAIL"                               \
-	  --meta-keywords "$SF_PM_DOC_KWD"                          \
-	  --meta-description "$SF_PM_DOC_DESC"                      \
+	  --css-code-bg						    \
 	  --Out                                                     \
 	  $input
 
@@ -165,17 +154,10 @@ function sfpmdochtmlall ()
     (
 	cd $SF_PM_DOC_ROOT/doc/tips || return
 
-	for file in *.txt;
+	for file in [a-z]*.txt;
 	do
-	    local size=$(sfpmdocfilesize $file)
-	    local opt
-	    if [ $size -gt 15000 ]; then
-	       opt=--html-frame
-	    fi
-
 	    sfpmdochtml $file "$opt"
-
-	 done
+	done
     )
 
     echo "$id: done."
@@ -254,10 +236,7 @@ function sfpmdoc_release ()
 
 dummy=$(sfpmdocinit)			# Run initializer
 
-export SF_PM_DOCS_HTML_TARGET
-export SF_PM_DOCS_KWD
-export SF_PM_DOCS_DESC
-export SF_PM_DOCS_TITLE
+
 export SF_PM_DOCS_ROOT
 
 
