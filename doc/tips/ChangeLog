@@ -1,3 +1,20 @@
+2003-06-29 Sun  Jari Aalto  <jari.aalto@poboxes.com>
+
+        * pm-tips.txt (26.2 Expire mail pointers): 2.19 Removed
+        whole topic. This is too old.
+        (26.3 Code: Sh remove matching lines from file): 2.19 Removed.
+        Too old to be useful.
+
+2003-06-07 Sat  Jari Aalto  <jari.aalto@poboxes.com>
+
+        (21.0 Additional procmail or MUA software): 2.19 Section Removed.
+
+2003-06-02 Mon  Jari Aalto  <jari.aalto@poboxes.com>
+
+        * pm-tips.txt (22.0 Additional procmail software for Emacs):
+        2.19 Removed obsolete `live-mode.el'. Emacs comes now standard
+        with `M-x global-autorevert-mode'
+
 2003-05-17 Sat  Jari Aalto  <jari.aalto@poboxes.com>
 
         * pm-tips.txt (2.6 Procmail code to filter UBE): 2.18
