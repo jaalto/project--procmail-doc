@@ -406,7 +406,7 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.10 2002/07/14 06:29:20 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.11 2002/07/26 00:57:55 jaalto Exp $
         .$Keywords: procmail, sendmail, formail, mail, UBE, UCE, spam, filter $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$Contactid: jari.aalto@poboxes.com $
@@ -8084,7 +8084,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.10 2002/07/14 06:29:20 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.11 2002/07/26 00:57:55 jaalto Exp $
             #
             #   File id
             #
@@ -13022,7 +13022,7 @@ Table of contents
 
     29.1 NoCEM, CAUCE and others
 
-       "The wAr of spam -- pointers to reseurces"
+       "The war of spam -- pointers to reseurces"
         http://spam.gunters.org/links.html
 
        "NoCEM"
@@ -13039,6 +13039,13 @@ Table of contents
         formed a coalition whose purpose is to amend 47 USC 227, the
         section of U.S. law that bans "junk faxing", so that it will cover
         electronic mail as well.
+
+       "SpamCon Foundation"
+        http://www.spamcon.org/
+        The SpamCon Foundation protects email as a
+        viable communication and commerce medium by supporting measures to
+        reduce the amount of unsolicited email that crosses private
+        networks, while ensuring that valid email reaches its destination.
 
        "Spamcop - report bulk mail intrucions here"
         http://www.spamcop.net/
