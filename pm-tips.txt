@@ -222,7 +222,7 @@ Table of contents
             15.18 Kill: (un)subscribe messages
             15.19 Time: Once a day cron-like job
             15.20 Time: Running a recipe at a given time
-            15.21 Time: Triggering email and using cron
+            15.21 Time: Triggering mail and using cron
             15.22 Decoding: Uudecode
             15.23 Decoding: MIME
             15.24 How to send commands in the message's body
@@ -348,14 +348,14 @@ Table of contents
         26.0 RFC, Request for comments
             26.1 RFCs and their jurisdiction (munged Addresses)
             26.2 Comments about addresses munging
-            26.3 RFC and valid email address characters
+            26.3 RFC and valid mail address characters
             26.4 RFC and login-name@fdqn
             26.5 RFCs and message's signature
             26.6 RFC and using MIME in usenet newsgroups
             26.7 Some RFC Pointers
 
         27.0 Introduction to E-mail Headers
-            27.1 To find out more about email (Resources)
+            27.1 To find out more about mail (Resources)
             27.2 Lecture by Alan Stebbens
             27.3 Applied to received messages
             27.4 Bcc lecture by Alan Stebbens
@@ -377,7 +377,7 @@ Table of contents
             28.13 Moral about CC copies in usenet
 
         29.0 Other interesting code
-            29.1 Misc email related pointers
+            29.1 Misc mail related pointers
             29.2 Expire mail pointers
             29.3 Usenet News related pointers
             29.4 Code: Perl Extract procmail man pages from 3.11pre7.tar.gz
@@ -387,52 +387,66 @@ Table of contents
 
     1.1 General
 
-        .@(#) $Id: pm-tips.txt,v 1.1 2000/08/25 13:20:47 jaalto Exp $
+        .@(#) $Id: pm-tips.txt,v 1.2 2000/09/03 18:11:28 jaalto Exp $
         .$Keywords: procmail sendmail formail mail UBE UCE spam filter $
         .$URL: http://www.procmail.org/jari/ $
-        .$Contactid: <jari.aalto@poboxes.com> $
+        .$Contactid: jari.aalto@poboxes.com $
         .$FileServer: send mail to Contactid with subject "send help" $
         .$UrlLinksLastChecked: 1999-04-30 $
 
-        .@(#) This is a procmail tips page: a collection of procmail recipes,
-        .@(#) instructions, howtos. The document also contains URL pointers to
-        .@(#) the procmail mailing list and sites that fight against Internet
-        .@(#) UBE. You will also find many other interesting subjects that
-        .@(#) discuss about internet email: headers, mime and RFCs. There is
-        .@(#) also lot of room dedicated to Emacs and Gnus, simply because
-        .@(#) those are the best tools you find from Unix to deal with your
-        .@(#) mail and news reading. And I happen to know Emacs quite well.
+        .@(#) This is a procmail tips page: a collection of procmail
+        .@(#) recipes, instructions, howtos. The document also contains URL
+        .@(#) pointers to the procmail mailing list and sites that fight
+        .@(#) against Internet UBE. Procmail is powerful mail handling tool
+        .@(#) and a lot of space here has been devoted to discuss about UBE
+        .@(#) (aka Spam) and its essence. You will also find many other
+        .@(#) interesting subjects that discuss about internet mail in
+        .@(#) general: mail headers, MIME and RFCs. Another part of this
+        .@(#) document is dedicated to Emacs and Emacs plug-in package
+        .@(#) Gnus.el, simply because Emacs is the best tools you can use
+        .@(#) to deal with your mail and news reading. Nowadays Emacs
+        .@(#) is also available in Windows platform as well. This is not to
+        .@(#) say that Existing Unix elm(1), mutt(1) or pine(1), slrn(1)
+        .@(#) mail/news programs are bad, they are just limited in power
+        .@(#) compared to Emacs and usually tied to Unix platform. Finally, to
+        .@(#) your blessing or curse (*smile*) the author happens to know
+        .@(#) Emacs quite well.
 
         .@(#) The tips are compiled from the procmail discussion list,
         .@(#) from comp.mail.misc and from the author's own experiences with
         .@(#) procmail.
 
-        This document does not intend to teach you the basics of procmail;
+        This document does not intend to teach you the basics of procmail,
         instead you have to be familiar with the procmail man pages
-        already. You may want to read *Nancy's* and *Era's* procmail faq
-        pages before this page. Especially Era's link page contains an
-        excellent collection of useful procmail links and pointers to unix
-        programs that deal with email (eg. Perl *MHonArc* Email hyperarchiver
-        at http://www.oac.uci.edu/indiv/ehood/mhonarc.html). If you find
+        already. (Manual pages exists primarily on Unix/Linux platform, If
+        You're using Windows operating system, see Cygwin at
+        http://sources.redhat.com/cygwin)
+
+        You may want to read *Nancy's* and *Era's* procmail faq pages
+        before this page. Especially Era's link page contains an excellent
+        collection of useful procmail links and pointers to unix programs
+        that deal with mail (e.g Perl *MHonArc* Email hyperarchiver at
+        http://www.oac.uci.edu/indiv/ehood/mhonarc.html). If you find
         errors or things to improve in this document, please go ahead and
-        send mail to [jari].
+        send mail to this document's [maintainer].
 
-        Author's homepage is behind these redirections links. Please keep these
-        in your bookmark list, not the absolute addresses, because the sutes may
-        move. These link should point always to the correct location:
+        Author's homepage is behind these redirections links. Please keep
+        these in your bookmark list, not the absolute addresses, because
+        the underlying sites may move at any time. These links should point
+        always to the correct location:
 
-            http://poboxes.com/jari.aalto/  eg. homepage.html
+            http://poboxes.com/jari.aalto/  e.g homepage.html
             http://home.eu.org/~jari/
 
-        If you want to have automatic notification whenever this page changes,
-        please visit the link below. To get nicely formatted netmind messages,
-        see procmail module `pm-janetmind.rc'.
+        If you want to have automatic notification whenever any page
+        changes, visit a free service link below. To get nicely formatted
+        netmind messages, see procmail module `pm-janetmind.rc'.
 
             http://minder.netmind.com/
 
         If a mentioned URL is not alive, you may still be able to
         successfully find it using the ftp search located at
-        http://ftpsearch.ntnu.no/
+        http://ftpsearch.ntnu.no/ or WWW search such as http://www.google.com/
 
     1.2 What is Procmail?
 
@@ -459,22 +473,23 @@ Table of contents
         lack of time he nominated Philip Guenther to the head of Procmail
         development.
 
-        .[aaron]    Aaron Schrab        <aaron+procmail@schrab.com>
-        .[alan]     Alan K. Stebbens    <Alan.Stebbens@software.com>
-        .[dan]      Daniel Smith        <J.Daniel.Smith@WriteMe.com>
-        .[david]    David W. Tamkin     <dattier@mcs.net>
-        .[ed]       Edward J. Sabol     <sabol@alderaan.gsfc.nasa.gov>
-        .[elijah]   Eli the Bearded     <process@qz.little-neck.ny.us>
-        .[hal]      Hal Wine            <hal@dtor.com>
-        .[jari]     Jari Aalto          <jari.aalto@poboxes.com>
-        .[philip]   Philip Guenther     <guenther@gac.edu>
-        .[richard]  Richard Kabel       <rkabel@sequent.com>
-        .[sean]     Sean B. Straw       <PSE-L@mail.professional.org>
-        .[timothy]  Timothy J Luoma     <luomat+procmail@luomat.peak.org>
-        .[walter]   Walter Dnes         <waltdnes@interlog.com>
+        .[aaron]      Aaron Schrab        <aaron+procmail@schrab.com>
+        .[alan]       Alan K. Stebbens    <Alan.Stebbens@software.com>
+        .[dan]        Daniel Smith        <J.Daniel.Smith@WriteMe.com>
+        .[david]      David W. Tamkin     <dattier@mcs.net>
+        .[ed]         Edward J. Sabol     <sabol@alderaan.gsfc.nasa.gov>
+        .[elijah]     Eli the Bearded     <process@qz.little-neck.ny.us>
+        .[hal]        Hal Wine            <hal@dtor.com>
+        .[jari]       Jari Aalto          <jari.aalto@poboxes.com>
+        .[philip]     Philip Guenther     <guenther@gac.edu>
+        .[richard]    Richard Kabel       <rkabel@sequent.com>
+        .[sean]       Sean B. Straw       <PSE-L@mail.professional.org>
+        .[timothy]    Timothy J Luoma     <luomat+procmail@luomat.peak.org>
+        .[walter]     Walter Dnes         <waltdnes@interlog.com>
 
-        .[faq]      Procmail FAQ        j1era+pr@iki.fi
-        .[manual]   Quote from some procmail manual page
+        .[faq]        Procmail FAQ        j1era+pr@iki.fi
+        .[manual]     Quote from some procmail manual page
+        .[maintainer] As of 2000-09 the maintainer is [jari]
         .#broken-link  Link does not exist any more. A replacement is needed
 
         o   PM-L, Procmail mailing list
@@ -484,36 +499,39 @@ Table of contents
             http://www.qucis.queensu.ca/FAQs/FAQaid/
         o   DING-L, Emacs Gnus mail/newsreader mailing list (ding).
             http://www.gnus.org/
-        o   <<text>> Text has been rephrased or something was added which
-            does not exist in original message.
+        o   <<text>> Text has been rephrased or modified that
+            does not exist in the original source.
 
-        I also thank following people
+        Thank you for the following people:
 
-        o   Era Eriksson proof read the v1.12 and sent corrections.
+        o   1998 Era Eriksson proof read the v1.12 and sent numerous corrections.
         o   Karl E. Vogel <vogelke@c17mis.region2.wpafb.af.mil>
             sent numerous new anti-spam links to be added to the document.
-        o   John Gianni <jjg@cadence.com> send some nice recipes: one is now
+        o   1998 John Gianni <jjg@cadence.com> send some nice recipes: one is now
             in the procmail module list and the other ideas I have added to
             this tips file.
-        o   Tim Potter <tpot@zip.com.au> had a spare moment with v1.27 and
+        o   1998 Tim Potter <tpot@zip.com.au> had a spare moment with v1.27 and
             sent lot of spelling corrections. Thank you.
-        o   <Guido.Van.Hoecke@se.bel.alcatel.be> took 1.48 and sent a huge
+        o   1999 <Guido.Van.Hoecke@se.bel.alcatel.be> took 1.48 and sent a huge
             55k patch to correct many English language typos. Thank you
             very much Guido.
         o   1998-10-28 Richard Kabel  <rkabel@sequent.com> sent massive patch
             to correct language and provided excellent improvement comments.
+            Thank you Guido for spending the time with it.
         o   1999-01-08 Steven Alexander <stevena@teleport.com> thought that
             a small perl script would help me to fix spelling mistakes more
-            easily. The script has been much better correction program that
-            simple patches. Thank you.
+            easily. The script has been much better correction program than
+            that I myself. Thank you. (Being a perl programmer myself, I
+            should have thought thia laready *smile*)
         o   1999-06-16 Mark Seiden <mis@seiden.com> Did a enermous work to
-            proofread the v1.74. He sent a massive 105k with many editorial
-            corrections. My wholeheart thanks to you Mark.
+            proofread the v1.74. He sent a massive 105k wpatch ith many
+            editorial corrections. My wholeheart thank you to you, Mark.
 
     1.4 Version information
 
         Here is version and file size log of the text file, which gives you
-        some estimate how often you should update your copy.
+        some estimate how often you might update your copy and how the document
+        has evolved.
 
             v1.01   1997-09-13  46 (k)
             v1.05   1997-09-14  53
@@ -558,16 +576,35 @@ Table of contents
 
     1.5 Document layout and maintenance
 
-        This document is maintained in plain text format with Emacs and my
-        text formatting package *tinytf.el* (automatic TOC and indentation
-        control). Funny marks or indentation are in the text
-        version so that the Perl text-to-html
-        filter `t2html.pl' can be used. See more about this at:
-        http://poboxes.com/jari.aalto/t2html.html
+        In order to be able to maintain this documentation in every
+        possible platform, the base version of this document is kept in
+        text format, which is easily accessible and requires no special
+        editors or learning a markup language like LaTex, Texinfo, or Linux
+        DocBook SGML. Granted, that some other base formatis suitable for
+        multiple presentation output formats (like postscript, Emacs info),
+        but in today's world a simple TEXT and generated HTML hopefully
+        suffices to all needs. Also Perl and Emacs are cross-platform
+        tools, (Windows, Unnix ..) and easily installed, so getting work
+        is hopefully an obstacle.
 
-        Text version of this file was converted into HTML with command:
+        The tools to help maintaining this document include (not required!)
 
-            % perl5.004_04 t2html.pl                                        \
+        o   Emacs Editor and plug-in: Technical Text formatting package
+            *tinytf.el* (automatic TOC, indentation control, fontifying)
+        o   Perl language (See for Unixhttp://www.perl.com/ and for Win32
+            http://www.activestate.com) and text-to-html conversion program
+            *t2html.pl* at http://poboxes.com/jari.aalto/t2html.html or at
+            the nearest CPAN (Comprehensive Perl Archive Network)
+            http://cpan.perl.com/ => *scripts*. Funny marks or indentation
+            in the text version due the minimalistic amd natural, markup
+            language which the *t2html.pl* offers over the other tools.
+
+        Text version of this file was converted into HTML with following
+        command. You need Perl interpreter 5.4 or newer to call t2html.pl
+        script. The `--Out' option generates file pm-tips.html in current
+        directory.
+
+            % perl5.004_04 -S t2html.pl                                     \
               --html-frame                                                  \
               --title   "Procmail tips page"                                \
               --author  "Jari Aalto"                                        \
@@ -577,41 +614,39 @@ Table of contents
               --base     http://www.procmail.org/jari                       \
               --document http://www.procmail.org/jari                       \
               --url      http://www.procmail.org/jari                       \
-              --html-body LANG=en                                           \
+              --html-body "LANG=en"                                         \
               --Out                                                         \
               pm-tips.txt
 
-        Please also familiarise yourself with unix what(1) and GNU RCS
-        ident(1), if you have those commands in your system. It is
-        important that you mark interesting text to these tools so that
-        someone can get an overview of your supplied files
+        Please also familiarize yourself with unix what(1), at least part of
+        SunOS SCCS tag extraction tool, and GNU RCS ident(1), if you have those
+        commands in your system. It is important that you mark interesting
+        text to these tools so that someone can get an overview of your
+        supplied files
 
             % what  FILES       - Print @( # ) tags
             % ident FILES       - Print $ $ keywords
 
        Sending improvements
 
-        Because I'm not English speaking, I regret the bad language I may have
-        used in this document. If you have any time, 5-10 minutes to find some
-        spelling mistake or misuse of the English verbs, please go ahead and
-        send me a patch to correct the wording. The preferred way to send
-        corrections to this document is as diff(1) output. Here's how to make
-        corrections send them to me:
-
-        The diff option -u is only available in GNU diff, please try to
-        send the -u diff if possible. If you don't have -u option, use -c
-        switch.
+        Because I'm not English speaking, I regret the bad language I may
+        have used in this document. If you have any time, 5-10 minutes to
+        find some spelling mistake or misuse of the English verbs, please
+        go ahead and send me a patch to correct the wording. The preferred
+        way to send corrections to this document is as diff(1) output.
+        Here's how to make corrections send them to me. The diff option
+        `-u' is only available in GNU diff, please try to send the -u diff
+        if possible. If you don't have -u option, use `-c' switch:
 
             %   cp pm-tips.txt pm-tips.txt.orig
 
             ... load the pm-tips.txt to your text editor
             ... edit the file and save
-            ... Print the version number first
+            ... Generate the difference (a patch(1) compatible file)
 
-            %   what pm-tips.txt    > pm-tips.txt.diff  # see man what(1)
-            %   diff -u -bw pm-tips.txt.orig pm-tips.txt >> pm-tips.txt.diff
+            %   diff -bwu pm-tips.txt.orig pm-tips.txt >> pm-tips.txt.patch
 
-            ...Send content of pm-tips.txt.diff to document maintainer.
+            ...Send content of pm-tips.txt.diff by mail to document maintainer.
 
     1.6 About presented recipes
 
@@ -619,7 +654,7 @@ Table of contents
         archives. I have tried my best to keep the recipes as original as
         possible, but I have generalised the examples when necessary. If
         some recipe doesn't work as announced, please a) send note to
-        [jari] b) send email to procmail mailing list and ask how to
+        [maintainer] b) send mail to procmail mailing list and ask how to
         correct it. I will watch the procmail list and I'll replace any
         faulty recipe with correct one.
 
@@ -644,23 +679,26 @@ Table of contents
             var = "value"
 
         because the procmail code checker then won't warn you about missing
-        dollar-sign, which you might have very well forgotten. Emacs fon-lock,
-        a syntax highlighting package also displays double quoted string
-        in color.
+        dollar-sign, which you might have very well forgotten. Emacs
+        package font-lock.el, a syntax highlighting assistant also displays
+        double quoted string in color.
 
             #   If you do this...
 
             var = value
 
-            #   then it is in fact not clear what was intended:
+            #   then you might have madea typo, it is in fact not clear
+            #   what was intended:
 
             var = "value"   # Did you mean:  literal assignment?
             var = $value    # Did you mean: variable assignment?
 
-        Recipe flags are also _not_ stuck together, because for me the
-        visual distinction of `:0' and `flags' is a valuable one.
+        Recipe flags are also _not_ stuck together, because the visual
+        distinction of `:0' and `flags' is a valuable one. Reasoning for
+        which flags are kept together and in which order is explained later
+        in details.
 
-            [Erm, all stuck]        [I like this better]
+            [Erm, all stuck]        [This is visually more clear]
             :0ABDc:                :0 A BDc:
 
     1.7 Variables used in recipes
@@ -668,7 +706,10 @@ Table of contents
         These are part of the procmail module *pm-javar.rc* and are used in
         recipes.
 
-            # Pure newline; typical usage: LOG = "$NL message $NL"
+            #   Pure newline; typical usage if you want to write
+            #   Something directly to procmail's active logfile:
+            #
+            #       LOG = "$NL message $NL"
 
             NL = "
             "
@@ -687,24 +728,31 @@ Table of contents
             W       = "[^0-9a-z_A-Z]"       # A word  -- Perl \W
             a       = "[a-zA-Z]"            # A word, only alphabetic chars
 
-        Writing recipes is now a little easier and may look more clear.
+        Writing recipes is now a little easier and may look more clear at
+        least to people that have accustomed reading Perl regular expression
+        shortnames:
 
-            *$ Header:$s+$d+$s+$d           # Matches "Header: 11 12"
+            :0
+            *$ Header-Name:$s+$d+$s+$d      # Matches "Header: 11 12"
+            {
+                # Matched "whitespace" + "digit" + "whitespace" + "digit"
+                # Do  something
+            }
 
         _SUPREME_ = 9876543210, is the highest score value that causes
         procmail to bail out. [david] Actually the maximum is 2147483647,
         but 9876543210 is easier to remember/type and will function just as
         well.
 
-        _PMSRC_ = Procmail includerc code directory, where *rc files
-        reside. Anywhere you want it to be: usually $HOME/pm or
-        $HOME/.procmail. Here you keep the procmail files, logfiles and
-        includerc scripts. You can also use the synonym _PMDIR_.
+        _PMSRC_ = Procmail module source code directory. Location where `*.rc'
+        files reside. Anywhere you want it to be. Usually $HOME/pm or
+        $HOME/procmail/lib. Here you can keep the procmail files, logfiles and
+        includerc scripts. Another common used synonym is _PMDIR_.
 
         _SPOOL_ = Directory where your procmail delivers the categorized
         messages. Like mailing lists:
 
-            list.procmail, list.lyx-users, list.emacs, list.elm
+            list.procmail, list.lynx-users, list.emacs, list.elm
 
         and work mail:
 
@@ -721,7 +769,7 @@ Table of contents
         If you read the procmail-delivered files directly, this directory
         is usually $HOME/Mail or $HOME/mail. If you use some other software
         that reads these files as mail spool files (like Emacs Gnus), then
-        this directory is typically ~/Mail/spool/ or similar.
+        this directory is typically ~/Mail/spool or similar.
 
         _MY_XLOOP_ = Used to prevent resending messages that have already
         been handled. Typically `$LOGNAME@$HOST', but this can be any user
@@ -731,25 +779,25 @@ Table of contents
             MY_XLOOP = "X-Loop: $LOGNAME@$HOST"
 
         _SENDMAIL_ = Program to deliver composed mail. Usually standard
-        Unix `sendmail', but it must have some switches with it. See man
+        Unix `sendmail(1)', but it must have some switches with it. See man
         page for more. We use following definition in scripts:
 
             SENDMAIL = "sendmail -oi -t"
 
-        _NICE_ = In a Unix environment you can lower the scheduling priority
-        wth nice(1). If you are conscious of how many external processes you
-        launch for each piece of mail it would be nice to lower the
-        priority of such processes. You may see in this tips file that
-        external processes are called with `NICE' enabled:
+        _NICE_ = In a Unix environment you can lower the scheduling
+        priority wth ´nice(1)'. If you are conscious of how many external
+        processes you launch for each piece of mail it would be polite to
+        lower the priority of such processes. You may see in this document
+        that external processes are called with `NICE' enabled:
 
-            :0 w                # same as nice -10 script.pls
+            :0 w                # Same as "nice -10 script.pl"
             | $NICE script.pl
 
-        _IS_ functions; eg. IS_EXIST is defined as "test -e" and so on.
-        The definition of _IS_ functions are system-dependent.
-        E.g. On Irix the "-e" option is not recognized and
-        the nearest equivalent is "test -r". All _IS_ functions
-        are defined in the `pm-javar.rc' module.
+        _IS_ functions; Functions to test file or directory attributes.
+        E.g. IS_EXIST is defined as "test -e" and so on. The definition of
+        _IS_ functions are system-dependent. E.g. On Irix the "-e" option
+        is not recognized and the nearest equivalent is "test -r". All _IS_
+        functions are defined in the `pm-javar.rc' module.
 
     1.8 About "useless use of cat award"
 
@@ -760,8 +808,8 @@ Table of contents
             % cat file.name.this | wc -l
 
         Instead he insisted that the call should have been written like this,
-        which saves the pipe. (Never mind that `wc' can read the file
-        directly; this is an example.)
+        which saves the pipe (never mind that `wc' can read the file
+        directly; this is an example).
 
             % wc -l < file.name.this
 
@@ -786,13 +834,14 @@ Table of contents
             0.27u 0.05s 0:00.39 82.0%
 
         There is not much difference, and this 2Meg file is not typical at
-        all. The files typically used are many times smaller. The nitpicking is
-        therefore pointless. Another reason why I use "left to right
-        pipe writing": when you recall the command in csh, you can edit the
-        last command's arguments easily. If you used the "<" token, tapping
-        keyboard is _much_ more tedious (try changing wc command's option
-        above). Oh yeah, you can write like this to get the command to the
-        right, but that's even more obscure.
+        all. The files typically used are many times smaller. The
+        nitpicking is therefore pointless. Another reason why I use "left
+        to right pipe writing": when you recall the command in csh, you can
+        edit the last command's arguments easily. If you used the "<"
+        token, tapping keyboard is _much_ more tedious (try changing wc
+        command's option above). To Unix gurus, naturally you can write
+        like this to get the command to the right, but that's even more
+        obscure.
 
             % < some-file-name-is-here wc -l
 
@@ -818,7 +867,7 @@ Table of contents
         _Spam_ = Spam describes a particular kind of Usenet posting (and
         canned spiced ham), but is now often used to describe many kinds of
         inappropriate activities, including some email-related events. It
-        is technically incorrect to use "spam" to describe email abuse,
+        is technically incorrect to use "spam" to describe mail abuse,
         although attempting to correct the practice would amount to tilting
         at windmills.
 
@@ -841,7 +890,7 @@ Table of contents
 
         Not surprisingly, many UBE outfits treat a "remove" request as
         evidence that the address is "live"; a "remove" request to some
-        bulk emailers will actually guarantee that they will send more to
+        bulk mailers will actually guarantee that they will send more to
         you. For many others, the remove procedure does not work, either by
         chance or design. At this point perhaps you're starting to get a
         feel for the type of people with whom you are dealing.
@@ -856,7 +905,7 @@ Table of contents
 
         Probably the remove procedure was false. Any remove procedure that
         tells you to send remove requests to AOL, CompuServe, Prodigy,
-        Hotmail, or Juno is certainly false. The bulk emailers are an
+        Hotmail, or Juno is certainly false. The bulk mailers are an
         unpopular lot; they forge headers, inject messages into open SMTP
         ports, use temporary accounts, and pull other stunts to avoid the
         tirade of complaints that follow every mailing.
@@ -913,7 +962,7 @@ Table of contents
         sent off to some mailing list or wrong address." Mark: Having
         originally set up my anti-spam recipes to be autoresponders, I
         absolutely agree with this. I recall one morning when my strongly-
-        worded no-spam message went out to *everyone* who sent me email for
+        worded no-spam message went out to *everyone* who sent me mail for
         several hours..... *** shudder ***
 
     2.4 UBE and "I don't mind" attitude
@@ -930,7 +979,7 @@ Table of contents
        [Soren Dayton <csdayton@midway.uchicago.edu>]
 
         The simplest reason against UBE is that it is rude. It costs some
-        people money to get email on some commercial services. This is
+        people money to get mail on some commercial services. This is
         fundamentally different than junk snail mail for this reason and
         too much spam can prevent people from getting mail (mailboxes can
         fill up).  So it is both an intrusion into my life _and_ it can
@@ -1082,17 +1131,17 @@ Table of contents
 
             Number_of_businesses / 3650 = UCE's iniciated per day
             UCE's iniciated per day * 2_000_000 (or more)
-                        / number of email addresses
+                        / number of mail addresses
             = UCEs in your mailbox
 
         Guess we are going to need T1's to just get all our mail. And a few
-        100 secretaries as well. Wave good-bye to usable email.
+        100 secretaries as well. Wave good-bye to usable mail.
 
     2.5 We need a law against UBE
 
           Ray Everett-Church <ray@everett.org>, Attorney/Online Consultant
           Co-Founder & Congressional Liaison Coalition Against Unsolicited
-          Commercial Email; article 1997-12 in remailer politics mailing
+          Commercial Email; article 1997-12 in rmailer politics mailing
           list
 
         In developing what eventually became the Smith Bill, CAUCE
@@ -1163,15 +1212,18 @@ Table of contents
 
        "The Coalition Against Unsolicited Commercial Email (CAUCE)"
         http://www.cauce.org/faq.html
-        ...The Problem: Unsolicited commercial email, more commonly known as
+        ...The Problem: Unsolicited commercial mail, more commonly known as
         "spam", is a growing problem on the Internet. If you've used the
         Internet for any length of time, you've probably received
-        solicitations via email to purchase products or services.
+        solicitations via mail to purchase products or services.
 
         A Solution: A group of Internet users who are fed up with spam have
         formed a coalition whose purpose is to amend 47 USC 227, the
         section of U.S. law that bans "junk faxing", so that it will cover
         electronic mail as well.
+
+       "Spamcop - report bulk mail intrucions here"
+        http://www.spamcop.net/
 
        "Teergrubing against Spam"
         http://www.iks-jena.de/mitarb/lutz/usenet/teergrube.en.html
@@ -1186,7 +1238,7 @@ Table of contents
         Main (configurable) features:
 
         o   deny unauthorized relay (no more relay rape!)
-        o   permit selective relay exceptions (eg. UUCP downstream)
+        o   permit selective relay exceptions (e.g UUCP downstream)
         o   regex() filtering [block those spamming dialins!]
         o   deny access for no MX, no PTR, etc.
         o   defeat % hack
@@ -1209,7 +1261,7 @@ Table of contents
         the major spam-related lawsuits noted above, also provides status
         summaries and links to state and federal legislation
 
-       "Select email court cases -- Lots of them"
+       "Select mail court cases -- Lots of them"
         http://www.jmls.edu/cyber/cases/spam.html
         America Online, Inc. v. Cyber Promotions, Inc.,
         Compuserve Inc. v. Cyber Promotions, Inc., etc.
@@ -1234,13 +1286,13 @@ Table of contents
         ...This page lists all known internet-accessible information
         filtering resources.
 
-    3.3 Junk email and spam
+    3.3 Junk mail and spam
 
        "Spam FAQ"
         ftp://rtfm.mit.edu/pub/usenet/alt.spam/
         http://www.cs.ruu.nl/wais/html/na-dir/net-abuse-faq/spam-faq.html
 
-       "The email abuse FAQ"
+       "The mail abuse FAQ"
         http://members.aol.com/emailfaq/emailfaq.html
         What is UBE, UCE, EMP, MMF, MLM, Spam, it is all explained here.
 
@@ -1257,18 +1309,18 @@ Table of contents
        "Dealing with Junk Email"
         http://www.mcs.com/~jcr/junkemaildeal.html
         ...What you should do (and not do) when you have been victimized by
-        a junk emailer. This document teaches you how to read headers in
-        order to trace the origin of junk email, and includes detailed
+        a junk mailer. This document teaches you how to read headers in
+        order to trace the origin of junk mail, and includes detailed
         examples to show you how it is done. Headers are designed for
         computers to read, not people, so they can be a little hard to
         follow. Therefore, I hereby grant permission to print or
         electronically save a copy of this page on your local machine for
-        your personal use while tracing junk email. Please check back for
+        your personal use while tracing junk mail. Please check back for
         updates and corrections, though.
 
         o   What Not To Do: Stuff that doesn't work
         o   What to do: effective techniques, including how to trace junk
-            email back to its source
+            mail back to its source
         o   Stay Calm (take a deep breath...)
         o   Stay Mad (don't get discouraged)
         o   How to identify the sender and who gives them Internet access
@@ -1296,7 +1348,7 @@ Table of contents
         everyone.
 
         o   Filtering mail to your personal account
-        o   Blocking spam email for an entire site
+        o   Blocking spam mail for an entire site
         o   Blocking Usenet spam for an entire site
         o   Blocking IP connectivity from spam sites
         o   Other tools and techniques for limiting spam
@@ -1308,7 +1360,7 @@ Table of contents
        "The Campaign to stop junk email web site"
         http://www.mcs.com/~jcr/junkmail.html
         ...we will attempt to teach victims and potential victims (that's
-        everyone with an email address) the most effective methods of
+        everyone with an mail address) the most effective methods of
         prevention and retribution.
 
        "news.admin.net-abuse.* Homepage"
@@ -1325,7 +1377,7 @@ Table of contents
         of them (either one) on your mail server. Access control lets you
         deny access to the server based on the senders envelope address or
         his IP address. Relay control lets you decide who gets to relay
-        email through your server.
+        mail through your server.
         ftp://ftp.xyzzy.no/sendmail/access.tar.Z
 
        "Anti-Spam Provisions in Sendmail 8.8"
@@ -1347,9 +1399,9 @@ Table of contents
        "Blocking Email"
         http://www.nepean.uws.edu.au/users/david/pe/blockmail.html
 
-        o   Do you or your users, receive "junk email" (aka., "spam")
+        o   Do you or your users, receive "junk mail" (aka., "spam")
         o   Do you have Sendmail R8.8.5 running at your site?
-        o   Would you like to block known "junk email" senders' addresses?
+        o   Would you like to block known "junk mail" senders' addresses?
 
         Now you can - and there's no need to patch any source code, either.
         Take advantage of Sendmail's check_mail rule, to see if the
@@ -1405,7 +1457,7 @@ Table of contents
 
        "Against Spam -- The garbage collecting."
         http://www.spam-archive.org/
-        To support this archive please forward email spam to
+        To support this archive please forward mail spam to
         <spam-list@toby.han.de>. Everybody is invited to bounce Mail-Spam
         he/she has got to this list. This is a mailing list to distribute
         actual spam-eMail. All incoming mail will be checked by subject and
@@ -1514,13 +1566,13 @@ Table of contents
 
        "Spammer blacklist"
         http://www.netchem.com
-        ...<remove@netchem.com> Dear Sir/Madam, Your email address may be on
+        ...<remove@netchem.com> Dear Sir/Madam, Your mail address may be on
         many spammers' lists. We are compiling a *remove* list. Forward the
         original junk to <list@netchem.com>
 
        "No Junk E-Mail database"
         http://pages.ripco.com:8080/~glr/nojunk.html
-        ...We will help stop unwanted email to you..the list is submitted to
+        ...We will help stop unwanted mail to you..the list is submitted to
         us, and those addresses that appear in the "do not mail" list are
         removed and the "cleaned" list is returned
 
@@ -1562,7 +1614,7 @@ Table of contents
         with spam. If you're looking for an ISP and want to know where they
         stand on spam, this is the list for you.
 
-        Send an email message to <listserv@peach.ease.lsoft.com>
+        Send an mail message to <listserv@peach.ease.lsoft.com>
         with the words "subscribe SPAM-L <First name> <Last name>" in the
         body of the message (no quotes). f you would like to contact the
         owner, the convention is the same as with all listserv lists. Just
@@ -1573,7 +1625,7 @@ Table of contents
         Scott Hazen Mueller <scott@zorch.sf-bay.org>
         http://spam.abuse.net/spam/tools/
 
-    3.9 Software: adcomplain -- Perl junk email rport
+    3.9 Software: adcomplain -- Perl junk mail rport
 
         <billmc@agora.rdrop.com>
         http://www.rdrop.com/users/billmc/adcomplain.html
@@ -1596,7 +1648,7 @@ Table of contents
           lists with strange Received-Headers also can present problems in
           tracing
 
-    3.10 Software: Ricochet -- Perl junk email rport
+    3.10 Software: Ricochet -- Perl junk mail rport
 
         http://www.vipul.net/ricochet/
         <ricochet@vipul.net> Vipul Ved Prakash
@@ -1604,14 +1656,14 @@ Table of contents
         MailingList: <ricochet-announce-request@vipul.net> with subject
         "subscribe"
 
-        A lot of unsolicited email goes unreported because tracing the
+        A lot of unsolicited mail goes unreported because tracing the
         origins of a possibly forged mail and finding the right people to
         report to is complicated and time-consuming. Ricochet, a smart net
         agent, automates this process. It traces the names and add resses
         of the systems where the spam originated from along with the
         servers that provide domain name resolution services to these
         systems (in most cases their ISPs). Then it collects/generates a
-        list of email addresses of tech/billing/admin/abuse contacts of
+        list of mail addresses of tech/billing/admin/abuse contacts of
         these system and mails them a complaint and a copy of the spam.
         Detailed description of its workings can be found in the README
         file that comes with the package.
@@ -1646,7 +1698,7 @@ Table of contents
 
           ...rblcheck is a lightweight C program for doing checks against
           Paul Vixie's Blackhole List. It works well in conjunction with
-          Procmail for filtering unwanted bulk email (under QMail, for
+          Procmail for filtering unwanted bulk mail (under QMail, for
           example, you can invoke it with the value of the environment
           variable TCPREMOTEIP). rblcheck is extremely simple:
 
@@ -1657,7 +1709,7 @@ Table of contents
         This is a quick note to announce the availability of a new tool for
         using Paul Vixie's RBL blacklist (see http://mail-abuse.org/  for
         more information about the blacklist itself, if you don't already
-        know). Most tools which use the blacklist block email on a
+        know). Most tools which use the blacklist block mail on a
         site-wide basis. For many networks, this treads on both the ideals
         of the administration, and on the perceived freedoms of the end
         user.
@@ -1933,19 +1985,22 @@ Table of contents
 
     3.18 Software: TinyGnus - Emacs Gnus plug-in
 
-        <jari.aalto@poboxes.com>
-        http://poboxes.com/jari.aalto/ema-tiny.html
+        ._Availability:_ <jari.aalto@poboxes.com>
+        http://poboxes.com/jari.aalto/emacs-tiny-tools.html
+        ._Platform:_ win32 and Unix Emacs versions.
 
-        Platform: win32 and Unix Emacs versions.
-
-        *TinyGnus* Is Emacs lisp extension package that integrated directly
+        *TinyGnus* Is Emacs lisp extension package that integrates directly
         to Gnus mail/newsreaders. It includes simple but efective UBE
         fighting hotkeys that make it possible to complain bunch of UBE
-        messages a once. Features:
+        messages at once. In order to use it, you have to have permanent
+        Internet connection and nslookup(1) tool. Features:
 
-        o   USER MUST DECIDE WHICH IS *ube* MAIL.
-        o   User selects messages that are ube with Gnus select commands.
-        o   Hotkey C-c ' u examines messages' headers and runs `nslookup'
+        o   USER MUST DECIDE and hand select WHICH IS *ube* MAIL. No software
+            can decide 100% which mail is UBE, so the responsibility is on
+            the Human user.
+        o   User selects messages that are ube with Gnus select commands,
+            like (#, select current message)
+        o   Hotkey C-c ' u examines messages' headers and runs `nslookup(1)'
             for each Received header to determine *abuse* *spam* and
             *postmaster* addresses where to send the complaint.
 
@@ -1988,7 +2043,7 @@ Table of contents
         above type-mixes may fail to profit from a suitably redefined
         time_t, and so may overflow on 2038.
 
-        I don't see any Y2K problems, though. And email headers use
+        I don't see any Y2K problems, though. And mail headers use
         four-digit years pretty consistently, so that should all be cool.
         This estimation doesn't constitute an in-depth Y2k audit of
         procmail, but the source code to procmail is ... kinda dense for
@@ -1996,9 +2051,9 @@ Table of contents
 
         [1998-09-25 Bennett Todd Message-Id:
         <19980925093902.B12428@fcmc.com>] As I see it there are at least
-        three measures that a whole email system, taken in aggregate, could
+        three measures that a whole mail system, taken in aggregate, could
         use for Y2K checking. First, capture a vast cross-section of
-        traffic and make sure no email software is using 2-digit years. I
+        traffic and make sure no mail software is using 2-digit years. I
         don't recall having seen any, but it's still worth checking.
         Second, generate a load of traffic with 2000 and 2001 dates and
         shove it through all the channels. And third, run all the systems
@@ -2021,7 +2076,7 @@ Table of contents
             unsubscribe user@domain         in the subject line
             unsubscribe                     first line in the body
 
-        If that fails, try email to
+        If that fails, try mail to
         <procmail-owner@informatik.rwth-aachen.de> (purportedly that should
         go to a person). See also the original subscriptions message that
         you will received http://www.iki.fi/~era/procmail/welcome.txt
@@ -2044,7 +2099,7 @@ Table of contents
        "Era's Procmail faq"
         http://www.iki.fi/~era/procmail/mini-faq.html
         http://www.dcs.ed.ac.uk/~procmail/faq/          [mirror]
-        Also available by email, the ITEM can be: links.html, mini-faq.html,
+        Also available by mail, the ITEM can be: links.html, mini-faq.html,
         procmail-faq
 
             To: <era+pr@iki.fi>
@@ -2111,7 +2166,7 @@ Table of contents
                 Inline decoding of MIME text attachments        (rc.mime-decode)
                 Cleansing of obscure "Re:" formats in subject   (rc.pre-list)
                 Nifty autoresponder                             (rc.qz-2)
-                Sophisticated dupicate email catching           (rc.dupes)
+                Sophisticated dupicate mail catching           (rc.dupes)
                 Example of using my mail bouncer                (rc.lists-out)
                 Detection of some classes of autoreplies        (rc.daemon)
                 Various junk mail filtering                     (rc.filter)
@@ -2181,7 +2236,7 @@ Table of contents
         o   *get-from.rc* -- From Alan's procmail-lib. get the "best" From
             address. Sets FROM and FRIENDLY, the latter being the "friendly"
             user name sans address.
-        o   *pm-jaaddr.rc* -- Subroutine to extract various email components
+        o   *pm-jaaddr.rc* -- Subroutine to extract various mail components
             from INPUT. Like address=foo@some.com, net=com, account=foo...
         o   *pm-jastore.rc* -- Subroutine for general mailbox delivery.
             Define MBOX as the folder where to drop
@@ -2227,7 +2282,7 @@ Table of contents
             forward address with a "control message" or turn
             forwarding on/off with a "control message"
         o   *pm-japing.rc* -- Send short reply when subject contains the word
-            "ping" to show that the account is up and email address is
+            "ping" to show that the account is up and mail address is
             valid.
         o   *correct-addr.rc* -- From alan's procmail lib. To help forward mail
             from an OLD address to a NEW address, and do some mailing list
@@ -2411,7 +2466,7 @@ Table of contents
         http://www.best.com/~ariel/nospam/
         ...The attached set of procmail recipes/filters, which I call
         The Spam Bouncer, are for users who are sick of spam (unsolicited
-        junk email) and want to filter it out of their mail as easily
+        junk mail) and want to filter it out of their mail as easily
         as possible. These recipes can be used as shared recipes for a
         whole system, or by an individual for their own mailbox only.
 
@@ -2451,7 +2506,7 @@ Table of contents
             % procmail $HOME/pm/pm-test.rc < $HOME/tmp/test-mail.txt
 
         The script pm-test.rc has the procmail recipe you're testing or
-        improving. The test-mail.txt is any valid email message containing
+        improving. The test-mail.txt is any valid mail message containing
         the headers and body. You can make one with any text editor, e.g.
         `vi', `pico' or `emacs' in your Unix system. Here's a
         simple test mail skeleton:
@@ -2878,7 +2933,7 @@ Table of contents
         [dan] It is very important to study your shell command calls and try to
         save the overload of the extra layer of shell. It may be extra work
         once when you write your rcfile but it saves effort on each piece of
-        arriving email. When procmail sees a character from `SHELLMETAS', it
+        arriving mail. When procmail sees a character from `SHELLMETAS', it
         runs
 
             # Default SHELLMETAS: &|<>~;?*[
@@ -3081,13 +3136,17 @@ Table of contents
         place.
 
         So, before your procmail does anything to your message, put the
-        message into some folder which is regularly expired. For example I
-        use Emacs Gnus to handle the expiring. One could also use a cron job
-        instead. Then you can relax knowing your email is safe.
+        message into some folder which is regularly expired. Emacs Gnus acn
+        automatically handle thos mailbox's expiring, but one could also
+        use a cron(1) cleaning. After this, you can relax knowing your mail is
+        safe.
+
+            #   Your incoming messages are stored here, filtered by procmail
 
             SPOOL      = $HOME/Mail/spool
 
             #   Backup storage
+            #
             #   - This could be directory too. In that case you could use
             #     cron job to expire old messages at regular intervals
             #   - For once a day expiration, see procmail module list
@@ -3110,7 +3169,7 @@ Table of contents
         If you have the date variables set up as described below, you
         could also create a backup folder per day:
 
-            $BUP_SPOOL    = $SPOOL/$YYYY$MM$DD
+            $BUP_SPOOL    = $SPOOL/junk.bup.$YYYY-$MM-$DD.spool
 
         This makes it very easy to delete backups that are older than
         a given number of days, either manually or through a cron job.
@@ -3118,9 +3177,11 @@ Table of contents
     6.20 Order of the procmail recipes
 
         When you start writing a lot of procmail recipes, you soon find out
-        that it matters a great deal in which order your put your recipes. When
-        each group of recipes starts growing too big, it's good practice to
-        move each group to a separate rc file. Here is one recommended order:
+        that it matters a great deal in which order your put your recipes.
+        When each group of recipes starts growing too big, it's good
+        practice to move each group to a separate includerc file. Here is
+        one recommended order in which yur calls appear in the mail
+        $HOME/.procmailrc
 
             -   backup important messages
             -   cron-subroutine
@@ -3154,11 +3215,16 @@ Table of contents
         spammers, who send you message or several per day need to be
         checked before checking other messages.
 
-        Last but not least: Put your UBE checkers to the end to avoid mishits
-        of valid mail. DO NOT SEND AUTOMATIC COMPLAINT BACK. Drop the
-        UBE to a folder, manually select the messages that need actions
-        and send message to postmasters in the Received chain explaining that
-        their mail relay has been hijacked.
+         Last but not least: Put your UBE checkers to the end to avoid
+         mishits of valid mail. _DO_ _NOT_ _SEND_ _AUTOMATIC_ _COMPLAINT_
+         _BACK_, or you'll get grey hairs when the autoresponder send its
+         complaint to valid source. You don't want to answr back with "My
+         apologies, the script had an error, it won't happen aagin." to all
+         the valid hate mail that is now addressed to you.
+
+        Drop the UBE to a folder, manually select the messages that need
+        actions and send message to postmasters in the Received chain
+        explaining that their mail relay has been hijacked.
 
 7.0 Procmail flags
 
@@ -3188,7 +3254,7 @@ Table of contents
 
             :0Afhw:$MYLOCK$LOCKEXT
 
-        Or, as I prefer, leave flags in their own slot for more
+        Or, as suggested, leave flags in their own slot for more
         distinctive separation. Note that $LOCKEXT must be next to $MYLOCK,
         because it contains string ".lock".
 
@@ -5566,7 +5632,7 @@ Table of contents
 
         I use this one-liner log in my Emacs window which is updated by
         `live-mode' process all the time (See the Emacs tools section
-        later). It gives a nice overview of email messages the I'm receiving:
+        later). It gives a nice overview of mail messages the I'm receiving:
         it's my biff(1) equivalent in Emacs.
 
             # this requires that HH and MM have been setup before,
@@ -5664,7 +5730,7 @@ Table of contents
     10.13 Emergency stop for your .procmailrc
 
         [jari] If I have a bad luck while I am testing a new recipe, it may
-        run in a loop and and it may send me continuously email messages. I
+        run in a loop and and it may send me continuously mail messages. I
         then have to quickly recall .procmailrc and start disabling my
         individual "control" recipe files. Yet I figure, in situations like
         this where every second is important, there must be a better way.
@@ -6237,7 +6303,7 @@ Table of contents
         o   You want to rewrite `From' to show your virtual address
             me@forever-lasting-address.com instead.
         o   You are in some other account currently, but you want to send
-            message to some Net service (eg. Mailing list) that expects to
+            message to some Net service (e.g Mailing list) that expects to
             see the same address you first time used in subscription.
 
         You could also use `Reply-To' to signify where you want further
@@ -6251,7 +6317,7 @@ Table of contents
     12.4 Formail -rt and Resent-From header
 
         Here is something that made me scratch my head a lot. Let's examine
-        scenario first which explains how the email travels.
+        scenario first which explains how the mail travels.
 
             account --> virtual-address --> Local-address
 
@@ -6488,7 +6554,7 @@ Table of contents
 
     12.13 Mailbox: Splitting to individual files
 
-        [david] To split some old email archives into individual
+        [david] To split some old mail archives into individual
         files while stripping unimportant header fields, use following. The
         keys are to use procmail's `-p' option, to strong-quote `$FILENO' in
         the setting of `DEFAULT', and to use /dev/null or a known empty file
@@ -6539,8 +6605,8 @@ Table of contents
           an MUA.
 
         [1998-08-27 Bennett Todd <bet@mordor.net>] I also deal with monster
-        volumes of email. I've switched over entirely to Maildir in all my
-        email handling; the only place I still see mboxes is in the save
+        volumes of mail. I've switched over entirely to Maildir in all my
+        mail handling; the only place I still see mboxes is in the save
         folders of my netnews reading (using slrn) and whenever I want to
         process them I either convert them into Maildir (e.g. for archival)
         or simply split them into multiple messages. Splitting into
@@ -6561,7 +6627,7 @@ Table of contents
         they're split it's really easy to use shell tools to bundle
         messages into batches, file them into categories, etc.
 
-        If you are archiving all email traffic forever (which I do) then
+        If you are archiving all mail traffic forever (which I do) then
         another dandy tool to add to the mix is glimpse
         http://glimpse.cs.arizona.edu/ it takes a while to build the index,
         but that's a fine job to run out of cron at night. Once the index
@@ -6887,14 +6953,14 @@ Table of contents
 
     13.3 Using RFC comment trick for additional information
 
-        Recall from [rfc1036] that the preferred Usenet email address
+        Recall from [rfc1036] that the preferred Usenet mail address
         formats are following
 
               From: login@example.com
               From: login@example.com (First Surname)
               From: First Surname <login@example.com>
 
-        I invented this idea after reading Eli's excellent faq about email
+        I invented this idea after reading Eli's excellent faq about mail
         addressing. Please read it (especially section 19.) before you
         continue in order to understand what I'm going to present.
 
@@ -7138,7 +7204,7 @@ Table of contents
         [era] I believe that the problem isn't really that the
         filename is over the allowed length for some platform (Macintoshes
         allow something like 27 characters if memory serves) but a bug in
-        how some particular email clients allocate memory for the file name
+        how some particular mail clients allocate memory for the file name
         string (but I am really only speculating here).
 
           ...So far Eudora, Netscape Mail, Outlook Express, and mutt (Unix)
@@ -7203,7 +7269,7 @@ Table of contents
 
         [Marek Jedlinski <eristic@gryzmak.lodz.pdi.net>]. This how I
         respond to html messages. In my `noHTML.txt' I politely explain
-        why I don't appreciate receiving HTML email, and ask to resend the
+        why I don't appreciate receiving HTML mail, and ask to resend the
         message as plaintext. What happens in the majority of cases is that
         the sender resends the same message again ("oh, it bounced, let's
         try again") and I assume they don't actually read my explanation
@@ -7249,7 +7315,7 @@ Table of contents
 
         This recipe has been written so that you can add more alternative
         html conversion scripts. You may even want to select the appropriate
-        conversion for a message: eg. perl for unimportant ones.
+        conversion for a message: e.g perl for unimportant ones.
 
         _Note_: This is oversimplified method of checking if body contains
         html. It would be probably a good idea to check mime headers which
@@ -7327,7 +7393,7 @@ Table of contents
 
     14.9 Sending contents of a html page in plain text to someone
 
-        [timothy] Send an email with the subject: "GetPage:
+        [timothy] Send an mail with the subject: "GetPage:
         some.url.here/". And it comes back. Kurt Thams <thams@thams.com>
         also pointed out that lynx allows file:// protocol and since
         procmail is running as you, this would be a security risk.
@@ -7644,7 +7710,7 @@ Table of contents
             I'm out of town until <return-date>.  Your mail regarding
                    "$SUBJECT"
             will be read when I return, or possibly at some unknown
-            time before then if I get a chance to check for email.
+            time before then if I get a chance to check for mail.
 
             If your message must be seen by me before I return,
             you can send it with the word "URGENT" in the subject header.
@@ -7654,8 +7720,8 @@ Table of contents
 
     15.11 Service: Auto-forwarding
 
-        [timothy] I have my .procmailrc setup to forward email to another
-        (email only) account. When I am not going to be at the account, I
+        [timothy] I have my .procmailrc setup to forward mail to another
+        (mail only) account. When I am not going to be at the account, I
         want to turn forwarding off
 
             #   look for the file to tell us whether or not to forward mail
@@ -7923,7 +7989,7 @@ Table of contents
             BLOCK_FILE  = $HOME/Mail/DeniedNames.lst
             UBE_MBOX    = $HOME/Mail/junk-ube.mbox
 
-            # To filter out the Subject lines, so that emails sent
+            # To filter out the Subject lines, so that mails sent
             # with the subject "Have you received a message from
             # blah-blah@spam" don't get filtered.
             # [era] suggested we use formail
@@ -8078,7 +8144,7 @@ Table of contents
         the seconds so that the expression for testing the 07-22 range can
         match only on the hour.
 
-    15.21 Time: Triggering email and using cron
+    15.21 Time: Triggering mail and using cron
 
         [david] Put something like the following entries in your personal
         crontab for your userid (and not knowing if you particular cron
@@ -8261,7 +8327,7 @@ Table of contents
 
     15.27 How to change subject by body match
 
-        Suppose you to change the email's subject when there is a match in
+        Suppose you to change the mail's subject when there is a match in
         the body. The desired outcome would be this:
 
             From: foo@this.is
@@ -9079,7 +9145,7 @@ Table of contents
             be in capital letters. Familiarize yourself with what(1) tags
             too. Notice the first and last lines: if you keep the format
             like this, then any universal tool can rip your code from any
-            file (or email), because it's delimited by "pm-xxScript.rc -- "
+            file (or mail), because it's delimited by "pm-xxScript.rc -- "
             and "end of pm-xxScript.rc". See unix what(1) for first line's
             syntax.
 
@@ -9185,7 +9251,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 1.1 2000/08/25 13:20:47 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 1.2 2000/09/03 18:11:28 jaalto Exp $
             #
             #   File id
             #
@@ -9195,7 +9261,7 @@ Table of contents
             #       .$keywords:     procmail [subroutine|recipe] whatItDoes $
             #
             #       This code is free software in terms of GNU Gen. pub. Lic. v2 or later
-            #       You can get newest version by sending email to maintainer with
+            #       You can get newest version by sending mail to maintainer with
             #       subject "send <FILENAME>"
             #
             #   Description
@@ -9321,7 +9387,7 @@ Table of contents
           ... a) what recipes procmail goes through if there's no
           /etc/procmailrc on the system b) how it decides whether an
           address/local-part is valid or not c) how procmail selects the
-          mailbox to drop the email
+          mailbox to drop the mail
 
         [philip] *Delivery* mode is invoked using the -d flag. All
         arguments are the -d are usernames. It is usually used by the MTA
@@ -9426,7 +9492,7 @@ Table of contents
         /etc/procmailrc. There is precious little I will gain from that and
         plenty of opportunity for them to make mistakes I would not have. At
         one ISP I know people got upset at some sendmail level filtering of
-        email. One of those upset is a habitual complain-to-spammer-ISP
+        mail. One of those upset is a habitual complain-to-spammer-ISP
         person. He did not want problems seeming to go away if they were
         really there. Another guy just didn't trust the filtering.
 
@@ -9511,7 +9577,7 @@ Table of contents
 
         In over two years subsequent to the change, we had no loss of mail
         due to procmail being used as the local mailer. If you wish further
-        comment from the current system managers, send email to
+        comment from the current system managers, send mail to
         "postmaster@eci.ucsb.edu".
 
         To answer your specific questions:
@@ -9844,7 +9910,7 @@ Table of contents
         problem.
 
         To recap, when our Caldera OpenLinux 1.1 system received multiple
-        email messages very quickly, some messages would get multiple F's on
+        mail messages very quickly, some messages would get multiple F's on
         the from line and then subsequent messages would be missing the F's.
 
         Most responses said that it sounded like a file locking problem.
@@ -10845,7 +10911,7 @@ Table of contents
         either be split on whitespace (if unquoted) or one argument (if
         double-quoted).  $@ has the cool property that if double quoted
         it'll still be split into multiple arguments on the original
-        argument boundaries. Since full-blown email addresses often have
+        argument boundaries. Since full-blown mail addresses often have
         spaces, this distinction should not be casually dismissed. Note
         that while you might not type in such an addresses, your MUA's
         reply builder may.
@@ -10933,7 +10999,7 @@ Table of contents
     20.44 TO_ macro and RFC 822
 
           ...According to RFC822 the From address can contains almost anything
-          and the valid email address can be extracted from the line as
+          and the valid mail address can be extracted from the line as
           long as it is enclosed between <...>. Like <foo@example.com>.
 
         [by Vikas Agnihotri <vikas@insight.att.com>] Block (E){see
@@ -11092,7 +11158,7 @@ Table of contents
             EX_NOPERM      77       permission denied
 
           I thought that by using the EXITCODE, I would be assured that the
-          email would be *rejected* but in fact Sendmail 8.8.7 attempts to
+          mail would be *rejected* but in fact Sendmail 8.8.7 attempts to
           deliver the "user unknown" to netcom.com, which is obviously
           wrong?
 
@@ -11361,25 +11427,25 @@ Table of contents
 
         [1998-10-08 SL-L <cueman@cue.com>] ...The trouble with rapid
         delivery MTA's and SmartList(is not!) is multigram and the bounced
-        email processing feature and large lists. If you run small lists
+        mail processing feature and large lists. If you run small lists
         it's not so bad. But with 30k+ subscriber monthly announcement
-        lists, I have to redirect bouncing email someplace else. The faster
+        lists, I have to redirect bouncing mail someplace else. The faster
         the mail is delivered the faster the bounces come in. The larger
         the list, the more multigram bogs down and the more procmail
         processes accumulate and then you get file table overflows and all
         that stuff from the load being sky high and hundreds of processes
         hanging around. Also because alot of mail servers don't behave the
         way we would like them to and return to us proprietary bounced
-        email messages that SmartList can't understand, the bounce feature
+        mail messages that SmartList can't understand, the bounce feature
         is only able to successfully remove a portion of the offensive
-        email addresses, requiring the listowner or some one to manually go
+        mail addresses, requiring the listowner or some one to manually go
         through it all anyway.
 
         SmartList is not covered by the GNU GPL -- the copyright notice in
         the docs do say that changes/modifications can be made if they are
         'marked'.
 
-        Personally, I think the bounced email removal system needs to be
+        Personally, I think the bounced mail removal system needs to be
         entirely redone if SmartList(is not!) is to be able to look forward
         to the future enough to merit further development.
 
@@ -11426,7 +11492,7 @@ Table of contents
         ftp://ftp.mail-list.com   mark david mcCreary <mdm@internet-tools.com
         ...This is a front end to Smartlist mailing lists. It provides easy to
         use addresses for subscribers of the list. It also allows list owners
-        to concatenate many Smartlist commands into one email message, which
+        to concatenate many Smartlist commands into one mail message, which
         is then broken up and sent in as separate messages to Smartlist.
 
         These scripts can accept messages for any mailing list, extract the
@@ -11578,7 +11644,7 @@ Table of contents
         Some time ago I wrote makefile to my Emacs tgz kit and as a side
         effect I got frustrated with the use of backslashes within the make
         rules. This backslash problem is universal in almost every
-        programming language, (eg. C/C++ macros) including procmail, where
+        programming language, (e.g C/C++ macros) including procmail, where
         you sometimes use `echo' a lot,
 
             :0 h
@@ -11736,7 +11802,7 @@ Table of contents
 
             mail -> $MAIL --> fire up Gnus  --> split1.mbx split2.mbx ....
 
-        _Case2_: procmail and Gnus. The email is always delivered to
+        _Case2_: procmail and Gnus. The mail is always delivered to
         procmail first. Procmail is free to put the mail anywhere or just
         let it drop to the user's default inbox, usually pointed by
         environment variable $MAIL.
@@ -11754,7 +11820,7 @@ Table of contents
         Summary
 
         o   If you use procmail, the incoming messages are immediately
-            categorized. The incoming email is put in the folder of your
+            categorized. The incoming mail is put in the folder of your
             choice. The mailboxes are there waiting for you all the time. You
             can use `less' or `more' to view them in a hurry.
         o   If you don't use procmail and let Gnus to do all the splitting,
@@ -11762,7 +11828,7 @@ Table of contents
             until you fire up Emacs and Gnus. If you're in a hurry, you
             may not have time to start Emacs & Gnus, before reading the
             important messages. Your only option is to read all  messages
-            in $MAIL and try to find the ones that consider eg. you work.
+            in $MAIL and try to find the ones that consider e.g you work.
 
         So, let procmail drop messages to their inboxes and Gnus to
         possibly "fine process" these inboxes.
@@ -12211,9 +12277,9 @@ Table of contents
         unlisted phone number.
 
         One thing is for certain: putting the burden on anyone wishing to
-        send an email to you, by requiring them to decipher the address.
+        send an mail to you, by requiring them to decipher the address.
         Someone may never "reply by mail" to persons using those phony
-        addresses. Anyone who wishes to send a personal email cannot just hit
+        addresses. Anyone who wishes to send a personal mail cannot just hit
         'reply'. People who do this accept this, which is they will watch
         the newsgroups for followups regularly. If someone eagerly wants
         to get personal, he can spend the extra minute to decipher
@@ -12259,10 +12325,10 @@ Table of contents
         to think about it anymore.... and that kind of laziness is all over
         the Internet.
 
-        The only one it wrongly inconveniences are those who need to email
-        me and have lost my email address. If you want to followup a Usenet
+        The only one it wrongly inconveniences are those who need to mail
+        me and have lost my mail address. If you want to followup a Usenet
         post, do it in Usenet. I'll be back here for followups. I get
-        enough email, and don't need email for Usenet threads.
+        enough mail, and don't need mail for Usenet threads.
 
         If you would like me to use a real address, please set me up an
         account with procmail where I can get all my Usenet related
@@ -12279,7 +12345,7 @@ Table of contents
         started altering my From: line. There's still the occasional that
         gets me, though. It's not really such a big deal right now, but
         after following the net-abuse newsgroups for a while, it has become
-        apparent to me that spammers are trying new tactics to grab email
+        apparent to me that spammers are trying new tactics to grab mail
         addresses (msg id's, sender: lines, etc...).
 
         Since I have to download most of my mail from a POP3 account, it
@@ -12299,10 +12365,10 @@ Table of contents
         along with the legit mail, after which, my local procmail puts it
         where it belongs. In other words, not in my inbox. And so I'll do
         what I have to to foil the spammers (until we get some sort of
-        legislation passed on junk email). And those that *do* get past the
+        legislation passed on junk mail). And those that *do* get past the
         fouled headers are dealt with accordingly.
 
-    26.3 RFC and valid email address characters
+    26.3 RFC and valid mail address characters
 
           What characters are legal in e-mail addresses? So far, I have
           uppercase, lowercase, digits, _ - + . @
@@ -12349,9 +12415,9 @@ Table of contents
 
         So? That the initial value is an FQDN is no indication that the
         value returned at any time thereafter will be. This is why emacs
-        doesn't use system-name to create email addresses, but has a
+        doesn't use system-name to create mail addresses, but has a
         separate function. If emacs itself doesn't rely on system-name to
-        generate any email addresses, why should gnus?
+        generate any mail addresses, why should gnus?
 
             >>> user@fqdn is the agent responsible for submission of a
             >>> message to the network. user@fqdn is the RFC sender of the
@@ -12482,7 +12548,7 @@ Table of contents
         o   rfc822  Format of internet messages (formerly called as Arpanet)
             A new draft that is likely to replace 822 is at:
             ftp://ftp.ietf.org/internet-drafts/draft-ietf-drums-msg-fmt-04.txt
-        o   rfc1036 (the email message format standard: From, to, date ...)
+        o   rfc1036 (the mail message format standard: From, to, date ...)
             Check also `son-of-1036.html' mentioned earlier.
         o   rfc1153 Digest message format, 1990, Status: EXPERIMENTAL)
         o   rfc1738 URL specification, mailto, http, <URL:address> consult
@@ -12505,16 +12571,16 @@ Table of contents
 
 27.0 Introduction to E-mail Headers
 
-    27.1 To find out more about email (Resources)
+    27.1 To find out more about mail (Resources)
 
        "All about Email headers"
         http://www.stopspam.org/email/headers/headers.html
         ...This document is intended to provide a comprehensive introduction
-        to the behavior of email headers. It is primarily intended to help
-        victims of unsolicited email ("email spam") attempting to determine
-        the real source of the (generally forged) email that plagues them;
+        to the behavior of mail headers. It is primarily intended to help
+        victims of unsolicited mail ("mail spam") attempting to determine
+        the real source of the (generally forged) mail that plagues them;
         it should also help in attempts to understand any other forged
-        email. It may also be beneficial to readers interested in a
+        mail. It may also be beneficial to readers interested in a
         general-purpose introduction to mail transfer on the Internet.
 
         [See also RFC pointers in the RFC section]
@@ -12534,7 +12600,7 @@ Table of contents
        "UNIX EMail Software"
         http://www.faqs.org/faqs/mail/setup/unix/part1/index.html
         ...This document is intended for system administrators who need to
-        know how to set up their UNIX systems for email communication with
+        know how to set up their UNIX systems for mail communication with
         the outside world...UUCP, Addresses, Domain Addresses, FQDN, NIC,
         MX record, Bang-Paths, Gateways, Routers, Smarthost, MIME,
         X.400, "The maps", Aliases
@@ -12667,7 +12733,7 @@ Table of contents
 
         The former, the ones generated by the MTAs, are used mostly for
         tracking the e-mail, and generally have nothing to do with the
-        content of the email, much like those bar-code labels FedEx uses to
+        content of the mail, much like those bar-code labels FedEx uses to
         track packages.
 
         The latter, the ones inserted by the MUA or by the user, are just
@@ -12833,8 +12899,8 @@ Table of contents
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html>
 
-        Procmail most typically processes incoming email at a destination
-        site; the BCC formatting (or lack of it) is done on outgoing email,
+        Procmail most typically processes incoming mail at a destination
+        site; the BCC formatting (or lack of it) is done on outgoing mail,
         at the originating site.
 
         For this discussion, let's make distinctions as to the kinds of mail
@@ -12866,7 +12932,7 @@ Table of contents
         o   A few MUAs deliver the message without the Bcc:, but also without
             any special indication; you must guess that it was a Bcc.
 
-        The original email standard RFC822 says this about Bcc:
+        The original mail standard RFC822 says this about Bcc:
 
           4.5.3. BCC / RESENT-BCC
 
@@ -12879,7 +12945,7 @@ Table of contents
 
         So, procmail *would* handle Bcc's correctly if the sender's MUA
         included the Bcc in the header in the first place. But, since
-        procmail is most typically used on *incoming* email, it will never
+        procmail is most typically used on *incoming* mail, it will never
         have a chance to deal with Bcc: headers.
 
     27.5 Bcc lecture by Philip Guenther
@@ -12948,7 +13014,7 @@ Table of contents
         to use (or not) the envelope address information.
 
         If you wish to understand the limits of your mail system, you should
-        read RFC822 (email formatting standards) and RFC821, which describes
+        read RFC822 (mail formatting standards) and RFC821, which describes
         the original language of SMTP. There are several extensions in
         progress, but the basic commands of "MAIL", "RCPT", and "DATA"
         should suffice.
@@ -13072,7 +13138,7 @@ Table of contents
         virtual domain alias, THERE IS NO WAY TO GET IT BACK! You can wave
         your hands and try faking it, but no one in the virtual domain can
         ever get onto a mailing list or otherwise receive a piece of mail for
-        which the header doesn't explicitly contain his/her email address. And
+        which the header doesn't explicitly contain his/her mail address. And
         furthermore, even doing that faking is extremely difficult to do
         right. What I show below does NOT correctly handle messages with
         Resent-* headers. This can result in messages being received by people
@@ -13101,7 +13167,7 @@ Table of contents
 
           ...Are there known problems with "valid" mails with illegal
           MessageIDs? For some strange reason, some people are sending out
-          email with bad message id's. That wouldn't be much of a problem,
+          mail with bad message id's. That wouldn't be much of a problem,
           except that our MITS department won't even consider fixing the
           bad-message-id unless it causes a problem somewhere else.
 
@@ -13326,7 +13392,7 @@ Table of contents
     28.8 X-Subscription-Info
 
         This is a header that is used by some mailing lists: it contains an
-        email address for un/subscribe, or a URL with said info. Imagine
+        mail address for un/subscribe, or a URL with said info. Imagine
         the reduction in bozo messages asking how to unsubscribe from
         mailing lists. If your mailing list doesn't have it already, make
         a suggestion to the list's maintainer.
@@ -13510,11 +13576,11 @@ Table of contents
         [Suggested by Lars, the Author of Emacs Gnus]
 
         ...Mail-Copies-To: is a header line used in messages on
-        Usenet to direct copies by email of followups to posts.
+        Usenet to direct copies by mail of followups to posts.
         http://www.math.fu-berlin.de/~guckes/rfc/mail-copies-to.html
 
         [SL Baur <steve@xemacs.org>] The `Mail-Copies-To:' header should
-        control how your email (and Usenet) client prepares a followup
+        control how your mail (and Usenet) client prepares a followup
         message. It gives control to the sender of a message whether
         `courtesy' duplicate copies of messages should be sent.
         There are two forms:
@@ -13548,7 +13614,7 @@ Table of contents
             To: mailing-list@somewhere.com
             Cc: luser@somewhereelse.com
 
-        The second form includes a properly formed RFC822 email address as
+        The second form includes a properly formed RFC822 mail address as
         the parameter:
 
             Mail-Copies-To: someaddress@somewhere.com
@@ -13675,7 +13741,7 @@ Table of contents
 
          Sending CC
 
-        There has been very heated discussion in the gnu.emacs.gnus (eg.
+        There has been very heated discussion in the gnu.emacs.gnus (e.g
         around 1999-03-20) newsgroup where many people argue for sending CC
         replies to the person thet posted the question to the newsgroup.
         The benefit of sending CC has been seen as:
@@ -13689,7 +13755,7 @@ Table of contents
             (but we don't know this for sure).
 
         In recent years the netnews has changed a lot and many people have
-        started using non-existing email address in order to prevent
+        started using non-existing mail address in order to prevent
         getting UBE mail. This has made the "CC" senders annoyed, because
         they get bounced mail from these non-existing addresses.
 
@@ -13710,7 +13776,7 @@ Table of contents
 
          A Clear munged address
 
-        An clear non-existing email address that indicates that it is not the
+        An clear non-existing mail address that indicates that it is not the
         real destination is usually considered good manners:
 
             john.doe@nowhere.net
@@ -13736,7 +13802,7 @@ Table of contents
         The MORAL learned about automatic CC copies is:
 
           An automatic CC is a bad thing. Don't guess people's minds. An
-          open email (real email addresss) is not an invitation to visit
+          open mail (real mail addresss) is not an invitation to visit
           his door. It is only a hint where the message comes from (valid
           or not). The only thing we can be sure of is that a A clear
           anti-UBE address is a stop sign, not to send any CC copies.
@@ -13747,18 +13813,18 @@ Table of contents
 
 29.0 Other interesting code
 
-    29.1 Misc email related pointers
+    29.1 Misc mail related pointers
 
        "ProcLog"
         http://www.best.com/~aturner/proclog/
         Aaron Turner <aturner@pobox.com>
         ...ProcLog is a set of Unix shell and Perl 5 scripts that
         provide an easy to use and fast reporting tool for detailing where
-        mail goes after Procmail sorts it. ProcLog reports on current email
-        in your Procmail Log file, any new email that has come in since
+        mail goes after Procmail sorts it. ProcLog reports on current mail
+        in your Procmail Log file, any new mail that has come in since
         ProcLog was last run, and the size of your Procmail log file. What
         makes ProcLog unique is its ability to help you keep track of
-        email you've read.
+        mail you've read.
 
        "Xbuffy -- biff log"
         http://www.fiction.net/blong/programs/#xbuffy
