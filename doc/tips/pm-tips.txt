@@ -1,6 +1,5 @@
 Table of contents
 
-
        1.0 Document id
            1.1 General
            1.2 What is Procmail?
@@ -13,34 +12,30 @@ Table of contents
            1.8 About "useless use of cat award"
 
        2.0 Procmail pointers
-           2.1 Where to get procmail binary
-           2.2 Where is procmail developed
-           2.3 About procmail's Y2K compliance
-           2.4 Procmail mailing lists
-              2.4.1 To get off the procmail mailing list
-           2.5 Procmail recipe modules and faqs
-           2.6 Procmail mode for Emacs
-           2.7 Procmail module list
-              2.7.1 Where to get the modules
-              2.7.2 Terminology
-              2.7.3 Foreword to using modules
-              2.7.4 Header file modules
-              2.7.5 General modules
-              2.7.6 Low-level Date and time handling
-              2.7.7 Higher-level Date and time handling
-              2.7.8 Forwarding and account modules
-              2.7.9 Vacation modules
-              2.7.10 Message-id based modules
-              2.7.11 Cron modules
-              2.7.12 Backup modules
-              2.7.13 Confirmation modules
-              2.7.14 File Servers
-              2.7.15 Mime modules
-              2.7.16 Filtering message body or headers
-              2.7.17 Miscellaneus modules
-              2.7.18 Mailing list modules
-           2.8 Where to get Procmail code and modules
-           2.9 Procmail code to filter UBE
+           2.1 Where is procmail developed
+           2.2 About procmail's Y2K compliance
+           2.3 Procmail resources
+           2.4 Procmail mode for Emacs
+           2.5 Procmail module library project
+              2.5.1 Where to get the modules
+              2.5.2 Terminology
+              2.5.3 Foreword to using modules
+              2.5.4 Header file modules
+              2.5.5 General modules
+              2.5.6 Low-level Date and time handling
+              2.5.7 Higher-level Date and time handling
+              2.5.8 Forwarding and account modules
+              2.5.9 Vacation modules
+              2.5.10 Message-id based modules
+              2.5.11 Cron modules
+              2.5.12 Backup modules
+              2.5.13 Confirmation modules
+              2.5.14 File Servers
+              2.5.15 Mime modules
+              2.5.16 Filtering message body or headers
+              2.5.17 Miscellaneus modules
+              2.5.18 Mailing list modules
+           2.6 Procmail code to filter UBE
 
        3.0 Dry run testing
            3.1 What is dry run testing
@@ -256,8 +251,6 @@ Table of contents
            16.8 An includerc skeleton
 
        17.0 Mailing list server
-           17.1 Mailing list server pointers
-           17.2 Simple Mailing list server
 
        18.0 Common troubles
            18.1 Procmail modes: normal, delivery, and mailfilter.
@@ -405,23 +398,21 @@ Table of contents
            29.9 Software: adcomplain -- Perl junk mail rport
            29.10 Software: Ricochet -- Perl junk mail rport
            29.11 Software: yell -- perl
-           29.12 Software: ifile - Perl
-           29.13 Software: RBL lookup tool -- C
-           29.14 Software: mapSoN
-           29.15 Software: spamgard
-           29.16 Software: Spam Be Gone
-           29.17 Software: ClearMail
-           29.18 Software: TinyGnus - Emacs Gnus plug-in
+           29.12 Software: RBL lookup tool -- C
+           29.13 Software: mapSoN
+           29.14 Software: spamgard
+           29.15 Software: Spam Be Gone
+           29.16 Software: TinyGnus - Emacs Gnus plug-in
 
 1.0 Document id
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.1 2001/12/06 19:07:51 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.2 2002/01/01 11:26:04 jaalto Exp $
         .$Keywords: procmail sendmail formail mail UBE UCE spam filter $
         .$URL: http://pm-doc.sourceforge.net/ $
-        .$Contactid: jaalto@W2KPICASSO $
-        .$UrlLinksLastChecked: 1999-04-30 $
+        .$Contactid: jari.aalto@poboxes.com $
+        .$UrlLinksLastChecked: 2002-02-02 $
 
         This is a procmail tips page: a collection of procmail recipes,
         instructions, howtos. The document also contains URL pointers to
@@ -484,7 +475,7 @@ Table of contents
         development.
 
         .[aaron]      Aaron Schrab        <aaron+procmail@schrab.com>
-        .[alan]       Alan K. Stebbens    <Alan.Stebbens@software.com>
+        .[alan]       Alan K. Stebbens    <alan.stebbens@openwave.com>
         .[dan]        Daniel Smith        <J.Daniel.Smith@WriteMe.com>
         .[david]      David W. Tamkin     <dattier@mcs.net>
         .[ed]         Edward J. Sabol     <sabol@alderaan.gsfc.nasa.gov>
@@ -542,6 +533,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
+            v2.2    2002-02-02  608  URL links checked and updated
             v2.0    2001-08-09  608  http://pm-doc.sourceforge.net opened.
             v1.77   1999-12-27  603  Netscape spam filters added
             v1.76   1999-10-01  602  Mark Seiden's patch applied. Now under CVS.
@@ -864,17 +856,11 @@ Table of contents
         Philip Guenther <guenther@gac.edu> is currently taking care of and
         coordinating procmail bug fixes. Please send any procmail bugs to
         the mailing list or to <bug@procmail.org>. The development mailing
-        list is running SmarList at <procmail-dev@procmail.org>. Further
-        patch and bug info can be found at:
-
-            http://www.gac.edu/~guenther/procmail/todo.html
-            http://www.gac.edu/~guenther/procmail/warts.html
-
+        list is running SmarList at <procmail-dev@procmail.org>.
         Newest Procmail code:
 
             http://www.procmail.org/
             ftp://ftp.procmail.org/
-            ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
 
         Manual pages
 
@@ -912,7 +898,7 @@ Table of contents
         shove it through all the channels. And third, run all the systems
         end-to-end with their system clocks rolling over the millenium.
 
-    2.3 Procmail recipe modules and faqs
+    2.3 Procmail resources
 
         Procmail is discussed in usenet newsgroup *comp.mail.misc*.
 
@@ -943,11 +929,6 @@ Table of contents
        "Professor Timo Salmis's Procmail page -- EXELLENT"
         http://www.uwasa.fi/~ts/info/proctips.html
 
-       "Catherine's Getting Started With Procmail"
-        http://shell3.ba.best.com/~ariel/nospam/proctut.shtml
-        This is a quick tutorial intended to get a procmail neophyte
-        started using procmail with as little trouble and fuss as possible.
-
        "Joe Gross's short Procmail tutorial"
         http://www.procmail.net/ <jgross@stimpy.net>
         ...Using procmail and a
@@ -957,14 +938,22 @@ Table of contents
        "Google's procmail pointers"
         http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/
 
-       "Unixworld - setting up procmail"
-        http://www.fm.cornell.edu/usr/doc/procmail-3.13.1/procmail.html
+       "Eli on Procmail"
+        1998-12-08 Eli the Bearded <*@qz.to> announced in comp.mail.misc
+        that he had made his procmail modules available at
+        http://www.faqs.org/faqs/mail/addressing/ You may find interesting
+        procmail code there but the modules themselves are not general
+        purpose *plug-in* modules that you could use right away. Some
+        functionality included:
 
-       "Unix manpages"
-        http://www.xs4all.nl/~pater/manpages/
-        ...If you don't have procmail manpages at hand, check this site.
-        It contains a wealth of Unix related manpages online.
-        <pater@xs4all.nl> Jeroen Paternostre
+                Inline decoding of MIME text attachments        (rc.mime-decode)
+                Cleansing of obscure "Re:" formats in subject   (rc.pre-list)
+                Nifty autoresponder                             (rc.qz-2)
+                Sophisticated dupicate mail catching            (rc.dupes)
+                Example of using my mail bouncer                (rc.lists-out)
+                Detection of some classes of autoreplies        (rc.daemon)
+                Various junk mail filtering                     (rc.filter)
+                Daily log files                                 (rc.vars)
 
     2.4 Procmail mode for Emacs
 
@@ -981,35 +970,29 @@ Table of contents
             pm.lint:062: Warning, recipe with "|" may need `w' flag.
             pm.lint:073: Warning, Formail used but no `f' flag found.
 
-    2.5 Procmail module list
+    2.5 Procmail module library project
 
        2.5.1 Where to get the modules
 
-        The UBE stop procmail modules are not listed here. See pointers in
-        "procmail code" section later.
+       "Procmail module library"
+        Hosted at sourceforge CVS server and open for anyone to
+        participate. Visit http://pm-lib.sourceforge.net/
 
-        o   2001-08-08 All pm-ja*.rc modules are available at
-            Procmail Module Project page
-            http://pm-lib.sourceforge.net/
+       "Alan's procmail modules"
+        Send subject "send procmail library" to Alan Stebbens
+        <alan.stebbens@software.com> or <alan.stebbens@openwave.com>
 
-        o   Other modules are by Alan Stebbens
-            http: //reality.sgi.com/aks/
+       "Concordia scripts"
+        http://alcor.concordia.ca/topics/email/auto/procmail/
+        ...We provide sample sets of recipes to get you started. The great
+        thing about the concordia scripts is the fact that they are
+        designed to run from a central location and be called from a
+        .procmailrc installed in the user's ~/home directory.
+        <webdoc@alcor.concordia.ca>
 
-        o   1998-12-08 Eli the Bearded <*@qz.to> announced in
-            comp.mail.misc that he had made his procmail modules available
-            at http://www.faqs.org/mail/addressing/
-            You may find interesting procmail code there but the modules
-            themselves are not general purpose *plug-in* modules that you
-            could use right away. Some functionality included:
-
-                Inline decoding of MIME text attachments        (rc.mime-decode)
-                Cleansing of obscure "Re:" formats in subject   (rc.pre-list)
-                Nifty autoresponder                             (rc.qz-2)
-                Sophisticated dupicate mail catching           (rc.dupes)
-                Example of using my mail bouncer                (rc.lists-out)
-                Detection of some classes of autoreplies        (rc.daemon)
-                Various junk mail filtering                     (rc.filter)
-                Daily log files                                 (rc.vars)
+        "David's" David Hunt <dh@west.net>
+        ...My .procmailrc and .forward files can be viewed at
+        http://www.west.net/~dh/homedir/pmdir/
 
        2.5.2 Terminology
 
@@ -1192,9 +1175,6 @@ Table of contents
             in the subject line. Handles commands (send|get)
             [help|info|procmail info|procmail lib|procmailrc] and a few
             others.
-        o   *send-file.rc* is a very simplistic piece of procmail code
-            to send file (non-MIME support) requested in subject line.
-            http://www.universe.digex.net/~mbr/unix/send-file.html
 
        2.5.15 Mime modules
 
@@ -1255,28 +1235,7 @@ Table of contents
             correct folders. No more hand work and manual storing
             of mailing list messages.
 
-    2.6 Where to get Procmail code and modules
-
-       "Alan's procmail modules"
-        Send subject "send procmail library" to Alan Stebbens
-        <alan.stebbens@software.com> http://reality.sgi.com/aks/
-
-       "pm-lib, Jari's Procmail modules"
-        http://pm-lib.sourceforge.net/
-
-       "Concordia scripts"
-        http://alcor.concordia.ca/topics/email/auto/procmail/
-        ...We provide sample sets of recipes to get you started. The great
-        thing about the concordia scripts is the fact that they are
-        designed to run from a central location and be called from a
-        .procmailrc installed in the user's ~/home directory.
-        <webdoc@alcor.concordia.ca>
-
-        "David's" David Hunt <dh@west.net>
-        ...My .procmailrc and .forward files can be viewed at
-        http://www.west.net/~dh/homedir/pmdir/
-
-    2.7 Procmail code to filter UBE
+    2.6 Procmail code to filter UBE
 
         _Sysadms_ _remember_ : Spam filtering is much more efficiently done
         in the MTA, especially if you are just looking at From and To lines.
@@ -1302,7 +1261,7 @@ Table of contents
         is included in kit `pm-code.zip'.
 
        "Catherine A. Hampton's Spambouncer"
-        http://www.best.com/~ariel/nospam/
+        http://www.spambouncer.org/
         ...The attached set of procmail recipes/filters, which I call
         The Spam Bouncer, are for users who are sick of spam (unsolicited
         junk mail) and want to filter it out of their mail as easily
@@ -1323,13 +1282,8 @@ Table of contents
         for electronic mail. Recipes include checks for forged headers,
         key words, common spam domains, relay servers and many others.
 
-       "Download procmail spam filters"
-        http://www.telebyte.com/stopspamr
-        This is excellent site and contains many other spam stop pointers.
-
        "SpamDunk"
-        http://www.interlog.com/~waltdnes
-        http://www.interlog.com/~waltdnes/beta/techie.htm
+        http://www3.sympatico.ca/walter.dnes/email/spamdunk/
         ...This webpage shows a commented example of a working .procmailrc
         file that works for me. I have tried to make things as generic as
         possible, but there are no guarantees that it will work for anyone
@@ -6078,7 +6032,7 @@ Table of contents
 
     12.3 Software to deal with mime or html
 
-        See also nearest Perl CPAN module, http://www.perl.org, site and
+        See also nearest Perl CPAN module, http://www.perl.org/ site and
         CPAN/modules/by-module/MIME/
 
         There's also Unix program `munpack' to explode a MIME message
@@ -8117,7 +8071,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.1 2001/12/06 19:07:51 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.2 2002/01/01 11:26:04 jaalto Exp $
             #
             #   File id
             #
@@ -8199,12 +8153,7 @@ Table of contents
 
 17.0 Mailing list server
 
-    17.1 Mailing list server pointers
-
-       "Meng on procmail"
-        http://res2.resnet.upenn.edu/procmail
-
-    17.2 Simple Mailing list server
+        Simple Mailing list server
 
             # by Lars Hecking <lhecking@nmrc.ucc.ie>
             #
@@ -8592,11 +8541,6 @@ Table of contents
         procmail in in the system's startup PATH. Note that procmail will
         try to deliver to /var/spool/mail/$USER by default; to change this,
         see INSTALL.mbox.
-
-        if you are trying to get procmail to deliver to maildir format as
-        well, take a look at rhi for patches:
-
-            http://www.qcc.sk.ca/~bguenter/distrib/procmail-maildir/
 
     18.12 Qmail: Procmail looks file from /var/spool/mail only
 
@@ -10262,7 +10206,6 @@ Table of contents
        "ezmlm"
 
         http://www.ezmlm.org/ and http://www.qmail.org/
-        http://www.htp.org/qmail/ezfaq/FAQ.html
 
         ..SmartList development is dead and in the long term it is difficult
         to manage and improve. I've moved the vast majority of my lists to
@@ -10323,17 +10266,15 @@ Table of contents
         o   majordomo uses Perl
         o   Mailman uses Python http://www.list.org/
         o   SmartList uses scripts/procmail
-        o   Listar Mailing List Package (free): http://www.nausicaa.net/~listar/
+        o   Listar Mailing List Package (free): http://www.listar.org/
         o   L-Soft international, Inc. (non-free): http://www.lsoft.com/
         o   The Petidomo Mailing List Processor and Manager (non-free):
-            http://www.petidomo.com/
-        o   Mailagent (free): http://www.foretune.co.jp/people/shigeya/mailagent/
-        o   BeroList (free): http://www.in-trier.de/~bero/BeroList/
+            http://cryp.to/
+        o   BeroList (free): http://freshmeat.net/projects/berolist/
 
     20.3 SmartList code (mailing list implementation with procmail)
 
        "Smartlist 'faq'"
-        http://www.mindwell.com/smartlist/
         http://www.hartzler.net/smartlist/SmartList-FAQ.html
 
        "Mark's Smartlist add-ons"
@@ -10373,9 +10314,6 @@ Table of contents
         A discussion group mailing list is available for support.
         Please send a blank message to <front-end-on@mail-list.com> to
         start the subscription process.
-
-       "Auto respond to 'help: is there faq?' "
-        http://www2.inow.com/~conover/ rel.tar.zip
 
        "Moderated lists -- Perl script"
         http://www.mjolner.com/~lbr/moderate/
@@ -10449,16 +10387,9 @@ Table of contents
 
     21.2 Elm and pgp support (Mutt is the successor to elm.)
 
-        Mutt's primary site is
-                ftp://ftp.guug.de/pub/mutt/
-        with various mirrors outside the US to avoid the crypto distribution
-        problem.
-
-        If you want elm,
-       "Michael Elkins' <me@cs.hmc.edu> ftp directory"
-        ftp://ftp.cs.hmc.edu/pub/me/
-        http://www.cs.hmc.edu/~me/mutt/
-        http://www.cs.hmc.edu/~me/elm/me.html
+        Mutt's primary site is ftp://ftp.guug.de/pub/mutt/ with various
+        mirrors outside the US to avoid the crypto distribution problem.
+        If you want elm, see http://www.elm.org/
 
         [Liviu Daia <daia@stoilow.imar.ro> mentions that] ...Provided that
         you configure it correctly, it will use lynx to convert HTML
@@ -10472,7 +10403,6 @@ Table of contents
     21.3 MH sites
 
        "New MH"
-        ftp://ftp.math.gatech.edu/pub/nmh/nmh.tar.gz
         http://www.math.gatech.edu/nmh/
 
 22.0 Additional procmail software for Emacs
@@ -10646,12 +10576,8 @@ Table of contents
 
        "Gnus"
         http://www.ifi.uio.no/~larsi
-
-       "Gnus manual: procmail"
+        Gnus and procmail:
         http://www.ifi.uio.no/~larsi/www.gnus.org/manual/gnus_6.html#IDX1501
-
-       "Gnus Hypertext search archive"
-        http://www.miranova.com/gnus-list/
 
     23.2 Why use procmail with Gnus
 
@@ -11381,7 +11307,6 @@ Table of contents
 
         The use of MIME is debatable. The use of MIME in a USENET posting
         is inexcusable, except for the case covered in draft by:
-        http://www.ietf.org/internet-drafts/draft-ietf-usefor-article-01.txt
 
           Insofar as there exist authorities empowered (by common consent
           or otherwise) to define what is and is not proper in various
@@ -11408,9 +11333,7 @@ Table of contents
     24.7 Some RFC Pointers
 
         http://www.cis.ohio-state.edu/hypertext/information/rfc.html
-        http://ds.internic.net/rfc/
         http://www.nexor.com/public/rfc/index/rfc.html
-        http://www.it.kth.se/docs/rfc/
 
         o   rfc821 SMTP protocol, see also rfc959 FTP protocol standard
         o   rfc822  Format of internet messages (formerly called as Arpanet)
@@ -11480,9 +11403,6 @@ Table of contents
         http://www.uiuc.edu/uiucnet/3-2-1.html
 
        "The Unix MBOX, Berkeley, format"
-
-        http://systems.binghamton.edu/Pine/low-level.html (--> Folder
-        Formats and Name Extensions --> Berkeley Mail Format)
         http://www.qmail.org/qmail-manual-html/man5/mbox.html ...This
         format comes to us from the ancient UNIX mail program, V7
         /bin/mail...Each message ends with two blank lines
@@ -12041,7 +11961,7 @@ Table of contents
 
         Why would they not consider fixing it? Their e-mail software/gateway
         is broken, and needs fixing. That's that. Direct them to RFC 822, sec
-        4.6.1. http://ds.internic.net/rfc/rfc822.txt
+        4.6.1. http://www.ietf.org/rfc/rfc0822.txt?number=822
 
         [Gerald Oskoboiny <gerald@impressive.net>] There are problems with
         Some of the problems with mail containing a bad message id
@@ -12684,7 +12604,7 @@ Table of contents
     27.1 Misc mail related pointers
 
        "ProcLog"
-        http://www.best.com/~aturner/proclog/
+        http://synfin.net/aturner/proclog/
         Aaron Turner <aturner@pobox.com>
         ...ProcLog is a set of Unix shell and Perl 5 scripts that
         provide an easy to use and fast reporting tool for detailing where
@@ -12698,14 +12618,6 @@ Table of contents
         http://www.fiction.net/blong/programs/#xbuffy
 
     27.2 Expire mail pointers
-
-       "Perl mail expire"
-        http://www.oasis.leo.org/perl/scripts/net/mail/expire_mail.dsc.html
-        Phil Male <phil@compnews.co.uk>
-        ...This program removes old messages from system mailboxes. It
-        assumes the format of mailboxes to be standard sendmail format mail
-        with a blank line followed by a `From ' line starting each and
-        every message. Mailbox locking is via flock. Works under SunOS.
 
        "Sh expire mail"
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
@@ -13140,11 +13052,6 @@ Table of contents
        "NoCEM"
         http://www.cm.org/
 
-       "Dougal's NoCeM-E"
-        http://advicom.net/~dougal/antispam/
-        ... Dougal is sysadm for an ISP. His page has wealth of information
-        about Anti-SPAM Tools. You also find his mailing list for NoCeM-E.
-
        "The Coalition Against Unsolicited Commercial Email (CAUCE)"
         http://www.cauce.org/faq.html
         ...The Problem: Unsolicited commercial mail, more commonly known as
@@ -13203,20 +13110,11 @@ Table of contents
         America Online, Inc. v. Cyber Promotions, Inc.,
         Compuserve Inc. v. Cyber Promotions, Inc., etc.
 
-       "Anti-Spam Directory of Information and Resources"
-        http://www.ao.net/waytosuccess/nospam.html
-
-       "FREE - The Forum for Responsible and Ethical E-mail"
-        http://www.spamfree.org/
-
-       "Ethical Marketing Using FREE Resources"
-        http://www.ao.net/waytosuccess/index.html
-
     29.2 General Filtering pages (more than procmail)
 
-       "Nancy McGough - Mail Filtering FAQ"
-        http://ssil.uoregon.edu/~trenton/autopage/page7547.html
-        http://www.ii.com/internet/faqs/launchers/mail/filtering-faq/
+       "Nancy McGough <nm@noadsplease.ii.com> - Mail Filtering FAQ"
+        .http://www.ii.com/internet/robots/procmail/qs/
+        .http://www.ii.com/internet/faqs/launchers/mail/filtering-faq/
 
        "Information Filtering Resources"
         http://www.ee.umd.edu/medlab/filter/ Doug Oard <oard@glue.umd.edu>
@@ -13234,7 +13132,7 @@ Table of contents
         What is UBE, UCE, EMP, MMF, MLM, Spam, it is all explained here.
 
        "Get that spammer -- A VERY GOOD LINK"
-        http://kryten.eng.monash.edu.au/gspam.html
+        http://www.triode.net.au/~forever/gspam.html
         ...All about Spam; traceroute, netabuse etc. Full of links and docs
 
        "Whois"
@@ -13244,7 +13142,7 @@ Table of contents
         ftp://rtfm.mit.edu/pub/usenet/advertising/
 
        "Dealing with Junk Email"
-        http://www.mcs.com/~jcr/junkemaildeal.html
+        http://www.jcrdesign.com/junkemaildeal.html
         ...What you should do (and not do) when you have been victimized by
         a junk mailer. This document teaches you how to read headers in
         order to trace the origin of junk mail, and includes detailed
@@ -13264,19 +13162,6 @@ Table of contents
         o   Who to complain to, abuse addresses, online services
         o   What to say and how to say it, effective complaining
 
-       "How to fight back."
-        http://www.oeonline.com/~edog/spamstop.html
-
-        o   Look at the header of the advertising message. Find the
-            "Message-ID" line. (You might have to tell your e-mail program to
-            display this.)
-        o   The words after the @ sign are the sender's real--not
-            faked--Internet Service Provider, or ISP. (Spammers often try to
-            disguise their address, but the Message-ID is a good clue.)
-        o   Write a complaint to the postmaster of that ISP, similar to the
-            one below. (If the ISP is junkmail.com, then let
-            postmaster@junkmail.com hear from you.)
-
        "Practical Tools to Boycott Spam"
         http://spam.abuse.net/spam/
         ...We have been actively engaged in fighting spam for years. Recent
@@ -13291,21 +13176,9 @@ Table of contents
         o   Other tools and techniques for limiting spam
         o   Sample Acceptable Use Policy statements for ISPs
 
-       "Spam -- stop that!"
-        http://com.primenet.com/spamking/buyerbeware.html
-
-       "The Campaign to stop junk email web site"
-        http://www.mcs.com/~jcr/junkmail.html
-        ...we will attempt to teach victims and potential victims (that's
-        everyone with an mail address) the most effective methods of
-        prevention and retribution.
-
        "news.admin.net-abuse.* Homepage"
         Timothy M. Skirvin <tskirvin@math.uiuc.edu>
-        http://www.ews.uiuc.edu/~tskirvin/home/nana/
-
-       "The automated spamhandler beta information heap."
-        http://www.halcyon.com/natew/
+        http://www.killfile.org/~tskirvin/nana/
 
        "Preventing relaying in Sendmail"
         ...This package adds two independent features to sendmail,
@@ -13462,7 +13335,7 @@ Table of contents
         http://www.tuxedo.org/~esr/fetchmail/
 
        "Maildrop filter utility"
-        http://www.geocities.com/SiliconValley/Peaks/5799/maildrop.README.html
+        http://freshmeat.net/projects/maildrop/
         ...Alternative to procmail
 
        "Lua"
@@ -13506,12 +13379,6 @@ Table of contents
         ...<remove@netchem.com> Dear Sir/Madam, Your mail address may be on
         many spammers' lists. We are compiling a *remove* list. Forward the
         original junk to <list@netchem.com>
-
-       "No Junk E-Mail database"
-        http://pages.ripco.com:8080/~glr/nojunk.html
-        ...We will help stop unwanted mail to you..the list is submitted to
-        us, and those addresses that appear in the "do not mail" list are
-        removed and the "cleaned" list is returned
 
     29.7 UBE related newsgroups or mailing lists
 
@@ -13614,22 +13481,7 @@ Table of contents
         addresses and Web site names and sends appropriate messages to
         users, postmasters and Webmasters.
 
-    29.12 Software: ifile - Perl
-
-        http://www.cs.cmu.edu/~jr6b/ifile/
-        Jason Daniel Rennie <jr6b@andrew.cmu.edu>
-
-        ...ifile is different from other mail filtering programs in
-        three major ways: 1) ifile does not require you to generate a set
-        of rules in order to successfully filter mail 2) ifile uses the
-        entire content of messages for filtering purposes 3) ifile learns
-        as you move incorrectly filtered messages to new mailboxes ifile is
-        not dependent upon any specific mail system and should be adaptable
-        to any mail system which allows an outside program to perform mail
-        filtering. Currently, ifile has been adapted to the MH and EXMH
-        mail systems.
-
-    29.13 Software: RBL lookup tool -- C
+    29.12 Software: RBL lookup tool -- C
 
         [1997-12-04 PM-L Edward S. Marshall <emarshal@logic.net>]
 
@@ -13763,7 +13615,7 @@ Table of contents
         this: you can compile sendmail -DTCPWRAPPERS and let it run as a
         daemon
 
-    29.14 Software: mapSoN
+    29.13 Software: mapSoN
 
           Note: You can do exactly the same as below with procmail with one
           of the listed procmail modules: pm-jacookie.rc. See the code.
@@ -13817,7 +13669,7 @@ Table of contents
         either delete the spooled mails, or send them to a special folder,
         or whatever you prefer.
 
-    29.15 Software: spamgard
+    29.14 Software: spamgard
 
         [similar to MapSon]
         ftp://ftp.netcom.com/pub/wj/wje/release/sg-howto
@@ -13834,7 +13686,7 @@ Table of contents
         be on, there are provisions for accepting all mail from a set of
         mailing lists that you specify.
 
-    29.16 Software: Spam Be Gone
+    29.15 Software: Spam Be Gone
 
        "Spam Be Gone"
         http://www.internz.com/SpamBeGone/
@@ -13892,35 +13744,7 @@ Table of contents
           (X-Advertisement comes to mind) that would be assests for killing
           SPAM.
 
-    29.17 Software: ClearMail
-
-        http://www.clearmail.com/ 1998-08-27
-        Scott R Carter <scarter@world.std.com>
-
-        ClearMail offers individuals some very strong control over spam
-        through a quite unique concept. The software includes Procmail,
-        Perl and C code. System Requirements include:
-
-        ClearMail helps to control spam by allowing a user to classify
-        e-mail as high or low priority based on an Address Book or "White
-        List" of known senders. Unknown senders can also send high priority
-        mail by including a special Mail Key (token) in their message
-        (initial message from unknown sender without valid Key results in a
-        bounceback message with instructions).
-
-        What makes ClearMail different from similar concepts is that
-        spammers are not able to easily obtain the Mail Key to bypass the `
-        system because it is conveyed as an image.
-
-        o   Unix operating system
-        o   Shell accounts for users
-        o   Individual .forward, .procmailrc files
-        o   Sendmail
-        o   Procmail
-        o   Perl
-        o   Public Web server
-
-    29.18 Software: TinyGnus - Emacs Gnus plug-in
+    29.16 Software: TinyGnus - Emacs Gnus plug-in
 
         ._Availability:_ <jari.aalto@poboxes.com>
         .http://tiny-tools.sourceforge.net/

@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.3 2001/12/06 19:07:51 jaalto Exp $
+#   $Id: admin.bashrc,v 1.4 2002/01/01 11:26:04 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -38,11 +38,11 @@ function sfpmdocinit ()
 
     local url=http://pm-doc.sourceforge.net/
 
-    SF_PM_DOC_HTML_TARGET=${SF_PM_DOC_HTML_TARGET:-http://pm-doc.sourceforge.net/}
+    SF_PM_DOC_HTML_TARGET=${SF_PM_DOC_HTML_TARGET:-$url}
     SF_PM_DOC_KWD=${SF_PM_DOC_KWD:-"procmail, sendmail, programming, faq"}
     SF_PM_DOC_DESC=${SF_PM_DOC_DESC:-"Procmail documentation"}
     SF_PM_DOC_TITLE=${SF_PM_DOC_TITLE:-"$SF_PM_DOC_DESC"}
-    SF_PM_DOC_LOC=${SF_PM_DOC_LOC:-"."}
+    SF_PM_DOC_LOC=${SF_PM_DOC_LOC:-""}
 
     if [ "$SF_PM_DOCS_USER" == "" ]; then
        echo "$id: Identity \$SF_PM_DOCS_USER unknown."
@@ -64,7 +64,7 @@ function Date ()
     date "+%Y.%M%d"
 }
 
-function sfttfilesize ()
+function sfpmdocfilesize ()
 {
     #	put line into array ( .. )
 
@@ -74,7 +74,7 @@ function sfttfilesize ()
     #	Read 4th element from array
     #	-rw-r--r--    1 root     None         4989 Aug  5 23:37 file
 
-    echo ${xxline[4]}
+    echo ${line[4]}
 }
 
 function sfpmdocscp ()
@@ -113,8 +113,6 @@ function sfpmdochtml ()
     #	     bash$ sfpmdochtml <FILE.txt> --as-is
 
 
-    cvs_location=~/sforge/devel/pm-doc/doc    # Where is the project
-
     local input="$1"
 
     if [ "$input" == "" ]; then
@@ -128,29 +126,27 @@ function sfpmdochtml ()
 	opt="$2"
     fi
 
-    echo "$id: $input $opt"
+    echo "$id: Htmlizing $input $opt"
 
-    (
-        perl -S t2html.pl                                               \
-              $opt                                                      \
-              --button-top $SF_PM_DOC_HTML_TARGET                       \
-              --title  "$SF_PM_DOC_TITLE"                               \
-              --author "$SF_PM_DOC_USER_NAME"                           \
-              --email  "$SF_PM_DOC_EMAIL"                               \
-              --meta-keywords "SF_PM_DOC_KWD"                           \
-              --meta-description "$SF_PM_DOC_DESC"                      \
-              --name-uniq                                               \
-              --Out                                                     \
-              $input;
+    perl -S t2html.pl                                               \
+	  $opt                                                      \
+	  --button-top "$SF_PM_DOC_HTML_TARGET"                     \
+	  --title  "$SF_PM_DOC_TITLE"                               \
+	  --author "$SF_PM_DOC_USER_NAME"                           \
+	  --email  "$SF_PM_DOC_EMAIL"                               \
+	  --meta-keywords "$SF_PM_DOC_KWD"                          \
+	  --meta-description "$SF_PM_DOC_DESC"                      \
+	  --name-uniq                                               \
+	  --Out                                                     \
+	  $input;
 
-	    if [ -d "../../html/"  ]; then
-		mv *.html ../../html/
-	    elif [ -d "../html/"  ]; then
-		mv *.html ../html/
-	    else
-		echo "Can't move generated HTML to ../../html/"
-	    fi
-    )
+	if [ -d "../../html/"  ]; then
+	    mv *.html ../../html/
+	elif [ -d "../html/"  ]; then
+	    mv *.html ../html/
+	else
+	    echo "Can't move generated HTML to ../../html/"
+	fi
 
 }
 
@@ -163,9 +159,14 @@ function sfpmdochtmlall ()
     local size
     local opt
 
+    if [ "$SF_PM_DOC_LOC" = "" ]; then
+       echo "$id: Where is the project root? Define SF_PM_DOC_LOC"
+       return;
+    fi
+
+
     (
 	cd $SF_PM_DOC_LOC || return;
-	echo "Source dir:" $(pwd)
 
 	for file in *.txt;
 	do
@@ -173,7 +174,6 @@ function sfpmdochtmlall ()
 	     if [ $size -gt 15000 ]; then
 	       opt=--html-frame
 	     fi;
-	     echo "Htmlizing $file $opt $size"
 
 	     sfpmdochtml $file "$opt"
 
