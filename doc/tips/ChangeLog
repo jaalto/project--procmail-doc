@@ -1,4 +1,4 @@
-2004-10-06 Wed  Jari Aalto  <jari dot aalto A T poboxes dot com>
+2004-10-06 Wed  Jari Aalto  <jari dot aalto A T cante dt net>
 
         * pm-tips.txt
         - Document streamlined. Only more or less directly procmail related
@@ -26,7 +26,7 @@
         (20.3 Emacs and lining up backslashes): 2.26 Removed.
         (Chapter 20 and 21 combined).
 
-2004-08-25 Wed  Jari Aalto  <jari dot aalto A T poboxes dot com>
+2004-08-25 Wed  Jari Aalto  <jari dot aalto A T cante dt net>
 
         * pm-tips.txt (9.8 Testing bogofilter value range with scoring):
         2.25 New topic.
@@ -35,7 +35,7 @@
         (6.1 Philosophy of abstraction in regexps): 2.25
         Added URL http://www.regexlib.com/
 
-2004-08-23 Mon  Jari Aalto  <jari dot aalto A T poboxes dot com>
+2004-08-23 Mon  Jari Aalto  <jari dot aalto A T cante dt net>
 
         * pm-tips.txt
         - Changed all recipes so that they won't trigger procmail 3.22 :0 HB
