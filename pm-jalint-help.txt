@@ -1,0 +1,193 @@
+Experimental procmail lint service via email
+
+    Document id
+
+        @(#) Jari's mail based Procmail Lint service help page
+        @(#) $Docid: 1998-08-28 Jari Aalto $
+
+        To get File Server help, send following message
+
+            To: <jari.aalto@poboxes.com>
+            Subject: send help
+
+    To download Procmail code writing minor mode (and Lint) for Emacs
+
+        (Emacs is a program that runs under Unix and WinNT/95
+         See ftp://cs.uta.fi/pub/ssjaaa/elisp.html)
+
+        Get the lisp tgz kit from ftp://cs.uta.fi/pub/ssjaaa/tiny-tools.tar.gz
+        And the latest development version of the Procmail minor mode
+        via "Subjct: send tinypm.el"
+
+        installing packages to Emacs is very easy; each lisp file has
+        section "Installation instructions."
+
+    Lint service Preface
+
+        The actual Lisp code si to do the job is ~125K in case that matters
+        to you. There are lot of checks that it finds better than you.
+
+        1997-11-14 I opened an experimental procmail code check (lint)
+        service via email. I had just finished Emacs lisp package called
+        `tinypm.el', which was a mode for writing and Linting the procmail
+        recipes. However, because many users don't know nothing about Emacs
+        and they may be scared to install Emacs packages and deal with
+        obscure lisp language, I decided to let people to try the Lint via
+        email.
+
+        This is experimental and my only motivation is to improve the Lint
+        parser, because I have only tried it on my code. When you send
+        message to this Lint service, it actually calls Emacs and loads the
+        TinyPm package, runs your code through the checker and quits. This
+        all takes some time and burns extra CPU cycles here. Naturally, if
+        the traffic starts to bother our mail server I have to close this
+        service.
+
+        But for now, you can try the Lint with command
+
+            To: <jari.aalto@poboxes.com>
+            Subject: pm-lint
+
+            BODY-CONTAINS-PROCMAIL-CODE-TO-LINT
+
+        Do not add signaturess or anything else in the message. The Lint
+        may very well die on error, so I don't guarrantee anything. If that
+        happens or if you get false positives (wrong errors, warnings) then
+        please report the code snippets and I'll improve the Lint engine.
+
+        Hope you find the service usefull and educating.
+        jari
+
+Exerpted from Emacs package tinypm.el
+
+    Rules on how to write Procmail recipe
+
+        In order to use the Linting service, This package requires that
+        you write your procmail code in following manner. These rules are
+        needed, so that it would be possible to parse the procmail code
+        efficiently and more easily.
+
+    recipe start
+
+            :   # although legal procmail, illegal here. Use :0
+
+    flag order
+
+        In order to autocorrect read flags from the buffer, the flag order
+        must be decided: and here is the de facto order. The one presented
+        in the procmail man page "HBDAaEehbfcwWir" is errourneous, because
+        flags "aAeE" must be first, otherwise it causes error in procmail
+        (heresay). The idea here is that the most important flags are
+        put to the left, like giving priority 1 for `aAeE', which affect
+        the receipe immedately. Priority 2 has been given to flag `f',
+        which tells if receipe filters somthing. Also (h)eader and (b)ody
+        should immediately follow `f', this is considered priority 3.
+        In the middle there are other flags, and last flag is `c', which
+        ends the receipe, or allows it to continue.
+
+            :0[aAeE]f[hbHB][DwWir]c: LOCKFILE
+               |    | |     |     |
+               |    | |     |     (c)opy flag last.
+               |    | |     Other flags
+               |    | The header/body flags next
+               |    (f)ilter flag to the left, before hb
+               The 'process' flags first: (A)ND or (E)lse recipe
+
+    lockfile
+
+        The lockfile names must be longer than two characters. Shorter
+        lockfile name trigger an error. Also lockfile must have extension
+        $LOCKEXT or .lock or .lck; no other non-standard extensions are
+        allowed. The lockfile name must be within charsert [-_$.a-zA-Z0-9/]
+        and anything else is considered as an odd lock file name.
+
+            :0 : c          # Error, should have been :0 c:
+            :0 : file       # Invalid, should read "file.$LOCKEXT"
+            :0 : file.tmp   # Invalid, non-standard extension.
+            :0 : file=0     # Invalid filename (odd characters in name)
+
+    condition line
+
+            * H B ?? regexp # valid procmail, llegal here: write "HB"
+
+    variables
+
+        The literal value on the right-hand side must be quoted with double
+        quotes if a simple string is being assigned. If there is no quote or
+        backtick, then Lint assumes that you forgot to add variable
+        dollar($). Try to avoid extra spaces in the variable initialisation
+        construct `:-'.
+
+            DUMMY  = yes        # Warning, did you mean DUMMY = $yes
+            VAR    = ${VAR:-1}  # No spaces allowed: "$ {" is illegal.
+
+    program names
+
+        Program `sendmail' must be named sendmail, but it can also be variable
+        $SENDMAIL. Similarly, program `formail' must be named `formail' or
+        it can be variable $FORMAIL. Use of $MY_SENDMAIL or $MY_FORMAIL are
+        illegal and cause missing many Lint checks.
+
+    commenting style
+
+        In recent procmail releases you're allowed to place comments inside
+        condition lines. Lint will issue a warning about this practise
+        if your procmail version does not support this. But while you
+        may place comments inside conditions, they should be indented by
+        some amount of spaces. The default indent is 4 spaces.
+
+            * condition1    --> * condition
+            # comment               # comment
+            # comment               # comment
+            * condition2        * condition
+
+        This is recommended for readability (separating conditions
+        from comments).
+
+    redirecting to a file
+
+        If you print something to file, then the shell redirection tokens
+        > and >> must have surrounding spaces, otherwise they are not
+        found in the procmail code. (because > can be used in regexps)
+
+            :0 :
+            | echo > test.tmp       # Do not use "echo >test.tmp"
+
+    Lint: directives
+
+        Most of the time the Lint knows what is best for you, but there
+        may be cases where you have very complex procmail code and you
+        know exactly what you want. Here are the Lint directives that you
+        can place immediately before the recipe start to prevent Lint
+        from whining. The word `Lint:' can have any number of surrounding
+        spaces as long as it is the first word after comment.
+
+            # Lint: <Lint flags here>
+            :0 FLAGS
+
+        The comment must be in the previous line, the following is not
+        recognized.
+
+            # Lint: <Lint flags here>
+            #   I'm doing some odd things here and ....
+            :0 FLAGS
+
+        Here is list of recognized Lint directives. each directive must have
+        leading space.
+
+        o   `-w'. In "|" recipe, ignore exit code. If you don't give
+            this directive, the missing "w" flag is suggested to put there.
+        o   `-i'. If you have recipe that, 1) has no "f"  2) has no ">"
+            3) has "|" action, then the recipe doesn't seem to store
+            the stdin anywhere. This may be valid case eg. if you use
+            MH's rcvstore. You can suppress the "-i" flag check with
+            this directive.
+        o   `-c'. This is used in conjunction with `-i' when you only
+            do something as a side effect and you reaally don't want copy.
+
+    Lint: error messages
+
+        The error messages should be self-explanatory, but if you don't
+        understand the message, please send me a note.
+
+End
