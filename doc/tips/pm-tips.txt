@@ -414,7 +414,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.15 2002/09/01 13:35:10 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.16 2002/09/01 13:50:17 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -537,6 +537,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
+            v2.16   2002-08-31  596  Removed old UBE pointers.
             v2.13   2002-08-13  596  Removed old UBE pointers.
             v2.5    2002-02-01  608  Spelling checked with Emacs ispell
             v2.2    2002-01-28  608  URL links checked and updated
@@ -8091,7 +8092,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.15 2002/09/01 13:35:10 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.16 2002/09/01 13:50:17 jaalto Exp $
             #
             #   File id
             #
