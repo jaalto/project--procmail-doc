@@ -413,7 +413,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.27 2004/08/25 18:39:33 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.28 2004/10/06 13:55:39 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2002-07-11 $
 
@@ -534,6 +534,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
+            v2.27   2004-10-10  516  Spam related things removed.
             v2.16   2002-08-31  596  Removed old UBE pointers.
             v2.13   2002-08-13  596  Removed old UBE pointers.
             v2.5    2002-02-01  608  Spelling checked with Emacs ispell
@@ -887,6 +888,8 @@ Table of contents
 
        "Professor Timo Salmis's Procmail page"
         http://www.uwasa.fi/~ts/info/proctips.html
+        See Timo's "Foiling Spam with an Email Password System" at
+        http://www.uwasa.fi/~ts/info/spamfoil.html
 
        "Joe Gross's short Procmail tutorial"
         http://www.procmail.net/ <jgross@stimpy.net>
@@ -1943,8 +1946,8 @@ Table of contents
             :0Afhw:$MYLOCK$LOCKEXT
 
         Or, as suggested, leave flags in their own slot for more
-        distinctive separation. Note that procmail variable `$LOCKEXT' must be next to
-        $MYLOCK, because it contains string ".lock".
+        distinctive separation. Note that procmail variable `$LOCKEXT' must
+        be next to $MYLOCK, because it contains string ".lock".
 
             :0 A fhw: $MYLOCK$LOCKEXT
 
@@ -2435,7 +2438,7 @@ Table of contents
     6.1 Philosophy of abstraction in regexps
 
           Here are two ways to view or write regexps. Make up your own
-          mind.
+          mind. More on regular expressions ar <http://www.regexlib.com/>.
 
          People who are in favor of writing pure native regexps in the
          recipes:
@@ -4795,7 +4798,38 @@ Table of contents
             *$ 1^1 ^Received:.*by$s+\/.*
             action
 
-    9.8 How to add Content-Length header
+    9.8 Testing value range with scoring (bogofilter)
+
+        Bogofilter adds headers to the message that contains the
+        propbability scode of the message being spam in range 0.0 - 1.0:
+
+            X-Bogosity: No, tests=bogofilter, spamicity=0.365761 ...
+
+        If the filter runs at MTA, the values that affects the word "No" at
+        canoot necessarily be configured. To test directly the result score
+        to catch messages in range 0.2 - 0.9 as "Unsure" can be done with
+        scoring. If the spamicity value was 0.92, the first score would
+        return: 1.90 - 0.92 = 0.98, which is lower than _1_ the score OK
+        value.
+
+            :0
+            * ^X-Bogosity:.*spamicity=\/0\.[0-9][0-9][0-9]
+            {
+                #   check for maximum
+                :0
+                * $ -$MATCH^0
+                *    1.90^0
+                {
+                    # check for minimum
+                    :0:
+                    * $  $MATCH^0
+                    *    0.8^0
+                    {
+                        # VAlue is betweeb A .. B
+                    }
+              }
+
+    9.9 How to add Content-Length header
 
           We use procmail for local delivery, and would like to get it
           to generate the content-length header, if one doesn't exist. SUN-OS
@@ -4815,7 +4849,7 @@ Table of contents
             * !^Content-Length:
             | /usr/bin/formail -a "Content-Length: 0000000000"
 
-    9.9 Testing message size or number of lines
+    9.10 Testing message size or number of lines
 
         Size conditions ignore `H' and `B' on the flag line and always work on
         `HB' unless another search area is specified on the condition's own
@@ -4837,7 +4871,7 @@ Table of contents
                 ...whatever when fewer lines
             }
 
-    9.10 Counting commas with recursive includerc
+    9.11 Counting commas with recursive includerc
 
         [jari] Foreword: David and Phil really are experts with procmail,
         and let this section serve as an example to "what on Earth is
@@ -7997,7 +8031,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.27 2004/08/25 18:39:33 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.28 2004/10/06 13:55:39 jaalto Exp $
             #
             #   File id
             #
@@ -9661,7 +9695,7 @@ Table of contents
 
         You can't catch null in the message. Eg if you try like this
 
-            NUL=`/usr/5bin/echo "\000"`
+            NUL=`/usr/bin/echo "\000"`
 
             :0
             *$ HB ?? $\NUL
@@ -9876,9 +9910,9 @@ Table of contents
 
         The right place to look is /usr/include/sysexits.h, but the codes
         should be pretty much standard. These ones are from HP-UX 10 and
-        the code that you will be using mostly is EX_NOUSER or EX_NOPERM.
-        It tells to the sender of UBE to "piss off and delete me from your
-        list; I'm not here"
+        the code that are mostly used are EX_NOUSER or EX_NOPERM. It tells
+        to the sender of UBE to "piss off and delete me from your list; I'm
+        not here"
 
             EX_OK          0        successful termination
             EX__BASE       64       base value for error messages
@@ -10142,137 +10176,22 @@ Table of contents
         package one finds instructions how to use and how to install the
         package into Emacs.
 
-    20.2 Emacs and procmail mode and Lint
+    20.2 Emacs procmail-mode and Procmail code checking (Lint)
 
         Procmail mode for Emacs (which can also lint procmail recipes) is
         available. People familiar with C-coding know lint, which is a
         rigorous code syntax checker. You can read about this Emacs mode
         from http://tiny-tools.sourceforge.net/
 
-    20.3 Emacs and lining up backslashes
+    20.3 Why use procmail with Gnus
 
-        Some time ago I wrote makefile to my Emacs tgz kit and as a side
-        effect I got frustrated with the use of backslashes within the make
-        rules. This backslash problem is universal in almost every
-        programming language, (e.g C/C++ macros) including procmail, where
-        you sometimes use `echo' a lot,
-
-            :0 h
-            * condition
-            | ( cat -;       \
-                echo "And the body text\n"  \
-                     "follows here with\n"  \
-                     "these echoes"; \
-                ) | $SENDMAIL
-
-        Ouch. That looks bad. Any line up tool anywhere? Yes, get my Emacs
-        tiny-tools.tar.gz and look at the file `tinymy.el' which defines
-        function `timy-backslash-fix-paragraph'. Here is piece of lisp code
-        that you stick to your .emacs to make the key `Control-\' to run the
-        backslash fix
-
-            (global-set-key "\C-\\"  'my-backslash-default-column)
-
-            (defun my-backslash-default-column (&optional arg)
-              "Col 76."
-              (interactive "*P")
-              (autoload 'tinymy-backslash-fix-paragraph "tinymy" t t)
-              (tinymy-backslash-fix-paragraph (or arg 76) 'verb))
-
-        After that, you just put your cursor inside paragraph and hit
-        `Control-\' to get the following line up effect. The column position
-        is best to set near right margin, but not further than a regular
-        page's maximum column 80.
-
-            :0 h
-            * condition
-            | ( cat -;                                                      \
-                echo "And the body text\n";                                 \
-                     "follows here with\n";                                 \
-                     "these echoes";                                        \
-                ) | $SENDMAIL
-
-        Emacs is available for every platform, even for Windows95 and
-        WindowsNT. So, go ahead and install one if you haven't already.
-        Setting up your personalized Emacs may require steep learning curve,
-        but it's well worth the effort.
-
-    20.4 Emacs and browsing mailbox files
-
-        If you use Gnus as your MUA, then you already can browse mailboxes.
-        If you just want to read some arbitrary mailbox without firing up
-        Gnus, then you can use package `tinymailbox.el', in kit
-        <http://tiny-tools.sourceforge.net/>. It defines a special mailbox
-        reading minor mode that is activated when you visit mailbox file.
-        You can copy, file, delete messages or mail the author of the
-        current message. There is no separate summary buffer as in RMAIL,
-        but you move from message to another with PgUp and PgDown keys.
-
-    20.5 Emacs and font-lock.el
-
-        `Font-lock' comes standard in Emacs releases. You can colorize your
-        .procmailrc if you use `font-lock'. Here is some lisp code; put it
-        in your .emacs and reload it with `M-x' `load-file'. When you load
-        file that matches `procmailrc' or `procmail.log' the font-lock
-        attributes for the file get set. Change the regexp if your procmail
-        filenames are different.
-
-            (add-hook 'find-file-hooks 'my-find-file-hooks)
-
-            (defun 'my-find-file-hooks ()
-              (require 'cl)
-
-              (when (fboundp 'font-lock-mode) ;; make sure this is present
-                (cond
-                 ((string-match "procmailrc" buffer-file-name)
-                  (setq font-lock-keywords
-                    (list
-                      '("#.*"             . font-lock-comment-face)
-                      '("^[\t ]*:.*"      . font-lock-type-face)
-                      '("[A-Za-z_]+=.*"   . font-lock-keyword-face)
-                      '("^\\*.*"          . font-lock-doc-string-face)))
-
-                  ;; Turn the fontifying mode on if it's not on already
-
-                  (unless font-lock-mode (font-lock-mode 1)))
-
-
-                 ((string-match "procmail.log" buffer-file-name)
-
-                  ;;  The strings "" in the procmail log makes font-lock crazy,
-                  ;;  We kill the String class from the buffer with
-                  ;;  these statements.
-                  ;;
-
-                  (let ((table (make-syntax-table)))
-                    (modify-syntax-entry ?\" "_" table) ;; Change "
-                    (set-syntax-table table))
-
-                  (setq font-lock-keywords
-                    (list
-                     (cons "Opening "       'font-lock-type-face)
-                     (cons ".* error .*"    'font-lock-keyword-face)
-                     (cons "Folder:"        'font-lock-type-face)))
-                  (unless font-lock-mode (font-lock-mode 1))))))
-            ;; End code
-
-21.0 Procmail and Emacs mail and newsreader Gnus
-
-    21.1 Gnus pointers
-
-       "Gnus"
-        http://www.ifi.uio.no/~larsi
-        Gnus and procmail:
-        http://www.ifi.uio.no/~larsi/www.gnus.org/manual/gnus_6.html#IDX1501
-
-    21.2 Why use procmail with Gnus
-
-        Gnus has very powerful mail split methods and one normal reaction
-        against the need of procmail is: "Hey, Gnus does my mail splitting,
-        I don't need procmail". The difference between Gnus and procmail
-        splitting is quite easily explained: you want procmail to
-        preprocess the mail before gnus ever sees it and then postprocess
-        the mail with Gnus (read, move mail from the inbox to another)
+        Gnus <http://www.gnus.org> includes very powerful mail split
+        methods and one normal reaction against the need of procmail is:
+        "Hey, Gnus does my mail splitting, I don't need procmail". The
+        difference between Gnus and procmail splitting is quite easily
+        explained: you want procmail to preprocess the mail before gnus
+        ever sees it and then postprocess the mail with Gnus (read, move
+        mail from the inbox to another)
 
         _Case1_: Gnus and regular mailbox, no procmail. Gnus reads directly
         one huge mailbox where all incoming messages are. When the user
@@ -10312,7 +10231,7 @@ Table of contents
         So, let procmail drop messages to their inboxes and Gnus to
         possibly "fine process" these inboxes.
 
-    21.3 Setting up Gnus for procmail - Basics
+    20.4 Setting up Gnus for procmail - Basics
 
         Procmail and Gnus communicate with each other very nicely when you
         use the mail backends like: `nnml', `nnmh' and `nnfolder'. See
@@ -10375,7 +10294,7 @@ Table of contents
         add more inboxes, create them inside gnus *Group* buffer with
         `G' `m'.
 
-    21.4 Gnus for procmail - More about it
+    20.5 Gnus for procmail - More about it
 
         Okay, let's continue our journey in Emacs. What you read previously
         was the minimum you needed to get your Gnus to read procmail
@@ -10444,7 +10363,7 @@ Table of contents
 
             (setq gnus-uncacheable-groups "^nn\\(virtual\\|m[hlk]\\|db\\)")
 
-    21.5 Emacs and Gnus -- Fiddling with spool files
+    20.6 Emacs and Gnus -- Fiddling with spool files
 
         Well, to tell you the truth, managing Gnus is scary at first: You
         can make a lot of mistakes along the way or otherwise change your mind
@@ -10478,7 +10397,7 @@ Table of contents
 
             % rm ~/Mail/spool/list.procmail.spool
 
-    21.6 Gnus article snippets
+    20.7 Gnus article snippets
 
         [These articles have been collected from the GNUS hypertext archive]
     !!
@@ -10543,149 +10462,9 @@ Table of contents
         spool files were called ~/incoming/lists/lists.whatever.spool,
         then?
 
-    21.7 Emacs GNUS - POP - Procmail
+21.0 RFC, Request for comments
 
-          Is it possible to get new mail via POP, run it through procmail
-          (for quick things like trashing junk mail and archiving mailing
-          lists) and then have Gnus do its own mail processing? This is
-          basically what I do now with procmail in my .forward file and all
-          output going into ~/.MailBox for Gnus to find.
-
-        [Mark Moll (mmoll@cs.cmu.edu) 08 May 1997 ]
-        First, let Gnus know that you're using procmail:
-
-            (setq nnmail-use-procmail t
-            nnmail-procmail-directory "~/Mail/spool/"
-            nnmail-procmail-suffix ""
-            nnmail-spool-file 'procmail)
-
-        Second, let gnus pop your mail every 5 minutes and invoke procmail:
-
-            (defun mm-pop-mail () (interactive)
-                (call-process "/usr0/mmoll/bin/procinc"))
-            (gnus-demon-add-handler 'mm-pop-mail 5 t)
-            (gnus-demon-init)
-
-        Finally create the following script (called `procinc' in the
-        previous step):
-
-            #!/bin/sh
-            MOVEMAIL=/usr/local/lib/xemacs-19.14/lib-src/movemail
-            ORGMAIL=$HOME/.newmail
-            $MOVEMAIL kpop://ux2.sp.cs.cmu.edu/mmoll $ORGMAIL
-            # this is copied from the procmail (1) man page:
-            if cd $HOME &&
-            test -s $ORGMAIL &&
-            $HOME/bin/lockfile -r0 -l3600 $HOME/.newmail.lock 2>/dev/null
-            then
-            trap "rm -f $HOME/.newmail.lock" 1 2 3 15
-            umask 077
-            $HOME/bin/formail -s $HOME/bin/procmail < $ORGMAIL &&
-            rm -f $HOME/.newmail.lock
-            fi
-            rm -f $ORGMAIL
-            exit 0
-
-
-        Instead of using a demon you can, of course, also pop your mail
-        manually by pressing `g' in the *Group* buffer if you add the
-        following line to your ..gnus:
-
-            (add-hook 'gnus-get-new-news-hook 'mm-pop-mail)
-
-    !!
-
-          From: Markus Dickebohm <m.dickebohm@uni-koeln.de> 1997-06
-
-        Recently I switched to procmail to filter some mails from high
-        volume mailing lists out of my inbox (I don't like my mail notifier
-        do blink every few seconds).
-
-        Personal mails and mails from some low volume lists stay in
-        /var/spool/mail/$USER.
-
-        I set `nnmail-use-procmail' and both the personal mails and the
-        procmail-filtered mails are incorporated to Gnus. That's exactly
-        the way I like it.
-
-        Today I started Gnus and to new nnml groups showed up. The reason
-        was that the procmail rule produced a file "ding.spool" while the
-        nnml group I used for this list via the `nnml-split-method' variable
-        was "Ding".
-
-        This behavior shows that Gnus doesn't split the procmail filtered
-        mails again. I understand the manual that the variable
-        `nnmail-resplit-incoming' is responsible for that. Do I have to set
-        this variable or is it OK to get the procmail rule and
-        `nnmail-split-method' in sync?
-
-        The manual says..  "This also means that you probably don't want to
-        set `nnmail-split-methods' either, which has some, perhaps,
-        unexpected side effects."
-
-        This is not what I want, since the remaining mails in
-        /var/spool/mail/$USER should be split further by Gnus. Do I really
-        have to decide to use procmail _or_ `nnmail-split-method' or is it
-        justified to get the best from both?
-
-        !!
-
-        in the Info file, section `Mail & Procmail' (or so), I read:
-
-          ... If you use `procmail', you should set
-          `nnmail-keep-last-article' to non-`nil', to prevent Gnus from
-          ever expiring the final article in a mail newsgroup. This is
-          quite, quite important.
-
-        Why? I thought this was important only if the `nnmail-use-procmail'
-        variable is nil and the .overview files are updated with a script.
-        When nnmail-use-procmail is t and procmail writes its stuff to the
-        spool files, (ding) knows everything about all its messages.
-
-          ... being able to reliably deliver mail directly to (ding)'s
-          nnmh directories, for example, using procmail would be very
-          nice...
-
-        As already hinted at by Per Abrahamsen this is possible as long as
-        you *don't* move or copy articles (within) ding into these
-        directories. Just set `nnmail-keep-last-article' to be true.
-
-        But that's an awfully big exception to what would be a rather nice
-        feature. Certainly filing mail into different mail groups is
-        something I do on a regular basis. That's why I am advocating pre-
-        and `post-hooks' for all modifications to the overview/active
-        information. With that in place, it would be possible to use a
-        locking mechanism to prevent procmail and (ding) from both trying
-        to modify these files at the same time. Then, copying and moving
-        messages between mail groups during procmail deliveries would be
-        100% reliable.
-
-        Unfortunately, there's no simple way to allow moves and copies into
-        groups that have external delivery agents. The preand post-
-        hooks stuff will solve the problem of safe overview / active file
-        update. This is only part of the problem for move/copy. If an
-        article has arrived since you last checked for new news, then ding
-        doesn't quite "see" it (as it doesn't "see" new news until you ask
-        it to look).  What's needed here is for ding to update its notion
-        of what the last article in the group actually is before doing the
-        move/copy--ie., to run a local *-get-new-news (of course, locking
-        via a hook is still required).
-
-        Adding this will need a lot of mucking around with the internals,
-        the way things currently stand.
-
-        Another approach entirely might be to wait until the stuff that was
-        discussed for IMAP gets added--where ding asks the backend for all
-        information and doesn't maintain any state in .gnus. It'll be
-        simple then to make the backend check for new mail before actually
-        copying/moving the article--ding won't have to be fooled as to what
-        the actual article numbers are. You could add something like this
-        right now, but I think it'll really stretch the code some.
-        (cf. gnus-cache.el for the meaning of "stretch" :-).
-
-22.0 RFC, Request for comments
-
-    22.1 RFCs and their jurisdiction (munged Addresses)
+    21.1 RFCs and their jurisdiction (munged Addresses)
 
         Try dejanews <power seach>
         Groups: gnu.emacs.gnus
@@ -10811,7 +10590,7 @@ Table of contents
         account with procmail where I can get all my Usenet related
         messages sent. --Timothy
 
-    22.2 Comments about addresses munging
+    21.2 Comments about addresses munging
 
        [1998-03-24 gnu.emacs.gnus <drwho@No-Spam-see-sig.xnet.com>]
 
@@ -10845,7 +10624,7 @@ Table of contents
         legislation passed on junk mail). And those that *do* get past the
         fouled headers are dealt with accordingly.
 
-    22.3 RFC and valid mail address characters
+    21.3 RFC and valid mail address characters
 
           What characters are legal in e-mail addresses? So far, I have
           uppercase, lowercase, digits, _ - + . @
@@ -10866,7 +10645,7 @@ Table of contents
         believe. I've tried it with stuff like <"fred($)barney"@redcat.com>
         and it seems pretty stable.
 
-    22.4 RFC and login-name@fdqn
+    21.4 RFC and login-name@fdqn
 
         [1998-06-08 Message-ID: <wkd8cjekay.fsf@mjf.vip.best.com>
         Marty Fouts <Usenet-user@usa.net> in gnu.emacs.help. Refer also
@@ -10957,7 +10736,7 @@ Table of contents
         Once you understand that this assertion is incorrect, it should be
         easy to see that all assertions derived from it are incorrect.
 
-    22.5 RFCs and messages signature
+    21.5 RFCs and messages signature
 
         http://www.chemie.fu-berlin.de/outerspace/netnews/son-of-1036.html
 
@@ -10983,7 +10762,7 @@ Table of contents
         delimiter may be "too well-established to change," but it collides
         with the reality of the tools people use.
 
-    22.6 RFC and using MIME in Usenet newsgroups
+    21.6 RFC and using MIME in Usenet newsgroups
 
          [1999-02-12 Marty Fouts <gnus@.fogey.com> in gnu.emacs.gnus
          Message-id: <wklni3b3gl.fsf@Usenet.nospam.fogey.com>]
@@ -11013,7 +10792,7 @@ Table of contents
         years, deadlines approach, and this particular issue has been
         argued in a great deal of detail.
 
-    22.7 Some RFC Pointers
+    21.7 Some RFC Pointers
 
         http://www.cis.ohio-state.edu/hypertext/information/rfc.html
 
@@ -11042,9 +10821,9 @@ Table of contents
         o   Common Internet Message Headers
             http://andrew2.andrew.cmu.edu/rfc/rfc2076.html
 
-23.0 Introduction to E-mail Headers
+22.0 Introduction to E-mail Headers
 
-    23.1 To find out more about mail (Resources)
+    22.1 To find out more about mail (Resources)
 
        "All about Email headers"
         http://www.stopspam.org/email/headers/headers.html
@@ -11171,7 +10950,7 @@ Table of contents
         1050 pages, $39.95
         <http://www.oreilly.com/>
 
-    23.2 Lecture by Alan Stebbens
+    22.2 Lecture by Alan Stebbens
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
         cgi-bin/w3glimpse2HTML/procmail/1996-08/msg00098.html?69#mfs>
@@ -11281,7 +11060,7 @@ Table of contents
         those having to do with the transport process and less with the
         contents.
 
-    23.3 Applied to received messages
+    22.3 Applied to received messages
 
         [alan] So, now that we have a common understanding...
 
@@ -11344,7 +11123,7 @@ Table of contents
 
         Please read the man page on sendmail, noting the use of '-f'.
 
-    23.4 Bcc lecture by Alan Stebbens
+    22.4 Bcc lecture by Alan Stebbens
 
         <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html>
 
@@ -11397,7 +11176,7 @@ Table of contents
         procmail is most typically used on *incoming* mail, it will never
         have a chance to deal with Bcc: headers.
 
-    23.5 Bcc lecture by Philip Guenther
+    22.5 Bcc lecture by Philip Guenther
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00055.html>
 
@@ -11467,9 +11246,9 @@ Table of contents
         progress, but the basic commands of "MAIL", "RCPT", and "DATA"
         should suffice.
 
-24.0 Message headers
+23.0 Message headers
 
-    24.1 What is correct From address syntax
+    23.1 What is correct From address syntax
 
           Case 1 is what is in RFC 822, as I recall. I regard Case 2 as
           "screen syntax" for inclusion in plain-text message-body
@@ -11514,7 +11293,7 @@ Table of contents
           interpret the comment, comments SHOULD NOT generally be used in
           address fields to avoid confusion.
 
-    24.2 What's that X-UIDL header?
+    23.2 What's that X-UIDL header?
 
         [philip]
 
@@ -11549,7 +11328,7 @@ Table of contents
         lists. Fluffy's mod.* list had these until I pointed out the
         wide-spread file-to-/dev/null problem to Fluffy.
 
-    24.3 What is that first From_ header?
+    23.3 What is that first From_ header?
 
         [philip] the address on the `From_' line is the envelope
         sender. If the message has a Return-Path: header, then it would
@@ -11611,7 +11390,7 @@ Table of contents
         someone may be able to give you further pointers on saving envelope
         recipients in virtual domain situations.
 
-    24.4 Message-Id header
+    23.4 Message-Id header
 
           ...Are there known problems with "valid" mails with illegal
           MessageIDs? For some strange reason, some people are sending out
@@ -11714,7 +11493,7 @@ Table of contents
         URL, not subject to the same time-dependent changes. URLs were
         designed exactly to remove the need for such descriptions.
 
-    24.5 Received header
+    23.5 Received header
 
           ...Found another interesting pattern, Received header that are all
           on one line. Normally a Received: header spans two lines, at
@@ -11744,7 +11523,7 @@ Table of contents
                     for $u; $|;
                     $.$b
 
-    24.6 Return-Path
+    23.6 Return-Path
 
           ...I've created a user (lo_mailer) with a .forward and a
           .procmailrc file to transport incoming mail to the right user.
@@ -11822,7 +11601,7 @@ Table of contents
         That said, this mailing list's requirement of matching Return-Path
         is indeed pretty peculiar.
 
-    24.7 Errors-To
+    23.7 Errors-To
 
           1) Can somebody confirm that Errors-To: is deprecated?
           2) Is there an RFC for this?
@@ -11837,7 +11616,7 @@ Table of contents
           intended for mailing lists. The Errors-To: header is officially
           deprecated and will go away in a future release.
 
-    24.8 X-Subscription-Info
+    23.8 X-Subscription-Info
 
         This is a header that is used by some mailing lists: it contains an
         mail address for un/subscribe, or a URL with said info. Imagine
@@ -11845,7 +11624,7 @@ Table of contents
         mailing lists. If your mailing list doesn't have it already, make
         a suggestion to the list's maintainer.
 
-    24.9 Reply-To header
+    23.9 Reply-To header
 
         The existence of a Reply-To: means, "IF you reply to me, send it to
         this address instead of the one in the From: header."
@@ -12019,7 +11798,7 @@ Table of contents
         From header and he should put that mailbox there when he originates
         the message, regardless of where he physically is when he does so.
 
-    24.10 Mail-Copies-To header
+    23.10 Mail-Copies-To header
 
         [Suggested by Lars, the Author of Emacs Gnus]
 
@@ -12103,7 +11882,7 @@ Table of contents
         foo@foo.bar' [2] It is also acceptable to put `foo@foo.bar' in the
         To: line.
 
-    24.11 Mail-Followup-To and Reply-To-Personal headers
+    23.11 Mail-Followup-To and Reply-To-Personal headers
 
         [21 Nov 1997,  Mutt Development List <mutt-dev@cs.hmc.edu]
 
@@ -12123,7 +11902,7 @@ Table of contents
         draft-ietf-drums-replyto-personal-00.txt My draft on
         Personal-Reply-To
 
-    24.12 Content-Length header and From_ specification
+    23.12 Content-Length header and From_ specification
 
          [1996-05-17 From: Jamie Zawinski <jwz@netscape.com>
          comp.mail.headers]
@@ -12185,7 +11964,7 @@ Table of contents
         Conventional wisdom is, ``if you believe the Content-Length header,
         I've got a bridge to sell you.''
 
-    24.13 Moral about CC copies in Usenet
+    23.13 Moral about CC copies in Usenet
 
          Sending CC
 
@@ -12258,974 +12037,5 @@ Table of contents
           When people want CC, they indicate it by saying it in mail or
           adding some header that can hopefully be understood by
           newsreaders, like `Mail-Copies-To' or `Followup'.
-
-25.0 UBE in Internet
-
-    25.1 Terms used and foreword
-
-        [Part of this has been excerpted from the Email Abuse Faq]
-
-        ._UBE_ = Unsolicited Bulk Email
-        ._UCE_ = (subset of UBE) Unsolicited Commercial Email
-
-        _Spam_ = Spam describes a particular kind of Usenet posting (and
-        canned spiced ham), but is now often used to describe many kinds of
-        inappropriate activities, including some email-related events. It
-        is technically incorrect to use "spam" to describe mail abuse,
-        although attempting to correct the practice would amount to tilting
-        at windmills.
-
-        _Spam_ = definition by Erik Beckjord. "Some people decide that Spam
-        is anything you decide you want to ban if you can't handle the
-        intellectual load on a list." Remember, not to be confused with
-        real spam, which is unwanted bulk mail.
-
-        People are nowadays seeking a cure which will stop
-        or handle UBE. That can be easily done with procmail (under your
-        control) and with sendmail (by your sysadm). In order to select the
-        right strategy against UBE messages, you should read this section
-        and then decide how you will be using your procmail to deal with it.
-
-    25.2 UBE strategies
-
-        [Excerpted from the Email Abuse Faq]
-
-       25.2.1 4g. I asked to be "removed" - guess what? I got another U*E
-
-        Not surprisingly, many UBE outfits treat a "remove" request as
-        evidence that the address is "live"; a "remove" request to some
-        bulk mailers will actually guarantee that they will send more to
-        you. For many others, the remove procedure does not work, either by
-        chance or design. At this point perhaps you're starting to get a
-        feel for the type of people with whom you are dealing.
-
-        Also, getting removed doesn't keep you from being added the next
-        time they mine for addresses, nor will it get you off other copies
-        of the list that have been sold or traded to others. In summary,
-        there is no evidence of "remove" requests being an effective way to
-        stop UBE.
-
-       25.2.2 4h. I asked to be "removed" - guess what? The message bounced
-
-        Probably the remove procedure was false. Any remove procedure that
-        tells you to send remove requests to AOL, CompuServe, Prodigy,
-        Hotmail, or Juno is certainly false. The bulk mailers are an
-        unpopular lot; they forge headers, inject messages into open SMTP
-        ports, use temporary accounts, and pull other stunts to avoid the
-        tirade of complaints that follow every mailing.
-
-    25.3 UBE and bouncing message back
-
-          Has anyone found that bouncing spam does any good at all?
-
-        _Note:_ There are several program packages out there that
-        can with a high degree of success (but not 100%) trace back a
-        spam even if some headers are faked. This will not help you against
-        spam houses (which don't care) but will speed you telling
-        the sysadmins of an open relay. Such tools need human interaction for
-        proper working. See pointers to them in this document later.
-
-        Examine the messages by hand first and feed them to automatic
-        complain script. See pointers in this document later.
-
-        [sean] I had a whole policy message written up that would be sent
-        out to spammers. Nothing but a waste of my resources. Most return
-        paths are either completely bogus, or end up bouncing pretty damn
-        soon after the spam, which just brings you more junk to deal with.
-
-        Instead, I choose to send messages occasionally to administrators
-        and upline providers of domains which spew.  "Agreement by action"
-        is one of the legal standards I like to use (for "should you
-        continue to send mail to me, that constitutes acceptance of the
-        terms herein").
-
-        InterNIC recently 1997-07 removed the root files for .com, .org,
-        and .net (I think) from access at their ftp server. Too many
-        spammers were using them for the purpose of generating mailing
-        lists. Access to the files now requires an assigned FTP account
-        from InterNIC. When I get a domain-style spam, I immediately do a
-        whois to get DNS info on the domain, then grep the root files to
-        obtain a list of domains serviced by the same DNS. If they appear
-        spammy (as spam domains tend to), I add these to a list of domains
-        to filter (egrep) in my primary domain-based ruleset. Works for
-        me, though the list is getting big.
-
-        [Kimmo Jaskari <kimmo@alcom.aland.fi>] Another good reason is
-        that all those bounces, which get ignored by the spammer/recipient
-        anyway, still take up needless bandwith on the net. The spam is bad
-        enough for that, bouncing it back with some more stuff added is just
-        plain silly. You become part of the problem rather than the solution.
-        If the bounce even gets to the spammer, the spammer drops it on the
-        floor unseen.
-
-        [1998-11-03 PM-L Mark Shaw <mshaw@asic.sc.ti.com>] Jari:
-        "Autoresponder is bad idea. You need more better heuristics than
-        what procmail can do. The UBE messages really need human
-        inspection before you send them out, otherwise you may have to
-        apologise from lot of people eg if the complaint was mistakenly
-        sent off to some mailing list or wrong address." Mark: Having
-        originally set up my anti-spam recipes to be autoresponders, I
-        absolutely agree with this. I recall one morning when my strongly-
-        worded no-spam message went out to *everyone* who sent me mail for
-        several hours..... *** shudder ***
-
-    25.4 UBE and "I don't mind" attitude
-
-          ...whenever you see a spam you don't want, hit the delete key and
-          move on. Grow up and get a life, folks. The spams just don't
-          bother me. Why the hell does everyone have to go up in arms
-          everytime someone sends a spam? Spams are harmless! Spams even
-          sometime are interesting and/or useful!
-
-         [Responses from thread in procmail mailing list 1995-10 to
-         "FREE 1 yr. Magazine" spam.]
-
-       [Soren Dayton <csdayton@midway.uchicago.edu>]
-
-        The simplest reason against UBE is that it is rude. It costs some
-        people money to get mail on some commercial services. This is
-        fundamentally different than junk snail mail for this reason and
-        too much spam can prevent people from getting mail (mailboxes can
-        fill up).  So it is both an intrusion into my life _and_ it can
-        conceivably end in me either loosing money or loosing mail (which is
-        far more important).  It is a burden on the receiver _far_ beyond
-        just hitting the delete key.
-
-       [Mark Seiden <mis@seiden.com>]
-
-        people who are able to monitor the incoming machines of one of the
-        larger online services (like me) can see a sizeable increase in
-        system load average and volume directly resulting from spams. this
-        competition for fixed resources inevitably translates to reduced
-        service for "first class" mail.
-
-        It is impossible to engineer a mail system that can cope with an
-        unlimited amount of abuse. this is in addition to the difficulties
-        of doing so on a fixed price economic model, and the difficulties
-        of keeping up with the successful rapid expansion of the population
-        to be served.
-
-        Even if you, an individual, aren't charged anything per piece of
-        mail, there are costs borne by your service provider per piece of
-        mail, and these are *somehow* passed on to you. (They've calculated
-        an average across their entire user population to come up with a
-        "monthly cost of Internet mail".)
-
-        Spamsters and bulk mailers are not at all concerned about
-        efficiency. as proof of that, many of them are not even courteous
-        enough to supply a proper return address, so they can prune their
-        lists of undeliverable mail. all they care about is getting their
-        message across without their paying anything whatsoever for that
-        service.
-
-        Watch how this will inevitably translate into increased costs for
-        you, the consumer, unless we change the mechanisms by which bulk
-        mail is delivered as well as putting an appropriate economic model
-        in place.
-
-       [Steve Simmons <scs@lokkur.dexter.mi.us>]
-
-        If you tolerate spamming, it will only get worse. Spamming has been
-        stopped again and again. Almost without exception, the spammers
-        have been tracked down and, via one means or another, have been
-        convinced to stop spamming.
-
-        Spams are harmless? I've already seen the 'Magazine Sub' message
-        10 or 12 times. I have a low bandwidth line. If I continue to
-        tolerate spamming, I will pay a very real penalty in performance as
-        tens, then thousands of spammers do it. Not to mention the
-        personal time involved in taking care of the crap.
-
-        Don't think that the time involved is significant? Just wait. My
-        wife and I are fairly generous with our time and money. As a
-        result, we were getting an average of five telephone calls *per
-        night* asking for money for various causes. A year ago, I adopted
-        a new policy -- I will not under any circumstances give money to a
-        caller, and will only consider it upon written solicitation. I
-        ask them to put me on their `do not call list'.  If they do
-        *anything else* to continue the conversation, I hang up on them.
-
-        My wife opposed this, and we agreed to disagree -- if they ask for
-        her, they get her. If they ask for me, they get my speech. After
-        a year, she is getting 2-3 calls per night and I'm getting one or
-        two a week.
-
-        My point here is that individual action *does* get re-action from
-        the mailers. For them, I copy their internet providers on my
-        complaints and call their Better Business Bureau. It works.
-
-        If one does this politely and consistently, 98% of the spammers
-        will stop. The remaining 2% will discover that they're in a
-        different world from direct mail or telephone solicitation. Their
-        mailboxes will be overloaded with complaints (when it takes a
-        single keystroke to invoke your complain macro, you're very likely
-        to complain).  Then their suppliers mailboxes will be overloaded
-        with complaints. The free magazine folks, who've been hiding
-        behind false ids and forging mail, will find that they're on the
-        wrong side of the law. I'm considering contacting their local
-        legal officials and urging them to investigate, because it sure
-        looks like fraud to me (read `Consumer Reports' for a similar case
-        by surface mail).  Should a few more like this come in, I *will*
-        contact their legal authorities. We have their fax number; it's
-        all we need to find them.
-
-       [Carl Payne <cpayne@optical.fiber.net>]
-
-        Um, I don't know about you or anyone else here, but this cutesy,
-        "it's-okay-by-me" spam has been circulated under half a dozen
-        different user names and "domains" on as many mailing lists. It's
-        obvious to me the sender is trying to make people pissed off--how
-        can he possibly think someone will buy that crap, and why does he
-        think it's okay to send 19 and 20K files over a billion groups?
-
-        AFAIC, it has to stop. Now. I'm tired of the spam, I'm tired of
-        the "Who cares" attitude about spam, I'm tired of ISPs letting
-        people spam, I'm tired of the jetwash of spam, and I'm tired of the
-        bleedinghearts that say, "Golly, just ignore it, and it'll go
-        away."
-
-        I've got news for you all: when this method of spamming becomes the
-        preferred method of "marketing" on the internet, and people like us
-        are the bad guys because we're not allowing such litter to fly
-        across the fiber, you will care. You will say something, most
-        probably, "Why didn't we do something about this sooner?"
-
-        The guy in the next cube from you, who's paying a per-message
-        charge through his ISP, is probably going, "Dammit, over three
-        dollars this month on mail I've itemized as being spam."  While
-        that doesn't seem like a lot, I revert to my earlier statement: if
-        this becomes the preferred method, his bill (and yours) will go up,
-        and everyone will wonder why it's too out of control to do anything
-        about.
-
-        Spam has the letters *m-a-s* in it, which en Espanol, means "more."
-        I say no. Not only no, but hell no. And, I refuse to be told that
-        my thinking is out of line just because I don't want my mailbox
-        flooded. Do something now. Do anything now. But, don't be quiet
-        and listen to anything that sounds like an endorsement of litter
-
-       [Wolfgang Weisselberg <weissel@ph-cip.uni-koeln.de>]
-
-        Worse is that it costs a spammer very little to spam, say, 2
-        million addresses with 5KB:
-
-        o   5 hours unattended time online
-        o   phone costs
-        o   a 'free x hours'-CD or a provider looking the othher way i.e.
-            something between $0 and $500 (an expensive provider)
-
-        It costs all recipients:
-
-        o   on an average of 5 seconds per UCE to decide that, indeed, it
-            is one: 115.7 *DAYS* (2777.8 hours) of mailchecking (at $7.5/h
-            that is just $20833 --- excluding all taxes and so on!)
-        o   379.5 hours (15.8 days) download time (multiply with your local
-            phone costs and remember that in most places even in-city calls
-            cost by the minute)
-        o   the same time as online time (multiply by your provider costs)
-        o   indirect costs (more HDs for the provider (9.5 GB), faster
-            connections for all the spams, more transmission costs (9.5
-            GB), faster machines, ...
-
-        I can send you the complete calculation if you like :-)
-
-        Now, if UCE becomes more common ... how many businesses are
-        connected to the Internet? Say that every business spamms once
-        every 10 years, and that they are well distributed over the time.
-
-            Number_of_businesses / 3650 = UCE's iniciated per day
-            UCE's iniciated per day * 2_000_000 (or more)
-                        / number of mail addresses
-            = UCEs in your mailbox
-
-        Guess we are going to need T1's to just get all our mail. And a few
-        100 secretaries as well. Wave good-bye to usable mail.
-
-    25.5 We need a law against UBE
-
-          Ray Everett-Church <ray@everett.org>, Attorney/Online Consultant
-          Co-Founder & Congressional Liaison Coalition Against Unsolicited
-          Commercial Email; article 1997-12 in rmailer politics mailing
-          list
-
-        In developing what eventually became the Smith Bill, CAUCE
-        discussed this rather extensively among our drafting committee. The
-        bill gives a cause of action against the advertiser, not any of the
-        pathways taken between you and them. This is consistent with the
-        interpretation of the fax law (and many other laws for that matter)
-        wherein the advertiser -- not the advertiser's agent -- is
-        responsible for the act committed.
-
-        As for the single UCE versus bulk issue, the general consensus has
-        been that while a single piece of spam does not do much damage, it
-        is fundamentally no less a cost shift than 10 identical messages,
-        or 100, or 1000, or a million. The only difference is that the
-        costs being shifted are greater and greater. We discussed many cut
-        off points... would 50 spams be acceptable? 25? 10? One really well
-        crafted, hand written, heartfelt and personalized spam be
-        permissible? And in the end we felt like we were discussion angels
-        on the heads of pins.
-
-        While virtually nobody's system will crash because of one piece of
-        spam (although George Nemeyer had trouble with three or four pieces
-        as I recall), what is the ultimate difference if you only get one
-        piece from each of 15 different advertisers a day? If one spam is
-        ok, but two are bad, what is the interval... a day, a week?
-        Enforcement depends on knowing when the threshold is crossed.
-
-        So here's a scenario: you receive three spams from what is,
-        unbeknownst to you, the same person (one advertising weightloss
-        pills from WeightLoss Associates at PO Box 1, one for an MLM from
-        MLM Company at PO Box 2, and Bee Pollen from Pollen Partnership at
-        PO Box 3). Each were individually crafted and appeared to be mailed
-        only to you.
-
-        Under the scenario above, if the law permits one spam, will you
-        sue?
-
-        Would you risk suing one or all of them, gambling that they sent
-        the spam to anyone other than you (or whatever the threshold is...
-        10, 25, 50)? Would you risk suing one or all of them on the chance
-        that they were somehow related? What if there was a chance that
-        you'd find out that the three companies were really different? What
-        if you did sue and found that they were owned by the same person,
-        but were legally organized separate entities and were therefore
-        each entitled to one spam a piece?
-
-        In short... if one spam is permitted, it could make enforcement
-        incredibly cumbersome, difficult and unlikely, and would present
-        spammers with many reasons to violate the law knowing the odds of a
-        suit and successful enforcement are greatly reduced. While bulk
-        spam is really bad on many levels, whether it's parsed out in very
-        small volumes makes little or no difference to the ultimate
-        recipients as far as the diminished utility, cost, and annoyance.
-
-        We need a clear, bright line. And the Smith Bill is that.
-
-26.0 Anti-UBE pointers
-
-    26.1 NoCEM, CAUCE and others
-
-       "Google's Spam resources and Spam-L FAQ"
-        http://directory.google.com/Top/Computers/Internet/Abuse/Spam/Tracking/
-        http://www.claws-and-paws.com/spam-l/
-
-       "NoCEM"
-        http://www.cm.org/
-
-       "The Coalition Against Unsolicited Commercial Email (CAUCE)"
-        http://www.cauce.org/faq.html
-        ...The Problem: Unsolicited commercial mail, more commonly known as
-        "spam", is a growing problem on the Internet. If you've used the
-        Internet for any length of time, you've probably received
-        solicitations via mail to purchase products or services.
-
-        A Solution: A group of Internet users who are fed up with spam have
-        formed a coalition whose purpose is to amend 47 USC 227, the
-        section of U.S. law that bans "junk faxing", so that it will cover
-        electronic mail as well.
-
-       "SpamCon Foundation"
-        http://www.spamcon.org/
-        The SpamCon Foundation protects email as a
-        viable communication and commerce medium by supporting measures to
-        reduce the amount of unsolicited email that crosses private
-        networks, while ensuring that valid email reaches its destination.
-
-       "Spamcop - report bulk mail intrucions here"
-        http://www.spamcop.net/
-
-       "Lot of good articles about spam"
-        http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html
-
-       "Select mail court cases -- Lots of them"
-        http://www.jmls.edu/cyber/cases/spam.html
-        America Online, Inc. v. Cyber Promotions, Inc.,
-        Compuserve Inc. v. Cyber Promotions, Inc., etc.
-
-    26.2 General Filtering pages (more than procmail)
-
-       "Information Filtering Resources"
-        http://www.ee.umd.edu/medlab/filter/ Doug Oard <oard@glue.umd.edu>
-        ...This page lists all known internet-accessible information
-        filtering resources.
-
-    26.3 Junk mail and spam
-
-       "Spam FAQ"
-        ftp://rtfm.mit.edu/pub/Usenet/alt.spam/
-        http://www.cs.ruu.nl/wais/html/na-dir/net-abuse-faq/spam-faq.html
-
-       "The mail abuse FAQ"
-        http://members.aol.com/emailFAQ/emailFAQ.html
-        What is UBE, UCE, EMP, MMF, MLM, Spam, it is all explained here.
-
-       "Get that spammer"
-        http://www.toppoint.de/~zoc/gspam.html
-        ...All about Spam; traceroute, netabuse etc. Full of links and docs
-
-       "Sam Spade Tools -- Track down that spammer"
-        http://www.samspade.org/
-        Includes address digger, obfuscated URLs, reverse DNS, traceroute,
-        whois, rwhois, Dejanews author search, USPIS,
-        blackhole list check
-
-       "Fight Spam on the Internet"
-        http://spam.abuse.net/
-
-       "Whois"
-        http://www.networksolutions.com/cgi-bin/whois/whois/
-
-       "Dealing with Junk Email"
-        http://www.jcrdesign.com/junkemaildeal.html
-        ...What you should do (and not do) when you have been victimized by
-        a junk mailer. This document teaches you how to read headers in
-        order to trace the origin of junk mail, and includes detailed
-        examples to show you how it is done. Headers are designed for
-        computers to read, not people, so they can be a little hard to
-        follow. Therefore, I hereby grant permission to print or
-        electronically save a copy of this page on your local machine for
-        your personal use while tracing junk mail. Please check back for
-        updates and corrections, though.
-
-        o   What Not To Do: Stuff that doesn't work
-        o   What to do: effective techniques, including how to trace junk
-            mail back to its source
-        o   Stay Calm (take a deep breath...)
-        o   Stay Mad (don't get discouraged)
-        o   How to identify the sender and who gives them Internet access
-        o   Who to complain to, abuse addresses, online services
-        o   What to say and how to say it, effective complaining
-
-       "Practical Tools to Boycott Spam"
-        http://spam.abuse.net/spam/
-        ...We have been actively engaged in fighting spam for years. Recent
-        events, including pending court battles, prompt us to present this
-        page to the public. Fight spam to keep the Internet useful for
-        everyone.
-
-        o   Filtering mail to your personal account
-        o   Blocking spam mail for an entire site
-        o   Blocking Usenet spam for an entire site
-        o   Blocking IP connectivity from spam sites
-        o   Other tools and techniques for limiting spam
-        o   Sample Acceptable Use Policy statements for ISPs
-
-       "news.admin.net-abuse.* Homepage"
-        Timothy M. Skirvin <tskirvin@math.uiuc.edu>
-        http://www.killfile.org/~tskirvin/nana/
-
-       "Preventing relaying in Sendmail"
-        ...This package adds two independent features to sendmail,
-        access control and relay control. They will be described here
-        simultaneously, but you can elect to include support for only one
-        of them (either one) on your mail server. Access control lets you
-        deny access to the server based on the senders envelope address or
-        his IP address. Relay control lets you decide who gets to relay
-        mail through your server.
-        ftp://ftp.xyzzy.no/sendmail/access.tar.Z
-
-       "Anti-Spam Provisions in Sendmail 8.8"
-        http://www.sendmail.org/antispam.html
-        http://mail-abuse.org/
-        http://www.informatik.uni-kiel.de/%7Eca/email/check.html#check_rcpt
-
-        o   Preventing relaying through your SMTP port
-        o   Refuse mail from selected hosts
-        o   Restrict mail acceptance from certain users to avoid mailbombing
-
-        [1998-06-15 PM-L walter] Somebody's starting to exploit a hole in
-        sendmail 8.8, where giving a HELO longer than 1024 bytes causes
-        buffer overflow, and all following "Received:" headers are lost. If
-        it's done off a relay, we have no clue who sent it. There may be a
-        more elegant solution, but here's a quick-n-dirty procmail filter
-        for this stunt...
-
-       "Preventing relaying in Netscape Messaging Server"
-        http://www.tsc.com/~bobp/nms-no-relay.html
-        ...discusses anti-spam configurations for Netscape
-        Messaging Server (NMS). These include proper anti-relay config,
-        spam filters, and using blacklists such as MAPS from NMS. I was
-        compelled to compile this page because of the extremely poor
-        Netscape documentation which includes anti-relay configurations
-        that are easily defeated. --Bob Poortinga <bobp@tsc.com>
-
-       "US Federal Trade Commission"
-        http://www.ftc.gov/
-        ...staff publicized the Commission's UCE mailbox, "uce@ftc.gov,"
-        and invited consumers to forward their UCE to it. spam complaints
-        <uce@ftc.gov>
-
-       "Misc"
-        http://www.junkbusters.com/
-        http://www.well.com/~jbremson/spam
-
-    26.4 Comprehensive list of spammers
-
-       "Against Spam -- The garbage collecting."
-        http://www.spam-archive.org/
-        To support this archive please forward mail spam to
-        <spam-list@toby.han.de>. Everybody is invited to bounce Mail-Spam
-        he/she has got to this list. This is a mailing list to distribute
-        actual spam-eMail. All incoming mail will be checked by subject and
-        from/sender-address wether it has already been distributed or not.
-        No discussions in this list. To discuss about this list please
-        subscribe to <spam-list-d@hiss.org>.
-
-        To subscribe to _blacklist-update_  mailing list
-        TO:   <Majordomo@hiss.han.de>
-        BODY: subscribe blacklist-update you@somewhere.com
-        Mail <postmaster@spam-archive.org> to discuss about blacklist if
-        your name is on it. (maintained by Axel Zinser <fifi@sis.han.de>)
-        Get the updated blacklist from
-        ftp://ftp.spam-archive.org/spam/blacklist/
-
-    26.5 Misc pointers
-
-          Is there a way to block local users from spamming other sites?
-          Maybe somehow force sentmail to read a rc file that would maybe
-          then grab the from field and see if the user exists on the system
-          or not. Or run it through some sort of filters.
-
-        [philip] You can and should do this purely in sendmail. I ended up
-        crafting a check_from ruleset that verifies that the envelope
-        sender address is either a) not local; b) a local user; or c) a
-        local alias. At the time I did this mainly to force people to
-        configure their Eudora clients so they didn't say "Return Address:
-        yourname@gac.edu" but it also covers the outgoing bogus source
-        address spam case. For those interested in this kinda thing I've
-        (just) put it up for FTP:
-
-            ftp://ftp.gac.edu/pub/guenther/
-
-       "IBM's Secure Mailer: postfix - open source"
-        http://www.postfix.org/
-
-          [1998-12-15 PM-L Matthew McGehrin <matthew@reverse.net>] The
-          official project is known as 'IBM's Secure Mailer'. The
-          unofficial codename was Vmailer, but they had to rename that, to
-          Postfix to agree with the lawyers. I should know, I have been
-          alpha testing this mailer for the past year, and it so blazing
-          fast, its amazing. It's faster and simplier to use than sendmail,
-          and also faster and more secure than qmail. It works fine with
-          procmail. (look in my headers). set
-          "mailbox_command=/usr/bin/procmail" in /etc/postfix/main.cf
-
-          [1998-12-15 PM-L Liviu Daia <daia@stoilow.imar.ro>] it has
-          explicit hooks for both procmail and RBL. In fact it's incredibly
-          easy to setup, I got it compiled and configured (with an actually
-          usable configuration) in about 15 minutes after downloading it.
-          Adding masquerading and a virtual domain took another 2 minutes.
-          :-) You should really give it a try, it's faster than QMail and
-          _much_ faster than sendmail. So far, I'm quite impressed.
-
-       "Qmail"
-        http://cr.yp.to/qmail.html
-        http://www.qmail.org/
-
-       "Sendmail"
-        http://www.sendmail.org/
-
-       "Fetchmail -- old pop3 replacement"
-        ftp://ftp.ccil.org/pub/esr/
-        http://www.ccil.org/~esr/
-        http://www.tuxedo.org/~esr/fetchmail/
-
-       "Maildrop filter utility"
-        http://freshmeat.net/projects/maildrop/
-        ...Alternative to procmail
-
-    26.6 UBE related newsgroups or mailing lists
-
-        alt.kill.spammers
-        alt.hackers.malicous
-        alt.2600
-
-        [1997-08-13 alt.privacy.anon-server by anonymous poster] Proper
-        etiquette demands you contact their ISP. However, if the ISP are
-        not interested in helping you, you should consider a posting in
-        alt.kill.spammers (or even alt.hackers.malicous or alt.2600) - give
-        as many details as you can about the spammer.
-
-        A certain spam-provider targeted the alt.hackers.malicious
-        newsgroup. Not the most sensible thing to do. The ISPs IPs were
-        found, their MX host was hacked. All their DNS entries was
-        published on alt.2600 (so that everyone could add filters to ignore
-        all mail from this company). Oh yeah, their password file also made
-        it to the group! The ISP then posted a complaint to alt.2600, much
-        to the enjoyment of everyone who took part. That host basically
-        died a horrible death. I'm pretty sure that not many people are
-        going to lose any sleep over this! I might as well mention that the
-        ISP's complaint mentioned that their "freedom" was being
-        abused. hehehe. Most of these postings can be seen in dejanews
-        or altavista archives of Usenet.
-
-       "SPAM-L mailing list and Doug Muth's Page"
-        http://www.claws-and-paws.com/spam-l/
-        ... "The SPAM-L FAQ" - A FAQ for SPAM-L, an anti-spam mailing list.
-        This FAQ discusses how to join the list and what to post there, AND
-        it also delves into the technical aspects of spam. For instance,
-        the various kinds of forgeries seen in spams are discussed here,
-        along with information on how to recognise them. If you hate spam,
-        this is something worth checking out... "TheGoodsites List" - I
-        maintain this list, which is part of the Spam Boycott, to show
-        which Internet providers out there act responsibly when dealing
-        with spam. If you're looking for an ISP and want to know where they
-        stand on spam, this is the list for you.
-
-        Send an mail message to <listserv@peach.ease.lsoft.com>
-        with the words "subscribe SPAM-L <First name> <Last name>" in the
-        body of the message (no quotes). f you would like to contact the
-        owner, the convention is the same as with all listserv lists. Just
-        send e-mail to <spam-l-request@peach.ease.lsoft.com>
-
-27.0 Mail and Spam software
-
-    27.1 Adcomplain -- Perl junk mail report
-
-        <billmc@agora.rdrop.com>
-        http://www.rdrop.com/users/billmc/adcomplain.html
-
-        Adcomplain runs under Unix, Windows-NT, and Windows-95. Adcomplain
-        is a tool for reporting inappropriate commercial e-mail and Usenet
-        postings, as well as chain letters and "make money fast" postings.
-
-        It automatically analyzes the message, composes an abuse report,
-        and mails the report to the offender's internet service provider.
-        The report is displayed for your approval prior to mailing.
-        Adcomplain can be invoked from the command line or automatically
-        from many news and mail readers.
-
-        #todo: url missing
-
-          [a user happy user reports] ...About 95% of all cases can be
-          traced correctly --- unless they come from a known spamhouse;
-          where complaining to them would not do much good anyway. Mailing
-          lists with strange Received-Headers also can present problems in
-          tracing
-
-    27.2 Ricochet (Perl junk mail report)
-
-        http://www.vipul.net/ricochet/
-        <ricochet@vipul.net> Vipul Ved Prakash
-
-        MailingList: <ricochet-announce-request@vipul.net> with subject
-        "subscribe"
-
-        A lot of unsolicited mail goes unreported because tracing the
-        origins of a possibly forged mail and finding the right people to
-        report to is complicated and time-consuming. Ricochet, a smart net
-        agent, automates this process. It traces the names and add resses
-        of the systems where the spam originated from along with the
-        servers that provide domain name resolution services to these
-        systems (in most cases their ISPs). Then it collects/generates a
-        list of mail addresses of tech/billing/admin/abuse contacts of
-        these system and mails them a complaint and a copy of the spam.
-        Detailed description of its workings can be found in the README
-        file that comes with the package.
-
-    27.3 RBL lookup tool (C language)
-
-        [1997-12-04 PM-L Edward S. Marshall <emarshal@logic.net>]
-
-          ...rblcheck is a lightweight C program for doing checks against
-          Paul Vixie's Blackhole List. It works well in conjunction with
-          Procmail for filtering unwanted bulk mail (under QMail, for
-          example, you can invoke it with the value of the environment
-          variable TCPREMOTEIP). rblcheck is extremely simple:
-
-            % rblcheck 1.2.3.4
-
-          where 1.2.3.4 is the IP address you want to check.
-
-        This is a quick note to announce the availability of a new tool for
-        using Paul Vixie's RBL blacklist (see http://mail-abuse.org/  for
-        more information about the blacklist itself, if you don't already
-        know). Most tools which use the blacklist block mail on a
-        site-wide basis. For many networks, this treads on both the ideals
-        of the administration, and on the perceived freedoms of the end
-        user.
-
-        Personally, I don't care either way. :-)
-
-        This tool was to fill the need I personally had to reject mail,
-        since one of the systems I receive mail through cannot, for various
-        political reasons, implement the available RBL filters on a
-        site-wide basis.
-
-        rblcheck is a simple tool meant to be used from procmail and
-        other personal filtering systems under UNIX in the absence of a
-        site-wide filter, as an alternative to imposing site-wide
-        restrictions, or as a means of imposing restrictions on systems
-        that cannot support the existing RBL filter patches.
-
-        Simply put: you hand it an IP address, and it determines if the IP
-        is in the RBL filter, providing the caller with a positive or
-        negative response. With the package, a sample procmail recipe is
-        provided, and examples of using it under QMail and Sendmail are
-        given.
-
-        .http://mail-abuse.org/
-        .http://www.isc.org/bind.html            The official home page
-        .http://www.xnet.com/~emarshal/rblcheck/
-
-        It has only been tested under Linux 2.x and Solaris 2.5.1. Success
-        stories, patches, questions, suggestions, and flames can be
-        directed to me at <emarshal@logic.net>.
-
-        [PM-L Aaron Schrab <aaron+procmail@schrab.com>] Here is my rbl
-        setup, but, this depends both upon the format of the Received:
-        lines, and the way that mail passes through your mail system.
-
-        I currently grab the IP address from the first Received: header
-        inserted by my ISP (I'm a sysadmin at the ISP, so I have a good
-        knowledge of how mail gets passed around internally). Here's the
-        recipe that I use.
-
-            # if there's a Received: header from one of these servers, it's
-            # (probably) the right one
-
-            BACKUPSERVER    = "([yz]\.mx\.execpc\.com)"
-            VIRTSERVER      = "(vm[0-9]+\.mx\.execpc\.com)"
-            LOCALSERVER     = "([abc]\.mx\.execpc\.com)"
-
-            # Match a header containing:
-            #   Received: <anything> [<ip address>]) by <local server>
-
-            :0
-            *$ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${BACKUPSERVER}
-            *$ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${VIRTSERVER}
-            *$ $SUPREME^0 ^Received:.*\[\/[0-9.]+\]\)$s+by$s+${LOCALSERVER}
-            {
-                IP = $MATCH
-
-                # trim it down to just the IP address
-
-                :0
-                * IP ?? ^^\/[0-9.]+
-                {
-                    IP = $MATCH
-
-                    :0 W
-                    * ! ? /home/aarons/bin/rblcheck -q $IP
-                    {
-                        SPAM = "$SPAM $IP is rbl'd$NL"
-                    }
-                }
-            }
-
-          It seems to be a procmail issue with letting the IP info
-          from sendmail pass through to the rblcheck program. I have not
-          been able to find anyone using rblcheck successfully with
-          procmail as a delivery agent...
-
-        [1998-03-26 PM-L Edward S. Marshall <emarshal@logic.net> ] This is a
-        standard problem; you should be able to change the invocation of
-        procmail the same way as the example (run env, which in turn runs
-        procmail). Make sure that there is a '-p' argument passed to
-        procmail; this preserves the environment you're constructing with
-        env (newer sendmail revisions sanitize the environment for you, so
-        that's not really an issue).
-
-        If you're still having troubles, make sure you're using the latest
-        incarnation of rblcheck, with the latest supplied procmail recipe;
-        earlier revisions had rather insidious bugs.
-
-        [1998-03-26 PM-L Xavier Beaudouin (kiwi) <kiwi@oav.net>] Also it
-        seems that sendmail 8.9.0Beta3 has builtin rules. I use it with
-        sendmail 8.8.8 and tcpwrapper every day and there is about 80%
-        spam rejected. Sounds very good. In your /etc/hosts.allow just add
-        the following lines :
-
-            sendmail: ALL: spawn /usr/local/bin/rblcheck -q %a && \
-                        exec /usr/sbin/sendmail -bs || /bin/echo \\
-              "469 Connection refused. You are in my Black List !!!\r\b\r\n"
-              && \
-              (safe_finger -l @%h 2>&1 | /bin/mail -s "%d-%h %u" root)
-
-        In your /etc/inetd.conf just add this line :
-
-            smtp stream tcp nowait root  /usr/sbin/tcpd  \
-                 /usr/sbin/sendmail  -bs
-
-        And check that your sendmail is _not_ working as a daemon. That's
-        all. Also if you have huge queue you can add a /usr/sbin/sendmail -q
-        in the root crontab... This should help to send some waiting
-        messages. I think we can use this to wait for official 8.9.0
-        sendmail since there is some cf/feature/rbl.m4 there.
-
-        [timothy] ...I think there's a much more efficient way to do
-        this: you can compile sendmail -DTCPWRAPPERS and let it run as a
-        daemon
-
-    27.4 mapSoN
-
-          Note: You can do exactly the same as below with procmail with one
-          of the listed procmail modules: pm-jacookie.rc. See the code.
-
-       "mapSoN (NoSpam backwards) -- The no spam utility"
-        http://mapson.gmd.de/
-        ftp://ftp.gmd.de/gmd/mapson/
-
-        Most spam filtering tools I've seen so far are based on procmail, or
-        a similar tool, and use a list of keywords or addresses to drop
-        unwanted junk mail. While this might be nice to filter mail from
-        known spam domains like "cyberpromo.com", it won't catch faked
-        headers.
-
-        mapSoN must be installed as filter program for your incoming mail,
-        usually by adding an appropriate entry to your $HOME/.forward file.
-        This means that mapSoN will get all your incoming mail and it will
-        decide whether or not to actually deliver it to your mailbox.
-
-        o   First of all, an user defined ruleset is checked against the
-            mail. If any keywords or patterns match, the mail will be dealt
-            with according to your wishes. This is useful to drop some
-            sender's mail completely, or to sort mail into different mail
-            folders.
-        o   If no rule matches the mail, mapSoN will check whether the mail
-            is a reply to an e-mail you sent, or whether it is a reply to a
-            USENET posting of yours. If it is, the mail will always be
-            delivered.
-        o   If no signs of a reply-mail can be found, mapSoN will check
-            whether the sender stated in the From: header has sent you mail
-            before. If he has, the mail will pass. If this is the first time
-            you receive an e-mail from this address, though, mapSoN will
-            delay the delivery of the mail and spool it in your home
-            directory. Then it will send a short notice to the address the
-            mail comes from, which may look like this:
-
-            From: Peter Simons <simons@petidomo.com>
-            To: never_mailed@me.before
-            Subject: [mapSoN] Request for Confirmation
-
-            mapSoN-Confirm-Cookie: <some_weird_cryptographic_cookie>
-
-        The person who tried to contact you will then reply to this
-        "request for confirmation", citing the cookie stated in the mail.
-        When your mapSoN receives this confirmation mail, it will deliver
-        the spooled mail into your folder. Furthermore, the address will be
-        added to the database, so that mail from this person will pass
-        directly in future.
-
-        If no confirmation mail arrives within a certain time, mapSoN can
-        either delete the spooled mails, or send them to a special folder,
-        or whatever you prefer.
-
-    27.5 ASK - Active Spam Killer (opt-in whitelist)
-
-        http://www.paganini.net/ask/ Marco Paganini <paganini@paganini.net>
-
-        This program (Active Spam Killer, or ASK for short) takes an
-        "Active" approach in solving the problem: Everytime an email is
-        received, a message is sent back to the sender asking for
-        confirmation. If that sender does not confirm the message, it
-        remains queued for delivery. If the sender confirms, the message is
-        delivered and removed from the queue. The "confirmed" senders will
-        be added to your "whitelist" and will never be sent another
-        confirmation. Messages from these emails will always be delivered
-        immediately . You can also specify an "ignorelist" for emails that
-        should be always ignored and a "blacklist" that will cause a
-        nastygram to be sent back to the sender everytime an email is
-        received.
-
-    27.6 Spamgard
-
-        [similar to MapSon]
-        ftp://ftp.netcom.com/pub/wj/wje/release/sg-howto
-
-        ...sppamgard(tm) screens from your e-mail unsolicited bulk mail. It
-        does this in a way that you only have to change things if you have
-        a new person from whom you _do_ want to receive mail; you don't
-        have to change things every time a spamster thinks of a new trick
-        to pull, or a new spamster comes along. And spamgard(tm) is
-        designed so that those who aren't in your "Good Guys" list can get
-        mail to you anyway until you put them there. The instructions for
-        them to get mail to you are simple and newbie-tested, but will
-        still keep out bulk mail. If you're on a mailing list you _want_ to
-        be on, there are provisions for accepting all mail from a set of
-        mailing lists that you specify.
-
-    27.7 Spam Be Gone
-
-        http://www.internz.com/SpamBeGone/ (open source)
-        ...uses machine learning and artificial intelligence technologies
-        to examine incoming mail messages and determine their
-        priority... is more than just a Spam filter, it's a general purpose
-        mail message prioritiser. You train the system, telling it which
-        are good, and which are bad messages. As Spam Be Gone! learns it
-        becomes customised for each individual user.
-
-        Note: 2000-03 this software has changed a lot, so the above
-        comment may not apply any more. If you have used the latest version,
-        please send your impressions to this page's maintainer if they
-        differ from the text below.
-
-         PM-L R Lindberg & E Winnie <rlindber@kendaco.telebyte.com> comments:
-
-          I have to agree with the recent comments about Spam Be Gone, I
-          found it tends to be inaccurate. I first set it up about a week
-          ago, followed the directions and trained it on several (15 to 20)
-          messages. One from each list we get, and the remainder from my
-          logs of SPAM messages.
-
-          The first day it missed about half the SPAM, and nailed about 1/3
-          of the real messages. So I tuned the key-words a bit, trained it
-          on about 100 more SPAMs and trained it on all the good messages
-          it nailed. Since then it has nailed every SPAM received, however
-          the second day it nailed about 20% of the good messages, which I
-          then trained it to like. Since then it has been nailing about
-          10% of the good messages, despite continual training. I also
-          added every list to the address book, and it still nails posts
-          from this list, and my wife's lace list.
-
-          I even went through my entire log of SPAM and trained it on every
-          one that didn't come out a 5 (bad). Being the kind of person I
-          am, I also checked after I trained it, and found four SPAMs, the
-          despite my training it that they were bad (5) came out as not so
-          bad (4). I don't dare kill 4's as far too much of my mail (like
-          this list) ends up as 4's.
-
-          For me, this program is not ready for prime time. If the comments
-          are correct that it only learns on Subject and From headers, it's
-          not even worth trying. Since lists use the TO and CC headers to
-          be identified, and there are several excellent other headers
-          (X-Advertisement comes to mind) that would be assests for killing
-          SPAM.
-
-    27.8 TinyGnus - Emacs Gnus plug-in
-
-        http://tiny-tools.sourceforge.net/
-        *TinyGnus* Is Emacs lisp extension package that integrates directly
-        to Gnus mail/newsreaders. It includes simple but efective UBE
-        fighting hotkeys that make it possible to complain bunch of UBE
-        messages at once. In order to use it, you have to have permanent
-        Internet connection and nslookup(1) tool. Features:
-
-        o   USER MUST DECIDE and hand select WHICH IS *ube* MAIL. No software
-            can decide 100% which mail is UBE, so the responsibility is on
-            the human user.
-        o   User selects messages that are ube with Gnus select commands,
-            like (#, select current message)
-        o   Hotkey C-c ' u examines messages' headers and runs `nslookup(1)'
-            for each Received header to determine *abuse* *spam* and
-            *postmaster* addresses where to send the complaint.
-
-    27.9 ProcLog - Procmail log reporting tool
-
-        http://synfin.net/code.html Aaron Turner <aturner@pobox.com>
-        ...ProcLog is a set of Unix shell and Perl 5 scripts that provide
-        an easy to use and fast reporting tool for detailing where mail
-        goes after Procmail sorts it. ProcLog reports on current mail in
-        your Procmail Log file, any new mail that has come in since ProcLog
-        was last run, and the size of your Procmail log file. What makes
-        ProcLog unique is its ability to help you keep track of mail you've
-        read.
-
-    27.10 Xbuffy -- A multi folder biff for X
-
-        http://www.fiction.net/blong/programs/#xbuffy
-
-
 
 End
