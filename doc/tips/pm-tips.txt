@@ -408,7 +408,7 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.7 2002/02/14 20:29:52 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.8 2002/03/30 07:27:27 jaalto Exp $
         .$Keywords: procmail, sendmail, formail, mail, UBE, UCE, spam, filter $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$Contactid: jari.aalto@poboxes.com $
@@ -8084,7 +8084,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.7 2002/02/14 20:29:52 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.8 2002/03/30 07:27:27 jaalto Exp $
             #
             #   File id
             #
@@ -13693,7 +13693,7 @@ Table of contents
     29.15 Software: Spam Be Gone
 
        "Spam Be Gone"
-        http://www.internz.com/SpamBeGone/
+        http://www.internz.com/SpamBeGone/ (open source)
         ...uses machine learning and artificial intelligence technologies
         to examine incoming mail messages and determine their
         priority... is more than just a Spam filter, it's a general purpose
@@ -13701,20 +13701,10 @@ Table of contents
         are good, and which are bad messages. As Spam Be Gone! learns it
         becomes customised for each individual user.
 
-         PM-L W. Wesley Groleau <wwgrol@sparc01.fw.hac.com> comments:
-
-          .> They only distribute binaries, and I'm paranoid. Anyone able to
-          .> convince me it's not really a Trojan Horse to collect addresses of
-          .> spam-haters or something even worse?
-
-          I did some sleuthing. I am 95% convinced that SpamBeGone is not
-          a front or cover for any spammer(s). To protect the author's
-          privacy, I won't say why I'm convinced or how I got the info.
-          Sorry. If you're paranoid like me, you'll have to do your own
-          sleuthing before you use it.
-
-          I'm also convinced SpamBeGone's theory is sound. I won't judge
-          the implementation until I've used it for a while.
+        Note: 2000-03 this software has changed a lot, so the above
+        comment may not apply any more. If you have used the latest version,
+        please send your impressions to this page's maintainer if they
+        differ from the text below.
 
          PM-L R Lindberg & E Winnie <rlindber@kendaco.telebyte.com> comments:
 
