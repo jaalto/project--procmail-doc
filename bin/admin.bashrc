@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.9 2002/08/13 01:22:47 jaalto Exp $
+#   $Id: admin.bashrc,v 1.10 2004/04/05 15:55:38 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -23,7 +23,6 @@
 #
 #	SF_PM_DOC_USER=<sourceforge-login-name>
 #	SF_PM_DOC_USER_NAME="FirstName LastName"
-#	SF_PM_DOC_EMAIL=<email address>
 #	SF_PM_DOC_ROOT=~/cvs-projects/pm-doc/doc/tips
 #
 #	source ~/cvs-projects/pm-doc/bin/admin.bashrc
@@ -37,25 +36,19 @@ function sfpmdocinit ()
 
     SF_PM_DOC_ROOT=${SF_PM_DOC_ROOT:-""}
 
-    if [ "$SF_PM_DOCS_USER" = "" ]; then
-       echo "$id: Identity SF_PM_DOCS_USER unknown."
+    if [ "$SF_PM_DOC_USER" = "" ]; then
+       echo "$id: Identity SF_PM_DOC_USER unknown."
     fi
 
-    if [ "$SF_PM_DOCS_USER_NAME" = "" ]; then
-       echo "$id: Identity SF_PM_DOCS_USER_NAME unknown."
-    fi
-
-    if [ "$SF_PM_DOCS_EMAIL" = "" ]; then
-       echo "$id: Address SF_PM_DOCS_EMAIL unknown."
+    if [ "$SF_PM_DOC_USER_NAME" = "" ]; then
+       echo "$id: Identity SF_PM_DOC_USER_NAME unknown."
     fi
 }
-
 
 function sfpmdocdate ()
 {
     date "+%Y.%m%d"
 }
-
 
 function sfpmdocfilesize ()
 {
@@ -87,6 +80,17 @@ function sfpmdocscp ()
     fi
 
     scp $* $sfuser@shell.sourceforge.net:/home/groups/$sfproject/htdocs/
+}
+
+function sfpmdocscptips ()
+{
+    local sfuser=$SF_PM_DOC_USER
+    local sfproject=p/pm/pm-doc
+    local to=/home/groups/$sfproject/htdocs/
+
+    cd ${SF_PM_DOCS_ROOT:-.} || return $?
+    pwd
+    scp pm-tip*html $sfuser@shell.sourceforge.net:$to
 }
 
 function sfpmdochtml ()
@@ -234,11 +238,8 @@ function sfpmdoc_release ()
     )
 }
 
-dummy=$(sfpmdocinit)			# Run initializer
-
+sfpmdocinit
 
 export SF_PM_DOCS_ROOT
-
-
 
 # End of file
