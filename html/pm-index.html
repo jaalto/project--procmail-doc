@@ -3,7 +3,7 @@
 <!--
         See unix what(1) and ident(1) why those funny tags
         @(#) Document: 
-        @(#) Contact : Jari Aalto jari.aalto@poboxes.com
+        @(#) Contact :  jari.aalto@poboxes.com
         The LINK tags are used by advanced browsers. The BASE signifies
         true location of the original document, and mirrored site
         location. It is where the #TAG go when you define them.
@@ -20,16 +20,10 @@ No title
     ......................................................................
 -->
 
-  <META HTTP-EQUIV="description"
-	CONTENT="">
-
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Wed,  6 Mar 2002 17:09:57 GMT">
-
-  <META HTTP-EQUIV="Author"
-	CONTENT="Jari Aalto">
+  <META HTTP-EQUIV="Expires" CONTENT="Thu,  4 Apr 2002 22:34:03 GMT">
 
 
   <META HTTP-EQUIV="Made"
@@ -37,7 +31,7 @@ No title
 
 
   <META NAME="Generator"
-	CONTENT="2002-01-05 19:09 Perl 5 program t2html.pl v1.53 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
+	CONTENT="2002-02-04 00:34 Perl 5 program t2html.pl v2002.0203 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
 
 
 
@@ -435,7 +429,7 @@ No title
 	{
 	    color: Blue;
             font-family:    "Courier New", monospace;
-            font-size:      0.8em;
+            /* font-size:      0.8em; */
 	}
 
         span.word-ref
@@ -443,12 +437,13 @@ No title
 	    color: teal;
         }
 
-        big.word-big
+        span.word-big
         {
-	    color: teal; font-size: 1.2em;
+	    color: teal;
+	    font-size: 1.2em;
         }
 
-        small.word-small
+        span.word-small
 	{
 	    color: #CC66FF;
 	    font-size: 0.9em;
@@ -458,10 +453,12 @@ No title
 
                 /* 7th column starting with double quote */
 
-        em.quote7
+        span.quote7
         {
-            color: Green;
-            font-style: italic;
+            /* color: Green; */
+            /* font-style: italic; */
+            font-weigh: bold;
+	    font-size: 1.2em;
         }
 
                 /* This appears in FRAME version: xxx-toc.html */
@@ -564,8 +561,8 @@ No title
                </H1>
            <BLOCKQUOTE>
 
-        @(#) <EM><STRONG>$Id: pm-index.html,v 1.3 2002/01/05 17:19:06 jaalto Exp $</STRONG></EM><BR>
-        $Contactid: <EM><A HREF="mailto:jari.aalto@poboxes.com" >jari.aalto@poboxes.com</A></EM> $<BR>
+        @(#) <EM><STRONG>$Id: pm-index.html,v 1.4 2002/02/03 23:37:52 jaalto Exp $</STRONG></EM><BR>
+        $Contactid: jari.aalto@poboxes.com $<BR>
         $URL: <A HREF="http://www.netforward.com/poboxes/?jari.aalto" target="_top">http://www.netforward.com/poboxes/?jari.aalto</A> $<BR>
         $Keywords: procmail library includerc subroutine recipe $<BR>
 
@@ -581,7 +578,7 @@ No title
 
         Hi, here are links to my world of the procmail, please select
         from the list below:
-        
+
 <P><UL>
 	<LI>/pm-tips.html and text version under name
             /pm-tips.txt
@@ -591,14 +588,14 @@ No title
             Anti Spam (aka UBE, UCE) discussion, tools (sendmail, Perl,
             relay) to fight against unsolicited Email.
 	<LI>/pm-code.html
-            My contribution to the world of procmail. A 
+            My contribution to the world of procmail. A
             plug-in procmail module library that can be used like
             callable <SAMP class="word">functions</SAMP>. Download at /pm-code.zip
 	<LI>I've written an <EM class="word">Emacs</EM> minor mode <EM class="word">tinypm.el</EM> that helps
             writing procmail files. The mode contains rather extensive lint
             (code checker) that can find mistakes from your procmail recipes.
-            The package <EM class="word">tinypm.el</EM> in included in my tiny-tools kit 
-	            &lt;<A HREF="http://poboxes.com/jari.aalto/ema-tiny.html" target="_top">http://poboxes.com/jari.aalto/ema-tiny.html</A>&gt;
+            The package <EM class="word">tinypm.el</EM> in included in my tiny-tools kit
+	            &lt;<A HREF="http://tiny-tools.sourceforge.net" target="_top">http://tiny-tools.sourceforge.net</A>&gt;
 </UL>
 
 
@@ -613,13 +610,12 @@ No title
       pm.lint:062: Warning, recipe with &quot;|&quot; may need `w' flag.
       pm.lint:073: Warning, Formail used but no `f' flag found.
 </PRE>
-                       
+
 
 <P class="column8">
         I hope you the very best in the world of procmail and Philip
         Guenter for his always so helpful advices and hosting the
-        <A HREF="http://www.prcomail.org/" target="_top">http://www.prcomail.org/</A> .
-            
+        <A HREF="http://www.procmail.org/" target="_top">http://www.procmail.org/</A> .
 
 
 
@@ -643,10 +639,10 @@ the copyright holder. (VI.B LICENSE OPTIONS)
 </P>
 <P>
 This file has been automatically generated from plain text file
-with Perl script <STRONG>t2html.pl 1.53</STRONG><BR>
+with Perl script <STRONG>t2html.pl 2002.0203</STRONG><BR>
 Document author: Jari Aalto<BR>
 Contact: &lt;<A HREF="mailto:jari.aalto@poboxes.com">jari.aalto@poboxes.com</A>&gt;<BR>
-Html date: 2002-01-05 19:09<BR>
+Html date: 2002-02-04 00:34<BR>
 </EM    class="footer">
 </BODY>
 </HTML>

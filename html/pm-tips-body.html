@@ -4,7 +4,7 @@
 <!--
         See unix what(1) and ident(1) why those funny tags
         @(#) Document: 
-        @(#) Contact : Jari Aalto jari.aalto@poboxes.com
+        @(#) Contact :  jari.aalto@poboxes.com
         The LINK tags are used by advanced browsers. The BASE signifies
         true location of the original document, and mirrored site
         location. It is where the #TAG go when you define them.
@@ -21,16 +21,10 @@ No title
     ......................................................................
 -->
 
-  <META HTTP-EQUIV="description"
-	CONTENT="">
-
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Wed,  6 Mar 2002 17:16:44 GMT">
-
-  <META HTTP-EQUIV="Author"
-	CONTENT="Jari Aalto">
+  <META HTTP-EQUIV="Expires" CONTENT="Thu,  4 Apr 2002 23:45:35 GMT">
 
 
   <META HTTP-EQUIV="Made"
@@ -38,7 +32,7 @@ No title
 
 
   <META NAME="Generator"
-	CONTENT="2002-01-05 19:16 Perl 5 program t2html.pl v1.53 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
+	CONTENT="2002-02-04 01:45 Perl 5 program t2html.pl v2002.0204 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
 
 
 
@@ -436,7 +430,7 @@ No title
 	{
 	    color: Blue;
             font-family:    "Courier New", monospace;
-            font-size:      0.8em;
+            /* font-size:      0.8em; */
 	}
 
         span.word-ref
@@ -444,12 +438,13 @@ No title
 	    color: teal;
         }
 
-        big.word-big
+        span.word-big
         {
-	    color: teal; font-size: 1.2em;
+	    color: teal;
+	    font-size: 1.2em;
         }
 
-        small.word-small
+        span.word-small
 	{
 	    color: #CC66FF;
 	    font-size: 0.9em;
@@ -459,10 +454,12 @@ No title
 
                 /* 7th column starting with double quote */
 
-        em.quote7
+        span.quote7
         {
-            color: Green;
-            font-style: italic;
+            /* color: Green; */
+            /* font-style: italic; */
+            font-weigh: bold;
+	    font-size: 1.2em;
         }
 
                 /* This appears in FRAME version: xxx-toc.html */
@@ -539,8 +536,8 @@ No title
 
 
 
-        <EM><STRONG>$Id: pm-tips-body.html,v 1.3 2002/01/05 17:19:06 jaalto Exp $</STRONG></EM><BR>
-        $Keywords: procmail sendmail formail mail UBE UCE spam filter $<BR>
+        <EM><STRONG>$Id: pm-tips-body.html,v 1.4 2002/02/03 23:37:52 jaalto Exp $</STRONG></EM><BR>
+        $Keywords: procmail, sendmail, formail, mail, UBE, UCE, spam, filter $<BR>
         $URL: <A HREF="http://pm-doc.sourceforge.net/" target="_top">http://pm-doc.sourceforge.net/</A> $<BR>
         $Contactid: jari.aalto@poboxes.com $<BR>
         $UrlLinksLastChecked: 2002-02-02 $<BR>
@@ -575,19 +572,16 @@ No title
 
 
 <P class="column8">
-        You may want to read <EM class="word">Nancy's</EM> and <EM class="word">Era's</EM> procmail faq pages
+        You may want to read <EM class="word">Nancy's</EM> and <EM class="word">Era's</EM> procmail FAQ pages
         before this page. Especially Era's link page contains an excellent
-        collection of useful procmail links and pointers to unix programs
-        that deal with mail (e.g Perl <EM class="word">MHonArc</EM> Email hyperarchiver at
-        <A HREF="http://www.oac.uci.edu/indiv/ehood/mhonarc.html)" target="_top">http://www.oac.uci.edu/indiv/ehood/mhonarc.html)</A>. If you find
-        errors or things to improve in this document, please go ahead and
-        send mail to this document's <SPAN class="word-ref">[maintainer]</SPAN>.
+        collection of useful procmail links and pointers to Unix programs
+        that deal with mail If you find errors or things to improve in this
+        document, please send mail to this document's Maintainer.
 
 
 <P class="column8">
         If any mentioned URL is not alive, you may still be able to
-        successfully find it using the ftp search located at
-        <A HREF="http://ftpsearch.ntnu.no/" target="_top">http://ftpsearch.ntnu.no/</A> or WWW search such as
+        successfully find it using the WWW search such as
         <A HREF="http://www.google.com/" target="_top">http://www.google.com/</A>
 
 
@@ -601,7 +595,7 @@ No title
 
 
 
-        <SPAN class="word-ref">[faq]</SPAN> Procmail is a mail processing utility, which can help you
+        <SPAN class="word-ref">[FAQ]</SPAN> Procmail is a mail processing utility, which can help you
         filter your mail, sort incoming mail according to sender, Subject
         line, length of message, keywords in the message, etc, implement an
         ftp-by-mail server, and much more. Procmail is also a complete
@@ -654,16 +648,20 @@ No title
 
 
 <P class="column8">
-        <SPAN class="word-ref">[faq]</SPAN>        Procmail FAQ        j1era+pr@iki.fi<BR>
+        <SPAN class="word-ref">[FAQ]</SPAN>        Procmail FAQ        <EM><A HREF="mailto:era@iki.fi" >era@iki.fi</A></EM><BR>
         <SPAN class="word-ref">[manual]</SPAN>     Quote from some procmail manual page<BR>
         <SPAN class="word-ref">[maintainer]</SPAN> As of 2000-09 the maintainer is <SPAN class="word-ref">[jari]</SPAN><BR>
         #broken-link  Link does not exist any more. A replacement is needed<BR>
 
 <P><UL>
-	<LI>PM-L, Procmail mailing list <A HREF="http://www.procmail.org/era/lists.html" target="_top">http://www.procmail.org/era/lists.html</A>
+	<LI>PM-L, Procmail mailing list
+            &lt;<A HREF="http://MailMan.RWTH-Aachen.DE/mailman/listinfo/procmail" target="_top">http://MailMan.RWTH-Aachen.DE/mailman/listinfo/procmail</A>&gt; and
+            SmartList
+            &lt;<A HREF="http://MailMan.RWTH-Aachen.DE/mailman/listinfo/smartlist" target="_top">http://MailMan.RWTH-Aachen.DE/mailman/listinfo/smartlist</A>&gt; See
+            also <A HREF="http://www.procmail.org/era/lists.html" target="_top">http://www.procmail.org/era/lists.html</A>
 	<LI>FAQ-L, Faq Maintainers mailing list
-            <A HREF="http://www.landfield.com/faq-maintainers/faq-server/" target="_top">http://www.landfield.com/faq-maintainers/faq-server/</A>
-            <A HREF="http://lists.consensus.com/scripts/lyris.pl?visit=faq-maintainers" target="_top">http://lists.consensus.com/scripts/lyris.pl?visit=faq-maintainers</A>
+            <A HREF="http://www.landfield.com/FAQ-maintainers/FAQ-server/" target="_top">http://www.landfield.com/FAQ-maintainers/FAQ-server/</A>
+            <A HREF="http://lists.consensus.com/scripts/lyris.pl?visit=FAQ-maintainers" target="_top">http://lists.consensus.com/scripts/lyris.pl?visit=FAQ-maintainers</A>
             <A HREF="http://www.qucis.queensu.ca/FAQs/FAQaid/" target="_top">http://www.qucis.queensu.ca/FAQs/FAQaid/</A>
 	<LI>DING-L, Emacs Gnus mail/newsreader mailing list (ding).
             <A HREF="http://www.gnus.org/" target="_top">http://www.gnus.org/</A>
@@ -720,7 +718,8 @@ No title
 
 
 <PRE class="code">
-      v2.2    2002-02-02  608  URL links checked and updated
+      v2.5    2002-02-01  608  Spelling checked with Emacs ispell
+      v2.2    2002-01-28  608  URL links checked and updated
       v2.0    2001-08-09  608  <A HREF="http://pm-doc.sourceforge.net" target="_top">http://pm-doc.sourceforge.net</A> opened.
       v1.77   1999-12-27  603  Netscape spam filters added
       v1.76   1999-10-01  602  Mark Seiden's patch applied. Now under CVS.
@@ -728,7 +727,7 @@ No title
       v1.72   1999-04-21  597  Links corrected
       v1.71   1999-03-29  597  Ricochet -- Perl script to fight UBE
       v1.70   1999-02-26  592  procmail's Y2K compliance
-      v1.69   1999-02-23  590  RFC and using MIME in usenet postings
+      v1.69   1999-02-23  590  RFC and using MIME in Usenet postings
       v1.68   1998-01-29  587  Added &quot;Lua&quot; language pointer
       v1.67   1998-01-07  579  Eli's procmail recipes in module section
       v1.66   1998-12-14  578  Philip took care of bugs/patches listing
@@ -791,14 +790,9 @@ No title
 	<LI>Emacs Editor and plug-in: Technical Text formatting package
             <EM class="word">tinytf.el</EM> (automatic TOC, indentation control, fontifying)
             <A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A>
-	<LI>Perl (See for Unix <A HREF="http://www.perl.com/" target="_top">http://www.perl.com/</A> and for Win32
-            <A HREF="http://www.activestate.com" target="_top">http://www.activestate.com</A> and text-to-html conversion program
-            <EM class="word">t2html.pl</EM> at nearest CPAN (Comprehensive Perl Archive
-            Network) at
-            <A HREF="http://www.cpan.org/modules/by-authors/id/J/JA/JARIAALTO/" target="_top">http://www.cpan.org/modules/by-authors/id/J/JA/JARIAALTO/</A> Funny
-            marks or indentation in the text version due the minimalistic
-            amd natural, markup language which the <EM class="word">t2html.pl</EM> offers over
-	            the other tools.
+	<LI>Perl  text-to-HTML conversion program
+            <EM class="word">t2HTML.pl</EM> project is at
+	            <A HREF="http://perl-text2html.sourceforge.net/" target="_top">http://perl-text2html.sourceforge.net/</A>
 </UL>
 
 
@@ -806,7 +800,7 @@ No title
 
 <P class="column8">
         Text version of this file was converted into HTML with following
-        command. You need Perl interpreter 5.4 or newer to call <EM class="word">t2html.pl</EM>
+        command. You need Perl interpreter 5.4 or newer to call <EM class="word">t2HTML.pl</EM>
         script. The <SAMP class="word">--Out</SAMP> option generates file pm-tips.html in current
         directory. Please also familiarize yourself with GNU RCS ident(1),
         if you have it available. It is important that you mark interesting
@@ -815,17 +809,17 @@ No title
 
 
 <PRE class="code">
-      % perl5.004 -S t2html.pl                                        \
-        --html-frame                                                  \
+      % perl5.004 -S t2HTML.pl                                        \
+        --HTML-frame                                                  \
         --title   &quot;Procmail tips page&quot;                                \
         --author  &quot;Jari Aalto&quot;                                        \
         --email   jari.aalto@poboxes.com                              \
-        --meta-keywords &quot;procmail, sendmail, mail, filter, faq, ube&quot;  \
+        --meta-keywords &quot;procmail, sendmail, mail, filter, FAQ, ube&quot;  \
         --meta-description &quot;Procmail tips page&quot;                       \
         --base      <A HREF="http://pm-doc.sourceforge.net" target="_top">http://pm-doc.sourceforge.net</A>                     \
         --document  <A HREF="http://pm-doc.sourceforge.net" target="_top">http://pm-doc.sourceforge.net</A>                     \
         --url       <A HREF="http://pm-doc.sourceforge.net" target="_top">http://pm-doc.sourceforge.net</A>                     \
-        --html-body &quot;LANG=en&quot;                                         \
+        --HTML-body &quot;LANG=en&quot;                                         \
         --Out                                                         \
         pm-tips.txt
 </PRE>
@@ -990,7 +984,7 @@ No title
 <P class="column8">
         Writing recipes is now a little easier and may look more clear at
         least to people that have accustomed reading Perl regular expression
-        shortnames:
+        short names:
 
 
 <PRE class="code">
@@ -1013,7 +1007,7 @@ No title
 <P class="column8">
         <STRONG class="word">PMSRC</STRONG> = Procmail module source code directory. Location where <SAMP class="word">*.rc</SAMP>
         files reside. Anywhere you want it to be. Usually $HOME/pm or
-        $HOME/procmail/lib. Here you can keep the procmail files, logfiles and
+        $HOME/procmail/lib. Here you can keep the procmail files, log files and
         includerc scripts. Another common used synonym is <STRONG class="word">PMDIR</STRONG>.
 
 
@@ -1041,7 +1035,7 @@ No title
 
 
 <PRE class="code">
-      mail.usenet, mail.private, mail.default, mail.perl
+      mail.Usenet, mail.private, mail.default, mail.perl
 </PRE>
 
 
@@ -1062,7 +1056,7 @@ No title
 
 
 <P class="column8">
-        <STRONG class="word">MY</STRONG>XLOOP_ = Used to prevent resending messages that have already
+        <STRONG class="word">MY</STRONG>XLOOP_ = Used to prevent re-sending messages that have already
         been handled. Typically <SAMP class="word">$LOGNAME@$HOST</SAMP>, but this can be any user
         chosen string. Make it it unique to your address. In this document
         the definition is:
@@ -1086,7 +1080,7 @@ No title
 
 <P class="column8">
         <STRONG class="word">NICE</STRONG> = In a Unix environment you can lower the scheduling
-        priority wth <SAMP class="word">nice(1)</SAMP>. If you are conscious of how many external
+        priority with <SAMP class="word">nice(1)</SAMP>. If you are conscious of how many external
         processes you launch for each piece of mail it would be polite to
         lower the priority of such processes. You may see in this document
         that external processes are called with <SAMP class="word">NICE</SAMP> enabled:
@@ -1117,7 +1111,7 @@ No title
 
 
         Randal Schwartz, a well-known Perl programmer and Perl book writer,
-        started giving emmy rewards for the &quot;useless use of cat command&quot;
+        started giving rewards for the &quot;useless use of cat command&quot;
         whenever someone wrote examples without token &quot;&lt;&quot;. Like this:
 
 
@@ -1178,11 +1172,11 @@ No title
         It's not the size of messages--most are small anyway--but the
         number of messages that cause a problem. Do you want to double the
         processing cost of all our mail? I'm looking at a system-wide
-        filter for all my users' mail. I'm considering Sendmail's milter vs
-        procmail filtering. I'll likely be using a bit of both. And given
-        that all of the filtering really just getting in the way of
-        legitimate traffic, it'd really piss me off if I naïvely doubled
-        the cost. <EM class="word">smile</EM>.
+        filter for all my users' mail. I'm considering Sendmail's mail
+        filter versus procmail filtering. I'll likely be using a bit of
+        both. And given that all of the filtering really just getting in
+        the way of legitimate traffic, it'd really piss me off if I naively
+        doubled the cost.
 
 </P>
            </BLOCKQUOTE>
@@ -1243,7 +1237,7 @@ No title
 
 <P class="column8">
         [1998-09-23 Bennett Todd <EM><A HREF="mailto:bet@mordor.net" >bet@mordor.net</A></EM> in Message-Id:
-        &lt;19980923164230.C30594@fcmc.com&gt;] Well, from a simple ogle of the
+        &lt;19980923164230.C30594@fcmc.com&gt;] Well, from a simple
         grep over the sources, it looks like there may be a Y2038 problem
         in the autoconf test code: unsigned otimet = time(). And another,
         possibly less likely to express itself, in formail.c: unsigned long
@@ -1271,7 +1265,7 @@ No title
         don't recall having seen any, but it's still worth checking.
         Second, generate a load of traffic with 2000 and 2001 dates and
         shove it through all the channels. And third, run all the systems
-        end-to-end with their system clocks rolling over the millenium.
+        end-to-end with their system clocks rolling over the millennium.
 
 
 </P>
@@ -1284,11 +1278,11 @@ No title
 
 
 
-        Procmail is discussed in usenet newsgroup <EM class="word">comp.mail.misc</EM>.
+        Procmail is discussed in Usenet newsgroup <EM class="word">comp.mail.misc</EM>.
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Procmail archive&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Procmail archive</SPAN><BR>
         <A HREF="ftp://ftp.informatik.rwth-aachen.de:/pub/packages/procmail/" target="_top">ftp://ftp.informatik.rwth-aachen.de:/pub/packages/procmail/</A>
         Articles from procmail mailing list: covers from 1994-08 to 1995-05
         (A .gz file: ~2Meg when uncompressed)
@@ -1303,11 +1297,11 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Era's Procmail faq&quot;</EM></STRONG><BR>
-        <A HREF="http://www.iki.fi/~era/procmail/mini-faq.html" target="_top">http://www.iki.fi/~era/procmail/mini-faq.html</A>
-        <A HREF="http://www.dcs.ed.ac.uk/~procmail/faq/" target="_top">http://www.dcs.ed.ac.uk/~procmail/faq/</A>          <SPAN class="word-ref">[mirror]</SPAN>
-        Also available by mail, the ITEM can be: links.html, mini-faq.html,
-        procmail-faq
+<SPAN class="quote7">Era's Procmail FAQ</SPAN><BR>
+        <A HREF="http://www.iki.fi/~era/procmail/mini-FAQ.html" target="_top">http://www.iki.fi/~era/procmail/mini-FAQ.html</A>
+        <A HREF="http://www.dcs.ed.ac.uk/~procmail/FAQ/" target="_top">http://www.dcs.ed.ac.uk/~procmail/FAQ/</A>          <SPAN class="word-ref">[mirror]</SPAN>
+        Also available by mail, the ITEM can be: links.html, mini-FAQ.html,
+        procmail-FAQ
 
 
 <PRE class="code">
@@ -1317,18 +1311,18 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Era's Procmail Link collections&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Era's Procmail Link collections</SPAN><BR>
         <A HREF="http://www.iki.fi/~era/procmail/links.html" target="_top">http://www.iki.fi/~era/procmail/links.html</A>
         ...A page full of good links to the world of procmail
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Professor Timo Salmis's Procmail page -- EXELLENT&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Professor Timo Salmis's Procmail page -- EXELLENT</SPAN><BR>
         <A HREF="http://www.uwasa.fi/~ts/info/proctips.html" target="_top">http://www.uwasa.fi/~ts/info/proctips.html</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Joe Gross's short Procmail tutorial&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Joe Gross's short Procmail tutorial</SPAN><BR>
         <A HREF="http://www.procmail.net/" target="_top">http://www.procmail.net/</A> <EM><A HREF="mailto:jgross@stimpy.net" >jgross@stimpy.net</A></EM>
         ...Using procmail and a
         feature of ph you can set up your own mailing list without
@@ -1336,29 +1330,29 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Google's procmail pointers&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Google's procmail pointers</SPAN><BR>
         <A HREF="http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/" target="_top">http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Eli on Procmail&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Eli on Procmail</SPAN><BR>
         1998-12-08 Eli the Bearded <EM><A HREF="mailto:*@qz.to" >*@qz.to</A></EM> announced in comp.mail.misc
         that he had made his procmail modules available at
-        <A HREF="http://www.faqs.org/faqs/mail/addressing/" target="_top">http://www.faqs.org/faqs/mail/addressing/</A> You may find interesting
+        <A HREF="http://www.FAQs.org/FAQs/mail/addressing/" target="_top">http://www.FAQs.org/FAQs/mail/addressing/</A> You may find interesting
         procmail code there but the modules themselves are not general
         purpose <EM class="word">plug-in</EM> modules that you could use right away. Some
         functionality included:
 
 
 <PRE class="code">
-          Inline decoding of MIME text attachments        (rc.mime-decode)
-          Cleansing of obscure &quot;Re:&quot; formats in subject   (rc.pre-list)
-          Nifty autoresponder                             (rc.qz-2)
-          Sophisticated dupicate mail catching            (rc.dupes)
-          Example of using my mail bouncer                (rc.lists-out)
-          Detection of some classes of autoreplies        (rc.daemon)
-          Various junk mail filtering                     (rc.filter)
-          Daily log files                                 (rc.vars)
+      Inline decoding of MIME text attachments        (rc.mime-decode)
+      Cleansing of obscure &quot;Re:&quot; formats in subject   (rc.pre-list)
+      Nifty autoresponder                             (rc.qz-2)
+      Sophisticated duplicate mail catching           (rc.dupes)
+      Example of using my mail bouncer                (rc.lists-out)
+      Detection of some classes of autoreplies        (rc.daemon)
+      Various junk mail filtering                     (rc.filter)
+      Daily log files                                 (rc.vars)
 </PRE>
 
 
@@ -1372,10 +1366,9 @@ No title
 
 
 
-        If you use Emacs, please download the Procmail
-        programming mode, <SAMP class="word">tinypm.el</SAMP>. Lint is included in there and it can
-        auto-correct mistakes on the fly. You can get it from the mentioned
-        <STRONG class="word">uta</STRONG> ftp site. Here is an example of its output:
+        If you use Emacs, See Procmail programming mode <EM class="word">tinypm.el</EM>
+        at &lt;<A HREF="http://tiny-tools.sourceforge.net/" target="_top">http://tiny-tools.sourceforge.net/</A>&gt; and it can be used
+        to syntax check procmail recipes. Here is an example of its output:
 
 
 <PRE class="code">
@@ -1406,19 +1399,19 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Procmail module library&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Procmail module library</SPAN><BR>
         Hosted at sourceforge CVS server and open for anyone to
         participate. Visit <A HREF="http://pm-lib.sourceforge.net/" target="_top">http://pm-lib.sourceforge.net/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Alan's procmail modules&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Alan's procmail modules</SPAN><BR>
         Send subject &quot;send procmail library&quot; to Alan Stebbens
         <EM><A HREF="mailto:alan.stebbens@software.com" >alan.stebbens@software.com</A></EM> or <EM><A HREF="mailto:alan.stebbens@openwave.com" >alan.stebbens@openwave.com</A></EM>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Concordia scripts&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Concordia scripts</SPAN><BR>
         <A HREF="http://alcor.concordia.ca/topics/email/auto/procmail/" target="_top">http://alcor.concordia.ca/topics/email/auto/procmail/</A>
         ...We provide sample sets of recipes to get you started. The great
         thing about the concordia scripts is the fact that they are
@@ -1627,7 +1620,7 @@ No title
             message to the body)
 	<LI><EM class="word">ackmail.rc</EM> -- From Alan's procmail lib. procmail rc to
             acknowledge mail (with either a  vacation message, or an
-	            acknowledgement)
+	            acknowledgment)
 </UL>
 
 
@@ -1674,7 +1667,7 @@ No title
             The implementation will always call shell for each message you
             receive; so using this module is not recommended if you get
             many messages per day. Instead, use the cron module to clean
-            the messages' backup directory only once a day, and not everytime
+            the messages' backup directory only once a day, and not every time
 	            a message arrives.
 </UL>
 
@@ -1734,7 +1727,7 @@ No title
 	<LI><EM class="word">pm-jamime-kill.rc</EM> -- Recipe for attachment killing: wipes out the
             extra mime cruft leaving only the plain text. Applications for
             killing: ms-tnef attachment (MS Explorer 7k),
-            html attachments (netscape, MS Express) vcard (Netscape),
+            HTML attachments (Netscape, MS Express) vcard (Netscape),
             PCX attachment (Lotus Notes).
 	<LI><EM class="word">pm-jamime-save.rc</EM> -- Recipe for saving simple file attachment.
             When you receive <STRONG class="word">ONE</STRONG> file attachment in a message, this
@@ -1764,7 +1757,7 @@ No title
 
 
 <P class="column7"><EM><STRONG>
-       2.5.17 Miscellaneus modules</STRONG></EM>
+       2.5.17 Miscellaneous modules</STRONG></EM>
 
 
 <P><UL>
@@ -1828,7 +1821,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Daniel's spam filter&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Daniel's spam filter</SPAN><BR>
         1997-09-13 Daniel Smith <EM><A HREF="mailto:DanS@bristol.com" >DanS@bristol.com</A></EM> sent excellent spam filter
         called <SAMP class="word">spamc.rc</SAMP>. It used some nice heuristics and filters from
         various people, including <SPAN class="word-ref">[david]</SPAN> and <SPAN class="word-ref">[philip]</SPAN>.
@@ -1837,7 +1830,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;pm-jaube.rc Jari's ube filter (compiled from others)&quot;</EM></STRONG><BR>
+<SPAN class="quote7">pm-jaube.rc Jari's ube filter (compiled from others)</SPAN><BR>
         After Daniel Smith posted his spam recipes to procmail mailing
         list, Jari investigated them and compiled other recipes to a
         general purpose UBE module that needs no special setup and can be
@@ -1847,7 +1840,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Catherine A. Hampton's Spambouncer&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Catherine A. Hampton's Spambouncer</SPAN><BR>
         <A HREF="http://www.spambouncer.org/" target="_top">http://www.spambouncer.org/</A>
         ...The attached set of procmail recipes/filters, which I call
         The Spam Bouncer, are for users who are sick of spam (unsolicited
@@ -1857,7 +1850,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Protect yourself from spam: A practical guide to procmail&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Protect yourself from spam: A practical guide to procmail</SPAN><BR>
         <A HREF="http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html" target="_top">http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html</A>
         ...take you, step by step, through everything you need to know in
         order to enlist the aid of a Unix host in filtering unwanted e-mail
@@ -1867,7 +1860,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Junkfilter&quot; by Gregory Sutter <EM><A HREF="mailto:gsutter@pobox.com" >gsutter@pobox.com</A></EM></EM></STRONG><BR>
+<SPAN class="quote7">Junkfilter</SPAN><BR>
         <A HREF="http://www.pobox.com/~gsutter/junkfilter/" target="_top">http://www.pobox.com/~gsutter/junkfilter/</A>
         ...Junkfilter is a user-configurable procmail-based filter system
         for electronic mail. Recipes include checks for forged headers,
@@ -1875,7 +1868,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;SpamDunk&quot;</EM></STRONG><BR>
+<SPAN class="quote7">SpamDunk</SPAN><BR>
         <A HREF="http://www3.sympatico.ca/walter.dnes/email/spamdunk/" target="_top">http://www3.sympatico.ca/walter.dnes/email/spamdunk/</A>
         ...This webpage shows a commented example of a working .procmailrc
         file that works for me. I have tried to make things as generic as
@@ -1943,7 +1936,7 @@ No title
 
 
 <P class="column8">
-        Suppose the script prints something to logfiles, but you'd instead
+        Suppose the script prints something to log files, but you'd instead
         like to get it all dumped to screen. No problem, first find out
         your tty value by calling <SAMP class="word">tty</SAMP> at shell prompt and pass
         that on the command line. Here the default LOGFILE is directed
@@ -2058,7 +2051,7 @@ No title
         Real csh or Emacs freaks have grown accustomed to using tilde (~)
         everywhere, but must drop that habit now. Procmail doesn't support it;
         just use <SAMP class="word">$HOME</SAMP>. When you write procmail recipes, think <EM class="word">sh</EM> not
-        <EM class="word">csh</EM>. This mindset will automatically get your brain tuned to the
+        <EM class="word">csh</EM>. This mind set will automatically get your brain tuned to the
         right programming habits.
 
 
@@ -2099,7 +2092,7 @@ No title
 
 
 
-        <SPAN class="word-ref">[faq]</SPAN> If your login shell is a C shell (csh or tcsh), avoid
+        <SPAN class="word-ref">[FAQ]</SPAN> If your login shell is a C shell (csh or tcsh), avoid
         havoc: as a precaution, always put following at the top of
         your .procmailrc.
 
@@ -2183,7 +2176,7 @@ No title
 
 <P class="column8">
         But then, the PATH getting clobbered is not the point here (just a
-        side-effect I didn't realise until 2 people pointed it out).
+        side-effect I didn't realize until 2 people pointed it out).
 
 
 </P>
@@ -2379,16 +2372,16 @@ No title
 
 
 
-        Lockfiles are only needed when procmail is doing something that
+        Lock files are only needed when procmail is doing something that
         should be serialized, i.e., when only one process at a time should
         be doing it.
 
 
 <P class="column8">
         This generally means that any time you write to a file, you should
-        have a locallock, preferably based on the name of the file being
+        have a local lock, preferably based on the name of the file being
         written to. Forwarding actions ('!'), and 99% of all filters don't
-        need lockfiles. However, if a filter action writes to a file while
+        need lock files. However, if a filter action writes to a file while
         filtering, then you may need a lock. Procmail always does kernel
         locking when it writes mail to files via simple file actions. So
         even if you forgot the lock colon, procmail tries to play safe if
@@ -2400,17 +2393,17 @@ No title
 
 
 <PRE class="code">
-       :0: a      # Ouch! Wrong unless you want a lockfile named a
+       :0: a      # Ouch! Wrong unless you want a lock file named a
        :0 a:      # Okay.
 </PRE>
 
 
 <P class="column8">
         Note that in delivering recipes where you manually write the
-        content, you must use local lockfile with <SAMP class="word">&gt;</SAMP> token, because
+        content, you must use local lock file with <SAMP class="word">&gt;</SAMP> token, because
         procmail can't determine lock by itself. It can only determine the
-        lockfile from the <SAMP class="word">&gt;&gt;</SAMP> token. <SPAN class="word-ref">[stephen]</SPAN> However, putting a
-        lockfile on a recipe like this is, of course, utterly useless. So
+        lock file from the <SAMP class="word">&gt;&gt;</SAMP> token. <SPAN class="word-ref">[stephen]</SPAN> However, putting a
+        lock file on a recipe like this is, of course, utterly useless. So
         you might as well omit the locking entirely.
 
 
@@ -2423,12 +2416,12 @@ No title
 
 <P><UL>
 	<LI>If the command line in the procmail rcfile contains &quot;&gt;&gt;&quot;,
-            a name for the local lockfile will be implicit, and the second
+            a name for the local lock file will be implicit, and the second
             colon alone is enough.
 	<LI>If the command doesn't write to a file, or doesn't write to the
             same file as anything else (including a matching letter that makes
             procmail run the same command) that might run at the same time,
-	            the local lockfile is unnecessary.
+	            the local lock file is unnecessary.
 </UL>
 
 
@@ -2436,7 +2429,7 @@ No title
 
 <P class="column8">
         <SPAN class="word-ref">[philip]</SPAN> Watch this too. A nesting block that does not launch
-        a clone cannot take a local lockfile on the recipe that starts the
+        a clone cannot take a local lock file on the recipe that starts the
         braces. A nesting block that does launch a clone can. (see
         the error)
 
@@ -2444,10 +2437,10 @@ No title
 <PRE class="code">
       :0: file$LOCKEXT
       {
-          #  error: &quot;procmail: Extraneous locallockfile ignored&quot;
+          #  error: &quot;procmail: Extraneous local lock file ignored&quot;
           #  - This lock file will be ignored
           #  - If the recipes inside the braces try to use file.lck
-          #    as  a lockfile, then you'll have a deadlock situation.
+          #    as  a lock file, then you'll have a deadlock situation.
 
           :0 :
           /tmp/tmp.mbx
@@ -2472,7 +2465,7 @@ No title
 <P class="column8">
         To quote the comment in source code, &quot;try and protect the user from
         his blissful ignorance&quot;. The parent will always wait for the cloned
-        child to exit when a lockfile is involved. The only question is
+        child to exit when a lock file is involved. The only question is
         whether or not it should be logged. If you want failure of the
         cloned child to be logged, then you should use the <SAMP class="word">w</SAMP> flag, ala:
 
@@ -2486,8 +2479,8 @@ No title
 <P class="column8">
         A local lockfile can be used to lock a clone; the parent procmail
         will remove it when the clone exits (thus it serves as a global
-        lockfile for the clone). If the braced block does not launch a
-        clone, asking for a local lockfile generates an error.
+        lock file for the clone). If the braced block does not launch a
+        clone, asking for a local lock file generates an error.
 
 
 </P>
@@ -2503,7 +2496,7 @@ No title
         <SPAN class="word-ref">[david]</SPAN> If you want to block everything while the recipe runs, even
         during the <STRONG class="word">conditions</STRONG>, use global lock. For example in this
         construct the <SAMP class="word">formail</SAMP> which updates the message-id cache file
-        must be protected with a global lockfile.
+        must be protected with a global lock file.
 
 
 <PRE class="code">
@@ -2539,13 +2532,13 @@ No title
 
 
 <P class="column8">
-        because the local lockfile named on the flag line will be created
+        because the local lock file named on the flag line will be created
         only if the conditions have matched and the action is attempted.
 
 
 <P class="column8">
         One more note: watch carefully, that there is <STRONG class="word">no</STRONG> <SAMP class="word">:</SAMP> lock when
-        delivering to <SAMP class="word">DUPLICATE_MBOX</SAMP> because the outer global lockfile
+        delivering to <SAMP class="word">DUPLICATE_MBOX</SAMP> because the outer global lock file
         already prevents all other procmail instances from executing this
         part of the recipe.
 
@@ -2672,7 +2665,7 @@ No title
         Sometimes those characters appear in arguments to a command without
         having their shell meta meaning and procmail really could invoke the
         command directly without the shell. You can see the distinction in a
-        verbose logfile: if procmail runs the command itself, it logs
+        verbose log file: if procmail runs the command itself, it logs
 
 
 <PRE class="code">
@@ -2772,11 +2765,7 @@ No title
 <P class="column10"><EM class="quote10">
           Comparing byte sizes on disk means nothing here... these
           things may or may not have been stripped. Any symbol tables included
-          in the byte counts you see above won't affect process start-up time.</EM>
-
-
-
-<P class="column10"><EM class="quote10">
+          in the byte counts you see above won't affect process start-up time.
           The <SAMP class="word">size</SAMP> command will give a better handle on what will be needed
           in starting a process. The three segments may each have their own
           overhead, though, and the relative contributions of those segments
@@ -2789,23 +2778,23 @@ No title
         least something:
 
 <P><UL>
-	<LI>While sed and grep may be bigger than awk in some systems, this
-            is an exception. They are usually much smaller and fast to use.
-	<LI>But complex commands that would require many processes to be
-            chained together, like `grep -v | grep | sed' combination could
-            be usually accomplished with one awk call. Ask somewhere how to
-            do it with awk if you don't know the language, it's quite alike
-            perl
-	<LI>Don't use anything else but standard awk, <STRONG class="word">gawk</STRONG> and <STRONG class="word">nawk</STRONG>
+	<LI>While <SAMP class="word">sed(1)</SAMP> and <SAMP class="word">grep(1)</SAMP> may be bigger than <SAMP class="word">awk(1)</SAMP> in
+            some systems, this is an exception. They are usually much
+            smaller and fast to use.
+	<LI>Complex commands that would require many processes to be
+            chained together, like `grep -v | grep | sed' could
+            be usually accomplished with one <SAMP class="word">awk(1)</SAMP> call. Ask somewhere how to
+            do it with <SAMP class="word">awk(1)</SAMP> if you don't know the language, it's quite alike
+            <SAMP class="word">perl(1)</SAMP>
+	<LI>Try to use standard <SAMP class="word">awk(1)</SAMP>. <SAMP class="word">gawk(1)</SAMP> and <SAMP class="word">nawk(1)</SAMP>
             are bigger and may not be found on all systems.
-	<LI>Avoid perl at all costs; it's many times (6) bigger than awk.
-            Perl is slow-to start up, due to intermediate compilation
-            process at startup.
+	<LI>Avoid <SAMP class="word">perl(1)</SAMP> at all costs; it's many times (6) bigger than
+            <SAMP class="word">awk(1)</SAMP>.  Perl is slow-to start up, due to intermediate
+            compilation process at startup and hogs oodles of memory.
 	<LI>Remember that if procmail is running in a dedicated mail host, it
             probably doesn't even have any goodies installed, just the boring
             standard versions; which may not be even the same as what you see
-            on current host. e.g. My mail host is running HPUX-9, while my
-	            login is on HPUX-10. They have very different installations.
+	            on current host.
 </UL>
 
 
@@ -2814,7 +2803,8 @@ No title
 <P class="column8">
         Here are some more programs. Don't even think of extracting fields with
         <SAMP class="word">grep</SAMP> or <SAMP class="word">awk</SAMP>, like &quot;grep Subject&quot;, because <SAMP class="word">formail</SAMP> is
-        much smaller and more optimized for tasks like that.
+        much smaller and more optimized for tasks like that. Better yet,
+        many times you can do all with procmail's regexp matches.
 
 
 <PRE class="code">
@@ -2842,19 +2832,18 @@ No title
 
 
 
-        Shell programmers know that if you use absolute path when you call
+        Shell programmers know that if absolute path is used for calling
         the executable, shell doesn't have to search through long list of
         directories in $PATH. This may speed up shell scripts remarkably.
-        The correct way to use such an optimization is to define variables to
+        The best way to use such an optimization is to define variables to
         those programs.
 
 
 <P class="column8">
-        Hm, should you use such optimization in your procmail code? That's
-        two folded question and I....would say yes and no. How many
-        shell calls do you have? Do you use grep or formail a lot? Then you
-        could optimize these calls. To be portable, define variables for
-        executables:
+        Should you use such optimization in your procmail code?  That is a
+        two folded question. Examine how many shell calls do you use? Do
+        you use <SAMP class="word">grep</SAMP> or <SAMP class="word">formail</SAMP> a lot? Then you could optimize these
+        calls. To be portable, define variables for executables:
 
 
 <PRE class="code">
@@ -2872,7 +2861,7 @@ No title
 
 
 <P class="column8">
-        And when you port your .procmailrc to different environment that
+        When you port your <SAMP class="word">.procmailrc</SAMP> to different environment which
         has different paths, you could use this recipe in addition to one
         just mentioned above:
 
@@ -2931,7 +2920,7 @@ No title
 
 
 
-        It's good to have a safety measure in your .procmailrc.
+        It's good to have a safety measure in your <SAMP class="word">.procmailrc</SAMP>.
         Although you are an expert and have checked your recipes 10 times,
         there is still a chance that something breaks. One morning, when you
         browse your <EM class="word">BIFF</EM> reminder log; you notice &quot;Hm, there is that
@@ -2945,10 +2934,9 @@ No title
 
 <P class="column8">
         So, before your procmail does anything to your message, put the
-        message into some folder which is regularly expired. Emacs Gnus acn
-        automatically handle thos mailbox's expiring, but one could also
-        use a cron(1) cleaning. After this, you can relax knowing your mail is
-        safe.
+        message into some folder which is regularly expired. Emacs Gnus can
+        do mailbox's expiring, but one could also use a <SAMP class="word">cron(1)</SAMP> to do the
+        cleaning. After that, you can relax knowing your mail is safe.
 
 
 <PRE class="code">
@@ -3054,10 +3042,9 @@ No title
 
 
 <P class="column8">
-        The backup, cron and duplicate handling go naturally to the beginning
-        of your .procmailrc. Next comes a grey area where Daemon, plus handling
-        (<A HREF="#using_rfc_comment_trick_for; Note plus" >)</A> and server messages can
-        be put.
+        The backup, cron and duplicate handling go naturally to the
+        beginning of your <SAMP class="word">.procmailrc</SAMP>. Next comes a grey area where
+        Daemon, plus handling and server messages can be put.
 
 
 <P class="column8">
@@ -3067,24 +3054,23 @@ No title
 
 <P class="column8">
         Do not send vacation replies before you have handled mailing lists
-        to prevent annoying vacation replies to lists.
+        to prevent annoying vacation replies to mailing lists.
 
 
 <P class="column8">
         After that you are left with &quot;known&quot; private messages and those of
         unknown origin. A kill file (to block based on sender) for rapid
-        spammers, who send you message or several per day need to be
+        spammers, who send you message or several per day may need to be
         checked before checking other messages.
 
 
-<P class="column9"><STRONG>
-         Last but not least: Put your UBE checkers to the end to avoid
-         mishits of valid mail. <STRONG class="word">DO</STRONG> <STRONG class="word">NOT</STRONG> <STRONG class="word">SEND</STRONG> <STRONG class="word">AUTOMATIC</STRONG> <STRONG class="word">COMPLAINT</STRONG>
-         <STRONG class="word">BACK</STRONG>, or you'll get grey hairs when the autoresponder send its
-         complaint to valid source. You don't want to answr back with &quot;My
-         apologies, the script had an error, it won't happen aagin.&quot; to all
-         the valid hate mail that is now addressed to you.</STRONG>
-
+<P class="column11">
+           Last but not least: Put your UBE checkers to the end to avoid
+           mishits of valid mail. <STRONG class="word">DO</STRONG> <STRONG class="word">NOT</STRONG> <STRONG class="word">SEND</STRONG> <STRONG class="word">AUTOMATIC</STRONG> <STRONG class="word">COMPLAINT</STRONG>
+           <STRONG class="word">BACK</STRONG>, or you'll get grey hairs when the autoresponder send its
+           complaint to valid source. You don't want to answr back with &quot;My
+           apologies, the script had an error, it won't happen aagin.&quot; to all
+           the valid hate mail that is now addressed to you.
 
 
 <P class="column8">
@@ -3113,16 +3099,16 @@ No title
 
 
 
-        Order does not matter of course, but here is one stylistic suggestion.
-        The idea here is that the most important flags are put to the left,
-        like giving priority 1 for <SAMP class="word">aAeE</SAMP>, which affect the recipe
-        immediately. Priority 2 has been given to flag <SAMP class="word">f</SAMP>, which tells if
-        a recipe filters something. Also (h)eader and (b)ody should
-        immediately follow <SAMP class="word">f</SAMP>, this is considered priority 3. In the
-        middle there are other flags, and last flag is <SAMP class="word">c</SAMP>, which ends the
-        recipe, or allows it to continue. In addition according to <SPAN class="word-ref">[david]</SPAN>:
-        &quot;...I'm quite sure that putting anything other than the opening
-        colon and the number to the left of <SAMP class="word">AaEe</SAMP> will cause an
+        The Order of the flags does not matter in practice, but here is one
+        stylistic suggestion.  The idea here is that the most important
+        flags are put to the left, like giving priority 1 for <SAMP class="word">aAeE</SAMP>, which
+        affect the recipe immediately. Priority 2 is given to flag
+        <SAMP class="word">f</SAMP>, which tells if a recipe filters something. Also (h)eader and
+        (b)ody should immediately follow <SAMP class="word">f</SAMP>, this is considered priority
+        3. In the middle there are other flags, and last flag is <SAMP class="word">c</SAMP>, which
+        ends the recipe, or allows it to continue. In addition according to
+        <SPAN class="word-ref">[david]</SPAN>: &quot;...I'm quite sure that putting anything other than the
+        opening colon and the number to the left of <SAMP class="word">AaEe</SAMP> will cause an
         error.&quot;
 
 
@@ -3153,7 +3139,7 @@ No title
 
 
 <PRE class="code">
-      :0 A HB fhw: $MYLOCK$LOCKEXT
+      :0 A fhw: $MYLOCK$LOCKEXT
 </PRE>
 
 
@@ -3202,28 +3188,28 @@ No title
 
 <P class="column8">
         <SPAN class="word-ref">[stephen]</SPAN> No, not on all occasions. Procmail will not care about the
-        exitcode here. However, if procmail detects a write error, it <EM class="word">will</EM>
+        exit code here. However, if procmail detects a write error, it <EM class="word">will</EM>
         recover (because of the missing <SAMP class="word">i</SAMP> flag). Procmail will only detect
         a write error in such a case if the mail is long enough and does not
         fit in the pipe buffer that's in the kernel (typically 10KB).
 
 
 </P>
-  <A name="flag_w_lockfile_and_recipe" id="flag_w_lockfile_and_recipe"></A>
+  <A name="flag_w_lock_file_and" id="flag_w_lock_file_and"></A>
   <H2>
-      5.3 Flag w, lockfile and recipe with |
+      5.3 Flag w, lock file and recipe with |
       
   </H2>
 
 
 
 
-        <SPAN class="word-ref">[manual]</SPAN> In order to make sure the lockfile is not removed until the
+        <SPAN class="word-ref">[manual]</SPAN> In order to make sure the lock file is not removed until the
         pipe has finished, you have to specify option <SAMP class="word">w</SAMP> otherwise the
-        lockfile would be removed as soon as the pipe has accepted the
+        lock file would be removed as soon as the pipe has accepted the
         mail. So if you see anything that looks like &quot;&gt;&quot; or &quot;&gt;&gt;&quot; in your
         recipe, then that should immediately ring your bells. immediately
-        check that you have included the <SAMP class="word">w</SAMP> flag <STRONG class="word">and</STRONG> the lockfile <SAMP class="word">:</SAMP>.
+        check that you have included the <SAMP class="word">w</SAMP> flag <STRONG class="word">and</STRONG> the lock file <SAMP class="word">:</SAMP>.
 
 
 <PRE class="code">
@@ -3245,9 +3231,9 @@ No title
 
 
 <P class="column10"><EM class="quote10">
-          The w tells Procmail to hang around and wait for the script to
-          finish. [Wouldn't you think this ought to be implied by the f
-          already?]</EM>
+          The <SAMP class="word">w</SAMP> tells Procmail to hang around and wait for the script to
+          finish. Hm, Wouldn't you think this ought to be implied by the <SAMP class="word">f</SAMP>
+          flag already? Not so.</EM>
 
 
 
@@ -3308,7 +3294,7 @@ No title
 
 
 <P class="column8">
-        <SPAN class="word-ref">[philip]</SPAN> Procmail knows that it shouldn't create a locallock on
+        <SPAN class="word-ref">[philip]</SPAN> Procmail knows that it shouldn't create a local lock on
         /dev/null and that it shouldn't kernel lock /dev/null, and it knows
         to write it &quot;raw&quot; (no &quot;From &quot; escaping or appended newline).  This
         means that procmail simply opens /dev/null, does its write with
@@ -3335,13 +3321,13 @@ No title
 
 
 
-<P class="column9"><STRONG>
-         Flag <SAMP class="word">i</SAMP> is useless in mailbox deliveries.</STRONG>
+<P class="column10"><EM class="quote10">
+          Flag <SAMP class="word">i</SAMP> is useless in mailbox deliveries.</EM>
 
 
 
 <P class="column8">
-        <SPAN class="word-ref">[faq]</SPAN> The following will work some of the time, when the message is
+        <SPAN class="word-ref">[FAQ]</SPAN> The following will work some of the time, when the message is
         short enough, but that's a coincidence. With a longer message,
         though, Unix starts paying attention to what is happening, because
         it will have to buffer some of the data, and then when the buffered
@@ -3537,10 +3523,9 @@ No title
         <SPAN class="word-ref">[philip]</SPAN> There is a misunderstanding here. Let me clarify:
 
 
-<P class="column10"><EM class="quote10">
-          Procmail only forks a full-blown clone on a recipe with the 'c'
-          flag whose action is a nested block.</EM>
-
+<P class="column11">
+           Procmail only forks a full-blown clone on a recipe with the 'c'
+           flag whose action is a nested block.
 
 
 <P class="column8">
@@ -3548,15 +3533,11 @@ No title
         procmail does not fork a 'clone' (for pipe and forward actions
         procmail does have to fork, but only so it can execute the
         action). <SAMP class="word">nbr.1</SAMP> and <SAMP class="word">nbr.2</SAMP> take the same number of forks to
-        execute. They also take the same effective number of writes
-        (in case you're concerned about that). The latter also
-        requires that procmail wait for the command to finish.
-
-
-<P class="column8">
-        <SAMP class="word">nbr.3</SAMP> is worse than the above two, as procmail has to not
-        only wait for the command to complete but also save the output
-        into the named variable.
+        execute. They also take the same effective number of writes (in
+        case you're concerned about that). The latter also requires that
+        procmail wait for the command to finish.  <SAMP class="word">nbr.3</SAMP> is worse than the
+        above two, as procmail has to not only wait for the command to
+        complete but also save the output into the named variable.
 
 
 </P>
@@ -3581,18 +3562,15 @@ No title
 
 
 <P class="column8">
-        <SPAN class="word-ref">[david]</SPAN> <SAMP class="word">HB</SAMP> <SAMP class="word">AaEe</SAMP> and <SAMP class="word">D</SAMP> affect the conditions and
-        thus are meaningful when the action is to open a brace. <SAMP class="word">HB</SAMP> and
-        <SAMP class="word">D</SAMP> would be meaningless, of course, on any unconditional recipe, but
-        they should not cause error messages.
-
-
-<P class="column8">
-        Generally, flags that affect actions are invalid there, and <SAMP class="word">bhfi</SAMP>
-        and <SAMP class="word">r</SAMP> always are, but the others are partial exceptions: if you
-        are using <SAMP class="word">c</SAMP> to launch a clone, then <SAMP class="word">w</SAMP> <SAMP class="word">W</SAMP> and a local lockfile can
-        be meaningful. If there is no <SAMP class="word">c</SAMP>, then <SAMP class="word">w</SAMP> <SAMP class="word">W</SAMP> and a local lockfile
-        are invalid at the opening of a braced block.
+        <SPAN class="word-ref">[david]</SPAN> <SAMP class="word">HB</SAMP> <SAMP class="word">AaEe</SAMP> and <SAMP class="word">D</SAMP> affect the conditions and thus are
+        meaningful when the action is to open a brace. <SAMP class="word">HB</SAMP> and <SAMP class="word">D</SAMP> would
+        be meaningless, of course, on any unconditional recipe, but they
+        should not cause error messages.  Generally, flags that affect
+        actions are invalid there, and <SAMP class="word">bhfi</SAMP> and <SAMP class="word">r</SAMP> always are, but the
+        others are partial exceptions: if you are using <SAMP class="word">c</SAMP> to launch a
+        clone, then <SAMP class="word">w</SAMP> <SAMP class="word">W</SAMP> and a local lock file can be meaningful. If
+        there is no <SAMP class="word">c</SAMP>, then <SAMP class="word">w</SAMP> <SAMP class="word">W</SAMP> and a local lock file are invalid at
+        the opening of a braced block.
 
 
 </P>
@@ -3879,7 +3857,7 @@ No title
         complicated by throwing in a more varied mix of delivering vs
         non-delivering recipes), but I've found that it usually does what I
         expect it to do, and when it doesn't or I'm in doubt or I want to
-        be particularly clear, I can always fallback to doing it explicitly
+        be particularly clear, I can always fall-back to doing it explicitly
         via nesting blocks. Pick your poison...
 
 </P>
@@ -3903,12 +3881,16 @@ No title
 
 
 
-        Here are two ways to view or write regexps. Make up your own mind.
-
 
 <P class="column10"><EM class="quote10">
-          People who are in favor of writing pure native regexps in the
-          recipes:</EM>
+          Here are two ways to view or write regexps. Make up your own
+          mind.</EM>
+
+
+
+<P class="column9"><STRONG>
+         People who are in favor of writing pure native regexps in the
+         recipes:</STRONG>
 
 
 
@@ -3919,7 +3901,7 @@ No title
 <P><UL>
 	<LI>I'm not planning on &quot;maintaining&quot; that code, as the syntax for
             XXX will not ever change &lt;&lt;it's RFC or something&gt;&gt;&gt;
-	<LI>I some how doubt that anyone else will change that regexp more than
+	<LI>I somehow doubt that anyone else will change that regexp more than
             trivially
 	<LI>If none of your other regexps use the categorical variables, and
             you're not changing the regexp, then what's the point?
@@ -3930,9 +3912,10 @@ No title
 
 
 
-<P class="column8">
-        Where someone that immediately wants to abstract things says
-        (This is from philip's great Message-Id matching recipe)
+<P class="column9"><STRONG>
+         Where someone that immediately wants to abstract things says (This
+         is from philip's great Message-Id matching recipe)</STRONG>
+
 
 
 <PRE class="code">
@@ -3946,20 +3929,14 @@ No title
 </PRE>
 
 
-<P class="column10"><EM class="quote10">
-          ....abstraction: It makes code clearer when you break it
-          to manageable parts, which possibly surfaces reusable parts. It
-          also makes thing look simpler, and enables even novices
-          to understand what's going on there. After we're not
-          connected to the net anymore, others could possibly understand
-          it too.</EM>
-
-
-
-<P class="column10"><EM class="quote10">
-          So, naturally we can't agree with any of the previously mentioned
-          arguments presented for keeping regexp &quot;in pure native format&quot;.</EM>
-
+<P class="column8">
+        ...abstraction: It makes code clearer when you break it to
+        manageable parts, which possibly surfaces reusable parts. It also
+        makes thing look simpler, and enables even novices to understand
+        what's going on there. After we're not connected to the net
+        anymore, others could possibly understand it too.  So, naturally we
+        can't agree with any of the previously mentioned arguments
+        presented for keeping regexp &quot;in pure native format&quot;.
 
 <P><UL>
 	<LI>Although you won't maintain it, it's an example for others. What
@@ -3974,8 +3951,8 @@ No title
             100 variables. (I don't know how to measure that, but launching
             a shell and creating a process is a much more expensive task).
 	<LI>Cluttering the env process? C'm on. That won't matter either.
-            No outside process uses lowercase environment names, or then it
-            must be real special program. So called &quot;cluttering&quot; of
+            No outside process use lowercase environment variable names, or
+            then it must be real special program. So called &quot;cluttering&quot; of
             environment space is also no-issue. CPU won't even get a hiccup
 	            for that.
 </UL>
@@ -3996,20 +3973,20 @@ No title
         Okay, okay; if you read the manual you knew that already. But
         sometimes someone with years of experience with Unix may take it for
         granted that procmail would be case-sensitive as the rest of the
-        unix tools are. Use the <SAMP class="word">D</SAMP> flag to turn on case-sensitivity.
+        Unix tools are. Use the <SAMP class="word">D</SAMP> flag to turn on case-sensitivity.
 
 
 </P>
-  <A name="procmail_uses_multiline_matches" id="procmail_uses_multiline_matches"></A>
+  <A name="procmail_uses_multi_line_matches" id="procmail_uses_multi_line_matches"></A>
   <H2>
-      6.3 Procmail uses multiline matches
+      6.3 Procmail uses multi line matches
       
   </H2>
 
 
 
 
-        Procmail uses multiline matches by default. This means that ^ and $
+        Procmail uses multi line matches by default. This means that ^ and $
         match a newline, even in the middle of a regexp. Now you know this,
         you can easily interpret e.g. <SAMP class="word">$[^&gt;]</SAMP> as: `a newline followed by a
         line not starting with a <SAMP class="word">&gt;</SAMP>.
@@ -4029,9 +4006,9 @@ No title
 
 
 </P>
-  <A name="headers_are_folded_before_matching" id="headers_are_folded_before_matching"></A>
+  <A name="headers_are_unfolded_before_matching" id="headers_are_unfolded_before_matching"></A>
   <H2>
-      6.4 Headers are folded before matching
+      6.4 Headers are unfolded before matching
       
   </H2>
 
@@ -4039,7 +4016,7 @@ No title
 
 
         If you have a header that continues on separate lines, you don't have
-        to worry about the linefeeds. Procmail silently folds the header onto
+        to worry about the line feeds. Procmail silently unfolds the header onto
         one line, before matching it
 
 
@@ -4049,6 +4026,9 @@ No title
 
       :0                          # note, match on continuation line
       * ^Received:.*bythehand\.
+      {
+          # Do something
+      }
 </PRE>
 
 
@@ -4074,7 +4054,7 @@ No title
 
 <P class="column8">
         But using the space+tab is not very readable and it's a very error
-        prone construct. I suggest using the following to improve the
+        prone construct. Here is a suggestion to use variables to improve the
         readability:
 
 
@@ -4085,13 +4065,17 @@ No title
                               # a lot in condition lines.
       NSPC  = &quot;[^$WSPC]&quot;      # negation of whitespace
 
-      #   match anything except space and tab
-
+      :0
       *$ var ?? $NSPC
+      {
+          #   match anything except space and tab
+      }
 
-      #   match anything ecxept space and tab and newline
-
+      :0
       *$ ! var ?? ($SPC|$)
+      {
+          #   match anything ecxept space and tab and newline
+      }
 </PRE>
 
 
@@ -4100,7 +4084,7 @@ No title
 
 
 <PRE class="code">
-      WSPCL  = &quot;   &quot;'
+      WSPCL  = &quot;   &quot;'         # Whitespace with line feed
       '
 
       #   Won't work although WSPCL definition is correct.
@@ -4247,7 +4231,7 @@ No title
       * rest of string[ ]
       * (rest of string )
       * rest of string ()
-      * rest of string( )         # I prefer this one
+      * rest of string( )         # This may be the best
 </PRE>
 
 
@@ -4255,17 +4239,14 @@ No title
         <SPAN class="word-ref">[philip]</SPAN> From my looking at the source, the last two should be
         equal in efficiency, and except for a trace difference in regcomp
         time, should match at the same speed as a solitary trailing blank.
-        The character class version [ ] will be slower.
-
-
-<P class="column8">
-        Of course, I suspect that neither you nor your sysadmin will ever
-        notice the difference in speed, and given that 99% of all systems are
-        I/O bound and not CPU bound, the system is incredibly unlikely to
+        The character class version [ ] will be slower.  Of course, I
+        suspect that neither you nor your sysadmin will ever notice the
+        difference in speed, and given that 99% of all systems are I/O
+        bound and not CPU bound, the system is incredibly unlikely to
         notice either. I can't complain though, as I also go to various
-        extremes to seek out every last bit of possible performance. Ah well.
-        The first one would be slower yet, though perhaps no slower than the
-        bracket form.
+        extremes to seek out every last bit of possible performance. Ah
+        well.  The first one would be slower yet, though perhaps no slower
+        than the bracket form.
 
 
 </P>
@@ -4662,7 +4643,10 @@ No title
 
 
 
-        <SAMP class="word">MATCH</SAMP> strips all leading blank lines in 3.11pre7
+
+<P class="column10"><EM class="quote10">
+          <SAMP class="word">MATCH</SAMP> strips all leading blank lines in 3.11pre7</EM>
+
 
 
 <P class="column8">
@@ -4693,17 +4677,17 @@ No title
         <SPAN class="word-ref">[philip]</SPAN> Procmail doesn't think <EM class="word">lines</EM> when it matches; but it
         concatenates all lines together and then runs the regexp
         engine. This may be a bit surprising, but consider the following where
-        we want to discard any message that is likely a html advertisement
+        we want to discard any message that is likely a HTML advertisement
 
 
 <PRE class="code">
-      #   Body consists entirely of html code
-      #   something which'll match any message which has &quot;&lt;html&gt;&quot;
+      #   Body consists entirely of HTML code
+      #   something which'll match any message which has &quot;&lt;HTML&gt;&quot;
       #   in the body
 
       :0 B:
-      *$ $s*&lt;html&gt;
-      html.mbox
+      *$ $s*&lt;HTML&gt;
+      HTML.mbox
 </PRE>
 
 
@@ -4718,11 +4702,11 @@ No title
 
 <PRE class="code">
       #   trap spam where the *very* first line of the body started with
-      #   &lt;html&gt;
+      #   &lt;HTML&gt;
 
       :0 B:
-      *$ ^^$s*&lt;html&gt;
-      html.mbox
+      *$ ^^$s*&lt;HTML&gt;
+      HTML.mbox
 </PRE>
 
 
@@ -4992,7 +4976,7 @@ No title
       :0
       * ! condition1
       * ! condition2
-      { }             # official procmail no-op
+      { }             # official procmail no-op. MUST LEAVE SPACE
       :0 E
       action_on_condition1_or_condition2
 </PRE>
@@ -5037,13 +5021,14 @@ No title
 
 <PRE class="code">
       VAR             # kill variable.
-      VAR=            # same but with old style
+      VAR=            # same, but with old style
       VAR = &quot;&quot;        # Variable is said to be &quot;null&quot; now
 </PRE>
 
 
 <P class="column8">
-        And you can put multiple assignments on the same line
+        And you can put multiple assignments on the same line, although
+        not recommended:
 
 
 <PRE class="code">
@@ -5052,17 +5037,17 @@ No title
 
 
 <P class="column8">
-        Examine the following, which are all equivalent. The backticks will not
+        Examine the following, which are all equivalent. The back ticks will not
         require a shell in the absence of any <SAMP class="word">SHELLMETAS</SAMP> so neither of
         these will spawn a shell
 
 
 <PRE class="code">
-          #   _case1_: We Don't care if file exists this time...
+          #   case1: We Don't care if file exists this time...
 
           VAR = `cat file`
 
-          #   _case2_: The use of {} is considered &quot;modern&quot;
+          #   case2: The use of {} is considered &quot;modern&quot;
 
           :0
           * condition
@@ -5070,7 +5055,7 @@ No title
               VAR = `cat file`
           }
 
-          #   _case3_: oldish, and procmail specific and errors have
+          #   case3: oldish, and procmail specific and errors have
           #   been reported if you use this construct.
           #   Note: There must be no space in &quot;VAR=|&quot;
 
@@ -5081,16 +5066,16 @@ No title
 
 
 </P>
-  <A name="variable_initialisation_and_sh_syntax" id="variable_initialisation_and_sh_syntax"></A>
+  <A name="variable_initialization_and_sh_syntax" id="variable_initialization_and_sh_syntax"></A>
   <H2>
-      7.2 Variable initialisation and sh syntax
+      7.2 Variable initialization and sh syntax
       
   </H2>
 
 
 
 
-        Procmail borrows some sh syntax for variable initialisation.
+        Procmail borrows some sh syntax for variable initialization.
         Note that sh's ${var:=default} and ${var=defaultvalue}
         syntaxes are not available in a procmail rcfile.
 
@@ -5214,7 +5199,7 @@ No title
 
 <P class="column8">
         Where &quot;!&quot; is the procmail &quot;false&quot; operation. One more way to do the
-        same would be, that we require at leastone character to be present.
+        same would be, that we require at least one character to be present.
         You could use also regexp (.), which would require at least one
         character to be present, but you might not like matching pure spaces.
 
@@ -5243,7 +5228,7 @@ No title
 
 
 <P class="column8">
-        Alternative with a positive test:
+        With negative test, this would be:
 
 
 <PRE class="code">
@@ -5252,13 +5237,9 @@ No title
 
 
 <P class="column8">
-        To my opinion, this is more readable. You're free to disagree with
-        me at this point, but all in all, it's nicer to look at code that
-        has as few ! flags as possible, especially in variable tests.
-
-
-<P class="column8">
-        <SPAN class="word-ref">[philip]</SPAN> The following fails if the variable is unset or null.
+        Using literal strings like &quot;yes&quot; and &quot;no&quot; might present more clear
+        though what is going that a traditional &quot;!&quot; negation of a test.
+        Note, that the following fails if the variable is unset or null.
 
 
 <PRE class="code">
@@ -5267,7 +5248,7 @@ No title
 
 
 <P class="column8">
-        That was why I'd be better off to use
+        That was why it would be better to test:
 
 
 <PRE class="code">
@@ -5288,7 +5269,7 @@ No title
         to require that <EM class="word">variable</EM> contain at least one character. But
         neither is a way to check whether a variable is set or not, because
         each treats a null variable the same as an unset one. This is the
-        best way I know to check whether a variable is set or not:
+        best way to check whether a variable is set or not:
 
 
 <PRE class="code">
@@ -5320,7 +5301,7 @@ No title
 
 
 
-        [era and david] Procmail 3.11, $\VAR will escape regex metacharacters.
+        [era and david] Procmail 3.11, $\VAR will escape regexp metacharacters.
         It should produce a suitably backslash-escaped expression for
         Procmail's own use. In addition $\VAR will always begin with leading
         empty parentheses.
@@ -5361,7 +5342,7 @@ No title
 
 
 
-        Procmail is picky and forgives nothing. Here are some of the favourite
+        Procmail is picky and forgives nothing. Here are some of the favorite
         mistakes one can make:
 
 
@@ -5527,10 +5508,16 @@ No title
         Remember to include the double quotes when you send variables'
         values to the shell programs. Below you see a mistake,
         because the content of the SUBJECT is not quoted and
-        thus not available from perl variable $ARGV[1].
+        thus not available from perl variable <SAMP class="word">$ARGV[1]</SAMP>.
 
 
 <PRE class="code">
+      :0                          # Use procmail match feature
+      * ^Subject:\/.*
+      {
+          SUBJECT = &quot;$MATCH&quot;
+      }
+
       :0
       * condition
       | perl-script $SUBJECT      # mistake; use &quot;$SUBJECT&quot;
@@ -5541,11 +5528,11 @@ No title
         There is also another way. If your script can access environment
         variables (almost all programs can), then you do not need to pass
         the variables on the command line. Above, the SUBJECT is already
-        in the environment and in perl you can get it.
+        in the environment and in Perl you can get it with:
 
 
 <PRE class="code">
-      $SUBJECT = $ENV{SUBJECT};   # or &quot;use Env;&quot; and you see $SUBJECT
+      $SUBJECT = $ENV{SUBJECT};
 </PRE>
 
 
@@ -5779,8 +5766,6 @@ No title
 
 
 <PRE class="code">
-      # 1998-06-23 PM-L [walter]
-
       :0
       *  1^1 VAR ?? .
       { }
@@ -6210,7 +6195,7 @@ No title
         it in a variable. Idea by <SPAN class="word-ref">[era]</SPAN>. You could do this in a separate shell
         script too. The following example reads URLs from the body of
         a message: the URLs have been put to separate lines and some special
-        Subject is used to trigger the dumping of the html pages:
+        Subject is used to trigger the dumping of the HTML pages:
 
 
 <PRE class="code">
@@ -6235,7 +6220,7 @@ No title
 
 <P class="column8">
         If you want to run the code inside the nested block, then look
-        carefully, there are double quotes around the command in backticks.
+        carefully, there are double quotes around the command in back ticks.
         If you leave double quotes out, then each word in SH_CMD would be
         interpreted separately:
 
@@ -6387,7 +6372,7 @@ No title
 <P><UL>
 	<LI>Multiple <SAMP class="word">echo</SAMP> commands that spread many lines can be converted
             to single echo command if \n escape is supported. You usually
-	            see these in autoresponders
+	            see these in auto responders
 </UL>
 
 
@@ -6435,7 +6420,7 @@ No title
 </PRE>
 
 <P><UL>
-	<LI>Count the backticks and you know how many shell calls procmail
+	<LI>Count the back ticks and you know how many shell calls procmail
             has to launch. See if you can minimize them and use some procmail
             code instead.
 	<LI>^TO and other macros are expensive, see if you can use simple
@@ -6559,11 +6544,11 @@ No title
 
 <P class="column8">
         There are other options: you could temporarily store the mail in
-        your account, then have a cronjob on the shell machine that
+        your account, then have a cron job on the shell machine that
         reprocesses the message. That would probably be more efficient than
         having each message trigger an rsh to the shell machine. If you
         actually get enough spam that it's pushing against your quota, then
-        the rsh is too expensive -- use a cronjob that invokes something
+        the rsh is too expensive -- use a cron job that invokes something
         like:
 
 
@@ -6619,7 +6604,7 @@ No title
 
 
 
-        <SPAN class="word-ref">[era]</SPAN> The regex to grab few lines (or all of them, if there are
+        <SPAN class="word-ref">[era]</SPAN> The regexp to grab few lines (or all of them, if there are
         less than fifty) is not going to be very pretty, but it saves launching
         an extra process.
 
@@ -6718,7 +6703,7 @@ No title
 	<LI>Echo is easier to use with variables.
 	<LI>Echo starts many processes, cat only starts one, but this is
             not always true: In most current Bourne shell implementations,
-            echo is a builtin. This holds true with tcsh too.
+            echo is a built-in. This holds true with tcsh too.
 	<LI>The main problem I see with the use of cat is &quot;what happens when
             you forget the file or destroy it ?&quot;. I suggest to, at least,
             test that the file is readable before catting it.
@@ -6759,7 +6744,7 @@ No title
 <PRE class="code">
       # case 1: print to BiffLog
 
-      dummy = `echo &quot;message: $FROM $SUBJECT&quot; &gt;&gt; $biff `
+      dummy = `echo &quot;message: $FROM $SUBJECT&quot; &gt;&gt; $biff`
 </PRE>
 
 
@@ -6884,7 +6869,7 @@ No title
 
 
 <P class="column8">
-        The command <SAMP class="word">:</SAMP> is a shell builtin which always returns true
+        The command <SAMP class="word">:</SAMP> is a shell built-in which always returns true
         status. Not exactly more readable than true(1) &quot;|| :&quot; will save the
         invocation of true (unless true is built into $SHELL), but procmail
         will still run a shell. On the other hand, as long as the command
@@ -6953,7 +6938,6 @@ No title
         anything more that one or two files (many times you want to put
         other files available too), then please do not use this code but a
         general file server module.
-        (Note: <A HREF="#procmail_module_list " >Procmail module list</A>)
 
 
 <PRE class="code">
@@ -7207,7 +7191,7 @@ No title
 
 
 <PRE class="code">
-      #   instead of leading dotfile, you may prefer
+      #   instead of leading dot file, you may prefer
       #   stopFile = $HOME/procmailrc.stop which shows up in default ls.
       #   In the other hand you can do ls ~/.procmail* to see both...
 
@@ -7846,7 +7830,7 @@ No title
 <P class="column8">
         See the recursive RC implementation at
         &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/</A>
-        cgi-bin/w3glimpse2html/procmail/1997-08/msg00073.html?50#mfs&gt;
+        cgi-bin/w3glimpse2HTML/procmail/1997-08/msg00073.html?50#mfs&gt;
 
 
 <P class="column8">
@@ -7945,7 +7929,7 @@ No title
 
 <P class="column8">
         That way only the <STRONG class="word">header</STRONG> gets fed into formail, whereas the
-        previous backtick fed the <STRONG class="word">whole</STRONG> message. Another benefit is,
+        previous back tick fed the <STRONG class="word">whole</STRONG> message. Another benefit is,
         that you can then check the return code of formail with <SAMP class="word">a</SAMP> or
         <SAMP class="word">A</SAMP> recipe after this one.
 
@@ -7981,7 +7965,7 @@ No title
 
 
 <P class="column8">
-        <SPAN class="word-ref">[faq]</SPAN> <SAMP class="word">-r</SAMP> breaks RFC822, so always use <SAMP class="word">-rt</SAMP> if you don't know
+        <SPAN class="word-ref">[FAQ]</SPAN> <SAMP class="word">-r</SAMP> breaks RFC822, so always use <SAMP class="word">-rt</SAMP> if you don't know
         what this means. Perhaps you should always use it anyway.
 
 
@@ -7989,7 +7973,7 @@ No title
         <SPAN class="word-ref">[david]</SPAN> There is formail -r[t] rank bar graph in the source code of
         3.11pre4. It might be easier to follow as a top-to-bottom listing
         (and again, Tom Zeltwanger appears to be using one of the older
-        versions where From_ was mistakenly overpromoted). These are the
+        versions where From_ was mistakenly over promoted). These are the
         rankings in version 3.11pre4:
 
 
@@ -8176,12 +8160,12 @@ No title
         picture. When I generated response from <EM class="word">Local-address</EM> with
         <SAMP class="word">formail</SAMP> <SAMP class="word">-rt</SAMP>, the generated address pointed back to
         *virtual-address, which pointed back to <EM class="word">Local-address</EM> of
-        course. A loopback was ready, I never got route travelling to
+        course. A loop back was ready, I never got route traveling to
         original address <EM class="word">account</EM>
 
 
 <P class="column8">
-        What was happening here was that the mailserver that handled the
+        What was happening here was that the mail server that handled the
         virtual-address, didn't <EM class="word">forward</EM> the message, but instead
         <EM class="word">resent</EM> the message. In this process a set of new headers were
         generated:
@@ -8229,7 +8213,7 @@ No title
         <SPAN class="word-ref">[edward]</SPAN> adds to this that: As you know, <SAMP class="word">formail</SAMP> <SAMP class="word">-rt</SAMP> is
         for composing a response to the address from which an e-mail was
         sent. Let's say you are on vacation and have set up a procmail
-        recipe to autorespond to all e-mail you receive. Furthermore, let's
+        recipe to auto respond to all e-mail you receive. Furthermore, let's
         say Joe sends me an e-mail and I re-send it to you. If you wanted
         to respond to the sender of the e-mail that you received, would you
         e-mail me or Joe? You better e-mail me because I was the one who
@@ -8289,8 +8273,8 @@ No title
 
 
 
-        Collin Park <EM><A HREF="mailto:collin@cup.hp.com" >collin@cup.hp.com</A></EM> suggets that you can grab the
-        content to a varaible and then use variable HDRS as you wish. This
+        Collin Park <EM><A HREF="mailto:collin@cup.hp.com" >collin@cup.hp.com</A></EM> suggests that you can grab the
+        content to a variable and then use variable HDRS as you wish. This
         This code doesn't modify original header, just put a few fields in $RH
 
 
@@ -8435,7 +8419,7 @@ No title
             you respond, writing to the wrong place.
 	<LI>You ought to keep <SAMP class="word">To</SAMP> and <SAMP class="word">Cc</SAMP> so that you can tell when you read
             your mail who else was sent it. If your mail user agent has a
-            groupreply or replyall function, keeping <SAMP class="word">To</SAMP> and <SAMP class="word">Cc</SAMP> will allow
+            group-reply or reply-all function, keeping <SAMP class="word">To</SAMP> and <SAMP class="word">Cc</SAMP> will allow
             that feature to continue working. This way you are cheating
             yourself out of it.
 	<LI>'-X From' is enough to keep both the <SAMP class="word">From_</SAMP> line and the <SAMP class="word">From</SAMP>
@@ -8508,7 +8492,7 @@ No title
 
 
 <P class="column8">
-        But this is my favourite way (it assumes that formail -r will never
+        But this is my favorite way (it assumes that formail -r will never
         generate a continuation line for From:); if you use it, make sure
         that the newHeaders file does NOT contain a trailing blank line:
 
@@ -9002,9 +8986,9 @@ No title
         Then I realized the real problem: there was no interruption in the
         succession of valid header lines in the input for anything that
         could look like a body. I could have put something other than blank
-        lines between each pair of headerfields and then -e would have done
+        lines between each pair of header fields and then -e would have done
         its job, but as long as every additional line looked like a valid
-        RFC822 headerfield, even if its name was the same as one that had
+        RFC822 header field, even if its name was the same as one that had
         appeared earlier, <SAMP class="word">formail</SAMP> <SAMP class="word">-s</SAMP> assumed that it was still the same
         message's head.
 
@@ -9108,7 +9092,7 @@ No title
 
 
 <P class="column8">
-        <A HREF="http://www.faqs.org/faqs/mail/addressing/" target="_top">http://www.faqs.org/faqs/mail/addressing/</A>
+        <A HREF="http://www.FAQs.org/FAQs/mail/addressing/" target="_top">http://www.FAQs.org/FAQs/mail/addressing/</A>
 
 
 <P class="column8">
@@ -9183,7 +9167,7 @@ No title
         mailer. Furthermore, there's more to plus-addressing support than
         the definition of the local mailer. Ruleset 0 or 5 needs to be set
         up to move everything after the + into the 'host' variable ($h).
-        Unless you have a strong understanding of sendmail rulesets and
+        Unless you have a strong understanding of sendmail rule sets and
         rewriting rules, you should not attempt to add plus-addressing to
         your sendmail.cf, but instead just install the latest version of
         sendmail and use the m4 sendmail.cf generation tools with a .mc
@@ -9238,7 +9222,7 @@ No title
 
 
 <P class="column8">
-        I invented this idea after reading Eli's excellent faq about mail
+        I invented this idea after reading Eli's excellent FAQ about mail
         addressing. Please read it (especially section 19.) before you
         continue in order to understand what I'm going to present.
 
@@ -9334,21 +9318,21 @@ No title
 <P class="column8">
         Pretty simple. And you can put anything inside RFC comment and do
         whatever you want with these plus addresses. <STRONG class="word">NOTE</STRONG>: there are no
-        guarantees that the RFC comment is preserved everytime. Well, the
+        guarantees that the RFC comment is preserved every time. Well, the
         standard RFC822 says is must be passed untouched, but I'd say it is
         90% of the cases where mail is delivered from one server to
         another, it is kept.
 
 
 <P class="column8">
-        Example: if you discuss in usenet groups, you could use address
+        Example: if you discuss in Usenet groups, you could use address
 
 
 <PRE class="code">
-      first.surname@example.com (First Surname+usenet.default)
-      first.surname@example.com (First Surname+usenet.games)
-      first.surname@example.com (First Surname+usenet.emacs)
-      first.surname@example.com (First Surname+usenet.linux)
+      first.surname@example.com (First Surname+Usenet.default)
+      first.surname@example.com (First Surname+Usenet.games)
+      first.surname@example.com (First Surname+Usenet.emacs)
+      first.surname@example.com (First Surname+Usenet.linux)
 </PRE>
 
 
@@ -9400,7 +9384,7 @@ No title
 
 <P class="column8">
         So Debian mailing list mail goes to Debian, procmail and fvwm mail
-        go to maillists and mail addressed to me yet CC'ed to a list go to
+        go to mail lists and mail addressed to me yet CC'ed to a list go to
         my main spool file.
 
 
@@ -9479,8 +9463,8 @@ No title
         both me and the list (say, responding to a message I
         sent to the list), then the copy that got to me through the list
         will end up in my procmail folder, while the copy that went
-        directly won't. I like this behaviour, but some people, possibly
-        yourself, may prefer it if both messages end up refiled. If so,
+        directly won't. I like this behavior, but some people, possibly
+        yourself, may prefer it if both messages end up re-filed. If so,
         your best bet is to combine the above with matching against the To:
         and Cc: headers via the ^TO_ token:
 
@@ -9513,7 +9497,7 @@ No title
 
       #   1) to get the match
       #   2) rematch sans the trailing \&gt;
-      #   3) Note: preserves capitalisation of the string
+      #   3) Note: preserves capitalization of the string
 
       :0
       * $ ^TO_()\/$LISTS\&gt;
@@ -9570,7 +9554,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;List of annoying things that various MIME implementations do.&quot;</EM></STRONG><BR>
+<SPAN class="quote7">List of annoying things that various MIME implementations do.</SPAN><BR>
         ...The result is a sort of style guide for implementors of things that
         generate MIME. Feel free to send comments or contributions.
         <A HREF="http://www.cs.utk.edu/~moore/mime-style.html" target="_top">http://www.cs.utk.edu/~moore/mime-style.html</A>
@@ -9637,7 +9621,7 @@ No title
 </P>
   <A name="software_to_deal_with_mime" id="software_to_deal_with_mime"></A>
   <H2>
-      12.3 Software to deal with mime or html
+      12.3 Software to deal with mime or HTML
       
   </H2>
 
@@ -9650,7 +9634,7 @@ No title
 
 <P class="column8">
         There's also Unix program <SAMP class="word">munpack</SAMP> to explode a MIME message
-        to separate files. Use ftpsearch to find it.
+        to separate files.
 
 
 <P class="column8">
@@ -9707,18 +9691,18 @@ No title
 </P>
   <A name="trapping_html_mime_messages" id="trapping_html_mime_messages"></A>
   <H2>
-      12.5 Trapping html mime messages
+      12.5 Trapping HTML mime messages
       
   </H2>
 
 
 
 
-        <SPAN class="word-ref">[era]</SPAN> Here's a simple filter to throw out unwanted html that is sent
+        <SPAN class="word-ref">[era]</SPAN> Here's a simple filter to throw out unwanted HTML that is sent
         by using mime. <SPAN class="word-ref">[jari]</SPAN> This recipe detects if the message is
-        classified as mime <EM class="word">text/html</EM> and junks it to separate folder. It
+        classified as mime <EM class="word">text/HTML</EM> and junks it to separate folder. It
         does not change the message content. If you want to actually
-        remove html or other attachments from the message, see
+        remove HTML or other attachments from the message, see
         <SAMP class="word">pm-jamime-kill.rc</SAMP> in the module list.
 
 
@@ -9726,7 +9710,7 @@ No title
       :0:
       *$ ^Content-Type:$s*multipart/(mixed|alternative);\
          $SPCNL*boundary=&quot;?\/[^;&quot;]+
-      * $ B ?? ^--$\MATCH\$([-a-z]+:.*)*Content-type:$s*text/html
+      * $ B ?? ^--$\MATCH\$([-a-z]+:.*)*Content-type:$s*text/HTML
       junk.html.mbox
 </PRE>
 
@@ -9738,7 +9722,7 @@ No title
 </P>
   <A name="complaining_about_html_messages" id="complaining_about_html_messages"></A>
   <H2>
-      12.6 Complaining about html messages
+      12.6 Complaining about HTML messages
       
   </H2>
 
@@ -9746,9 +9730,9 @@ No title
 
 
         [Marek Jedlinski <EM><A HREF="mailto:eristic@gryzmak.lodz.pdi.net" >eristic@gryzmak.lodz.pdi.net</A></EM>]. This how I
-        respond to html messages. In my <SAMP class="word">noHTML.txt</SAMP> I politely explain
+        respond to HTML messages. In my <SAMP class="word">noHTML.txt</SAMP> I politely explain
         why I don't appreciate receiving HTML mail, and ask to resend the
-        message as plaintext. What happens in the majority of cases is that
+        message as plain text. What happens in the majority of cases is that
         the sender resends the same message again (&quot;oh, it bounced, let's
         try again&quot;) and I assume they don't actually read my explanation
         since they just happily resend the HTML cr*p. It bounces again at
@@ -9796,31 +9780,31 @@ No title
 
 <P class="column10"><EM class="quote10">
           <STRONG class="word">Note:</STRONG> Older lynx has security holes:
-          <A HREF="http://ciac.llnl.gov/ciac/bulletins/h-82.shtml" target="_top">http://ciac.llnl.gov/ciac/bulletins/h-82.shtml</A>
+          <A HREF="http://ciac.llnl.gov/ciac/bulletins/h-82.sHTML" target="_top">http://ciac.llnl.gov/ciac/bulletins/h-82.sHTML</A>
           <A HREF="http://lynx.browser.org/" target="_top">http://lynx.browser.org/</A></EM>
 
 
 
 <P class="column8">
-        The most popular solution to convert html body into plain text is to
+        The most popular solution to convert HTML body into plain text is to
         use <SAMP class="word">lynx</SAMP>. Another more straightforward method is to use a perl one
         liner: it's quicker, easier to use with procmail but it doesn't pretend
         to know about HTML DTD. The recipe below should be taken with grains of
-        salt: seeing HTML tag is no guarantee that the body &quot;only&quot; has html. A
-        cautious recipe writer also watches for MIME multipart messages. (See
+        salt: seeing HTML tag is no guarantee that the body &quot;only&quot; has HTML. A
+        cautious recipe writer also watches for MIME multi part messages. (See
         <SAMP class="word">pm-jamime.rc</SAMP> to draw some mime characteristics from message)
 
 
 <P class="column8">
         This recipe has been written so that you can add more alternative
-        html conversion scripts. You may even want to select the appropriate
+        HTML conversion scripts. You may even want to select the appropriate
         conversion for a message: e.g perl for unimportant ones.
 
 
 <P class="column8">
         <STRONG class="word">Note</STRONG>: This is oversimplified method of checking if body contains
-        html. It would be probably a good idea to check mime headers which
-        indicate html encoding here as well.
+        HTML. It would be probably a good idea to check mime headers which
+        indicate HTML encoding here as well.
 
 
 <PRE class="code">
@@ -9836,7 +9820,7 @@ No title
               # In new lynx version you can read from stdin. If
               # /dev/stdin doesn't exits try /dev/fd/0
               #
-              # lynx -dump -force_html -nolist -restrictions=all \
+              # lynx -dump -force_HTML -nolist -restrictions=all \
               #   /dev/stdin
               #
               #  Without a global lock on this, you have a chance
@@ -9864,7 +9848,7 @@ No title
 </P>
   <A name="getting_rid_of_unwanted_mime" id="getting_rid_of_unwanted_mime"></A>
   <H2>
-      12.8 Getting rid of unwanted mime attachments (html, vcard)
+      12.8 Getting rid of unwanted mime attachments (HTML, vcard)
       
   </H2>
 
@@ -9882,7 +9866,7 @@ No title
       --mime-boundary
       plain text
       --mime-boundary
-      Some idiotic html (or other type) copy of the text
+      Some idiotic HTML (or other type) copy of the text
       --mime-boundary
 </PRE>
 
@@ -9906,9 +9890,9 @@ No title
 	<LI>Microsoft Explorer has a bad habit of including 7k
             application/ms-tnef attachment to the end of message.
 	<LI>Lotus Notes sends similar extra attachment.
-	<LI>Microsoft Express sends a copy of message in html format in the
+	<LI>Microsoft Express sends a copy of message in HTML format in the
             attachment.
-	<LI>Netscape's Mozilla sends a copy of message in html. See
+	<LI>Netscape's Mozilla sends a copy of message in HTML. See
 	            example. It Also sends annoying <SAMP class="word">vcards</SAMP>.
 </UL>
 
@@ -9924,7 +9908,7 @@ No title
 </P>
   <A name="sending_contents_of_a_html" id="sending_contents_of_a_html"></A>
   <H2>
-      12.9 Sending contents of a html page in plain text to someone
+      12.9 Sending contents of a HTML page in plain text to someone
       
   </H2>
 
@@ -9971,7 +9955,7 @@ No title
         etc). Conversely, if your needs are complex, get the Perl MIME
         package from CPAN and cook up your own tool. The MIME FAQ
         (especially part 6) is a good place to look for info.
-        <A HREF="http://www.faqs.org/faqs/by-newsgroup/comp/comp.mail.mime.html" target="_top">http://www.faqs.org/faqs/by-newsgroup/comp/comp.mail.mime.html</A>
+        <A HREF="http://www.FAQs.org/FAQs/by-newsgroup/comp/comp.mail.mime.html" target="_top">http://www.FAQs.org/FAQs/by-newsgroup/comp/comp.mail.mime.html</A>
 
 
 <P class="column8">
@@ -10189,35 +10173,51 @@ No title
 <PRE class="code">
       :0
       * ()\/^From: +\/.*
-      { FROM = $MATCH }
+      {
+          FROM = $MATCH
+      }
 
       :0
       * ()\/^Reply-To: +\/.*
-      { RT = $MATCH }
+      {
+          RT = $MATCH
+      }
 
       :0
       * ()\/^X-Mailer: +\/.*
-      { XM = $MATCH }
+      {
+          XM = $MATCH
+      }
 
       :0
       * ()\/^Message-Id: +\/.*
-      { MID = $MATCH }
+      {
+          MID = $MATCH
+      }
 
       :0
       * ()\/^Date: +\/.*
-      { DATE = $MATCH }
+      {
+          DATE = $MATCH
+      }
 
       :0
       * ()\/^To: +\/.*
-      { TT = $MATCH }
+      {
+          TT = $MATCH
+      }
 
       :0
       * ()\/^CC: +\/.*
-      { CC = $MATCH }
+      {
+          CC = $MATCH
+      }
 
       :0
       * ()\/^Subject: +\/.*
-      { SUBJ = $MATCH }
+      {
+          SUBJ = $MATCH
+      }
 
       :0 fh w
       | $FORMAIL                                                      \
@@ -10263,9 +10263,9 @@ No title
 
 
 </P>
-  <A name="service_file_server__send_fileas" id="service_file_server__send_fileas"></A>
+  <A name="service_file_server__send_file" id="service_file_server__send_file"></A>
   <H2>
-      13.7 Service: File server -- send fileas as attachments upon request
+      13.7 Service: File server -- send file as attachments upon request
       
   </H2>
 
@@ -10288,7 +10288,7 @@ No title
 
         Sometimes I'm on the road and I don't seem to get access to the
         site where my messages are. The telnet connection fails and
-        standard unix &quot;ping&quot; plays dead for me. &quot;What's happening in that
+        standard Unix &quot;ping&quot; plays dead for me. &quot;What's happening in that
         site?&quot; I wonder. Here is a recipe that I have added to all of my
         accounts. It sends an immediate reply if at least the mailhost is
         up and gives some status information.
@@ -10388,7 +10388,7 @@ No title
 <PRE class="code">
       OFFSITE = &quot;my_guest_login@wherever.I.am&quot;
 
-      #  Forward urgent mail to me at my offsite address; afterward,
+      #  Forward urgent mail to me at my off site address; afterward,
       #  continue processing it as normal The procmail pattern match
       #  may be case-insensitive, in which case this rule could be
       #  simplified...
@@ -10619,21 +10619,21 @@ No title
 
 
 </P>
-  <A name="kill_simple_killfile_recipe_with" id="kill_simple_killfile_recipe_with"></A>
+  <A name="kill_simple_kill_file_recipe" id="kill_simple_kill_file_recipe"></A>
   <H2>
-      13.15 Kill: simple killfile recipe with procmail
+      13.15 Kill: simple kill file recipe with procmail
       
   </H2>
 
 
 
 
-        Kill files are widely used with newsreaders to delete uninteresting
+        Kill files are widely used with news readers to delete uninteresting
         posts when you enter a newsgroup. A kill file usually contains one
         single entry per line to match the message content and this can be
         easily done with procmail. Remember however that for every message
-        procmail forks a process, so before you apply the killfile rules to
-        the messages, be sure your recipes are in this order: the killfile
+        procmail forks a process, so before you apply the kill file rules to
+        the messages, be sure your recipes are in this order: the kill file
         rules are applied only to <EM class="word">unknown</EM> messages
 
 
@@ -10642,32 +10642,32 @@ No title
       SINK ANNOUNCEMENTS
       SINK WORK MESSAGES
       OTHER DELIVERIES
-      apply killfile rules and UBE recipes to the rest
+      apply kill file rules and UBE recipes to the rest
 </PRE>
 
 
 <P class="column8">
         Recipe will drop the message (i.e. consider it 'delivered') if one
-        of its headers matches a pattern in killfile.
+        of its headers matches a pattern in kill file.
 
 
 <PRE class="code">
-      :0 hW:  $HOME/.killfile$LOCKEXT
-      | egrep -i -f $HOME/.killfile
+      :0 hW:  $HOME/.kill file$LOCKEXT
+      | egrep -i -f $HOME/.kill file
 </PRE>
 
 
 <P class="column8">
-        The reason why there is explicit lockfile is that you must be able to
-        update the killfile while your procmail is running. An example edit
+        The reason why there is explicit lock file is that you must be able to
+        update the kill file while your procmail is running. An example edit
         script is presented below.
 
 
 <PRE class="code">
       #!/bin/sh
-      # program: killfile.sh
+      # program: kill file.sh
       #
-      file=$HOME/.killfile
+      file=$HOME/.kill file
       lock=$file.lock
       cp $file $file.tmp
       emacs -q $file          # or use whatever you prefer: vi, pico
@@ -11279,9 +11279,9 @@ No title
 <PRE class="code">
       # The 'B' tells procmail to look in the body instead of the header.
       # The second colon tells procmail to lock the mailbox with a
-      # locallockfile -- if mailbox is a directory then you don't need
+      # local lock file -- if mailbox is a directory then you don't need
       # it. The brackets in the condition contain a space and a tab.
-      #
+
       :0 B:
       *$ one$s*two
       default.mbox
@@ -11687,11 +11687,11 @@ No title
 
 
 <P class="column8">
-        I'm not sure what would be appropriate to generate behaviour more
+        I'm not sure what would be appropriate to generate behavior more
         like I suggest below, any takers? Perhaps no score at all for empty
         lines, neutralize .signatures (hope sender obeys &quot;-- &quot; convention)
         and add 10^0.5 for each quoted line and dish out -15^0.3 for
-        nonquoted? (I haven't really explored this -- could be completely
+        non-quoted? (I haven't really explored this -- could be completely
         up the creek.) [Also, perhaps long runs of quoted material should
         be penalized harder than quoted snippet -- reply text -- quoted
         snippet -- reply text alternations?]
@@ -11759,7 +11759,7 @@ No title
 
 <P class="column8">
         &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/</A>
-        cgi-bin/w3glimpse2html/procmail/1997-12/msg00125.html?43#mfs&gt;
+        cgi-bin/w3glimpse2HTML/procmail/1997-12/msg00125.html?43#mfs&gt;
 
 
 <P class="column8">
@@ -11923,7 +11923,7 @@ No title
       #   Now, let's install the changes if needed:
       #   with -A instead of -I or -i it should
       #   not clobber existing To: or Cc: information.
-      #   -A : Append a custom headerfield onto the header in any case.
+      #   -A : Append a custom header field onto the header in any case.
 
       :0
       * ORIG_TO ?? ^^^^
@@ -11952,7 +11952,7 @@ No title
         and the rest) back during WWII, using a mechanical relay based
         computer. As such, it is trivially easy to break using any computer
         more resent than a Radio Shack TRS-80. Poke around in any of the
-        comp.sources.unix archives, they had a &quot;Crypt Breaker's Workbench&quot;
+        comp.sources.Unix archives, they had a &quot;Crypt Breaker's Workbench&quot;
         posted well over a decade ago. For similar reasons, I can't
         recommend single-pass 56-bit DES anymore either. Triple-DES (with
         an effective 112-bit key) looks safe, as do any of the encryptions
@@ -12028,9 +12028,9 @@ No title
 
 
 </P>
-  <A name="getkeys_from_keyserver" id="getkeys_from_keyserver"></A>
+  <A name="getkeys_from_key_server" id="getkeys_from_key_server"></A>
   <H2>
-      15.2 Getkeys from keyserver
+      15.2 Getkeys from key server
       
   </H2>
 
@@ -12045,7 +12045,7 @@ No title
       # service that I often send incorrect commands to, generating 5mb
       # of reply. It also sorts based on success of the command.
       #
-      # swissnet.ai.mit.edu is fast keyserver
+      # swissnet.ai.mit.edu is fast key server
 
       :0
       * From bal@swissnet.ai.mit.edu
@@ -12100,8 +12100,8 @@ No title
 
       #  auto key retrieval
       #
-      #  I have an elm alias, pgp, points to a keyserver The logfile
-      #  gets unset briefly to keep the elm lines out of my logfile.
+      #  I have an elm alias, pgp, points to a key server The log file
+      #  gets unset briefly to keep the elm lines out of my log file.
 
       :0 W
       * B   ?? -----BEGIN PGP
@@ -12446,7 +12446,7 @@ No title
 
 <P class="column8">
         I usually use a name like <SAMP class="word">pm-xxSCRIPT-NAME.rc</SAMP> for a rc file where
-        <SAMP class="word">xx</SAMP> is my initials from firstname and surname, like (J)ari
+        <SAMP class="word">xx</SAMP> is my initials from first name and surname, like (J)ari
         (A)alto. These scripts are product versions, that can be
         distributed. I also have private scripts that handle my mailing
         lists, work messages and so on and they have prefix <SAMP class="word">my</SAMP>.
@@ -12454,7 +12454,7 @@ No title
 
 <PRE class="code">
       pm-jascript.rc
-      pm-myscript.rc
+      pm-myscript.rc      &lt;&lt; private version
 </PRE>
 
 
@@ -12469,9 +12469,9 @@ No title
 
 
 </P>
-  <A name="making_using_namespace_when_saving" id="making_using_namespace_when_saving"></A>
+  <A name="making_using_name_space_when" id="making_using_name_space_when"></A>
   <H2>
-      16.5 Making: Using namespace when saving procmail variables
+      16.5 Making: Using name space when saving procmail variables
       
   </H2>
 
@@ -12504,7 +12504,7 @@ No title
 
 <P class="column8">
         Procmail does not have local variables, so you must put the
-        variables to global namespace. Let's see an example where
+        variables to global name space. Let's see an example where
         subroutine uses <SAMP class="word">MAILDIR</SAMP> for <SAMP class="word">chdir</SAMP> purposes.
 
 
@@ -12570,7 +12570,7 @@ No title
 
 
         As you learned above, the variables should be put to RC file's
-        namespace. The user interface variables (public) should be all caps
+        name space. The user interface variables (public) should be all caps
         and private variable should start with lowercase letter. Whether
         you use &quot;theVarStyle&quot; or &quot;the_var_style&quot; is up to you.
 
@@ -12616,7 +12616,7 @@ No title
         In this case it would be wise a) not to define <SAMP class="word">charset</SAMP> at the top
         of the file but to move the definition to just before the recipe
         where it is used or b) make the name unique, with
-        <SAMP class="word">pmScriptCharset</SAMP>.
+        <SAMP class="word">xxScriptCharset</SAMP>.
 
 
 </P>
@@ -12640,7 +12640,7 @@ No title
             too. Notice the first and last lines: if you keep the format
             like this, then any universal tool can rip your code from any
             file (or mail), because it's delimited by &quot;pm-xxScript.rc -- &quot;
-            and &quot;end of pm-xxScript.rc&quot;. See unix what(1) for first line's
+            and &quot;end of pm-xxScript.rc&quot;. See Unix what(1) for first line's
 	            syntax.
 </UL>
 
@@ -12726,7 +12726,7 @@ No title
 
           [ in the pm-xxScript.rc variable definitions  ]
 
-          #   User should initialise the variable
+          #   User should initialize the variable
           #   XX_SCRIPT_SUBJECT if he already has read the
           #   subject.
 
@@ -12770,15 +12770,15 @@ No title
 
 
         Here is my includerc file skeleton that i use in all my modules. The
-        funny looking &quot;.$&quot; are for the text2html Perl filter. The
-        documentation section can be ripped and turned into html very easily
+        funny looking &quot;.$&quot; are for the text2HTML Perl filter. The
+        documentation section can be ripped and turned into HTML very easily
         is you just keep the standard 4 tab column positions and start the
         description with &quot;File id&quot; and end it with &quot;Change Log&quot;. The command
-        to make the html is:
+        to make the HTML is:
 
 
 <PRE class="code">
-      % ripdoc.pl pm-xxscript.rc | t2html.pl &gt; pm-xxscript.html
+      % ripdoc.pl pm-xxscript.rc | t2HTML.pl &gt; pm-xxscript.html
 </PRE>
 
 
@@ -12788,7 +12788,7 @@ No title
 
 <PRE class="code">
       # @(#) pm-xxscript.rc -- one line description string here
-      # @(#) <EM><STRONG>$Id: pm-tips-body.html,v 1.3 2002/01/05 17:19:06 jaalto Exp $</STRONG></EM>
+      # @(#) <EM><STRONG>$Id: pm-tips-body.html,v 1.4 2002/02/03 23:37:52 jaalto Exp $</STRONG></EM>
       #
       #   File id
       #
@@ -12943,7 +12943,7 @@ No title
 </P>
   <A name="procmail_modes_normal_delivery_and" id="procmail_modes_normal_delivery_and"></A>
   <H2>
-      18.1 Procmail modes: normal, delivery, and mailfilter.
+      18.1 Procmail modes: normal, delivery, and mail filter.
       
   </H2>
 
@@ -12961,9 +12961,9 @@ No title
 
 <P class="column8">
         <SPAN class="word-ref">[philip]</SPAN> <EM class="word">Delivery</EM> mode is invoked using the -d flag. All
-        arguments are the -d are usernames. It is usually used by the MTA
+        arguments are the -d are user names. It is usually used by the MTA
         to deliver mail to users, and indeed, procmail will return failure
-        if it is given an invalid username. In delivery mode, procmail
+        if it is given an invalid user name. In delivery mode, procmail
         reads /etc/procmailrc before the user's .procmailrc.
 
 
@@ -12983,7 +12983,7 @@ No title
         under /etc/procmailrcs/ then procmail will take on the uid of the
         owner of that file. Otherwise, it will run as the user who invoked
         it. /etc/procmailrc, that procmail -d reads, is ignored. In
-        mailfilter mode, procmail unsets <SAMP class="word">ORGMAIL</SAMP> and <SAMP class="word">DEFAULT</SAMP> to
+        mail filter mode, procmail unsets <SAMP class="word">ORGMAIL</SAMP> and <SAMP class="word">DEFAULT</SAMP> to
         suppress normal delivery -- reaching the end of the rcfile results
         in the mail bouncing. If the rcfile sets either of them then
         procmail will attempt delivery to that mailbox if it falls off the
@@ -12999,7 +12999,7 @@ No title
 
 <P class="column8">
         <EM class="word">Normal</EM> mode is invoked by not using the <SAMP class="word">-m</SAMP> or <SAMP class="word">-d</SAMP> flags. It
-        accepts any number of rcfiles and variable asssignments as
+        accepts any number of rcfiles and variable assignments as
         arguments. Procmail runs as the invoking user in this mode.
         /etc/procmailrc is ignored.
 
@@ -13500,7 +13500,7 @@ No title
           mailqueue and tried again until either it succeeds or sendmail
           bounces it after 5 days (as usual). The README file says this is
           my choice (to bounce or not), but I cannot find any place where
-          I can set this. What is the correct place to set this behaviour</EM>
+          I can set this. What is the correct place to set this behavior</EM>
 
 
 
@@ -13792,7 +13792,7 @@ No title
         Doing this latter one should keep procmail from generating
         COMSAT/BIFF notifications, but would still leave your shell capable
         of receiving them, say, if you only processed certain mail in
-        procmail manually or somesuch. Personally, I turn biff off AND set
+        procmail manually or some such. Personally, I turn biff off AND set
         the COMSAT off. I read my mail when I read my mail, and I check it
         often enough (with a POP client at that).
 
@@ -13953,7 +13953,7 @@ No title
         <SPAN class="word-ref">[era]</SPAN> Perhaps preferably use ^TO_ if you have Procmail 3.11pre7
         or newer. This is the classical case of using Procmail where you
         really need the envelope recipient information. The headers are
-        <BIG class="word-big">not</BIG> enough to determine who a message is for. If Procmail is your
+        <SPAN class="word-big">not</SPAN> enough to determine who a message is for. If Procmail is your
         MDA, you can have this, but I'd still think something involving
         Sendmail would be more appropriate. For one thing, what if this
         user would suddenly really want to use Procmail? You can set
@@ -14466,7 +14466,7 @@ No title
 
 <P class="column8">
         &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/</A>
-        cgi-bin/w3glimpse2html/procmail/1997-10/msg00330.html?63#mfs&gt;.
+        cgi-bin/w3glimpse2HTML/procmail/1997-10/msg00330.html?63#mfs&gt;.
 
 
 <P class="column8">
@@ -14477,9 +14477,9 @@ No title
 
 
 </P>
-  <A name="procmail_signalled_out_of_memory" id="procmail_signalled_out_of_memory"></A>
+  <A name="procmail_signaled_out_of_memory" id="procmail_signaled_out_of_memory"></A>
   <H2>
-      18.27 Procmail signalled out of memory in my verbose log
+      18.27 Procmail signaled out of memory in my verbose log
       
   </H2>
 
@@ -14688,18 +14688,18 @@ No title
 <P class="column8">
         <SPAN class="word-ref">[philip]</SPAN> DROPPRIVS only has an effect inside the /etc/procmailrc used
         when procmail is running in delivery mode (-d), not when it's
-        running in mailfilter mode (-m). USER and LOGNAME have no effect on
+        running in mail filter mode (-m). USER and LOGNAME have no effect on
         the working of DROPPRIVS, as procmail is just going to change to
         the uid/gid of the user specified on the command line after the -d.
         Your mailtable entry should be specifying the procmail mailer,
-        which runs procmail in mailfilter mode.
+        which runs procmail in mail filter mode.
 
 
 <P class="column8">
         If the following are true:
 
 <P><UL>
-	<LI>procmail is running in mailfilter mode
+	<LI>procmail is running in mail filter mode
 	<LI>no assignments were given on the command line
 	<LI>the -p flag was not specified
 	<LI>the rcfile specified is located under /etc/procmailrcs/ without
@@ -14890,7 +14890,7 @@ No title
 
 <P class="column8">
         <STRONG class="word">Note:</STRONG> Beware of simply setting LINEBUF to a huge value: such an
-        assignment causes procmail to immeadiately allocate twice that much
+        assignment causes procmail to immediately allocate twice that much
         memory (procmail has two buffer internally of size $LINEBUF).
 
 
@@ -14907,12 +14907,12 @@ No title
 <P class="column8">
         <SAMP class="word">LINEBUF</SAMP> only applies to lines from procmailrcs. You generally only
         have to worry about <SAMP class="word">LINEBUF</SAMP> when you have a variable expansion or
-        command expansion (backquotes) that doesn't have an obvious and
-        reasonable bound on its size. procmail will avoid overrunning its
+        command expansion (back quotes) that doesn't have an obvious and
+        reasonable bound on its size. procmail will avoid over running its
         <SAMP class="word">LINEBUF</SAMP> length buffer when doing command expansions by ignoring the
         extra output, so you're safe there, as long as data truncation is
         fine. Variable expansion isn't checked like that, so you can cause
-        procmail to coredump by doing something like:
+        procmail to core dump by doing something like:
 
 
 <PRE class="code">
@@ -15013,8 +15013,8 @@ No title
         what you're doing depends on one of the others having a certain
         value, then you should just go ahead and set it to that value. I
         know of only two ways to find out what value procmail is using by
-        default: a) check the manpage (the manpages should show the correct
-        default for the machine), or b) fire up your favourite debugger and
+        default: a) check the manpage (the manual pages should show the correct
+        default for the machine), or b) fire up your favorite debugger and
         hope that no one stripped the procmail binary.
 
 
@@ -15103,7 +15103,7 @@ No title
 
 
 
-        Here is one example how to write to the logfile, Be sure that you
+        Here is one example how to write to the log file, Be sure that you
         have preset all the variables, this just demonstrated the usage of
         <SAMP class="word">TRAP</SAMP>. Pay attention to right use of single and double quotes if
         you pass the values to the shell. Like in this example where the
@@ -15165,7 +15165,7 @@ No title
 
 <P class="column8">
         &lt;&lt;Some Message had doubled Subject lines&gt;&gt; <SPAN class="word-ref">[david]</SPAN> ...this will
-        list all subject lines in the logfile upon exit if there are two
+        list all subject lines in the log file upon exit if there are two
         or more. The earliest would appear twice: once in the trap output
         and once in the logabstract.
 
@@ -15224,7 +15224,7 @@ No title
 	<LI>For a really pedestrian solution, keep all your spool files in
             their own directory (I think this is a good idea for other
             reasons as well) and do an ls -lrt on that directory, possibly
-            piped into a sed script to trim off files with timestamps older
+            piped into a sed script to trim off files with time stamps older
             than, say, 24 hours.
 	<LI>If your mail reader will reset permissions on spool files when
             it gets mail from them, the UMASK trick is a good base for a
@@ -15288,9 +15288,9 @@ No title
 
 
 </P>
-  <A name="performance_difference_between_backtick_and" id="performance_difference_between_backtick_and"></A>
+  <A name="performance_difference_between_back_tick" id="performance_difference_between_back_tick"></A>
   <H2>
-      18.38 Performance difference between backtick and &quot;|&quot; recipe
+      18.38 Performance difference between back tick and &quot;|&quot; recipe
       
   </H2>
 
@@ -15298,7 +15298,7 @@ No title
 
 
         Procmail sends the whole message to stdin whenever
-        it sees backticks used. And if you use recipe, you can add
+        it sees back ticks used. And if you use recipe, you can add
         the <SAMP class="word">h</SAMP> flag to feed only the header to the program, and not the
         whole message. Let's ask academic question: Which one
         of the choices below is efficient?
@@ -16160,7 +16160,7 @@ No title
 
 
 <P class="column8">
-        i.e. this should be there in <BIG class="word-big">addition</BIG> to what else you do.
+        i.e. this should be there in <SPAN class="word-big">addition</SPAN> to what else you do.
         Otherwise this will lose your mail thoroughly, since it reads the
         mail but doesn't save it anywhere. You might want to save a copy of
         all incoming mail to a safety mailbox, too, just in case. Like so:
@@ -16240,7 +16240,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Smartlist FAQ&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Smartlist FAQ</SPAN><BR>
         <A HREF="http://www.hartzler.net/smartlist/SmartList-FAQ.html" target="_top">http://www.hartzler.net/smartlist/SmartList-FAQ.html</A>
 
 
@@ -16261,7 +16261,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;ezmlm&quot;</EM></STRONG><BR>
+<SPAN class="quote7">ezmlm</SPAN><BR>
 
 
 <P class="column8">
@@ -16289,7 +16289,7 @@ No title
           'way' to lure you in with the idea it is a painless drop-in
           replacement for Sendmail. Before long you realize you need to
           convert your entire mail server over to qmail. Qmail seems to
-          disdain anything not qmail, unix itself, in pretty harsh terms.</EM>
+          disdain anything not qmail, Unix itself, in pretty harsh terms.</EM>
 
 
 
@@ -16308,7 +16308,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;SmartList limitations&quot;</EM></STRONG><BR>
+<SPAN class="quote7">SmartList limitations</SPAN><BR>
 
 
 <P class="column8">
@@ -16342,7 +16342,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Other MLM software&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Other MLM software</SPAN><BR>
 
 <P><UL>
 	<LI>majordomo uses Perl
@@ -16368,12 +16368,12 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Smartlist 'faq'&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Smartlist 'FAQ'</SPAN><BR>
         <A HREF="http://www.hartzler.net/smartlist/SmartList-FAQ.html" target="_top">http://www.hartzler.net/smartlist/SmartList-FAQ.html</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Mark's Smartlist add-ons&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Mark's Smartlist add-ons</SPAN><BR>
         Mark David mcCreary <EM><A HREF="mailto:mdm@internet-tools.com" >mdm@internet-tools.com</A></EM>
         <A HREF="ftp://ftp.mail-list.com/" target="_top">ftp://ftp.mail-list.com/</A>
 
@@ -16401,14 +16401,14 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Michelle's (SmartList add-ons) Confirmation cookie&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Michelle's (SmartList add-ons) Confirmation cookie</SPAN><BR>
         <A HREF="ftp://ftp.fatfree.com/" target="_top">ftp://ftp.fatfree.com/</A> confirm-1.1.tar.gz
         <A HREF="ftp://ftp.rahul.net/pub2/artemis/" target="_top">ftp://ftp.rahul.net/pub2/artemis/</A> confirm-1.1.tar.gz
         To add subscription confirmation to smartlist
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;The mail-list.com front-end for Smartlist Mailing Lists&quot;</EM></STRONG><BR>
+<SPAN class="quote7">The mail-list.com front-end for Smartlist Mailing Lists</SPAN><BR>
         <A HREF="ftp://ftp.mail-list.com" target="_top">ftp://ftp.mail-list.com</A>   mark david mcCreary &lt;mdm@internet-tools.com
         ...This is a front end to Smartlist mailing lists. It provides easy to
         use addresses for subscribers of the list. It also allows list owners
@@ -16430,7 +16430,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Moderated lists -- Perl script&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Moderated lists -- Perl script</SPAN><BR>
         <A HREF="http://www.mjolner.com/~lbr/moderate/" target="_top">http://www.mjolner.com/~lbr/moderate/</A>
 
 
@@ -16550,7 +16550,7 @@ No title
 
 
 
-        <A HREF="ftp://ftp.belwue.de/pub/unix/xcomsat.tar.gz" target="_top">ftp://ftp.belwue.de/pub/unix/xcomsat.tar.gz</A>
+        <A HREF="ftp://ftp.belwue.de/pub/Unix/xcomsat.tar.gz" target="_top">ftp://ftp.belwue.de/pub/Unix/xcomsat.tar.gz</A>
 
 
 </P>
@@ -16589,7 +16589,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;New MH&quot;</EM></STRONG><BR>
+<SPAN class="quote7">New MH</SPAN><BR>
         <A HREF="http://www.math.gatech.edu/nmh/" target="_top">http://www.math.gatech.edu/nmh/</A>
 
 </P>
@@ -16626,7 +16626,7 @@ No title
         editor, or a programming editor, but it does almost everything you
         tell it to do except make your coffee) which can be found almost
         in any Unix platform. Nowadays Emacs is also available for the PC
-        platform too. There are two flavours to choose from: Emacs,
+        platform too. There are two flavors to choose from: Emacs,
         maintained by the FSF (Free Software Foundation), and XEmacs,
         sometimes called &quot;Emacs the next generation&quot;, because it has a
         better graphical user interface (gui) and internally advanced OO
@@ -16730,7 +16730,7 @@ No title
 <P class="column8">
         Guys, Emacs is available for every platform, even for Windows95 and
         WindowsNT. So, go ahead and install one if you haven't already.
-        Setting up your personalised Emacs may require steep learning curve,
+        Setting up your personalized Emacs may require steep learning curve,
         but it's well worth the effort :-)
 
 
@@ -16778,7 +16778,7 @@ No title
 
 <P class="column8">
         You definitely want this if you browse procmail log files. This
-        package updates the logfile buffers whenever they change on disk.
+        package updates the log file buffers whenever they change on disk.
         You can think it like <EM class="word">biff</EM> if you record incoming file to short
         <SAMP class="word">$BIFF</SAMP> log.
 
@@ -16810,8 +16810,7 @@ No title
         ;;   colors are available to Emacs only under X window
 
         (when (and window-system
-                   (fboundp 'font-lock-mode) ;; make sure this is present
-                   )
+                   (fboundp 'font-lock-mode)) ;; make sure this is present
           (cond
            ((string-match &quot;procmailrc&quot; buffer-file-name)
             (setq font-lock-keywords
@@ -16819,13 +16818,11 @@ No title
                 '(&quot;#.*&quot;             . font-lock-comment-face)
                 '(&quot;^[\t ]*:.*&quot;      . font-lock-type-face)
                 '(&quot;[A-Za-z_]+=.*&quot;   . font-lock-keyword-face)
-                '(&quot;^\\*.*&quot;          . font-lock-doc-string-face)
-                ))
+                '(&quot;^\\*.*&quot;          . font-lock-doc-string-face)))
 
             ;; Turn the fontifying mode on if it's not on already
 
-            (unless font-lock-mode (font-lock-mode 1))
-            )
+            (unless font-lock-mode (font-lock-mode 1)))
 
 
            ((string-match &quot;procmail.log&quot; buffer-file-name)
@@ -16843,11 +16840,8 @@ No title
               (list
                (cons &quot;Opening &quot;       'font-lock-type-face)
                (cons &quot;.* error .*&quot;    'font-lock-keyword-face)
-               (cons &quot;Folder:&quot;        'font-lock-type-face)
-               ))
-            (unless font-lock-mode (font-lock-mode 1))
-            ))
-          ))
+               (cons &quot;Folder:&quot;        'font-lock-type-face)))
+            (unless font-lock-mode (font-lock-mode 1))))))
       ;; End code
 </PRE>
 
@@ -16872,7 +16866,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Gnus&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Gnus</SPAN><BR>
         <A HREF="http://www.ifi.uio.no/~larsi" target="_top">http://www.ifi.uio.no/~larsi</A>
         Gnus and procmail:
         <A HREF="http://www.ifi.uio.no/~larsi/www.gnus.org/manual/gnus_6.html#IDX1501" target="_top">http://www.ifi.uio.no/~larsi/www.gnus.org/manual/gnus_6.html#IDX1501</A>
@@ -17033,8 +17027,7 @@ No title
        nnmail-use-procmail        t
        nnmail-spool-file          'procmail
        nnmail-procmail-directory  &quot;~/Mail/spool/&quot;
-       nnmail-delete-incoming     t
-       )
+       nnmail-delete-incoming     t)
 </PRE>
 
 
@@ -17150,8 +17143,7 @@ No title
           (concat
            &quot;procmail&quot;
            &quot;\\|other-list&quot;
-           &quot;\\|and-some-other-list&quot;
-           ))
+           &quot;\\|and-some-other-list&quot;))
 </PRE>
 
 
@@ -17478,7 +17470,7 @@ No title
 
 
 <P class="column8">
-        This behaviour shows that Gnus doesn't split the procmail filtered
+        This behavior shows that Gnus doesn't split the procmail filtered
         mails again. I understand the manual that the variable
         <SAMP class="word">nnmail-resplit-incoming</SAMP> is responsible for that. Do I have to set
         this variable or is it OK to get the procmail rule and
@@ -17629,7 +17621,7 @@ No title
         of the poster to be a <EM class="word">reachable</EM> address (indeed, Sender: is
         sometimes user@host without the domain part) -- it only requires
         such addresses to be syntactically correct. The RFCs do <STRONG class="word">not</STRONG>
-        require anything. The RFCs related to usenet are <EM class="word">advisory</EM>. RFCs
+        require anything. The RFCs related to Usenet are <EM class="word">advisory</EM>. RFCs
         describe various things and define a small number of standard
         protocols, netnews is <STRONG class="word">not</STRONG> an internet standard protocol.)
 
@@ -17669,7 +17661,7 @@ No title
 <P class="column10"><EM class="quote10">
           [counter argument 1998-03-25 gnu.emacs.gnus, Jan
           Vroonhof <EM><A HREF="mailto:vroonhof@frege.math.ethz.ch" >vroonhof@frege.math.ethz.ch</A></EM>] Now although INND and
-          friends are important parts of the usenet software bundle the
+          friends are important parts of the Usenet software bundle the
           news READERS are even more important. Now I'll bet 99% readers,
           like f.i. Gnus, assume the address in the header is the address to
           be replyed to when the user requests to go into a private
@@ -17724,7 +17716,7 @@ No title
 <P class="column10"><EM class="quote10">
           [Counter argument, unknown] Furthermore, there are a number of
           procmail recipes available on the net, that can be used with
-          minor adjustments to filter your mail. No heavy-duty unix skills
+          minor adjustments to filter your mail. No heavy-duty Unix skills
           are required. Just the initiative to take responsibility for your
           own problems.</EM>
 
@@ -17742,7 +17734,7 @@ No title
 <P class="column10"><EM class="quote10">
           ...You simply prefer to put the problem off on somebody else, rather
           than take the time to deal with it yourself. Well, that kind of
-          laziness does seem to predominate in the &quot;world of the internet&quot;
+          laziness does seem to predominate in the &quot;world of the Internet&quot;
           these days.</EM>
 
 
@@ -17784,7 +17776,7 @@ No title
 
 
 <P class="column8">
-        ...I am well aware that it is bad behaviour, as I am well aware
+        ...I am well aware that it is bad behavior, as I am well aware
         that it breaks standards. However, I'm <EM class="word">also</EM> well aware of the
         fact that I do not need to have a mail-box filled with spam every
         time I look at it. Things have quieted down considerably since I
@@ -17875,7 +17867,7 @@ No title
 
 
         [1998-06-08 Message-ID: <EM><A HREF="mailto:wkd8cjekay.fsf@mjf.vip.best.com" >wkd8cjekay.fsf@mjf.vip.best.com</A></EM>
-        Marty Fouts <EM><A HREF="mailto:usenet-user@usa.net" >usenet-user@usa.net</A></EM> in gnu.emacs.help. Refer also
+        Marty Fouts <EM><A HREF="mailto:Usenet-user@usa.net" >Usenet-user@usa.net</A></EM> in gnu.emacs.help. Refer also
         to summary of the whole thread in 1998-06-11 Message-ID:
         <EM><A HREF="mailto:wk4sxs62ll.fsf@mjf.vip.best.com" >wk4sxs62ll.fsf@mjf.vip.best.com</A></EM> by Marty Fouts.]
 
@@ -18046,7 +18038,7 @@ No title
 </P>
   <A name="rfc_and_using_mime_in" id="rfc_and_using_mime_in"></A>
   <H2>
-      24.6 RFC and using MIME in usenet newsgroups
+      24.6 RFC and using MIME in Usenet newsgroups
       
   </H2>
 
@@ -18060,7 +18052,7 @@ No title
 
 
 <P class="column7"><EM><STRONG>
-       24.6.1 in Message-id: <EM><A HREF="mailto:wklni3b3gl.fsf@usenet.nospam.fogey.com" >wklni3b3gl.fsf@usenet.nospam.fogey.com</A></EM>]</STRONG></EM>
+       24.6.1 in Message-id: <EM><A HREF="mailto:wklni3b3gl.fsf@Usenet.nospam.fogey.com" >wklni3b3gl.fsf@Usenet.nospam.fogey.com</A></EM>]</STRONG></EM>
 
 
 
@@ -18167,7 +18159,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;All about Email headers&quot;</EM></STRONG><BR>
+<SPAN class="quote7">All about Email headers</SPAN><BR>
         <A HREF="http://www.stopspam.org/email/headers/headers.html" target="_top">http://www.stopspam.org/email/headers/headers.html</A>
         ...This document is intended to provide a comprehensive introduction
         to the behavior of mail headers. It is primarily intended to help
@@ -18183,28 +18175,28 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;IMC -- Internet Mail Standards&quot;</EM></STRONG><BR>
+<SPAN class="quote7">IMC -- Internet Mail Standards</SPAN><BR>
         <A HREF="http://www.imc.org/mail-standards.html" target="_top">http://www.imc.org/mail-standards.html</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;FAQ archive&quot;</EM></STRONG><BR>
-        <A HREF="http://www.faqs.org/faqs/" target="_top">http://www.faqs.org/faqs/</A>
+<SPAN class="quote7">FAQ archive</SPAN><BR>
+        <A HREF="http://www.FAQs.org/FAQs/" target="_top">http://www.FAQs.org/FAQs/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;RTFM ftp archive - Read the fine manual&quot;</EM></STRONG><BR>
-        <A HREF="ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/mail/" target="_top">ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/mail/</A>
+<SPAN class="quote7">RTFM ftp archive - Read the fine manual</SPAN><BR>
+        <A HREF="ftp://rtfm.mit.edu/pub/Usenet-by-hierarchy/comp/mail/" target="_top">ftp://rtfm.mit.edu/pub/Usenet-by-hierarchy/comp/mail/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Sendmail&quot;</EM></STRONG><BR>
-        <A HREF="ftp://rtfm.mit.edu/pub/usenet-by-group/comp.mail.misc/sendmail_FAQ" target="_top">ftp://rtfm.mit.edu/pub/usenet-by-group/comp.mail.misc/sendmail_FAQ</A>
+<SPAN class="quote7">Sendmail</SPAN><BR>
+        <A HREF="ftp://rtfm.mit.edu/pub/Usenet-by-group/comp.mail.misc/sendmail_FAQ" target="_top">ftp://rtfm.mit.edu/pub/Usenet-by-group/comp.mail.misc/sendmail_FAQ</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;UNIX EMail Software&quot;</EM></STRONG><BR>
-        <A HREF="http://www.faqs.org/faqs/mail/setup/unix/part1/index.html" target="_top">http://www.faqs.org/faqs/mail/setup/unix/part1/index.html</A>
+<SPAN class="quote7">UNIX EMail Software</SPAN><BR>
+        <A HREF="http://www.FAQs.org/FAQs/mail/setup/Unix/part1/index.html" target="_top">http://www.FAQs.org/FAQs/mail/setup/Unix/part1/index.html</A>
         ...This document is intended for system administrators who need to
         know how to set up their UNIX systems for mail communication with
         the outside world...UUCP, Addresses, Domain Addresses, FQDN, NIC,
@@ -18213,18 +18205,18 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Plus addressing&quot;</EM></STRONG><BR>
-        <A HREF="http://www.faqs.org/faqs/mail/addressing/" target="_top">http://www.faqs.org/faqs/mail/addressing/</A>
+<SPAN class="quote7">Plus addressing</SPAN><BR>
+        <A HREF="http://www.FAQs.org/FAQs/mail/addressing/" target="_top">http://www.FAQs.org/FAQs/mail/addressing/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Understanding E-Mail Addresses, DNS, Gateways&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Understanding E-Mail Addresses, DNS, Gateways</SPAN><BR>
         <A HREF="http://www.uiuc.edu/uiucnet/3-2-1.html" target="_top">http://www.uiuc.edu/uiucnet/3-2-1.html</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;The Unix MBOX, Berkeley, format&quot;</EM></STRONG><BR>
-        <A HREF="http://www.qmail.org/qmail-manual-html/man5/mbox.html" target="_top">http://www.qmail.org/qmail-manual-html/man5/mbox.html</A> ...This
+<SPAN class="quote7">The Unix MBOX, Berkeley, format</SPAN><BR>
+        <A HREF="http://www.qmail.org/qmail-manual-HTML/man5/mbox.html" target="_top">http://www.qmail.org/qmail-manual-HTML/man5/mbox.html</A> ...This
         format comes to us from the ancient UNIX mail program, V7
         /bin/mail...Each message ends with two blank lines
 
@@ -18248,8 +18240,8 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Listspec -- proposed standard from mailing list messages&quot;</EM></STRONG><BR>
-        <A HREF="http://www.within.com/~chandhok/ietf/listid.shtml" target="_top">http://www.within.com/~chandhok/ietf/listid.shtml</A>
+<SPAN class="quote7">Listspec -- proposed standard from mailing list messages</SPAN><BR>
+        <A HREF="http://www.within.com/~chandhok/ietf/listid.sHTML" target="_top">http://www.within.com/~chandhok/ietf/listid.sHTML</A>
         <A HREF="http://www.ietf.org/internet-drafts/draft-chandhok-listid-03.txt" target="_top">http://www.ietf.org/internet-drafts/draft-chandhok-listid-03.txt</A>
 
 
@@ -18275,7 +18267,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Literature&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Literature</SPAN><BR>
 
 
 <P class="column8">
@@ -18359,7 +18351,7 @@ No title
         2nd Edition January 1997
         ISBN: 1-56592-222-0
         1050 pages, $39.95
-        &lt;<A HREF="http://www.oreilly.com/catalog/sendmail2/noframes.html" target="_top">http://www.oreilly.com/catalog/sendmail2/noframes.html</A>&gt;
+        &lt;<A HREF="http://www.oreilly.com/" target="_top">http://www.oreilly.com/</A>&gt;
 
 
 </P>
@@ -18373,7 +18365,7 @@ No title
 
 
         &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/</A>
-        cgi-bin/w3glimpse2html/procmail/1996-08/msg00098.html?69#mfs&gt;
+        cgi-bin/w3glimpse2HTML/procmail/1996-08/msg00098.html?69#mfs&gt;
 
 
 <P class="column8">
@@ -18640,7 +18632,7 @@ No title
 
 
 
-        &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html</A>&gt;
+        &lt;<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html</A>&gt;
 
 
 <P class="column8">
@@ -18731,8 +18723,7 @@ No title
 
 
 
-        &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/</A>
-        1996-11/msg00055.html&gt;
+        &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00055.html" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00055.html</A>&gt;
 
 
 <P class="column8">
@@ -19449,7 +19440,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;ListAdmin: Don't play with Reply-To&quot;</EM></STRONG><BR>
+<SPAN class="quote7">ListAdmin: Don't play with Reply-To</SPAN><BR>
         <A HREF="http://www.unicom.com/pw/reply-to-harmful.html" target="_top">http://www.unicom.com/pw/reply-to-harmful.html</A>
         ... RFC-822 on reply-to is just almost hopeless. The reason people
         do what they do is more likely because they saw someone else doing
@@ -19461,12 +19452,12 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Reply problems&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Reply problems</SPAN><BR>
         <A HREF="http://www.cs.utk.edu/~moore/reply-problem-list.txt" target="_top">http://www.cs.utk.edu/~moore/reply-problem-list.txt</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Mail-Followup-To&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Mail-Followup-To</SPAN><BR>
         <A HREF="ftp://koobera.math.uic.edu/www/proto/replyto.html" target="_top">ftp://koobera.math.uic.edu/www/proto/replyto.html</A>
         ...there are useful things that can be done with these headers. For
         instance -- on mailing lists where everyone that posts is assumed to
@@ -19957,7 +19948,7 @@ No title
 </P>
   <A name="moral_about_cc_copies_in" id="moral_about_cc_copies_in"></A>
   <H2>
-      26.13 Moral about CC copies in usenet
+      26.13 Moral about CC copies in Usenet
       
   </H2>
 
@@ -20057,7 +20048,7 @@ No title
 
 <P class="column8">
         But an address that looks like a &quot;real&quot;, but is bogus, is not a
-        polite way to participate in usenet. This address wold give an
+        polite way to participate in Usenet. This address wold give an
         impression that persn is really there:
 
 
@@ -20106,7 +20097,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;ProcLog&quot;</EM></STRONG><BR>
+<SPAN class="quote7">ProcLog</SPAN><BR>
         <A HREF="http://synfin.net/aturner/proclog/" target="_top">http://synfin.net/aturner/proclog/</A>
         Aaron Turner <EM><A HREF="mailto:aturner@pobox.com" >aturner@pobox.com</A></EM>
         ...ProcLog is a set of Unix shell and Perl 5 scripts that
@@ -20119,7 +20110,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Xbuffy -- biff log&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Xbuffy -- biff log</SPAN><BR>
         <A HREF="http://www.fiction.net/blong/programs/#xbuffy" target="_top">http://www.fiction.net/blong/programs/#xbuffy</A>
 
 
@@ -20133,7 +20124,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Sh expire mail&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Sh expire mail</SPAN><BR>
         &lt;URL:<A HREF="http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/" target="_top">http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/</A>
         1996-09/msg00141.html&gt; This script will delete messages older than
         $AGE days from the mailbox specified on the command line. It
@@ -20143,7 +20134,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Gawk expire mail&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Gawk expire mail</SPAN><BR>
         by Roman Czyborra <EM><A HREF="mailto:czyborra@cs.tu-berlin.de" >czyborra@cs.tu-berlin.de</A></EM>
         ...Using GNU version 2.15 of awk: This filter deletes all messages
         older than expire days from a Unix mailbox. Sample call: gawk -f
@@ -20152,7 +20143,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;pick -- Auto deleting old messages&quot;</EM></STRONG><BR>
+<SPAN class="quote7">pick -- Auto deleting old messages</SPAN><BR>
         [Brian Dockter <EM><A HREF="mailto:brian@nds.com" >brian@nds.com</A></EM>] ...Once the messages were in the
         correct folder, I would suggest using cron and mush. mush is able
         to manipulate messages on a wide variety of criteria, but works
@@ -20807,18 +20798,18 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;The wAr of spam -- pointers to reseurces&quot;</EM></STRONG><BR>
+<SPAN class="quote7">The wAr of spam -- pointers to reseurces</SPAN><BR>
         <A HREF="http://spam.gunters.org/links.html" target="_top">http://spam.gunters.org/links.html</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;NoCEM&quot;</EM></STRONG><BR>
+<SPAN class="quote7">NoCEM</SPAN><BR>
         <A HREF="http://www.cm.org/" target="_top">http://www.cm.org/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;The Coalition Against Unsolicited Commercial Email (CAUCE)&quot;</EM></STRONG><BR>
-        <A HREF="http://www.cauce.org/faq.html" target="_top">http://www.cauce.org/faq.html</A>
+<SPAN class="quote7">The Coalition Against Unsolicited Commercial Email (CAUCE)</SPAN><BR>
+        <A HREF="http://www.cauce.org/FAQ.html" target="_top">http://www.cauce.org/FAQ.html</A>
         ...The Problem: Unsolicited commercial mail, more commonly known as
         &quot;spam&quot;, is a growing problem on the Internet. If you've used the
         Internet for any length of time, you've probably received
@@ -20833,13 +20824,13 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Spamcop - report bulk mail intrucions here&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Spamcop - report bulk mail intrucions here</SPAN><BR>
         <A HREF="http://www.spamcop.net/" target="_top">http://www.spamcop.net/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Teergrubing against Spam&quot;</EM></STRONG><BR>
-        <A HREF="http://www.iks-jena.de/mitarb/lutz/usenet/teergrube.en.html" target="_top">http://www.iks-jena.de/mitarb/lutz/usenet/teergrube.en.html</A>
+<SPAN class="quote7">Teergrubing against Spam</SPAN><BR>
+        <A HREF="http://www.iks-jena.de/mitarb/lutz/Usenet/teergrube.en.html" target="_top">http://www.iks-jena.de/mitarb/lutz/Usenet/teergrube.en.html</A>
         ...`Teergrubing' It's German and means Tar-Pit. Once you have been
         stuck you can't get out. ...slow down internet connections in order
         to stop UBE abuse. Several hundred teergrubes are able to block
@@ -20848,7 +20839,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Obtuse smtpd for UNIX&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Obtuse smtpd for UNIX</SPAN><BR>
 
 
 <P class="column7"><EM><STRONG>
@@ -20877,7 +20868,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Lot of good articles about spam&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Lot of good articles about spam</SPAN><BR>
         <A HREF="http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html" target="_top">http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html</A>
 
 
@@ -20893,7 +20884,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Select mail court cases -- Lots of them&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Select mail court cases -- Lots of them</SPAN><BR>
         <A HREF="http://www.jmls.edu/cyber/cases/spam.html" target="_top">http://www.jmls.edu/cyber/cases/spam.html</A>
         America Online, Inc. v. Cyber Promotions, Inc.,
         Compuserve Inc. v. Cyber Promotions, Inc., etc.
@@ -20909,13 +20900,13 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Nancy McGough <EM><A HREF="mailto:nm@noadsplease.ii.com" >nm@noadsplease.ii.com</A></EM> - Mail Filtering FAQ&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Nancy McGough <EM><A HREF="mailto:nm@noadsplease.ii.com" >nm@noadsplease.ii.com</A></EM> - Mail Filtering FAQ</SPAN><BR>
         <A HREF="http://www.ii.com/internet/robots/procmail/qs/" target="_top">http://www.ii.com/internet/robots/procmail/qs/</A><BR>
-        <A HREF="http://www.ii.com/internet/faqs/launchers/mail/filtering-faq/" target="_top">http://www.ii.com/internet/faqs/launchers/mail/filtering-faq/</A><BR>
+        <A HREF="http://www.ii.com/internet/FAQs/launchers/mail/filtering-FAQ/" target="_top">http://www.ii.com/internet/FAQs/launchers/mail/filtering-FAQ/</A><BR>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Information Filtering Resources&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Information Filtering Resources</SPAN><BR>
         <A HREF="http://www.ee.umd.edu/medlab/filter/" target="_top">http://www.ee.umd.edu/medlab/filter/</A> Doug Oard <EM><A HREF="mailto:oard@glue.umd.edu" >oard@glue.umd.edu</A></EM>
         ...This page lists all known internet-accessible information
         filtering resources.
@@ -20931,35 +20922,35 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Spam FAQ&quot;</EM></STRONG><BR>
-        <A HREF="ftp://rtfm.mit.edu/pub/usenet/alt.spam/" target="_top">ftp://rtfm.mit.edu/pub/usenet/alt.spam/</A>
-        <A HREF="http://www.cs.ruu.nl/wais/html/na-dir/net-abuse-faq/spam-faq.html" target="_top">http://www.cs.ruu.nl/wais/html/na-dir/net-abuse-faq/spam-faq.html</A>
+<SPAN class="quote7">Spam FAQ</SPAN><BR>
+        <A HREF="ftp://rtfm.mit.edu/pub/Usenet/alt.spam/" target="_top">ftp://rtfm.mit.edu/pub/Usenet/alt.spam/</A>
+        <A HREF="http://www.cs.ruu.nl/wais/HTML/na-dir/net-abuse-FAQ/spam-FAQ.html" target="_top">http://www.cs.ruu.nl/wais/HTML/na-dir/net-abuse-FAQ/spam-FAQ.html</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;The mail abuse FAQ&quot;</EM></STRONG><BR>
-        <A HREF="http://members.aol.com/emailfaq/emailfaq.html" target="_top">http://members.aol.com/emailfaq/emailfaq.html</A>
+<SPAN class="quote7">The mail abuse FAQ</SPAN><BR>
+        <A HREF="http://members.aol.com/emailFAQ/emailFAQ.html" target="_top">http://members.aol.com/emailFAQ/emailFAQ.html</A>
         What is UBE, UCE, EMP, MMF, MLM, Spam, it is all explained here.
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Get that spammer -- A VERY GOOD LINK&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Get that spammer -- A VERY GOOD LINK</SPAN><BR>
         <A HREF="http://www.triode.net.au/~forever/gspam.html" target="_top">http://www.triode.net.au/~forever/gspam.html</A>
         ...All about Spam; traceroute, netabuse etc. Full of links and docs
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Whois&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Whois</SPAN><BR>
         <A HREF="http://www.networksolutions.com/cgi-bin/whois/whois/" target="_top">http://www.networksolutions.com/cgi-bin/whois/whois/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Advertising on Usenet: How To Do It, How Not To Do It&quot;</EM></STRONG><BR>
-        <A HREF="ftp://rtfm.mit.edu/pub/usenet/advertising/" target="_top">ftp://rtfm.mit.edu/pub/usenet/advertising/</A>
+<SPAN class="quote7">Advertising on Usenet: How To Do It, How Not To Do It</SPAN><BR>
+        <A HREF="ftp://rtfm.mit.edu/pub/Usenet/advertising/" target="_top">ftp://rtfm.mit.edu/pub/Usenet/advertising/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Dealing with Junk Email&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Dealing with Junk Email</SPAN><BR>
         <A HREF="http://www.jcrdesign.com/junkemaildeal.html" target="_top">http://www.jcrdesign.com/junkemaildeal.html</A>
         ...What you should do (and not do) when you have been victimized by
         a junk mailer. This document teaches you how to read headers in
@@ -20986,7 +20977,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Practical Tools to Boycott Spam&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Practical Tools to Boycott Spam</SPAN><BR>
         <A HREF="http://spam.abuse.net/spam/" target="_top">http://spam.abuse.net/spam/</A>
         ...We have been actively engaged in fighting spam for years. Recent
         events, including pending court battles, prompt us to present this
@@ -21006,13 +20997,13 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;news.admin.net-abuse.* Homepage&quot;</EM></STRONG><BR>
+<SPAN class="quote7">news.admin.net-abuse.* Homepage</SPAN><BR>
         Timothy M. Skirvin <EM><A HREF="mailto:tskirvin@math.uiuc.edu" >tskirvin@math.uiuc.edu</A></EM>
-        <A HREF="http://www.killfile.org/~tskirvin/nana/" target="_top">http://www.killfile.org/~tskirvin/nana/</A>
+        <A HREF="http://www.kill" target="_top">http://www.kill</A> file.org/~tskirvin/nana/
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Preventing relaying in Sendmail&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Preventing relaying in Sendmail</SPAN><BR>
         ...This package adds two independent features to sendmail,
         access control and relay control. They will be described here
         simultaneously, but you can elect to include support for only one
@@ -21024,7 +21015,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Anti-Spam Provisions in Sendmail 8.8&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Anti-Spam Provisions in Sendmail 8.8</SPAN><BR>
         <A HREF="http://www.sendmail.org/antispam.html" target="_top">http://www.sendmail.org/antispam.html</A>
         <A HREF="http://mail-abuse.org/" target="_top">http://mail-abuse.org/</A>
         <A HREF="http://www.informatik.uni-kiel.de/%7Eca/email/check.html#check_rcpt" target="_top">http://www.informatik.uni-kiel.de/%7Eca/email/check.html#check_rcpt</A>
@@ -21048,7 +21039,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Blocking Email&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Blocking Email</SPAN><BR>
         <A HREF="http://www.nepean.uws.edu.au/users/david/pe/blockmail.html" target="_top">http://www.nepean.uws.edu.au/users/david/pe/blockmail.html</A>
 
 <P><UL>
@@ -21092,7 +21083,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Preventing relaying in Netscape Messaging Server&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Preventing relaying in Netscape Messaging Server</SPAN><BR>
         <A HREF="http://www.tsc.com/~bobp/nms-no-relay.html" target="_top">http://www.tsc.com/~bobp/nms-no-relay.html</A>
         ...discusses anti-spam configurations for Netscape
         Messaging Server (NMS). These include proper anti-relay config,
@@ -21103,7 +21094,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;US Federal Trade Commission&quot;</EM></STRONG><BR>
+<SPAN class="quote7">US Federal Trade Commission</SPAN><BR>
         <A HREF="http://www.ftc.gov/" target="_top">http://www.ftc.gov/</A>
         ...staff publicized the Commission's UCE mailbox, &quot;uce@ftc.gov,&quot;
         and invited consumers to forward their UCE to it. spam complaints
@@ -21111,14 +21102,14 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Spam Spade Web based tracking tool&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Spam Spade Web based tracking tool</SPAN><BR>
         <A HREF="http://www.blighty.com/" target="_top">http://www.blighty.com/</A>
         ...Figuring out forged headers and verifying IP addresses and
         whois information.
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Misc&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Misc</SPAN><BR>
         <A HREF="http://www.junkbusters.com/" target="_top">http://www.junkbusters.com/</A>
         <A HREF="http://www.well.com/~jbremson/spam" target="_top">http://www.well.com/~jbremson/spam</A>
         <A HREF="http://www.wolfenet.com/~jhardin/procmail-security.html" target="_top">http://www.wolfenet.com/~jhardin/procmail-security.html</A>
@@ -21134,7 +21125,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Against Spam -- The garbage collecting.&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Against Spam -- The garbage collecting.</SPAN><BR>
         <A HREF="http://www.spam-archive.org/" target="_top">http://www.spam-archive.org/</A>
         To support this archive please forward mail spam to
         <EM><A HREF="mailto:spam-list@toby.han.de" >spam-list@toby.han.de</A></EM>. Everybody is invited to bounce Mail-Spam
@@ -21191,7 +21182,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;IBM's Secure Mailer -- open source&quot;</EM></STRONG><BR>
+<SPAN class="quote7">IBM's Secure Mailer -- open source</SPAN><BR>
         <A HREF="http://www.postfix.org/" target="_top">http://www.postfix.org/</A>
 
 
@@ -21220,31 +21211,31 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Qmail&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Qmail</SPAN><BR>
         <A HREF="http://pobox.com/~djb/qmail.html" target="_top">http://pobox.com/~djb/qmail.html</A>
         <A HREF="http://www.qmail.org/" target="_top">http://www.qmail.org/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Sendmail&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Sendmail</SPAN><BR>
         <A HREF="http://www.sendmail.org/" target="_top">http://www.sendmail.org/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Fetchmail -- old pop3 replacement&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Fetchmail -- old pop3 replacement</SPAN><BR>
         <A HREF="ftp://ftp.ccil.org/pub/esr/" target="_top">ftp://ftp.ccil.org/pub/esr/</A>
         <A HREF="http://www.ccil.org/~esr/" target="_top">http://www.ccil.org/~esr/</A>
         <A HREF="http://www.tuxedo.org/~esr/fetchmail/" target="_top">http://www.tuxedo.org/~esr/fetchmail/</A>
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Maildrop filter utility&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Maildrop filter utility</SPAN><BR>
         <A HREF="http://freshmeat.net/projects/maildrop/" target="_top">http://freshmeat.net/projects/maildrop/</A>
         ...Alternative to procmail
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Lua&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Lua</SPAN><BR>
         <A HREF="http://www.tecgraf.puc-rio.br/lua/" target="_top">http://www.tecgraf.puc-rio.br/lua/</A> <EM><A HREF="mailto:lua@tecgraf.puc-rio.br" >lua@tecgraf.puc-rio.br</A></EM>
         [possible replacement for procmail language] ... <EM class="word">Lua</EM> is a
         programming language originally designed for extending
@@ -21267,7 +21258,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;IEMMC: Internet E-Mail Marketing Council Formed 1997-03&quot;</EM></STRONG><BR>
+<SPAN class="quote7">IEMMC: Internet E-Mail Marketing Council Formed 1997-03</SPAN><BR>
 
 
 <P class="column8">
@@ -21301,7 +21292,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;Spammer blacklist&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Spammer blacklist</SPAN><BR>
         <A HREF="http://www.netchem.com/" target="_top">http://www.netchem.com/</A>
         ...<EM><A HREF="mailto:remove@netchem.com" >remove@netchem.com</A></EM> Dear Sir/Madam, Your mail address may be on
         many spammers' lists. We are compiling a <EM class="word">remove</EM> list. Forward the
@@ -21343,11 +21334,11 @@ No title
         going to lose any sleep over this! I might as well mention that the
         ISP's complaint mentioned that their &quot;freedom&quot; was being
         abused. hehehe. Most of these postings can be seen in dejanews
-        or altavista archives of usenet.
+        or altavista archives of Usenet.
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;SPAM-L mailing list and Doug Muth's Page&quot;</EM></STRONG><BR>
+<SPAN class="quote7">SPAM-L mailing list and Doug Muth's Page</SPAN><BR>
         <A HREF="http://www.claws-and-paws.com/spam-l/" target="_top">http://www.claws-and-paws.com/spam-l/</A>
         ... &quot;The SPAM-L FAQ&quot; - A FAQ for SPAM-L, an anti-spam mailing list.
         This FAQ discusses how to join the list and what to post there, AND
@@ -21386,7 +21377,7 @@ No title
 </P>
   <A name="software_adcomplain__perl_junk_mail" id="software_adcomplain__perl_junk_mail"></A>
   <H2>
-      29.9 Software: adcomplain -- Perl junk mail rport
+      29.9 Software: adcomplain -- Perl junk mail report
       
   </H2>
 
@@ -21399,7 +21390,7 @@ No title
 
 <P class="column8">
         Adcomplain runs under Unix, Windows-NT, and Windows-95. Adcomplain
-        is a tool for reporting inappropriate commercial e-mail and usenet
+        is a tool for reporting inappropriate commercial e-mail and Usenet
         postings, as well as chain letters and &quot;make money fast&quot; postings.
 
 
@@ -21427,7 +21418,7 @@ No title
 </P>
   <A name="software_ricochet__perl_junk_mail" id="software_ricochet__perl_junk_mail"></A>
   <H2>
-      29.10 Software: Ricochet -- Perl junk mail rport
+      29.10 Software: Ricochet -- Perl junk mail report
       
   </H2>
 
@@ -21689,7 +21680,7 @@ No title
 
 
 <P class="column8">
-<STRONG><EM class="quote7">       &quot;mapSoN (NoSpam backwards) -- The no spam utility&quot;</EM></STRONG><BR>
+<SPAN class="quote7">mapSoN (NoSpam backwards) -- The no spam utility</SPAN><BR>
         <A HREF="http://mapson.gmd.de/" target="_top">http://mapson.gmd.de/</A>
         <A HREF="ftp://ftp.gmd.de/gmd/mapson/" target="_top">ftp://ftp.gmd.de/gmd/mapson/</A>
 
@@ -21792,7 +21783,7 @@ No title
 
 
 
-<STRONG><EM class="quote7">       &quot;Spam Be Gone&quot;</EM></STRONG><BR>
+<SPAN class="quote7">Spam Be Gone</SPAN><BR>
         <A HREF="http://www.internz.com/SpamBeGone/" target="_top">http://www.internz.com/SpamBeGone/</A>
         ...uses machine learning and artificial intelligence technologies
         to examine incoming mail messages and determine their
@@ -21935,10 +21926,10 @@ the copyright holder. (VI.B LICENSE OPTIONS)
 </P>
 <P>
 This file has been automatically generated from plain text file
-with Perl script <STRONG>t2html.pl 1.53</STRONG><BR>
+with Perl script <STRONG>t2html.pl 2002.0204</STRONG><BR>
 Document author: Jari Aalto<BR>
 Contact: &lt;<A HREF="mailto:jari.aalto@poboxes.com">jari.aalto@poboxes.com</A>&gt;<BR>
-Html date: 2002-01-05 19:16<BR>
+Html date: 2002-02-04 01:45<BR>
 </EM    class="footer">
 </BODY>
 </HTML>

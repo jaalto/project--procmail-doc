@@ -387,7 +387,7 @@ Table of contents
 
        29.0 Anti-UBE pointers
            29.1 NoCEM, CAUCE and others
-              29.1.1 http://www.obtuse.com/smtpd.HTML
+              29.1.1 http://www.obtuse.com/smtpd.html
            29.2 General Filtering pages (more than procmail)
            29.3 Junk mail and spam
            29.4 Comprehensive list of spammers
@@ -408,8 +408,8 @@ Table of contents
 
     1.1 General
 
-        .$Id: pm-tips.txt,v 2.5 2002/02/03 22:22:42 jaalto Exp $
-        .$Keywords: procmail sendmail formail mail UBE UCE spam filter $
+        .$Id: pm-tips.txt,v 2.6 2002/02/03 23:37:51 jaalto Exp $
+        .$Keywords: procmail, sendmail, formail, mail, UBE, UCE, spam, filter $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$Contactid: jari.aalto@poboxes.com $
         .$UrlLinksLastChecked: 2002-02-02 $
@@ -441,10 +441,8 @@ Table of contents
         You may want to read *Nancy's* and *Era's* procmail FAQ pages
         before this page. Especially Era's link page contains an excellent
         collection of useful procmail links and pointers to Unix programs
-        that deal with mail (e.g Perl *MHonArc* Email hyper archiver at
-        <http://www.oac.uci.edu/indiv/ehood/mhonarc.HTML>). If you find
-        errors or things to improve in this document, please go ahead and
-        send mail to this document's [maintainer].
+        that deal with mail If you find errors or things to improve in this
+        document, please send mail to this document's Maintainer.
 
         If any mentioned URL is not alive, you may still be able to
         successfully find it using the WWW search such as
@@ -496,7 +494,7 @@ Table of contents
             <http://MailMan.RWTH-Aachen.DE/mailman/listinfo/procmail> and
             SmartList
             <http://MailMan.RWTH-Aachen.DE/mailman/listinfo/smartlist> See
-            also http://www.procmail.org/era/lists.HTML
+            also http://www.procmail.org/era/lists.html
         o   FAQ-L, Faq Maintainers mailing list
             http://www.landfield.com/FAQ-maintainers/FAQ-server/
             http://lists.consensus.com/scripts/lyris.pl?visit=FAQ-maintainers
@@ -603,7 +601,7 @@ Table of contents
 
         Text version of this file was converted into HTML with following
         command. You need Perl interpreter 5.4 or newer to call *t2HTML.pl*
-        script. The `--Out' option generates file pm-tips.HTML in current
+        script. The `--Out' option generates file pm-tips.html in current
         directory. Please also familiarize yourself with GNU RCS ident(1),
         if you have it available. It is important that you mark interesting
         text to these tools so that someone can get an overview of your
@@ -863,7 +861,7 @@ Table of contents
 
         Manual pages
 
-            http://www.voicenet.com/~dfma/intro.HTML
+            http://www.voicenet.com/~dfma/intro.html
 
     2.2 About procmail's Y2K compliance
 
@@ -913,20 +911,20 @@ Table of contents
         http://www.rosat.mpe-garching.mpg.de/~ach/exmh/archive/procmail/
 
        "Era's Procmail FAQ"
-        http://www.iki.fi/~era/procmail/mini-FAQ.HTML
+        http://www.iki.fi/~era/procmail/mini-FAQ.html
         http://www.dcs.ed.ac.uk/~procmail/FAQ/          [mirror]
-        Also available by mail, the ITEM can be: links.HTML, mini-FAQ.HTML,
+        Also available by mail, the ITEM can be: links.html, mini-FAQ.html,
         procmail-FAQ
 
             To: <era+pr@iki.fi>
             Subject: send ITEM
 
        "Era's Procmail Link collections"
-        http://www.iki.fi/~era/procmail/links.HTML
+        http://www.iki.fi/~era/procmail/links.html
         ...A page full of good links to the world of procmail
 
        "Professor Timo Salmis's Procmail page -- EXELLENT"
-        http://www.uwasa.fi/~ts/info/proctips.HTML
+        http://www.uwasa.fi/~ts/info/proctips.html
 
        "Joe Gross's short Procmail tutorial"
         http://www.procmail.net/ <jgross@stimpy.net>
@@ -945,20 +943,20 @@ Table of contents
         purpose *plug-in* modules that you could use right away. Some
         functionality included:
 
-                Inline decoding of MIME text attachments        (rc.mime-decode)
-                Cleansing of obscure "Re:" formats in subject   (rc.pre-list)
-                Nifty autoresponder                             (rc.qz-2)
-                Sophisticated duplicate mail catching           (rc.dupes)
-                Example of using my mail bouncer                (rc.lists-out)
-                Detection of some classes of autoreplies        (rc.daemon)
-                Various junk mail filtering                     (rc.filter)
-                Daily log files                                 (rc.vars)
+            Inline decoding of MIME text attachments        (rc.mime-decode)
+            Cleansing of obscure "Re:" formats in subject   (rc.pre-list)
+            Nifty autoresponder                             (rc.qz-2)
+            Sophisticated duplicate mail catching           (rc.dupes)
+            Example of using my mail bouncer                (rc.lists-out)
+            Detection of some classes of autoreplies        (rc.daemon)
+            Various junk mail filtering                     (rc.filter)
+            Daily log files                                 (rc.vars)
 
     2.4 Procmail mode for Emacs
 
-        If you use Emacs, please download the Procmail
-        programming mode <http://tiny-tools.sourceforge.net/> and it can
-        auto-correct mistakes on the fly. Here is an example of its output:
+        If you use Emacs, See Procmail programming mode *tinypm.el*
+        at <http://tiny-tools.sourceforge.net/> and it can be used
+        to syntax check procmail recipes. Here is an example of its output:
 
             *** 1997-11-24 22:13 (pm.lint) 3.11pre7 tinypm.el 1.80
             cd /users/jaalto/junk/
@@ -1267,7 +1265,7 @@ Table of contents
         whole system, or by an individual for their own mailbox only.
 
        "Protect yourself from spam: A practical guide to procmail"
-        http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.HTML
+        http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html
         ...take you, step by step, through everything you need to know in
         order to enlist the aid of a Unix host in filtering unwanted e-mail
         traffic. This page is excellent to get you started with procmail
@@ -1812,7 +1810,6 @@ Table of contents
           Comparing byte sizes on disk means nothing here... these
           things may or may not have been stripped. Any symbol tables included
           in the byte counts you see above won't affect process start-up time.
-
           The `size' command will give a better handle on what will be needed
           in starting a process. The three segments may each have their own
           overhead, though, and the relative contributions of those segments
@@ -1821,27 +1818,28 @@ Table of contents
         Hm. Can we draw some conclusion? Not anything definitive, but at
         least something:
 
-        o   While sed and grep may be bigger than awk in some systems, this
-            is an exception. They are usually much smaller and fast to use.
-        o   But complex commands that would require many processes to be
-            chained together, like `grep -v | grep | sed' combination could
-            be usually accomplished with one awk call. Ask somewhere how to
-            do it with awk if you don't know the language, it's quite alike
-            perl
-        o   Don't use anything else but standard awk, _gawk_ and _nawk_
+        o   While `sed(1)' and `grep(1)' may be bigger than `awk(1)' in
+            some systems, this is an exception. They are usually much
+            smaller and fast to use.
+        o   Complex commands that would require many processes to be
+            chained together, like `grep -v | grep | sed' could
+            be usually accomplished with one `awk(1)' call. Ask somewhere how to
+            do it with `awk(1)' if you don't know the language, it's quite alike
+            `perl(1)'
+        o   Try to use standard `awk(1)'. `gawk(1)' and `nawk(1)'
             are bigger and may not be found on all systems.
-        o   Avoid perl at all costs; it's many times (6) bigger than awk.
-            Perl is slow-to start up, due to intermediate compilation
-            process at startup.
+        o   Avoid `perl(1)' at all costs; it's many times (6) bigger than
+            `awk(1)'.  Perl is slow-to start up, due to intermediate
+            compilation process at startup and hogs oodles of memory.
         o   Remember that if procmail is running in a dedicated mail host, it
             probably doesn't even have any goodies installed, just the boring
             standard versions; which may not be even the same as what you see
-            on current host. e.g. My mail host is running HPUX-9, while my
-            login is on HPUX-10. They have very different installations.
+            on current host.
 
         Here are some more programs. Don't even think of extracting fields with
         `grep' or `awk', like "grep Subject", because `formail' is
-        much smaller and more optimized for tasks like that.
+        much smaller and more optimized for tasks like that. Better yet,
+        many times you can do all with procmail's regexp matches.
 
             37007 Sep  5 15:53 /usr/local/bin/formail   # 3.11pre7
             28672 Jun 10  1996 /usr/bin/tr
@@ -1857,17 +1855,16 @@ Table of contents
 
     4.17 Using absolute paths when calling a shell program
 
-        Shell programmers know that if you use absolute path when you call
+        Shell programmers know that if absolute path is used for calling
         the executable, shell doesn't have to search through long list of
         directories in $PATH. This may speed up shell scripts remarkably.
-        The correct way to use such an optimization is to define variables to
+        The best way to use such an optimization is to define variables to
         those programs.
 
-        Should you use such optimization in your procmail code? That's
-        two folded question and I....would say yes and no. How many
-        shell calls do you have? Do you use grep or formail a lot? Then you
-        could optimize these calls. To be portable, define variables for
-        executables:
+        Should you use such optimization in your procmail code?  That is a
+        two folded question. Examine how many shell calls do you use? Do
+        you use `grep' or `formail' a lot? Then you could optimize these
+        calls. To be portable, define variables for executables:
 
             #  perhaps defined in separate INCLUDERC
             #
@@ -1880,7 +1877,7 @@ Table of contents
             :0 fhw
             | $FORMAIL -rt
 
-        And when you port your .procmailrc to different environment that
+        When you port your `.procmailrc' to different environment which
         has different paths, you could use this recipe in addition to one
         just mentioned above:
 
@@ -1915,7 +1912,7 @@ Table of contents
 
     4.19 Keep message backup, no matter what
 
-        It's good to have a safety measure in your .procmailrc.
+        It's good to have a safety measure in your `.procmailrc'.
         Although you are an expert and have checked your recipes 10 times,
         there is still a chance that something breaks. One morning, when you
         browse your *BIFF* reminder log; you notice "Hm, there is that
@@ -1927,10 +1924,9 @@ Table of contents
         place.
 
         So, before your procmail does anything to your message, put the
-        message into some folder which is regularly expired. Emacs Gnus acn
-        automatically handle thos mailbox's expiring, but one could also
-        use a cron(1) cleaning. After this, you can relax knowing your mail is
-        safe.
+        message into some folder which is regularly expired. Emacs Gnus can
+        do mailbox's expiring, but one could also use a `cron(1)' to do the
+        cleaning. After that, you can relax knowing your mail is safe.
 
             #   Your incoming messages are stored here, filtered by procmail
 
@@ -1990,28 +1986,27 @@ Table of contents
 
         o    and last: FILTER UBE.
 
-        The backup, cron and duplicate handling go naturally to the beginning
-        of your .procmailrc. Next comes a grey area where Daemon, plus handling
-        (#REF #using_rfc_comment_trick_for; Note plus;); and server messages can
-        be put.
+        The backup, cron and duplicate handling go naturally to the
+        beginning of your `.procmailrc'. Next comes a grey area where
+        Daemon, plus handling and server messages can be put.
 
         Mailing lists should be handled as early as possible, but after the
         server messages, because you want your services handled first.
 
         Do not send vacation replies before you have handled mailing lists
-        to prevent annoying vacation replies to lists.
+        to prevent annoying vacation replies to mailing lists.
 
         After that you are left with "known" private messages and those of
         unknown origin. A kill file (to block based on sender) for rapid
-        spammers, who send you message or several per day need to be
+        spammers, who send you message or several per day may need to be
         checked before checking other messages.
 
-         Last but not least: Put your UBE checkers to the end to avoid
-         mishits of valid mail. _DO_ _NOT_ _SEND_ _AUTOMATIC_ _COMPLAINT_
-         _BACK_, or you'll get grey hairs when the autoresponder send its
-         complaint to valid source. You don't want to answr back with "My
-         apologies, the script had an error, it won't happen aagin." to all
-         the valid hate mail that is now addressed to you.
+           Last but not least: Put your UBE checkers to the end to avoid
+           mishits of valid mail. _DO_ _NOT_ _SEND_ _AUTOMATIC_ _COMPLAINT_
+           _BACK_, or you'll get grey hairs when the autoresponder send its
+           complaint to valid source. You don't want to answr back with "My
+           apologies, the script had an error, it won't happen aagin." to all
+           the valid hate mail that is now addressed to you.
 
         Drop the UBE to a folder, manually select the messages that need
         actions and send message to postmasters in the Received chain
@@ -2021,16 +2016,16 @@ Table of contents
 
     5.1 The order of the flags
 
-        Order does not matter of course, but here is one stylistic suggestion.
-        The idea here is that the most important flags are put to the left,
-        like giving priority 1 for `aAeE', which affect the recipe
-        immediately. Priority 2 has been given to flag `f', which tells if
-        a recipe filters something. Also (h)eader and (b)ody should
-        immediately follow `f', this is considered priority 3. In the
-        middle there are other flags, and last flag is `c', which ends the
-        recipe, or allows it to continue. In addition according to [david]:
-        "...I'm quite sure that putting anything other than the opening
-        colon and the number to the left of `AaEe' will cause an
+        The Order of the flags does not matter in practice, but here is one
+        stylistic suggestion.  The idea here is that the most important
+        flags are put to the left, like giving priority 1 for `aAeE', which
+        affect the recipe immediately. Priority 2 is given to flag
+        `f', which tells if a recipe filters something. Also (h)eader and
+        (b)ody should immediately follow `f', this is considered priority
+        3. In the middle there are other flags, and last flag is `c', which
+        ends the recipe, or allows it to continue. In addition according to
+        [david]: "...I'm quite sure that putting anything other than the
+        opening colon and the number to the left of `AaEe' will cause an
         error."
 
             :0 aAeE HBD fhb wWir c: LOCKFILE
@@ -2049,7 +2044,7 @@ Table of contents
         distinctive separation. Note that $LOCKEXT must be next to $MYLOCK,
         because it contains string ".lock".
 
-            :0 A HB fhw: $MYLOCK$LOCKEXT
+            :0 A fhw: $MYLOCK$LOCKEXT
 
     5.2 Flag w and recipe with |
 
@@ -2096,9 +2091,9 @@ Table of contents
 
     5.4 Flag f and w together
 
-          The w tells Procmail to hang around and wait for the script to
-          finish. [Wouldn't you think this ought to be implied by the f
-          already?]
+          The `w' tells Procmail to hang around and wait for the script to
+          finish. Hm, Wouldn't you think this ought to be implied by the `f'
+          flag already? Not so.
 
         [david] Of course the `f' flag is enough to make procmail wait for
         the filter to finish, but the `w' means something more: to wait to
@@ -2146,7 +2141,7 @@ Table of contents
 
     5.7 Flag i and pipe flag f
 
-         Flag `i' is useless in mailbox deliveries.
+          Flag `i' is useless in mailbox deliveries.
 
         [FAQ] The following will work some of the time, when the message is
         short enough, but that's a coincidence. With a longer message,
@@ -2263,20 +2258,18 @@ Table of contents
 
         [philip] There is a misunderstanding here. Let me clarify:
 
-          Procmail only forks a full-blown clone on a recipe with the 'c'
-          flag whose action is a nested block.
+           Procmail only forks a full-blown clone on a recipe with the 'c'
+           flag whose action is a nested block.
 
         If it's a simple mailbox deliver, pipe, or forward action then
         procmail does not fork a 'clone' (for pipe and forward actions
         procmail does have to fork, but only so it can execute the
         action). `nbr.1' and `nbr.2' take the same number of forks to
-        execute. They also take the same effective number of writes
-        (in case you're concerned about that). The latter also
-        requires that procmail wait for the command to finish.
-
-        `nbr.3' is worse than the above two, as procmail has to not
-        only wait for the command to complete but also save the output
-        into the named variable.
+        execute. They also take the same effective number of writes (in
+        case you're concerned about that). The latter also requires that
+        procmail wait for the command to finish.  `nbr.3' is worse than the
+        above two, as procmail has to not only wait for the command to
+        complete but also save the output into the named variable.
 
     5.12 Flags before nested block
 
@@ -2287,16 +2280,15 @@ Table of contents
                 do-something
             }
 
-        [david] `HB' `AaEe' and `D' affect the conditions and
-        thus are meaningful when the action is to open a brace. `HB' and
-        `D' would be meaningless, of course, on any unconditional recipe, but
-        they should not cause error messages.
-
-        Generally, flags that affect actions are invalid there, and `bhfi'
-        and `r' always are, but the others are partial exceptions: if you
-        are using `c' to launch a clone, then `w' `W' and a local lock file can
-        be meaningful. If there is no `c', then `w' `W' and a local lock file
-        are invalid at the opening of a braced block.
+        [david] `HB' `AaEe' and `D' affect the conditions and thus are
+        meaningful when the action is to open a brace. `HB' and `D' would
+        be meaningless, of course, on any unconditional recipe, but they
+        should not cause error messages.  Generally, flags that affect
+        actions are invalid there, and `bhfi' and `r' always are, but the
+        others are partial exceptions: if you are using `c' to launch a
+        clone, then `w' `W' and a local lock file can be meaningful. If
+        there is no `c', then `w' `W' and a local lock file are invalid at
+        the opening of a braced block.
 
     5.13 Flags aAeE tutorial
 
@@ -2518,24 +2510,25 @@ Table of contents
 
     6.1 Philosophy of abstraction in regexps
 
-        Here are two ways to view or write regexps. Make up your own mind.
+          Here are two ways to view or write regexps. Make up your own
+          mind.
 
-          People who are in favor of writing pure native regexps in the
-          recipes:
+         People who are in favor of writing pure native regexps in the
+         recipes:
 
             [    ]<[    ]*("([^"\]|\\.)*"|[-!#-'*+/-9=?A-Z^-~]+)...  # "
 
         o   I'm not planning on "maintaining" that code, as the syntax for
             XXX will not ever change <<it's RFC or something>>>
-        o   I some how doubt that anyone else will change that regexp more than
+        o   I somehow doubt that anyone else will change that regexp more than
             trivially
         o   If none of your other regexps use the categorical variables, and
             you're not changing the regexp, then what's the point?
             The variablized version will be slower, and will clutter the
             environment with subprocesses.
 
-        Where someone that immediately wants to abstract things says
-        (This is from philip's great Message-Id matching recipe)
+         Where someone that immediately wants to abstract things says (This
+         is from philip's great Message-Id matching recipe)
 
             dq = '"'                                # (literal) double-quote
             bw = "\\"                               # (literal) backwhack
@@ -2545,15 +2538,13 @@ Table of contents
 
             $s<$s$local_part...                     # ignore comment here
 
-          ....abstraction: It makes code clearer when you break it
-          to manageable parts, which possibly surfaces reusable parts. It
-          also makes thing look simpler, and enables even novices
-          to understand what's going on there. After we're not
-          connected to the net anymore, others could possibly understand
-          it too.
-
-          So, naturally we can't agree with any of the previously mentioned
-          arguments presented for keeping regexp "in pure native format".
+        ...abstraction: It makes code clearer when you break it to
+        manageable parts, which possibly surfaces reusable parts. It also
+        makes thing look simpler, and enables even novices to understand
+        what's going on there. After we're not connected to the net
+        anymore, others could possibly understand it too.  So, naturally we
+        can't agree with any of the previously mentioned arguments
+        presented for keeping regexp "in pure native format".
 
         o   Although you won't maintain it, it's an example for others. What
             you post first, people will save it to their mailboxes and
@@ -2567,8 +2558,8 @@ Table of contents
             100 variables. (I don't know how to measure that, but launching
             a shell and creating a process is a much more expensive task).
         o   Cluttering the env process? C'm on. That won't matter either.
-            No outside process uses lowercase environment names, or then it
-            must be real special program. So called "cluttering" of
+            No outside process use lowercase environment variable names, or
+            then it must be real special program. So called "cluttering" of
             environment space is also no-issue. CPU won't even get a hiccup
             for that.
 
@@ -2618,7 +2609,7 @@ Table of contents
             [ \t]                       [   ]
 
         But using the space+tab is not very readable and it's a very error
-        prone construct. I suggest using the following to improve the
+        prone construct. Here is a suggestion to use variables to improve the
         readability:
 
             WSPC   = "    "         # whitespace = space + tab
@@ -2627,17 +2618,21 @@ Table of contents
                                     # a lot in condition lines.
             NSPC  = "[^$WSPC]"      # negation of whitespace
 
-            #   match anything except space and tab
-
+            :0
             *$ var ?? $NSPC
+            {
+                #   match anything except space and tab
+            }
 
-            #   match anything ecxept space and tab and newline
-
+            :0
             *$ ! var ?? ($SPC|$)
+            {
+                #   match anything ecxept space and tab and newline
+            }
 
         But you cannot use newline inside brackets.
 
-            WSPCL  = "   "'
+            WSPCL  = "   "'         # Whitespace with line feed
             '
 
             #   Won't work although WSPCL definition is correct.
@@ -2719,20 +2714,19 @@ Table of contents
             * rest of string[ ]
             * (rest of string )
             * rest of string ()
-            * rest of string( )         # I prefer this one
+            * rest of string( )         # This may be the best
 
         [philip] From my looking at the source, the last two should be
         equal in efficiency, and except for a trace difference in regcomp
         time, should match at the same speed as a solitary trailing blank.
-        The character class version [ ] will be slower.
-
-        Of course, I suspect that neither you nor your sysadmin will ever
-        notice the difference in speed, and given that 99% of all systems are
-        I/O bound and not CPU bound, the system is incredibly unlikely to
+        The character class version [ ] will be slower.  Of course, I
+        suspect that neither you nor your sysadmin will ever notice the
+        difference in speed, and given that 99% of all systems are I/O
+        bound and not CPU bound, the system is incredibly unlikely to
         notice either. I can't complain though, as I also go to various
-        extremes to seek out every last bit of possible performance. Ah well.
-        The first one would be slower yet, though perhaps no slower than the
-        bracket form.
+        extremes to seek out every last bit of possible performance. Ah
+        well.  The first one would be slower yet, though perhaps no slower
+        than the bracket form.
 
     6.9 Beware leading backslash
 
@@ -2954,7 +2948,7 @@ Table of contents
 
     6.14 Explaining \/ and ()\/
 
-        `MATCH' strips all leading blank lines in 3.11pre7
+          `MATCH' strips all leading blank lines in 3.11pre7
 
         [david] \/ with nothing to the left of it means "one foreslash". To
         start a condition with the extraction operator, use ()\/ or \\/;
@@ -3147,7 +3141,7 @@ Table of contents
             :0
             * ! condition1
             * ! condition2
-            { }             # official procmail no-op
+            { }             # official procmail no-op. MUST LEAVE SPACE
             :0 E
             action_on_condition1_or_condition2
 
@@ -3167,10 +3161,11 @@ Table of contents
         Unsetting a variable is done like this
 
             VAR             # kill variable.
-            VAR=            # same but with old style
+            VAR=            # same, but with old style
             VAR = ""        # Variable is said to be "null" now
 
-        And you can put multiple assignments on the same line
+        And you can put multiple assignments on the same line, although
+        not recommended:
 
             VAR=1  VAR=2  VAR=3
 
@@ -3178,11 +3173,11 @@ Table of contents
         require a shell in the absence of any `SHELLMETAS' so neither of
         these will spawn a shell
 
-                #   _case1_: We Don't care if file exists this time...
+                #   case1: We Don't care if file exists this time...
 
                 VAR = `cat file`
 
-                #   _case2_: The use of {} is considered "modern"
+                #   case2: The use of {} is considered "modern"
 
                 :0
                 * condition
@@ -3190,7 +3185,7 @@ Table of contents
                     VAR = `cat file`
                 }
 
-                #   _case3_: oldish, and procmail specific and errors have
+                #   case3: oldish, and procmail specific and errors have
                 #   been reported if you use this construct.
                 #   Note: There must be no space in "VAR=|"
 
@@ -3300,19 +3295,17 @@ Table of contents
 
             * ! TEST_FLAG ?? yes
 
-        Alternative with a positive test:
+        With negative test, this would be:
 
             *  TEST_FLAG ?? no
 
-        To my opinion, this is more readable. You're free to disagree with
-        me at this point, but all in all, it's nicer to look at code that
-        has as few ! flags as possible, especially in variable tests.
-
-        [philip] The following fails if the variable is unset or null.
+        Using literal strings like "yes" and "no" might present more clear
+        though what is going that a traditional "!" negation of a test.
+        Note, that the following fails if the variable is unset or null.
 
             * variable ?? (.)
 
-        That was why I'd be better off to use
+        That was why it would be better to test:
 
             *$ variable ?? $NSPC
 
@@ -3323,7 +3316,7 @@ Table of contents
         to require that *variable* contain at least one character. But
         neither is a way to check whether a variable is set or not, because
         each treats a null variable the same as an unset one. This is the
-        best way I know to check whether a variable is set or not:
+        best way to check whether a variable is set or not:
 
             *$ ! ${VAR+!}
 
@@ -4944,7 +4937,7 @@ Table of contents
 
         See the recursive RC implementation at
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1997-08/msg00073.HTML?50#mfs>
+        cgi-bin/w3glimpse2HTML/procmail/1997-08/msg00073.html?50#mfs>
 
         [richard] Here is recipe that needs no recursion. MAX_RECIP
         is set to 9, but you may prefer some other value. This counts each
@@ -6000,12 +5993,12 @@ Table of contents
        "List of annoying things that various MIME implementations do."
         ...The result is a sort of style guide for implementors of things that
         generate MIME. Feel free to send comments or contributions.
-        http://www.cs.utk.edu/~moore/mime-style.HTML
+        http://www.cs.utk.edu/~moore/mime-style.html
 
     12.2 Mime notes
 
         <URL:http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-07/
-        msg00248.HTML>
+        msg00248.html>
 
         [1998-07-28 PM-L Brett Glass <brett@lariat.org>] MIME filename
         buffer overflow bug described at
@@ -6049,7 +6042,7 @@ Table of contents
 
         All Emacs Mail agents can handle MIME if you install some of the
         mime handling packages: TM, SEMI, rmime.el. See
-        http://www.bmrc.berkeley.edu/~trey/emacs/mime.HTML
+        http://www.bmrc.berkeley.edu/~trey/emacs/mime.html
 
     12.4 Mime content type application/ms-tnef
 
@@ -6084,7 +6077,7 @@ Table of contents
             *$ ^Content-Type:$s*multipart/(mixed|alternative);\
                $SPCNL*boundary="?\/[^;"]+
             * $ B ?? ^--$\MATCH\$([-a-z]+:.*)*Content-type:$s*text/HTML
-            junk.HTML.mbox
+            junk.html.mbox
 
         Some more examples can be found from section: 'Explaning  ^^ and ^'
 
@@ -6109,7 +6102,7 @@ Table of contents
             *  ! ^FROM_DAEMON
             *$ ! ^$XLOOP
             *    ^Content.Type.+multipart.alternative
-            *    ^Content.Type.+text.HTML
+            *    ^Content.Type.+text.html
             {
                     LOG = "$NL --TRASH: multi-part HTML $NL"
 
@@ -6246,7 +6239,7 @@ Table of contents
         etc). Conversely, if your needs are complex, get the Perl MIME
         package from CPAN and cook up your own tool. The MIME FAQ
         (especially part 6) is a good place to look for info.
-        http://www.FAQs.org/FAQs/by-newsgroup/comp/comp.mail.mime.HTML
+        http://www.FAQs.org/FAQs/by-newsgroup/comp/comp.mail.mime.html
 
         [jari] See procmail module list at the beginning of this
         document for procmail based MIME file servers.
@@ -6772,11 +6765,11 @@ Table of contents
         duplicate detection, where some promising stuff was posted. One
         item you should definitely have in your collection is Eli's `hashd'
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1997-09/msg00160.HTML>
+        1997-09/msg00160.html>
 
         Matt Saroff also started a thread about duplicates:
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1997-05/msg00599.HTML> where several of the replies are also helpful.
+        1997-05/msg00599.html> where several of the replies are also helpful.
 
     13.17 Kill: spam filter with simple recipes
 
@@ -7265,7 +7258,7 @@ Table of contents
         [philip] wrote full RFC compliant matcher. Follow the link
 
         <URL:http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-03
-        /msg00375.HTML>
+        /msg00375.html>
 
             dq = '"'                                # (literal) double-quote
             bw = "\\"                               # (literal) backwhack
@@ -7399,7 +7392,7 @@ Table of contents
           messages.
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1997-12/msg00125.HTML?43#mfs>
+        cgi-bin/w3glimpse2HTML/procmail/1997-12/msg00125.html?43#mfs>
 
         [era] This stuff about forwarding to pagers is a recurring
         topic on this list. I've tried to find a good summary of all the
@@ -8086,12 +8079,12 @@ Table of contents
         description with "File id" and end it with "Change Log". The command
         to make the HTML is:
 
-            % ripdoc.pl pm-xxscript.rc | t2HTML.pl > pm-xxscript.HTML
+            % ripdoc.pl pm-xxscript.rc | t2HTML.pl > pm-xxscript.html
 
         These two perl files are available from my ftp directory.
 
             # @(#) pm-xxscript.rc -- one line description string here
-            # @(#) $Id: pm-tips.txt,v 2.5 2002/02/03 22:22:42 jaalto Exp $
+            # @(#) $Id: pm-tips.txt,v 2.6 2002/02/03 23:37:51 jaalto Exp $
             #
             #   File id
             #
@@ -8457,7 +8450,7 @@ Table of contents
 
     18.8 The .forward file must be real file
 
-        http://www.math.fu-berlin.de/~guckes/mail/forwarding.HTML
+        http://www.math.fu-berlin.de/~guckes/mail/forwarding.html
 
           ...I tried to make a softlink to ~/.forward, but then my
           procmail wouldn't run. When I made a real ~/.forward file, then it
@@ -8816,7 +8809,7 @@ Table of contents
     18.20 NFS mounting /var/mail is a good way to get bad performance
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1998-06/msg00199.HTML>
+        1998-06/msg00199.html>
 
 
             > /var/mail stays at a Solaris 2.5 machine. Cucipop is working
@@ -9118,7 +9111,7 @@ Table of contents
         Specifically, the patch is located at
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1997-10/msg00330.HTML?63#mfs>.
+        cgi-bin/w3glimpse2HTML/procmail/1997-10/msg00330.html?63#mfs>.
 
         It's an artifact of procmail's memory management. It reads
         an entire message into memory before working on it. Fear the system
@@ -10214,12 +10207,12 @@ Table of contents
     20.1 MLM RFC
 
        "Smartlist FAQ"
-        http://www.hartzler.net/smartlist/SmartList-FAQ.HTML
+        http://www.hartzler.net/smartlist/SmartList-FAQ.html
 
         Mailing list managers and Header fields are controlled by rfc2369
         "The Use of URLs as Meta-Syntax for Core Mail List Commands and
         their Transport through Message Header Fields".
-        http://www.cis.ohio-state.edu/htbin/rfc/rfc2369.HTML
+        http://www.cis.ohio-state.edu/htbin/rfc/rfc2369.html
 
     20.2 Other mailing list software
 
@@ -10295,7 +10288,7 @@ Table of contents
     20.3 SmartList code (mailing list implementation with procmail)
 
        "Smartlist 'FAQ'"
-        http://www.hartzler.net/smartlist/SmartList-FAQ.HTML
+        http://www.hartzler.net/smartlist/SmartList-FAQ.html
 
        "Mark's Smartlist add-ons"
         Mark David mcCreary <mdm@internet-tools.com>
@@ -10444,7 +10437,7 @@ Table of contents
         design (it can highlight on tty, whereas Emacs can't). XEmacs is
         being maintained by group of programming wizards.
 
-            See #URL-BASE/elisp.HTML
+            See #URL-BASE/elisp.html
 
         Emacs add-in packages are lisp and the lisp file extension is
         *.el*. Inside each package one finds instructions how to use and
@@ -10591,7 +10584,7 @@ Table of contents
        "Gnus"
         http://www.ifi.uio.no/~larsi
         Gnus and procmail:
-        http://www.ifi.uio.no/~larsi/www.gnus.org/manual/gnus_6.HTML#IDX1501
+        http://www.ifi.uio.no/~larsi/www.gnus.org/manual/gnus_6.html#IDX1501
 
     23.2 Why use procmail with Gnus
 
@@ -11287,7 +11280,7 @@ Table of contents
 
     24.5 RFCs and messages signature
 
-        http://www.chemie.fu-berlin.de/outerspace/netnews/son-of-1036.HTML
+        http://www.chemie.fu-berlin.de/outerspace/netnews/son-of-1036.html
 
         According to universal defacto Net convention, there must
         be "\n-- \n" before signature. The extra space in signature
@@ -11344,15 +11337,15 @@ Table of contents
 
     24.7 Some RFC Pointers
 
-        http://www.cis.ohio-state.edu/hypertext/information/rfc.HTML
-        http://www.nexor.com/public/rfc/index/rfc.HTML
+        http://www.cis.ohio-state.edu/hypertext/information/rfc.html
+        http://www.nexor.com/public/rfc/index/rfc.html
 
         o   rfc821 SMTP protocol, see also rfc959 FTP protocol standard
         o   rfc822  Format of internet messages (formerly called as Arpanet)
             A new draft that is likely to replace 822 is at:
             ftp://ftp.ietf.org/internet-drafts/draft-ietf-drums-msg-fmt-04.txt
         o   rfc1036 (the mail message format standard: From, to, date ...)
-            Check also `son-of-1036.HTML' mentioned earlier.
+            Check also `son-of-1036.html' mentioned earlier.
         o   rfc1153 Digest message format, 1990, Status: EXPERIMENTAL)
         o   rfc1738 URL specification, mailto, http, <URL:address> consult
             rfc2396 which supersedes rfc1738. the <URL:...> wrapping has been
@@ -11370,14 +11363,14 @@ Table of contents
         More Details
 
         o   Common Internet Message Headers
-            http://andrew2.andrew.cmu.edu/rfc/rfc2076.HTML
+            http://andrew2.andrew.cmu.edu/rfc/rfc2076.html
 
 25.0 Introduction to E-mail Headers
 
     25.1 To find out more about mail (Resources)
 
        "All about Email headers"
-        http://www.stopspam.org/email/headers/headers.HTML
+        http://www.stopspam.org/email/headers/headers.html
         ...This document is intended to provide a comprehensive introduction
         to the behavior of mail headers. It is primarily intended to help
         victims of unsolicited mail ("mail spam") attempting to determine
@@ -11389,7 +11382,7 @@ Table of contents
         [See also RFC pointers in the RFC section]
 
        "IMC -- Internet Mail Standards"
-        http://www.imc.org/mail-standards.HTML
+        http://www.imc.org/mail-standards.html
 
        "FAQ archive"
         http://www.FAQs.org/FAQs/
@@ -11401,7 +11394,7 @@ Table of contents
         ftp://rtfm.mit.edu/pub/Usenet-by-group/comp.mail.misc/sendmail_FAQ
 
        "UNIX EMail Software"
-        http://www.FAQs.org/FAQs/mail/setup/Unix/part1/index.HTML
+        http://www.FAQs.org/FAQs/mail/setup/Unix/part1/index.html
         ...This document is intended for system administrators who need to
         know how to set up their UNIX systems for mail communication with
         the outside world...UUCP, Addresses, Domain Addresses, FQDN, NIC,
@@ -11412,10 +11405,10 @@ Table of contents
         http://www.FAQs.org/FAQs/mail/addressing/
 
        "Understanding E-Mail Addresses, DNS, Gateways"
-        http://www.uiuc.edu/uiucnet/3-2-1.HTML
+        http://www.uiuc.edu/uiucnet/3-2-1.html
 
        "The Unix MBOX, Berkeley, format"
-        http://www.qmail.org/qmail-manual-HTML/man5/mbox.HTML ...This
+        http://www.qmail.org/qmail-manual-HTML/man5/mbox.html ...This
         format comes to us from the ancient UNIX mail program, V7
         /bin/mail...Each message ends with two blank lines
 
@@ -11520,12 +11513,12 @@ Table of contents
         2nd Edition January 1997
         ISBN: 1-56592-222-0
         1050 pages, $39.95
-        <http://www.oreilly.com/catalog/sendmail2/noframes.HTML>
+        <http://www.oreilly.com/>
 
     25.2 Lecture by Alan Stebbens
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1996-08/msg00098.HTML?69#mfs>
+        cgi-bin/w3glimpse2HTML/procmail/1996-08/msg00098.html?69#mfs>
 
         There are two general classes of headers: those generated
         automatically by the MTA, and those configured and inserted by the
@@ -11697,7 +11690,7 @@ Table of contents
 
     25.4 Bcc lecture by Alan Stebbens
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.HTML>
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html>
 
         Procmail most typically processes incoming mail at a destination
         site; the BCC formatting (or lack of it) is done on outgoing mail,
@@ -11750,8 +11743,7 @@ Table of contents
 
     25.5 Bcc lecture by Philip Guenther
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1996-11/msg00055.HTML>
+        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00055.html>
 
         The Bcc: header should in general not appear in an incoming message
         (if procmail is used for processing outgoing mail it may occur
@@ -11782,7 +11774,7 @@ Table of contents
          [alan]
 
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1996-11/msg00093.HTML>
+        1996-11/msg00093.html>
 
         Only the MTA knows the destination address because it is part of
         the "envelope", the information which is passed on the "RCPT To:
@@ -12208,7 +12200,7 @@ Table of contents
         mean".
 
        "ListAdmin: Don't play with Reply-To"
-        http://www.unicom.com/pw/reply-to-harmful.HTML
+        http://www.unicom.com/pw/reply-to-harmful.html
         ... RFC-822 on reply-to is just almost hopeless. The reason people
         do what they do is more likely because they saw someone else doing
         that, and imagined it was correct, and copied - perhaps slightly
@@ -12221,7 +12213,7 @@ Table of contents
         http://www.cs.utk.edu/~moore/reply-problem-list.txt
 
        "Mail-Followup-To"
-        ftp://koobera.math.uic.edu/www/proto/replyto.HTML
+        ftp://koobera.math.uic.edu/www/proto/replyto.html
         ...there are useful things that can be done with these headers. For
         instance -- on mailing lists where everyone that posts is assumed to
         be subscribed (like this one), the listserv could add a
@@ -12377,7 +12369,7 @@ Table of contents
 
         ...Mail-Copies-To: is a header line used in messages on
         Usenet to direct copies by mail of followups to posts.
-        http://www.math.fu-berlin.de/~guckes/rfc/mail-copies-to.HTML
+        http://www.math.fu-berlin.de/~guckes/rfc/mail-copies-to.html
 
         [SL Baur <steve@xemacs.org>] The `Mail-Copies-To:' header should
         control how your mail (and Usenet) client prepares a followup
@@ -12633,7 +12625,7 @@ Table of contents
 
        "Sh expire mail"
         <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1996-09/msg00141.HTML> This script will delete messages older than
+        1996-09/msg00141.html> This script will delete messages older than
         $AGE days from the mailbox specified on the command line. It
         requires that you have formail installed on your system, and if
         formail is in a directory other than /usr/bin, you must change the
@@ -13059,13 +13051,13 @@ Table of contents
     29.1 NoCEM, CAUCE and others
 
        "The wAr of spam -- pointers to reseurces"
-        http://spam.gunters.org/links.HTML
+        http://spam.gunters.org/links.html
 
        "NoCEM"
         http://www.cm.org/
 
        "The Coalition Against Unsolicited Commercial Email (CAUCE)"
-        http://www.cauce.org/FAQ.HTML
+        http://www.cauce.org/FAQ.html
         ...The Problem: Unsolicited commercial mail, more commonly known as
         "spam", is a growing problem on the Internet. If you've used the
         Internet for any length of time, you've probably received
@@ -13080,7 +13072,7 @@ Table of contents
         http://www.spamcop.net/
 
        "Teergrubing against Spam"
-        http://www.iks-jena.de/mitarb/lutz/Usenet/teergrube.en.HTML
+        http://www.iks-jena.de/mitarb/lutz/Usenet/teergrube.en.html
         ...`Teergrubing' It's German and means Tar-Pit. Once you have been
         stuck you can't get out. ...slow down internet connections in order
         to stop UBE abuse. Several hundred teergrubes are able to block
@@ -13089,7 +13081,7 @@ Table of contents
 
        "Obtuse smtpd for UNIX"
 
-       29.1.1 http://www.obtuse.com/smtpd.HTML
+       29.1.1 http://www.obtuse.com/smtpd.html
 
         Main (configurable) features:
 
@@ -13106,11 +13098,11 @@ Table of contents
         o   informative log summary scripts
 
        "Lot of good articles about spam"
-        http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.HTML
+        http://www.sun.com/sunworldonline/swol-12-1997/swol-12-spam.html
 
         "(anti-spam Law) US Representative Chris Smith's statement on junk
         e-mail"
-        http://www.sun.com/sunworldonline/swol-08-1997/swol-08-junkemail.HTML
+        http://www.sun.com/sunworldonline/swol-08-1997/swol-08-junkemail.html
         ...considerable variation in the approaches at the federal level,
         and state legislation varies widely as well. Professor David Sorkin
         of John Marshall Law School, who summarized and provided links to
@@ -13118,7 +13110,7 @@ Table of contents
         summaries and links to state and federal legislation
 
        "Select mail court cases -- Lots of them"
-        http://www.jmls.edu/cyber/cases/spam.HTML
+        http://www.jmls.edu/cyber/cases/spam.html
         America Online, Inc. v. Cyber Promotions, Inc.,
         Compuserve Inc. v. Cyber Promotions, Inc., etc.
 
@@ -13137,14 +13129,14 @@ Table of contents
 
        "Spam FAQ"
         ftp://rtfm.mit.edu/pub/Usenet/alt.spam/
-        http://www.cs.ruu.nl/wais/HTML/na-dir/net-abuse-FAQ/spam-FAQ.HTML
+        http://www.cs.ruu.nl/wais/HTML/na-dir/net-abuse-FAQ/spam-FAQ.html
 
        "The mail abuse FAQ"
-        http://members.aol.com/emailFAQ/emailFAQ.HTML
+        http://members.aol.com/emailFAQ/emailFAQ.html
         What is UBE, UCE, EMP, MMF, MLM, Spam, it is all explained here.
 
        "Get that spammer -- A VERY GOOD LINK"
-        http://www.triode.net.au/~forever/gspam.HTML
+        http://www.triode.net.au/~forever/gspam.html
         ...All about Spam; traceroute, netabuse etc. Full of links and docs
 
        "Whois"
@@ -13154,7 +13146,7 @@ Table of contents
         ftp://rtfm.mit.edu/pub/Usenet/advertising/
 
        "Dealing with Junk Email"
-        http://www.jcrdesign.com/junkemaildeal.HTML
+        http://www.jcrdesign.com/junkemaildeal.html
         ...What you should do (and not do) when you have been victimized by
         a junk mailer. This document teaches you how to read headers in
         order to trace the origin of junk mail, and includes detailed
@@ -13203,9 +13195,9 @@ Table of contents
         ftp://ftp.xyzzy.no/sendmail/access.tar.Z
 
        "Anti-Spam Provisions in Sendmail 8.8"
-        http://www.sendmail.org/antispam.HTML
+        http://www.sendmail.org/antispam.html
         http://mail-abuse.org/
-        http://www.informatik.uni-kiel.de/%7Eca/email/check.HTML#check_rcpt
+        http://www.informatik.uni-kiel.de/%7Eca/email/check.html#check_rcpt
 
         o   Preventing relaying through your SMTP port
         o   Refuse mail from selected hosts
@@ -13219,7 +13211,7 @@ Table of contents
         for this stunt...
 
        "Blocking Email"
-        http://www.nepean.uws.edu.au/users/david/pe/blockmail.HTML
+        http://www.nepean.uws.edu.au/users/david/pe/blockmail.html
 
         o   Do you or your users, receive "junk mail" (aka., "spam")
         o   Do you have Sendmail R8.8.5 running at your site?
@@ -13251,7 +13243,7 @@ Table of contents
         o   The SPAM-L mailing list
 
        "Preventing relaying in Netscape Messaging Server"
-        http://www.tsc.com/~bobp/nms-no-relay.HTML
+        http://www.tsc.com/~bobp/nms-no-relay.html
         ...discusses anti-spam configurations for Netscape
         Messaging Server (NMS). These include proper anti-relay config,
         spam filters, and using blacklists such as MAPS from NMS. I was
@@ -13273,7 +13265,7 @@ Table of contents
        "Misc"
         http://www.junkbusters.com/
         http://www.well.com/~jbremson/spam
-        http://www.wolfenet.com/~jhardin/procmail-security.HTML
+        http://www.wolfenet.com/~jhardin/procmail-security.html
 
     29.4 Comprehensive list of spammers
 
@@ -13335,7 +13327,7 @@ Table of contents
           _much_ faster than sendmail. So far, I'm quite impressed.
 
        "Qmail"
-        http://pobox.com/~djb/qmail.HTML
+        http://pobox.com/~djb/qmail.html
         http://www.qmail.org/
 
        "Sendmail"
@@ -13444,7 +13436,7 @@ Table of contents
     29.9 Software: adcomplain -- Perl junk mail report
 
         <billmc@agora.rdrop.com>
-        http://www.rdrop.com/users/billmc/adcomplain.HTML
+        http://www.rdrop.com/users/billmc/adcomplain.html
 
         Adcomplain runs under Unix, Windows-NT, and Windows-95. Adcomplain
         is a tool for reporting inappropriate commercial e-mail and Usenet
@@ -13535,7 +13527,7 @@ Table of contents
         given.
 
         .http://mail-abuse.org/
-        .http://www.isc.org/bind.HTML            The official home page
+        .http://www.isc.org/bind.html            The official home page
         .http://www.xnet.com/~emarshal/rblcheck/
 
         It has only been tested under Linux 2.x and Solaris 2.5.1. Success

@@ -20,18 +20,12 @@
 
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
 
-  <META HTTP-EQUIV="Expires" CONTENT="Wed,  6 Mar 2002 17:16:44 GMT">
+  <META HTTP-EQUIV="Expires" CONTENT="Thu,  4 Apr 2002 23:45:35 GMT">
 
-  <META HTTP-EQUIV="Author"
-	CONTENT="Jari Aalto">
-
-
-  <META HTTP-EQUIV="Made"
-	CONTENT="mailto:jari.aalto@poboxes.com">
 
 
   <META NAME="Generator"
-	CONTENT="2002-01-05 19:16 Perl 5 program t2html.pl v1.53 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
+	CONTENT="2002-02-04 01:45 Perl 5 program t2html.pl v2002.0204 available at http://cpan.perl.org/modules/by-authors/id/J/JA/JARIAALTO/">
 
 
   <BASE TARGET="body">
@@ -424,7 +418,7 @@
 	{
 	    color: Blue;
             font-family:    "Courier New", monospace;
-            font-size:      0.8em;
+            /* font-size:      0.8em; */
 	}
 
         span.word-ref
@@ -432,12 +426,13 @@
 	    color: teal;
         }
 
-        big.word-big
+        span.word-big
         {
-	    color: teal; font-size: 1.2em;
+	    color: teal;
+	    font-size: 1.2em;
         }
 
-        small.word-small
+        span.word-small
 	{
 	    color: #CC66FF;
 	    font-size: 0.9em;
@@ -447,10 +442,12 @@
 
                 /* 7th column starting with double quote */
 
-        em.quote7
+        span.quote7
         {
-            color: Green;
-            font-style: italic;
+            /* color: Green; */
+            /* font-style: italic; */
+            font-weigh: bold;
+	    font-size: 1.2em;
         }
 
                 /* This appears in FRAME version: xxx-toc.html */
@@ -736,8 +733,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#flag_w_lockfile_and_recipe" class="toc" >
-               5.3 Flag w, lockfile and recipe with |
+           <A HREF="pm-tips-body.html#flag_w_lock_file_and" class="toc" >
+               5.3 Flag w, lock file and recipe with |
     </A>
            <BR>
 <LI>
@@ -808,13 +805,13 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#procmail_uses_multiline_matches" class="toc" >
-               6.3 Procmail uses multiline matches
+           <A HREF="pm-tips-body.html#procmail_uses_multi_line_matches" class="toc" >
+               6.3 Procmail uses multi line matches
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#headers_are_folded_before_matching" class="toc" >
-               6.4 Headers are folded before matching
+           <A HREF="pm-tips-body.html#headers_are_unfolded_before_matching" class="toc" >
+               6.4 Headers are unfolded before matching
     </A>
            <BR>
 <LI>
@@ -905,8 +902,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#variable_initialisation_and_sh_syntax" class="toc" >
-               7.2 Variable initialisation and sh syntax
+           <A HREF="pm-tips-body.html#variable_initialization_and_sh_syntax" class="toc" >
+               7.2 Variable initialization and sh syntax
     </A>
            <BR>
 <LI>
@@ -1301,7 +1298,7 @@
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#software_to_deal_with_mime" class="toc" >
-               12.3 Software to deal with mime or html
+               12.3 Software to deal with mime or HTML
     </A>
            <BR>
 <LI>
@@ -1311,12 +1308,12 @@
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#trapping_html_mime_messages" class="toc" >
-               12.5 Trapping html mime messages
+               12.5 Trapping HTML mime messages
     </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#complaining_about_html_messages" class="toc" >
-               12.6 Complaining about html messages
+               12.6 Complaining about HTML messages
     </A>
            <BR>
 <LI>
@@ -1326,12 +1323,12 @@
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#getting_rid_of_unwanted_mime" class="toc" >
-               12.8 Getting rid of unwanted mime attachments (html, vcard)
+               12.8 Getting rid of unwanted mime attachments (HTML, vcard)
     </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#sending_contents_of_a_html" class="toc" >
-               12.9 Sending contents of a html page in plain text to someone
+               12.9 Sending contents of a HTML page in plain text to someone
     </A>
            <BR>
 </UL>
@@ -1372,8 +1369,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#service_file_server__send_fileas" class="toc" >
-               13.7 Service: File server -- send fileas as attachments upon request
+           <A HREF="pm-tips-body.html#service_file_server__send_file" class="toc" >
+               13.7 Service: File server -- send file as attachments upon request
     </A>
            <BR>
 <LI>
@@ -1412,8 +1409,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#kill_simple_killfile_recipe_with" class="toc" >
-               13.15 Kill: simple killfile recipe with procmail
+           <A HREF="pm-tips-body.html#kill_simple_kill_file_recipe" class="toc" >
+               13.15 Kill: simple kill file recipe with procmail
     </A>
            <BR>
 <LI>
@@ -1541,8 +1538,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#getkeys_from_keyserver" class="toc" >
-               15.2 Getkeys from keyserver
+           <A HREF="pm-tips-body.html#getkeys_from_key_server" class="toc" >
+               15.2 Getkeys from key server
     </A>
            <BR>
 <LI>
@@ -1578,8 +1575,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#making_using_namespace_when_saving" class="toc" >
-               16.5 Making: Using namespace when saving procmail variables
+           <A HREF="pm-tips-body.html#making_using_name_space_when" class="toc" >
+               16.5 Making: Using name space when saving procmail variables
     </A>
            <BR>
 <LI>
@@ -1610,7 +1607,7 @@
 <UL>
 <LI>
            <A HREF="pm-tips-body.html#procmail_modes_normal_delivery_and" class="toc" >
-               18.1 Procmail modes: normal, delivery, and mailfilter.
+               18.1 Procmail modes: normal, delivery, and mail filter.
     </A>
            <BR>
 <LI>
@@ -1739,8 +1736,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#procmail_signalled_out_of_memory" class="toc" >
-               18.27 Procmail signalled out of memory in my verbose log
+           <A HREF="pm-tips-body.html#procmail_signaled_out_of_memory" class="toc" >
+               18.27 Procmail signaled out of memory in my verbose log
     </A>
            <BR>
 <LI>
@@ -1794,8 +1791,8 @@
     </A>
            <BR>
 <LI>
-           <A HREF="pm-tips-body.html#performance_difference_between_backtick_and" class="toc" >
-               18.38 Performance difference between backtick and &quot;|&quot; recipe
+           <A HREF="pm-tips-body.html#performance_difference_between_back_tick" class="toc" >
+               18.38 Performance difference between back tick and &quot;|&quot; recipe
     </A>
            <BR>
 <LI>
@@ -2042,7 +2039,7 @@
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#rfc_and_using_mime_in" class="toc" >
-               24.6 RFC and using MIME in usenet newsgroups
+               24.6 RFC and using MIME in Usenet newsgroups
     </A>
            <BR>
 <LI>
@@ -2151,7 +2148,7 @@
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#moral_about_cc_copies_in" class="toc" >
-               26.13 Moral about CC copies in usenet
+               26.13 Moral about CC copies in Usenet
     </A>
            <BR>
 </UL>
@@ -2267,12 +2264,12 @@
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#software_adcomplain__perl_junk_mail" class="toc" >
-               29.9 Software: adcomplain -- Perl junk mail rport
+               29.9 Software: adcomplain -- Perl junk mail report
     </A>
            <BR>
 <LI>
            <A HREF="pm-tips-body.html#software_ricochet__perl_junk_mail" class="toc" >
-               29.10 Software: Ricochet -- Perl junk mail rport
+               29.10 Software: Ricochet -- Perl junk mail report
     </A>
            <BR>
 <LI>
