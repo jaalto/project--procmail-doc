@@ -1,13 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN"
-          "http://www.w3.org/TR/REC-html40/frameset.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
-<HTML>
 
-<HEAD>
+<html>
 
-    <TITLE>
+<head>
+
+    <title>
     Navigation
-    </TITLE>
+    </title>
 
 
 
@@ -16,23 +16,21 @@
     ......................................................................
 -->
 
-  <META HTTP-EQUIV="description"
-	CONTENT="">
+  <meta http-equiv="description"
+	content="">
 
-
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
-
-  <META HTTP-EQUIV="Expires" CONTENT="Sun,  5 Dec 2004 13:54:00 GMT">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Expires" content="Mon, 17 Apr 2006 07:13:56 GMT">
 
 
 
-  <META NAME="Generator"
-	CONTENT="2004-10-06 16:54 Perl program t2html.pl v2004.0428 http://perl-text2html.sourceforge.net/">
+  <meta name="Generator"
+	content="2006-02-16 09:13 Perl program t2html.pl v2006.0125 http://perl-text2html.sourceforge.net/">
 
 
-  <BASE TARGET="body">
+  <base target="body">
 
-    <STYLE TYPE="text/css">
+    <style type="text/css">
 
 
         /*
@@ -115,7 +113,6 @@
             padding-top: 10pt;
         }
 
-
         h2.default
         {
             font-family: bold large Arial,Helvetica,Sans-serif;
@@ -130,7 +127,6 @@
         {
             font-family: medium Arial,Helvetica,Sans-serif;
         }
-
 
         /*   ////////////////////////// Make pointing AHREF more visual */
 
@@ -220,6 +216,12 @@
             color: Navy;
         }
 
+        hr.special
+        {
+            width: 50%;
+            text-align; left;
+        }
+
         pre
         {
             font-family:   "Courier New", monospace;
@@ -247,12 +249,19 @@
 
         /* //////////////////////// tables /////////////////////////// */
 
+        table
+        {
+            border: none;
+            width: 100%;
+            cellpadding: 10px;
+            cellspacing: 0px;
+        }
+
         table.basic
         {
                 font-family:    "Courier New", monospace;
                 color: Navy;
         }
-
 
         table.dashed
         {
@@ -273,7 +282,6 @@
                 /* line-height: 105%; */
         }
 
-
         table.solid
         {
                 font-family:    "Courier New", monospace;
@@ -290,7 +298,6 @@
                 border-bottom:  1px #666666 solid; /* dark grey */
                 /* line-height: 105%; */
         }
-
 
         /* Make 3D styled layout by thickening the boton + right. */
 
@@ -311,7 +318,6 @@
                 /* line-height: 105%; */
         }
 
-
         .shade-3d-attrib
         {
             /*
@@ -325,7 +331,6 @@
             background: #FFFFCC;
         }
 
-
         table.shade-normal
         {
                 font-family:    "Courier New", monospace;
@@ -338,10 +343,10 @@
             /*  grey: EAEAEA, F0F0F0 FFFFCC
                 lime: F7F7DE CCFFCC
                 pinkish: E6F1FD D8E9FB C6DEFA FFEEFF (light ... darker)
+                slightly darker than F1F1F1: #EFEFEF;
             */
-            background: #EFEFEF;
+            background: #F1F1F1;
         }
-
 
         table.shade-normal2
         {
@@ -353,19 +358,13 @@
             background: #E0E0F0;
         }
 
-
-        table.shade-note
-        {
-            /* nothing special */
-        }
-
-
         .shade-note-attrib
         {
             /*  darker is #E0E0F0; */
             /* background: #E5ECF3; */
             background: #E5ECF3;
-            font-family: Georgia, Palatino, Verdana, Arial, Helvetica;
+            font-family: Georgia, "New Century Schoolbook",
+                         Palatino, Verdana, Helvetica, serif;
             font-size: 0.8em;
         }
 
@@ -411,12 +410,17 @@
             background: #FAFACA;
         }
 
+        .color-beige3
+        {
+            color: Navy;
+            background: #F5F5E9;
+        }
+
         .color-beige-dark
         {
             color: Navy;
             background: #CFEFBD;
         }
-
 
         .color-pink-dark
         {
@@ -442,6 +446,15 @@
             background: #FFEEFF;
         }
 
+        .color-blue-light
+        {
+            background: #F0F0FF;
+        }
+
+        .color-blue-medium
+        {
+            background: #4A88BE;
+        }
 
         /* ////////////////////////////////////////////// Format columns */
 
@@ -466,7 +479,8 @@
             font-family: "Goudy Old Style"
             */
             margin-left: 3em;
-            font-family: Georgia, Palatino, Verdana, Arial, Helvetica;
+            font-family: Georgia, "New Century Schoolbook",
+                         Palatino, Verdana, Arial, Helvetica;
             font-size:  0.9em;
         }
 
@@ -599,7 +613,6 @@
             font-size: 0.8em;
         }
 
-
         span.word-ref
         {
             color: teal;
@@ -620,7 +633,7 @@
 
         /* /////////////////////////////////////////////// Format other */
 
-                /* 7th column starting with double quote */
+        /* 7th column starting with double quote */
 
         span.quote7
         {
@@ -631,38 +644,35 @@
             font-size: 1em;
         }
 
-                /* This appears in FRAME version: xxx-toc.html */
+        /* This appears in FRAME version: xxx-toc.html */
 
         div.toc
         {
             font-size: 0.8em;
         }
 
-                /* This appears in picture: the acption text beneath */
+        /* This appears in picture: the acption text beneath */
 
         div.picture
         {
             font-style: italic;
         }
 
-
-                /* This is the document info footer */
+        /* This is the document info footer */
 
         em.footer
         {
             font-size: 0.9em;
         }
 
-        END: Hide from older browsers
 
 
-
-    </STYLE>
+    </style>
 
 
     <!-- ...................................................... Java code -->
 
-    <SCRIPT TYPE="text/javascript">
+    <script type="text/javascript">
 
         function MakeVisual(obj)
         {
@@ -681,1568 +691,1573 @@
 
         window.onerror = IgnoreErrors;
 
-    </SCRIPT>
+    </script>
 
-</HEAD>
-<BODY>
-<DIV class="TOC">
-<A HREF="pm-tips-body.html#document_id" class="toc" >
+</head>
+<body>
+<div class="TOC">
+<a href="pm-tips-body.html#document_id" class="toc">
                1.0 Document id
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#general" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#general" class="toc">
                1.1 General
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#what_is_procmail" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#what_is_procmail" class="toc">
                1.2 What is Procmail?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#abbreviations_and_thanks" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#abbreviations_and_thanks" class="toc">
                1.3 Abbreviations and thanks
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#version_information" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#version_information" class="toc">
                1.4 Version information
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#document_layout_and_maintenance" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#document_layout_and_maintenance" class="toc">
                1.5 Document layout and maintenance
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#about_presented_recipes" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#about_presented_recipes" class="toc">
                1.6 About presented recipes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variables_used_in_recipes" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variables_used_in_recipes" class="toc">
                1.7 Variables used in recipes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#about_useless_use_of_cat" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#about_useless_use_of_cat" class="toc">
                1.8 About &quot;useless use of cat award&quot;
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#procmail_pointers" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#procmail_pointers" class="toc">
                2.0 Procmail pointers
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#where_is_procmail_developed" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#where_is_procmail_developed" class="toc">
                2.1 Where is procmail developed
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_resources" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_resources" class="toc">
                2.2 Procmail resources
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_mode_for_emacs" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_mode_for_emacs" class="toc">
                2.3 Procmail mode for Emacs
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_module_library_project" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_module_library_project" class="toc">
                2.4 Procmail module library project
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_code_to_filter_ube" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_code_to_filter_ube" class="toc">
                2.5 Procmail code to filter UBE
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#dry_run_testing" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#dry_run_testing" class="toc">
                3.0 Dry run testing
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#what_is_dry_run_testing" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#what_is_dry_run_testing" class="toc">
                3.1 What is dry run testing?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#why_the_from_field_is" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#why_the_from_field_is" class="toc">
                3.2 Why the From field is not okay after dry run?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#getting_default_value_of_a" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#getting_default_value_of_a" class="toc">
                3.3 Getting default value of a procmail variable
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#things_to_remember" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#things_to_remember" class="toc">
                4.0 Things to remember
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#get_the_newest_procmail" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#get_the_newest_procmail" class="toc">
                4.1 Get the newest procmail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#cshs_tilde_is_not_supported" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#cshs_tilde_is_not_supported" class="toc">
                4.2 Csh's tilde is not supported
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#be_sure_to_write_the" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#be_sure_to_write_the" class="toc">
                4.3 Be sure to write the recipe starting right
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#always_set_shell" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#always_set_shell" class="toc">
                4.4 Always set SHELL
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#check_and_set_path" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#check_and_set_path" class="toc">
                4.5 Check and set PATH
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#keep_the_log_on_all" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#keep_the_log_on_all" class="toc">
                4.6 Keep the log on all the time
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#never_add_a_trailing_slash" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#never_add_a_trailing_slash" class="toc">
                4.7 Never add a trailing slash for directories
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#remember_what_term_delivered_means" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#remember_what_term_delivered_means" class="toc">
                4.8 Remember what term DELIVERED means
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#beware_putting_comment_in_wrong" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#beware_putting_comment_in_wrong" class="toc">
                4.9 Beware putting comment in wrong places
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#brace_placement" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#brace_placement" class="toc">
                4.10 Brace placement
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#local_lockfile_usage" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#local_lockfile_usage" class="toc">
                4.11 Local lockfile usage
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#global_lockfile" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#global_lockfile" class="toc">
                4.12 Global lockfile
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#gee_where_do_i_put" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#gee_where_do_i_put" class="toc">
                4.13 Gee, where do I put all those ! * $ ??
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#if_you_send_an_automatic" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#if_you_send_an_automatic" class="toc">
                4.14 If you Send an automatic reply, use X-loop header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#avoid_extra_shell_layer_and" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#avoid_extra_shell_layer_and" class="toc">
                4.15 Avoid extra shell layer and check command for SHELLMETAS
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#think_what_shell_commands_you" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#think_what_shell_commands_you" class="toc">
                4.16 Think what shell commands you use
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_absolute_paths_when_calling" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_absolute_paths_when_calling" class="toc">
                4.17 Using absolute paths when calling a shell program
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#disabling_a_recipe_temporarily" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#disabling_a_recipe_temporarily" class="toc">
                4.18 Disabling a recipe temporarily
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#keep_message_backup_no_matter" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#keep_message_backup_no_matter" class="toc">
                4.19 Keep message backup, no matter what
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#order_of_the_procmail_recipes" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#order_of_the_procmail_recipes" class="toc">
                4.20 Order of the procmail recipes
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#procmail_flags" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#procmail_flags" class="toc">
                5.0 Procmail flags
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#the_order_of_the_flags" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#the_order_of_the_flags" class="toc">
                5.1 The order of the flags
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flags_hb_at_top_of" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flags_hb_at_top_of" class="toc">
                5.2 Flags HB at top of recipe (warning)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_w_and_recipe_with" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_w_and_recipe_with" class="toc">
                5.3 Flag w and recipe with |
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_w_lock_file_and" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_w_lock_file_and" class="toc">
                5.4 Flag w, lock file and recipe with |
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_f_and_w_together" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_f_and_w_together" class="toc">
                5.5 Flag f and w together
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flags_h_and_b" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flags_h_and_b" class="toc">
                5.6 Flags h and b
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_h_and_sinking_to" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_h_and_sinking_to" class="toc">
                5.7 Flag h and sinking to /dev/null
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_i_and_pipe_flag" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_i_and_pipe_flag" class="toc">
                5.8 Flag i and pipe flag f
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_r" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_r" class="toc">
                5.9 Flag r
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_cs_background" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_cs_background" class="toc">
                5.10 Flag c's background
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_c_before_nested_block" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_c_before_nested_block" class="toc">
                5.11 Flag c before nested block forks a child
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flag_c_and_understanding_possible" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flag_c_and_understanding_possible" class="toc">
                5.12 Flag c and understanding possible forking penalty
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flags_before_nested_block" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flags_before_nested_block" class="toc">
                5.13 Flags before nested block
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#flags_aaee_tutorial" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#flags_aaee_tutorial" class="toc">
                5.14 Flags aAeE tutorial
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#matching_and_regexps_regular_expressions" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#matching_and_regexps_regular_expressions" class="toc">
                6.0 Matching and regexps (regular expressions)
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#philosophy_of_abstraction_in_regexps" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#philosophy_of_abstraction_in_regexps" class="toc">
                6.1 Philosophy of abstraction in regexps
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#matches_are_not_casesensitive" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#matches_are_not_casesensitive" class="toc">
                6.2 Matches are not case-sensitive
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_uses_multi_line_matches" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_uses_multi_line_matches" class="toc">
                6.3 Procmail uses multi line matches
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#headers_are_unfolded_before_matching" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#headers_are_unfolded_before_matching" class="toc">
                6.4 Headers are unfolded before matching
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#improving_spacetab_syndrome" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#improving_spacetab_syndrome" class="toc">
                6.5 Improving Space-Tab syndrome
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#handling_exclamation_character" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#handling_exclamation_character" class="toc">
                6.6 Handling exclamation character
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#rules_for_generating_a_character" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#rules_for_generating_a_character" class="toc">
                6.7 Rules for generating a character class
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#matching_space_at_the_end" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#matching_space_at_the_end" class="toc">
                6.8 Matching space at the end of condition
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#beware_leading_backslash" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#beware_leading_backslash" class="toc">
                6.9 Beware leading backslash
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#correct_use_of_to_macro" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#correct_use_of_to_macro" class="toc">
                6.10 Correct use of TO Macro
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmails_regexp_engine" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmails_regexp_engine" class="toc">
                6.11 Procmail's regexp engine
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_and_egrep_differences" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_and_egrep_differences" class="toc">
                6.12 Procmail and egrep differences
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#understanding_procmails_minimal_matching_stingy" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#understanding_procmails_minimal_matching_stingy" class="toc">
                6.13 Understanding procmail's minimal matching (stingy vs. greedy)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#explaining_and" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#explaining_and" class="toc">
                6.14 Explaining \/ and ()\/
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#explaining__and" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#explaining__and" class="toc">
                6.15 Explaining  ^^ and ^
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#anding_traditionally" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#anding_traditionally" class="toc">
                6.16 ANDing traditionally
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#oring_traditionally" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#oring_traditionally" class="toc">
                6.17 ORing traditionally
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#oring_and_score_recipe" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#oring_and_score_recipe" class="toc">
                6.18 ORing and score recipe
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#oring_by_using_de_morgan" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#oring_by_using_de_morgan" class="toc">
                6.19 ORing by using De Morgan rules
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#variables" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#variables" class="toc">
                7.0 Variables
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#setting_and_unsetting_variables" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#setting_and_unsetting_variables" class="toc">
                7.1 Setting and unsetting variables
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_initialization_and_sh_syntax" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_initialization_and_sh_syntax" class="toc">
                7.2 Variable initialization and sh syntax
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#testing_variables" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#testing_variables" class="toc">
                7.3 Testing variables
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#what_does" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#what_does" class="toc">
                7.4 What does $\VAR mean?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#common_pitfalls_when_using_variables" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#common_pitfalls_when_using_variables" class="toc">
                7.5 Common pitfalls when using variables
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#quoting_using_single_or_double" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#quoting_using_single_or_double" class="toc">
                7.6 Quoting: Using single or double quotes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#quoting_passing_values_to_an" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#quoting_passing_values_to_an" class="toc">
                7.7 Quoting: Passing values to an external program
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#passing_values_from_an_external" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#passing_values_from_an_external" class="toc">
                7.8 Passing values from an external program
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#incrementing_a_variable_by_a" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#incrementing_a_variable_by_a" class="toc">
                7.9 Incrementing a variable by a value N
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#comparing_values" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#comparing_values" class="toc">
                7.10 Comparing values
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#strings_how_many_characters_are" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#strings_how_many_characters_are" class="toc">
                7.11 Strings: How many characters are there in a given string?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#strings_how_to_strip_trailing" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#strings_how_to_strip_trailing" class="toc">
                7.12 Strings: How to strip trailing newline.
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#strings_deriving_the_last_n" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#strings_deriving_the_last_n" class="toc">
                7.13 Strings: deriving the last N characters of a string.
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#strings_getting_partial_matches_from" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#strings_getting_partial_matches_from" class="toc">
                7.14 Strings: Getting partial matches from a string.
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#strings_procmail_string_manipulation_example" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#strings_procmail_string_manipulation_example" class="toc">
                7.15 Strings: Procmail string manipulation example
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_raise_a_flag" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_raise_a_flag" class="toc">
                7.16 How to raise a flag if the message was filed
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#dollar_sign_in_condition_lines." class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#dollar_sign_in_condition_lines." class="toc">
                7.17 Dollar sign in condition lines.
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#finding_mysterious_foo_variable" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#finding_mysterious_foo_variable" class="toc">
                7.18 Finding mysterious foo variable
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#storing_code_to_variable" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#storing_code_to_variable" class="toc">
                7.19 Storing code to variable
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#getting_headers_into_a_variable." class="toc" >
-               7.20 Getting headers into a variable.
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#converting_value_to_lowercase" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#getting_headers_into_a_variable" class="toc">
+               7.20 Getting headers into a variable
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#converting_value_to_lowercase" class="toc">
                7.21 Converting value to lowercase
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#suggestions_and_miscellaneous" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#suggestions_and_miscellaneous" class="toc">
                8.0 Suggestions and miscellaneous
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#speeding_up_procmail" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#speeding_up_procmail" class="toc">
                8.1 Speeding up procmail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#see_the_procmail_installations_examples" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#see_the_procmail_installations_examples" class="toc">
                8.2 See the procmail installation's examples
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#printing_statistics_of_your_incoming" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#printing_statistics_of_your_incoming" class="toc">
                8.3 Printing statistics of your incoming mail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#storing_ube_mailboxes_outside_of" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#storing_ube_mailboxes_outside_of" class="toc">
                8.4 Storing UBE mailboxes outside of quota
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_first_530_lines_from" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_first_530_lines_from" class="toc">
                8.5 Using first 5-30 lines from the message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_cat_or_echo_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_cat_or_echo_in" class="toc">
                8.6 Using cat or echo in scripts?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_run_an_extra" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_run_an_extra" class="toc">
                8.7 How to run an extra shell command as a side effect?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#forcing_ok_return_status_from" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#forcing_ok_return_status_from" class="toc">
                8.8 Forcing &quot;ok&quot; return status from shell script
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#make_your_own_.procmailrc_available" class="toc" >
-               8.9 Make your own .procmailrc available to others
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_dates_efficiently" class="toc" >
-               8.10 Using dates efficiently
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#keep_simple_header_log" class="toc" >
-               8.11 Keep simple header log
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#gzipping_messages" class="toc" >
-               8.12 Gzipping messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#emergency_stop_for_your_.procmailrc" class="toc" >
-               8.13 Emergency stop for your .procmailrc
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#scoring" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_grep_with_file_lists" class="toc">
+               8.9 Using grep with file lists to mach messages
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#make_your_own_.procmailrc_available" class="toc">
+               8.10 Make your own .procmailrc available to others
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_dates_efficiently" class="toc">
+               8.11 Using dates efficiently
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#keep_simple_header_log" class="toc">
+               8.12 Keep simple header log
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#gzipping_messages" class="toc">
+               8.13 Gzipping messages
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#emergency_stop_for_your_.procmailrc" class="toc">
+               8.14 Emergency stop for your .procmailrc
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#scoring" class="toc">
                9.0 Scoring
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#using_scores_by_an_example" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#using_scores_by_an_example" class="toc">
                9.1 Using scores by an example
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#brief_score_tutorial" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#brief_score_tutorial" class="toc">
                9.2 Brief Score tutorial
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#scores_scope" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#scores_scope" class="toc">
                9.3 Score's scope
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#counting_length_of_a_string" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#counting_length_of_a_string" class="toc">
                9.4 Counting length of a string
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#counting_lines_in_a_message" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#counting_lines_in_a_message" class="toc">
                9.5 Counting lines in a message (Adding Lines: header)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#determining_if_body_is_longer" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#determining_if_body_is_longer" class="toc">
                9.6 Determining if body is longer than header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#matching_last_received_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#matching_last_received_header" class="toc">
                9.7 Matching last Received header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#testing_value_range_with_scoring" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#testing_value_range_with_scoring" class="toc">
                9.8 Testing value range with scoring (bogofilter)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_add_contentlength_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_add_contentlength_header" class="toc">
                9.9 How to add Content-Length header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#testing_message_size_or_number" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#testing_message_size_or_number" class="toc">
                9.10 Testing message size or number of lines
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#counting_commas_with_recursive_includerc" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#counting_commas_with_recursive_includerc" class="toc">
                9.11 Counting commas with recursive includerc
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#formail_usage" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#formail_usage" class="toc">
                10.0 Formail usage
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#fetching_fields_with_formail_x" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#fetching_fields_with_formail_x" class="toc">
                10.1 Fetching fields with formail -x
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#always_use_formails_rt_switch" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#always_use_formails_rt_switch" class="toc">
                10.2 Always use formail's -rt switch
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_rt_and_rewriting_the" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_rt_and_rewriting_the" class="toc">
                10.3 Using -rt and rewriting the From address
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#formail_rt_and_resentfrom_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#formail_rt_and_resentfrom_header" class="toc">
                10.4 Formail -rt and Resent-From header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#quoting_the_message" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#quoting_the_message" class="toc">
                10.5 Quoting the message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#without_quoting_the_message" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#without_quoting_the_message" class="toc">
                10.6 Without quoting the message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_include_headers_and" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_include_headers_and" class="toc">
                10.7 How to include headers and body to the reply message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#adding_text_to_the_beginning" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#adding_text_to_the_beginning" class="toc">
                10.8 Adding text to the beginning of message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#adding_text_to_the_end" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#adding_text_to_the_end" class="toc">
                10.9 Adding text to the end of message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#adding_text_before_quoted_message" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#adding_text_before_quoted_message" class="toc">
                10.10 Adding text before quoted message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#adding_extra_headers_from_file" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#adding_extra_headers_from_file" class="toc">
                10.11 Adding extra headers from file
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#splitting_digest" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#splitting_digest" class="toc">
                10.12 Splitting digest
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mailbox_splitting_to_individual_files" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mailbox_splitting_to_individual_files" class="toc">
                10.13 Mailbox: Splitting to individual files
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mailbox_extracting_all_from_addresses" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mailbox_extracting_all_from_addresses" class="toc">
                10.14 Mailbox: Extracting all From addresses from mailbox
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mailbox_applying_procmail_recipe_on" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mailbox_applying_procmail_recipe_on" class="toc">
                10.15 Mailbox: Applying procmail recipe on whole mailbox
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mailbox_run_series_of_commands" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mailbox_run_series_of_commands" class="toc">
                10.16 Mailbox: run series of commands for each mail (split mailbox)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#option_d_and_cache" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#option_d_and_cache" class="toc">
                10.17 Option -D and cache
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#option_d_and_messageid_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#option_d_and_messageid_in" class="toc">
                10.18 Option -D and message-id in the body
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#reducing_formail_calls_conditionally_adding" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#reducing_formail_calls_conditionally_adding" class="toc">
                10.19 Reducing formail calls (conditionally adding fields)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#formail_a_a_options" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#formail_a_a_options" class="toc">
                10.20 Formail -A -a options
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#formail_e_s_options" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#formail_e_s_options" class="toc">
                10.21 Formail -e -s options
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#saving_mailing_list_messages" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#saving_mailing_list_messages" class="toc">
                11.0 Saving mailing list messages
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#using_subroutine_pmjalist.rc_to_detect" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#using_subroutine_pmjalist.rc_to_detect" class="toc">
                11.1 Using subroutine pm-jalist.rc to detect mailing lists
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_plus_addressing_foobar" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_plus_addressing_foobar" class="toc">
                11.2 Using plus addressing foo+bar@address.com
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_rfc_comment_trick_for" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_rfc_comment_trick_for" class="toc">
                11.3 Using RFC comment trick for additional information
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#simple_mailing_list_handling" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#simple_mailing_list_handling" class="toc">
                11.4 Simple mailing list handling
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#archiving_according_to_to" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#archiving_according_to_to" class="toc">
                11.5 Archiving according to TO
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_returnpath_to_detect_mailing" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_returnpath_to_detect_mailing" class="toc">
                11.6 Using Return-Path to detect mailing lists
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#procmail_mime_and_html" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#procmail_mime_and_html" class="toc">
                12.0 Procmail, MIME and HTML
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#mime_bibliography" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#mime_bibliography" class="toc">
                12.1 Mime Bibliography
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mime_notes" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mime_notes" class="toc">
                12.2 Mime notes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#software_to_deal_with_mime" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#software_to_deal_with_mime" class="toc">
                12.3 Software to deal with mime or HTML
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mime_content_type_applicationmstnef" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mime_content_type_applicationmstnef" class="toc">
                12.4 Mime content type application/ms-tnef
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#trapping_html_mime_messages" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#trapping_html_mime_messages" class="toc">
                12.5 Trapping HTML mime messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#complaining_about_html_messages" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#complaining_about_html_messages" class="toc">
                12.6 Complaining about HTML messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#converting_html_body_to_plain" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#converting_html_body_to_plain" class="toc">
                12.7 Converting HTML body to plain text
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#getting_rid_of_unwanted_mime" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#getting_rid_of_unwanted_mime" class="toc">
                12.8 Getting rid of unwanted mime attachments (HTML, vcard)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#sending_contents_of_a_html" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#sending_contents_of_a_html" class="toc">
                12.9 Sending contents of a HTML page in plain text to someone
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#simple_recipe_examples" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#simple_recipe_examples" class="toc">
                13.0 Simple recipe examples
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#saving_mh_folders_numbered_messages" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#saving_mh_folders_numbered_messages" class="toc">
                13.1 Saving: MH folders -- numbered messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#saving_to_monthly_folders" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#saving_to_monthly_folders" class="toc">
                13.2 Saving: to monthly folders
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#modifying_filtering_basics" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#modifying_filtering_basics" class="toc">
                13.3 Modifying: Filtering basics
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#modifying_squeezing_empty_lines_around" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#modifying_squeezing_empty_lines_around" class="toc">
                13.4 Modifying: Squeezing empty lines around message body
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#modifying_shuffling_headers_always_to" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#modifying_shuffling_headers_always_to" class="toc">
                13.5 Modifying: shuffling headers always to same order
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#service_auto_answerer_to_empty" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#service_auto_answerer_to_empty" class="toc">
                13.6 Service: Auto answerer to empty messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#service_ping_responder" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#service_ping_responder" class="toc">
                13.7 Service: Ping responder
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#service_simple_vacation_with_procmail" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#service_simple_vacation_with_procmail" class="toc">
                13.8 Service: simple vacation with procmail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#service_vacation_code_example" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#service_vacation_code_example" class="toc">
                13.9 Service: vacation code example
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#service_autoforwarding" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#service_autoforwarding" class="toc">
                13.10 Service: Auto-forwarding
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#service_forward_only_specific_messages" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#service_forward_only_specific_messages" class="toc">
                13.11 Service: forward only specific messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#service_making_digests" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#service_making_digests" class="toc">
                13.12 Service: Making digests
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#kill_killing_advertisement_headers_and" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#kill_killing_advertisement_headers_and" class="toc">
                13.13 Kill: killing advertisement headers and footers
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#kill_simple_kill_file_recipe" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#kill_simple_kill_file_recipe" class="toc">
                13.14 Kill: simple kill file recipe with procmail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#kill_duplicate_messages" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#kill_duplicate_messages" class="toc">
                13.15 Kill: duplicate messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#kill_spam_filter_with_simple" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#kill_spam_filter_with_simple" class="toc">
                13.16 Kill: spam filter with simple recipes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#kill_unsubscribe_messages" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#kill_unsubscribe_messages" class="toc">
                13.17 Kill: (un)subscribe messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#time_once_a_day_cronlike" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#time_once_a_day_cronlike" class="toc">
                13.18 Time: Once a day cron-like job
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#time_running_a_recipe_at" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#time_running_a_recipe_at" class="toc">
                13.19 Time: Running a recipe at a given time
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#time_triggering_mail_and_using" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#time_triggering_mail_and_using" class="toc">
                13.20 Time: Triggering mail and using cron
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#decoding_uudecode" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#decoding_uudecode" class="toc">
                13.21 Decoding: Uudecode
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#decoding_mime" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#decoding_mime" class="toc">
                13.22 Decoding: MIME
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_send_commands_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_send_commands_in" class="toc">
                13.23 How to send commands in the message's body
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#matching_two_words_on_a" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#matching_two_words_on_a" class="toc">
                13.24 Matching two words on a line, but not one
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_define_personal_xx" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_define_personal_xx" class="toc">
                13.25 How to define personal XX macros?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_change_subject_by" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_change_subject_by" class="toc">
                13.26 How to change subject by body match
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_change_subject_according" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_change_subject_according" class="toc">
                13.27 How to change Subject according to some other header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#how_to_call_program_with" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#how_to_call_program_with" class="toc">
                13.28 How to call program with parameters
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#miscellaneous_recipes" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#miscellaneous_recipes" class="toc">
                14.0 Miscellaneous recipes
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#matching_valid_messageid_header" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#matching_valid_messageid_header" class="toc">
                14.1 Matching valid Message-Id header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#sending_two_files_in_a" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#sending_two_files_in_a" class="toc">
                14.2 Sending two files in a message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#excessive_quoting_of_message" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#excessive_quoting_of_message" class="toc">
                14.3 Excessive quoting of message
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#sending_message_to_pager_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#sending_message_to_pager_in" class="toc">
                14.4 Sending message to pager in chunks
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#playing_particular_sound_when_message" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#playing_particular_sound_when_message" class="toc">
                14.5 Playing particular sound when message arrives
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#combining_multiple_originalcc_and_originalto" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#combining_multiple_originalcc_and_originalto" class="toc">
                14.6 Combining multiple Original-Cc and Original-To headers
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#forwarding_sensitive_messages_in_encrypted" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#forwarding_sensitive_messages_in_encrypted" class="toc">
                14.7 Forwarding sensitive messages in encrypted format
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#procmail_and_pgp" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#procmail_and_pgp" class="toc">
                15.0 Procmail and PGP
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#decrypt_pgp_messages_automatically" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#decrypt_pgp_messages_automatically" class="toc">
                15.1 Decrypt pgp messages automatically
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#getkeys_from_key_server" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#getkeys_from_key_server" class="toc">
                15.2 Getkeys from key server
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#auto_grab_incoming_pgp_keys" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#auto_grab_incoming_pgp_keys" class="toc">
                15.3 Auto grab incoming pgp keys
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#includerc_usage" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#includerc_usage" class="toc">
                16.0 Includerc usage
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#using_multiple_rc_files" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#using_multiple_rc_files" class="toc">
                16.1 Using: multiple rc files
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_call_rc_file_conditionally" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_call_rc_file_conditionally" class="toc">
                16.2 Using: call rc file conditionally
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_autoloading_an_rc_file" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_autoloading_an_rc_file" class="toc">
                16.3 Using: autoloading an rc file
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#making_naming_of_the_rc" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#making_naming_of_the_rc" class="toc">
                16.4 Making: naming of the rc file
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#making_using_name_space_when" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#making_using_name_space_when" class="toc">
                16.5 Making: Using name space when saving procmail variables
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#making_public_and_private_variables" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#making_public_and_private_variables" class="toc">
                16.6 Making: Public and private variables in rc file
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#the_rules_of_thumb_for" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#the_rules_of_thumb_for" class="toc">
                16.7 The rules of thumb for constructing general purpose rc file
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#an_includerc_skeleton" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#an_includerc_skeleton" class="toc">
                16.8 An includerc skeleton
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#mailing_list_server" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#mailing_list_server" class="toc">
                17.0 Mailing list server
-           </A>
-           <BR>
-<A HREF="pm-tips-body.html#common_troubles" class="toc" >
+           </a>
+           <br>
+<a href="pm-tips-body.html#common_troubles" class="toc">
                18.0 Common troubles
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_modes_normal_delivery_and" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#procmail_modes_normal_delivery_and" class="toc">
                18.1 Procmail modes: normal, delivery, and mail filter.
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_as_sendmail_mlocal_mail" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_as_sendmail_mlocal_mail" class="toc">
                18.2 Procmail as sendmail Mlocal mail filtering device
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_doesnt_pass_8bit_characters" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_doesnt_pass_8bit_characters" class="toc">
                18.3 Procmail doesn't pass 8bit characters
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#my_isp_isnt_very_interested" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#my_isp_isnt_very_interested" class="toc">
                18.4 My ISP isn't very interested in installing procmail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#my_isp_has_systemwide_procmailrc" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#my_isp_has_systemwide_procmailrc" class="toc">
                18.5 My ISP has systemwide procmailrc; is this a good idea?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_changes_mailbox_and_directory" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_changes_mailbox_and_directory" class="toc">
                18.6 Procmail changes mailbox and directory permissions
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#changing_mbox_permission_during_compilation" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#changing_mbox_permission_during_compilation" class="toc">
                18.7 Changing mbox permission during compilation to 660
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#the_.forward_file_must_be" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#the_.forward_file_must_be" class="toc">
                18.8 The .forward file must be real file
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#using_.forward_if_procmail_already" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#using_.forward_if_procmail_already" class="toc">
                18.9 Using .forward if procmail already is LDA
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mail_should_be_put_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mail_should_be_put_in" class="toc">
                18.10 Mail should be put in the mailqueue if write fails
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#qmail_how_to_make_it" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#qmail_how_to_make_it" class="toc">
                18.11 Qmail: how to make it work with procmail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#qmail_procmail_looks_file_from" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#qmail_procmail_looks_file_from" class="toc">
                18.12 Qmail: Procmail looks file from /var/spool/mail only
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#qmail_patch_to_procmail_3.11pre7" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#qmail_patch_to_procmail_3.11pre7" class="toc">
                18.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#afs_how_to_use_procmail" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#afs_how_to_use_procmail" class="toc">
                18.14 AFS: How to use Procmail when HOME is in AFS cell
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#help_some_idiot_sent_my" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#help_some_idiot_sent_my" class="toc">
                18.15 Help, some idiot sent my address to 30 mailing lists
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#help_procmail_beeps_and_prints" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#help_procmail_beeps_and_prints" class="toc">
                18.16 Help, Procmail beeps and prints to my console
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#help_procmail_dumps_mail_to" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#help_procmail_dumps_mail_to" class="toc">
                18.17 Help, procmail dumps mail to console
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#help_corrupted_from_line_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#help_corrupted_from_line_in" class="toc">
                18.18 Help, corrupted From_ line in mailbox
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#directing_users_mail_to_home" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#directing_users_mail_to_home" class="toc">
                18.19 Directing user's mail to HOME instead of /var/spool/
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#nfs_mounting_varmail_is_a" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#nfs_mounting_varmail_is_a" class="toc">
                18.20 NFS mounting /var/mail is a good way to get bad performance
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#i_cant_see_the_sendmails" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#i_cant_see_the_sendmails" class="toc">
                18.21 I can't see the sendmail's response in LOGFILE
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#compiling_procmail_and_choosing_locking" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#compiling_procmail_and_choosing_locking" class="toc">
                18.22 Compiling procmail and choosing locking scheme
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#forwarding_lot_of_mail_causes" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#forwarding_lot_of_mail_causes" class="toc">
                18.23 Forwarding lot of mail causes heavy load
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#what_happens_to_mail_if" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#what_happens_to_mail_if" class="toc">
                18.24 What happens to mail if MDA Procmail fails
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_reads_entire_90mb_message" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_reads_entire_90mb_message" class="toc">
                18.25 Procmail reads entire 90Mb message into memory
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#help_procmail_uses_occasionally_huge" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#help_procmail_uses_occasionally_huge" class="toc">
                18.26 Help, procmail uses occasionally huge chunk of memory
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_signaled_out_of_memory" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_signaled_out_of_memory" class="toc">
                18.27 Procmail signaled out of memory in my verbose log
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variables_default_and_orgmail" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variables_default_and_orgmail" class="toc">
                18.28 Variables DEFAULT and ORGMAIL
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#when_default_cannot_be_mailed" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#when_default_cannot_be_mailed" class="toc">
                18.29 When DEFAULT cannot be mailed to
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_dropprivs" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_dropprivs" class="toc">
                18.30 Variable DROPPRIVS
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_home" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_home" class="toc">
                18.31 Variable HOME
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_host" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_host" class="toc">
                18.32 Variable HOST
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_linebuf" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_linebuf" class="toc">
                18.33 Variable LINEBUF
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_log_and_logfile" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_log_and_logfile" class="toc">
                18.34 Variable LOG and LOGFILE
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_trap" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_trap" class="toc">
                18.35 Variable TRAP
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#variable_umask" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#variable_umask" class="toc">
                18.36 Variable UMASK
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#umask_and_permissions" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#umask_and_permissions" class="toc">
                18.37 UMASK and permissions
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#performance_difference_between_back_tick" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#performance_difference_between_back_tick" class="toc">
                18.38 Performance difference between back tick and &quot;|&quot; recipe
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmails_temporary_file_names_while" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmails_temporary_file_names_while" class="toc">
                18.39 Procmail's temporary file names while writing file out
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#parameter" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#parameter" class="toc">
                18.40 Parameter $@
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_variables_are_null_terminated" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_variables_are_null_terminated" class="toc">
                18.41 Procmail variables are null terminated (detecting null string)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#from_daemon_to_and_to_and" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#from_daemon_to_and_to_and" class="toc">
                18.42 FROM_DAEMON TO and TO_ and case-sensitiveness
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#to_macro_deciphered" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#to_macro_deciphered" class="toc">
                18.43 TO_ macro deciphered
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#to_macro_and_rfc_822" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#to_macro_and_rfc_822" class="toc">
                18.44 TO_ macro and RFC 822
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#from_daemon_deciphered" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#from_daemon_deciphered" class="toc">
                18.45 FROM_DAEMON deciphered
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#technical_matters" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#technical_matters" class="toc">
                19.0 Technical matters
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#list_of_exit_codes" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#list_of_exit_codes" class="toc">
                19.1 List of exit codes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#list_of_precedence_codes" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#list_of_precedence_codes" class="toc">
                19.2 List of precedence codes
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#sendmail_and_t" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#sendmail_and_t" class="toc">
                19.3 Sendmail and -t
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#rfc822_replyto_and_formail_problem" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#rfc822_replyto_and_formail_problem" class="toc">
                19.4 RFC822 Reply-To and formail problem with multiple recipients
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#procmail_and_imap_server" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#procmail_and_imap_server" class="toc">
                19.5 Procmail and IMAP server
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#machine_which_processes_mail" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#machine_which_processes_mail" class="toc">
                19.6 Machine which processes mail
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#compiling_procmail_and_mailspoolhome" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#compiling_procmail_and_mailspoolhome" class="toc">
                19.7 Compiling procmail and MAILSPOOLHOME
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#procmail_software_for_emacs" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#procmail_software_for_emacs" class="toc">
                20.0 Procmail software for Emacs
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#what_is_emacs" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#what_is_emacs" class="toc">
                20.1 What is Emacs
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#emacs_procmailmode_and_procmail_code" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#emacs_procmailmode_and_procmail_code" class="toc">
                20.2 Emacs procmail-mode and Procmail code checking (Lint)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#why_use_procmail_with_gnus" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#why_use_procmail_with_gnus" class="toc">
                20.3 Why use procmail with Gnus
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#setting_up_gnus_for_procmail" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#setting_up_gnus_for_procmail" class="toc">
                20.4 Setting up Gnus for procmail - Basics
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#gnus_for_procmail_more_about" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#gnus_for_procmail_more_about" class="toc">
                20.5 Gnus for procmail - More about it
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#emacs_and_gnus_fiddling_with" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#emacs_and_gnus_fiddling_with" class="toc">
                20.6 Emacs and Gnus -- Fiddling with spool files
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#gnus_article_snippets" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#gnus_article_snippets" class="toc">
                20.7 Gnus article snippets
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#rfc_request_for_comments" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#rfc_request_for_comments" class="toc">
                21.0 RFC, Request for comments
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#rfcs_and_their_jurisdiction_munged" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#rfcs_and_their_jurisdiction_munged" class="toc">
                21.1 RFCs and their jurisdiction (munged Addresses)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#comments_about_addresses_munging" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#comments_about_addresses_munging" class="toc">
                21.2 Comments about addresses munging
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#rfc_and_valid_mail_address" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#rfc_and_valid_mail_address" class="toc">
                21.3 RFC and valid mail address characters
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#rfc_and_loginname" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#rfc_and_loginname" class="toc">
                21.4 RFC and login-name@fdqn
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#rfcs_and_messages_signature" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#rfcs_and_messages_signature" class="toc">
                21.5 RFCs and messages signature
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#rfc_and_using_mime_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#rfc_and_using_mime_in" class="toc">
                21.6 RFC and using MIME in Usenet newsgroups
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#some_rfc_pointers" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#some_rfc_pointers" class="toc">
                21.7 Some RFC Pointers
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#introduction_to_email_headers" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#introduction_to_email_headers" class="toc">
                22.0 Introduction to E-mail Headers
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#to_find_out_more_about" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#to_find_out_more_about" class="toc">
                22.1 To find out more about mail (Resources)
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#lecture_by_alan_stebbens" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#lecture_by_alan_stebbens" class="toc">
                22.2 Lecture by Alan Stebbens
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#applied_to_received_messages" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#applied_to_received_messages" class="toc">
                22.3 Applied to received messages
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#bcc_lecture_by_alan_stebbens" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#bcc_lecture_by_alan_stebbens" class="toc">
                22.4 Bcc lecture by Alan Stebbens
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#bcc_lecture_by_philip_guenther" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#bcc_lecture_by_philip_guenther" class="toc">
                22.5 Bcc lecture by Philip Guenther
-           </A>
-           <BR>
-</UL>
-<A HREF="pm-tips-body.html#message_headers" class="toc" >
+           </a>
+           <br>
+</ul>
+<a href="pm-tips-body.html#message_headers" class="toc">
                23.0 Message headers
-           </A>
-           <BR>
+           </a>
+           <br>
 
-<UL>
-<LI>
-           <A HREF="pm-tips-body.html#what_is_correct_from_address" class="toc" >
+<ul>
+<li>
+           <a href="pm-tips-body.html#what_is_correct_from_address" class="toc">
                23.1 What is correct From address syntax
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#whats_that_xuidl_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#whats_that_xuidl_header" class="toc">
                23.2 What's that X-UIDL header?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#what_is_that_first_from_" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#what_is_that_first_from_" class="toc">
                23.3 What is that first From_ header?
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#messageid_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#messageid_header" class="toc">
                23.4 Message-Id header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#received_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#received_header" class="toc">
                23.5 Received header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#returnpath" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#returnpath" class="toc">
                23.6 Return-Path
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#errorsto" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#errorsto" class="toc">
                23.7 Errors-To
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#xsubscriptioninfo" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#xsubscriptioninfo" class="toc">
                23.8 X-Subscription-Info
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#replyto_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#replyto_header" class="toc">
                23.9 Reply-To header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mailcopiesto_header" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mailcopiesto_header" class="toc">
                23.10 Mail-Copies-To header
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#mailfollowupto_and_replytopersonal_headers" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#mailfollowupto_and_replytopersonal_headers" class="toc">
                23.11 Mail-Followup-To and Reply-To-Personal headers
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#contentlength_header_and_from_specification" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#contentlength_header_and_from_specification" class="toc">
                23.12 Content-Length header and From_ specification
-           </A>
-           <BR>
-<LI>
-           <A HREF="pm-tips-body.html#moral_about_cc_copies_in" class="toc" >
+           </a>
+           <br>
+<li>
+           <a href="pm-tips-body.html#moral_about_cc_copies_in" class="toc">
                23.13 Moral about CC copies in Usenet
-           </A>
-           <BR>
-</DIV>
-</BODY>
-</HTML>
+           </a>
+           <br>
+</ul></div>
+</body>
+</html>
