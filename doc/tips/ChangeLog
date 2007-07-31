@@ -1,3 +1,9 @@
+2007-07-31  Jari Aalto  <jari aalto A T cante net>
+
+	* pm-tips.txt: (13.18 Time: Once a day cron-like job):
+	Added missing '=' near INCLUDERC call. Error reported by
+	Stefan Weber <s.weber planet-interkom.de>. Thank you.
+
 2006-02-16 Thu  Jari Aalto  <jari dot aalto A T cante dot net>
 
         * pm-tips.txt: Obfusticated users' email addresses. Change all

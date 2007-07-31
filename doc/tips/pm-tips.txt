@@ -389,12 +389,15 @@ Table of contents
 
         #T2HTML-AUTHOR Jari Aalto
         #T2HTML-TITLE Procmail Tips
+        #T2HTML-OPTION --simple
+        #T2HTML-OPTION --quiet
         #T2HTML-OPTION --html-frame
         #T2HTML-OPTION --css-code-bg
+        #T2HTML-OPTION --css-file=index.css
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.31 2006/02/16 08:36:50 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.32 2007/07/31 21:16:12 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2006-02-14 $
 
@@ -516,6 +519,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
+            v2.31   2007-07-31  519  New HTML/CSS layout
             v2.30   2006-02-15  519  Sanitized all email addresses
             v2.27   2004-10-10  516  Spam related things removed.
             v2.16   2002-08-31  596  Removed old UBE pointers.
@@ -6953,7 +6957,7 @@ Table of contents
             #   Contains single line of procmail code
             #   YYMMDD_PREV = ..
 
-            INCLUDERC $YYMMDD_FILE
+            INCLUDERC = $YYMMDD_FILE
 
             #   If different date, then enter this block
             #   The echo updates stamp in file.
@@ -8097,7 +8101,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.31 2006/02/16 08:36:50 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.32 2007/07/31 21:16:12 jaalto Exp $
             #
             #   File id
             #
