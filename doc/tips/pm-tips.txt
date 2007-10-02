@@ -396,42 +396,37 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.33 2007/10/02 13:08:22 jaalto Exp $
-        .$URL: http://pm-doc.sourceforge.net/ $
-        .$UrlLinksLastChecked: 2006-02-14 $
+        .$Id: pm-tips.txt,v 2.34 2007/10/02 14:24:04 jaalto Exp $
+        .Homepage http://pm-doc.sourceforge.net/
+        .URLs last checked: 2007-10-02
+
+        Procmail is powerful mail handling tool and a lot of space
+        here has been devoted to discuss about UBE (aka Spam) and its
+        essence.
 
         This is a Procmail Tips page: a collection of procmail
-        recipes, instructions, howtos. The document also contains URL
-        pointers to the procmail mailing list and sites that fight
-        against Internet UBE. Procmail is powerful mail handling tool
-        and a lot of space here has been devoted to discuss about UBE
-        (aka Spam) and its essence. You will also find many other
-        interesting subjects that discuss about internet mail in
+        recipes, instructions, howtos. You will also find many other
+        interesting subjects that discuss about Internet mail in
         general: mail headers, MIME and RFCs. Another part of this
-        document -- to your blessing or curse; the author happens to
-        know Emacs quite well -- is dedicated to Emacs and its package
-        gnus.el, simply because Emacs is powerful tool that can be
-        used mail and news reading. Nowadays Emacs is also available
-        in Windows platform as well. This is not to say that existing
-        Unix elm(1), mutt(1) or pine(1), slrn(1) mail/news programs
-        are bad, they are just limited in power compared to Emacs and
-        usually tied to Unix platform. The tips are compiled from the
-        procmail discussion list, from comp.mail.misc and from the
-        author's own experiences with procmail.
+        document is dedicated to Emacs and its maili handlling
+        capabilities. Emacs is powerful tool that can be used for both
+        mail and news reading; available in Windows platform as well.
+        The tips have been compiled from the procmail discussion list,
+        from comp.mail.misc and from the author's own experiences with
+        procmail.
 
         This document does not intend to teach the basics of procmail,
-        instead you have to be familiar with the procmail man pages
+        instead you should be familiar with the procmail manual pages
         already. If you're using Windows operating system, procmail is
-        available in Cygwin <http://www.cygwin.com/>.
+        available in Cygwin <http://www.cygwin.com/> distribution.
 
         You may want to read *Nancy's* and *Era's* procmail FAQ pages
-        before this page. There are wealth of useful procmail links and
-        pointers to Unix programs that deal with mail. If you find
-        errors or things to improve in this document, please send mail
-        to this document's Maintainer (see sourceforge's project page).
+        before this page.
 
-        If any mentioned URL is not alive, you may still be able to
-        successfully find it using the WWW search such as Google.
+        If you find errors or things to improve in this document,
+        please send mail to this document's maintainer (see project
+        page). If some URL is not alive any more, you may still be
+        able to find it by using a WWW search such as Google.
 
     1.2 What is Procmail?
 
@@ -472,42 +467,31 @@ Table of contents
         .[manual]     Quote from some procmail manual page
         .[maintainer] As of 2000-09 the maintainer is [jari]
 
-        o   PM-L, Procmail mailing list
-            <http://mailman.rwth-aachen.de/mailman/listinfo/procmail>
-            See also http://www.procmail.org/era/lists.html
-        o   FAQ-L, Faq Maintainers mailing list
-            http://www.faqs.org/faq-maintainers
-        o   DING-L, Emacs Gnus mail/newsreader mailing list (ding).
-            http://www.gnus.org/
-
         A big thanks goes to all these people:
 
-        o   1999-06-16 Mark Seiden <mis A T seiden.com> Did a enormous
-            work to proofread the v1.74. He sent a massive 105k wpatch
-            with many editorial corrections. My wholeheart thank you to
-            you, Mark.
+        o   1999-06-16 Mark Seiden <mis A T seiden.com> Did an enormous
+            work to proofread the v1.74. He sent a massive 105k patch
+            with many editorial corrections.
         o   1999-01-08 Steven Alexander <stevena A T teleport.com>
             thought that a small perl script would help me to fix
             spelling mistakes more easily. The script has been much
             better correction program than anything else.
         o   1999 <Guido.Van.Hoecke A T se.bel.alcatel.be> took v1.48
             and sent a huge 55k patch to correct many grammar
-            typos. Thank you very much Guido.
+            typos.
         o   1998-10-28 Richard Kabel <rkabel A T sequent.com> sent
             massive patch to correct language and provided excellent
-            improvement comments. Thank you Guido for spending the
-            time with it.
+            improvement comments.
         o   1998 Era Eriksson proof read the v1.12 and sent numerous
             corrections.
         o   Karl E. Vogel <vogelke A T c17mis.region2.wpafb.af.mil>
             sent numerous new anti-spam links to be added to the
             document.
-        o   1998 John Gianni <jjg A T cadence.com> send some nice
+        o   1998 John Gianni <jjg A T cadence.com> sent nice
             recipes: one is now in the procmail module list and the
             other ideas I have added to this tips file.
         o   1998 Tim Potter <tpot A T zip.com.au> had a spare moment
-            with v1.27 and sent lot of spelling corrections. Thank
-            you.
+            with v1.27 and sent a patch to correct spelling mistakes.
 
     1.4 Version information
 
@@ -852,7 +836,6 @@ Table of contents
 
        "Nancy McGough <nm A T noadsplease.ii.com> - Prcmail Quick start"
         .http://www.ii.com/internet/robots/procmail/qs/
-        .http://www.ii.com/internet/faqs/launchers/mail/filtering-faq/
 
        "Era Eriksson's Procmail FAQ and link collection"
         http://www.iki.fi/~era/procmail
@@ -983,7 +966,8 @@ Table of contents
 
        2.4.6 Spam modules
 
-        Please read <http://pm-lib.sourceforge.net/README.html> which
+        Read "Thoughts about increasing spam annoyance" at
+        <http://pm-doc.sourceforge.net/README.html> which
         explains these modules better in context "2.0 A lightweight
         UBE block system with pure procmail".
 
@@ -2456,7 +2440,7 @@ Table of contents
     6.1 Philosophy of abstraction in regexps
 
           Here are two ways to view or write regexps. Make up your own
-          mind. More on regular expressions ar <http://www.regexlib.com/>.
+          mind. More on regular expressions ar <http://regexlib.com/>.
 
          People who are in favor of writing pure native regexps in the
          recipes:
@@ -4957,10 +4941,6 @@ Table of contents
                 SHELLMETAS  = $saved
             }
 
-        See the recursive RC implementation at
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1997-08/msg00073.html?50#mfs>
-
         [richard] Here is recipe that needs no recursion. MAX_RECIP
         is set to 9, but you may prefer some other value. This counts each
         comma. It allowed in addresses.Some folks sum Resent-xx *or*
@@ -6013,8 +5993,7 @@ Table of contents
 
     12.2 Mime notes
 
-        <URL:http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-07/
-        msg00248.html>
+        <http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-07/msg00248.html>
 
         [1998-07-28 PM-L Brett Glass <brett A T lariat.org>] MIME filename
         buffer overflow bug described at
@@ -6771,12 +6750,10 @@ Table of contents
         There was a pretty heavy thread around September 1997 about
         duplicate detection, where some promising stuff was posted. One
         item you should definitely have in your collection is Eli's `hashd'
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1997-09/msg00160.html>
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1997-09/msg00160.html>
 
         Matt Saroff also started a thread about duplicates:
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1997-05/msg00599.html> where several of the replies are also helpful.
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1997-05/msg00599.html> where several of the replies are also helpful.
 
     13.16 Kill: spam filter with simple recipes
 
@@ -7264,9 +7241,7 @@ Table of contents
     14.1 Matching valid Message-Id header
 
         [philip] wrote full RFC compliant matcher. Follow the link
-
-        <URL:http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-03
-        /msg00375.html>
+        <http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-03/msg00375.html>
 
             dq = '"'                                # (literal) double-quote
             bw = "\\"                               # (literal) backwhack
@@ -7398,9 +7373,7 @@ Table of contents
           who go over that limit. What I would like to do is have a recipe
           split up messages addressed to my pager into 200 character (max)
           messages.
-
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1997-12/msg00125.html?43#mfs>
+          <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse2HTML/procmail/1997-12/msg00125.html?43#mfs>
 
         [era] This stuff about forwarding to pagers is a recurring
         topic on this list. I've tried to find a good summary of all the
@@ -8096,7 +8069,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.33 2007/10/02 13:08:22 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.34 2007/10/02 14:24:04 jaalto Exp $
             #
             #   File id
             #
@@ -8825,8 +8798,7 @@ Table of contents
 
     18.20 NFS mounting /var/mail is a good way to get bad performance
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1998-06/msg00199.html>
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1998-06/msg00199.html>
 
 
             > /var/mail stays at a Solaris 2.5 machine. Cucipop is working
@@ -9103,9 +9075,7 @@ Table of contents
 
         [ed] There is a patch available that should fix the problem
         for you. See the messages at
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse/procmail?query=Albsmeier&errors=0&case=on
-        &maxfiles=100&maxlines=30>.
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse/procmail?query=Albsmeier&errors=0&case=on&maxfiles=100&maxlines=30>.
 
     18.26 Help, procmail uses occasionally huge chunk of memory
 
@@ -9121,14 +9091,11 @@ Table of contents
         platforms. A patch that works around this is available. See the
         messages at
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse/procmail?query=Albsmeier&errors=0
-        &case=on&maxfiles=100&maxlines=30>
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse/procmail?query=Albsmeier&errors=0&case=on&maxfiles=100&maxlines=30>
 
         Specifically, the patch is located at
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1997-10/msg00330.html?63#mfs>.
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse2HTML/procmail/1997-10/msg00330.html?63#mfs>.
 
         It's an artifact of procmail's memory management. It reads
         an entire message into memory before working on it. Fear the system
@@ -10550,7 +10517,7 @@ Table of contents
 
           _Note:_ Marty is an IETF USEFOR and has a good understanding how
           the RFCs should be interpreted. See gnu.emacs.gnus 1999-02-08
-          and theread / Re: "Sender" field/. <URL:http://search.dejanews.com/msgid.xp?MID=%3Cy1ud83pre7w.fsf@acuson.com%3E&format=threaded&maxhits=200>
+          and theread / Re: "Sender" field/. <http://search.dejanews.com/msgid.xp?MID=%3Cy1ud83pre7w.fsf@acuson.com%3E&format=threaded&maxhits=200>
 
         [1997-11-05 gnus.emacs.gnus, Marty Fouts] No RFC forces the address
         of the poster to be a *reachable* address (indeed, Sender: is
@@ -11018,8 +10985,7 @@ Table of contents
 
     22.2 Lecture by Alan Stebbens
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/
-        cgi-bin/w3glimpse2HTML/procmail/1996-08/msg00098.html?69#mfs>
+        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse2HTML/procmail/1996-08/msg00098.html?69#mfs>
 
         There are two general classes of headers: those generated
         automatically by the MTA, and those configured and inserted by the
@@ -11274,8 +11240,7 @@ Table of contents
 
          [alan]
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
-        1996-11/msg00093.html>
+        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00093.html>
 
         Only the MTA knows the destination address because it is part of
         the "envelope", the information which is passed on the "RCPT To:
@@ -11830,11 +11795,11 @@ Table of contents
 
         When you get right down to it, this proposed standard has two goals:
 
-        .   To make broken MUAs act less brokenly. Well, broken MUAs are not
+        o   To make broken MUAs act less brokenly. Well, broken MUAs are not
             going to implement this standard, anyway; good MUAs do not need it
             as they already make the distinction between replies and
             followups.
-        .   To make broken mailing lists act less brokenly. Administrators of
+        o   To make broken mailing lists act less brokenly. Administrators of
             broken mailing lists have decided that they like it that way. They
             claim that it makes it easier for their lists' subscribers to
             reply to the list. The subscribers that "need" list-bound Reply-To
@@ -11867,7 +11832,7 @@ Table of contents
 
     23.10 Mail-Copies-To header
 
-        [Suggested by Lars, the Author of Emacs Gnus]
+        [Suggested by Lars Magne Ingebrigtsen, the Author of Emacs Gnus]
 
         ...Mail-Copies-To: is a header line used in messages on
         Usenet to direct copies by mail of followups to posts.

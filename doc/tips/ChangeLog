@@ -1,7 +1,19 @@
 2007-10-02  Jari Aalto  <jari.aalto@cante.net>
 
-	* pm-tips.txt: (2.5 Procmail code to filter UBE): update Procmail
-	Module library URL.
+	* pm-tips.txt:
+	- Corrected all 'broken apart' links and removed URL: prefix.
+	- New CSS layout. Removed framed page with single page.
+	(1.1 General): Made more compact.
+	(1.3 Abbreviations and thanks): Removed mailing lists links.
+	(2.2 Procmail resources): Updated Nancy McGough's Prcmail Quick
+	start
+	(2.5 Procmail code to filter UBE): update Procmail Module library
+	URL.
+	(6.1 Philosophy of abstraction in regexps): updated link to
+	regexlib.com.
+	(9.11 Counting commas with recursive includerc): Removed
+	invalid link www.rosat.mpe-garching.mpg.de/mailing-lists/procmail
+	(23.9 Reply-To header): Fixed HTML output error with bullets.
 
 2007-07-31  Jari Aalto  <jari.aalto@cante.net>
 
