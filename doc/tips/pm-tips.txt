@@ -391,13 +391,12 @@ Table of contents
         #T2HTML-TITLE Procmail Tips
         #T2HTML-OPTION --simple
         #T2HTML-OPTION --quiet
-        #T2HTML-OPTION --html-frame
         #T2HTML-OPTION --css-code-bg
-        #T2HTML-OPTION --css-file=index.css
+        #T2HTML-OPTION --css-file=pm-tips.css
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.32 2007/07/31 21:16:12 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.33 2007/10/02 13:08:22 jaalto Exp $
         .$URL: http://pm-doc.sourceforge.net/ $
         .$UrlLinksLastChecked: 2006-02-14 $
 
@@ -448,9 +447,6 @@ Table of contents
 
     1.3 Abbreviations and thanks
 
-          People and documents, abbreviations referred to, tokens used, are
-          in no particular order.
-
         [stephen] Stephen R. van den Berg, Author of Procmail Last heard
         from stephen 1997-08 in procmail mailing list by using address
         <srb A T cuci nl>. Later 1998 due to his regular work activities and
@@ -461,8 +457,7 @@ Table of contents
         .[alan]       Alan K. Stebbens    alan.stebbens A T openwave com
         .[dan]        Daniel Smith        J.Daniel.Smith A T WriteMe dt com
         .[david]      David W. Tamkin     dattier A T panix com
-        o   <<text>> Text has been rephrased or modified that
-            does not exist in the original source.
+        .<<text>> Text has been rephrased or modified that does not exist in the original source.
         .[ed]         Edward J. Sabol     sabol A T alderaan gsfc nasa gov
         .[elijah]     Eli the Bearded     process A T qz little-neck ny us
         .[hal]        Hal Wine            hal A T dtor com
@@ -909,10 +904,10 @@ Table of contents
        "Procmail module library"
 
         Hosted at sourceforge CVS server and open for anyone to
-        participate. Visit <http://pm-lib.sourceforge.net/>. The idea
-        was invented by <alan.stebbens A T software.com> (also
-        <alan.stebbens A T openwave.com>) and his modules are included
-        in the library.
+        participate. Visit
+        <http://freshmeat.net/projects/procmail-lib>. The idea was
+        originally invented by Alan Stebbens (<alan.stebbens A T
+        software.com>, <alan.stebbens A T openwave.com>).
 
        2.4.2 Terminology
 
@@ -1006,8 +1001,8 @@ Table of contents
             bones" and very simplistic (but fast) way to check if
             message is Spam. The results of classification appears in
             returned variables that the caller can use for deciding
-            what to do. 
-        o   *pm-jaube-prg-runall.rc* -- An Interface module to call 
+            what to do.
+        o   *pm-jaube-prg-runall.rc* -- An Interface module to call
             external statistical bayesian spam classifier programs.
             This subroutine will call other modules, like
             pm-jaube-prg-bogofilter.rc (for bogofilter),
@@ -1179,12 +1174,12 @@ Table of contents
 
        "pm-jaube.rc - Procmail module library's UBE filter"
         After Daniel Smith posted his spam recipes to procmail mailing
-        list, the code was adopted and more generalized to handle lot more
-        UBE. Module needs no special setup and can be
-        installed via simple INCLUDERC. No additional ube-list files are
-        used, all UBE detection happens using procmail rules. The module
-        is available in Procmail module library at
-        http://pm-lib.sourceforge.net/
+        list, the code was adopted and more generalized to handle lot
+        more UBE. Module needs no special setup and can be installed
+        via simple INCLUDERC. All UBE detection happens using procmail
+        rules with no external files needed. The module is available
+        in Procmail module library at
+        <http://freshmeat.net/projects/procmail-lib>.
 
        "Catherine A. Hampton's Spambouncer"
         http://www.spambouncer.org/
@@ -1583,7 +1578,7 @@ Table of contents
     4.13 Gee, where do I put all those ! * $ ??
 
         Ahem. I can't tell you exactly what to do or how to write your own
-        procmail recipes, but I can sow you an example. Here is one possible
+        procmail recipes, but I can show you an example. Here is one possible
         style for condition line token order:
 
             *$ ! ? BH VAR ?? test
@@ -8101,7 +8096,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.32 2007/07/31 21:16:12 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.33 2007/10/02 13:08:22 jaalto Exp $
             #
             #   File id
             #

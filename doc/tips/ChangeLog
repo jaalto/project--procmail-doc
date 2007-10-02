@@ -1,8 +1,15 @@
+2007-10-02  Jari Aalto  <Administrator@W2KPICASSO>
+
+	* pm-tips.txt: (2.5 Procmail code to filter UBE): update Procmail
+	Module library URL.
+
 2007-07-31  Jari Aalto  <jari aalto A T cante net>
 
 	* pm-tips.txt: (13.18 Time: Once a day cron-like job):
 	Added missing '=' near INCLUDERC call. Error reported by
 	Stefan Weber <s.weber planet-interkom.de>. Thank you.
+	(4.13 Gee, where do I put all those ! * $ ??): Typo:
+	sow => show.
 
 2006-02-16 Thu  Jari Aalto  <jari dot aalto A T cante dot net>
 
