@@ -1,0 +1,594 @@
+/*
+ *	Copyright (C) 2003-2007 Jari Aalto
+ *
+ *	This code is free software; you can redistribute it and/or
+ *	modify it under the terms of the GNU General Public License as
+ *	published by the Free Software Foundation; either version 2 of the
+ *	License, or (at your option) any later version
+ *
+ *	This program is distributed in the hope that it will be useful, but
+ *	WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ *	General Public License for more details.
+ *
+ *	Visit <http://www.gnu.org/copyleft/gpl.html>
+ *
+ * See also
+ *
+ *      http://www.w3.org/TR/REC-CSS2/cover.html#minitoc
+ *      http://www.pitt.edu/~nisg/cis/web/cgi/rgb.html
+ *
+ */
+
+/* /////////////////////////////////////////////// Format words */
+
+body
+{
+    font-family:            Verdana, Arial, sans-serif;
+/*    font-family:    Georgia, "Times New Roman", times, serif; */
+    padding-left:   0px;
+    margin-left:    30px;
+
+    font-size:      12px;
+
+    line-height:    140%;
+    text-align:     left;
+    max-width:      700px;
+}
+
+a:link
+{
+    color:           #4080DF;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: #000;
+}
+
+h1, h2, h3
+{
+    font-family:            Verdana, Arial, sans-serif;
+    color:          #6BA4DC;
+}
+
+div.doc h1
+{
+    font-size:              180%;
+    padding-bottom:         3px;
+
+    border-bottom-width:    1px;
+    border-bottom-color:    #00c6c8;
+    border-bottom-style:    dashed;
+}
+
+div.doc h2
+{
+    font-size:              medium;
+}
+
+em.word
+{
+    /* #809F69 Forest green */
+    /* color: #80B06A;  Darker Forest green */
+    color: #999;
+    font-weight: lighter;
+}
+
+strong.word
+{
+
+}
+
+samp.word
+{
+    color:          #4C9CD4;
+    font-family:    "Courier New", Courier, monospace;
+    font-size:      1em;
+/*    font-weight:    bolder; */
+}
+
+span.super
+{
+    /* superscripts */
+    color:          teal;
+    vertical-align: super;
+    font-family:    Verdana, Arial, sans-serif;
+    font-size:      0.8em;
+}
+
+span.word-ref
+{
+    color:          teal;
+}
+
+span.word-big
+{
+    color: teal;
+    font-size: 1.2em;
+}
+
+span.word-small
+{
+    color: #CC66FF;
+    font-family: Verdana, Arial, sans-serif;
+/*    font-size: 0.95em; */
+}
+
+/* /////////////////////////////////////////////// Format other */
+
+/* 7th column starting with double quote */
+
+span.quote7
+{
+    /* color: Green; */
+    /* font-style: italic; */
+    font-family: Verdana;
+    font-weigh: bold;
+    font-size: 1em;
+}
+
+/* This appears in FRAME version: xxx-toc.html */
+
+div.toc
+{
+    font-size: 0.9em;
+}
+
+div.toc a:link
+{
+    color: #777
+}
+
+div.toc a:hover
+{
+    color: #000;
+}
+
+/* This appears in picture: the caption text beneath */
+
+div.picture
+{
+    font-size: 1em;
+    font-style: italic;
+}
+
+/* This is the document info footer */
+
+em.footer
+{
+    font-size: 0.9em;
+}
+
+/* ////////////////////////////////////////////// Format columns */
+
+p.column3
+{
+    color: Green;
+}
+
+p.column5
+{
+    color: #87C0FF;   /* shaded casual blue */
+}
+
+p.column6
+{
+    /* #809F69 is Forest green
+       But web safe colors are:
+       Lighter  ForestGreen: 66CC00
+       ForestGreen: #999966 669900 339900 669966
+
+    color: #669900;
+    font-family: "Goudy Old Style"
+    */
+    margin-left: 3em;
+    font-family: Georgia, "New Century Schoolbook",
+                 Palatino, Verdana, Arial, Helvetica;
+    font-size:  0.9em;
+}
+
+    /* This is so called 3rd heading */
+
+p.column7
+{
+    font-family: Verdana, Arial, sans-serif;
+    font-style:  italic;
+    font-weight: bold;
+}
+
+@media print { P.column7
+{
+    font-style:  italic;
+    font-weight: bold;
+}}
+
+p.column8
+{
+    text-align: justify;
+}
+
+p.column9
+{
+    font-weight: bold;
+}
+
+p.column10
+{
+    margin-left: 2em;
+    padding-top: 0;
+}
+
+em.quote10
+{
+    /*
+        #FF00FF Fuchsia;
+        #0000FF Blue
+
+        #87C0FF casual blue
+        #87CAF0
+
+        #A0FFFF Very light blue
+
+        #809F69 = Forest Green , see /usr/lib/X11/rgb.txt
+
+        background-color:
+
+        color: #80871F ; Orange, short of
+
+        # font-family: "Gill Sans", sans-serif;
+
+        line-height: 0.9em;
+        font-style:  italic;
+        font-size:   1em;
+
+        line-height: 0.9em;
+        color: #008080;
+
+        background-color: #F5F5F5;
+        #809F69; forest green
+        #F5F5F5; Pale grey
+        #FFf098; pale green
+        ##bfefff; #ffefff; LightBlue1
+
+        background-color: #ffefff;
+
+        .................
+        #FFFCE7         Orange very light
+        #FFE7BF         Orange dark
+        #FFFFBF         Orange limon
+
+     */
+
+     /*
+     #  See a nice page at
+     #  http://www.cs.helsinki.fi/linux/
+     #  http://www.cs.helsinki.fi/include/tktl.css
+     #
+     #  3-4 of these first fonts have almost identical look
+     #  Browser will pick the one that is supported
+     */
+
+     font-family: Georgia, Verdana, Arial, "Trebuchet MS", helvetica, sans-serif;
+/*     background-color: #eeeeff; */
+
+     font-size:   1em;
+}
+
+@media print { em.quote10
+{
+    font-style:  italic;
+    line-height: 0.9em;
+    font-size:   0.8em;
+}}
+
+p.column11
+{
+    font-family:    Georgia, Verdana, Helvetica, sans-serif;
+    font-size:      0.9em;
+/*    font-style:           italic; */
+    letter-spacing: 0.7;
+/*    font-variant:   small-caps; */
+    color:          #4682b4;
+}
+
+p.column11 samp.word
+{
+    font-size:      medium;
+    font-family:    "Courier New", courier, monospace, sans-serif;
+    font-variant:   normal;
+    font-size:      1em;
+    font-stretch:   wider;
+    color:          #191970;
+}
+
+
+/* ////////////////////////////////////////////// Format tables */
+
+table
+{
+    border:             none;
+    width:              100%;
+    cellpadding:        10px;
+    cellspacing:        0px;
+}
+
+table tr td pre
+{
+        /*  Make PRE tables "airy" */
+        margin-top:     1em;
+        margin-bottom:  1em;
+}
+
+table.basic
+{
+        font-family:    "Courier New", Courier, monospace;
+        color:          #777;
+}
+
+td.info
+{
+    border-left: 8px solid #ddd;
+}
+
+
+table.attention
+{
+        /* font-family: sans-serif; /*
+        /* grey (dark to white): 0 > 3 > 6 > 9 > C > F; like #666666 */
+
+/*
+        border-top:     1px #CCCCCC solid;
+        border-bottom:  1px #666666 solid;
+*/
+        border-top-width:       thin;
+
+        border-top-style:       solid;
+        border-top-color:       #D3D3D3;
+
+        border-bottom-style:    double;
+        border-bottom-color:    #D3D3D3;
+}
+
+table.dashed
+{
+        /* font-family: sans-serif; /*
+        /* background:  #F7DE9C; */
+
+        color: Navy;
+
+        border-top:     1px #00e6e8 solid;
+        border-left:    1px #00e6e8 solid;
+        border-right:   1px #00c6c8 solid;
+        border-bottom:  1px #00c6c8 solid;
+        border-width:   94%;
+        border-style:   dashed; /* dotted */
+
+        /* line-height: 105%; */
+}
+
+table.solid
+{
+        font-family:    "Courier New", Courier, monospace;
+        /* afont-size:      0.8em; */
+
+        color:          Navy;
+
+        /* font-family: sans-serif; /*
+        /* background:  #F7DE9C; */
+
+        border-top:     1px #CCCCCC solid;
+        border-left:    1px #CCCCCC solid; /* 999999 */
+        border-right:   1px #666666 solid;
+        border-bottom:  1px #666666 solid; /* dark grey */
+        /* line-height: 105%; */
+}
+
+/* Make 3D styled layout by thickening the boton + right. */
+
+table.shade-3d
+{
+        font-family:    "Courier New", Courier, monospace;
+        font-size:      0.8em;
+
+        color:          #999999; /* Navy; */
+
+        /* font-family: sans-serif; /*
+        /* background:  #F7DE9C; */
+
+        /* border-top:  1px #999999 solid; */
+        /* border-left: 1px #999999 solid; */
+        border-right:   4px #666666 solid;
+        border-bottom:  3px #666666 solid;
+        /* line-height: 105%; */
+}
+
+.shade-3d-attrib
+{
+    /*
+        F9EDCC          Light Orange
+        FAEFD2          Even lighter Orange
+
+        #FFFFCC         Light yellow, lime
+
+    */
+
+    background: #FFFFCC;
+}
+
+table.shade-normal
+{
+        font-family:    "Courier New", Courier, monospace;
+        font-size:      0.95em;
+        background:     #E3F2F9;
+        color:          #5F5F5F;
+        /* color:       Navy; */
+}
+
+.shade-normal-attrib
+{
+    /*  grey: EAEAEA, F0F0F0 FFFFCC
+        lime: F7F7DE CCFFCC
+        pinkish: E6F1FD D8E9FB C6DEFA FFEEFF (light ... darker)
+        slightly darker than F1F1F1: #EFEFEF;
+
+    background: #F9F9F9;
+    */
+}
+
+table.shade-normal2
+{
+        font-family:    "Courier New", Courier, monospace;
+}
+
+.shade-normal2-attrib
+{
+    background: #E0E0F0;
+}
+
+table.shade-note
+{
+    border-bottom-style: dashed;
+    border-bottom:       #666666;
+
+    border-width:        thin;
+}
+
+.shade-note-attrib
+{
+    /*  darker is #E0E0F0; */
+    /* background: #E5ECF3; */
+    /* background: #E5ECF3; */
+    /* #afeeee; dark green */
+
+    background: #EDF3FB;
+
+/*
+    font-family: "Times New Roman", Times, Georgia, "New Century Schoolbook",
+                 Palatino, Verdana, Helvetica, serif;
+*/
+
+    font-size:           0.90em;
+    font-style:          normal;
+
+    padding-left:       1em;
+    padding-right:      1em;
+    padding-top:        1em;
+    padding-bottom:     1em;
+    max-width:          700px;
+}
+
+.shade-note-attrib samp.word
+{
+    color:          #4C9CD4;
+    font-family:    "Courier New", Courier, monospace;
+    font-size:      0.9em;
+}
+/* ..................................... colors ................. */
+
+.color-white
+{
+    color:      #000;
+/*    background: #FFFFFF; */
+}
+
+.color-fg-navy
+{
+    color: navy;
+}
+
+.color-fg-blue
+{
+    color: blue;
+}
+
+.color-fg-teal
+{
+    color: teal;
+}
+
+/*   Nice combination: teal-dark, beige2 and  beige-dark */
+
+.color-teal-dark
+{
+    color: #96EFF2;
+}
+
+.color-beige
+{
+    color: Navy;
+    background: #F7F7DE;
+}
+
+.color-beige2
+{
+    color: Navy;
+    background: #FAFACA;
+}
+
+.color-beige3
+{
+    color: Navy;
+    background: #F5F5E9;
+}
+
+.color-beige-dark
+{
+    color: Navy;
+    background: #CFEFBD;
+}
+
+.color-pink-dark
+{
+    background: #E6F1FD;
+}
+
+.color-pink-medium
+{
+    background: #D8E9FB;
+}
+
+.color-pink
+{
+    /*  grey: EAEAEA, F0F0F0 FFFFCC
+        lime: F7F7DE CCFFCC
+        pinkish: E6F1FD D8E9FB C6DEFA FFEEFF (light ... darker)
+    */
+    background: #C6DEFA;
+}
+
+.color-pink-light
+{
+    background: #FFEEFF;
+}
+
+.color-blue-light
+{
+    background: #F0F0FF;
+}
+
+.color-blue-medium
+{
+    background: #4A88BE;
+}
+
+span.bookref
+{
+    font-weight:            lighter;
+}
+
+div.footnote
+{
+/*
+    border-top-width:       1px;
+    border-top-style:       solid;
+    border-top-color:       teal;
+*/
+    font-size:              1em;
+
+    font-family:            Georgia, "Times New Roman", Roman, serif;
+    color:                  #333333;
+}
+
+/* End of file */
