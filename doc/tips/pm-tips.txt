@@ -396,7 +396,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.34 2007/10/02 14:24:04 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.35 2007/10/02 15:08:54 jaalto Exp $
         .Homepage http://pm-doc.sourceforge.net/
         .URLs last checked: 2007-10-02
 
@@ -825,14 +825,6 @@ Table of contents
     2.2 Procmail resources
 
         Procmail is discussed in Usenet newsgroup *comp.mail.misc*.
-
-       "Procmail archive"
-        ftp://ftp.informatik.rwth-aachen.de:/pub/packages/procmail/
-        Articles from procmail mailing list: covers from 1994-08 to 1995-05
-        (A .gz file: ~2Meg when uncompressed) More later articles can be
-        found at <http://mailman.rwth-aachen.de/pipermail/procmail/>.
-        Search page is at
-        http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/
 
        "Nancy McGough <nm A T noadsplease.ii.com> - Prcmail Quick start"
         .http://www.ii.com/internet/robots/procmail/qs/
@@ -2448,7 +2440,7 @@ Table of contents
             [    ]<[    ]*("([^"\]|\\.)*"|[-!#-'*+/-9=?A-Z^-~]+)...  # "
 
         o   I'm not planning on "maintaining" that code, as the syntax for
-            XXX will not ever change <<it's RFC or something>>>
+            XXX will not ever change, it's RFC or something.
         o   I somehow doubt that anyone else will change that regexp more than
             trivially
         o   If none of your other regexps use the categorical variables, and
@@ -5991,55 +5983,7 @@ Table of contents
         generate MIME. Feel free to send comments or contributions.
         http://www.cs.utk.edu/~moore/mime-style.html
 
-    12.2 Mime notes
-
-        <http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-07/msg00248.html>
-
-        [1998-07-28 PM-L Brett Glass <brett A T lariat.org>] MIME filename
-        buffer overflow bug described at
-
-            http://www.sjmercury.com/business/microsoft/docs/security0728.htm
-
-        This bug is particularly insidious because it can be exploited via
-        by spamming software and could impact millions of users in a very
-        short time.
-
-        Use procmail to plug the hole at the mail server, by truncating the
-        excessively long file names in the MIME headers: eliminate the
-        extra-long filenames, truncating them back to (say) 64 characters
-        max? All that's required is to recognize header below and make sure
-        that <verylongname> is chopped to a reasonable size.
-
-            Content-Disposition: attachment; filename="<verylongname>"
-
-        [era] I believe that the problem isn't really that the
-        filename is over the allowed length for some platform (Macintoshes
-        allow something like 27 characters if memory serves) but a bug in
-        how some particular mail clients allocate memory for the file name
-        string (but I am really only speculating here).
-
-          ...So far Eudora, Netscape Mail, Outlook Express, and mutt (Unix)
-          have all been found to have buffer overflow problems.
-          (mutt-0.93.2i and up are fixed. A patch for 0.93.1 is available.)
-
-    12.3 Software to deal with mime or HTML
-
-        See also nearest Perl CPAN module, http://www.perl.org/ site and
-        CPAN/modules/by-module/MIME/
-
-        There's also Unix program `munpack' to explode a MIME message
-        to separate files.
-
-        [MIME aware mail agents in Unix]
-
-        See `mutt' that could handle HTML mail. (Pointer to Mutt
-        mentioned below)
-
-        All Emacs Mail agents can handle MIME if you install some of the
-        mime handling packages: TM, SEMI, rmime.el. See
-        http://www.bmrc.berkeley.edu/~trey/emacs/mime.html
-
-    12.4 Mime content type application/ms-tnef
+    12.2 Mime content type application/ms-tnef
 
           ...A member of one of my mailing lists appears to be using
           Microsoft Mail. His messages to the list are usually accompanied my
@@ -6059,7 +6003,7 @@ Table of contents
         information, see: XCLN: Sending Messages In Rich-Text Format
         http://support.microsoft.com/support/kb/articles/q136/2/04.asp
 
-    12.5 Trapping HTML mime messages
+    12.3 Trapping HTML mime messages
 
         [era] Here's a simple filter to throw out unwanted HTML that is sent
         by using mime. [jari] This recipe detects if the message is
@@ -6076,7 +6020,7 @@ Table of contents
 
         Some more examples can be found from section: 'Explaning  ^^ and ^'
 
-    12.6 Complaining about HTML messages
+    12.4 Complaining about HTML messages
 
         [Marek Jedlinski <eristic A T gryzmak.lodz.pdi.net>]. This how I
         respond to HTML messages. In my `noHTML.txt' I politely explain
@@ -6110,7 +6054,7 @@ Table of contents
                         ) | $SENDMAIL
             }
 
-    12.7 Converting HTML body to plain text
+    12.5 Converting HTML body to plain text
 
           _Note:_ Older lynx has security holes:
           http://ciac.llnl.gov/ciac/bulletins/h-82.shtml
@@ -6167,7 +6111,7 @@ Table of contents
 
             }
 
-    12.8 Getting rid of unwanted mime attachments (HTML, vcard)
+    12.6 Getting rid of unwanted mime attachments (HTML, vcard)
 
         Microsoft and Netscape MUAs are conquering the PC world and it's
         likely that you will receive messages from people that use this
@@ -6202,7 +6146,7 @@ Table of contents
         `pm-code.zip'.
         (Note: #REF #procmail_module_list ;Procmail module list;)
 
-    12.9 Sending contents of a HTML page in plain text to someone
+    12.7 Sending contents of a HTML page in plain text to someone
 
         [timothy] Send an mail with the subject: "GetPage:
         some.url.here/". And it comes back. Kurt Thams <thams A T thams.com>
@@ -6748,12 +6692,9 @@ Table of contents
               duplicate.mbox
 
         There was a pretty heavy thread around September 1997 about
-        duplicate detection, where some promising stuff was posted. One
-        item you should definitely have in your collection is Eli's `hashd'
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1997-09/msg00160.html>
-
-        Matt Saroff also started a thread about duplicates:
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1997-05/msg00599.html> where several of the replies are also helpful.
+        duplicate detection, where some promising stuff was posted.
+        One item you should definitely have in your collection is
+        Eli's `hashd' [in Procmail mailing list 1997-09]
 
     13.16 Kill: spam filter with simple recipes
 
@@ -7372,8 +7313,7 @@ Table of contents
           I have a 200 character limit on my pager. But I have wordy contacts
           who go over that limit. What I would like to do is have a recipe
           split up messages addressed to my pager into 200 character (max)
-          messages.
-          <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse2HTML/procmail/1997-12/msg00125.html?43#mfs>
+          messages (Procmail mailing list 1997-12).
 
         [era] This stuff about forwarding to pagers is a recurring
         topic on this list. I've tried to find a good summary of all the
@@ -8069,7 +8009,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.34 2007/10/02 14:24:04 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.35 2007/10/02 15:08:54 jaalto Exp $
             #
             #   File id
             #
@@ -8798,8 +8738,7 @@ Table of contents
 
     18.20 NFS mounting /var/mail is a good way to get bad performance
 
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1998-06/msg00199.html>
-
+        Procmail mailing list 1998-06
 
             > /var/mail stays at a Solaris 2.5 machine. Cucipop is working
             > at the same machine. It's fine there. But, I want to have
@@ -9061,10 +9000,10 @@ Table of contents
         there anyway to cut down on the totally trivial denial-of-service
         attacks and because it's more efficient.
 
-          ...I am running procmail ver 3.11pre7 and I keep getting "out of memory
-          as i tried to allocate 8xxxxxx bytes.". I have over 100 meg
-          available swap space so i have a difficult time understanding
-          this. Is this a known error?
+          ...I am running procmail ver 3.11pre7 and I keep getting
+          "out of memory as i tried to allocate 8xxxxxx bytes.". I
+          have over 100 meg available swap space so i have a difficult
+          time understanding this. Is this a known error?
 
         Procmail's memory allocation technique appears to non-optimal for
         some OS/libc combos, namely implementation of the libc system
@@ -9073,36 +9012,7 @@ Table of contents
         system limitation to use a strategy more efficient on them. Don't
         hold your breath.
 
-        [ed] There is a patch available that should fix the problem
-        for you. See the messages at
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse/procmail?query=Albsmeier&errors=0&case=on&maxfiles=100&maxlines=30>.
-
-    18.26 Help, procmail uses occasionally huge chunk of memory
-
-          ...we've noticed that occasionally, procmail uses a huge chunk of
-          memory. It's always the same 17MB as reported by the top command.
-          Can anyone enlighten me as to why sometimes procmail creates such
-          a huge footprint and other times doesn't, for the same user with
-          an unchanged .procmailrc file?
-
-        [ed] Is your operating system a BSD variant such as FreeBSD or
-        OpenBSD? If so, then the problem is due to a poor implementation of
-        the Standard C Library system function realloc() on those
-        platforms. A patch that works around this is available. See the
-        messages at
-
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse/procmail?query=Albsmeier&errors=0&case=on&maxfiles=100&maxlines=30>
-
-        Specifically, the patch is located at
-
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse2HTML/procmail/1997-10/msg00330.html?63#mfs>.
-
-        It's an artifact of procmail's memory management. It reads
-        an entire message into memory before working on it. Fear the system
-        with procmail as the local delivery agent, where people are
-        slagging 100M CAD files around. :-)
-
-    18.27 Procmail signaled out of memory in my verbose log
+    18.26 Procmail signaled out of memory in my verbose log
 
           ...I notice in my procmail verbose log the following
           'transaction':
@@ -9144,7 +9054,7 @@ Table of contents
         memory to handle TRAP and EXITCODE, and it'll refuse to try that
         when it was malloc that caused the exit.)
 
-    18.28 Variables DEFAULT and ORGMAIL
+    18.27 Variables DEFAULT and ORGMAIL
 
           ...According to the man pages, `DEFAULT' is defined as `ORGMAIL'
           ...so if I redefine ORGMAIL, then `DEFAULT' should change as
@@ -9199,7 +9109,7 @@ Table of contents
         `EXITCODE' would probably override those. The message is logged
         as "*Bounced*".
 
-    18.29 When DEFAULT cannot be mailed to
+    18.28 When DEFAULT cannot be mailed to
 
         If procmail gets to the end of the rcfile without delivery (or without
         being directed to another rcfile by an INCLUDERC or HOST assignment),
@@ -9217,7 +9127,7 @@ Table of contents
         MTA, which, depending on other factors, will either requeue the letter
         and try delivering later or will bounce it to the sender.
 
-    18.30 Variable DROPPRIVS
+    18.29 Variable DROPPRIVS
 
           ...I have procmail invoked from a mailtable for a virtual domain.
           Presently that runs as root, inherited from sendmail. I'd like to
@@ -9252,7 +9162,7 @@ Table of contents
 
             /etc/procmailrcs must be owned by root and mode 700.
 
-    18.31 Variable HOME
+    18.30 Variable HOME
 
         [david] Since procmail doesn't understand tilde, you have to use
         variable HOME instead.
@@ -9283,7 +9193,7 @@ Table of contents
             HOME_PHIL   = `ksh -c "echo ~phil"`
             HOME_ED     = `ksh -c "echo ~ed"`
 
-    18.32 Variable HOST
+    18.31 Variable HOST
 
         [philip] If a assignment to the "HOST" variable occurs where the
         assigned value doesn't equal the hostname of the machine on which
@@ -9341,7 +9251,7 @@ Table of contents
                 INCLUDERC = $HOME/.$MATCH.rc
             }
 
-    18.33 Variable LINEBUF
+    18.32 Variable LINEBUF
 
           ...[manual] Length of the internal line buffers, cannot be set
           smaller than 128. All lines read from the rcfile should not
@@ -9454,7 +9364,7 @@ Table of contents
         Unfortunately, LINEBUF seems to be a write-only variable; you can
         change its value but you can't find out its current setting.
 
-    18.34 Variable LOG and LOGFILE
+    18.33 Variable LOG and LOGFILE
 
         If you want to print something to the `LOGFILE', you could do it
         like this
@@ -9483,7 +9393,7 @@ Table of contents
 
             VERBOSE = $saved            # restore original value
 
-    18.35 Variable TRAP
+    18.34 Variable TRAP
 
         Here is one example how to write to the log file, Be sure that you
         have preset all the variables, this just demonstrated the usage of
@@ -9538,7 +9448,7 @@ Table of contents
                 TRAP = "${TRAP:+$TRAP ; }$FORMAIL -XSubject:"
             }
 
-    18.36 Variable UMASK
+    18.35 Variable UMASK
 
         There is a better way to find out which folders contain new
         mails if you are using procmail to filter the mails. (This was a
@@ -9573,7 +9483,7 @@ Table of contents
             mail checking script, but I would then only ls -l the spool
             files and look for files with an x01 permission.
 
-    18.37 UMASK and permissions
+    18.36 UMASK and permissions
 
           My mail folder says -rw-r--r-x, Is there a bug in Procmail's
           umask handling? (see last x bit)
@@ -9604,7 +9514,7 @@ Table of contents
         executables. Procmail just happens to call open() with a mode
         argument of 0667, to be modified by your umask.
 
-    18.38 Performance difference between back tick and "|" recipe
+    18.37 Performance difference between back tick and "|" recipe
 
         Procmail sends the whole message to stdin whenever
         it sees back ticks used. And if you use recipe, you can add
@@ -9631,7 +9541,7 @@ Table of contents
             :0 hwic
             | cat - /dev/null; echo "hi there" > some-file.txt
 
-    18.39 Procmail's temporary file names while writing file out
+    18.38 Procmail's temporary file names while writing file out
 
           ...Any ideas what might make those .nfs* files? They contain
           messages which seem to have been successfully processed by
@@ -9692,7 +9602,7 @@ Table of contents
         files over a certain age to eliminate the unsightly buildup in the
         filesystems.
 
-    18.40 Parameter $@
+    18.39 Parameter $@
 
         [david] Of version 3.11pre7 procmail does not grok "$*", nor does
         it grok "$@" outside a pipe or forward action. The only way to get
@@ -9723,7 +9633,7 @@ Table of contents
         that while you might not type in such an addresses, your MUA's
         reply builder may.
 
-    18.41 Procmail variables are null terminated (detecting null string)
+    18.40 Procmail variables are null terminated (detecting null string)
 
         You can't catch null in the message. Eg if you try like this
 
@@ -9746,7 +9656,7 @@ Table of contents
         procmailrcs, so you can use a literal control-A and octal-377 in
         your .procmailrc and save an echo and shell invocation right there.
 
-    18.42 FROM_DAEMON TO and TO_ and case-sensitiveness
+    18.41 FROM_DAEMON TO and TO_ and case-sensitiveness
 
         [david] ^TO is case-insensitive by default. Stephen once told me
         something to the effect that tokens like ^TO, ^TO_, ^FROM_DAEMON,
@@ -9760,7 +9670,7 @@ Table of contents
         recipe are not affected by this. The other tokens have no effect on
         the case-sensitivity. (This is with procmail 3.11pre4)
 
-    18.43 TO_ macro deciphered
+    18.42 TO_ macro deciphered
 
           ...What is the essential difference between TO and TO_ ?
 
@@ -9803,7 +9713,7 @@ Table of contents
              )                      # [end (A)]
             /x                      # [end regexp]
 
-    18.44 TO_ macro and RFC 822
+    18.43 TO_ macro and RFC 822
 
           ...According to RFC822 the From address can contains almost anything
           and the valid mail address can be extracted from the line as
@@ -9848,7 +9758,7 @@ Table of contents
 
         If someone is malicious enough to send you such mail.
 
-    18.45 FROM_DAEMON deciphered
+    18.44 FROM_DAEMON deciphered
 
         Here is the exploded FROM_DAEMON regexp as of 3.11pre7
 
@@ -10124,7 +10034,7 @@ Table of contents
 
         You need a program which will fetch your e-mail from the IMAP
         server and then feed it to procmail. One such program that can do
-        this is fetchmail. Check out http://locke.ccil.org/~esr/fetchmail/.
+        this is fetchmail. Check out http://packages.debian.org/fetchmail
         The bad news is that once you do this, you probably won't be able
         to use an IMAP client to read your e-mail anymore. But that might
         be good news if you prefer an MUA that reads mbox files but doesn't
@@ -10499,25 +10409,24 @@ Table of contents
 
     21.1 RFCs and their jurisdiction (munged Addresses)
 
-        Try dejanews <power seach>
         Groups: gnu.emacs.gnus
         Search: RFC
 
           The real implementation of news software doesn't care if the from
           field is munged or not
 
-        [1998-03-25 gnus.emacs.gnus, Marty Fouts <fouts A T null.net>] The point
-        of the argument is: The RFCs don't demand what those who would
-        quote them to suppress munging claim they do. In particular, RFC
-        1036 is advisory, an _attempt_ to describe how netnews works with
-        NNTP. In the case of header munging, RFC 1036 does _not_ describe
-        the way the software works in the field. There is no reason to cite
-        an advisory RFC that in many ways is incorrect to support an
-        untenable position.
+        [1998-03-25 gnus.emacs.gnus, Marty Fouts <fouts A T null.net>]
+        The point of the argument is: The RFCs don't demand what those
+        who would quote them to suppress munging claim they do. In
+        particular, RFC 1036 is advisory, an _attempt_ to describe how
+        netnews works with NNTP. In the case of header munging, RFC
+        1036 does _not_ describe the way the software works in the
+        field. There is no reason to cite an advisory RFC that in many
+        ways is incorrect to support an untenable position.
 
           _Note:_ Marty is an IETF USEFOR and has a good understanding how
           the RFCs should be interpreted. See gnu.emacs.gnus 1999-02-08
-          and theread / Re: "Sender" field/. <http://search.dejanews.com/msgid.xp?MID=%3Cy1ud83pre7w.fsf@acuson.com%3E&format=threaded&maxhits=200>
+          and theread / Re: "Sender" field/.
 
         [1997-11-05 gnus.emacs.gnus, Marty Fouts] No RFC forces the address
         of the poster to be a *reachable* address (indeed, Sender: is
@@ -10827,12 +10736,12 @@ Table of contents
 
     21.7 Some RFC Pointers
 
-        http://www.cis.ohio-state.edu/hypertext/information/rfc.html
+        http://www.ietf.org/rfc.html
 
         o   rfc821 SMTP protocol, see also rfc959 FTP protocol standard
         o   rfc822  Format of internet messages (formerly called as Arpanet)
             A new draft that is likely to replace 822 is at:
-            ftp://ftp.ietf.org/internet-drafts/draft-ietf-drums-msg-fmt-04.txt
+            http://tools.ietf.org/html/draft-ietf-drums-msg-fmt-04
         o   rfc1036 (the mail message format standard: From, to, date ...)
             Check also `son-of-1036.html' mentioned earlier.
         o   rfc1153 Digest message format, 1990, Status: EXPERIMENTAL)
@@ -10849,14 +10758,9 @@ Table of contents
                     Also rfc1341
         o   rfc2142 Mailbox names for common services, roles and functions
 
-        More Details
-
-        o   Common Internet Message Headers
-            http://andrew2.andrew.cmu.edu/rfc/rfc2076.html
-
 22.0 Introduction to E-mail Headers
 
-    22.1 To find out more about mail (Resources)
+    22.1 To find out more about mail
 
        "All about Email headers"
         http://www.stopspam.org/email/headers/headers.html
@@ -10874,13 +10778,7 @@ Table of contents
         http://www.imc.org/mail-standards.html
 
        "FAQ archive"
-        http://www.FAQs.org/FAQs/
-
-       "RTFM ftp archive - Read the fine manual"
-        ftp://rtfm.mit.edu/pub/Usenet-by-hierarchy/comp/mail/
-
-       "Sendmail"
-        ftp://rtfm.mit.edu/pub/Usenet-by-group/comp.mail.misc/sendmail_FAQ
+        http://www.faqs.org/faqs/
 
        "UNIX EMail Software"
         http://www.faqs.org/faqs/mail/setup/unix/part1/index.html
@@ -10891,10 +10789,7 @@ Table of contents
         X.400, "The maps", Aliases
 
        "Plus addressing"
-        http://www.FAQs.org/FAQs/mail/addressing/
-
-       "Understanding E-Mail Addresses, DNS, Gateways"
-        http://www.uiuc.edu/uiucnet/3-2-1.html
+        http://www.faqs.org/faqs/mail/addressing/
 
        "The Unix MBOX, Berkeley, format"
         http://www.qmail.org/qmail-manual-html/man5/mbox.html ...This
@@ -10985,7 +10880,7 @@ Table of contents
 
     22.2 Lecture by Alan Stebbens
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/cgi-bin/w3glimpse2HTML/procmail/1996-08/msg00098.html?69#mfs>
+        Procmail mailing list 1996-08.
 
         There are two general classes of headers: those generated
         automatically by the MTA, and those configured and inserted by the
@@ -11157,7 +11052,7 @@ Table of contents
 
     22.4 Bcc lecture by Alan Stebbens
 
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00054.html>
+        Procmail mailing list 1996-11
 
         Procmail most typically processes incoming mail at a destination
         site; the BCC formatting (or lack of it) is done on outgoing mail,
@@ -11210,7 +11105,7 @@ Table of contents
 
     22.5 Bcc lecture by Philip Guenther
 
-        <URL:http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00055.html>
+        Procmail mailing list 1996-11
 
         The Bcc: header should in general not appear in an incoming message
         (if procmail is used for processing outgoing mail it may occur
@@ -11240,7 +11135,7 @@ Table of contents
 
          [alan]
 
-        <http://www.rosat.mpe-garching.mpg.de/mailing-lists/procmail/1996-11/msg00093.html>
+        Procmail mailing list 1996-11
 
         Only the MTA knows the destination address because it is part of
         the "envelope", the information which is passed on the "RCPT To:
@@ -11309,8 +11204,7 @@ Table of contents
         software can work with and allows you to leave the use of brackets
         for comments. The current internet draft that on this that will
         most likely replace RFC 822 on this point is at:
-
-            ftp://ftp.ietf.org/internet-drafts/draft-ietf-drums-msg-fmt-04.txt
+        http://tools.ietf.org/html/draft-ietf-drums-msg-fmt-04
 
         The bit is section 3.4 which says:
 
@@ -11513,12 +11407,7 @@ Table of contents
         It's more usual (and useful) to refer to news articles by
         Message-ID (that's what Message-IDs are for!). In this case
 
-            <URL:news:uhfwwk9ae.fsf_-_@delivery.ansa.co.uk>
-
-        If you are so attached to DejaNews:
-
-            <URL:http://search.dejanews.com/msgid.xp?MID=%3C
-            uhfwwk9ae.fsf_-_@delivery.ansa.co.uk%3E&fmt=raw>
+            <news://uhfwwk9ae.fsf_-_@delivery.ansa.co.uk>
 
         (though for some reason this returns text/plain for something which
         is clearly a message/rfc822). Either of which is an unambiguous
@@ -11582,7 +11471,7 @@ Table of contents
 
             :0Efwh # if there's no return path but there is a From_, use that
             * ^^From[      ]+\/[^  ]+
-            | formail -A "Old-Return-Path: <$MATCH>"
+            | formail -A "Old-Return-Path: $MATCH"
 
             :0Efwh # if there was neither a Return-Path: nor a From_
             | formail -A "Old-Return-Path: unknown"
@@ -11676,17 +11565,7 @@ Table of contents
         fact, decreases functionality. Reply-To munging destroys the
         reply-to-author. capability.
 
-       "Reply problems"
-        http://www.cs.utk.edu/~moore/reply-problem-list.txt
-
        "Mail-Followup-To"
-        ftp://koobera.math.uic.edu/www/proto/replyto.html
-        ...there are useful things that can be done with these headers. For
-        instance -- on mailing lists where everyone that posts is assumed to
-        be subscribed (like this one), the listserv could add a
-        "Mail-Followup-To: ding A T gnus.org" header. It can also be used by the
-        sender as a way to signal "I am subscribed to the list; don't Cc me or
-        anybody else".
 
          [Mail-Followup-To problems] Keith Moore <moore A T
          cs.utk.edu> Wed, 11 Feb 1998 14:20:25 -0500 commented on the

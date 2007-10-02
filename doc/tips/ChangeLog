@@ -6,14 +6,25 @@
 	(1.1 General): Made more compact.
 	(1.3 Abbreviations and thanks): Removed mailing lists links.
 	(2.2 Procmail resources): Updated Nancy McGough's Prcmail Quick
-	start
+	start. Remove 'Procmail archive' topic (old links).
+	Removed non-responding koobera link from 'Mail-Followup-To'.
 	(2.5 Procmail code to filter UBE): update Procmail Module library
 	URL.
 	(6.1 Philosophy of abstraction in regexps): updated link to
 	regexlib.com.
 	(9.11 Counting commas with recursive includerc): Removed
 	invalid link www.rosat.mpe-garching.mpg.de/mailing-lists/procmail
+	(12.2 Mime notes): Topic removed. Old.
+	(12.3 Software to deal with mime or HTML): Topic removed.
+	(18.26 Help, procmail uses occasionally huge chunk of memory):
+	Topic removed. Old.
+	(19.1 List of exit codes): Correct fetchmail URL.
+	(21.0 RFC, Request for comments): Removed non-responding dejanews
+	link.
+	(21.7 Some RFC Pointers): Fix URL to point to IETF.
+	(22.1 To find out more about mail): Removed non-responding rtfm.mit.edu
 	(23.9 Reply-To header): Fixed HTML output error with bullets.
+	- Renumbered headings after these changes.
 
 2007-07-31  Jari Aalto  <jari.aalto@cante.net>
 
