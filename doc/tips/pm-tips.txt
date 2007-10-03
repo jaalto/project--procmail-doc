@@ -1,4 +1,4 @@
-Table of contents
+xTable of contents
 
        1.0 Document id
            1.1 General
@@ -395,7 +395,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.36 2007/10/02 15:20:12 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.37 2007/10/03 17:36:02 jaalto Exp $
         .Homepage http://pm-doc.sourceforge.net/
         .URLs last checked: 2007-10-02
 
@@ -497,7 +497,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
-            v2.31   2007-07-31  519  New HTML/CSS layout
+            v2.36   2007-07-31  519  New HTML/CSS layout. Links checked
             v2.30   2006-02-15  519  Sanitized all email addresses
             v2.27   2004-10-10  516  Spam related things removed.
             v2.16   2002-08-31  596  Removed old UBE pointers.
@@ -548,42 +548,21 @@ Table of contents
 
     1.5 Document layout and maintenance
 
-        In order to be able to maintain this documentation in every
-        possible platform, the base version of this document is kept
-        in text format, which is easily accessible and requires no
-        special editors or learning a markup language like LaTex,
-        Texinfo, or Linux DocBook SGML. Granted, that some other base
-        format may be more suitable for multiple presentation output
-        formats (like postscript, Emacs info), but in simple TEXT and
-        generated HTML hopefully suffices to all needs. Also Perl and
-        Emacs are cross-platform tools and easily installed, so
-        getting work is hopefully no obstacle. The tools to help
-        maintaining this document include (not required!):
+        The base version of this document is kept in plain text
+        format, which requires no special editors or learning a markup
+        language. The tools to help maintaining this document include:
 
-        o   Emacs Editor and plug-in: Technical Text formatting package
-            *tinytf.el* (automatic TOC, indentation control, fontifying)
-            http://tiny-tools.sourceforge.net/
-        o   Perl  text-to-HTML conversion program
-            *t2html.pl* project is at
-            http://perl-text2html.sourceforge.net/
+        o   #URL<http://www.gnu.og/software/emacs><Emacs> and
+            technical formatting package (TOC, indentation control,
+            fontifying) *tinytf.el* from
+            http://freshmeat.net/projects/emacs-tiny-tools
+        o   Text-to-HTML conversion program *t2html.pl* from
+            http://freshmeat.net/projects/perl-text2html
 
-        Text version of this file was converted into HTML with
-        following command. The `--Out' option generates file
-        pm-tips.html in current directory. Some $$ tags at the top of
-        file are designed to be printed by GNU RCS ident(1).
+        Text version of this file is converted into HTML with
+        following command:
 
-            % per -S t2html.pl                                              \
-              --html-frame                                                  \
-              --title   "Procmail tips page"                                \
-              --author  "Jari Aalto"                                        \
-              --meta-keywords "procmail, sendmail, mail, filter, FAQ, ube"  \
-              --meta-description "Procmail tips page"                       \
-              --base      http://pm-doc.sourceforge.net                     \
-              --document  http://pm-doc.sourceforge.net                     \
-              --url       http://pm-doc.sourceforge.net                     \
-              --html-body "LANG=en"                                         \
-              --Out                                                         \
-              pm-tips.txt
+            perl -S t2html.pl --Auto-detect --Out pm-tips.txt
 
        1.5.1 Sending improvements
 
@@ -859,9 +838,10 @@ Table of contents
 
     2.3 Procmail mode for Emacs
 
-        If you use Emacs, See Procmail programming mode *tinypm.el*
-        at <http://tiny-tools.sourceforge.net/> and it can be used
-        to syntax check procmail recipes. Here is an example of its output:
+        If you use Emacs, See Procmail mode *tinypm.el* at
+        <http://freshmeat.net/projects/emacs-tiny-tools>. It can also
+        be used to syntax check recipes. Here is an example of its
+        output:
 
             *** 1997-11-24 22:13 (pm.lint) 3.11pre7 tinypm.el 1.80
             cd /users/jaalto/junk/
@@ -8008,7 +7988,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.36 2007/10/02 15:20:12 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.37 2007/10/03 17:36:02 jaalto Exp $
             #
             #   File id
             #
@@ -10123,7 +10103,7 @@ Table of contents
         Procmail mode for Emacs (which can also lint procmail recipes) is
         available. People familiar with C-coding know lint, which is a
         rigorous code syntax checker. You can read about this Emacs mode
-        from http://tiny-tools.sourceforge.net/
+        from http://freshmeat.net/projects/emacs-tiny-tools
 
     20.3 Why use procmail with Gnus
 
