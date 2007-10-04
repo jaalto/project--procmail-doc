@@ -1,4 +1,4 @@
-xTable of contents
+Table of contents
 
        1.0 Document id
            1.1 General
@@ -395,7 +395,7 @@ xTable of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.37 2007/10/03 17:36:02 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.38 2007/10/04 16:23:37 jaalto Exp $
         .Homepage http://pm-doc.sourceforge.net/
         .URLs last checked: 2007-10-02
 
@@ -497,8 +497,8 @@ xTable of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
-            v2.36   2007-07-31  519  New HTML/CSS layout. Links checked
-            v2.30   2006-02-15  519  Sanitized all email addresses
+            v2.36   2007-10-02  519  New HTML/CSS layout. Links checked.
+            v2.30   2006-02-15  519  Sanitized all email addresses.
             v2.27   2004-10-10  516  Spam related things removed.
             v2.16   2002-08-31  596  Removed old UBE pointers.
             v2.13   2002-08-13  596  Removed old UBE pointers.
@@ -559,30 +559,32 @@ xTable of contents
         o   Text-to-HTML conversion program *t2html.pl* from
             http://freshmeat.net/projects/perl-text2html
 
-        Text version of this file is converted into HTML with
-        following command:
+        Text version of this file is converted to HTML with:
 
-            perl -S t2html.pl --Auto-detect --Out pm-tips.txt
+            perl -S <conversion program> --Auto-detect --Out pm-tips.txt
 
-       1.5.1 Sending improvements
+        SENDING IMPROVEMENTS
 
         If you have any spare moment, a glimpse to find some spelling
         mistakes or misuse of the verbs, please go ahead and send a
         patch to maintainer of this page. The preferred way to send
         corrections to this document is as `diff(1)' output. Here's
         how to make corrections send them forward. Please try to use
-        unified GNU diff `-u' options and only if it's not available,
-        use regular context diff option `-c'.
+        unified diff `-u' option. The source is available at
+        http://pm-doc.cvs.sourceforge.net/pm-doc/pm-doc/doc/tips/
 
-            %   cp pm-tips.txt pm-tips.txt.orig
+            cp pm-tips.txt pm-tips.txt.orig
 
-            ... load the pm-tips.txt to a text editor
-            ... edit the file and save
-            ... Generate the difference (a patch(1) compatible file)
+            ... load the pm-tips.txt to a text editor / edit / save
+            ... Generate the difference
 
-            %   diff -bwu pm-tips.txt.orig pm-tips.txt > pm-tips.txt.patch
+            diff -bwu pm-tips.txt.orig pm-tips.txt > pm-tips.txt.patch
 
-            ...Send content of pm-tips.txt.diff by mail to document maintainer.
+            ...Send content of pm-tips.txt.diff by mail to maintainer
+
+        If you do not know what a diff format is, then simply send
+        your comments in email. Use "Linux: pm-doc" as subject to
+        bypass spam filtering.
 
     1.6 About presented recipes
 
@@ -677,10 +679,11 @@ xTable of contents
         but 9876543210 is easier to remember/type and will function just as
         well.
 
-        _PMSRC_ = Procmail module source code directory. Location where `*.rc'
-        files reside. Anywhere you want it to be. Usually $HOME/pm or
-        $HOME/procmail/lib. Here you can keep the procmail files, log files and
-        includerc scripts. Another common used synonym is _PMDIR_.
+        _PMSRC_ = Procmail module source code directory. Location
+        where `*.rc' files reside. Anywhere you want it to be. Usually
+        `$HOME/pm' or `$HOME/procmail/lib'. Here you can keep the
+        procmail files, log files and includerc scripts. Another
+        common used synonym is _PMDIR_.
 
         _SPOOL_ = Directory where your procmail delivers the categorized
         messages. Like mailing lists:
@@ -733,8 +736,6 @@ xTable of contents
         functions are defined in the `pm-javar.rc' module.
 
     1.8 About "useless use of cat award"
-
-        FIXME: Replace wc -l and use other example.
 
         Randal Schwartz, a well-known Perl programmer and Perl book writer,
         started giving rewards for the "useless use of cat command"
@@ -798,47 +799,28 @@ xTable of contents
         the mailing list or to <bug@procmail.org>. The development mailing
         list is running SmarList at <procmail-dev@procmail.org>.
         Newest Procmail code it at <http://www.procmail.org/> and
-        <ftp://ftp.procmail.org/>.
+        ready packages are available at Linux distributions' repositories.
 
     2.2 Procmail resources
 
         Procmail is discussed in Usenet newsgroup *comp.mail.misc*.
 
-       "Nancy McGough <nm A T noadsplease.ii.com> - Prcmail Quick start"
-        .http://www.ii.com/internet/robots/procmail/qs/
-
-       "Era Eriksson's Procmail FAQ and link collection"
-        http://www.iki.fi/~era/procmail
-
-       "Professor Timo Salmis's Procmail page"
-        http://www.uwasa.fi/~ts/info/proctips.html
-        See Timo's "Foiling Spam with an Email Password System" at
-        http://www.uwasa.fi/~ts/info/spamfoil.html
-
-       "Joe Gross's short Procmail tutorial"
-        http://www.procmail.net/ <jgross A T stimpy.net>
-        ...Using procmail and a
-        feature of ph you can set up your own mailing list without
-        needing root on your own machine.
-
-       "Google's procmail pointers"
-        http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/
-
-       "Eli on Procmail"
-        See Eli the Bearded's addressing tips at
-        http://www.faqs.org/faqs/mail/addressing/
-
-       "Concordia University's procmail page"
-        http://alcor.concordia.ca/topics/email/auto/procmail/
-        ...People often ask how to avoid receiving "spam" mail, or how
-        to bounce mail from someone who is annoying them. These pages
-        tell you how to install procmail; you can then tailor it to do
-        all those things, or whatever else you want.
-        <webdoc A T alcor.concordia.ca>
+        o   #URL<http://www.ii.com/internet/robots/procmail/qs/><Nancy McGough <nm A T noadsplease.ii.com> - Prcmail Quick start>
+        o   #URL<http://www.iki.fi/~era/procmail><Era Eriksson's Procmail FAQ and link collection>
+        o   #URL<http://www.uwasa.fi/~ts/info/proctips.html><Professor Timo Salmis's Procmail page>
+        o   #URL<http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/><Google's procmail pointers>
+        o   #URL<http://www.faqs.org/faqs/mail/addressing/><Eli the Bearded's addressing tips>
+        o   #URL<http://alcor.concordia.ca/topics/email/auto/procmail/><Concordia University's procmail page>
+            <webdoc A T alcor.concordia.ca>: "...People often ask how
+            to avoid receiving "spam" mail, or how to bounce mail from
+            someone who is annoying them. These pages tell you how to
+            install procmail; you can then tailor it to do all those
+            things, or whatever else you want."
 
     2.3 Procmail mode for Emacs
 
-        If you use Emacs, See Procmail mode *tinypm.el* at
+        If you use #URL<http://www.gnu.og/software/emacs><Emacs>, See
+        Procmail mode *tinypm.el* at
         <http://freshmeat.net/projects/emacs-tiny-tools>. It can also
         be used to syntax check recipes. Here is an example of its
         output:
@@ -855,35 +837,34 @@ xTable of contents
 
        2.4.1 Where to get various modules
 
-       "Procmail module library"
-
-        Hosted at sourceforge CVS server and open for anyone to
-        participate. Visit
-        <http://freshmeat.net/projects/procmail-lib>. The idea was
-        originally invented by Alan Stebbens (<alan.stebbens A T
-        software.com>, <alan.stebbens A T openwave.com>).
+        o   #URL<http://freshmeat.net/projects/procmail-lib><Procmail
+            module library>. The idea of plug-in modules was
+            originally coined by Alan Stebbens (<alan.stebbens A T
+            software.com>, <alan.stebbens A T openwave.com>).
 
        2.4.2 Terminology
 
-        *subroutine* = A piece of code that gets something in `INPUT' and
-        responds with `OUTPUT'. Subroutine is not message specific.
+        *subroutine/module* = A piece of code that gets something in
+        `INPUT' and responds with `OUTPUT'. Subroutine is not message
+        specific.
 
-        *recipe* = A piece of code that is somewhat self contained:
-        It reads something from the message or does something
-        according to matches in message. Recipe may be message-specific.
+        *recipe/module* = A piece of code that is somewhat self
+        contained: It reads something from the message or does
+        something according to matches in message. Recipe may be
+        message-specific.
 
        2.4.3 Foreword to using modules
 
-        In the module listing, some of the modules are recipes and some can
-        be considered subroutines. Let's take the address exploder module
-        that was discussed a while ago. First, visualise following familiar
-        programming language pseudo code:
+        In the module listing, some of the modules are recipes and
+        some can be considered subroutines. Let's take the address
+        exploder. First, visualise following familiar programming
+        language pseudo code:
 
             (ret-val1, ret-val2 ...) = Function(arg1, arg2, arg3 ...)
 
-        *Function* may return multiple arguments and multiple arguments can
-        be passed to it. Clear so far. Let's show how this applies to
-        procmail modules:
+        *Function* may return multiple arguments and multiple
+        arguments can be passed to it. Clear so far. The concept
+        applies to procmail modules like this:
 
             RC_FUNCTION  = $PMSRC/pm-xxx.rc # name the subroutine/module
             RC_FUNCTION2 = ...
@@ -1115,7 +1096,6 @@ xTable of contents
             thinking to use this module as a generic Challenge-Response
             module to reduce spam.
 
-
     2.5 Procmail code to filter UBE
 
           _Sysadms_ _remember_ : Spam filtering is much more
@@ -1127,34 +1107,30 @@ xTable of contents
           such bogus addresses at the SMTP level before the message is
           received.
 
-       "pm-jaube.rc - Procmail module library's UBE filter"
-        After Daniel Smith posted his spam recipes to procmail mailing
-        list, the code was adopted and more generalized to handle lot
-        more UBE. Module needs no special setup and can be installed
-        via simple INCLUDERC. All UBE detection happens using procmail
-        rules with no external files needed. The module is available
-        in Procmail module library at
-        <http://freshmeat.net/projects/procmail-lib>.
-
-       "Catherine A. Hampton's Spambouncer"
-        http://www.spambouncer.org/
-        ...The attached set of procmail recipes/filters, which I call
-        The Spam Bouncer, are for users who are sick of spam (unsolicited
-        junk mail) and want to filter it out of their mail as easily
-        as possible. These recipes can be used as shared recipes for a
-        whole system, or by an individual for their own mailbox only.
-
-       "Junkfilter" by Gregory Sutter <gsutter A T pobox.com>
-        http://www.pobox.com/~gsutter/junkfilter/ and
-        http://sourceforge.net/projects/junkfilter
-        ...Junkfilter is a user-configurable procmail-based filter system
-        for electronic mail. Recipes include checks for forged headers,
-        key words, common spam domains, relay servers and many others.
-
-       "Nonplussed Spambouncer"
-        http://www.cs.mu.OZ.AU/~amb/
-        ...Procmail include file for bouncing spam. Requires sendmail with
-        plussed users.
+        o   #URL<http://freshmeat.net/projects/procmail-lib><pm-jaube.rc -Procmail module library's UBE filter>
+            After Daniel Smith
+            posted his spam recipes to procmail mailing list, the code
+            was adopted and more generalized to handle lot more UBE.
+            Module needs no special setup and can be installed via
+            simple INCLUDERC. All UBE detection happens using procmail
+            rules with no external files needed. The module is
+            available in Procmail module library at
+            <http://freshmeat.net/projects/procmail-lib>.
+       o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
+            The attached set of procmail recipes/filters, which I
+            call The Spam Bouncer, are for users who are sick of spam
+            (unsolicited junk mail) and want to filter it out of their
+            mail as easily as possible. These recipes can be used as
+            shared recipes for a whole system, or by an individual for
+            their own mailbox only.
+        o   #URL<http://sourceforge.net/projects/junkfilter><Junkfilter>.
+            by Gregory Sutter. Junkfilter is a user-configurable
+            procmail-based filter system for electronic mail. Recipes
+            include checks for forged headers, key words, common spam
+            domains, relay servers and many others.
+        o   #URL<http://www.cs.mu.OZ.AU/~amb/><Nonplussed Spambouncer>
+            Procmail module for bouncing spam. Requires sendmail with
+            plussed users.
 
 3.0 Dry run testing
 
@@ -1683,14 +1659,15 @@ xTable of contents
         Hm. Can we draw some conclusion? Not anything definitive, but at
         least something:
 
-        o   While `sed(1)' and `grep(1)' may be bigger than `awk(1)' in
-            some systems, this is an exception. They are usually much
-            smaller and fast to use.
+        o   While `sed(1)' and `grep(1)' may be bigger than `awk(1)'
+            in some systems, this is an exception. They are usually
+            much smaller. It's more effective to use one `awk' process
+            instead of many combined filtering commands.
         o   Complex commands that would require many processes to be
-            chained together, like `grep -v | grep | sed' could
-            be usually accomplished with one `awk(1)' call. Ask somewhere how to
-            do it with `awk(1)' if you don't know the language, it's quite alike
-            `perl(1)'
+            chained together, like `grep -v | grep | sed' could be
+            usually accomplished with one `awk(1)' call. Ask somewhere
+            how to do it with `awk(1)' if you don't know the language,
+            it's quite alike `perl(1)'
         o   Try to use standard `awk(1)'. `gawk(1)' and `nawk(1)'
             are bigger and may not be found on all systems.
         o   Avoid `perl(1)' at all costs; it's many times (6) bigger than
@@ -7988,7 +7965,7 @@ xTable of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.37 2007/10/03 17:36:02 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.38 2007/10/04 16:23:37 jaalto Exp $
             #
             #   File id
             #

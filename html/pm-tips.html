@@ -15,7 +15,7 @@ Procmail Tips
 	content="">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Expires" content="Sun,  2 Dec 2007 17:37:04 GMT">
+  <meta http-equiv="Expires" content="Mon,  3 Dec 2007 15:51:47 GMT">
 
 
 
@@ -1591,446 +1591,6 @@ Procmail Tips
 
 
 
-xTable of contents
-
-
-<p class="column7"><em><strong>
-       1.0 Document id
-           1.1 General
-           1.2 What is Procmail?
-           1.3 Abbreviations and thanks
-           1.4 Version information
-           1.5 Document layout and maintenance
-        1.5.1 Sending improvements
-           1.6 About presented recipes
-           1.7 Variables used in recipes
-           1.8 About &quot;useless use of cat award&quot;
-
-
-<p class="column7"><em><strong>
-       2.0 Procmail pointers
-           2.1 Where is procmail developed
-           2.2 Procmail resources
-           2.3 Procmail mode for Emacs
-           2.4 Procmail module library project
-        2.4.1 Where to get various modules
-        2.4.2 Terminology
-        2.4.3 Foreword to using modules
-        2.4.4 Header file modules
-        2.4.5 General modules
-        2.4.6 Low-level Date and time handling
-        2.4.7 Higher-level Date and time handling
-        2.4.8 Forwarding and account modules
-        2.4.9 Vacation modules
-        2.4.10 Message-id based modules
-        2.4.11 Cron modules
-        2.4.12 Backup modules
-        2.4.13 Confirmation modules
-        2.4.14 Mime modules
-        2.4.15 Filtering message body or headers
-        2.4.16 Miscellaneous modules
-        2.4.17 Mailing list modules
-           2.5 Procmail code to filter UBE
-
-
-<p class="column7"><em><strong>
-       3.0 Dry run testing
-           3.1 What is dry run testing?
-           3.2 Why the From field is not okay after dry run?
-           3.3 Getting default value of a procmail variable
-
-
-<p class="column7"><em><strong>
-       4.0 Things to remember
-           4.1 Get the newest procmail
-           4.2 Csh's tilde is not supported
-           4.3 Be sure to write the recipe starting right
-           4.4 Always set SHELL
-        4.4.1 If system has no /bin/sh and you're forced to use csh/tcsh
-        4.4.2 Procmail won't work well with SHELL set to csh derivate
-           4.5 Check and set PATH
-           4.6 Keep the log on all the time
-           4.7 Never add a trailing slash for directories
-           4.8 Remember what term DELIVERED means
-           4.9 Beware putting comment in wrong places
-           4.10 Brace placement
-           4.11 Local lockfile usage
-           4.12 Global lockfile
-           4.13 Gee, where do I put all those ! * $ ??
-           4.14 If you Send an automatic reply, use X-loop header
-           4.15 Avoid extra shell layer and check command for SHELLMETAS
-           4.16 Think what shell commands you use
-           4.17 Using absolute paths when calling a shell program
-           4.18 Disabling a recipe temporarily
-           4.19 Keep message backup, no matter what
-           4.20 Order of the procmail recipes
-
-
-<p class="column7"><em><strong>
-       5.0 Procmail flags
-           5.1 The order of the flags
-           5.2 Flags HB at top of recipe (warning)
-           5.3 Flag w and recipe with |
-           5.4 Flag w, lock file and recipe with |
-           5.5 Flag f and w together
-           5.6 Flags h and b
-           5.7 Flag h and sinking to /dev/null
-           5.8 Flag i and pipe flag f
-           5.9 Flag r
-           5.10 Flag c's background
-           5.11 Flag c before nested block forks a child
-           5.12 Flag c and understanding possible forking penalty
-           5.13 Flags before nested block
-           5.14 Flags aAeE tutorial
-
-
-<p class="column7"><em><strong>
-       6.0 Matching and regexps (regular expressions)
-           6.1 Philosophy of abstraction in regexps
-           6.2 Matches are not case-sensitive
-           6.3 Procmail uses multi line matches
-           6.4 Headers are unfolded before matching
-           6.5 Improving Space-Tab syndrome
-           6.6 Handling exclamation character
-           6.7 Rules for generating a character class
-           6.8 Matching space at the end of condition
-           6.9 Beware leading backslash
-           6.10 Correct use of TO Macro
-           6.11 Procmail's regexp engine
-           6.12 Procmail and egrep differences
-           6.13 Understanding procmail's minimal matching (stingy vs. greedy)
-           6.14 Explaining \/ and ()\/
-           6.15 Explaining  ^^ and ^
-           6.16 ANDing traditionally
-           6.17 ORing traditionally
-           6.18 ORing and score recipe
-           6.19 ORing by using De Morgan rules
-
-
-<p class="column7"><em><strong>
-       7.0 Variables
-           7.1 Setting and unsetting variables
-           7.2 Variable initialization and sh syntax
-           7.3 Testing variables
-           7.4 What does $\VAR mean?
-           7.5 Common pitfalls when using variables
-           7.6 Quoting: Using single or double quotes
-           7.7 Quoting: Passing values to an external program
-           7.8 Passing values from an external program
-           7.9 Incrementing a variable by a value N
-           7.10 Comparing values
-           7.11 Strings: How many characters are there in a given string?
-           7.12 Strings: How to strip trailing newline.
-           7.13 Strings: deriving the last N characters of a string.
-           7.14 Strings: Getting partial matches from a string.
-           7.15 Strings: Procmail string manipulation example
-           7.16 How to raise a flag if the message was filed
-           7.17 Dollar sign in condition lines.
-           7.18 Finding mysterious foo variable
-           7.19 Storing code to variable
-           7.20 Getting headers into a variable.
-           7.21 Converting value to lowercase
-
-
-<p class="column7"><em><strong>
-       8.0 Suggestions and miscellaneous
-           8.1 Speeding up procmail
-           8.2 See the procmail installation's examples
-           8.3 Printing statistics of your incoming mail
-           8.4 Storing UBE mailboxes outside of quota
-           8.5 Using first 5-30 lines from the message
-           8.6 Using cat or echo in scripts?
-           8.7 How to run an extra shell command as a side effect?
-           8.8 Forcing &quot;ok&quot; return status from shell script
-           8.9 Using grep with file lists to mach messages
-           8.10 Make your own .procmailrc available to others
-           8.11 Using dates efficiently
-           8.12 Keep simple header log
-           8.13 Gzipping messages
-           8.14 Emergency stop for your .procmailrc
-
-
-<p class="column7"><em><strong>
-       9.0 Scoring
-           9.1 Using scores by an example
-           9.2 Brief Score tutorial
-           9.3 Score's scope
-           9.4 Counting length of a string
-           9.5 Counting lines in a message (Adding Lines: header)
-           9.6 Determining if body is longer than header
-           9.7 Matching last Received header
-           9.8 How to add Content-Length header
-           9.9 Testing message size or number of lines
-           9.10 Counting commas with recursive includerc
-
-
-<p class="column7"><em><strong>
-       10.0 Formail usage
-           10.1 Fetching fields with formail -x
-           10.2 Always use formail's -rt switch
-        10.2.1 For procmail versions prior 3.14
-           10.3 Using -rt and rewriting the From address
-           10.4 Formail -rt and Resent-From header
-           10.5 Quoting the message
-           10.6 Without quoting the message
-           10.7 How to include headers and body to the reply message
-           10.8 Adding text to the beginning of message
-           10.9 Adding text to the end of message
-           10.10 Adding text before quoted message
-           10.11 Adding extra headers from file
-           10.12 Splitting digest
-           10.13 Mailbox: Splitting to individual files
-           10.14 Mailbox: Extracting all From addresses from mailbox
-           10.15 Mailbox: Applying procmail recipe on whole mailbox
-           10.16 Mailbox: run series of commands for each mail (split mailbox)
-           10.17 Option -D and cache
-           10.18 Option -D and message-id in the body
-           10.19 Reducing formail calls (conditionally adding fields)
-           10.20 Formail -A -a options
-           10.21 Formail -e -s options
-
-
-<p class="column7"><em><strong>
-       11.0 Saving mailing list messages
-           11.1 Using subroutine pm-jalist.rc to detect mailing lists
-           11.2 Using plus addressing foo+bar@address.com
-           11.3 Using RFC comment trick for additional information
-           11.4 Simple mailing list handling
-           11.5 Archiving according to TO
-           11.6 Using Return-Path to detect mailing lists
-
-
-<p class="column7"><em><strong>
-       12.0 Procmail, MIME and HTML
-           12.1 Mime Bibliography
-           12.2 Mime notes
-           12.3 Software to deal with mime or HTML
-           12.4 Mime content type application/ms-tnef
-           12.5 Trapping HTML mime messages
-           12.6 Complaining about HTML messages
-           12.7 Converting HTML body to plain text
-           12.8 Getting rid of unwanted mime attachments (HTML, vcard)
-           12.9 Sending contents of a HTML page in plain text to someone
-
-
-<p class="column7"><em><strong>
-       13.0 Simple recipe examples
-           13.1 Saving: MH folders &ndash; numbered messages
-           13.2 Saving: to monthly folders
-           13.3 Modifying: Filtering basics
-           13.4 Modifying: Squeezing empty lines around message body
-           13.5 Modifying: shuffling headers always to same order
-           13.6 Service: Auto answerer to empty messages
-           13.7 Service: Ping responder
-           13.8 Service: simple vacation with procmail
-           13.9 Service: vacation code example
-           13.10 Service: Auto-forwarding
-           13.11 Service: forward only specific messages
-           13.12 Service: Making digests
-           13.13 Kill: killing advertisement headers and footers
-           13.14 Kill: simple kill file recipe with procmail
-           13.15 Kill: duplicate messages
-           13.16 Kill: spam filter with simple recipes
-           13.17 Kill: (un)subscribe messages
-           13.18 Time: Once a day cron-like job
-           13.19 Time: Running a recipe at a given time
-           13.20 Time: Triggering mail and using cron
-           13.21 Decoding: Uudecode
-           13.22 Decoding: MIME
-           13.23 How to send commands in the message's body
-           13.24 Matching two words on a line, but not one
-           13.25 How to define personal XX macros?
-           13.26 How to change subject by body match
-           13.27 How to change Subject according to some other header
-           13.28 How to call program with parameters
-
-
-<p class="column7"><em><strong>
-       14.0 Miscellaneous recipes
-           14.1 Matching valid Message-Id header
-           14.2 Sending two files in a message
-           14.3 Excessive quoting of message
-           14.4 Sending message to pager in chunks
-           14.5 Playing particular sound when message arrives
-           14.6 Combining multiple Original-Cc and Original-To headers
-           14.7 Forwarding sensitive messages in encrypted format
-
-
-<p class="column7"><em><strong>
-       15.0 Procmail and PGP
-           15.1 Decrypt pgp messages automatically
-           15.2 Getkeys from key server
-           15.3 Auto grab incoming pgp keys
-
-
-<p class="column7"><em><strong>
-       16.0 Includerc usage
-           16.1 Using: multiple rc files
-           16.2 Using: call rc file conditionally
-           16.3 Using: autoloading an rc file
-           16.4 Making: naming of the rc file
-           16.5 Making: Using name space when saving procmail variables
-           16.6 Making: Public and private variables in rc file
-           16.7 The rules of thumb for constructing general purpose rc file
-           16.8 An includerc skeleton
-
-
-<p class="column7"><em><strong>
-       17.0 Mailing list server</strong></em>
-
-
-
-<p class="column7"><em><strong>
-       18.0 Common troubles
-           18.1 Procmail modes: normal, delivery, and mail filter.
-           18.2 Procmail as sendmail Mlocal mail filtering device
-           18.3 Procmail doesn't pass 8bit characters
-           18.4 My ISP isn't very interested in installing procmail
-           18.5 My ISP has systemwide procmailrc; is this a good idea?
-           18.6 Procmail changes mailbox and directory permissions
-           18.7 Changing mbox permission during compilation to 660
-           18.8 The .forward file must be real file
-           18.9 Using .forward if procmail already is LDA
-           18.10 Mail should be put in the mailqueue if write fails
-           18.11 Qmail: how to make it work with procmail
-           18.12 Qmail: Procmail looks file from /var/spool/mail only
-           18.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
-           18.14 AFS: How to use Procmail when HOME is in AFS cell
-           18.15 Help, some idiot sent my address to 30 mailing lists
-           18.16 Help, Procmail beeps and prints to my console
-           18.17 Help, procmail dumps mail to console
-           18.18 Help, corrupted From_ line in mailbox
-           18.19 Directing user's mail to HOME instead of /var/spool/
-           18.20 NFS mounting /var/mail is a good way to get bad performance
-           18.21 I can't see the sendmail's response in LOGFILE
-           18.22 Compiling procmail and choosing locking scheme
-           18.23 Forwarding lot of mail causes heavy load
-           18.24 What happens to mail if MDA Procmail fails
-           18.25 Procmail reads entire 90Mb message into memory
-           18.26 Help, procmail uses occasionally huge chunk of memory
-           18.27 Procmail signaled out of memory in my verbose log
-           18.28 Variables DEFAULT and ORGMAIL
-           18.29 When DEFAULT cannot be mailed to
-           18.30 Variable DROPPRIVS
-           18.31 Variable HOME
-           18.32 Variable HOST
-           18.33 Variable LINEBUF
-           18.34 Variable LOG and LOGFILE
-           18.35 Variable TRAP
-           18.36 Variable UMASK
-           18.37 UMASK and permissions
-           18.38 Performance difference between back tick and &quot;|&quot; recipe
-           18.39 Procmail's temporary file names while writing file out
-           18.40 Parameter $@
-           18.41 Procmail variables are null terminated (detecting null string)
-           18.42 FROM_DAEMON TO and TO_ and case-sensitiveness
-           18.43 TO_ macro deciphered
-           18.44 TO_ macro and RFC 822
-           18.45 FROM_DAEMON deciphered
-
-
-<p class="column7"><em><strong>
-       19.0 Technical matters
-           19.1 List of exit codes
-           19.2 List of precedence codes
-           19.3 Sendmail and -t
-           19.4 RFC822 Reply-To and formail problem with multiple recipients
-           19.5 Procmail and IMAP server
-           19.6 Machine which processes mail
-           19.7 Compiling procmail and MAILSPOOLHOME
-
-
-<p class="column7"><em><strong>
-       20.0 Procmail software for Emacs
-           20.1 What is Emacs
-           20.2 Emacs and procmail mode and Lint
-           20.3 Emacs and lining up backslashes
-           20.4 Emacs and browsing mailbox files
-           20.5 Emacs and font-lock.el
-
-
-<p class="column7"><em><strong>
-       21.0 Procmail and Emacs mail and newsreader Gnus
-           21.1 Gnus pointers
-           21.2 Why use procmail with Gnus
-           21.3 Setting up Gnus for procmail - Basics
-           21.4 Gnus for procmail - More about it
-           21.5 Emacs and Gnus &ndash; Fiddling with spool files
-           21.6 Gnus article snippets
-           21.7 Emacs GNUS - POP - Procmail
-
-
-<p class="column7"><em><strong>
-       22.0 RFC, Request for comments
-           22.1 RFCs and their jurisdiction (munged Addresses)
-           22.2 Comments about addresses munging
-           22.3 RFC and valid mail address characters
-           22.4 RFC and login-name@fdqn
-           22.5 RFCs and messages signature
-           22.6 RFC and using MIME in Usenet newsgroups
-           22.7 Some RFC Pointers
-
-
-<p class="column7"><em><strong>
-       23.0 Introduction to E-mail Headers
-           23.1 To find out more about mail (Resources)
-           23.2 Lecture by Alan Stebbens
-           23.3 Applied to received messages
-           23.4 Bcc lecture by Alan Stebbens
-           23.5 Bcc lecture by Philip Guenther
-
-
-<p class="column7"><em><strong>
-       24.0 Message headers
-           24.1 What is correct From address syntax
-           24.2 What's that X-UIDL header?
-           24.3 What is that first From_ header?
-           24.4 Message-Id header
-           24.5 Received header
-           24.6 Return-Path
-           24.7 Errors-To
-           24.8 X-Subscription-Info
-           24.9 Reply-To header
-           24.10 Mail-Copies-To header
-           24.11 Mail-Followup-To and Reply-To-Personal headers
-           24.12 Content-Length header and From_ specification
-           24.13 Moral about CC copies in Usenet
-
-
-<p class="column7"><em><strong>
-       25.0 UBE in Internet
-           25.1 Terms used and foreword
-           25.2 UBE strategies
-        25.2.1 4g. I asked to be &quot;removed&quot; - guess what? I got another U*E
-        25.2.2 4h. I asked to be &quot;removed&quot; - guess what? The message bounced
-           25.3 UBE and bouncing message back
-           25.4 UBE and &quot;I don't mind&quot; attitude
-           25.5 We need a law against UBE
-
-
-<p class="column7"><em><strong>
-       26.0 Anti-UBE pointers
-           26.1 NoCEM, CAUCE and others
-           26.2 General Filtering pages (more than procmail)
-           26.3 Junk mail and spam
-           26.4 Comprehensive list of spammers
-           26.5 Misc pointers
-           26.6 UBE related newsgroups or mailing lists
-
-
-<p class="column7"><em><strong>
-       27.0 Mail and Spam software
-           27.1 Adcomplain &ndash; Perl junk mail report
-           27.2 Ricochet (Perl junk mail report)
-           27.3 RBL lookup tool (C language)
-           27.4 mapSoN
-           27.5 ASK - Active Spam Killer (opt-in whitelist)
-           27.6 Spamgard
-           27.7 Spam Be Gone
-           27.8 TinyGnus - Emacs Gnus plug-in
-           27.9 ProcLog - Procmail log reporting tool
-           27.10 Xbuffy &ndash; A multi folder biff for X
-
 <hr>
                <A name="document_id"  id="document_id"></A>
                <h1>
@@ -2052,7 +1612,7 @@ xTable of contents
 
 <p>
 <p class="column8">
-        <EM><STRONG>$Id: pm-tips.html,v 1.15 2007/10/03 17:36:03 jaalto Exp $</STRONG></EM><br>
+        <EM><STRONG>$Id: pm-tips.html,v 1.16 2007/10/04 16:23:37 jaalto Exp $</STRONG></EM><br>
         Homepage <a href="http://pm-doc.sourceforge.net/" >http://pm-doc.sourceforge.net/</A><br>
         URLs last checked: 2007-10-02<br>
 
@@ -2218,8 +1778,8 @@ xTable of contents
     <TR>
     <TD class="shade-normal-attrib" valign="top">
     <PRE>
-      v2.36   2007-07-31  519  New HTML/CSS layout. Links checked
-      v2.30   2006-02-15  519  Sanitized all email addresses
+      v2.36   2007-10-02  519  New HTML/CSS layout. Links checked.
+      v2.30   2006-02-15  519  Sanitized all email addresses.
       v2.27   2004-10-10  516  Spam related things removed.
       v2.16   2002-08-31  596  Removed old UBE pointers.
       v2.13   2002-08-13  596  Removed old UBE pointers.
@@ -2297,21 +1857,20 @@ xTable of contents
 
 
 <p class="column8">
-        Text version of this file is converted into HTML with
-        following command:
+        Text version of this file is converted to HTML with:
 
 <P>
 <TABLE class="shade-normal">
     <TR>
     <TD class="shade-normal-attrib" valign="top">
     <PRE>
+      perl -S &lt;conversion program&gt; --Auto-detect --Out pm-tips.txt    </PRE></TD>
     </TR>
 </TABLE>
 
 
-<p class="column7"><em><strong>
-       1.5.1 Sending improvements</strong></em>
-
+<p class="column8">
+        SENDING IMPROVEMENTS
 
 
 <p class="column8">
@@ -2320,25 +1879,30 @@ xTable of contents
         patch to maintainer of this page. The preferred way to send
         corrections to this document is as <samp class="word">diff(1)</samp> output. Here's
         how to make corrections send them forward. Please try to use
-        unified GNU diff <samp class="word">-u</samp> options and only if it's not available,
-        use regular context diff option <samp class="word">-c</samp>.
+        unified diff <samp class="word">-u</samp> option. The source is available at
+        <a href="http://pm-doc.cvs.sourceforge.net/pm-doc/pm-doc/doc/tips/" >http://pm-doc.cvs.sourceforge.net/pm-doc/pm-doc/doc/tips/</A>
 
 <P>
 <TABLE class="shade-normal">
     <TR>
     <TD class="shade-normal-attrib" valign="top">
     <PRE>
-      %   cp pm-tips.txt pm-tips.txt.orig
+      cp pm-tips.txt pm-tips.txt.orig
 
-      ... load the pm-tips.txt to a text editor
-      ... edit the file and save
-      ... Generate the difference (a patch(1) compatible file)
+      ... load the pm-tips.txt to a text editor / edit / save
+      ... Generate the difference
 
-      %   diff -bwu pm-tips.txt.orig pm-tips.txt &gt; pm-tips.txt.patch
+      diff -bwu pm-tips.txt.orig pm-tips.txt &gt; pm-tips.txt.patch
 
-      ...Send content of pm-tips.txt.diff by mail to document maintainer.    </PRE></TD>
+      ...Send content of pm-tips.txt.diff by mail to maintainer    </PRE></TD>
     </TR>
 </TABLE>
+
+
+<p class="column8">
+        If you do not know what a diff format is, then simply send
+        your comments in email. Use &quot;Linux: pm-doc&quot; as subject to
+        bypass spam filtering.
 
 
 
@@ -2527,10 +2091,11 @@ xTable of contents
 
 
 <p class="column8">
-        <strong class="word">PMSRC</strong> = Procmail module source code directory. Location where <samp class="word">*.rc</samp>
-        files reside. Anywhere you want it to be. Usually $HOME/pm or
-        $HOME/procmail/lib. Here you can keep the procmail files, log files and
-        includerc scripts. Another common used synonym is <strong class="word">PMDIR</strong>.
+        <strong class="word">PMSRC</strong> = Procmail module source code directory. Location
+        where <samp class="word">*.rc</samp> files reside. Anywhere you want it to be. Usually
+        <samp class="word">$HOME/pm</samp> or <samp class="word">$HOME/procmail/lib</samp>. Here you can keep the
+        procmail files, log files and includerc scripts. Another
+        common used synonym is <strong class="word">PMDIR</strong>.
 
 
 <p class="column8">
@@ -2662,10 +2227,6 @@ xTable of contents
 
 <p>
 <p class="column8">
-        FIXME: Replace wc -l and use other example.
-
-
-<p class="column8">
         Randal Schwartz, a well-known Perl programmer and Perl book writer,
         started giving rewards for the &quot;useless use of cat command&quot;
         whenever someone wrote examples without token &quot;&lt;&quot;. Like this:
@@ -2771,7 +2332,7 @@ xTable of contents
         the mailing list or to <EM><a href="mailto:bug@procmail.org" >bug@procmail.org</A></EM>. The development mailing
         list is running SmarList at <EM><a href="mailto:procmail-dev@procmail.org" >procmail-dev@procmail.org</A></EM>.
         Newest Procmail code it at &lt;<a href="http://www.procmail.org/" >http://www.procmail.org/</A>&gt; and
-        &lt;<a href="ftp://ftp.procmail.org/" >ftp://ftp.procmail.org/</A>&gt;.
+        ready packages are available at Linux distributions' repositories.
 
 
 
@@ -2788,51 +2349,25 @@ xTable of contents
 <p class="column8">
         Procmail is discussed in Usenet newsgroup <em class="word">comp.mail.misc</em>.
 
-
-<p class="column8">
-<span class="quote7">Nancy McGough &lt;nm A T noadsplease.ii.com&gt; - Prcmail Quick start</span><BR>
-        <a href="http://www.ii.com/internet/robots/procmail/qs/" >http://www.ii.com/internet/robots/procmail/qs/</A><br>
-
-
-<p class="column8">
-<span class="quote7">Era Eriksson's Procmail FAQ and link collection</span><BR>
-        <a href="http://www.iki.fi/~era/procmail" >http://www.iki.fi/~era/procmail</A>
-
-
-<p class="column8">
-<span class="quote7">Professor Timo Salmis's Procmail page</span><BR>
-        <a href="http://www.uwasa.fi/~ts/info/proctips.html" >http://www.uwasa.fi/~ts/info/proctips.html</A>
-        See Timo's &quot;Foiling Spam with an Email Password System&quot; at
-        <a href="http://www.uwasa.fi/~ts/info/spamfoil.html" >http://www.uwasa.fi/~ts/info/spamfoil.html</A>
-
-
-<p class="column8">
-<span class="quote7">Joe Gross's short Procmail tutorial</span><BR>
-        <a href="http://www.procmail.net/" >http://www.procmail.net/</A> &lt;jgross A T stimpy.net&gt;
-        ...Using procmail and a
-        feature of ph you can set up your own mailing list without
-        needing root on your own machine.
+<ul>
+	<li><a href="http://www.ii.com/internet/robots/procmail/qs/">Nancy McGough &lt;nm A T noadsplease.ii.com</a> - Prcmail Quick start&gt;
+<li><a href="http://www.iki.fi/~era/procmail">Era Eriksson's Procmail FAQ and link collection</a>
+	</li>
+<li><a href="http://www.uwasa.fi/~ts/info/proctips.html">Professor Timo Salmis's Procmail page</a>
+	</li>
+<li><a href="http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/">Google's procmail pointers</a>
+	</li>
+<li><a href="http://www.faqs.org/faqs/mail/addressing/">Eli the Bearded's addressing tips</a>
+	</li>
+<li><a href="http://alcor.concordia.ca/topics/email/auto/procmail/">Concordia University's procmail page</a>
+            &lt;webdoc A T alcor.concordia.ca&gt;: &quot;...People often ask how
+            to avoid receiving &quot;spam&quot; mail, or how to bounce mail from
+            someone who is annoying them. These pages tell you how to
+            install procmail; you can then tailor it to do all those
+	            things, or whatever else you want.&quot;</li>
+</ul>
 
 
-<p class="column8">
-<span class="quote7">Google's procmail pointers</span><BR>
-        <a href="http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/" >http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/</A>
-
-
-<p class="column8">
-<span class="quote7">Eli on Procmail</span><BR>
-        See Eli the Bearded's addressing tips at
-        <a href="http://www.faqs.org/faqs/mail/addressing/" >http://www.faqs.org/faqs/mail/addressing/</A>
-
-
-<p class="column8">
-<span class="quote7">Concordia University's procmail page</span><BR>
-        <a href="http://alcor.concordia.ca/topics/email/auto/procmail/" >http://alcor.concordia.ca/topics/email/auto/procmail/</A>
-        ...People often ask how to avoid receiving &quot;spam&quot; mail, or how
-        to bounce mail from someone who is annoying them. These pages
-        tell you how to install procmail; you can then tailor it to do
-        all those things, or whatever else you want.
-        &lt;webdoc A T alcor.concordia.ca&gt;
 
 
 
@@ -2847,7 +2382,8 @@ xTable of contents
 
 <p>
 <p class="column8">
-        If you use Emacs, See Procmail mode <em class="word">tinypm.el</em> at
+        If you use <a href="http://www.gnu.og/software/emacs">Emacs</a>, See
+        Procmail mode <em class="word">tinypm.el</em> at
         &lt;<a href="http://freshmeat.net/projects/emacs-tiny-tools" >http://freshmeat.net/projects/emacs-tiny-tools</A>&gt;. It can also
         be used to syntax check recipes. Here is an example of its
         output:
@@ -2883,17 +2419,14 @@ xTable of contents
        2.4.1 Where to get various modules</strong></em>
 
 
+<ul>
+	<li>#URL&lt;<a href="http://freshmeat.net/projects/procmail-lib" >http://freshmeat.net/projects/procmail-lib</A>&gt;&lt;Procmail
+            module library&gt;. The idea of plug-in modules was
+            originally coined by Alan Stebbens (&lt;alan.stebbens A T
+	            software.com&gt;, &lt;alan.stebbens A T openwave.com&gt;).</li>
+</ul>
 
-<p class="column8">
-<span class="quote7">Procmail module library</span><BR>
 
-
-<p class="column8">
-        Hosted at sourceforge CVS server and open for anyone to
-        participate. Visit
-        &lt;<a href="http://freshmeat.net/projects/procmail-lib" >http://freshmeat.net/projects/procmail-lib</A>&gt;. The idea was
-        originally invented by Alan Stebbens (&lt;alan.stebbens A T
-        software.com&gt;, &lt;alan.stebbens A T openwave.com&gt;).
 
 
 <p class="column7"><em><strong>
@@ -2902,14 +2435,16 @@ xTable of contents
 
 
 <p class="column8">
-        <em class="word">subroutine</em> = A piece of code that gets something in <samp class="word">INPUT</samp> and
-        responds with <samp class="word">OUTPUT</samp>. Subroutine is not message specific.
+        <em class="word">subroutine/module</em> = A piece of code that gets something in
+        <samp class="word">INPUT</samp> and responds with <samp class="word">OUTPUT</samp>. Subroutine is not message
+        specific.
 
 
 <p class="column8">
-        <em class="word">recipe</em> = A piece of code that is somewhat self contained:
-        It reads something from the message or does something
-        according to matches in message. Recipe may be message-specific.
+        <em class="word">recipe/module</em> = A piece of code that is somewhat self
+        contained: It reads something from the message or does
+        something according to matches in message. Recipe may be
+        message-specific.
 
 
 <p class="column7"><em><strong>
@@ -2918,10 +2453,10 @@ xTable of contents
 
 
 <p class="column8">
-        In the module listing, some of the modules are recipes and some can
-        be considered subroutines. Let's take the address exploder module
-        that was discussed a while ago. First, visualise following familiar
-        programming language pseudo code:
+        In the module listing, some of the modules are recipes and
+        some can be considered subroutines. Let's take the address
+        exploder. First, visualise following familiar programming
+        language pseudo code:
 
 <P>
 <TABLE class="shade-normal">
@@ -2934,9 +2469,9 @@ xTable of contents
 
 
 <p class="column8">
-        <em class="word">Function</em> may return multiple arguments and multiple arguments can
-        be passed to it. Clear so far. Let's show how this applies to
-        procmail modules:
+        <em class="word">Function</em> may return multiple arguments and multiple
+        arguments can be passed to it. Clear so far. The concept
+        applies to procmail modules like this:
 
 <P>
 <TABLE class="shade-normal">
@@ -3306,7 +2841,6 @@ xTable of contents
 
 
 
-
   <a name="procmail_code_to_filter_ube" id="procmail_code_to_filter_ube"></a>
   <h2>
       2.5 Procmail code to filter UBE
@@ -3328,42 +2862,35 @@ xTable of contents
           received.</em>
 
 
-
-<p class="column8">
-<span class="quote7">pm-jaube.rc - Procmail module library's UBE filter</span><BR>
-        After Daniel Smith posted his spam recipes to procmail mailing
-        list, the code was adopted and more generalized to handle lot
-        more UBE. Module needs no special setup and can be installed
-        via simple INCLUDERC. All UBE detection happens using procmail
-        rules with no external files needed. The module is available
-        in Procmail module library at
-        &lt;<a href="http://freshmeat.net/projects/procmail-lib" >http://freshmeat.net/projects/procmail-lib</A>&gt;.
-
-
-<p class="column8">
-<span class="quote7">Catherine A. Hampton's Spambouncer</span><BR>
-        <a href="http://www.spambouncer.org/" >http://www.spambouncer.org/</A>
-        ...The attached set of procmail recipes/filters, which I call
-        The Spam Bouncer, are for users who are sick of spam (unsolicited
-        junk mail) and want to filter it out of their mail as easily
-        as possible. These recipes can be used as shared recipes for a
-        whole system, or by an individual for their own mailbox only.
-
-
-<p class="column8">
-<span class="quote7">Junkfilter</span><BR>
-        <a href="http://www.pobox.com/~gsutter/junkfilter/" >http://www.pobox.com/~gsutter/junkfilter/</A> and
-        <a href="http://sourceforge.net/projects/junkfilter" >http://sourceforge.net/projects/junkfilter</A>
-        ...Junkfilter is a user-configurable procmail-based filter system
-        for electronic mail. Recipes include checks for forged headers,
-        key words, common spam domains, relay servers and many others.
+<ul>
+	<li><a href="http://freshmeat.net/projects/procmail-lib">pm-jaube.rc -Procmail module library's UBE filter</a>
+            After Daniel Smith
+            posted his spam recipes to procmail mailing list, the code
+            was adopted and more generalized to handle lot more UBE.
+            Module needs no special setup and can be installed via
+            simple INCLUDERC. All UBE detection happens using procmail
+            rules with no external files needed. The module is
+            available in Procmail module library at
+            &lt;<a href="http://freshmeat.net/projects/procmail-lib" >http://freshmeat.net/projects/procmail-lib</A>&gt;.
+       o    <a href="http://www.spambouncer.org/">Catherine A. Hampton's Spambouncer&quot;</a>.
+            The attached set of procmail recipes/filters, which I
+            call The Spam Bouncer, are for users who are sick of spam
+            (unsolicited junk mail) and want to filter it out of their
+            mail as easily as possible. These recipes can be used as
+            shared recipes for a whole system, or by an individual for
+            their own mailbox only.
+<li><a href="http://sourceforge.net/projects/junkfilter">Junkfilter</a>.
+            by Gregory Sutter. Junkfilter is a user-configurable
+            procmail-based filter system for electronic mail. Recipes
+            include checks for forged headers, key words, common spam
+            domains, relay servers and many others.
+	</li>
+<li><a href="http://www.cs.mu.OZ.AU/~amb/">Nonplussed Spambouncer</a>
+            Procmail module for bouncing spam. Requires sendmail with
+	            plussed users.</li>
+</ul>
 
 
-<p class="column8">
-<span class="quote7">Nonplussed Spambouncer</span><BR>
-        <a href="http://www.cs.mu.OZ.AU/~amb/" >http://www.cs.mu.OZ.AU/~amb/</A>
-        ...Procmail include file for bouncing spam. Requires sendmail with
-        plussed users.
 
 <hr>
                <A name="dry_run_testing"  id="dry_run_testing"></A>
@@ -4406,14 +3933,15 @@ xTable of contents
         least something:
 
 <ul>
-	<li>While <samp class="word">sed(1)</samp> and <samp class="word">grep(1)</samp> may be bigger than <samp class="word">awk(1)</samp> in
-            some systems, this is an exception. They are usually much
-            smaller and fast to use.
+	<li>While <samp class="word">sed(1)</samp> and <samp class="word">grep(1)</samp> may be bigger than <samp class="word">awk(1)</samp>
+            in some systems, this is an exception. They are usually
+            much smaller. It's more effective to use one <samp class="word">awk</samp> process
+            instead of many combined filtering commands.
 <li>Complex commands that would require many processes to be
-            chained together, like `grep -v | grep | sed' could
-            be usually accomplished with one <samp class="word">awk(1)</samp> call. Ask somewhere how to
-            do it with <samp class="word">awk(1)</samp> if you don't know the language, it's quite alike
-            <samp class="word">perl(1)</samp>
+            chained together, like `grep -v | grep | sed' could be
+            usually accomplished with one <samp class="word">awk(1)</samp> call. Ask somewhere
+            how to do it with <samp class="word">awk(1)</samp> if you don't know the language,
+            it's quite alike <samp class="word">perl(1)</samp>
 	</li>
 <li>Try to use standard <samp class="word">awk(1)</samp>. <samp class="word">gawk(1)</samp> and <samp class="word">nawk(1)</samp>
             are bigger and may not be found on all systems.
@@ -16172,7 +15700,7 @@ xTable of contents
     <TD class="shade-normal-attrib" valign="top">
     <PRE>
       # pm-xxscript.rc -- one line description string here
-      # &lt;EM&gt;&lt;STRONG&gt;$Id: pm-tips.html,v 1.15 2007/10/03 17:36:03 jaalto Exp $&lt;/STRONG&gt;&lt;/EM&gt;
+      # &lt;EM&gt;&lt;STRONG&gt;$Id: pm-tips.html,v 1.16 2007/10/04 16:23:37 jaalto Exp $&lt;/STRONG&gt;&lt;/EM&gt;
       #
       #   File id
       #
@@ -23126,7 +22654,7 @@ xTable of contents
 
 <hr>
 
-<em    class="footer">Html date: 2007-10-03 20:37<br>
+<em    class="footer">Html date: 2007-10-04 18:51<br>
 
 </em>
 
