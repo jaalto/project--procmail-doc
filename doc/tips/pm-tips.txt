@@ -389,13 +389,12 @@ Table of contents
 
         #T2HTML-AUTHOR Jari Aalto
         #T2HTML-TITLE Procmail Tips
-        #T2HTML-OPTION --simple
         #T2HTML-OPTION --css-code-bg
         #T2HTML-OPTION --css-file=pm-tips.css
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.39 2007/10/27 10:08:41 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.40 2007/10/27 10:15:07 jaalto Exp $
         .Homepage http://pm-doc.sourceforge.net/
         .URLs last checked: 2007-10-02
 
@@ -7954,7 +7953,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.39 2007/10/27 10:08:41 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.40 2007/10/27 10:15:07 jaalto Exp $
             #
             #   File id
             #
