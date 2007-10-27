@@ -15,7 +15,7 @@ Procmail Tips
 	content="">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Expires" content="Mon,  3 Dec 2007 15:51:47 GMT">
+  <meta http-equiv="Expires" content="Mon,  3 Dec 2007 16:33:10 GMT">
 
 
 
@@ -589,1000 +589,990 @@ Procmail Tips
            </a>
            <br>
 <li>
-           <a href="#make_your_own_procmailrc_available_to_others" class="toc">
-               8.10 Make your own .procmailrc available to others
-           </a>
-           <br>
-<li>
-           <a href="#using_dates_efficiently" class="toc">
-               8.11 Using dates efficiently
-           </a>
-           <br>
-<li>
            <a href="#keep_simple_header_log" class="toc">
-               8.12 Keep simple header log
+               9.1 Keep simple header log
            </a>
            <br>
 <li>
            <a href="#gzipping_messages" class="toc">
-               8.13 Gzipping messages
+               9.2 Gzipping messages
            </a>
            <br>
 <li>
            <a href="#emergency_stop_for_your_procmailrc" class="toc">
-               8.14 Emergency stop for your .procmailrc
+               9.3 Emergency stop for your .procmailrc
            </a>
            <br>
 </ul>
 <a href="#scoring" class="toc">
-               9.0 Scoring
+               10.0 Scoring
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#using_scores_by_an_example" class="toc">
-               9.1 Using scores by an example
+               10.1 Using scores by an example
            </a>
            <br>
 <li>
            <a href="#brief_score_tutorial" class="toc">
-               9.2 Brief Score tutorial
+               10.2 Brief Score tutorial
            </a>
            <br>
 <li>
            <a href="#scores_scope" class="toc">
-               9.3 Score's scope
+               10.3 Score's scope
            </a>
            <br>
 <li>
            <a href="#counting_length_of_a_string" class="toc">
-               9.4 Counting length of a string
+               10.4 Counting length of a string
            </a>
            <br>
 <li>
            <a href="#counting_lines_in_a_message_adding_lines_header" class="toc">
-               9.5 Counting lines in a message (Adding Lines: header)
+               10.5 Counting lines in a message (Adding Lines: header)
            </a>
            <br>
 <li>
            <a href="#determining_if_body_is_longer_than_header" class="toc">
-               9.6 Determining if body is longer than header
+               10.6 Determining if body is longer than header
            </a>
            <br>
 <li>
            <a href="#matching_last_received_header" class="toc">
-               9.7 Matching last Received header
+               10.7 Matching last Received header
            </a>
            <br>
 <li>
            <a href="#testing_value_range_with_scoring_bogofilter" class="toc">
-               9.8 Testing value range with scoring (bogofilter)
+               10.8 Testing value range with scoring (bogofilter)
            </a>
            <br>
 <li>
            <a href="#how_to_add_contentlength_header" class="toc">
-               9.9 How to add Content-Length header
+               10.9 How to add Content-Length header
            </a>
            <br>
 <li>
            <a href="#testing_message_size_or_number_of_lines" class="toc">
-               9.10 Testing message size or number of lines
+               10.10 Testing message size or number of lines
            </a>
            <br>
 <li>
            <a href="#counting_commas_with_recursive_includerc" class="toc">
-               9.11 Counting commas with recursive includerc
+               10.11 Counting commas with recursive includerc
            </a>
            <br>
 </ul>
 <a href="#formail_usage" class="toc">
-               10.0 Formail usage
+               11.0 Formail usage
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#fetching_fields_with_formail_x" class="toc">
-               10.1 Fetching fields with formail -x
+               11.1 Fetching fields with formail -x
            </a>
            <br>
 <li>
            <a href="#always_use_formails_rt_switch" class="toc">
-               10.2 Always use formail's -rt switch
+               11.2 Always use formail's -rt switch
            </a>
            <br>
 <li>
            <a href="#using_rt_and_rewriting_the_from_address" class="toc">
-               10.3 Using -rt and rewriting the From address
+               11.3 Using -rt and rewriting the From address
            </a>
            <br>
 <li>
            <a href="#formail_rt_and_resentfrom_header" class="toc">
-               10.4 Formail -rt and Resent-From header
+               11.4 Formail -rt and Resent-From header
            </a>
            <br>
 <li>
            <a href="#quoting_the_message" class="toc">
-               10.5 Quoting the message
+               11.5 Quoting the message
            </a>
            <br>
 <li>
            <a href="#without_quoting_the_message" class="toc">
-               10.6 Without quoting the message
+               11.6 Without quoting the message
            </a>
            <br>
 <li>
            <a href="#how_to_include_headers_and_body_to_the_reply" class="toc">
-               10.7 How to include headers and body to the reply message
+               11.7 How to include headers and body to the reply message
            </a>
            <br>
 <li>
            <a href="#adding_text_to_the_beginning_of_message" class="toc">
-               10.8 Adding text to the beginning of message
+               11.8 Adding text to the beginning of message
            </a>
            <br>
 <li>
            <a href="#adding_text_to_the_end_of_message" class="toc">
-               10.9 Adding text to the end of message
+               11.9 Adding text to the end of message
            </a>
            <br>
 <li>
            <a href="#adding_text_before_quoted_message" class="toc">
-               10.10 Adding text before quoted message
+               11.10 Adding text before quoted message
            </a>
            <br>
 <li>
            <a href="#adding_extra_headers_from_file" class="toc">
-               10.11 Adding extra headers from file
+               11.11 Adding extra headers from file
            </a>
            <br>
 <li>
            <a href="#splitting_digest" class="toc">
-               10.12 Splitting digest
+               11.12 Splitting digest
            </a>
            <br>
 <li>
            <a href="#mailbox_splitting_to_individual_files" class="toc">
-               10.13 Mailbox: Splitting to individual files
+               11.13 Mailbox: Splitting to individual files
            </a>
            <br>
 <li>
            <a href="#mailbox_extracting_all_from_addresses_from_mailbox" class="toc">
-               10.14 Mailbox: Extracting all From addresses from mailbox
+               11.14 Mailbox: Extracting all From addresses from mailbox
            </a>
            <br>
 <li>
            <a href="#mailbox_applying_procmail_recipe_on_whole_mailbox" class="toc">
-               10.15 Mailbox: Applying procmail recipe on whole mailbox
+               11.15 Mailbox: Applying procmail recipe on whole mailbox
            </a>
            <br>
 <li>
            <a href="#mailbox_run_series_of_commands_for_each_mail_split" class="toc">
-               10.16 Mailbox: run series of commands for each mail (split mailbox)
+               11.16 Mailbox: run series of commands for each mail (split mailbox)
            </a>
            <br>
 <li>
            <a href="#option_d_and_cache" class="toc">
-               10.17 Option -D and cache
+               11.17 Option -D and cache
            </a>
            <br>
 <li>
            <a href="#option_d_and_messageid_in_the_body" class="toc">
-               10.18 Option -D and message-id in the body
+               11.18 Option -D and message-id in the body
            </a>
            <br>
 <li>
            <a href="#reducing_formail_calls_conditionally_adding_fields" class="toc">
-               10.19 Reducing formail calls (conditionally adding fields)
+               11.19 Reducing formail calls (conditionally adding fields)
            </a>
            <br>
 <li>
            <a href="#formail_a_a_options" class="toc">
-               10.20 Formail -A -a options
+               11.20 Formail -A -a options
            </a>
            <br>
 <li>
            <a href="#formail_e_s_options" class="toc">
-               10.21 Formail -e -s options
+               11.21 Formail -e -s options
            </a>
            <br>
 </ul>
 <a href="#saving_mailing_list_messages" class="toc">
-               11.0 Saving mailing list messages
+               12.0 Saving mailing list messages
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#using_subroutine_pmjalist_rc_to_detect_mailing_lists" class="toc">
-               11.1 Using subroutine pm-jalist.rc to detect mailing lists
+               12.1 Using subroutine pm-jalist.rc to detect mailing lists
            </a>
            <br>
 <li>
            <a href="#using_plus_addressing_foobar" class="toc">
-               11.2 Using plus addressing foo+bar@address.com
+               12.2 Using plus addressing foo+bar@address.com
            </a>
            <br>
 <li>
            <a href="#using_rfc_comment_trick_for_additional_information" class="toc">
-               11.3 Using RFC comment trick for additional information
+               12.3 Using RFC comment trick for additional information
            </a>
            <br>
 <li>
            <a href="#simple_mailing_list_handling" class="toc">
-               11.4 Simple mailing list handling
+               12.4 Simple mailing list handling
            </a>
            <br>
 <li>
            <a href="#archiving_according_to_to" class="toc">
-               11.5 Archiving according to TO
+               12.5 Archiving according to TO
            </a>
            <br>
 <li>
            <a href="#using_returnpath_to_detect_mailing_lists" class="toc">
-               11.6 Using Return-Path to detect mailing lists
+               12.6 Using Return-Path to detect mailing lists
            </a>
            <br>
 </ul>
 <a href="#procmail_mime_and_html" class="toc">
-               12.0 Procmail, MIME and HTML
+               13.0 Procmail, MIME and HTML
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#mime_bibliography" class="toc">
-               12.1 Mime Bibliography
+               13.1 Mime Bibliography
            </a>
            <br>
 <li>
            <a href="#mime_content_type_applicationmstnef" class="toc">
-               12.2 Mime content type application/ms-tnef
+               13.2 Mime content type application/ms-tnef
            </a>
            <br>
 <li>
            <a href="#trapping_html_mime_messages" class="toc">
-               12.3 Trapping HTML mime messages
+               13.3 Trapping HTML mime messages
            </a>
            <br>
 <li>
            <a href="#complaining_about_html_messages" class="toc">
-               12.4 Complaining about HTML messages
+               13.4 Complaining about HTML messages
            </a>
            <br>
 <li>
            <a href="#converting_html_body_to_plain_text" class="toc">
-               12.5 Converting HTML body to plain text
+               13.5 Converting HTML body to plain text
            </a>
            <br>
 <li>
            <a href="#getting_rid_of_unwanted_mime_attachments_html_vcard" class="toc">
-               12.6 Getting rid of unwanted mime attachments (HTML, vcard)
+               13.6 Getting rid of unwanted mime attachments (HTML, vcard)
            </a>
            <br>
 <li>
            <a href="#sending_contents_of_a_html_page_in_plain_text" class="toc">
-               12.7 Sending contents of a HTML page in plain text to someone
+               13.7 Sending contents of a HTML page in plain text to someone
            </a>
            <br>
 </ul>
 <a href="#simple_recipe_examples" class="toc">
-               13.0 Simple recipe examples
+               14.0 Simple recipe examples
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#saving_mh_folders_numbered_messages" class="toc">
-               13.1 Saving: MH folders -- numbered messages
+               14.1 Saving: MH folders -- numbered messages
            </a>
            <br>
 <li>
            <a href="#saving_to_monthly_folders" class="toc">
-               13.2 Saving: to monthly folders
+               14.2 Saving: to monthly folders
            </a>
            <br>
 <li>
            <a href="#modifying_filtering_basics" class="toc">
-               13.3 Modifying: Filtering basics
+               14.3 Modifying: Filtering basics
            </a>
            <br>
 <li>
            <a href="#modifying_squeezing_empty_lines_around_message_body" class="toc">
-               13.4 Modifying: Squeezing empty lines around message body
+               14.4 Modifying: Squeezing empty lines around message body
            </a>
            <br>
 <li>
            <a href="#modifying_shuffling_headers_always_to_same_order" class="toc">
-               13.5 Modifying: shuffling headers always to same order
+               14.5 Modifying: shuffling headers always to same order
            </a>
            <br>
 <li>
            <a href="#service_auto_answerer_to_empty_messages" class="toc">
-               13.6 Service: Auto answerer to empty messages
+               14.6 Service: Auto answerer to empty messages
            </a>
            <br>
 <li>
            <a href="#service_ping_responder" class="toc">
-               13.7 Service: Ping responder
+               14.7 Service: Ping responder
            </a>
            <br>
 <li>
            <a href="#service_simple_vacation_with_procmail" class="toc">
-               13.8 Service: simple vacation with procmail
+               14.8 Service: simple vacation with procmail
            </a>
            <br>
 <li>
            <a href="#service_vacation_code_example" class="toc">
-               13.9 Service: vacation code example
+               14.9 Service: vacation code example
            </a>
            <br>
 <li>
            <a href="#service_autoforwarding" class="toc">
-               13.10 Service: Auto-forwarding
+               14.10 Service: Auto-forwarding
            </a>
            <br>
 <li>
            <a href="#service_forward_only_specific_messages" class="toc">
-               13.11 Service: forward only specific messages
+               14.11 Service: forward only specific messages
            </a>
            <br>
 <li>
            <a href="#service_making_digests" class="toc">
-               13.12 Service: Making digests
+               14.12 Service: Making digests
            </a>
            <br>
 <li>
            <a href="#kill_killing_advertisement_headers_and_footers" class="toc">
-               13.13 Kill: killing advertisement headers and footers
+               14.13 Kill: killing advertisement headers and footers
            </a>
            <br>
 <li>
            <a href="#kill_simple_kill_file_recipe_with_procmail" class="toc">
-               13.14 Kill: simple kill file recipe with procmail
+               14.14 Kill: simple kill file recipe with procmail
            </a>
            <br>
 <li>
            <a href="#kill_duplicate_messages" class="toc">
-               13.15 Kill: duplicate messages
+               14.15 Kill: duplicate messages
            </a>
            <br>
 <li>
            <a href="#kill_spam_filter_with_simple_recipes" class="toc">
-               13.16 Kill: spam filter with simple recipes
+               14.16 Kill: spam filter with simple recipes
            </a>
            <br>
 <li>
            <a href="#kill_unsubscribe_messages" class="toc">
-               13.17 Kill: (un)subscribe messages
+               14.17 Kill: (un)subscribe messages
            </a>
            <br>
 <li>
            <a href="#time_once_a_day_cronlike_job" class="toc">
-               13.18 Time: Once a day cron-like job
+               14.18 Time: Once a day cron-like job
            </a>
            <br>
 <li>
            <a href="#time_running_a_recipe_at_a_given_time" class="toc">
-               13.19 Time: Running a recipe at a given time
+               14.19 Time: Running a recipe at a given time
            </a>
            <br>
 <li>
            <a href="#time_triggering_mail_and_using_cron" class="toc">
-               13.20 Time: Triggering mail and using cron
+               14.20 Time: Triggering mail and using cron
            </a>
            <br>
 <li>
            <a href="#decoding_uudecode" class="toc">
-               13.21 Decoding: Uudecode
+               14.21 Decoding: Uudecode
            </a>
            <br>
 <li>
            <a href="#decoding_mime" class="toc">
-               13.22 Decoding: MIME
+               14.22 Decoding: MIME
            </a>
            <br>
 <li>
            <a href="#how_to_send_commands_in_the_messages_body" class="toc">
-               13.23 How to send commands in the message's body
+               14.23 How to send commands in the message's body
            </a>
            <br>
 <li>
            <a href="#matching_two_words_on_a_line_but_not_one" class="toc">
-               13.24 Matching two words on a line, but not one
+               14.24 Matching two words on a line, but not one
            </a>
            <br>
 <li>
            <a href="#how_to_define_personal_xx_macros" class="toc">
-               13.25 How to define personal XX macros?
+               14.25 How to define personal XX macros?
            </a>
            <br>
 <li>
            <a href="#how_to_change_subject_by_body_match" class="toc">
-               13.26 How to change subject by body match
+               14.26 How to change subject by body match
            </a>
            <br>
 <li>
            <a href="#how_to_change_subject_according_to_some_other_header" class="toc">
-               13.27 How to change Subject according to some other header
+               14.27 How to change Subject according to some other header
            </a>
            <br>
 <li>
            <a href="#how_to_call_program_with_parameters" class="toc">
-               13.28 How to call program with parameters
+               14.28 How to call program with parameters
            </a>
            <br>
 </ul>
 <a href="#miscellaneous_recipes" class="toc">
-               14.0 Miscellaneous recipes
+               15.0 Miscellaneous recipes
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#matching_valid_messageid_header" class="toc">
-               14.1 Matching valid Message-Id header
+               15.1 Matching valid Message-Id header
            </a>
            <br>
 <li>
            <a href="#sending_two_files_in_a_message" class="toc">
-               14.2 Sending two files in a message
+               15.2 Sending two files in a message
            </a>
            <br>
 <li>
            <a href="#excessive_quoting_of_message" class="toc">
-               14.3 Excessive quoting of message
+               15.3 Excessive quoting of message
            </a>
            <br>
 <li>
            <a href="#sending_message_to_pager_in_chunks" class="toc">
-               14.4 Sending message to pager in chunks
+               15.4 Sending message to pager in chunks
            </a>
            <br>
 <li>
            <a href="#playing_particular_sound_when_message_arrives" class="toc">
-               14.5 Playing particular sound when message arrives
+               15.5 Playing particular sound when message arrives
            </a>
            <br>
 <li>
            <a href="#combining_multiple_originalcc_and_originalto_headers" class="toc">
-               14.6 Combining multiple Original-Cc and Original-To headers
+               15.6 Combining multiple Original-Cc and Original-To headers
            </a>
            <br>
 <li>
            <a href="#forwarding_sensitive_messages_in_encrypted_format" class="toc">
-               14.7 Forwarding sensitive messages in encrypted format
+               15.7 Forwarding sensitive messages in encrypted format
            </a>
            <br>
 </ul>
 <a href="#procmail_and_pgp" class="toc">
-               15.0 Procmail and PGP
+               16.0 Procmail and PGP
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#decrypt_pgp_messages_automatically" class="toc">
-               15.1 Decrypt pgp messages automatically
+               16.1 Decrypt pgp messages automatically
            </a>
            <br>
 <li>
            <a href="#getkeys_from_key_server" class="toc">
-               15.2 Getkeys from key server
+               16.2 Getkeys from key server
            </a>
            <br>
 <li>
            <a href="#auto_grab_incoming_pgp_keys" class="toc">
-               15.3 Auto grab incoming pgp keys
+               16.3 Auto grab incoming pgp keys
            </a>
            <br>
 </ul>
 <a href="#includerc_usage" class="toc">
-               16.0 Includerc usage
+               17.0 Includerc usage
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#using_multiple_rc_files" class="toc">
-               16.1 Using: multiple rc files
+               17.1 Using: multiple rc files
            </a>
            <br>
 <li>
            <a href="#using_call_rc_file_conditionally" class="toc">
-               16.2 Using: call rc file conditionally
+               17.2 Using: call rc file conditionally
            </a>
            <br>
 <li>
            <a href="#using_autoloading_an_rc_file" class="toc">
-               16.3 Using: autoloading an rc file
+               17.3 Using: autoloading an rc file
            </a>
            <br>
 <li>
            <a href="#making_naming_of_the_rc_file" class="toc">
-               16.4 Making: naming of the rc file
+               17.4 Making: naming of the rc file
            </a>
            <br>
 <li>
            <a href="#making_using_name_space_when_saving_procmail_variables" class="toc">
-               16.5 Making: Using name space when saving procmail variables
+               17.5 Making: Using name space when saving procmail variables
            </a>
            <br>
 <li>
            <a href="#making_public_and_private_variables_in_rc_file" class="toc">
-               16.6 Making: Public and private variables in rc file
+               17.6 Making: Public and private variables in rc file
            </a>
            <br>
 <li>
            <a href="#the_rules_of_thumb_for_constructing_general_purpose_rc" class="toc">
-               16.7 The rules of thumb for constructing general purpose rc file
+               17.7 The rules of thumb for constructing general purpose rc file
            </a>
            <br>
 <li>
            <a href="#an_includerc_skeleton" class="toc">
-               16.8 An includerc skeleton
+               17.8 An includerc skeleton
            </a>
            <br>
 </ul>
 <a href="#mailing_list_server" class="toc">
-               17.0 Mailing list server
+               18.0 Mailing list server
            </a>
            <br>
 <a href="#common_troubles" class="toc">
-               18.0 Common troubles
+               19.0 Common troubles
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#procmail_modes_normal_delivery_and_mail_filter" class="toc">
-               18.1 Procmail modes: normal, delivery, and mail filter.
+               19.1 Procmail modes: normal, delivery, and mail filter.
            </a>
            <br>
 <li>
            <a href="#procmail_as_sendmail_mlocal_mail_filtering_device" class="toc">
-               18.2 Procmail as sendmail Mlocal mail filtering device
+               19.2 Procmail as sendmail Mlocal mail filtering device
            </a>
            <br>
 <li>
            <a href="#procmail_doesnt_pass_8bit_characters" class="toc">
-               18.3 Procmail doesn't pass 8bit characters
+               19.3 Procmail doesn't pass 8bit characters
            </a>
            <br>
 <li>
            <a href="#my_isp_isnt_very_interested_in_installing_procmail" class="toc">
-               18.4 My ISP isn't very interested in installing procmail
+               19.4 My ISP isn't very interested in installing procmail
            </a>
            <br>
 <li>
            <a href="#my_isp_has_systemwide_procmailrc_is_this_a_good" class="toc">
-               18.5 My ISP has systemwide procmailrc; is this a good idea?
+               19.5 My ISP has systemwide procmailrc; is this a good idea?
            </a>
            <br>
 <li>
            <a href="#procmail_changes_mailbox_and_directory_permissions" class="toc">
-               18.6 Procmail changes mailbox and directory permissions
+               19.6 Procmail changes mailbox and directory permissions
            </a>
            <br>
 <li>
            <a href="#changing_mbox_permission_during_compilation_to_660" class="toc">
-               18.7 Changing mbox permission during compilation to 660
+               19.7 Changing mbox permission during compilation to 660
            </a>
            <br>
 <li>
            <a href="#the_forward_file_must_be_real_file" class="toc">
-               18.8 The .forward file must be real file
+               19.8 The .forward file must be real file
            </a>
            <br>
 <li>
            <a href="#using_forward_if_procmail_already_is_lda" class="toc">
-               18.9 Using .forward if procmail already is LDA
+               19.9 Using .forward if procmail already is LDA
            </a>
            <br>
 <li>
            <a href="#mail_should_be_put_in_the_mailqueue_if_write" class="toc">
-               18.10 Mail should be put in the mailqueue if write fails
+               19.10 Mail should be put in the mailqueue if write fails
            </a>
            <br>
 <li>
            <a href="#qmail_how_to_make_it_work_with_procmail" class="toc">
-               18.11 Qmail: how to make it work with procmail
+               19.11 Qmail: how to make it work with procmail
            </a>
            <br>
 <li>
            <a href="#qmail_procmail_looks_file_from_varspoolmail_only" class="toc">
-               18.12 Qmail: Procmail looks file from /var/spool/mail only
+               19.12 Qmail: Procmail looks file from /var/spool/mail only
            </a>
            <br>
 <li>
            <a href="#qmail_patch_to_procmail_3_11pre7_to_work_with" class="toc">
-               18.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
+               19.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
            </a>
            <br>
 <li>
            <a href="#afs_how_to_use_procmail_when_home_is_in" class="toc">
-               18.14 AFS: How to use Procmail when HOME is in AFS cell
+               19.14 AFS: How to use Procmail when HOME is in AFS cell
            </a>
            <br>
 <li>
            <a href="#help_some_idiot_sent_my_address_to_30_mailing" class="toc">
-               18.15 Help, some idiot sent my address to 30 mailing lists
+               19.15 Help, some idiot sent my address to 30 mailing lists
            </a>
            <br>
 <li>
            <a href="#help_procmail_beeps_and_prints_to_my_console" class="toc">
-               18.16 Help, Procmail beeps and prints to my console
+               19.16 Help, Procmail beeps and prints to my console
            </a>
            <br>
 <li>
            <a href="#help_procmail_dumps_mail_to_console" class="toc">
-               18.17 Help, procmail dumps mail to console
+               19.17 Help, procmail dumps mail to console
            </a>
            <br>
 <li>
            <a href="#help_corrupted_from_line_in_mailbox" class="toc">
-               18.18 Help, corrupted From_ line in mailbox
+               19.18 Help, corrupted From_ line in mailbox
            </a>
            <br>
 <li>
            <a href="#directing_users_mail_to_home_instead_of_varspool" class="toc">
-               18.19 Directing user's mail to HOME instead of /var/spool/
+               19.19 Directing user's mail to HOME instead of /var/spool/
            </a>
            <br>
 <li>
            <a href="#nfs_mounting_varmail_is_a_good_way_to_get" class="toc">
-               18.20 NFS mounting /var/mail is a good way to get bad performance
+               19.20 NFS mounting /var/mail is a good way to get bad performance
            </a>
            <br>
 <li>
            <a href="#i_cant_see_the_sendmails_response_in_logfile" class="toc">
-               18.21 I can't see the sendmail's response in LOGFILE
+               19.21 I can't see the sendmail's response in LOGFILE
            </a>
            <br>
 <li>
            <a href="#compiling_procmail_and_choosing_locking_scheme" class="toc">
-               18.22 Compiling procmail and choosing locking scheme
+               19.22 Compiling procmail and choosing locking scheme
            </a>
            <br>
 <li>
            <a href="#forwarding_lot_of_mail_causes_heavy_load" class="toc">
-               18.23 Forwarding lot of mail causes heavy load
+               19.23 Forwarding lot of mail causes heavy load
            </a>
            <br>
 <li>
            <a href="#what_happens_to_mail_if_mda_procmail_fails" class="toc">
-               18.24 What happens to mail if MDA Procmail fails
+               19.24 What happens to mail if MDA Procmail fails
            </a>
            <br>
 <li>
            <a href="#procmail_reads_entire_90mb_message_into_memory" class="toc">
-               18.25 Procmail reads entire 90Mb message into memory
+               19.25 Procmail reads entire 90Mb message into memory
            </a>
            <br>
 <li>
            <a href="#procmail_signaled_out_of_memory_in_my_verbose_log" class="toc">
-               18.26 Procmail signaled out of memory in my verbose log
+               19.26 Procmail signaled out of memory in my verbose log
            </a>
            <br>
 <li>
            <a href="#variables_default_and_orgmail" class="toc">
-               18.27 Variables DEFAULT and ORGMAIL
+               19.27 Variables DEFAULT and ORGMAIL
            </a>
            <br>
 <li>
            <a href="#when_default_cannot_be_mailed_to" class="toc">
-               18.28 When DEFAULT cannot be mailed to
+               19.28 When DEFAULT cannot be mailed to
            </a>
            <br>
 <li>
            <a href="#variable_dropprivs" class="toc">
-               18.29 Variable DROPPRIVS
+               19.29 Variable DROPPRIVS
            </a>
            <br>
 <li>
            <a href="#variable_home" class="toc">
-               18.30 Variable HOME
+               19.30 Variable HOME
            </a>
            <br>
 <li>
            <a href="#variable_host" class="toc">
-               18.31 Variable HOST
+               19.31 Variable HOST
            </a>
            <br>
 <li>
            <a href="#variable_linebuf" class="toc">
-               18.32 Variable LINEBUF
+               19.32 Variable LINEBUF
            </a>
            <br>
 <li>
            <a href="#variable_log_and_logfile" class="toc">
-               18.33 Variable LOG and LOGFILE
+               19.33 Variable LOG and LOGFILE
            </a>
            <br>
 <li>
            <a href="#variable_trap" class="toc">
-               18.34 Variable TRAP
+               19.34 Variable TRAP
            </a>
            <br>
 <li>
            <a href="#variable_umask" class="toc">
-               18.35 Variable UMASK
+               19.35 Variable UMASK
            </a>
            <br>
 <li>
            <a href="#umask_and_permissions" class="toc">
-               18.36 UMASK and permissions
+               19.36 UMASK and permissions
            </a>
            <br>
 <li>
            <a href="#performance_difference_between_back_tick_and_recipe" class="toc">
-               18.37 Performance difference between back tick and &quot;|&quot; recipe
+               19.37 Performance difference between back tick and &quot;|&quot; recipe
            </a>
            <br>
 <li>
            <a href="#procmails_temporary_file_names_while_writing_file_out" class="toc">
-               18.38 Procmail's temporary file names while writing file out
+               19.38 Procmail's temporary file names while writing file out
            </a>
            <br>
 <li>
            <a href="#parameter" class="toc">
-               18.39 Parameter $@
+               19.39 Parameter $@
            </a>
            <br>
 <li>
            <a href="#procmail_variables_are_null_terminated_detecting_null_string" class="toc">
-               18.40 Procmail variables are null terminated (detecting null string)
+               19.40 Procmail variables are null terminated (detecting null string)
            </a>
            <br>
 <li>
            <a href="#from_daemon_to_and_to_and_casesensitiveness" class="toc">
-               18.41 FROM_DAEMON TO and TO_ and case-sensitiveness
+               19.41 FROM_DAEMON TO and TO_ and case-sensitiveness
            </a>
            <br>
 <li>
            <a href="#to_macro_deciphered" class="toc">
-               18.42 TO_ macro deciphered
+               19.42 TO_ macro deciphered
            </a>
            <br>
 <li>
            <a href="#to_macro_and_rfc_822" class="toc">
-               18.43 TO_ macro and RFC 822
+               19.43 TO_ macro and RFC 822
            </a>
            <br>
 <li>
            <a href="#from_daemon_deciphered" class="toc">
-               18.44 FROM_DAEMON deciphered
+               19.44 FROM_DAEMON deciphered
            </a>
            <br>
 </ul>
 <a href="#technical_matters" class="toc">
-               19.0 Technical matters
+               20.0 Technical matters
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#list_of_exit_codes" class="toc">
-               19.1 List of exit codes
+               20.1 List of exit codes
            </a>
            <br>
 <li>
            <a href="#list_of_precedence_codes" class="toc">
-               19.2 List of precedence codes
+               20.2 List of precedence codes
            </a>
            <br>
 <li>
            <a href="#sendmail_and_t" class="toc">
-               19.3 Sendmail and -t
+               20.3 Sendmail and -t
            </a>
            <br>
 <li>
            <a href="#rfc822_replyto_and_formail_problem_with_multiple_recipients" class="toc">
-               19.4 RFC822 Reply-To and formail problem with multiple recipients
+               20.4 RFC822 Reply-To and formail problem with multiple recipients
            </a>
            <br>
 <li>
            <a href="#procmail_and_imap_server" class="toc">
-               19.5 Procmail and IMAP server
+               20.5 Procmail and IMAP server
            </a>
            <br>
 <li>
            <a href="#machine_which_processes_mail" class="toc">
-               19.6 Machine which processes mail
+               20.6 Machine which processes mail
            </a>
            <br>
 <li>
            <a href="#compiling_procmail_and_mailspoolhome" class="toc">
-               19.7 Compiling procmail and MAILSPOOLHOME
+               20.7 Compiling procmail and MAILSPOOLHOME
            </a>
            <br>
 </ul>
 <a href="#procmail_software_for_emacs" class="toc">
-               20.0 Procmail software for Emacs
+               21.0 Procmail software for Emacs
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#what_is_emacs" class="toc">
-               20.1 What is Emacs
+               21.1 What is Emacs
            </a>
            <br>
 <li>
            <a href="#emacs_procmailmode_and_procmail_code_checking_lint" class="toc">
-               20.2 Emacs procmail-mode and Procmail code checking (Lint)
+               21.2 Emacs procmail-mode and Procmail code checking (Lint)
            </a>
            <br>
 <li>
            <a href="#why_use_procmail_with_gnus" class="toc">
-               20.3 Why use procmail with Gnus
+               21.3 Why use procmail with Gnus
            </a>
            <br>
 <li>
            <a href="#setting_up_gnus_for_procmail_basics" class="toc">
-               20.4 Setting up Gnus for procmail - Basics
+               21.4 Setting up Gnus for procmail - Basics
            </a>
            <br>
 <li>
            <a href="#gnus_for_procmail_more_about_it" class="toc">
-               20.5 Gnus for procmail - More about it
+               21.5 Gnus for procmail - More about it
            </a>
            <br>
 <li>
            <a href="#emacs_and_gnus_fiddling_with_spool_files" class="toc">
-               20.6 Emacs and Gnus -- Fiddling with spool files
+               21.6 Emacs and Gnus -- Fiddling with spool files
            </a>
            <br>
 <li>
            <a href="#gnus_article_snippets" class="toc">
-               20.7 Gnus article snippets
+               21.7 Gnus article snippets
            </a>
            <br>
 </ul>
 <a href="#rfc_request_for_comments" class="toc">
-               21.0 RFC, Request for comments
+               22.0 RFC, Request for comments
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#rfcs_and_their_jurisdiction_munged_addresses" class="toc">
-               21.1 RFCs and their jurisdiction (munged Addresses)
+               22.1 RFCs and their jurisdiction (munged Addresses)
            </a>
            <br>
 <li>
            <a href="#comments_about_addresses_munging" class="toc">
-               21.2 Comments about addresses munging
+               22.2 Comments about addresses munging
            </a>
            <br>
 <li>
            <a href="#rfc_and_valid_mail_address_characters" class="toc">
-               21.3 RFC and valid mail address characters
+               22.3 RFC and valid mail address characters
            </a>
            <br>
 <li>
            <a href="#rfc_and_loginname" class="toc">
-               21.4 RFC and login-name@fdqn
+               22.4 RFC and login-name@fdqn
            </a>
            <br>
 <li>
            <a href="#rfcs_and_messages_signature" class="toc">
-               21.5 RFCs and messages signature
+               22.5 RFCs and messages signature
            </a>
            <br>
 <li>
            <a href="#rfc_and_using_mime_in_usenet_newsgroups" class="toc">
-               21.6 RFC and using MIME in Usenet newsgroups
+               22.6 RFC and using MIME in Usenet newsgroups
            </a>
            <br>
 <li>
            <a href="#some_rfc_pointers" class="toc">
-               21.7 Some RFC Pointers
+               22.7 Some RFC Pointers
            </a>
            <br>
 </ul>
 <a href="#introduction_to_email_headers" class="toc">
-               22.0 Introduction to E-mail Headers
+               23.0 Introduction to E-mail Headers
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#to_find_out_more_about_mail" class="toc">
-               22.1 To find out more about mail
+               23.1 To find out more about mail
            </a>
            <br>
 <li>
            <a href="#lecture_by_alan_stebbens" class="toc">
-               22.2 Lecture by Alan Stebbens
+               23.2 Lecture by Alan Stebbens
            </a>
            <br>
 <li>
            <a href="#applied_to_received_messages" class="toc">
-               22.3 Applied to received messages
+               23.3 Applied to received messages
            </a>
            <br>
 <li>
            <a href="#bcc_lecture_by_alan_stebbens" class="toc">
-               22.4 Bcc lecture by Alan Stebbens
+               23.4 Bcc lecture by Alan Stebbens
            </a>
            <br>
 <li>
            <a href="#bcc_lecture_by_philip_guenther" class="toc">
-               22.5 Bcc lecture by Philip Guenther
+               23.5 Bcc lecture by Philip Guenther
            </a>
            <br>
 </ul>
 <a href="#message_headers" class="toc">
-               23.0 Message headers
+               24.0 Message headers
            </a>
            <br>
 
 <ul>
 <li>
            <a href="#what_is_correct_from_address_syntax" class="toc">
-               23.1 What is correct From address syntax
+               24.1 What is correct From address syntax
            </a>
            <br>
 <li>
            <a href="#whats_that_xuidl_header" class="toc">
-               23.2 What's that X-UIDL header?
+               24.2 What's that X-UIDL header?
            </a>
            <br>
 <li>
            <a href="#what_is_that_first_from_header" class="toc">
-               23.3 What is that first From_ header?
+               24.3 What is that first From_ header?
            </a>
            <br>
 <li>
            <a href="#messageid_header" class="toc">
-               23.4 Message-Id header
+               24.4 Message-Id header
            </a>
            <br>
 <li>
            <a href="#received_header" class="toc">
-               23.5 Received header
+               24.5 Received header
            </a>
            <br>
 <li>
            <a href="#returnpath" class="toc">
-               23.6 Return-Path
+               24.6 Return-Path
            </a>
            <br>
 <li>
            <a href="#errorsto" class="toc">
-               23.7 Errors-To
+               24.7 Errors-To
            </a>
            <br>
 <li>
            <a href="#xsubscriptioninfo" class="toc">
-               23.8 X-Subscription-Info
+               24.8 X-Subscription-Info
            </a>
            <br>
 <li>
            <a href="#replyto_header" class="toc">
-               23.9 Reply-To header
+               24.9 Reply-To header
            </a>
            <br>
 <li>
            <a href="#mailcopiesto_header" class="toc">
-               23.10 Mail-Copies-To header
+               24.10 Mail-Copies-To header
            </a>
            <br>
 <li>
            <a href="#mailfollowupto_and_replytopersonal_headers" class="toc">
-               23.11 Mail-Followup-To and Reply-To-Personal headers
+               24.11 Mail-Followup-To and Reply-To-Personal headers
            </a>
            <br>
 <li>
            <a href="#contentlength_header_and_from_specification" class="toc">
-               23.12 Content-Length header and From_ specification
+               24.12 Content-Length header and From_ specification
            </a>
            <br>
 <li>
            <a href="#moral_about_cc_copies_in_usenet" class="toc">
-               23.13 Moral about CC copies in Usenet
+               24.13 Moral about CC copies in Usenet
            </a>
            <br>
 </ul>
@@ -1612,7 +1602,7 @@ Procmail Tips
 
 <p>
 <p class="column8">
-        <EM><STRONG>$Id: pm-tips.html,v 1.16 2007/10/04 16:23:37 jaalto Exp $</STRONG></EM><br>
+        <EM><STRONG>$Id: pm-tips.html,v 1.17 2007/10/27 10:08:41 jaalto Exp $</STRONG></EM><br>
         Homepage <a href="http://pm-doc.sourceforge.net/" >http://pm-doc.sourceforge.net/</A><br>
         URLs last checked: 2007-10-02<br>
 
@@ -1653,6 +1643,13 @@ Procmail Tips
         please send mail to this document's maintainer (see project
         page). If some URL is not alive any more, you may still be
         able to find it by using a WWW search such as Google.
+
+
+<p class="column8">
+        There is never too much to learn about procmail and the best
+        source is the rc files that people have done. If you have some
+        time, please place your <samp class="word">.procmailrc</samp> with good comments to
+        your home page.
 
 
 
@@ -2872,7 +2869,7 @@ Procmail Tips
             rules with no external files needed. The module is
             available in Procmail module library at
             &lt;<a href="http://freshmeat.net/projects/procmail-lib" >http://freshmeat.net/projects/procmail-lib</A>&gt;.
-       o    <a href="http://www.spambouncer.org/">Catherine A. Hampton's Spambouncer&quot;</a>.
+       2.5.1 o    <a href="http://www.spambouncer.org/">Catherine A. Hampton's Spambouncer&quot;</a>.
             The attached set of procmail recipes/filters, which I
             call The Spam Bouncer, are for users who are sick of spam
             (unsolicited junk mail) and want to filter it out of their
@@ -8971,64 +8968,9 @@ Procmail Tips
         Unsolicited Bulk Email from friend &ndash; he is not the real sender,
         but his address was drifted to spammers email database.
 
+9.0 x1    8.11 Using dates efficiently
 
 
-  <a name="make_your_own_procmailrc_available_to_others" id="make_your_own_procmailrc_available_to_others"></a>
-  <h2>
-      8.10 Make your own .procmailrc available to others
-
-  </h2>
-
-
-
-
-<p>
-<p class="column8">
-        There is never too much to learn about procmail and the best source
-        is the rc files that people have done. Remember to comment your
-        procmailrc file well before you put it available. Below is a<br>
-        recipe for sending your .procmailrc upon request. If you want to
-        send anything more that one or two files (many times you want to
-        put other files available too), then please do not use this code
-        but a general file server module.
-
-<P>
-<TABLE class="shade-normal">
-    <TR>
-    <TD class="shade-normal-attrib" valign="top">
-    <PRE>
-      :0
-      * ! ^Subject:.Re:
-      *   ^Subject:.*send.*procmailrc
-      * ! ^FROM_DAEMON
-      {
-          :0 fhw:
-          | $FORMAIL -rt                                              \
-                     -A &quot;Precedence: junk&quot;                            \
-                     -I &quot;Subject: Requested .procmailrc&quot;;             \
-                     -I &quot;$MYXLOOP&quot;
-
-          :0 a hwic
-          | ( cat - $HOME/.procmailrc ) | $SENDMAIL
-
-          :0              # trash the &quot;Send procmailrc&quot; request
-          /dev/null
-      }    </PRE></TD>
-    </TR>
-</TABLE>
-
-
-
-  <a name="using_dates_efficiently" id="using_dates_efficiently"></a>
-  <h2>
-      8.11 Using dates efficiently
-
-  </h2>
-
-
-
-
-<p>
 <p class="column10"><em class="quote10">
           <strong class="word">Note</strong>: See module list, where you will find <samp class="word">date</samp> and <samp class="word">time</samp>
           parsing modules. You can also parse the date from the first
@@ -9097,7 +9039,7 @@ Procmail Tips
 
   <a name="keep_simple_header_log" id="keep_simple_header_log"></a>
   <h2>
-      8.12 Keep simple header log
+      9.1 Keep simple header log
 
   </h2>
 
@@ -9176,7 +9118,7 @@ Procmail Tips
 
   <a name="gzipping_messages" id="gzipping_messages"></a>
   <h2>
-      8.13 Gzipping messages
+      9.2 Gzipping messages
 
   </h2>
 
@@ -9256,7 +9198,7 @@ Procmail Tips
 
   <a name="emergency_stop_for_your_procmailrc" id="emergency_stop_for_your_procmailrc"></a>
   <h2>
-      8.14 Emergency stop for your .procmailrc
+      9.3 Emergency stop for your .procmailrc
 
   </h2>
 
@@ -9320,7 +9262,7 @@ Procmail Tips
 <hr>
                <A name="scoring"  id="scoring"></A>
                <h1>
-               9.0 Scoring
+               10.0 Scoring
 
                </h1>
 
@@ -9328,7 +9270,7 @@ Procmail Tips
 
   <a name="using_scores_by_an_example" id="using_scores_by_an_example"></a>
   <h2>
-      9.1 Using scores by an example
+      10.1 Using scores by an example
 
   </h2>
 
@@ -9510,7 +9452,7 @@ Procmail Tips
 
   <a name="brief_score_tutorial" id="brief_score_tutorial"></a>
   <h2>
-      9.2 Brief Score tutorial
+      10.2 Brief Score tutorial
 
   </h2>
 
@@ -9608,7 +9550,7 @@ Procmail Tips
 
   <a name="scores_scope" id="scores_scope"></a>
   <h2>
-      9.3 Score's scope
+      10.3 Score's scope
 
   </h2>
 
@@ -9702,7 +9644,7 @@ Procmail Tips
 
   <a name="counting_length_of_a_string" id="counting_length_of_a_string"></a>
   <h2>
-      9.4 Counting length of a string
+      10.4 Counting length of a string
 
   </h2>
 
@@ -9732,7 +9674,7 @@ Procmail Tips
 
   <a name="counting_lines_in_a_message_adding_lines_header" id="counting_lines_in_a_message_adding_lines_header"></a>
   <h2>
-      9.5 Counting lines in a message (Adding Lines: header)
+      10.5 Counting lines in a message (Adding Lines: header)
 
   </h2>
 
@@ -9853,7 +9795,7 @@ Procmail Tips
 
   <a name="determining_if_body_is_longer_than_header" id="determining_if_body_is_longer_than_header"></a>
   <h2>
-      9.6 Determining if body is longer than header
+      10.6 Determining if body is longer than header
 
   </h2>
 
@@ -9878,7 +9820,7 @@ Procmail Tips
 
   <a name="matching_last_received_header" id="matching_last_received_header"></a>
   <h2>
-      9.7 Matching last Received header
+      10.7 Matching last Received header
 
   </h2>
 
@@ -9905,7 +9847,7 @@ Procmail Tips
 
   <a name="testing_value_range_with_scoring_bogofilter" id="testing_value_range_with_scoring_bogofilter"></a>
   <h2>
-      9.8 Testing value range with scoring (bogofilter)
+      10.8 Testing value range with scoring (bogofilter)
 
   </h2>
 
@@ -9963,7 +9905,7 @@ Procmail Tips
 
   <a name="how_to_add_contentlength_header" id="how_to_add_contentlength_header"></a>
   <h2>
-      9.9 How to add Content-Length header
+      10.9 How to add Content-Length header
 
   </h2>
 
@@ -10013,7 +9955,7 @@ Procmail Tips
 
   <a name="testing_message_size_or_number_of_lines" id="testing_message_size_or_number_of_lines"></a>
   <h2>
-      9.10 Testing message size or number of lines
+      10.10 Testing message size or number of lines
 
   </h2>
 
@@ -10062,7 +10004,7 @@ Procmail Tips
 
   <a name="counting_commas_with_recursive_includerc" id="counting_commas_with_recursive_includerc"></a>
   <h2>
-      9.11 Counting commas with recursive includerc
+      10.11 Counting commas with recursive includerc
 
   </h2>
 
@@ -10128,7 +10070,7 @@ Procmail Tips
 <hr>
                <A name="formail_usage"  id="formail_usage"></A>
                <h1>
-               10.0 Formail usage
+               11.0 Formail usage
 
                </h1>
 
@@ -10136,7 +10078,7 @@ Procmail Tips
 
   <a name="fetching_fields_with_formail_x" id="fetching_fields_with_formail_x"></a>
   <h2>
-      10.1 Fetching fields with formail -x
+      11.1 Fetching fields with formail -x
 
   </h2>
 
@@ -10222,7 +10164,7 @@ Procmail Tips
 
   <a name="always_use_formails_rt_switch" id="always_use_formails_rt_switch"></a>
   <h2>
-      10.2 Always use formail's -rt switch
+      11.2 Always use formail's -rt switch
 
   </h2>
 
@@ -10247,7 +10189,7 @@ Procmail Tips
 
 
 <p class="column7"><em><strong>
-       10.2.1 For procmail versions prior 3.14</strong></em>
+       11.2.1 For procmail versions prior 3.14</strong></em>
 
 
 
@@ -10402,7 +10344,7 @@ Procmail Tips
 
   <a name="using_rt_and_rewriting_the_from_address" id="using_rt_and_rewriting_the_from_address"></a>
   <h2>
-      10.3 Using -rt and rewriting the From address
+      11.3 Using -rt and rewriting the From address
 
   </h2>
 
@@ -10449,7 +10391,7 @@ Procmail Tips
 
   <a name="formail_rt_and_resentfrom_header" id="formail_rt_and_resentfrom_header"></a>
   <h2>
-      10.4 Formail -rt and Resent-From header
+      11.4 Formail -rt and Resent-From header
 
   </h2>
 
@@ -10566,7 +10508,7 @@ Procmail Tips
 
   <a name="quoting_the_message" id="quoting_the_message"></a>
   <h2>
-      10.5 Quoting the message
+      11.5 Quoting the message
 
   </h2>
 
@@ -10581,7 +10523,7 @@ Procmail Tips
 
   <a name="without_quoting_the_message" id="without_quoting_the_message"></a>
   <h2>
-      10.6 Without quoting the message
+      11.6 Without quoting the message
 
   </h2>
 
@@ -10596,7 +10538,7 @@ Procmail Tips
 
   <a name="how_to_include_headers_and_body_to_the_reply" id="how_to_include_headers_and_body_to_the_reply"></a>
   <h2>
-      10.7 How to include headers and body to the reply message
+      11.7 How to include headers and body to the reply message
 
   </h2>
 
@@ -10633,7 +10575,7 @@ Procmail Tips
 
   <a name="adding_text_to_the_beginning_of_message" id="adding_text_to_the_beginning_of_message"></a>
   <h2>
-      10.8 Adding text to the beginning of message
+      11.8 Adding text to the beginning of message
 
   </h2>
 
@@ -10660,7 +10602,7 @@ Procmail Tips
 
   <a name="adding_text_to_the_end_of_message" id="adding_text_to_the_end_of_message"></a>
   <h2>
-      10.9 Adding text to the end of message
+      11.9 Adding text to the end of message
 
   </h2>
 
@@ -10681,7 +10623,7 @@ Procmail Tips
 
   <a name="adding_text_before_quoted_message" id="adding_text_before_quoted_message"></a>
   <h2>
-      10.10 Adding text before quoted message
+      11.10 Adding text before quoted message
 
   </h2>
 
@@ -10804,7 +10746,7 @@ Procmail Tips
 
   <a name="adding_extra_headers_from_file" id="adding_extra_headers_from_file"></a>
   <h2>
-      10.11 Adding extra headers from file
+      11.11 Adding extra headers from file
 
   </h2>
 
@@ -10876,7 +10818,7 @@ Procmail Tips
 
   <a name="splitting_digest" id="splitting_digest"></a>
   <h2>
-      10.12 Splitting digest
+      11.12 Splitting digest
 
   </h2>
 
@@ -10913,7 +10855,7 @@ Procmail Tips
 
   <a name="mailbox_splitting_to_individual_files" id="mailbox_splitting_to_individual_files"></a>
   <h2>
-      10.13 Mailbox: Splitting to individual files
+      11.13 Mailbox: Splitting to individual files
 
   </h2>
 
@@ -10945,7 +10887,7 @@ Procmail Tips
 
   <a name="mailbox_extracting_all_from_addresses_from_mailbox" id="mailbox_extracting_all_from_addresses_from_mailbox"></a>
   <h2>
-      10.14 Mailbox: Extracting all From addresses from mailbox
+      11.14 Mailbox: Extracting all From addresses from mailbox
 
   </h2>
 
@@ -10970,7 +10912,7 @@ Procmail Tips
 
   <a name="mailbox_applying_procmail_recipe_on_whole_mailbox" id="mailbox_applying_procmail_recipe_on_whole_mailbox"></a>
   <h2>
-      10.15 Mailbox: Applying procmail recipe on whole mailbox
+      11.15 Mailbox: Applying procmail recipe on whole mailbox
 
   </h2>
 
@@ -10990,7 +10932,7 @@ Procmail Tips
 
   <a name="mailbox_run_series_of_commands_for_each_mail_split" id="mailbox_run_series_of_commands_for_each_mail_split"></a>
   <h2>
-      10.16 Mailbox: run series of commands for each mail (split mailbox)
+      11.16 Mailbox: run series of commands for each mail (split mailbox)
 
   </h2>
 
@@ -11096,7 +11038,7 @@ Procmail Tips
 
   <a name="option_d_and_cache" id="option_d_and_cache"></a>
   <h2>
-      10.17 Option -D and cache
+      11.17 Option -D and cache
 
   </h2>
 
@@ -11168,7 +11110,7 @@ Procmail Tips
 
   <a name="option_d_and_messageid_in_the_body" id="option_d_and_messageid_in_the_body"></a>
   <h2>
-      10.18 Option -D and message-id in the body
+      11.18 Option -D and message-id in the body
 
   </h2>
 
@@ -11232,7 +11174,7 @@ Procmail Tips
 
   <a name="reducing_formail_calls_conditionally_adding_fields" id="reducing_formail_calls_conditionally_adding_fields"></a>
   <h2>
-      10.19 Reducing formail calls (conditionally adding fields)
+      11.19 Reducing formail calls (conditionally adding fields)
 
   </h2>
 
@@ -11361,7 +11303,7 @@ Procmail Tips
 
   <a name="formail_a_a_options" id="formail_a_a_options"></a>
   <h2>
-      10.20 Formail -A -a options
+      11.20 Formail -A -a options
 
   </h2>
 
@@ -11409,7 +11351,7 @@ Procmail Tips
 
   <a name="formail_e_s_options" id="formail_e_s_options"></a>
   <h2>
-      10.21 Formail -e -s options
+      11.21 Formail -e -s options
 
   </h2>
 
@@ -11451,7 +11393,7 @@ Procmail Tips
 <hr>
                <A name="saving_mailing_list_messages"  id="saving_mailing_list_messages"></A>
                <h1>
-               11.0 Saving mailing list messages
+               12.0 Saving mailing list messages
 
                </h1>
 
@@ -11459,7 +11401,7 @@ Procmail Tips
 
   <a name="using_subroutine_pmjalist_rc_to_detect_mailing_lists" id="using_subroutine_pmjalist_rc_to_detect_mailing_lists"></a>
   <h2>
-      11.1 Using subroutine pm-jalist.rc to detect mailing lists
+      12.1 Using subroutine pm-jalist.rc to detect mailing lists
 
   </h2>
 
@@ -11545,7 +11487,7 @@ Procmail Tips
 
   <a name="using_plus_addressing_foobar" id="using_plus_addressing_foobar"></a>
   <h2>
-      11.2 Using plus addressing foo+bar@address.com
+      12.2 Using plus addressing foo+bar@address.com
 
   </h2>
 
@@ -11691,7 +11633,7 @@ Procmail Tips
 
   <a name="using_rfc_comment_trick_for_additional_information" id="using_rfc_comment_trick_for_additional_information"></a>
   <h2>
-      11.3 Using RFC comment trick for additional information
+      12.3 Using RFC comment trick for additional information
 
   </h2>
 
@@ -11853,7 +11795,7 @@ Procmail Tips
 
   <a name="simple_mailing_list_handling" id="simple_mailing_list_handling"></a>
   <h2>
-      11.4 Simple mailing list handling
+      12.4 Simple mailing list handling
 
   </h2>
 
@@ -11915,7 +11857,7 @@ Procmail Tips
 
   <a name="archiving_according_to_to" id="archiving_according_to_to"></a>
   <h2>
-      11.5 Archiving according to TO
+      12.5 Archiving according to TO
 
   </h2>
 
@@ -11965,7 +11907,7 @@ Procmail Tips
 
   <a name="using_returnpath_to_detect_mailing_lists" id="using_returnpath_to_detect_mailing_lists"></a>
   <h2>
-      11.6 Using Return-Path to detect mailing lists
+      12.6 Using Return-Path to detect mailing lists
 
   </h2>
 
@@ -12087,7 +12029,7 @@ Procmail Tips
 <hr>
                <A name="procmail_mime_and_html"  id="procmail_mime_and_html"></A>
                <h1>
-               12.0 Procmail, MIME and HTML
+               13.0 Procmail, MIME and HTML
 
                </h1>
 
@@ -12095,7 +12037,7 @@ Procmail Tips
 
   <a name="mime_bibliography" id="mime_bibliography"></a>
   <h2>
-      12.1 Mime Bibliography
+      13.1 Mime Bibliography
 
   </h2>
 
@@ -12113,7 +12055,7 @@ Procmail Tips
 
   <a name="mime_content_type_applicationmstnef" id="mime_content_type_applicationmstnef"></a>
   <h2>
-      12.2 Mime content type application/ms-tnef
+      13.2 Mime content type application/ms-tnef
 
   </h2>
 
@@ -12149,7 +12091,7 @@ Procmail Tips
 
   <a name="trapping_html_mime_messages" id="trapping_html_mime_messages"></a>
   <h2>
-      12.3 Trapping HTML mime messages
+      13.3 Trapping HTML mime messages
 
   </h2>
 
@@ -12186,7 +12128,7 @@ Procmail Tips
 
   <a name="complaining_about_html_messages" id="complaining_about_html_messages"></a>
   <h2>
-      12.4 Complaining about HTML messages
+      13.4 Complaining about HTML messages
 
   </h2>
 
@@ -12240,7 +12182,7 @@ Procmail Tips
 
   <a name="converting_html_body_to_plain_text" id="converting_html_body_to_plain_text"></a>
   <h2>
-      12.5 Converting HTML body to plain text
+      13.5 Converting HTML body to plain text
 
   </h2>
 
@@ -12322,7 +12264,7 @@ Procmail Tips
 
   <a name="getting_rid_of_unwanted_mime_attachments_html_vcard" id="getting_rid_of_unwanted_mime_attachments_html_vcard"></a>
   <h2>
-      12.6 Getting rid of unwanted mime attachments (HTML, vcard)
+      13.6 Getting rid of unwanted mime attachments (HTML, vcard)
 
   </h2>
 
@@ -12394,7 +12336,7 @@ Procmail Tips
 
   <a name="sending_contents_of_a_html_page_in_plain_text" id="sending_contents_of_a_html_page_in_plain_text"></a>
   <h2>
-      12.7 Sending contents of a HTML page in plain text to someone
+      13.7 Sending contents of a HTML page in plain text to someone
 
   </h2>
 
@@ -12456,7 +12398,7 @@ Procmail Tips
 <hr>
                <A name="simple_recipe_examples"  id="simple_recipe_examples"></A>
                <h1>
-               13.0 Simple recipe examples
+               14.0 Simple recipe examples
 
                </h1>
 
@@ -12464,7 +12406,7 @@ Procmail Tips
 
   <a name="saving_mh_folders_numbered_messages" id="saving_mh_folders_numbered_messages"></a>
   <h2>
-      13.1 Saving: MH folders &ndash; numbered messages
+      14.1 Saving: MH folders &ndash; numbered messages
 
   </h2>
 
@@ -12525,7 +12467,7 @@ Procmail Tips
 
   <a name="saving_to_monthly_folders" id="saving_to_monthly_folders"></a>
   <h2>
-      13.2 Saving: to monthly folders
+      14.2 Saving: to monthly folders
 
   </h2>
 
@@ -12566,7 +12508,7 @@ Procmail Tips
 
   <a name="modifying_filtering_basics" id="modifying_filtering_basics"></a>
   <h2>
-      13.3 Modifying: Filtering basics
+      14.3 Modifying: Filtering basics
 
   </h2>
 
@@ -12605,7 +12547,7 @@ Procmail Tips
 
   <a name="modifying_squeezing_empty_lines_around_message_body" id="modifying_squeezing_empty_lines_around_message_body"></a>
   <h2>
-      13.4 Modifying: Squeezing empty lines around message body
+      14.4 Modifying: Squeezing empty lines around message body
 
   </h2>
 
@@ -12673,7 +12615,7 @@ Procmail Tips
 
   <a name="modifying_shuffling_headers_always_to_same_order" id="modifying_shuffling_headers_always_to_same_order"></a>
   <h2>
-      13.5 Modifying: shuffling headers always to same order
+      14.5 Modifying: shuffling headers always to same order
 
   </h2>
 
@@ -12762,7 +12704,7 @@ Procmail Tips
 
   <a name="service_auto_answerer_to_empty_messages" id="service_auto_answerer_to_empty_messages"></a>
   <h2>
-      13.6 Service: Auto answerer to empty messages
+      14.6 Service: Auto answerer to empty messages
 
   </h2>
 
@@ -12798,7 +12740,7 @@ Procmail Tips
 
   <a name="service_ping_responder" id="service_ping_responder"></a>
   <h2>
-      13.7 Service: Ping responder
+      14.7 Service: Ping responder
 
   </h2>
 
@@ -12845,7 +12787,7 @@ Procmail Tips
 
   <a name="service_simple_vacation_with_procmail" id="service_simple_vacation_with_procmail"></a>
   <h2>
-      13.8 Service: simple vacation with procmail
+      14.8 Service: simple vacation with procmail
 
   </h2>
 
@@ -12914,7 +12856,7 @@ Procmail Tips
 
   <a name="service_vacation_code_example" id="service_vacation_code_example"></a>
   <h2>
-      13.9 Service: vacation code example
+      14.9 Service: vacation code example
 
   </h2>
 
@@ -12983,7 +12925,7 @@ Procmail Tips
 
   <a name="service_autoforwarding" id="service_autoforwarding"></a>
   <h2>
-      13.10 Service: Auto-forwarding
+      14.10 Service: Auto-forwarding
 
   </h2>
 
@@ -13036,7 +12978,7 @@ Procmail Tips
 
   <a name="service_forward_only_specific_messages" id="service_forward_only_specific_messages"></a>
   <h2>
-      13.11 Service: forward only specific messages
+      14.11 Service: forward only specific messages
 
   </h2>
 
@@ -13084,7 +13026,7 @@ Procmail Tips
 
   <a name="service_making_digests" id="service_making_digests"></a>
   <h2>
-      13.12 Service: Making digests
+      14.12 Service: Making digests
 
   </h2>
 
@@ -13115,7 +13057,7 @@ Procmail Tips
 
   <a name="kill_killing_advertisement_headers_and_footers" id="kill_killing_advertisement_headers_and_footers"></a>
   <h2>
-      13.13 Kill: killing advertisement headers and footers
+      14.13 Kill: killing advertisement headers and footers
 
   </h2>
 
@@ -13198,7 +13140,7 @@ Procmail Tips
 
   <a name="kill_simple_kill_file_recipe_with_procmail" id="kill_simple_kill_file_recipe_with_procmail"></a>
   <h2>
-      13.14 Kill: simple kill file recipe with procmail
+      14.14 Kill: simple kill file recipe with procmail
 
   </h2>
 
@@ -13271,7 +13213,7 @@ Procmail Tips
 
   <a name="kill_duplicate_messages" id="kill_duplicate_messages"></a>
   <h2>
-      13.15 Kill: duplicate messages
+      14.15 Kill: duplicate messages
 
   </h2>
 
@@ -13357,7 +13299,7 @@ Procmail Tips
 
   <a name="kill_spam_filter_with_simple_recipes" id="kill_spam_filter_with_simple_recipes"></a>
   <h2>
-      13.16 Kill: spam filter with simple recipes
+      14.16 Kill: spam filter with simple recipes
 
   </h2>
 
@@ -13484,7 +13426,7 @@ Procmail Tips
 
   <a name="kill_unsubscribe_messages" id="kill_unsubscribe_messages"></a>
   <h2>
-      13.17 Kill: (un)subscribe messages
+      14.17 Kill: (un)subscribe messages
 
   </h2>
 
@@ -13618,7 +13560,7 @@ Procmail Tips
 
   <a name="time_once_a_day_cronlike_job" id="time_once_a_day_cronlike_job"></a>
   <h2>
-      13.18 Time: Once a day cron-like job
+      14.18 Time: Once a day cron-like job
 
   </h2>
 
@@ -13660,7 +13602,7 @@ Procmail Tips
 
   <a name="time_running_a_recipe_at_a_given_time" id="time_running_a_recipe_at_a_given_time"></a>
   <h2>
-      13.19 Time: Running a recipe at a given time
+      14.19 Time: Running a recipe at a given time
 
   </h2>
 
@@ -13704,7 +13646,7 @@ Procmail Tips
 
   <a name="time_triggering_mail_and_using_cron" id="time_triggering_mail_and_using_cron"></a>
   <h2>
-      13.20 Time: Triggering mail and using cron
+      14.20 Time: Triggering mail and using cron
 
   </h2>
 
@@ -13807,7 +13749,7 @@ Procmail Tips
 
   <a name="decoding_uudecode" id="decoding_uudecode"></a>
   <h2>
-      13.21 Decoding: Uudecode
+      14.21 Decoding: Uudecode
 
   </h2>
 
@@ -13838,7 +13780,7 @@ Procmail Tips
 
   <a name="decoding_mime" id="decoding_mime"></a>
   <h2>
-      13.22 Decoding: MIME
+      14.22 Decoding: MIME
 
   </h2>
 
@@ -13899,7 +13841,7 @@ Procmail Tips
 
   <a name="how_to_send_commands_in_the_messages_body" id="how_to_send_commands_in_the_messages_body"></a>
   <h2>
-      13.23 How to send commands in the message's body
+      14.23 How to send commands in the message's body
 
   </h2>
 
@@ -13921,7 +13863,7 @@ Procmail Tips
 
   <a name="matching_two_words_on_a_line_but_not_one" id="matching_two_words_on_a_line_but_not_one"></a>
   <h2>
-      13.24 Matching two words on a line, but not one
+      14.24 Matching two words on a line, but not one
 
   </h2>
 
@@ -14002,7 +13944,7 @@ Procmail Tips
 
   <a name="how_to_define_personal_xx_macros" id="how_to_define_personal_xx_macros"></a>
   <h2>
-      13.25 How to define personal XX macros?
+      14.25 How to define personal XX macros?
 
   </h2>
 
@@ -14074,7 +14016,7 @@ Procmail Tips
 
   <a name="how_to_change_subject_by_body_match" id="how_to_change_subject_by_body_match"></a>
   <h2>
-      13.26 How to change subject by body match
+      14.26 How to change subject by body match
 
   </h2>
 
@@ -14118,7 +14060,7 @@ Procmail Tips
 
   <a name="how_to_change_subject_according_to_some_other_header" id="how_to_change_subject_according_to_some_other_header"></a>
   <h2>
-      13.27 How to change Subject according to some other header
+      14.27 How to change Subject according to some other header
 
   </h2>
 
@@ -14214,7 +14156,7 @@ Procmail Tips
 
   <a name="how_to_call_program_with_parameters" id="how_to_call_program_with_parameters"></a>
   <h2>
-      13.28 How to call program with parameters
+      14.28 How to call program with parameters
 
   </h2>
 
@@ -14252,7 +14194,7 @@ Procmail Tips
 <hr>
                <A name="miscellaneous_recipes"  id="miscellaneous_recipes"></A>
                <h1>
-               14.0 Miscellaneous recipes
+               15.0 Miscellaneous recipes
 
                </h1>
 
@@ -14260,7 +14202,7 @@ Procmail Tips
 
   <a name="matching_valid_messageid_header" id="matching_valid_messageid_header"></a>
   <h2>
-      14.1 Matching valid Message-Id header
+      15.1 Matching valid Message-Id header
 
   </h2>
 
@@ -14295,7 +14237,7 @@ Procmail Tips
 
   <a name="sending_two_files_in_a_message" id="sending_two_files_in_a_message"></a>
   <h2>
-      14.2 Sending two files in a message
+      15.2 Sending two files in a message
 
   </h2>
 
@@ -14402,7 +14344,7 @@ Procmail Tips
 
   <a name="excessive_quoting_of_message" id="excessive_quoting_of_message"></a>
   <h2>
-      14.3 Excessive quoting of message
+      15.3 Excessive quoting of message
 
   </h2>
 
@@ -14493,7 +14435,7 @@ Procmail Tips
 
   <a name="sending_message_to_pager_in_chunks" id="sending_message_to_pager_in_chunks"></a>
   <h2>
-      14.4 Sending message to pager in chunks
+      15.4 Sending message to pager in chunks
 
   </h2>
 
@@ -14572,7 +14514,7 @@ Procmail Tips
 
   <a name="playing_particular_sound_when_message_arrives" id="playing_particular_sound_when_message_arrives"></a>
   <h2>
-      14.5 Playing particular sound when message arrives
+      15.5 Playing particular sound when message arrives
 
   </h2>
 
@@ -14631,7 +14573,7 @@ Procmail Tips
 
   <a name="combining_multiple_originalcc_and_originalto_headers" id="combining_multiple_originalcc_and_originalto_headers"></a>
   <h2>
-      14.6 Combining multiple Original-Cc and Original-To headers
+      15.6 Combining multiple Original-Cc and Original-To headers
 
   </h2>
 
@@ -14708,7 +14650,7 @@ Procmail Tips
 
   <a name="forwarding_sensitive_messages_in_encrypted_format" id="forwarding_sensitive_messages_in_encrypted_format"></a>
   <h2>
-      14.7 Forwarding sensitive messages in encrypted format
+      15.7 Forwarding sensitive messages in encrypted format
 
   </h2>
 
@@ -14770,7 +14712,7 @@ Procmail Tips
 <hr>
                <A name="procmail_and_pgp"  id="procmail_and_pgp"></A>
                <h1>
-               15.0 Procmail and PGP
+               16.0 Procmail and PGP
 
                </h1>
 
@@ -14778,7 +14720,7 @@ Procmail Tips
 
   <a name="decrypt_pgp_messages_automatically" id="decrypt_pgp_messages_automatically"></a>
   <h2>
-      15.1 Decrypt pgp messages automatically
+      16.1 Decrypt pgp messages automatically
 
   </h2>
 
@@ -14808,7 +14750,7 @@ Procmail Tips
 
   <a name="getkeys_from_key_server" id="getkeys_from_key_server"></a>
   <h2>
-      15.2 Getkeys from key server
+      16.2 Getkeys from key server
 
   </h2>
 
@@ -14849,7 +14791,7 @@ Procmail Tips
 
   <a name="auto_grab_incoming_pgp_keys" id="auto_grab_incoming_pgp_keys"></a>
   <h2>
-      15.3 Auto grab incoming pgp keys
+      16.3 Auto grab incoming pgp keys
 
   </h2>
 
@@ -14930,7 +14872,7 @@ Procmail Tips
 <hr>
                <A name="includerc_usage"  id="includerc_usage"></A>
                <h1>
-               16.0 Includerc usage
+               17.0 Includerc usage
 
                </h1>
 
@@ -14938,7 +14880,7 @@ Procmail Tips
 
   <a name="using_multiple_rc_files" id="using_multiple_rc_files"></a>
   <h2>
-      16.1 Using: multiple rc files
+      17.1 Using: multiple rc files
 
   </h2>
 
@@ -14980,7 +14922,7 @@ Procmail Tips
 
   <a name="using_call_rc_file_conditionally" id="using_call_rc_file_conditionally"></a>
   <h2>
-      16.2 Using: call rc file conditionally
+      17.2 Using: call rc file conditionally
 
   </h2>
 
@@ -15094,7 +15036,7 @@ Procmail Tips
 
   <a name="using_autoloading_an_rc_file" id="using_autoloading_an_rc_file"></a>
   <h2>
-      16.3 Using: autoloading an rc file
+      17.3 Using: autoloading an rc file
 
   </h2>
 
@@ -15234,7 +15176,7 @@ Procmail Tips
 
   <a name="making_naming_of_the_rc_file" id="making_naming_of_the_rc_file"></a>
   <h2>
-      16.4 Making: naming of the rc file
+      17.4 Making: naming of the rc file
 
   </h2>
 
@@ -15316,7 +15258,7 @@ Procmail Tips
 
   <a name="making_using_name_space_when_saving_procmail_variables" id="making_using_name_space_when_saving_procmail_variables"></a>
   <h2>
-      16.5 Making: Using name space when saving procmail variables
+      17.5 Making: Using name space when saving procmail variables
 
   </h2>
 
@@ -15429,7 +15371,7 @@ Procmail Tips
 
   <a name="making_public_and_private_variables_in_rc_file" id="making_public_and_private_variables_in_rc_file"></a>
   <h2>
-      16.6 Making: Public and private variables in rc file
+      17.6 Making: Public and private variables in rc file
 
   </h2>
 
@@ -15499,7 +15441,7 @@ Procmail Tips
 
   <a name="the_rules_of_thumb_for_constructing_general_purpose_rc" id="the_rules_of_thumb_for_constructing_general_purpose_rc"></a>
   <h2>
-      16.7 The rules of thumb for constructing general purpose rc file
+      17.7 The rules of thumb for constructing general purpose rc file
 
   </h2>
 
@@ -15665,7 +15607,7 @@ Procmail Tips
 
   <a name="an_includerc_skeleton" id="an_includerc_skeleton"></a>
   <h2>
-      16.8 An includerc skeleton
+      17.8 An includerc skeleton
 
   </h2>
 
@@ -15700,7 +15642,7 @@ Procmail Tips
     <TD class="shade-normal-attrib" valign="top">
     <PRE>
       # pm-xxscript.rc -- one line description string here
-      # &lt;EM&gt;&lt;STRONG&gt;$Id: pm-tips.html,v 1.16 2007/10/04 16:23:37 jaalto Exp $&lt;/STRONG&gt;&lt;/EM&gt;
+      # &lt;EM&gt;&lt;STRONG&gt;$Id: pm-tips.html,v 1.17 2007/10/27 10:08:41 jaalto Exp $&lt;/STRONG&gt;&lt;/EM&gt;
       #
       #   File id
       #
@@ -15784,7 +15726,7 @@ Procmail Tips
 <hr>
                <A name="mailing_list_server"  id="mailing_list_server"></A>
                <h1>
-               17.0 Mailing list server
+               18.0 Mailing list server
 
                </h1>
 
@@ -15865,7 +15807,7 @@ Procmail Tips
 <hr>
                <A name="common_troubles"  id="common_troubles"></A>
                <h1>
-               18.0 Common troubles
+               19.0 Common troubles
 
                </h1>
 
@@ -15873,7 +15815,7 @@ Procmail Tips
 
   <a name="procmail_modes_normal_delivery_and_mail_filter" id="procmail_modes_normal_delivery_and_mail_filter"></a>
   <h2>
-      18.1 Procmail modes: normal, delivery, and mail filter.
+      19.1 Procmail modes: normal, delivery, and mail filter.
 
   </h2>
 
@@ -15944,7 +15886,7 @@ Procmail Tips
 
   <a name="procmail_as_sendmail_mlocal_mail_filtering_device" id="procmail_as_sendmail_mlocal_mail_filtering_device"></a>
   <h2>
-      18.2 Procmail as sendmail Mlocal mail filtering device
+      19.2 Procmail as sendmail Mlocal mail filtering device
 
   </h2>
 
@@ -15999,7 +15941,7 @@ Procmail Tips
 
   <a name="procmail_doesnt_pass_8bit_characters" id="procmail_doesnt_pass_8bit_characters"></a>
   <h2>
-      18.3 Procmail doesn't pass 8bit characters
+      19.3 Procmail doesn't pass 8bit characters
 
   </h2>
 
@@ -16042,7 +15984,7 @@ Procmail Tips
 
   <a name="my_isp_isnt_very_interested_in_installing_procmail" id="my_isp_isnt_very_interested_in_installing_procmail"></a>
   <h2>
-      18.4 My ISP isn't very interested in installing procmail
+      19.4 My ISP isn't very interested in installing procmail
 
   </h2>
 
@@ -16069,7 +16011,7 @@ Procmail Tips
 
   <a name="my_isp_has_systemwide_procmailrc_is_this_a_good" id="my_isp_has_systemwide_procmailrc_is_this_a_good"></a>
   <h2>
-      18.5 My ISP has systemwide procmailrc; is this a good idea?
+      19.5 My ISP has systemwide procmailrc; is this a good idea?
 
   </h2>
 
@@ -16096,7 +16038,7 @@ Procmail Tips
 
   <a name="procmail_changes_mailbox_and_directory_permissions" id="procmail_changes_mailbox_and_directory_permissions"></a>
   <h2>
-      18.6 Procmail changes mailbox and directory permissions
+      19.6 Procmail changes mailbox and directory permissions
 
   </h2>
 
@@ -16190,7 +16132,7 @@ Procmail Tips
 
   <a name="changing_mbox_permission_during_compilation_to_660" id="changing_mbox_permission_during_compilation_to_660"></a>
   <h2>
-      18.7 Changing mbox permission during compilation to 660
+      19.7 Changing mbox permission during compilation to 660
 
   </h2>
 
@@ -16321,7 +16263,7 @@ Procmail Tips
 
   <a name="the_forward_file_must_be_real_file" id="the_forward_file_must_be_real_file"></a>
   <h2>
-      18.8 The .forward file must be real file
+      19.8 The .forward file must be real file
 
   </h2>
 
@@ -16400,7 +16342,7 @@ Procmail Tips
 
   <a name="using_forward_if_procmail_already_is_lda" id="using_forward_if_procmail_already_is_lda"></a>
   <h2>
-      18.9 Using .forward if procmail already is LDA
+      19.9 Using .forward if procmail already is LDA
 
   </h2>
 
@@ -16455,7 +16397,7 @@ Procmail Tips
 
   <a name="mail_should_be_put_in_the_mailqueue_if_write" id="mail_should_be_put_in_the_mailqueue_if_write"></a>
   <h2>
-      18.10 Mail should be put in the mailqueue if write fails
+      19.10 Mail should be put in the mailqueue if write fails
 
   </h2>
 
@@ -16484,7 +16426,7 @@ Procmail Tips
 
   <a name="qmail_how_to_make_it_work_with_procmail" id="qmail_how_to_make_it_work_with_procmail"></a>
   <h2>
-      18.11 Qmail: how to make it work with procmail
+      19.11 Qmail: how to make it work with procmail
 
   </h2>
 
@@ -16523,7 +16465,7 @@ Procmail Tips
 
   <a name="qmail_procmail_looks_file_from_varspoolmail_only" id="qmail_procmail_looks_file_from_varspoolmail_only"></a>
   <h2>
-      18.12 Qmail: Procmail looks file from /var/spool/mail only
+      19.12 Qmail: Procmail looks file from /var/spool/mail only
 
   </h2>
 
@@ -16555,7 +16497,7 @@ Procmail Tips
 
   <a name="qmail_patch_to_procmail_3_11pre7_to_work_with" id="qmail_patch_to_procmail_3_11pre7_to_work_with"></a>
   <h2>
-      18.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
+      19.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
 
   </h2>
 
@@ -16584,7 +16526,7 @@ Procmail Tips
 
   <a name="afs_how_to_use_procmail_when_home_is_in" id="afs_how_to_use_procmail_when_home_is_in"></a>
   <h2>
-      18.14 AFS: How to use Procmail when HOME is in AFS cell
+      19.14 AFS: How to use Procmail when HOME is in AFS cell
 
   </h2>
 
@@ -16642,7 +16584,7 @@ Procmail Tips
 
   <a name="help_some_idiot_sent_my_address_to_30_mailing" id="help_some_idiot_sent_my_address_to_30_mailing"></a>
   <h2>
-      18.15 Help, some idiot sent my address to 30 mailing lists
+      19.15 Help, some idiot sent my address to 30 mailing lists
 
   </h2>
 
@@ -16737,7 +16679,7 @@ Procmail Tips
 
   <a name="help_procmail_beeps_and_prints_to_my_console" id="help_procmail_beeps_and_prints_to_my_console"></a>
   <h2>
-      18.16 Help, Procmail beeps and prints to my console
+      19.16 Help, Procmail beeps and prints to my console
 
   </h2>
 
@@ -16800,7 +16742,7 @@ Procmail Tips
 
   <a name="help_procmail_dumps_mail_to_console" id="help_procmail_dumps_mail_to_console"></a>
   <h2>
-      18.17 Help, procmail dumps mail to console
+      19.17 Help, procmail dumps mail to console
 
   </h2>
 
@@ -16828,7 +16770,7 @@ Procmail Tips
 
   <a name="help_corrupted_from_line_in_mailbox" id="help_corrupted_from_line_in_mailbox"></a>
   <h2>
-      18.18 Help, corrupted From_ line in mailbox
+      19.18 Help, corrupted From_ line in mailbox
 
   </h2>
 
@@ -16927,7 +16869,7 @@ Procmail Tips
 
   <a name="directing_users_mail_to_home_instead_of_varspool" id="directing_users_mail_to_home_instead_of_varspool"></a>
   <h2>
-      18.19 Directing user's mail to HOME instead of /var/spool/
+      19.19 Directing user's mail to HOME instead of /var/spool/
 
   </h2>
 
@@ -16973,7 +16915,7 @@ Procmail Tips
 
   <a name="nfs_mounting_varmail_is_a_good_way_to_get" id="nfs_mounting_varmail_is_a_good_way_to_get"></a>
   <h2>
-      18.20 NFS mounting /var/mail is a good way to get bad performance
+      19.20 NFS mounting /var/mail is a good way to get bad performance
 
   </h2>
 
@@ -17112,7 +17054,7 @@ Procmail Tips
 
   <a name="i_cant_see_the_sendmails_response_in_logfile" id="i_cant_see_the_sendmails_response_in_logfile"></a>
   <h2>
-      18.21 I can't see the sendmail's response in LOGFILE
+      19.21 I can't see the sendmail's response in LOGFILE
 
   </h2>
 
@@ -17155,7 +17097,7 @@ Procmail Tips
 
   <a name="compiling_procmail_and_choosing_locking_scheme" id="compiling_procmail_and_choosing_locking_scheme"></a>
   <h2>
-      18.22 Compiling procmail and choosing locking scheme
+      19.22 Compiling procmail and choosing locking scheme
 
   </h2>
 
@@ -17215,7 +17157,7 @@ Procmail Tips
 
   <a name="forwarding_lot_of_mail_causes_heavy_load" id="forwarding_lot_of_mail_causes_heavy_load"></a>
   <h2>
-      18.23 Forwarding lot of mail causes heavy load
+      19.23 Forwarding lot of mail causes heavy load
 
   </h2>
 
@@ -17352,7 +17294,7 @@ Procmail Tips
 
   <a name="what_happens_to_mail_if_mda_procmail_fails" id="what_happens_to_mail_if_mda_procmail_fails"></a>
   <h2>
-      18.24 What happens to mail if MDA Procmail fails
+      19.24 What happens to mail if MDA Procmail fails
 
   </h2>
 
@@ -17396,7 +17338,7 @@ Procmail Tips
 
   <a name="procmail_reads_entire_90mb_message_into_memory" id="procmail_reads_entire_90mb_message_into_memory"></a>
   <h2>
-      18.25 Procmail reads entire 90Mb message into memory
+      19.25 Procmail reads entire 90Mb message into memory
 
   </h2>
 
@@ -17479,7 +17421,7 @@ Procmail Tips
 
   <a name="procmail_signaled_out_of_memory_in_my_verbose_log" id="procmail_signaled_out_of_memory_in_my_verbose_log"></a>
   <h2>
-      18.26 Procmail signaled out of memory in my verbose log
+      19.26 Procmail signaled out of memory in my verbose log
 
   </h2>
 
@@ -17550,7 +17492,7 @@ Procmail Tips
 
   <a name="variables_default_and_orgmail" id="variables_default_and_orgmail"></a>
   <h2>
-      18.27 Variables DEFAULT and ORGMAIL
+      19.27 Variables DEFAULT and ORGMAIL
 
   </h2>
 
@@ -17642,7 +17584,7 @@ Procmail Tips
 
   <a name="when_default_cannot_be_mailed_to" id="when_default_cannot_be_mailed_to"></a>
   <h2>
-      18.28 When DEFAULT cannot be mailed to
+      19.28 When DEFAULT cannot be mailed to
 
   </h2>
 
@@ -17680,7 +17622,7 @@ Procmail Tips
 
   <a name="variable_dropprivs" id="variable_dropprivs"></a>
   <h2>
-      18.29 Variable DROPPRIVS
+      19.29 Variable DROPPRIVS
 
   </h2>
 
@@ -17746,7 +17688,7 @@ Procmail Tips
 
   <a name="variable_home" id="variable_home"></a>
   <h2>
-      18.30 Variable HOME
+      19.30 Variable HOME
 
   </h2>
 
@@ -17815,7 +17757,7 @@ Procmail Tips
 
   <a name="variable_host" id="variable_host"></a>
   <h2>
-      18.31 Variable HOST
+      19.31 Variable HOST
 
   </h2>
 
@@ -17919,7 +17861,7 @@ Procmail Tips
 
   <a name="variable_linebuf" id="variable_linebuf"></a>
   <h2>
-      18.32 Variable LINEBUF
+      19.32 Variable LINEBUF
 
   </h2>
 
@@ -18113,7 +18055,7 @@ Procmail Tips
 
   <a name="variable_log_and_logfile" id="variable_log_and_logfile"></a>
   <h2>
-      18.33 Variable LOG and LOGFILE
+      19.33 Variable LOG and LOGFILE
 
   </h2>
 
@@ -18178,7 +18120,7 @@ Procmail Tips
 
   <a name="variable_trap" id="variable_trap"></a>
   <h2>
-      18.34 Variable TRAP
+      19.34 Variable TRAP
 
   </h2>
 
@@ -18285,7 +18227,7 @@ Procmail Tips
 
   <a name="variable_umask" id="variable_umask"></a>
   <h2>
-      18.35 Variable UMASK
+      19.35 Variable UMASK
 
   </h2>
 
@@ -18341,7 +18283,7 @@ Procmail Tips
 
   <a name="umask_and_permissions" id="umask_and_permissions"></a>
   <h2>
-      18.36 UMASK and permissions
+      19.36 UMASK and permissions
 
   </h2>
 
@@ -18393,7 +18335,7 @@ Procmail Tips
 
   <a name="performance_difference_between_back_tick_and_recipe" id="performance_difference_between_back_tick_and_recipe"></a>
   <h2>
-      18.37 Performance difference between back tick and &quot;|&quot; recipe
+      19.37 Performance difference between back tick and &quot;|&quot; recipe
 
   </h2>
 
@@ -18449,7 +18391,7 @@ Procmail Tips
 
   <a name="procmails_temporary_file_names_while_writing_file_out" id="procmails_temporary_file_names_while_writing_file_out"></a>
   <h2>
-      18.38 Procmail's temporary file names while writing file out
+      19.38 Procmail's temporary file names while writing file out
 
   </h2>
 
@@ -18543,7 +18485,7 @@ Procmail Tips
 
   <a name="parameter" id="parameter"></a>
   <h2>
-      18.39 Parameter $@
+      19.39 Parameter $@
 
   </h2>
 
@@ -18609,7 +18551,7 @@ Procmail Tips
 
   <a name="procmail_variables_are_null_terminated_detecting_null_string" id="procmail_variables_are_null_terminated_detecting_null_string"></a>
   <h2>
-      18.40 Procmail variables are null terminated (detecting null string)
+      19.40 Procmail variables are null terminated (detecting null string)
 
   </h2>
 
@@ -18661,7 +18603,7 @@ Procmail Tips
 
   <a name="from_daemon_to_and_to_and_casesensitiveness" id="from_daemon_to_and_to_and_casesensitiveness"></a>
   <h2>
-      18.41 FROM_DAEMON TO and TO_ and case-sensitiveness
+      19.41 FROM_DAEMON TO and TO_ and case-sensitiveness
 
   </h2>
 
@@ -18688,7 +18630,7 @@ Procmail Tips
 
   <a name="to_macro_deciphered" id="to_macro_deciphered"></a>
   <h2>
-      18.42 TO_ macro deciphered
+      19.42 TO_ macro deciphered
 
   </h2>
 
@@ -18754,7 +18696,7 @@ Procmail Tips
 
   <a name="to_macro_and_rfc_822" id="to_macro_and_rfc_822"></a>
   <h2>
-      18.43 TO_ macro and RFC 822
+      19.43 TO_ macro and RFC 822
 
   </h2>
 
@@ -18867,7 +18809,7 @@ Procmail Tips
 
   <a name="from_daemon_deciphered" id="from_daemon_deciphered"></a>
   <h2>
-      18.44 FROM_DAEMON deciphered
+      19.44 FROM_DAEMON deciphered
 
   </h2>
 
@@ -19006,7 +18948,7 @@ Procmail Tips
 <hr>
                <A name="technical_matters"  id="technical_matters"></A>
                <h1>
-               19.0 Technical matters
+               20.0 Technical matters
 
                </h1>
 
@@ -19014,7 +18956,7 @@ Procmail Tips
 
   <a name="list_of_exit_codes" id="list_of_exit_codes"></a>
   <h2>
-      19.1 List of exit codes
+      20.1 List of exit codes
 
   </h2>
 
@@ -19134,7 +19076,7 @@ Procmail Tips
 
   <a name="list_of_precedence_codes" id="list_of_precedence_codes"></a>
   <h2>
-      19.2 List of precedence codes
+      20.2 List of precedence codes
 
   </h2>
 
@@ -19198,7 +19140,7 @@ Procmail Tips
 
   <a name="sendmail_and_t" id="sendmail_and_t"></a>
   <h2>
-      19.3 Sendmail and -t
+      20.3 Sendmail and -t
 
   </h2>
 
@@ -19234,7 +19176,7 @@ Procmail Tips
 
   <a name="rfc822_replyto_and_formail_problem_with_multiple_recipients" id="rfc822_replyto_and_formail_problem_with_multiple_recipients"></a>
   <h2>
-      19.4 RFC822 Reply-To and formail problem with multiple recipients
+      20.4 RFC822 Reply-To and formail problem with multiple recipients
 
   </h2>
 
@@ -19283,7 +19225,7 @@ Procmail Tips
 
   <a name="procmail_and_imap_server" id="procmail_and_imap_server"></a>
   <h2>
-      19.5 Procmail and IMAP server
+      20.5 Procmail and IMAP server
 
   </h2>
 
@@ -19325,7 +19267,7 @@ Procmail Tips
 
   <a name="machine_which_processes_mail" id="machine_which_processes_mail"></a>
   <h2>
-      19.6 Machine which processes mail
+      20.6 Machine which processes mail
 
   </h2>
 
@@ -19404,7 +19346,7 @@ Procmail Tips
 
   <a name="compiling_procmail_and_mailspoolhome" id="compiling_procmail_and_mailspoolhome"></a>
   <h2>
-      19.7 Compiling procmail and MAILSPOOLHOME
+      20.7 Compiling procmail and MAILSPOOLHOME
 
   </h2>
 
@@ -19438,7 +19380,7 @@ Procmail Tips
 <hr>
                <A name="procmail_software_for_emacs"  id="procmail_software_for_emacs"></A>
                <h1>
-               20.0 Procmail software for Emacs
+               21.0 Procmail software for Emacs
 
                </h1>
 
@@ -19446,7 +19388,7 @@ Procmail Tips
 
   <a name="what_is_emacs" id="what_is_emacs"></a>
   <h2>
-      20.1 What is Emacs
+      21.1 What is Emacs
 
   </h2>
 
@@ -19480,7 +19422,7 @@ Procmail Tips
 
   <a name="emacs_procmailmode_and_procmail_code_checking_lint" id="emacs_procmailmode_and_procmail_code_checking_lint"></a>
   <h2>
-      20.2 Emacs procmail-mode and Procmail code checking (Lint)
+      21.2 Emacs procmail-mode and Procmail code checking (Lint)
 
   </h2>
 
@@ -19498,7 +19440,7 @@ Procmail Tips
 
   <a name="why_use_procmail_with_gnus" id="why_use_procmail_with_gnus"></a>
   <h2>
-      20.3 Why use procmail with Gnus
+      21.3 Why use procmail with Gnus
 
   </h2>
 
@@ -19585,7 +19527,7 @@ Procmail Tips
 
   <a name="setting_up_gnus_for_procmail_basics" id="setting_up_gnus_for_procmail_basics"></a>
   <h2>
-      20.4 Setting up Gnus for procmail - Basics
+      21.4 Setting up Gnus for procmail - Basics
 
   </h2>
 
@@ -19685,7 +19627,7 @@ Procmail Tips
 
   <a name="gnus_for_procmail_more_about_it" id="gnus_for_procmail_more_about_it"></a>
   <h2>
-      20.5 Gnus for procmail - More about it
+      21.5 Gnus for procmail - More about it
 
   </h2>
 
@@ -19852,7 +19794,7 @@ Procmail Tips
 
   <a name="emacs_and_gnus_fiddling_with_spool_files" id="emacs_and_gnus_fiddling_with_spool_files"></a>
   <h2>
-      20.6 Emacs and Gnus &ndash; Fiddling with spool files
+      21.6 Emacs and Gnus &ndash; Fiddling with spool files
 
   </h2>
 
@@ -19921,7 +19863,7 @@ Procmail Tips
 
   <a name="gnus_article_snippets" id="gnus_article_snippets"></a>
   <h2>
-      20.7 Gnus article snippets
+      21.7 Gnus article snippets
 
   </h2>
 
@@ -20048,7 +19990,7 @@ Procmail Tips
 <hr>
                <A name="rfc_request_for_comments"  id="rfc_request_for_comments"></A>
                <h1>
-               21.0 RFC, Request for comments
+               22.0 RFC, Request for comments
 
                </h1>
 
@@ -20056,7 +19998,7 @@ Procmail Tips
 
   <a name="rfcs_and_their_jurisdiction_munged_addresses" id="rfcs_and_their_jurisdiction_munged_addresses"></a>
   <h2>
-      21.1 RFCs and their jurisdiction (munged Addresses)
+      22.1 RFCs and their jurisdiction (munged Addresses)
 
   </h2>
 
@@ -20241,7 +20183,7 @@ Procmail Tips
 
   <a name="comments_about_addresses_munging" id="comments_about_addresses_munging"></a>
   <h2>
-      21.2 Comments about addresses munging
+      22.2 Comments about addresses munging
 
   </h2>
 
@@ -20298,7 +20240,7 @@ Procmail Tips
 
   <a name="rfc_and_valid_mail_address_characters" id="rfc_and_valid_mail_address_characters"></a>
   <h2>
-      21.3 RFC and valid mail address characters
+      22.3 RFC and valid mail address characters
 
   </h2>
 
@@ -20342,7 +20284,7 @@ Procmail Tips
 
   <a name="rfc_and_loginname" id="rfc_and_loginname"></a>
   <h2>
-      21.4 RFC and login-name@fdqn
+      22.4 RFC and login-name@fdqn
 
   </h2>
 
@@ -20493,7 +20435,7 @@ Procmail Tips
 
   <a name="rfcs_and_messages_signature" id="rfcs_and_messages_signature"></a>
   <h2>
-      21.5 RFCs and messages signature
+      22.5 RFCs and messages signature
 
   </h2>
 
@@ -20538,7 +20480,7 @@ Procmail Tips
 
   <a name="rfc_and_using_mime_in_usenet_newsgroups" id="rfc_and_using_mime_in_usenet_newsgroups"></a>
   <h2>
-      21.6 RFC and using MIME in Usenet newsgroups
+      22.6 RFC and using MIME in Usenet newsgroups
 
   </h2>
 
@@ -20589,7 +20531,7 @@ Procmail Tips
 
   <a name="some_rfc_pointers" id="some_rfc_pointers"></a>
   <h2>
-      21.7 Some RFC Pointers
+      22.7 Some RFC Pointers
 
   </h2>
 
@@ -20635,7 +20577,7 @@ Procmail Tips
 <hr>
                <A name="introduction_to_email_headers"  id="introduction_to_email_headers"></A>
                <h1>
-               22.0 Introduction to E-mail Headers
+               23.0 Introduction to E-mail Headers
 
                </h1>
 
@@ -20643,7 +20585,7 @@ Procmail Tips
 
   <a name="to_find_out_more_about_mail" id="to_find_out_more_about_mail"></a>
   <h2>
-      22.1 To find out more about mail
+      23.1 To find out more about mail
 
   </h2>
 
@@ -20806,7 +20748,7 @@ Procmail Tips
 
   <a name="lecture_by_alan_stebbens" id="lecture_by_alan_stebbens"></a>
   <h2>
-      22.2 Lecture by Alan Stebbens
+      23.2 Lecture by Alan Stebbens
 
   </h2>
 
@@ -21005,7 +20947,7 @@ Procmail Tips
 
   <a name="applied_to_received_messages" id="applied_to_received_messages"></a>
   <h2>
-      22.3 Applied to received messages
+      23.3 Applied to received messages
 
   </h2>
 
@@ -21113,7 +21055,7 @@ Procmail Tips
 
   <a name="bcc_lecture_by_alan_stebbens" id="bcc_lecture_by_alan_stebbens"></a>
   <h2>
-      22.4 Bcc lecture by Alan Stebbens
+      23.4 Bcc lecture by Alan Stebbens
 
   </h2>
 
@@ -21210,7 +21152,7 @@ Procmail Tips
 
   <a name="bcc_lecture_by_philip_guenther" id="bcc_lecture_by_philip_guenther"></a>
   <h2>
-      22.5 Bcc lecture by Philip Guenther
+      23.5 Bcc lecture by Philip Guenther
 
   </h2>
 
@@ -21315,7 +21257,7 @@ Procmail Tips
 <hr>
                <A name="message_headers"  id="message_headers"></A>
                <h1>
-               23.0 Message headers
+               24.0 Message headers
 
                </h1>
 
@@ -21323,7 +21265,7 @@ Procmail Tips
 
   <a name="what_is_correct_from_address_syntax" id="what_is_correct_from_address_syntax"></a>
   <h2>
-      23.1 What is correct From address syntax
+      24.1 What is correct From address syntax
 
   </h2>
 
@@ -21397,7 +21339,7 @@ Procmail Tips
 
   <a name="whats_that_xuidl_header" id="whats_that_xuidl_header"></a>
   <h2>
-      23.2 What's that X-UIDL header?
+      24.2 What's that X-UIDL header?
 
   </h2>
 
@@ -21458,7 +21400,7 @@ Procmail Tips
 
   <a name="what_is_that_first_from_header" id="what_is_that_first_from_header"></a>
   <h2>
-      23.3 What is that first From_ header?
+      24.3 What is that first From_ header?
 
   </h2>
 
@@ -21541,7 +21483,7 @@ Procmail Tips
 
   <a name="messageid_header" id="messageid_header"></a>
   <h2>
-      23.4 Message-Id header
+      24.4 Message-Id header
 
   </h2>
 
@@ -21706,7 +21648,7 @@ Procmail Tips
 
   <a name="received_header" id="received_header"></a>
   <h2>
-      23.5 Received header
+      24.5 Received header
 
   </h2>
 
@@ -21775,7 +21717,7 @@ Procmail Tips
 
   <a name="returnpath" id="returnpath"></a>
   <h2>
-      23.6 Return-Path
+      24.6 Return-Path
 
   </h2>
 
@@ -21890,7 +21832,7 @@ Procmail Tips
 
   <a name="errorsto" id="errorsto"></a>
   <h2>
-      23.7 Errors-To
+      24.7 Errors-To
 
   </h2>
 
@@ -21922,7 +21864,7 @@ Procmail Tips
 
   <a name="xsubscriptioninfo" id="xsubscriptioninfo"></a>
   <h2>
-      23.8 X-Subscription-Info
+      24.8 X-Subscription-Info
 
   </h2>
 
@@ -21941,7 +21883,7 @@ Procmail Tips
 
   <a name="replyto_header" id="replyto_header"></a>
   <h2>
-      23.9 Reply-To header
+      24.9 Reply-To header
 
   </h2>
 
@@ -22208,7 +22150,7 @@ Procmail Tips
 
   <a name="mailcopiesto_header" id="mailcopiesto_header"></a>
   <h2>
-      23.10 Mail-Copies-To header
+      24.10 Mail-Copies-To header
 
   </h2>
 
@@ -22376,7 +22318,7 @@ Procmail Tips
 
   <a name="mailfollowupto_and_replytopersonal_headers" id="mailfollowupto_and_replytopersonal_headers"></a>
   <h2>
-      23.11 Mail-Followup-To and Reply-To-Personal headers
+      24.11 Mail-Followup-To and Reply-To-Personal headers
 
   </h2>
 
@@ -22413,7 +22355,7 @@ Procmail Tips
 
   <a name="contentlength_header_and_from_specification" id="contentlength_header_and_from_specification"></a>
   <h2>
-      23.12 Content-Length header and From_ specification
+      24.12 Content-Length header and From_ specification
 
   </h2>
 
@@ -22505,7 +22447,7 @@ Procmail Tips
 
   <a name="moral_about_cc_copies_in_usenet" id="moral_about_cc_copies_in_usenet"></a>
   <h2>
-      23.13 Moral about CC copies in Usenet
+      24.13 Moral about CC copies in Usenet
 
   </h2>
 
@@ -22654,7 +22596,7 @@ Procmail Tips
 
 <hr>
 
-<em    class="footer">Html date: 2007-10-04 18:51<br>
+<em    class="footer">Html date: 2007-10-04 19:33<br>
 
 </em>
 

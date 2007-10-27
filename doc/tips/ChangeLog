@@ -1,8 +1,17 @@
-2007-10-04  Jari Aalto  <Administrator@W2KPICASSO>
+2007-10-27  Jari Aalto  <jari.aalto@cante.net>
+
+	* pm-tips.txt: (1.8 About "useless use of cat award"):
+	Converted ksh script to plain Bourne shell sh-script and
+	presented the timing results.
+
+2007-10-04  Jari Aalto  <jari.aalto@cante.net>
 
 	* pm-tips.txt (2.2 Procmail resources):
 	(2.2 Procmail resources): Reformatted.
 	(2.5 Procmail code to filter UBE): Reformatted.
+	(8.10 Make your own .procmailrc available to others): Topic and
+	recipe code 'autoresponder' removed. Web pages are appropriate
+	place to show procmail code.
 
 2007-10-02  Jari Aalto  <jari.aalto@cante.net>
 

@@ -395,7 +395,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.38 2007/10/04 16:23:37 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.39 2007/10/27 10:08:41 jaalto Exp $
         .Homepage http://pm-doc.sourceforge.net/
         .URLs last checked: 2007-10-02
 
@@ -426,6 +426,11 @@ Table of contents
         please send mail to this document's maintainer (see project
         page). If some URL is not alive any more, you may still be
         able to find it by using a WWW search such as Google.
+
+        There is never too much to learn about procmail and the best
+        source is the rc files that people have done. If you have some
+        time, please place your `.procmailrc' with good comments to
+        your home page.
 
     1.2 What is Procmail?
 
@@ -741,13 +746,13 @@ Table of contents
         started giving rewards for the "useless use of cat command"
         whenever someone wrote examples without token "<". Like this:
 
-            % cat file.name.this | wc -l
+            $ cat file.name.this | wc -l
 
         Instead he writes that the call should have been written like this,
         which saves the pipe (never mind that `wc' can read the file
         directly; this is an example).
 
-            % wc -l < file.name.this
+            $ wc -l < file.name.this
 
         [Paul David Fardy <pdf A T morgan.ucs.mun.ca>] There is weight
         in the pipeline, but the true cost is in process startup. Try
@@ -755,28 +760,40 @@ Table of contents
         the useless use of cat doubles the real and processing time (real,
         user, and system time are each roughly doubled):
 
-            $ cat > /tmp/randall <<'EOF'
-            [[ -n $COUNT ]] || COUNT0
-            typeset -i i=1
-            while (( i < $COUNT )); do
-                    < /etc/motd wc;
-                    (( i = i + 1 ))
-            done > /dev/null
+            $ cat > /tmp/randal << 'EOF'
+            COUNT=100
+            i=1
+            while :
+            do
+                    wc < /etc/motd > /dev/null
+                    i=$(expr $i + 1)
+                    [ "$i" = "$COUNT" ] && break
+            done
             EOF
 
-            $ cat > /tmp/useless <<'EOF'
-            [[ -n $COUNT ]] || COUNT=100
-            typeset -i i=1
-            while (( i < $COUNT )); do
-                    cat /etc/motd | wc;
-                    (( i = i + 1 ))
-            done > /dev/null
+            $ cat > /tmp/useless << 'EOF'
+            COUNT=100
+            i=1
+            while :
+            do
+                    cat /etc/motd | wc > /dev/null
+                    i=$(expr $i + 1)
+                    [ "$i" = "$COUNT" ] && break
+            done
             EOF
 
-            $ set -x
-            $ export COUNT0
-            $ time ksh /tmp/randall
-            $ time ksh /tmp/useless
+            # NOTE: The timing values should be read as absolute, but
+            # examine the relative differencies.
+
+            $ time sh /tmp/randall
+            real    0m0.568s
+            user    0m0.208s
+            sys     0m0.348s
+
+            $ time sh /tmp/useless
+            real    0m0.825s
+            user    0m0.348s
+            sys     0m0.476s
 
         This becomes important, for example, when you decide to filter all
         your mail with procmail -- looking for virus signatures for example.
@@ -1116,7 +1133,7 @@ Table of contents
             rules with no external files needed. The module is
             available in Procmail module library at
             <http://freshmeat.net/projects/procmail-lib>.
-       o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
+       2.5.1 o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
             The attached set of procmail recipes/filters, which I
             call The Spam Bouncer, are for users who are sick of spam
             (unsolicited junk mail) and want to filter it out of their
@@ -4265,35 +4282,7 @@ Table of contents
         Unsolicited Bulk Email from friend -- he is not the real sender,
         but his address was drifted to spammers email database.
 
-    8.10 Make your own .procmailrc available to others
-
-        There is never too much to learn about procmail and the best source
-        is the rc files that people have done. Remember to comment your
-        .procmailrc file well before you put it available. Below is a
-        recipe for sending your .procmailrc upon request. If you want to
-        send anything more that one or two files (many times you want to
-        put other files available too), then please do not use this code
-        but a general file server module.
-
-            :0
-            * ! ^Subject:.Re:
-            *   ^Subject:.*send.*procmailrc
-            * ! ^FROM_DAEMON
-            {
-                :0 fhw:
-                | $FORMAIL -rt                                              \
-                           -A "Precedence: junk"                            \
-                           -I "Subject: Requested .procmailrc";             \
-                           -I "$MYXLOOP"
-
-                :0 a hwic
-                | ( cat - $HOME/.procmailrc ) | $SENDMAIL
-
-                :0              # trash the "Send procmailrc" request
-                /dev/null
-            }
-
-    8.11 Using dates efficiently
+9.0 x1    8.11 Using dates efficiently
 
           _Note_: See module list, where you will find `date' and `time'
           parsing modules. You can also parse the date from the first
@@ -4339,7 +4328,7 @@ Table of contents
 
             TODAY   = "$YYYY-$MM-$DD" # ISO std date: like 1997-12-01
 
-    8.12 Keep simple header log
+    9.1 Keep simple header log
 
         Here is a simple strategy: record all what comes in and record all what
         happened to that message. See how brief info is constantly recorded to
@@ -4398,7 +4387,7 @@ Table of contents
             * ? echo "  [null-AddrReject]" >> $BIFF
             $NULL
 
-    8.13 Gzipping messages
+    9.2 Gzipping messages
 
         [Sean B. Straw <PSE-L A T mail.professional.org>] On the recipe
         delivery line where you'd normally be tossing it into a folder do
@@ -4442,7 +4431,7 @@ Table of contents
                 header.log
             }
 
-    8.14 Emergency stop for your .procmailrc
+    9.3 Emergency stop for your .procmailrc
 
         [jari] If I have a bad luck while I am testing a new recipe, it may
         run in a loop and and it may send me continuously mail messages. I
@@ -4478,9 +4467,9 @@ Table of contents
         complain about them if they exist and are empty. Another reason to
         not use dotted file names, but to use cp instead of mv.
 
-9.0 Scoring
+10.0 Scoring
 
-    9.1 Using scores by an example
+    10.1 Using scores by an example
 
         First make all the needed matches and let the `SCORE' value to be
         set. Examine the score after the final value has been calculated.
@@ -4580,7 +4569,7 @@ Table of contents
             Subject: Great opportunity for free sex; no money required!!!!
             * 100^1 MATCH ?? ()\<(free|sex|money|opportunity|great)\>
 
-    9.2 Brief Score tutorial
+    10.2 Brief Score tutorial
 
         #todo: test
 
@@ -4641,7 +4630,7 @@ Table of contents
             From foo Fooof
               Folder: /dev/null 46
 
-    9.3 Score's scope
+    10.3 Score's scope
 
         If you have a delivering recipe and the score is positive, the
         action lines are executed. If the score is less or equal to 0, then
@@ -4697,7 +4686,7 @@ Table of contents
             *$ $SCORE^0
             action_if_positive
 
-    9.4 Counting length of a string
+    10.4 Counting length of a string
 
         Supposing `VAR' contains some text, we can count the characters
         by using dot to match every character and increasing score for
@@ -4709,7 +4698,7 @@ Table of contents
 
             LENGTH = $=
 
-    9.5 Counting lines in a message (Adding Lines: header)
+    10.5 Counting lines in a message (Adding Lines: header)
 
         [1995-10-03 PM-L Idea by David Karr <dkarr A T nmo.gtegsc.com>] [david]
         later corrected 1998-01-02: For one thing, the second condition
@@ -4776,7 +4765,7 @@ Table of contents
                 | $FORMAIL -a "Content-length: $textsize"
             }
 
-    9.6 Determining if body is longer than header
+    10.6 Determining if body is longer than header
 
             :0
             *  1^1 B ?? > 1
@@ -4785,7 +4774,7 @@ Table of contents
                 ..body was longer
             }
 
-    9.7 Matching last Received header
+    10.7 Matching last Received header
 
         [david] Here is way to use scores to hit the bottommost `Received'
         header.
@@ -4794,7 +4783,7 @@ Table of contents
             *$ 1^1 ^Received:.*by$s+\/.*
             action
 
-    9.8 Testing value range with scoring (bogofilter)
+    10.8 Testing value range with scoring (bogofilter)
 
         Bogofilter adds headers to the message that contains the
         propbability scode of the message being spam in range 0.0 - 1.0:
@@ -4825,7 +4814,7 @@ Table of contents
                     }
               }
 
-    9.9 How to add Content-Length header
+    10.9 How to add Content-Length header
 
           We use procmail for local delivery, and would like to get it
           to generate the content-length header, if one doesn't exist. SUN-OS
@@ -4845,7 +4834,7 @@ Table of contents
             * !^Content-Length:
             | /usr/bin/formail -a "Content-Length: 0000000000"
 
-    9.10 Testing message size or number of lines
+    10.10 Testing message size or number of lines
 
         Size conditions ignore `H' and `B' on the flag line and always work on
         `HB' unless another search area is specified on the condition's own
@@ -4867,7 +4856,7 @@ Table of contents
                 ...whatever when fewer lines
             }
 
-    9.11 Counting commas with recursive includerc
+    10.11 Counting commas with recursive includerc
 
         [jari] Foreword: David and Phil really are experts with procmail,
         and let this section serve as an example to "what on Earth is
@@ -4907,9 +4896,9 @@ Table of contents
                 }
             }
 
-10.0 Formail usage
+11.0 Formail usage
 
-    10.1 Fetching fields with formail -x
+    11.1 Fetching fields with formail -x
 
         If you're new to procmail your first though to read a header
         content from the message would might be call:
@@ -4948,7 +4937,7 @@ Table of contents
         that you can then check the return code of formail with `a' or
         `A' recipe after this one.
 
-    10.2 Always use formail's -rt switch
+    11.2 Always use formail's -rt switch
 
         [Philip] As of version 3.14 you should now usually leave out the
         `-t'. To quote the formail manpage:
@@ -4961,7 +4950,7 @@ Table of contents
           the contents of the original message then the -t option should be
           used.
 
-       10.2.1 For procmail versions prior 3.14
+       11.2.1 For procmail versions prior 3.14
 
         [FAQ] `-r' breaks RFC822, so always use `-rt' if you don't know
         what this means. Perhaps you should always use it anyway.
@@ -5049,7 +5038,7 @@ Table of contents
         respective mail-handling programs to decide what additional
         facilities will be provided.
 
-    10.3 Using -rt and rewriting the From address
+    11.3 Using -rt and rewriting the From address
 
         Sendmail adds the `From' header which points to your account. But in
         some cases you may wish to rewrite the `From'.
@@ -5071,7 +5060,7 @@ Table of contents
             :0 fhw
             | $FORMAIL -rt -I "From: me@forever-lasting-address.example.com"
 
-    10.4 Formail -rt and Resent-From header
+    11.4 Formail -rt and Resent-From header
 
         Here is something that made me scratch my head a lot. Let's examine
         scenario first which explains how the mail travels.
@@ -5142,15 +5131,15 @@ Table of contents
         all header fields. Next is Resent-From and Resent-Sender, followed
         by Reply-To, From, Sender, et al.
 
-    10.5 Quoting the message
+    11.5 Quoting the message
 
         Use formail -rtk
 
-    10.6 Without quoting the message
+    11.6 Without quoting the message
 
         Use formail -rkb or formail -rkt -p ''
 
-    10.7 How to include headers and body to the reply message
+    11.7 How to include headers and body to the reply message
 
         The idea is that you first capture whole header in a
         variable, then add it to the body of message. Here a
@@ -5169,7 +5158,7 @@ Table of contents
             :0 fhw
             | $FORMAIL -rt; ... now generate reply ...
 
-    10.8 Adding text to the beginning of message
+    11.8 Adding text to the beginning of message
 
         We don't actually filter anything here. It's just a trick to
         reprint headers and add some text after them: text appears
@@ -5178,12 +5167,12 @@ Table of contents
             :0 fhw
             | cat - ; echo "This text comes after the headers."
 
-    10.9 Adding text to the end of message
+    11.9 Adding text to the end of message
 
             :0 fb
             | cat -; echo "added text after body"
 
-    10.10 Adding text before quoted message
+    11.10 Adding text before quoted message
 
         If you are generating an auto-reply message where you want to place
         the notification to the beginning of body followed by the quoted
@@ -5260,7 +5249,7 @@ Table of contents
             *   possible-condition-to-handle-only-certain-messages
             |   $FORMAIL -I Received:
 
-    10.11 Adding extra headers from file
+    11.11 Adding extra headers from file
 
         [stephen] Notice that the obvious solution won't do here:
 
@@ -5294,7 +5283,7 @@ Table of contents
               :0 A fhw
               | sed "/^From:/r $HOME/newHeaders"
 
-    10.12 Splitting digest
+    11.12 Splitting digest
 
         [Idea by David Hunt] One interesting idea to handle digests
         automatically as single messages if that we call procmail
@@ -5313,7 +5302,7 @@ Table of contents
             *$ ! H ?? ^$MYXLOOP
             | $FORMAIL -A "$MYXLOOP" -m4s procmail
 
-    10.13 Mailbox: Splitting to individual files
+    11.13 Mailbox: Splitting to individual files
 
         [david] To split some old mail archives into individual
         files while stripping unimportant header fields, use following. The
@@ -5327,18 +5316,18 @@ Table of contents
                 procmail -p DEFAULT=`pwd`/'$FILENO.txt'                     \
                 /dev/null < inputfile
 
-    10.14 Mailbox: Extracting all From addresses from mailbox
+    11.14 Mailbox: Extracting all From addresses from mailbox
 
         The `-ns' option causes formail to split the mailbox and feed each
         mail separately to next process.
 
             % formail -ns formail -xFrom: < mailbox | sort -u
 
-    10.15 Mailbox: Applying procmail recipe on whole mailbox
+    11.15 Mailbox: Applying procmail recipe on whole mailbox
 
             % formail -ns procmail pm-experiments.rc < mailbox
 
-    10.16 Mailbox: run series of commands for each mail (split mailbox)
+    11.16 Mailbox: run series of commands for each mail (split mailbox)
 
           ...Maybe the heat has melted my brain, but I can't seem to get
           formail to perform a series of commands on each mail that it has
@@ -5395,7 +5384,7 @@ Table of contents
         is built it's a pleasingly quick way to root through big archives
         of messages.
 
-    10.17 Option -D and cache
+    11.17 Option -D and cache
 
         [Bob Weissman <b_weissm A T kla.com>] and [stephen] These files are
         self-limiting. The number after the `-D' is the size in bytes above
@@ -5427,7 +5416,7 @@ Table of contents
         New entries will be written after the first double-null, so that it
         implements a circular cache. Check out lines 319-322 of formail.c
 
-    10.18 Option -D and message-id in the body
+    11.18 Option -D and message-id in the body
 
           Some of my messages contain the original Message-ID in the body
           of the letter and not the Header. Is there an option for Formail to
@@ -5461,7 +5450,7 @@ Table of contents
             :0 hW
             | $FORMAIL -D $cache_size $cache_name
 
-    10.19 Reducing formail calls (conditionally adding fields)
+    11.19 Reducing formail calls (conditionally adding fields)
 
         #todo: url
 
@@ -5537,7 +5526,7 @@ Table of contents
                 field = "$field${NL}X-Header1: value"
             }
 
-    10.20 Formail -A -a options
+    11.20 Formail -A -a options
 
         You can't use option -A with -a or -I if the header name is the same.
         Like below where you try to keep only the last definition of X-1,
@@ -5558,7 +5547,7 @@ Table of contents
             -->
             X-1: 2
 
-    10.21 Formail -e -s options
+    11.21 Formail -e -s options
 
         [david] I had a file of alternating `From' and `Date' lines and
         wanted to convert it into an mbox.
@@ -5579,9 +5568,9 @@ Table of contents
         appeared earlier, `formail' `-s' assumed that it was still the same
         message's head.
 
-11.0 Saving mailing list messages
+12.0 Saving mailing list messages
 
-    11.1 Using subroutine pm-jalist.rc to detect mailing lists
+    12.1 Using subroutine pm-jalist.rc to detect mailing lists
 
         Because I didn't have sendmail plus addressing capabilities
         (explained in next section) I wrote module *pm-jalist.rc*. It
@@ -5628,7 +5617,7 @@ Table of contents
             * ! LIST ?? ^^^^
             $LIST_SPOOL_DIR/list.$LIST
 
-    11.2 Using plus addressing foo+bar@address.com
+    12.2 Using plus addressing foo+bar@address.com
 
         If you have a recent enough (8.8.8+) `sendmail', please ask your
         sysadm to activate the plus addressing. Procmail gets `bar' in `$1'
@@ -5712,7 +5701,7 @@ Table of contents
                             T=X-Unix,
                             A=sh -c $u
 
-    11.3 Using RFC comment trick for additional information
+    12.3 Using RFC comment trick for additional information
 
         Recall from [rfc1036] that the preferred Usenet mail address
         formats are following
@@ -5800,7 +5789,7 @@ Table of contents
             first.surname@example.com (First Surname+Usenet.emacs)
             first.surname@example.com (First Surname+Usenet.linux)
 
-    11.4 Simple mailing list handling
+    12.4 Simple mailing list handling
 
         [Peter S Galbraith <galbraith A T mixing.qc.dfo.ca>] I have used
         this in the past (by simply looking at the spool file and seeing the
@@ -5833,7 +5822,7 @@ Table of contents
         go to mail lists and mail addressed to me yet CC'ed to a list go to
         my main spool file.
 
-    11.5 Archiving according to TO
+    12.5 Archiving according to TO
 
         Traditional way to detect and save mailing list messages is:
 
@@ -5856,7 +5845,7 @@ Table of contents
             *$ LISTS ?? ()\/$\MATCH
             list.$MATCH
 
-    11.6 Using Return-Path to detect mailing lists
+    12.6 Using Return-Path to detect mailing lists
 
         [philip] For most mailing lists, a more accurate way to determine
         whether it came from the list is to examine the Return-Path:, From_
@@ -5930,16 +5919,16 @@ Table of contents
                 # Fine, New MATCH contains moo
             }
 
-12.0 Procmail, MIME and HTML
+13.0 Procmail, MIME and HTML
 
-    12.1 Mime Bibliography
+    13.1 Mime Bibliography
 
        "List of annoying things that various MIME implementations do."
         ...The result is a sort of style guide for implementors of things that
         generate MIME. Feel free to send comments or contributions.
         http://www.cs.utk.edu/~moore/mime-style.html
 
-    12.2 Mime content type application/ms-tnef
+    13.2 Mime content type application/ms-tnef
 
           ...A member of one of my mailing lists appears to be using
           Microsoft Mail. His messages to the list are usually accompanied my
@@ -5959,7 +5948,7 @@ Table of contents
         information, see: XCLN: Sending Messages In Rich-Text Format
         http://support.microsoft.com/support/kb/articles/q136/2/04.asp
 
-    12.3 Trapping HTML mime messages
+    13.3 Trapping HTML mime messages
 
         [era] Here's a simple filter to throw out unwanted HTML that is sent
         by using mime. [jari] This recipe detects if the message is
@@ -5976,7 +5965,7 @@ Table of contents
 
         Some more examples can be found from section: 'Explaning  ^^ and ^'
 
-    12.4 Complaining about HTML messages
+    13.4 Complaining about HTML messages
 
         [Marek Jedlinski <eristic A T gryzmak.lodz.pdi.net>]. This how I
         respond to HTML messages. In my `noHTML.txt' I politely explain
@@ -6010,7 +5999,7 @@ Table of contents
                         ) | $SENDMAIL
             }
 
-    12.5 Converting HTML body to plain text
+    13.5 Converting HTML body to plain text
 
           _Note:_ Older lynx has security holes:
           http://ciac.llnl.gov/ciac/bulletins/h-82.shtml
@@ -6067,7 +6056,7 @@ Table of contents
 
             }
 
-    12.6 Getting rid of unwanted mime attachments (HTML, vcard)
+    13.6 Getting rid of unwanted mime attachments (HTML, vcard)
 
         Microsoft and Netscape MUAs are conquering the PC world and it's
         likely that you will receive messages from people that use this
@@ -6102,7 +6091,7 @@ Table of contents
         `pm-code.zip'.
         (Note: #REF #procmail_module_list ;Procmail module list;)
 
-    12.7 Sending contents of a HTML page in plain text to someone
+    13.7 Sending contents of a HTML page in plain text to someone
 
         [timothy] Send an mail with the subject: "GetPage:
         some.url.here/". And it comes back. Kurt Thams <thams A T thams.com>
@@ -6136,9 +6125,9 @@ Table of contents
         (especially part 6) is a good place to look for info.
         http://www.faqs.org/faqs/by-newsgroup/comp/comp.mail.mime.html
 
-13.0 Simple recipe examples
+14.0 Simple recipe examples
 
-    13.1 Saving: MH folders -- numbered messages
+    14.1 Saving: MH folders -- numbered messages
 
         Hm. This is explained in the procmail man pages, but not very
         well. There are just one or two occasions where the man page tells
@@ -6167,7 +6156,7 @@ Table of contents
             0=52, ...
             --> zkO
 
-    13.2 Saving: to monthly folders
+    14.2 Saving: to monthly folders
 
             # Use any date method mentioned previously to define variables
             # YYYY YY MM DD. Archive digests monthly
@@ -6192,7 +6181,7 @@ Table of contents
                 $YYYY-$MM-$MBOX
             }
 
-    13.3 Modifying: Filtering basics
+    14.3 Modifying: Filtering basics
 
         Pay attention to the `cat' command position in each recipe.
 
@@ -6213,7 +6202,7 @@ Table of contents
             :0 fbwi              # replace the body with text from file
             | cat msg.txt
 
-    13.4 Modifying: Squeezing empty lines around message body
+    14.4 Modifying: Squeezing empty lines around message body
 
         [david] Anything that replaces the body is going to require an outside
         process, even if it's only /bin/echo. In order to trim empty lines
@@ -6243,7 +6232,7 @@ Table of contents
         one. The echo and sed suggestion will remove all empty lines from
         the top and, like cat -s, keep one at the bottom.
 
-    13.5 Modifying: shuffling headers always to same order
+    14.5 Modifying: shuffling headers always to same order
 
         [phil] To sort the headers in the message into predictable order,
         you can use following recipe. The spaces have been eliminated
@@ -6314,7 +6303,7 @@ Table of contents
                 ${DATE:+-I"Date: $DATE"}                                    \
                 ${SUBJ:+-I"Subject: $SUBJ"}
 
-    13.6 Service: Auto answerer to empty messages
+    14.6 Service: Auto answerer to empty messages
 
         [elijah] Here is piece of code that responds to empty
         messages.
@@ -6332,7 +6321,7 @@ Table of contents
                    "this has been an automated response\n"                  \
               ) | $SENDMAIL
 
-    13.7 Service: Ping responder
+    14.7 Service: Ping responder
 
         Sometimes I'm on the road and I don't seem to get access to the
         site where my messages are. The telnet connection fails and
@@ -6361,7 +6350,7 @@ Table of contents
                 $PING_SPOOL
             }
 
-    13.8 Service: simple vacation with procmail
+    14.8 Service: simple vacation with procmail
 
         Don't forget to look into procmailex(5) man pages which also has
         vacation example. The ones presented below may not work for you.
@@ -6394,7 +6383,7 @@ Table of contents
 
             |/usr/ucb/vacation","exec /usr/local/bin/procmail -f- ||exit 75 #abc
 
-    13.9 Service: vacation code example
+    14.9 Service: vacation code example
 
         [By Eric Black <eric A T Mirador.COM>] Here is the procmail part
 
@@ -6436,7 +6425,7 @@ Table of contents
             I see it sooner.
             --Eric
 
-    13.10 Service: Auto-forwarding
+    14.10 Service: Auto-forwarding
 
         [timothy] I have my .procmailrc setup to forward mail to another
         (mail only) account. When I am not going to be at the account, I
@@ -6471,7 +6460,7 @@ Table of contents
             * ^Subject: forward-on
             | $NICE mv -f $FILE.off $FILE
 
-    13.11 Service: forward only specific messages
+    14.11 Service: forward only specific messages
 
         Here is piece of code that triggers forwarding according to
         addresses. If you have lot of these kind of forwarding,
@@ -6501,7 +6490,7 @@ Table of contents
               :0 a
               ! $FORWARDTO
 
-    13.12 Service: Making digests
+    14.12 Service: Making digests
 
             # By <jimo A T eskimo.com>
             # Add this message to the digest accumulator
@@ -6516,7 +6505,7 @@ Table of contents
             *$ `wc -l <$DIGEST`    ^0
             | $NICE send-digest $DIGEST
 
-    13.13 Kill: killing advertisement headers and footers
+    14.13 Kill: killing advertisement headers and footers
 
           A mailing list that I subscribe recently began adding a block of
           "boiler plate" text to the beginning and end of every message
@@ -6558,7 +6547,7 @@ Table of contents
             * -4^0
             | sed -e 1,5d -e "$="q
 
-    13.14 Kill: simple kill file recipe with procmail
+    14.14 Kill: simple kill file recipe with procmail
 
         Kill files are widely used with news readers to delete uninteresting
         posts when you enter a newsgroup. A kill file usually contains one
@@ -6595,7 +6584,7 @@ Table of contents
             mv $file.tmp $file
             rm -f $lock
 
-    13.15 Kill: duplicate messages
+    14.15 Kill: duplicate messages
 
         [Lars Kellogg-Stedman <lars A T bu.edu>] Put this as a first entry in
         your .procmailrc and you won't see any duplicates as long as the 8K
@@ -6652,7 +6641,7 @@ Table of contents
         One item you should definitely have in your collection is
         Eli's `hashd' [in Procmail mailing list 1997-09]
 
-    13.16 Kill: spam filter with simple recipes
+    14.16 Kill: spam filter with simple recipes
 
         [Ed McGuire <emcguire A T i2.com>] Seeing several junk mail filters
         posted recently, varying from the simple to the complex, I thought
@@ -6732,7 +6721,7 @@ Table of contents
             Emerald@earthstar.example.com
             FreeWay@dm1.example.com
 
-    13.17 Kill: (un)subscribe messages
+    14.17 Kill: (un)subscribe messages
 
           I'm getting tired of those pesky (un)subscribe messages that
           certain "other" mailing lists seem to pass through to the list at
@@ -6814,7 +6803,7 @@ Table of contents
         unsubscribe requests with long signatures or attachments at the
         bottom of a previous message will get through.
 
-    13.18 Time: Once a day cron-like job
+    14.18 Time: Once a day cron-like job
 
         [Bill Moseley <moseley A T netcom.com>] If you want to do
         something only once a day, they you have to store the date
@@ -6838,7 +6827,7 @@ Table of contents
                 ...do the cron jobs..
             }
 
-    13.19 Time: Running a recipe at a given time
+    14.19 Time: Running a recipe at a given time
 
           If I put a program to my recipes, it will be executed every time
           message arrives. That's a problem, and I'm not allowed to use cron
@@ -6859,7 +6848,7 @@ Table of contents
         the seconds so that the expression for testing the 07-22 range can
         match only on the hour.
 
-    13.20 Time: Triggering mail and using cron
+    14.20 Time: Triggering mail and using cron
 
         [david] Put something like the following entries in your personal
         crontab for your userid (and not knowing if you particular cron
@@ -6904,7 +6893,7 @@ Table of contents
             * ^From .*some-address.* (0[0-6]|23):[0-5][0-9]:
             | command
 
-    13.21 Decoding: Uudecode
+    14.21 Decoding: Uudecode
 
         [philip] here is piece of code to do uudecode match when certain
         condition is matched. The magic string here is "begin ...file",
@@ -6917,7 +6906,7 @@ Table of contents
             * B ?? ^begin 644 file.tar.gz
             | my_uudecode_program
 
-    13.22 Decoding: MIME
+    14.22 Decoding: MIME
 
             #   by Peter Galbraith <galbraith A T mixing.qc.dfo.ca>
             #   MIME filtering of accented characters and split lines.
@@ -6962,13 +6951,13 @@ Table of contents
               | mmencode -u -q
             }
 
-    13.23 How to send commands in the message's body
+    14.23 How to send commands in the message's body
 
             :0 b
             * ^Subject: ARCHIVE
             | sed -e '/$s*[^a-zA-Z]/,$ d' | sh
 
-    13.24 Matching two words on a line, but not one
+    14.24 Matching two words on a line, but not one
 
         How does one write a recipe that will do this: Put mail in mailbox
         which has a line with two string (one and two) like:
@@ -7010,7 +6999,7 @@ Table of contents
             * B ?? ()\<one\>
             error.mbox
 
-    13.25 How to define personal XX macros?
+    14.25 How to define personal XX macros?
 
         By macro, I'm referring to the procmail's FROM_DAEMON, TO and TO_
         that you can use in matches. Here is one way to make one's own macro
@@ -7040,7 +7029,7 @@ Table of contents
             (From|Reply-To|Sender):(.*\<)?|\
             ^From $NSPC+)"}
 
-    13.26 How to change subject by body match
+    14.26 How to change subject by body match
 
         Suppose you to change the mail's subject when there is a match in
         the body. The desired outcome would be this:
@@ -7057,7 +7046,7 @@ Table of contents
             *$ B ?? ^$s*\/Fault: [0-9a-f]+ in program block.*
             | $FORMAIL -I "Subject: $MATCH"
 
-    13.27 How to change Subject according to some other header
+    14.27 How to change Subject according to some other header
 
         Suppose you want to change the subject when mail comes to some
         particular address; or when some other header field. Here is one
@@ -7115,7 +7104,7 @@ Table of contents
         This method will work even if someone Bcc:s a message to
         foo@example.com.
 
-    13.28 How to call program with parameters
+    14.28 How to call program with parameters
 
           ...now, suppose I want to call `program' with parameter $FOUND,
           and get the result back in RESULT, how do I do it ?
@@ -7133,9 +7122,9 @@ Table of contents
                 RESULT = `program "$FOUND"`
             }
 
-14.0 Miscellaneous recipes
+15.0 Miscellaneous recipes
 
-    14.1 Matching valid Message-Id header
+    15.1 Matching valid Message-Id header
 
         [philip] wrote full RFC compliant matcher. Follow the link
         <http://www.xray.mpe.mpg.de/mailing-lists/procmail/1998-03/msg00375.html>
@@ -7152,7 +7141,7 @@ Table of contents
             * ! $ ^Message-Id:$ws<$ws$local_part$ws@$ws$domain$ws>
             thats-non-valid-message-id
 
-    14.2 Sending two files in a message
+    15.2 Sending two files in a message
 
         If you plan to send multiple files in a message, be sure that every
         file has extra blank line at the end so that they can be *cat*d
@@ -7198,7 +7187,7 @@ Table of contents
 
         This side of sed comes out only after sed has had a few drinks...
 
-    14.3 Excessive quoting of message
+    15.3 Excessive quoting of message
 
           [25 Nov 1997 buck A T Compact.COM] I administer a LISTSERV mailing
           list and our host has asked us to reduce excess quoting of
@@ -7264,7 +7253,7 @@ Table of contents
                 :0 :
                 $SOME_MBOX
 
-    14.4 Sending message to pager in chunks
+    15.4 Sending message to pager in chunks
 
           I have a 200 character limit on my pager. But I have wordy contacts
           who go over that limit. What I would like to do is have a recipe
@@ -7316,7 +7305,7 @@ Table of contents
         don't. Again, for future generations, details like this are relevant
         to include when you ask about how to do this.
 
-    14.5 Playing particular sound when message arrives
+    15.5 Playing particular sound when message arrives
 
         [Peter S Galbraith <galbraith A T mixing.qc.dfo.ca>] Here is
         the command in shell to produce the sound:
@@ -7339,7 +7328,7 @@ Table of contents
             * ^From:.*foo@example.com
             | cat > /dev/null; $AU -audio tcp/mixing:8000 $TUNE
 
-    14.6 Combining multiple Original-Cc and Original-To headers
+    15.6 Combining multiple Original-Cc and Original-To headers
 
           How can I use procmail/formail to combine the information in these
           headers into their *CORRESPONDING* header MINUS the Original-*
@@ -7397,7 +7386,7 @@ Table of contents
               ${ORIG_TO:+-A "To: $ORIG_TO"}                                 \
               ${ORIG_CC:+-A "Cc: $ORIG_CC"}
 
-    14.7 Forwarding sensitive messages in encrypted format
+    15.7 Forwarding sensitive messages in encrypted format
 
         [<Valdis.Kletnieks A T vt.edu>] Please note that the standard Unix
         `crypt(1)' command is not secure, as it uses a modification of the
@@ -7442,9 +7431,9 @@ Table of contents
 
             }
 
-15.0 Procmail and PGP
+16.0 Procmail and PGP
 
-    15.1 Decrypt pgp messages automatically
+    16.1 Decrypt pgp messages automatically
 
         _Warning_: if you use remailers or anonymous services, you must use
         different passwords and different user id's to decrypt incoming
@@ -7456,7 +7445,7 @@ Table of contents
             * B ?? PGP ENCRYPTED MESSAGE
             | pgp -z "your pass phrase" -f +batch 2>&1
 
-    15.2 Getkeys from key server
+    16.2 Getkeys from key server
 
             # by Adam Shostack <adam A T bwh.harvard.edu> 1996-02
             #
@@ -7481,7 +7470,7 @@ Table of contents
                | pgp +batchmode -fka
             }
 
-    15.3 Auto grab incoming pgp keys
+    16.3 Auto grab incoming pgp keys
 
             #  [Opher Kahn <kahn A T dg-rtp.dg.com>] This first
             #  ruleset protects me from mailbombs from an automated
@@ -7547,9 +7536,9 @@ Table of contents
 
             # end of sender_unknown
 
-16.0 Includerc usage
+17.0 Includerc usage
 
-    16.1 Using: multiple rc files
+    17.1 Using: multiple rc files
 
           ...Do INCLUDERC statements function as a kind of "call" which
           returns control to the "original" rc file if processing falls off
@@ -7568,7 +7557,7 @@ Table of contents
 
         Includerc is nothing more that a sliced top level recipe.
 
-    16.2 Using: call rc file conditionally
+    17.2 Using: call rc file conditionally
 
         One interesting way to prevent false hits when filtering UBE is to
         try to see if the message comes from some valid destination
@@ -7642,7 +7631,7 @@ Table of contents
             #   name, and those that went through pm-ubecheck.rc but came out
             #   undelivered.
 
-    16.3 Using: autoloading an rc file
+    17.3 Using: autoloading an rc file
 
         Now when you know that includerc can be called conditionally, let's
         discuss about "autoloading of a module". For example you may see
@@ -7711,7 +7700,7 @@ Table of contents
         it's around few, say one or two, whose purpose is to define
         variables of get date information.
 
-    16.4 Making: naming of the rc file
+    17.4 Making: naming of the rc file
 
         When you write an rc file, think whether or not it could be
         generalized so that others could use it. You could adopt a style
@@ -7748,7 +7737,7 @@ Table of contents
 
             pm-ajscript.rc      # Average Joe's script.
 
-    16.5 Making: Using name space when saving procmail variables
+    17.5 Making: Using name space when saving procmail variables
 
         If you're going to write rc file that works like any other
         programming language subroutine, you must separate it from the
@@ -7805,7 +7794,7 @@ Table of contents
 
             restore-x-1
 
-    16.6 Making: Public and private variables in rc file
+    17.6 Making: Public and private variables in rc file
 
         As you learned above, the variables should be put to RC file's
         name space. The user interface variables (public) should be all caps
@@ -7846,7 +7835,7 @@ Table of contents
         where it is used or b) make the name unique, with
         `xxScriptCharset'.
 
-    16.7 The rules of thumb for constructing general purpose rc file
+    17.7 The rules of thumb for constructing general purpose rc file
 
         o   Write good documentation at the beginning of file: how to set up
             the includerc and explain what it does. If you don't include
@@ -7951,7 +7940,7 @@ Table of contents
                     # Ok, now we're clear to send an automated reply
                 }
 
-    16.8 An includerc skeleton
+    17.8 An includerc skeleton
 
         Here is my includerc file skeleton that i use in all my modules. The
         funny looking ".$" are for the text2HTML Perl filter. The
@@ -7965,7 +7954,7 @@ Table of contents
         These two perl files are available from my ftp directory.
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.38 2007/10/04 16:23:37 jaalto Exp $
+            # $Id: pm-tips.txt,v 2.39 2007/10/27 10:08:41 jaalto Exp $
             #
             #   File id
             #
@@ -8044,7 +8033,7 @@ Table of contents
 
             # end of pm-xxscript.rc
 
-17.0 Mailing list server
+18.0 Mailing list server
 
             Note: These examples are for ad-hoc lists. Procmail language is not
             suitable for handling complex mailing list administration
@@ -8094,9 +8083,9 @@ Table of contents
             :0 a
             ! -oi `cat /var/tmp/src/power-users.list`
 
-18.0 Common troubles
+19.0 Common troubles
 
-    18.1 Procmail modes: normal, delivery, and mail filter.
+    19.1 Procmail modes: normal, delivery, and mail filter.
 
           ... a) what recipes procmail goes through if there's no
           /etc/procmailrc on the system b) how it decides whether an
@@ -8143,7 +8132,7 @@ Table of contents
         Everything is up to the rcfile -- how to determine whether the
         address is valid and where to put the message if it is.
 
-    18.2 Procmail as sendmail Mlocal mail filtering device
+    19.2 Procmail as sendmail Mlocal mail filtering device
 
           ...I'm a new sys admin at my company, and I've been trying to set up
           Procmail as the mail filtering device (still using mail as the
@@ -8168,7 +8157,7 @@ Table of contents
             :0
             ! -oi -f "$@"
 
-    18.3 Procmail doesn't pass 8bit characters
+    19.3 Procmail doesn't pass 8bit characters
 
         You've mistaken. Procmail does not do that to your mail.
         Frank Gadegast <phade A T powerweb.de> tells you:
@@ -8187,7 +8176,7 @@ Table of contents
         procmail, but these mails came from external and it was sendmail to
         blame.
 
-    18.4 My ISP isn't very interested in installing procmail
+    19.4 My ISP isn't very interested in installing procmail
 
           ...I recently requested my ISP to install procmail, and they
           responded by saying no. Their main reason was they did not wish to
@@ -8200,7 +8189,7 @@ Table of contents
         delivery and enable all users to filter out junkmail without ever
         seeing it. If they still refuse, find a better ISP.
 
-    18.5 My ISP has systemwide procmailrc; is this a good idea?
+    19.5 My ISP has systemwide procmailrc; is this a good idea?
 
         [eli] I, for one, do not like my ISPs to put stuff in
         /etc/procmailrc. There is precious little I will gain from that and
@@ -8214,7 +8203,7 @@ Table of contents
         includercs a system wide shared procmailrc is the best way to do it.
         This forces the filtering to be "opt-in".
 
-    18.6 Procmail changes mailbox and directory permissions
+    19.6 Procmail changes mailbox and directory permissions
 
         By Ed McGuire <emcguire A T i2.com>. Before procmail was used:
 
@@ -8255,7 +8244,7 @@ Table of contents
         protection of 660, gid=6 (mail). I think that's an OS-dependent bug,
         with the `chmod u+x ...' as the workaround.
 
-    18.7 Changing mbox permission during compilation to 660
+    19.7 Changing mbox permission during compilation to 660
 
           ...it appears that mail that procmail delivers back into the
           spool it is writing out with owner.group user.mail and rights
@@ -8334,7 +8323,7 @@ Table of contents
         the procmail class file, and they never had any problems (I was one
         of them).
 
-    18.8 The .forward file must be real file
+    19.8 The .forward file must be real file
 
         http://www.math.fu-berlin.de/~guckes/mail/forwarding.html
 
@@ -8378,7 +8367,7 @@ Table of contents
         Two hard links share the same permission, so this argument doesn't
         hold.
 
-    18.9 Using .forward if procmail already is LDA
+    19.9 Using .forward if procmail already is LDA
 
           [Elie Rosenblum <fnord A T jurai.net>] If you have a .forward, it is
           used by sendmail to replace a call to the LDA for the user in
@@ -8409,7 +8398,7 @@ Table of contents
         Or in other words, the .forward takes precedence over the LDA.
         Thank you both.
 
-    18.10 Mail should be put in the mailqueue if write fails
+    19.10 Mail should be put in the mailqueue if write fails
 
           ...We want to deliver directly to a user's home
           directory. But this can of course be temporarily full. Then the
@@ -8424,7 +8413,7 @@ Table of contents
         EX_CANTCREAT. If you've made procmail the local delivery agent then
         you should add -t to the A= define, _before_ the -d flag.
 
-    18.11 Qmail: how to make it work with procmail
+    19.11 Qmail: how to make it work with procmail
 
         [1998-11-10 PM-L John Conover <conover A T inow.com>] All you
         do is install fastforward and dot-forward, (they are optional, and
@@ -8441,7 +8430,7 @@ Table of contents
         try to deliver to /var/spool/mail/$USER by default; to change this,
         see INSTALL.mbox.
 
-    18.12 Qmail: Procmail looks file from /var/spool/mail only
+    19.12 Qmail: Procmail looks file from /var/spool/mail only
 
           ...Procmail seems to want to do something in /var/spool/mail. But
           since I use qmail, I don't have a /var/spool/mail. Is there a way
@@ -8457,7 +8446,7 @@ Table of contents
         procmail-maildir-patch. When you can't find it, I can send you a
         netmail. Have no problems with procmail and qmail. Works good.
 
-    18.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
+    19.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
 
         [Jaye Mathisen <mrcpu A T cdsnet.net>] On the www.qmail.org page is a
         patch that lets procmail 3.11pre7 work with Maildir's, (qmail's NFS
@@ -8471,7 +8460,7 @@ Table of contents
         Killer. I suspect Procmail's locking of the Maildir 8 ways from
         Sunday is probably partially to blame.
 
-    18.14 AFS: How to use Procmail when HOME is in AFS cell
+    19.14 AFS: How to use Procmail when HOME is in AFS cell
 
           ...I've viewed some of the archived posts concerning AFS and
           procmail, but each seems to have a different perspective on the
@@ -8502,7 +8491,7 @@ Table of contents
         that my home directory is /var/forward/lindsey, and everything
         works fine.
 
-    18.15 Help, some idiot sent my address to 30 mailing lists
+    19.15 Help, some idiot sent my address to 30 mailing lists
 
         You can make a procmail recipe to junk incoming mail from the
         lists until you get the unsubscribe messages delivered to cancel
@@ -8566,7 +8555,7 @@ Table of contents
         till the end of eternity - you should want to unsubscribe from them
         to simplify your mail).
 
-    18.16 Help, Procmail beeps and prints to my console
+    19.16 Help, Procmail beeps and prints to my console
 
           ...when messages get filtered through procmail I get a beep and
           then first 10 lines or so are also sent to the console. I get a
@@ -8595,7 +8584,7 @@ Table of contents
         the COMSAT off. I read my mail when I read my mail, and I check it
         often enough (with a POP client at that).
 
-    18.17 Help, procmail dumps mail to console
+    19.17 Help, procmail dumps mail to console
 
           ...I have installed sendmail and procmail on my linux machine
           (latest version of slackware) it works ok, but procmail if run
@@ -8609,7 +8598,7 @@ Table of contents
         in.comstat, add a '#' at the beginning of the line, save the file
         and killall -HUP inetd. This should stop this ;-)
 
-    18.18 Help, corrupted From_ line in mailbox
+    19.18 Help, corrupted From_ line in mailbox
 
          [Jeffrey S. Gilton <jeffg A T castlec.com>
          1998-02-11 in procmail mailing list " Solved the FFrom problem"]
@@ -8667,7 +8656,7 @@ Table of contents
         I got that feedback from the guy who wrote imapd, and it works very
         well.
 
-    18.19 Directing user's mail to HOME instead of /var/spool/
+    19.19 Directing user's mail to HOME instead of /var/spool/
 
           ...I have a need to direct all a single user's mail to a mailbox in
           his home directory, to $HOME/mailbox,
@@ -8692,7 +8681,7 @@ Table of contents
         around that, but the bottom line, as so many times before, is that
         Procmail might not be the right tool for this.
 
-    18.20 NFS mounting /var/mail is a good way to get bad performance
+    19.20 NFS mounting /var/mail is a good way to get bad performance
 
         Procmail mailing list 1998-06
 
@@ -8772,7 +8761,7 @@ Table of contents
         physically hooked up to the same disks, but through DECsafe ASE not
         mounting them unless the primary died).
 
-    18.21 I can't see the sendmail's response in LOGFILE
+    19.21 I can't see the sendmail's response in LOGFILE
 
           ...As the man page says, this should've written to my LOGFILE. It
           didn't. But it DID activate the pipe in the recipe. So what's up
@@ -8792,7 +8781,7 @@ Table of contents
         Thus you're assigning a null string to $LOG, and when procmail writes
         $LOG to the logfile you can't see a difference.
 
-    18.22 Compiling procmail and choosing locking scheme
+    19.22 Compiling procmail and choosing locking scheme
 
         General advice: Everything except dot locking is usually broken.
 
@@ -8821,7 +8810,7 @@ Table of contents
             /*#define NO_lockf_LOCK definitely do not want procmail to make */
             /*#define NO_flock_LOCK use of those kernel-locking methods */
 
-    18.23 Forwarding lot of mail causes heavy load
+    19.23 Forwarding lot of mail causes heavy load
 
           ...There are several forward (e.g. ! walter@localhost) recipes
           For every forwarded mail, a distinct sendmail process is created.
@@ -8892,7 +8881,7 @@ Table of contents
             :0
             a /dev/null
 
-    18.24 What happens to mail if MDA Procmail fails
+    19.24 What happens to mail if MDA Procmail fails
 
           ...When procmail is the local mailing agent distributing
           e-mail to a user's $HOME and the target machine is 'down', where
@@ -8918,7 +8907,7 @@ Table of contents
         EX_TEMPFAIL instead of EX_CANTCREAT. This would cause the message
         to be requeued. However, this is not generally recommended.)
 
-    18.25 Procmail reads entire 90Mb message into memory
+    19.25 Procmail reads entire 90Mb message into memory
 
           ...last week my workstation ground to a halt when procmail received a
           90Mb Email message (ran out of memory). The point is, such
@@ -8968,7 +8957,7 @@ Table of contents
         system limitation to use a strategy more efficient on them. Don't
         hold your breath.
 
-    18.26 Procmail signaled out of memory in my verbose log
+    19.26 Procmail signaled out of memory in my verbose log
 
           ...I notice in my procmail verbose log the following
           'transaction':
@@ -9010,7 +8999,7 @@ Table of contents
         memory to handle TRAP and EXITCODE, and it'll refuse to try that
         when it was malloc that caused the exit.)
 
-    18.27 Variables DEFAULT and ORGMAIL
+    19.27 Variables DEFAULT and ORGMAIL
 
           ...According to the man pages, `DEFAULT' is defined as `ORGMAIL'
           ...so if I redefine ORGMAIL, then `DEFAULT' should change as
@@ -9065,7 +9054,7 @@ Table of contents
         `EXITCODE' would probably override those. The message is logged
         as "*Bounced*".
 
-    18.28 When DEFAULT cannot be mailed to
+    19.28 When DEFAULT cannot be mailed to
 
         If procmail gets to the end of the rcfile without delivery (or without
         being directed to another rcfile by an INCLUDERC or HOST assignment),
@@ -9083,7 +9072,7 @@ Table of contents
         MTA, which, depending on other factors, will either requeue the letter
         and try delivering later or will bounce it to the sender.
 
-    18.29 Variable DROPPRIVS
+    19.29 Variable DROPPRIVS
 
           ...I have procmail invoked from a mailtable for a virtual domain.
           Presently that runs as root, inherited from sendmail. I'd like to
@@ -9118,7 +9107,7 @@ Table of contents
 
             /etc/procmailrcs must be owned by root and mode 700.
 
-    18.30 Variable HOME
+    19.30 Variable HOME
 
         [david] Since procmail doesn't understand tilde, you have to use
         variable HOME instead.
@@ -9149,7 +9138,7 @@ Table of contents
             HOME_PHIL   = `ksh -c "echo ~phil"`
             HOME_ED     = `ksh -c "echo ~ed"`
 
-    18.31 Variable HOST
+    19.31 Variable HOST
 
         [philip] If a assignment to the "HOST" variable occurs where the
         assigned value doesn't equal the hostname of the machine on which
@@ -9207,7 +9196,7 @@ Table of contents
                 INCLUDERC = $HOME/.$MATCH.rc
             }
 
-    18.32 Variable LINEBUF
+    19.32 Variable LINEBUF
 
           ...[manual] Length of the internal line buffers, cannot be set
           smaller than 128. All lines read from the rcfile should not
@@ -9320,7 +9309,7 @@ Table of contents
         Unfortunately, LINEBUF seems to be a write-only variable; you can
         change its value but you can't find out its current setting.
 
-    18.33 Variable LOG and LOGFILE
+    19.33 Variable LOG and LOGFILE
 
         If you want to print something to the `LOGFILE', you could do it
         like this
@@ -9349,7 +9338,7 @@ Table of contents
 
             VERBOSE = $saved            # restore original value
 
-    18.34 Variable TRAP
+    19.34 Variable TRAP
 
         Here is one example how to write to the log file, Be sure that you
         have preset all the variables, this just demonstrated the usage of
@@ -9404,7 +9393,7 @@ Table of contents
                 TRAP = "${TRAP:+$TRAP ; }$FORMAIL -XSubject:"
             }
 
-    18.35 Variable UMASK
+    19.35 Variable UMASK
 
         There is a better way to find out which folders contain new
         mails if you are using procmail to filter the mails. (This was a
@@ -9439,7 +9428,7 @@ Table of contents
             mail checking script, but I would then only ls -l the spool
             files and look for files with an x01 permission.
 
-    18.36 UMASK and permissions
+    19.36 UMASK and permissions
 
           My mail folder says -rw-r--r-x, Is there a bug in Procmail's
           umask handling? (see last x bit)
@@ -9470,7 +9459,7 @@ Table of contents
         executables. Procmail just happens to call open() with a mode
         argument of 0667, to be modified by your umask.
 
-    18.37 Performance difference between back tick and "|" recipe
+    19.37 Performance difference between back tick and "|" recipe
 
         Procmail sends the whole message to stdin whenever
         it sees back ticks used. And if you use recipe, you can add
@@ -9497,7 +9486,7 @@ Table of contents
             :0 hwic
             | cat - /dev/null; echo "hi there" > some-file.txt
 
-    18.38 Procmail's temporary file names while writing file out
+    19.38 Procmail's temporary file names while writing file out
 
           ...Any ideas what might make those .nfs* files? They contain
           messages which seem to have been successfully processed by
@@ -9558,7 +9547,7 @@ Table of contents
         files over a certain age to eliminate the unsightly buildup in the
         filesystems.
 
-    18.39 Parameter $@
+    19.39 Parameter $@
 
         [david] Of version 3.11pre7 procmail does not grok "$*", nor does
         it grok "$@" outside a pipe or forward action. The only way to get
@@ -9589,7 +9578,7 @@ Table of contents
         that while you might not type in such an addresses, your MUA's
         reply builder may.
 
-    18.40 Procmail variables are null terminated (detecting null string)
+    19.40 Procmail variables are null terminated (detecting null string)
 
         You can't catch null in the message. Eg if you try like this
 
@@ -9612,7 +9601,7 @@ Table of contents
         procmailrcs, so you can use a literal control-A and octal-377 in
         your .procmailrc and save an echo and shell invocation right there.
 
-    18.41 FROM_DAEMON TO and TO_ and case-sensitiveness
+    19.41 FROM_DAEMON TO and TO_ and case-sensitiveness
 
         [david] ^TO is case-insensitive by default. Stephen once told me
         something to the effect that tokens like ^TO, ^TO_, ^FROM_DAEMON,
@@ -9626,7 +9615,7 @@ Table of contents
         recipe are not affected by this. The other tokens have no effect on
         the case-sensitivity. (This is with procmail 3.11pre4)
 
-    18.42 TO_ macro deciphered
+    19.42 TO_ macro deciphered
 
           ...What is the essential difference between TO and TO_ ?
 
@@ -9669,7 +9658,7 @@ Table of contents
              )                      # [end (A)]
             /x                      # [end regexp]
 
-    18.43 TO_ macro and RFC 822
+    19.43 TO_ macro and RFC 822
 
           ...According to RFC822 the From address can contains almost anything
           and the valid mail address can be extracted from the line as
@@ -9714,7 +9703,7 @@ Table of contents
 
         If someone is malicious enough to send you such mail.
 
-    18.44 FROM_DAEMON deciphered
+    19.44 FROM_DAEMON deciphered
 
         Here is the exploded FROM_DAEMON regexp as of 3.11pre7
 
@@ -9803,9 +9792,9 @@ Table of contents
             * MATCH ?? ^FROM_MAILER
             action
 
-19.0 Technical matters
+20.0 Technical matters
 
-    19.1 List of exit codes
+    20.1 List of exit codes
 
         The right place to look is /usr/include/sysexits.h, but the codes
         should be pretty much standard. These ones are from HP-UX 10 and
@@ -9887,7 +9876,7 @@ Table of contents
         Use procmail to trashbin (or otherwise file) all the junk and then
         manually take action on those which get through.
 
-    19.2 List of precedence codes
+    20.2 List of precedence codes
 
         The priorities most sendmails recognize are following. The lower
         the priority, the later the message gets dealt with. A smart
@@ -9925,7 +9914,7 @@ Table of contents
         is by looking at the Precedence field. If it contains `junk', they
         know, this is not something we should respond to.
 
-    19.3 Sendmail and -t
+    20.3 Sendmail and -t
 
           sendmail -t tag reads To, Cc, Bcc, etc, for the recipient of
           the auto response?
@@ -9940,7 +9929,7 @@ Table of contents
         only line where sendmail -t will look for recipients will be the
         To: line.
 
-    19.4 RFC822 Reply-To and formail problem with multiple recipients
+    20.4 RFC822 Reply-To and formail problem with multiple recipients
 
         [david] formail -r extracts only one return address, even when the
         Resent-Reply-To: or Reply-To: header contains more than one (and
@@ -9970,7 +9959,7 @@ Table of contents
         formail's "-t" option is also specified? Or if you are really worried
         about mail-storms and existing recipes, a new formail option.
 
-    19.5 Procmail and IMAP server
+    20.5 Procmail and IMAP server
 
         [ed] See also ftp://ftp.cac.washington.edu/mail/imap.vs.pop ...This
         paper is an elaboration on a short note entitled "Comparing Two
@@ -9996,7 +9985,7 @@ Table of contents
         be good news if you prefer an MUA that reads mbox files but doesn't
         grok IMAP.
 
-    19.6 Machine which processes mail
+    20.6 Machine which processes mail
 
           ...The just-installed procmail does not work and I am assuming
           that sendmail is trying to run procmail on another machine. Is
@@ -10032,7 +10021,7 @@ Table of contents
         Try the `uname' command (and/or read the manual) to see what you
         should expect to find in the file .uname.out
 
-    19.7 Compiling procmail and MAILSPOOLHOME
+    20.7 Compiling procmail and MAILSPOOLHOME
 
           ...I am compiling 3.11pre7 on a new system and have a couple of
           questions. I edited the makefile to be the home directory
@@ -10053,9 +10042,9 @@ Table of contents
         hierarchy in the spool directory to be created, thus avoiding the
         'fat slow directory' problem.
 
-20.0 Procmail software for Emacs
+21.0 Procmail software for Emacs
 
-    20.1 What is Emacs
+    21.1 What is Emacs
 
           ...first thing I learned on a Unix machine was that `vi' is a text
           editor and `Emacs' is a way of life.
@@ -10075,14 +10064,14 @@ Table of contents
         package one finds instructions how to use and how to install the
         package into Emacs.
 
-    20.2 Emacs procmail-mode and Procmail code checking (Lint)
+    21.2 Emacs procmail-mode and Procmail code checking (Lint)
 
         Procmail mode for Emacs (which can also lint procmail recipes) is
         available. People familiar with C-coding know lint, which is a
         rigorous code syntax checker. You can read about this Emacs mode
         from http://freshmeat.net/projects/emacs-tiny-tools
 
-    20.3 Why use procmail with Gnus
+    21.3 Why use procmail with Gnus
 
         Gnus <http://www.gnus.org> includes very powerful mail split
         methods and one normal reaction against the need of procmail is:
@@ -10130,7 +10119,7 @@ Table of contents
         So, let procmail drop messages to their inboxes and Gnus to
         possibly "fine process" these inboxes.
 
-    20.4 Setting up Gnus for procmail - Basics
+    21.4 Setting up Gnus for procmail - Basics
 
         Procmail and Gnus communicate with each other very nicely when you
         use the mail backends like: `nnml', `nnmh' and `nnfolder'. See
@@ -10193,7 +10182,7 @@ Table of contents
         add more inboxes, create them inside gnus *Group* buffer with
         `G' `m'.
 
-    20.5 Gnus for procmail - More about it
+    21.5 Gnus for procmail - More about it
 
         Okay, let's continue our journey in Emacs. What you read previously
         was the minimum you needed to get your Gnus to read procmail
@@ -10262,7 +10251,7 @@ Table of contents
 
             (setq gnus-uncacheable-groups "^nn\\(virtual\\|m[hlk]\\|db\\)")
 
-    20.6 Emacs and Gnus -- Fiddling with spool files
+    21.6 Emacs and Gnus -- Fiddling with spool files
 
         Well, to tell you the truth, managing Gnus is scary at first: You
         can make a lot of mistakes along the way or otherwise change your mind
@@ -10296,7 +10285,7 @@ Table of contents
 
             % rm ~/Mail/spool/list.procmail.spool
 
-    20.7 Gnus article snippets
+    21.7 Gnus article snippets
 
         [These articles have been collected from the GNUS hypertext archive]
     !!
@@ -10361,9 +10350,9 @@ Table of contents
         spool files were called ~/incoming/lists/lists.whatever.spool,
         then?
 
-21.0 RFC, Request for comments
+22.0 RFC, Request for comments
 
-    21.1 RFCs and their jurisdiction (munged Addresses)
+    22.1 RFCs and their jurisdiction (munged Addresses)
 
         Groups: gnu.emacs.gnus
         Search: RFC
@@ -10488,7 +10477,7 @@ Table of contents
         account with procmail where I can get all my Usenet related
         messages sent. --Timothy
 
-    21.2 Comments about addresses munging
+    22.2 Comments about addresses munging
 
        [1998-03-24 gnu.emacs.gnus <drwho A T No-Spam-see-sig.xnet.com>]
 
@@ -10522,7 +10511,7 @@ Table of contents
         legislation passed on junk mail). And those that *do* get past the
         fouled headers are dealt with accordingly.
 
-    21.3 RFC and valid mail address characters
+    22.3 RFC and valid mail address characters
 
           What characters are legal in e-mail addresses? So far, I have
           uppercase, lowercase, digits, _ - + . @
@@ -10543,7 +10532,7 @@ Table of contents
         believe. I've tried it with stuff like <"fred($)barney"@example.com>
         and it seems pretty stable.
 
-    21.4 RFC and login-name@fdqn
+    22.4 RFC and login-name@fdqn
 
         [1998-06-08 Message-ID: <wkd8cjekay.fsf@mjf.vip.best.com>
         Marty Fouts <Usenet-user A T usa.net> in gnu.emacs.help. Refer also
@@ -10634,7 +10623,7 @@ Table of contents
         Once you understand that this assertion is incorrect, it should be
         easy to see that all assertions derived from it are incorrect.
 
-    21.5 RFCs and messages signature
+    22.5 RFCs and messages signature
 
         http://www.chemie.fu-berlin.de/outerspace/netnews/son-of-1036.html
 
@@ -10660,7 +10649,7 @@ Table of contents
         delimiter may be "too well-established to change," but it collides
         with the reality of the tools people use.
 
-    21.6 RFC and using MIME in Usenet newsgroups
+    22.6 RFC and using MIME in Usenet newsgroups
 
          [1999-02-12 Marty Fouts <gnus A T fogey.com> in gnu.emacs.gnus
          Message-id: <wklni3b3gl.fsf@Usenet.nospam.fogey.com>]
@@ -10690,7 +10679,7 @@ Table of contents
         years, deadlines approach, and this particular issue has been
         argued in a great deal of detail.
 
-    21.7 Some RFC Pointers
+    22.7 Some RFC Pointers
 
         http://www.ietf.org/rfc.html
 
@@ -10714,9 +10703,9 @@ Table of contents
                     Also rfc1341
         o   rfc2142 Mailbox names for common services, roles and functions
 
-22.0 Introduction to E-mail Headers
+23.0 Introduction to E-mail Headers
 
-    22.1 To find out more about mail
+    23.1 To find out more about mail
 
        "All about Email headers"
         http://www.stopspam.org/email/headers/headers.html
@@ -10834,7 +10823,7 @@ Table of contents
         1050 pages, $39.95
         <http://www.oreilly.com/>
 
-    22.2 Lecture by Alan Stebbens
+    23.2 Lecture by Alan Stebbens
 
         Procmail mailing list 1996-08.
 
@@ -10943,7 +10932,7 @@ Table of contents
         those having to do with the transport process and less with the
         contents.
 
-    22.3 Applied to received messages
+    23.3 Applied to received messages
 
         [alan] So, now that we have a common understanding...
 
@@ -11006,7 +10995,7 @@ Table of contents
 
         Please read the man page on sendmail, noting the use of '-f'.
 
-    22.4 Bcc lecture by Alan Stebbens
+    23.4 Bcc lecture by Alan Stebbens
 
         Procmail mailing list 1996-11
 
@@ -11059,7 +11048,7 @@ Table of contents
         procmail is most typically used on *incoming* mail, it will never
         have a chance to deal with Bcc: headers.
 
-    22.5 Bcc lecture by Philip Guenther
+    23.5 Bcc lecture by Philip Guenther
 
         Procmail mailing list 1996-11
 
@@ -11128,9 +11117,9 @@ Table of contents
         progress, but the basic commands of "MAIL", "RCPT", and "DATA"
         should suffice.
 
-23.0 Message headers
+24.0 Message headers
 
-    23.1 What is correct From address syntax
+    24.1 What is correct From address syntax
 
           Case 1 is what is in RFC 822, as I recall. I regard Case 2 as
           "screen syntax" for inclusion in plain-text message-body
@@ -11174,7 +11163,7 @@ Table of contents
           interpret the comment, comments SHOULD NOT generally be used in
           address fields to avoid confusion.
 
-    23.2 What's that X-UIDL header?
+    24.2 What's that X-UIDL header?
 
         [philip]
 
@@ -11209,7 +11198,7 @@ Table of contents
         lists. Fluffy's mod.* list had these until I pointed out the
         wide-spread file-to-/dev/null problem to Fluffy.
 
-    23.3 What is that first From_ header?
+    24.3 What is that first From_ header?
 
         [philip] the address on the `From_' line is the envelope
         sender. If the message has a Return-Path: header, then it would
@@ -11271,7 +11260,7 @@ Table of contents
         someone may be able to give you further pointers on saving envelope
         recipients in virtual domain situations.
 
-    23.4 Message-Id header
+    24.4 Message-Id header
 
           ...Are there known problems with "valid" mails with illegal
           MessageIDs? For some strange reason, some people are sending out
@@ -11370,7 +11359,7 @@ Table of contents
         URL, not subject to the same time-dependent changes. URLs were
         designed exactly to remove the need for such descriptions.
 
-    23.5 Received header
+    24.5 Received header
 
           ...Found another interesting pattern, Received header that are all
           on one line. Normally a Received: header spans two lines, at
@@ -11400,7 +11389,7 @@ Table of contents
                     for $u; $|;
                     $.$b
 
-    23.6 Return-Path
+    24.6 Return-Path
 
           ...I've created a user (lo_mailer) with a .forward and a
           .procmailrc file to transport incoming mail to the right user.
@@ -11478,7 +11467,7 @@ Table of contents
         That said, this mailing list's requirement of matching Return-Path
         is indeed pretty peculiar.
 
-    23.7 Errors-To
+    24.7 Errors-To
 
           1) Can somebody confirm that Errors-To: is deprecated?
           2) Is there an RFC for this?
@@ -11493,7 +11482,7 @@ Table of contents
           intended for mailing lists. The Errors-To: header is officially
           deprecated and will go away in a future release.
 
-    23.8 X-Subscription-Info
+    24.8 X-Subscription-Info
 
         This is a header that is used by some mailing lists: it contains an
         mail address for un/subscribe, or a URL with said info. Imagine
@@ -11501,7 +11490,7 @@ Table of contents
         mailing lists. If your mailing list doesn't have it already, make
         a suggestion to the list's maintainer.
 
-    23.9 Reply-To header
+    24.9 Reply-To header
 
         The existence of a Reply-To: means, "IF you reply to me, send it to
         this address instead of the one in the From: header."
@@ -11665,7 +11654,7 @@ Table of contents
         From header and he should put that mailbox there when he originates
         the message, regardless of where he physically is when he does so.
 
-    23.10 Mail-Copies-To header
+    24.10 Mail-Copies-To header
 
         [Suggested by Lars Magne Ingebrigtsen, the Author of Emacs Gnus]
 
@@ -11746,7 +11735,7 @@ Table of contents
         foo@example.com' [2] It is also acceptable to put
         `foo@example.com' in the To: line.
 
-    23.11 Mail-Followup-To and Reply-To-Personal headers
+    24.11 Mail-Followup-To and Reply-To-Personal headers
 
         [21 Nov 1997,  Mutt Development List <mutt-dev A T cs.hmc.edu]
 
@@ -11766,7 +11755,7 @@ Table of contents
         draft-ietf-drums-replyto-personal-00.txt My draft on
         Personal-Reply-To
 
-    23.12 Content-Length header and From_ specification
+    24.12 Content-Length header and From_ specification
 
          [1996-05-17 From: Jamie Zawinski <jwz A T netscape.com>
          comp.mail.headers]
@@ -11828,7 +11817,7 @@ Table of contents
         Conventional wisdom is, ``if you believe the Content-Length header,
         I've got a bridge to sell you.''
 
-    23.13 Moral about CC copies in Usenet
+    24.13 Moral about CC copies in Usenet
 
          Sending CC
 
