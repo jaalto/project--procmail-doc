@@ -1,3 +1,17 @@
+2008-03-09  Jari Aalto  <jari.aalto@cante.net>
+
+	* pm-tips.txt:
+	(1.5 Document layout and maintenance): Fix URL.
+	(2.2 Procmail resources): Add Gmane URL.
+	(2.3 Procmail mode for Emacs): Fix URL.
+	(2.4.1 Where to get various modules): Fix URL.
+	(2.4.2 Terminology): Clarify recipe.
+	(2.4.6 Spam modules): Correct URL.
+	(Csh's tilde is not supported): Rewrite paragraph.
+	(4.5 Check and set PATH): Break PATH into separate lines.
+	(4.9 Beware putting comment in wrong places): Adjust example.
+	(5.2 Flags HB at top of recipe): Adjust URL.
+
 2007-10-27  Jari Aalto  <jari.aalto@cante.net>
 
 	* pm-tips.txt: (1.8 About "useless use of cat award"):

@@ -395,7 +395,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-        .$Id: pm-tips.txt,v 2.41 2007/10/27 10:16:30 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.42 2008/03/09 13:16:49 jaalto Exp $
         .Homepage http://pm-doc.sourceforge.net/
         .URLs last checked: 2007-10-02
 
@@ -411,7 +411,7 @@ Table of contents
         capabilities. Emacs is powerful tool that can be used for both
         mail and news reading; available in Windows platform as well.
         The tips have been compiled from the procmail discussion list,
-        from comp.mail.misc and from the author's own experiences with
+        from *comp.mail.misc* and from the author's own experiences with
         procmail.
 
         This document does not intend to teach the basics of procmail,
@@ -502,6 +502,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
+            v2.42   2008-03-10  510  Add Gmane URL. Links checked.
             v2.36   2007-10-02  519  New HTML/CSS layout. Links checked.
             v2.30   2006-02-15  519  Sanitized all email addresses.
             v2.27   2004-10-10  516  Spam related things removed.
@@ -557,7 +558,7 @@ Table of contents
         format, which requires no special editors or learning a markup
         language. The tools to help maintaining this document include:
 
-        o   #URL<http://www.gnu.og/software/emacs><Emacs> and
+        o   #URL<http://www.gnu.org/software/emacs><Emacs> and
             technical formatting package (TOC, indentation control,
             fontifying) *tinytf.el* from
             http://freshmeat.net/projects/emacs-tiny-tools
@@ -820,7 +821,9 @@ Table of contents
 
     2.2 Procmail resources
 
-        Procmail is discussed in Usenet newsgroup *comp.mail.misc*.
+        Procmail is discussed in Usenet newsgroup *comp.mail.misc* and
+	mailing list accessible at NNTP server
+	<http://news.gmane.org/gmane.mail.procmail>.
 
         o   #URL<http://www.ii.com/internet/robots/procmail/qs/><Nancy McGough <nm A T noadsplease.ii.com> - Prcmail Quick start>
         o   #URL<http://www.iki.fi/~era/procmail><Era Eriksson's Procmail FAQ and link collection>
@@ -836,11 +839,11 @@ Table of contents
 
     2.3 Procmail mode for Emacs
 
-        If you use #URL<http://www.gnu.og/software/emacs><Emacs>, See
+        If you use #URL<http://www.gnu.org/software/emacs><Emacs>, See
         Procmail mode *tinypm.el* at
         <http://freshmeat.net/projects/emacs-tiny-tools>. It can also
-        be used to syntax check recipes. Here is an example of its
-        output:
+        be used to statically syntax check recipes. Here is an example
+        of its output:
 
             *** 1997-11-24 22:13 (pm.lint) 3.11pre7 tinypm.el 1.80
             cd /users/jaalto/junk/
@@ -854,10 +857,10 @@ Table of contents
 
        2.4.1 Where to get various modules
 
-        o   #URL<http://freshmeat.net/projects/procmail-lib><Procmail
-            module library>. The idea of plug-in modules was
-            originally coined by Alan Stebbens (<alan.stebbens A T
-            software.com>, <alan.stebbens A T openwave.com>).
+        o   #URL<http://freshmeat.net/projects/procmail-lib><Procmail module library>.
+	    The idea of plug-in modules was originally coined by Alan
+            Stebbens (<alan.stebbens A T software.com>, <alan.stebbens
+            A T openwave.com>).
 
        2.4.2 Terminology
 
@@ -865,10 +868,11 @@ Table of contents
         `INPUT' and responds with `OUTPUT'. Subroutine is not message
         specific.
 
-        *recipe/module* = A piece of code that is somewhat self
+        *recipe* = A piece of code that is somewhat self
         contained: It reads something from the message or does
         something according to matches in message. Recipe may be
-        message-specific.
+        message-specific. Recipe is more free-form and does not
+	follow strict INPUT/OUTPUT methodology.
 
        2.4.3 Foreword to using modules
 
@@ -899,11 +903,11 @@ Table of contents
         it. The documentation also tells you what values are returned, e.g.
         one of them was ERROR.
 
-        If it were recipe/module, the call would be almost the same, but
+        If it were recipe, the call would be almost the same, but
         instead of returning values, the recipe/module most likely does
         something to your message or writes something to the data files
-        etc. A *Recipe/module* is much higher level, because it may
-        call multiple subroutine/modules. The distinction between
+        etc. A *recipe* is much higher level, because it may
+        call multiple subroutines/modules. The distinction between
         subroutine and recipe module type is not crystal clear, but I hope
         the above will clarify a bit the Procmail module/subroutine/recipe
         concept.
@@ -936,7 +940,7 @@ Table of contents
        2.4.6 Spam modules
 
         Read "Thoughts about increasing spam annoyance" at
-        <http://pm-doc.sourceforge.net/README.html> which
+        <http://pm-lib.sourceforge.net/README.html> which
         explains these modules better in context "2.0 A lightweight
         UBE block system with pure procmail".
 
@@ -1229,11 +1233,12 @@ Table of contents
 
     4.2 Csh's tilde is not supported
 
-        Real csh or Emacs freaks have grown accustomed to using tilde (~)
-        everywhere, but must drop that habit now. Procmail doesn't support it;
-        just use `$HOME'. When you write procmail recipes, think *sh* not
-        *csh*. This mind set will automatically get your brain tuned to the
-        right programming habits.
+	Many shell users have accustomed to using tilde (~)
+        everywhere. Unfortunately procmail doesn't expand that to home
+        directories; just use `$HOME'. When you write procmail
+        recipes, think *sh* not *bash*. This mind set will
+        automatically get your brain tuned to the right programming
+        habits.
 
     4.3 Be sure to write the recipe starting right
 
@@ -1260,7 +1265,7 @@ Table of contents
        4.4.1 If system has no /bin/sh and you're forced to use csh/tcsh
 
         [<kuhlmav A T elec.canterbury.ac.nz>] Csh and tcsh execute the
-        .cshrc first, THEN if, and only if it is the login shell (not
+        `.cshrc' first, THEN if, and only if it is the login shell (not
         a sub shell) it executes the .login, which should contain
         basic important system setting like `stty' commands. Likewise,
         bash and ksh users are taught to define and export PATH in
@@ -1324,20 +1329,31 @@ Table of contents
         the same `$HOME/.procmail' on multiple servers (Like HP, SUN,
         IBM, Linux)
 
-            PATH = $HOME/bin:\
+            PATH = \
+	    $HOME/bin:\
+            /usr/local/gnu/bin:\
             /usr/contrib/bin:\
-            /bin:/usr/bin:/usr/lib:/usr/ucb:/usr/sbin:\
-            /usr/local/bin:/opt/local/bin:\
-            /vol/bin:/vol/lib:/vol/local/bin:${PATH}
+            /usr/local/bin:\
+	    /opt/local/bin:\
+            /bin:\
+	    /usr/bin:\
+	    /usr/lib:\
+	    /usr/ucb:\
+	    /usr/sbin:\
+            /vol/bin:\
+	    /vol/lib:\
+	    /vol/local/bin:\
+	    ${PATH}
 
     4.6 Keep the log on all the time
 
         It's best that you put these variables at the very start of
-        your .procmailrc. When you start using procmail, you also want to know
-        all the time what's happening there and why your recipes
-        didn't work as expected. The answer to almost all your questions can
-        be found in the log file. As the log file will grow to be quite big,
-        remember to set up a cron job to keep it moderate size.
+        your `.procmailrc'. When you start using procmail, you also
+        want to know all the time what's happening there and why your
+        recipes didn't work as expected. The answer to almost all your
+        questions can be found in the log file. As the log file will
+        grow to be quite big, remember to set up a cron job to keep it
+        moderate size.
 
             LOGFILE     = $PMSRC/pm.log
             LOGABSTRACT = "all"
@@ -1375,17 +1391,17 @@ Table of contents
         free to comment code in procmail. Pay attention to the following
         example
 
-            :0          # comment, nice tune...
-            * condition # OUCH, Ouch, ouch. This comment must not be here!!
-                #         Hm, Old procmail versions don't understand this
-                #         Are you sure you want to put comments inside
-                #         Condition line?
+            :0              #  comment ok
+	    * condition	    #  OUCH, ouch. This comment must not be here.
+            #  Hm, Old procmail versions don't understand this
+	    #  Are you sure you want to put comments inside
+	    #  condition line?
             * condition
-            {               # comment ok
-                            # comment ok
-                :0          # comment ok
-                /dev/null   # comment ok
-            }               # comment ok
+            {               #  comment ok
+                            #  comment ok
+                :0          #  comment ok
+                /dev/null   #  comment ok
+            }               #  comment ok
 
         So, the place to watch is the *condition* line. Later procmail
         versions may understand those, but if you intend to share your
@@ -1826,8 +1842,8 @@ Table of contents
         that it matters a great deal in which order your put your recipes.
         When each group of recipes starts growing too big, it's good
         practice to move each group to a separate includerc file. Here is
-        one recommended order in which yur calls appear in the mail
-        $HOME/.procmailrc
+        one recommended order in which your calls appear in the mail
+        `$HOME/.procmailrc':
 
         o    backup important messages
         o    cron-subroutine
@@ -1863,9 +1879,9 @@ Table of contents
            Last but not least: Put your UBE checkers to the end to avoid
            mishits of valid mail. _DO_ _NOT_ _SEND_ _AUTOMATIC_ _COMPLAINT_
            _BACK_, or you'll get grey hairs when the autoresponder send its
-           complaint to valid source. You don't want to answr back with "My
-           apologies, the script had an error, it won't happen aagin." to all
-           the valid hate mail that is now addressed to you.
+           complaint to valid source. You don't want to answer back with "My
+           apologies, the script had an error, it won't happen agin" to all
+           the valid angry mails that are now addressed to you.
 
         Drop the UBE to a folder, manually select the messages that need
         actions and send message to postmasters in the Received chain
@@ -1875,7 +1891,7 @@ Table of contents
 
     5.1 The order of the flags
 
-        The Order of the flags does not matter in practice, but here is one
+        The order of the flags does not matter in practice, but here is one
         stylistic suggestion.  The idea here is that the most important
         flags are put to the left, like giving priority 1 for `aAeE', which
         affect the recipe immediately. Priority 2 is given to flag
@@ -1917,8 +1933,8 @@ Table of contents
         recipes that needs to match against both the header and the
         body. If you want a recipe to match only against the body and
         you're using 3.22, use the "B ??" modifier on the conditions.
-        See message
-        <http://mailman.rwth-aachen.de/pipermail/procmail/2002-February/008355.html>.
+        See Procmail-L message titled
+        #URL<http://mailman.rwth-aachen.de/pipermail/procmail/2002-February/008355.html><"Cannot get recipies to work properly">.
         So to be most pportable possible, convert all previously used
         condition lines from:
 
@@ -1930,7 +1946,7 @@ Table of contents
             :0
             * B ?? body-check-here
 
-    5.3 Flag w and recipe with |
+    5.3 Flag w and recipe with pipe(|)
 
         [alan] If the filter program exits with a 0 status (0 == okay), then
         procmail will replace the original input body with the output of the
@@ -1960,7 +1976,7 @@ Table of contents
         a write error in such a case if the mail is long enough and does not
         fit in the pipe buffer that's in the kernel (typically 10KB).
 
-    5.4 Flag w, lock file and recipe with |
+    5.4 Flag w, lock file and recipe with pipe(|)
 
         [manual] In order to make sure the lock file is not removed until the
         pipe has finished, you have to specify option `w' otherwise the
@@ -2405,12 +2421,14 @@ Table of contents
     6.1 Philosophy of abstraction in regexps
 
           Here are two ways to view or write regexps. Make up your own
-          mind. More on regular expressions ar <http://regexlib.com/>.
+          mind. More on regular expressions at <http://regexlib.com/>.
 
          People who are in favor of writing pure native regexps in the
          recipes:
 
             [    ]<[    ]*("([^"\]|\\.)*"|[-!#-'*+/-9=?A-Z^-~]+)...  # "
+
+	They think:
 
         o   I'm not planning on "maintaining" that code, as the syntax for
             XXX will not ever change, it's RFC or something.
@@ -2421,7 +2439,7 @@ Table of contents
             The variablized version will be slower, and will clutter the
             environment with subprocesses.
 
-         Where someone that immediately wants to abstract things says (This
+         Where someone that immediately wants to abstract things says (this
          is from philip's great Message-Id matching recipe)
 
             dq = '"'                                # (literal) double-quote
@@ -2471,7 +2489,7 @@ Table of contents
         you can easily interpret e.g. `$[^>]' as: `a newline followed by a
         line not starting with a `>'.
 
-        If you put a '$' after the '\/' match token then procmail will
+        If you put a `$' after the `\/' match token then procmail will
         include the matched newline if there's one there. Solution? Don't
         put a dollar sign there unless you really want a newline, use period
         that matches all but newline:
@@ -7951,10 +7969,9 @@ Table of contents
 
             % ripdoc.pl pm-xxscript.rc | t2HTML.pl > pm-xxscript.html
 
-        These two perl files are available from my ftp directory.
+        These two perl files are available:
 
             # pm-xxscript.rc -- one line description string here
-            # $Id: pm-tips.txt,v 2.41 2007/10/27 10:16:30 jaalto Exp $
             #
             #   File id
             #
@@ -8324,8 +8341,6 @@ Table of contents
         of them).
 
     19.8 The .forward file must be real file
-
-        http://www.math.fu-berlin.de/~guckes/mail/forwarding.html
 
           ...I tried to make a softlink to ~/.forward, but then my
           procmail wouldn't run. When I made a real ~/.forward file, then it
