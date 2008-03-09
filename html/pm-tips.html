@@ -22,12 +22,12 @@ Procmail Tips
 	content="">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Expires" content="Wed, 26 Dec 2007 10:13:28 GMT">
+  <meta http-equiv="Expires" content="Thu,  8 May 2008 13:55:00 GMT">
 
 
 
   <meta name="Generator"
-	content="2007-10-27 13:13 Perl program t2html v2007.1019.1708 http://freshmeat.net/projects/perl-text2html">
+	content="2008-03-09 15:55 Perl program t2html v2007.1019.1708 http://freshmeat.net/projects/perl-text2html">
 
 
 
@@ -280,13 +280,13 @@ Procmail Tips
            </a>
            <br>
 <li>
-           <a href="#flag_w_and_recipe_with" class="toc">
-               5.3 Flag w and recipe with |
+           <a href="#flag_w_and_recipe_with_pipe" class="toc">
+               5.3 Flag w and recipe with pipe(|)
            </a>
            <br>
 <li>
-           <a href="#flag_w_lock_file_and_recipe_with" class="toc">
-               5.4 Flag w, lock file and recipe with |
+           <a href="#flag_w_lock_file_and_recipe_with_pipe" class="toc">
+               5.4 Flag w, lock file and recipe with pipe(|)
            </a>
            <br>
 <li>
@@ -1623,7 +1623,7 @@ Procmail Tips
 
 <p>
 <p class="column8">
-        $Id: pm-tips.html,v 1.18 2007/10/27 10:15:07 jaalto Exp $<br>
+        $Id: pm-tips.html,v 1.19 2008/03/09 14:12:30 jaalto Exp $<br>
         Homepage <a href="http://pm-doc.sourceforge.net/" >http://pm-doc.sourceforge.net/</A><br>
         URLs last checked: 2007-10-02<br>
 
@@ -1643,7 +1643,7 @@ Procmail Tips
         capabilities. Emacs is powerful tool that can be used for both
         mail and news reading; available in Windows platform as well.
         The tips have been compiled from the procmail discussion list,
-        from comp.mail.misc and from the author's own experiences with
+        from <em class="word">comp.mail.misc</em> and from the author's own experiences with
         procmail.
 
 
@@ -1796,6 +1796,7 @@ Procmail Tips
     <tr>
     <td class="shade-normal-attrib" valign="top">
     <pre>
+      v2.42   2008-03-10  510  Add Gmane URL. Links checked.
       v2.36   2007-10-02  519  New HTML/CSS layout. Links checked.
       v2.30   2006-02-15  519  Sanitized all email addresses.
       v2.27   2004-10-10  516  Spam related things removed.
@@ -1865,7 +1866,7 @@ Procmail Tips
         language. The tools to help maintaining this document include:
 
 <ul>
-	<li><a href="http://www.gnu.og/software/emacs">Emacs</a> and
+	<li><a href="http://www.gnu.org/software/emacs">Emacs</a> and
             technical formatting package (TOC, indentation control,
             fontifying) <em class="word">tinytf.el</em> from
             <a href="http://freshmeat.net/projects/emacs-tiny-tools" >http://freshmeat.net/projects/emacs-tiny-tools</A>
@@ -2379,7 +2380,9 @@ Procmail Tips
 
 <p>
 <p class="column8">
-        Procmail is discussed in Usenet newsgroup <em class="word">comp.mail.misc</em>.
+        Procmail is discussed in Usenet newsgroup <em class="word">comp.mail.misc</em> and
+        mailing list accessible at NNTP server
+        &lt;<a href="http://news.gmane.org/gmane.mail.procmail" >http://news.gmane.org/gmane.mail.procmail</A>&gt;.
 
 <ul>
 	<li><a href="http://www.ii.com/internet/robots/procmail/qs/">Nancy McGough &lt;nm A T noadsplease.ii.com</a> - Prcmail Quick start&gt;
@@ -2414,11 +2417,11 @@ Procmail Tips
 
 <p>
 <p class="column8">
-        If you use <a href="http://www.gnu.og/software/emacs">Emacs</a>, See
+        If you use <a href="http://www.gnu.org/software/emacs">Emacs</a>, See
         Procmail mode <em class="word">tinypm.el</em> at
         &lt;<a href="http://freshmeat.net/projects/emacs-tiny-tools" >http://freshmeat.net/projects/emacs-tiny-tools</A>&gt;. It can also
-        be used to syntax check recipes. Here is an example of its
-        output:
+        be used to statically syntax check recipes. Here is an example
+        of its output:
 
 <p>
 <table class="shade-normal">
@@ -2452,10 +2455,10 @@ Procmail Tips
 
 
 <ul>
-	<li>#URL&lt;<a href="http://freshmeat.net/projects/procmail-lib" >http://freshmeat.net/projects/procmail-lib</A>&gt;&lt;Procmail
-            module library&gt;. The idea of plug-in modules was
-            originally coined by Alan Stebbens (&lt;alan.stebbens A T
-	            software.com&gt;, &lt;alan.stebbens A T openwave.com&gt;).</li>
+	<li><a href="http://freshmeat.net/projects/procmail-lib">Procmail module library</a>.
+            The idea of plug-in modules was originally coined by Alan
+            Stebbens (&lt;alan.stebbens A T software.com&gt;, &lt;alan.stebbens
+	            A T openwave.com&gt;).</li>
 </ul>
 
 
@@ -2473,10 +2476,11 @@ Procmail Tips
 
 
 <p class="column8">
-        <em class="word">recipe/module</em> = A piece of code that is somewhat self
+        <em class="word">recipe</em> = A piece of code that is somewhat self
         contained: It reads something from the message or does
         something according to matches in message. Recipe may be
-        message-specific.
+        message-specific. Recipe is more free-form and does not
+        follow strict INPUT/OUTPUT methodology.
 
 
 <p class="column7"><em><strong>
@@ -2532,11 +2536,11 @@ Procmail Tips
 
 
 <p class="column8">
-        If it were recipe/module, the call would be almost the same, but
+        If it were recipe, the call would be almost the same, but
         instead of returning values, the recipe/module most likely does
         something to your message or writes something to the data files
-        etc. A <em class="word">Recipe/module</em> is much higher level, because it may
-        call multiple subroutine/modules. The distinction between
+        etc. A <em class="word">recipe</em> is much higher level, because it may
+        call multiple subroutines/modules. The distinction between
         subroutine and recipe module type is not crystal clear, but I hope
         the above will clarify a bit the Procmail module/subroutine/recipe
         concept.
@@ -2592,7 +2596,7 @@ Procmail Tips
 
 <p class="column8">
         Read &quot;Thoughts about increasing spam annoyance&quot; at
-        &lt;<a href="http://pm-doc.sourceforge.net/README.html" >http://pm-doc.sourceforge.net/README.html</A>&gt; which
+        &lt;<a href="http://pm-lib.sourceforge.net/README.html" >http://pm-lib.sourceforge.net/README.html</A>&gt; which
         explains these modules better in context &quot;2.0 A lightweight
         UBE block system with pure procmail&quot;.
 
@@ -3122,11 +3126,12 @@ Procmail Tips
 
 <p>
 <p class="column8">
-        Real csh or Emacs freaks have grown accustomed to using tilde (~)
-        everywhere, but must drop that habit now. Procmail doesn't support it;
-        just use <samp class="word">$HOME</samp>. When you write procmail recipes, think <em class="word">sh</em> not
-        <em class="word">csh</em>. This mind set will automatically get your brain tuned to the
-        right programming habits.
+        Many shell users have accustomed to using tilde (~)
+        everywhere. Unfortunately procmail doesn't expand that to home
+        directories; just use <samp class="word">$HOME</samp>. When you write procmail
+        recipes, think <em class="word">sh</em> not <em class="word">bash</em>. This mind set will
+        automatically get your brain tuned to the right programming
+        habits.
 
 
 
@@ -3187,7 +3192,7 @@ Procmail Tips
 
 <p class="column8">
         <span class="word-ref">[&lt;kuhlmav A T elec.canterbury.ac.nz&gt;]</span> Csh and tcsh execute the
-        cshrc first, THEN if, and only if it is the login shell (not<br>
+        <samp class="word">.cshrc</samp> first, THEN if, and only if it is the login shell (not
         a sub shell) it executes the .login, which should contain
         basic important system setting like <samp class="word">stty</samp> commands. Likewise,
         bash and ksh users are taught to define and export PATH in
@@ -3283,11 +3288,21 @@ Procmail Tips
     <tr>
     <td class="shade-normal-attrib" valign="top">
     <pre>
-      PATH = $HOME/bin:\
+      PATH = \
+      $HOME/bin:\
+      /usr/local/gnu/bin:\
       /usr/contrib/bin:\
-      /bin:/usr/bin:/usr/lib:/usr/ucb:/usr/sbin:\
-      /usr/local/bin:/opt/local/bin:\
-      /vol/bin:/vol/lib:/vol/local/bin:${PATH}    </pre></td>
+      /usr/local/bin:\
+      /opt/local/bin:\
+      /bin:\
+      /usr/bin:\
+      /usr/lib:\
+      /usr/ucb:\
+      /usr/sbin:\
+      /vol/bin:\
+      /vol/lib:\
+      /vol/local/bin:\
+      ${PATH}    </pre></td>
     </tr>
 </table>
 
@@ -3305,11 +3320,12 @@ Procmail Tips
 <p>
 <p class="column8">
         It's best that you put these variables at the very start of
-        your .procmailrc. When you start using procmail, you also want to know
-        all the time what's happening there and why your recipes
-        didn't work as expected. The answer to almost all your questions can
-        be found in the log file. As the log file will grow to be quite big,
-        remember to set up a cron job to keep it moderate size.
+        your <samp class="word">.procmailrc</samp>. When you start using procmail, you also
+        want to know all the time what's happening there and why your
+        recipes didn't work as expected. The answer to almost all your
+        questions can be found in the log file. As the log file will
+        grow to be quite big, remember to set up a cron job to keep it
+        moderate size.
 
 <p>
 <table class="shade-normal">
@@ -3402,17 +3418,17 @@ Procmail Tips
     <tr>
     <td class="shade-normal-attrib" valign="top">
     <pre>
-      :0          # comment, nice tune...
-      * condition # OUCH, Ouch, ouch. This comment must not be here!!
-          #         Hm, Old procmail versions don't understand this
-          #         Are you sure you want to put comments inside
-          #         Condition line?
+      :0              #  comment ok
+      * condition     #  OUCH, ouch. This comment must not be here.
+      #  Hm, Old procmail versions don't understand this
+      #  Are you sure you want to put comments inside
+      #  condition line?
       * condition
-      {               # comment ok
-                      # comment ok
-          :0          # comment ok
-          /dev/null   # comment ok
-      }               # comment ok    </pre></td>
+      {               #  comment ok
+                      #  comment ok
+          :0          #  comment ok
+          /dev/null   #  comment ok
+      }               #  comment ok    </pre></td>
     </tr>
 </table>
 
@@ -4228,8 +4244,8 @@ Procmail Tips
         that it matters a great deal in which order your put your recipes.
         When each group of recipes starts growing too big, it's good
         practice to move each group to a separate includerc file. Here is
-        one recommended order in which yur calls appear in the mail
-        $HOME/.procmailrc
+        one recommended order in which your calls appear in the mail
+        <samp class="word">$HOME/.procmailrc</samp>:
 
 <ul>
 	<li> backup important messages
@@ -4299,9 +4315,9 @@ Procmail Tips
            Last but not least: Put your UBE checkers to the end to avoid
            mishits of valid mail. <strong class="word">DO</strong> <strong class="word">NOT</strong> <strong class="word">SEND</strong> <strong class="word">AUTOMATIC</strong> <strong class="word">COMPLAINT</strong>
            <strong class="word">BACK</strong>, or you'll get grey hairs when the autoresponder send its
-           complaint to valid source. You don't want to answr back with &quot;My
-           apologies, the script had an error, it won't happen aagin.&quot; to all
-           the valid hate mail that is now addressed to you.
+           complaint to valid source. You don't want to answer back with &quot;My
+           apologies, the script had an error, it won't happen agin&quot; to all
+           the valid angry mails that are now addressed to you.
 
 
 <p class="column8">
@@ -4329,7 +4345,7 @@ Procmail Tips
 
 <p>
 <p class="column8">
-        The Order of the flags does not matter in practice, but here is one
+        The order of the flags does not matter in practice, but here is one
         stylistic suggestion.  The idea here is that the most important
         flags are put to the left, like giving priority 1 for <samp class="word">aAeE</samp>, which
         affect the recipe immediately. Priority 2 is given to flag
@@ -4407,8 +4423,8 @@ Procmail Tips
         recipes that needs to match against both the header and the
         body. If you want a recipe to match only against the body and
         you're using 3.22, use the &quot;B ??&quot; modifier on the conditions.
-        See message
-        &lt;<a href="http://mailman.rwth-aachen.de/pipermail/procmail/2002-February/008355.html" >http://mailman.rwth-aachen.de/pipermail/procmail/2002-February/008355.html</A>&gt;.
+        See Procmail-L message titled
+        <a href="http://mailman.rwth-aachen.de/pipermail/procmail/2002-February/008355.html">&quot;Cannot get recipies to work properly&quot;</a>.
         So to be most pportable possible, convert all previously used
         condition lines from:
 
@@ -4438,9 +4454,9 @@ Procmail Tips
 
 
 
-  <a name="flag_w_and_recipe_with" id="flag_w_and_recipe_with"></a>
+  <a name="flag_w_and_recipe_with_pipe" id="flag_w_and_recipe_with_pipe"></a>
   <h2>
-      5.3 Flag w and recipe with |
+      5.3 Flag w and recipe with pipe(|)
 
   </h2>
 
@@ -4499,9 +4515,9 @@ Procmail Tips
 
 
 
-  <a name="flag_w_lock_file_and_recipe_with" id="flag_w_lock_file_and_recipe_with"></a>
+  <a name="flag_w_lock_file_and_recipe_with_pipe" id="flag_w_lock_file_and_recipe_with_pipe"></a>
   <h2>
-      5.4 Flag w, lock file and recipe with |
+      5.4 Flag w, lock file and recipe with pipe(|)
 
   </h2>
 
@@ -5281,7 +5297,7 @@ Procmail Tips
 <p>
 <p class="column10"><em class="quote10">
           Here are two ways to view or write regexps. Make up your own
-          mind. More on regular expressions ar &lt;<a href="http://regexlib.com/" >http://regexlib.com/</A>&gt;.</em>
+          mind. More on regular expressions at &lt;<a href="http://regexlib.com/" >http://regexlib.com/</A>&gt;.</em>
 
 
 
@@ -5299,6 +5315,10 @@ Procmail Tips
     </tr>
 </table>
 
+
+<p class="column8">
+        They think:
+
 <ul>
 	<li>I'm not planning on &quot;maintaining&quot; that code, as the syntax for
             XXX will not ever change, it's RFC or something.
@@ -5315,7 +5335,7 @@ Procmail Tips
 
 
 <p class="column9"><strong>
-         Where someone that immediately wants to abstract things says (This
+         Where someone that immediately wants to abstract things says (this
          is from philip's great Message-Id matching recipe)</strong>
 
 
@@ -5405,7 +5425,7 @@ Procmail Tips
 
 
 <p class="column8">
-        If you put a '$' after the '\/' match token then procmail will
+        If you put a <samp class="word">$</samp> after the <samp class="word">\/</samp> match token then procmail will
         include the matched newline if there's one there. Solution? Don't
         put a dollar sign there unless you really want a newline, use period
         that matches all but newline:
@@ -15669,7 +15689,7 @@ Procmail Tips
 
 
 <p class="column8">
-        These two perl files are available from my ftp directory.
+        These two perl files are available:
 
 <p>
 <table class="shade-normal">
@@ -15677,7 +15697,6 @@ Procmail Tips
     <td class="shade-normal-attrib" valign="top">
     <pre>
       # pm-xxscript.rc -- one line description string here
-      # $Id: pm-tips.html,v 1.18 2007/10/27 10:15:07 jaalto Exp $
       #
       #   File id
       #
@@ -16306,10 +16325,6 @@ Procmail Tips
 
 
 <p>
-<p class="column8">
-        <a href="http://www.math.fu-berlin.de/~guckes/mail/forwarding.html" >http://www.math.fu-berlin.de/~guckes/mail/forwarding.html</A>
-
-
 <p class="column10"><em class="quote10">
           ...I tried to make a softlink to ~/.forward, but then my
           procmail wouldn't run. When I made a real ~/.forward file, then it
@@ -22640,7 +22655,7 @@ This file has been automatically generated from plain text file
 with
 <a href="http://freshmeat.net/projects/perl-text2html">t2html</a>
 <br>
-Last updated: 2007-10-27 13:13<br>
+Last updated: 2008-03-09 15:55<br>
 </em    class="footer">
 </body>
 </html>
