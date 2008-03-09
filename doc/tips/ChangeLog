@@ -11,6 +11,8 @@
 	(4.5 Check and set PATH): Break PATH into separate lines.
 	(4.9 Beware putting comment in wrong places): Adjust example.
 	(5.2 Flags HB at top of recipe): Adjust URL.
+	(19.8 The .forward file must be real file): Remove non existing
+	URL http://www.math.fu-berlin.de/~guckes/mail/forwarding.html
 
 2007-10-27  Jari Aalto  <jari.aalto@cante.net>
 
