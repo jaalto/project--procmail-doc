@@ -1,6 +1,6 @@
 # .......................................................................
 #
-#   $Id: admin.bashrc,v 1.10 2004/04/05 15:55:38 jaalto Exp $
+#   $Id: admin.bashrc,v 1.11 2008/03/09 14:10:58 jaalto Exp $
 #
 #   These bash functions will help uploading files to Sourceforge project.
 #   You need:
@@ -23,26 +23,38 @@
 #
 #	SF_PM_DOC_USER=<sourceforge-login-name>
 #	SF_PM_DOC_USER_NAME="FirstName LastName"
-#	SF_PM_DOC_ROOT=~/cvs-projects/pm-doc/doc/tips
+#	SF_PM_DOC_ROOT=~/cvs-projects/pm-doc
 #
 #	source ~/cvs-projects/pm-doc/bin/admin.bashrc
 #
 # .......................................................................
 
-
 function sfpmdocinit ()
 {
     local id="sfpmdocinit"
+    local status=0
 
-    SF_PM_DOC_ROOT=${SF_PM_DOC_ROOT:-""}
+    if [ "$SF_PM_DOC_ROOT" = "" ]; then
+	echo "$id: directory SF_PM_DOC_ROOT not set." >&2
+	status=1
+    fi
 
     if [ "$SF_PM_DOC_USER" = "" ]; then
-       echo "$id: Identity SF_PM_DOC_USER unknown."
+	echo "$id: Identity SF_PM_DOC_USER unknown." >&2
+	status=1
     fi
 
     if [ "$SF_PM_DOC_USER_NAME" = "" ]; then
-       echo "$id: Identity SF_PM_DOC_USER_NAME unknown."
+	echo "$id: Identity SF_PM_DOC_USER_NAME unknown." >&2
+	status=1
     fi
+
+    return $status
+}
+
+function sfpmcheck ()
+{
+    sfpmdocinit || exit 1
 }
 
 function sfpmdocdate ()
@@ -79,7 +91,7 @@ function sfpmdocscp ()
 	return
     fi
 
-    scp $* $sfuser@shell.sourceforge.net:/home/groups/$sfproject/htdocs/
+    scp "$@" $sfuser@shell.sourceforge.net:/home/groups/$sfproject/htdocs/
 }
 
 function sfpmdocscptips ()
@@ -88,9 +100,13 @@ function sfpmdocscptips ()
     local sfproject=p/pm/pm-doc
     local to=/home/groups/$sfproject/htdocs/
 
-    cd ${SF_PM_DOCS_ROOT:-.} || return $?
-    pwd
-    scp pm-tip*html $sfuser@shell.sourceforge.net:$to
+    sfpmcheck
+
+    (
+	scp $SF_PM_DOC_ROOT/html/pm-tips.html \
+	    $SF_PM_DOC_ROOT/html/*.css \
+	    $sfuser@shell.sourceforge.net:$to
+    )
 }
 
 function sfpmdochtml ()
@@ -149,14 +165,10 @@ function sfpmdochtmlall ()
     local id="sfpmdochtmlall"
     echo "$id: started."
 
-    if [ "$SF_PM_DOC_ROOT" = "" ]; then
-       echo "$id: Where is the project root? Define SF_PM_DOC_ROOT"
-       return
-    fi
-
+    sfpmcheck
 
     (
-	cd $SF_PM_DOC_ROOT/doc/tips || return
+	cd $SF_PM_DOC_ROOT/doc/tips || return 1
 
 	for file in [a-z]*.txt;
 	do
@@ -167,11 +179,9 @@ function sfpmdochtmlall ()
     echo "$id: done."
 }
 
-
 function sfpmdoc_release ()
 {
     local id="sfpmdoc_release"
-
     local dir=/tmp
 
     if [ ! -d $dir ]; then
@@ -179,11 +189,7 @@ function sfpmdoc_release ()
 	return
     fi
 
-    if [ ! -d "$SF_PM_DOC_ROOT" ]; then
-	echo "$id: No SF_PM_DOC_ROOT [$SF_PM_DOC_ROOT]"
-	return
-    fi
-
+    sfpmcheck
 
     local opt=-9
     local cmd=gzip
@@ -199,7 +205,6 @@ function sfpmdoc_release ()
 	echo "$id: Removing old archive $dir/$file"
 	rm $dir/$file
     fi
-
 
     (
 
@@ -239,7 +244,5 @@ function sfpmdoc_release ()
 }
 
 sfpmdocinit
-
-export SF_PM_DOCS_ROOT
 
 # End of file
