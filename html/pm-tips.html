@@ -1,8 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<!--
-        Note: the LINK tags are used by advanced browsers.
--->
 <head>
 <title>
 Procmail Tips
@@ -10,31 +7,18 @@ Procmail Tips
 
 
 
-<!--    ......................................................................
-    META TAGS (FOR SEARCH ENGINES)
-    ......................................................................
--->
 
   <meta http-equiv="keywords"
 	CONTENT="procmail, sendmail, formail, mail, UBE, UCE, spam, filter">
 
-  <meta http-equiv="description"
-	content="">
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Expires" content="Thu,  8 May 2008 13:55:00 GMT">
+  <meta http-equiv="Expires" content="Thu, 20 Nov 2008 22:41:14 GMT">
 
 
 
-  <meta name="Generator"
-	content="2008-03-09 15:55 Perl program t2html v2007.1019.1708 http://freshmeat.net/projects/perl-text2html">
 
 
 
-<!--    ......................................................................
-    BUTTON DEFINITION START
-    ......................................................................
--->
 
 <link rel="stylesheet" type="text/css" href="pm-tips.css">
 </head>
@@ -42,13 +26,9 @@ Procmail Tips
 <body >
 
 
-<!--    ......................................................................
-    TABLE OF CONTENT START
-    ......................................................................
--->
 
 
-<div class="toc" id="toc">
+<div class="toc">
 <a name="toc" id="toc" class="name"></a>
 <h1>
     Table of Contents
@@ -56,1558 +36,1554 @@ Procmail Tips
 </h1>
 
 <a href="#document_id" class="toc">
-               1.0 Document id
-           </a>
-           <br>
+	1.0 Document id
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#general" class="toc">
-               1.1 General
-           </a>
-           <br>
+    <a href="#general" class="toc">
+	1.1 General
+    </a>
+    <br>
 <li>
-           <a href="#what_is_procmail" class="toc">
-               1.2 What is Procmail?
-           </a>
-           <br>
+    <a href="#what_is_procmail" class="toc">
+	1.2 What is Procmail?
+    </a>
+    <br>
 <li>
-           <a href="#abbreviations_and_thanks" class="toc">
-               1.3 Abbreviations and thanks
-           </a>
-           <br>
+    <a href="#abbreviations_and_thanks" class="toc">
+	1.3 Abbreviations and thanks
+    </a>
+    <br>
 <li>
-           <a href="#version_information" class="toc">
-               1.4 Version information
-           </a>
-           <br>
+    <a href="#version_information" class="toc">
+	1.4 Version information
+    </a>
+    <br>
 <li>
-           <a href="#document_layout_and_maintenance" class="toc">
-               1.5 Document layout and maintenance
-           </a>
-           <br>
+    <a href="#document_layout_and_maintenance" class="toc">
+	1.5 Document layout and maintenance
+    </a>
+    <br>
 <li>
-           <a href="#about_presented_recipes" class="toc">
-               1.6 About presented recipes
-           </a>
-           <br>
+    <a href="#about_presented_recipes" class="toc">
+	1.6 About presented recipes
+    </a>
+    <br>
 <li>
-           <a href="#variables_used_in_recipes" class="toc">
-               1.7 Variables used in recipes
-           </a>
-           <br>
+    <a href="#variables_used_in_recipes" class="toc">
+	1.7 Variables used in recipes
+    </a>
+    <br>
 <li>
-           <a href="#about_useless_use_of_cat_award" class="toc">
-               1.8 About &quot;useless use of cat award&quot;
-           </a>
-           <br>
+    <a href="#about_useless_use_of_cat_award" class="toc">
+	1.8 About &quot;useless use of cat award&quot;
+    </a>
+    <br>
 </ul>
 <a href="#procmail_pointers" class="toc">
-               2.0 Procmail pointers
-           </a>
-           <br>
+	2.0 Procmail pointers
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#where_is_procmail_developed" class="toc">
-               2.1 Where is procmail developed
-           </a>
-           <br>
+    <a href="#where_is_procmail_developed" class="toc">
+	2.1 Where is procmail developed
+    </a>
+    <br>
 <li>
-           <a href="#procmail_resources" class="toc">
-               2.2 Procmail resources
-           </a>
-           <br>
+    <a href="#procmail_resources" class="toc">
+	2.2 Procmail resources
+    </a>
+    <br>
 <li>
-           <a href="#procmail_mode_for_emacs" class="toc">
-               2.3 Procmail mode for Emacs
-           </a>
-           <br>
+    <a href="#procmail_mode_for_emacs" class="toc">
+	2.3 Procmail mode for Emacs
+    </a>
+    <br>
 <li>
-           <a href="#procmail_module_library_project" class="toc">
-               2.4 Procmail module library project
-           </a>
-           <br>
+    <a href="#procmail_module_library_project" class="toc">
+	2.4 Procmail module library project
+    </a>
+    <br>
 <li>
-           <a href="#procmail_code_to_filter_ube" class="toc">
-               2.5 Procmail code to filter UBE
-           </a>
-           <br>
+    <a href="#procmail_code_to_filter_ube" class="toc">
+	2.5 Procmail code to filter UBE
+    </a>
+    <br>
 </ul>
 <a href="#dry_run_testing" class="toc">
-               3.0 Dry run testing
-           </a>
-           <br>
+	3.0 Dry run testing
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#what_is_dry_run_testing" class="toc">
-               3.1 What is dry run testing?
-           </a>
-           <br>
+    <a href="#what_is_dry_run_testing" class="toc">
+	3.1 What is dry run testing?
+    </a>
+    <br>
 <li>
-           <a href="#why_the_from_field_is_not_okay_after_dry" class="toc">
-               3.2 Why the From field is not okay after dry run?
-           </a>
-           <br>
+    <a href="#why_the_from_field_is_not_okay_after_dry" class="toc">
+	3.2 Why the From field is not okay after dry run?
+    </a>
+    <br>
 <li>
-           <a href="#getting_default_value_of_a_procmail_variable" class="toc">
-               3.3 Getting default value of a procmail variable
-           </a>
-           <br>
+    <a href="#getting_default_value_of_a_procmail_variable" class="toc">
+	3.3 Getting default value of a procmail variable
+    </a>
+    <br>
 </ul>
 <a href="#things_to_remember" class="toc">
-               4.0 Things to remember
-           </a>
-           <br>
+	4.0 Things to remember
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#get_the_newest_procmail" class="toc">
-               4.1 Get the newest procmail
-           </a>
-           <br>
+    <a href="#get_the_newest_procmail" class="toc">
+	4.1 Get the newest procmail
+    </a>
+    <br>
 <li>
-           <a href="#cshs_tilde_is_not_supported" class="toc">
-               4.2 Csh's tilde is not supported
-           </a>
-           <br>
+    <a href="#cshs_tilde_is_not_supported" class="toc">
+	4.2 Csh's tilde is not supported
+    </a>
+    <br>
 <li>
-           <a href="#be_sure_to_write_the_recipe_starting_right" class="toc">
-               4.3 Be sure to write the recipe starting right
-           </a>
-           <br>
+    <a href="#be_sure_to_write_the_recipe_starting_right" class="toc">
+	4.3 Be sure to write the recipe starting right
+    </a>
+    <br>
 <li>
-           <a href="#always_set_shell" class="toc">
-               4.4 Always set SHELL
-           </a>
-           <br>
+    <a href="#always_set_shell" class="toc">
+	4.4 Always set SHELL
+    </a>
+    <br>
 <li>
-           <a href="#check_and_set_path" class="toc">
-               4.5 Check and set PATH
-           </a>
-           <br>
+    <a href="#check_and_set_path" class="toc">
+	4.5 Check and set PATH
+    </a>
+    <br>
 <li>
-           <a href="#keep_the_log_on_all_the_time" class="toc">
-               4.6 Keep the log on all the time
-           </a>
-           <br>
+    <a href="#keep_the_log_on_all_the_time" class="toc">
+	4.6 Keep the log on all the time
+    </a>
+    <br>
 <li>
-           <a href="#never_add_a_trailing_slash_for_directories" class="toc">
-               4.7 Never add a trailing slash for directories
-           </a>
-           <br>
+    <a href="#never_add_a_trailing_slash_for_directories" class="toc">
+	4.7 Never add a trailing slash for directories
+    </a>
+    <br>
 <li>
-           <a href="#remember_what_term_delivered_means" class="toc">
-               4.8 Remember what term DELIVERED means
-           </a>
-           <br>
+    <a href="#remember_what_term_delivered_means" class="toc">
+	4.8 Remember what term DELIVERED means
+    </a>
+    <br>
 <li>
-           <a href="#beware_putting_comment_in_wrong_places" class="toc">
-               4.9 Beware putting comment in wrong places
-           </a>
-           <br>
+    <a href="#beware_putting_comment_in_wrong_places" class="toc">
+	4.9 Beware putting comment in wrong places
+    </a>
+    <br>
 <li>
-           <a href="#brace_placement" class="toc">
-               4.10 Brace placement
-           </a>
-           <br>
+    <a href="#brace_placement" class="toc">
+	4.10 Brace placement
+    </a>
+    <br>
 <li>
-           <a href="#local_lockfile_usage" class="toc">
-               4.11 Local lockfile usage
-           </a>
-           <br>
+    <a href="#local_lockfile_usage" class="toc">
+	4.11 Local lockfile usage
+    </a>
+    <br>
 <li>
-           <a href="#global_lockfile" class="toc">
-               4.12 Global lockfile
-           </a>
-           <br>
+    <a href="#global_lockfile" class="toc">
+	4.12 Global lockfile
+    </a>
+    <br>
 <li>
-           <a href="#gee_where_do_i_put_all_those" class="toc">
-               4.13 Gee, where do I put all those ! * $ ??
-           </a>
-           <br>
+    <a href="#gee_where_do_i_put_all_those" class="toc">
+	4.13 Gee, where do I put all those ! * $ ??
+    </a>
+    <br>
 <li>
-           <a href="#if_you_send_an_automatic_reply_use_xloop_header" class="toc">
-               4.14 If you Send an automatic reply, use X-loop header
-           </a>
-           <br>
+    <a href="#if_you_send_an_automatic_reply_use_xloop_header" class="toc">
+	4.14 If you Send an automatic reply, use X-loop header
+    </a>
+    <br>
 <li>
-           <a href="#avoid_extra_shell_layer_and_check_command_for_shellmetas" class="toc">
-               4.15 Avoid extra shell layer and check command for SHELLMETAS
-           </a>
-           <br>
+    <a href="#avoid_extra_shell_layer_and_check_command_for_shellmetas" class="toc">
+	4.15 Avoid extra shell layer and check command for SHELLMETAS
+    </a>
+    <br>
 <li>
-           <a href="#think_what_shell_commands_you_use" class="toc">
-               4.16 Think what shell commands you use
-           </a>
-           <br>
+    <a href="#think_what_shell_commands_you_use" class="toc">
+	4.16 Think what shell commands you use
+    </a>
+    <br>
 <li>
-           <a href="#using_absolute_paths_when_calling_a_shell_program" class="toc">
-               4.17 Using absolute paths when calling a shell program
-           </a>
-           <br>
+    <a href="#using_absolute_paths_when_calling_a_shell_program" class="toc">
+	4.17 Using absolute paths when calling a shell program
+    </a>
+    <br>
 <li>
-           <a href="#disabling_a_recipe_temporarily" class="toc">
-               4.18 Disabling a recipe temporarily
-           </a>
-           <br>
+    <a href="#disabling_a_recipe_temporarily" class="toc">
+	4.18 Disabling a recipe temporarily
+    </a>
+    <br>
 <li>
-           <a href="#keep_message_backup_no_matter_what" class="toc">
-               4.19 Keep message backup, no matter what
-           </a>
-           <br>
+    <a href="#keep_message_backup_no_matter_what" class="toc">
+	4.19 Keep message backup, no matter what
+    </a>
+    <br>
 <li>
-           <a href="#order_of_the_procmail_recipes" class="toc">
-               4.20 Order of the procmail recipes
-           </a>
-           <br>
+    <a href="#order_of_the_procmail_recipes" class="toc">
+	4.20 Order of the procmail recipes
+    </a>
+    <br>
 </ul>
 <a href="#procmail_flags" class="toc">
-               5.0 Procmail flags
-           </a>
-           <br>
+	5.0 Procmail flags
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#the_order_of_the_flags" class="toc">
-               5.1 The order of the flags
-           </a>
-           <br>
+    <a href="#the_order_of_the_flags" class="toc">
+	5.1 The order of the flags
+    </a>
+    <br>
 <li>
-           <a href="#flags_hb_at_top_of_recipe_warning" class="toc">
-               5.2 Flags HB at top of recipe (warning)
-           </a>
-           <br>
+    <a href="#flags_hb_at_top_of_recipe_warning" class="toc">
+	5.2 Flags HB at top of recipe (warning)
+    </a>
+    <br>
 <li>
-           <a href="#flag_w_and_recipe_with_pipe" class="toc">
-               5.3 Flag w and recipe with pipe(|)
-           </a>
-           <br>
+    <a href="#flag_w_and_recipe_with_pipe" class="toc">
+	5.3 Flag w and recipe with pipe(|)
+    </a>
+    <br>
 <li>
-           <a href="#flag_w_lock_file_and_recipe_with_pipe" class="toc">
-               5.4 Flag w, lock file and recipe with pipe(|)
-           </a>
-           <br>
+    <a href="#flag_w_lock_file_and_recipe_with_pipe" class="toc">
+	5.4 Flag w, lock file and recipe with pipe(|)
+    </a>
+    <br>
 <li>
-           <a href="#flag_f_and_w_together" class="toc">
-               5.5 Flag f and w together
-           </a>
-           <br>
+    <a href="#flag_f_and_w_together" class="toc">
+	5.5 Flag f and w together
+    </a>
+    <br>
 <li>
-           <a href="#flags_h_and_b" class="toc">
-               5.6 Flags h and b
-           </a>
-           <br>
+    <a href="#flags_h_and_b" class="toc">
+	5.6 Flags h and b
+    </a>
+    <br>
 <li>
-           <a href="#flag_h_and_sinking_to_devnull" class="toc">
-               5.7 Flag h and sinking to /dev/null
-           </a>
-           <br>
+    <a href="#flag_h_and_sinking_to_devnull" class="toc">
+	5.7 Flag h and sinking to /dev/null
+    </a>
+    <br>
 <li>
-           <a href="#flag_i_and_pipe_flag_f" class="toc">
-               5.8 Flag i and pipe flag f
-           </a>
-           <br>
+    <a href="#flag_i_and_pipe_flag_f" class="toc">
+	5.8 Flag i and pipe flag f
+    </a>
+    <br>
 <li>
-           <a href="#flag_r" class="toc">
-               5.9 Flag r
-           </a>
-           <br>
+    <a href="#flag_r" class="toc">
+	5.9 Flag r
+    </a>
+    <br>
 <li>
-           <a href="#flag_cs_background" class="toc">
-               5.10 Flag c's background
-           </a>
-           <br>
+    <a href="#flag_cs_background" class="toc">
+	5.10 Flag c's background
+    </a>
+    <br>
 <li>
-           <a href="#flag_c_before_nested_block_forks_a_child" class="toc">
-               5.11 Flag c before nested block forks a child
-           </a>
-           <br>
+    <a href="#flag_c_before_nested_block_forks_a_child" class="toc">
+	5.11 Flag c before nested block forks a child
+    </a>
+    <br>
 <li>
-           <a href="#flag_c_and_understanding_possible_forking_penalty" class="toc">
-               5.12 Flag c and understanding possible forking penalty
-           </a>
-           <br>
+    <a href="#flag_c_and_understanding_possible_forking_penalty" class="toc">
+	5.12 Flag c and understanding possible forking penalty
+    </a>
+    <br>
 <li>
-           <a href="#flags_before_nested_block" class="toc">
-               5.13 Flags before nested block
-           </a>
-           <br>
+    <a href="#flags_before_nested_block" class="toc">
+	5.13 Flags before nested block
+    </a>
+    <br>
 <li>
-           <a href="#flags_aaee_tutorial" class="toc">
-               5.14 Flags aAeE tutorial
-           </a>
-           <br>
+    <a href="#flags_aaee_tutorial" class="toc">
+	5.14 Flags aAeE tutorial
+    </a>
+    <br>
 </ul>
 <a href="#matching_and_regexps_regular_expressions" class="toc">
-               6.0 Matching and regexps (regular expressions)
-           </a>
-           <br>
+	6.0 Matching and regexps (regular expressions)
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#philosophy_of_abstraction_in_regexps" class="toc">
-               6.1 Philosophy of abstraction in regexps
-           </a>
-           <br>
+    <a href="#philosophy_of_abstraction_in_regexps" class="toc">
+	6.1 Philosophy of abstraction in regexps
+    </a>
+    <br>
 <li>
-           <a href="#matches_are_not_casesensitive" class="toc">
-               6.2 Matches are not case-sensitive
-           </a>
-           <br>
+    <a href="#matches_are_not_casesensitive" class="toc">
+	6.2 Matches are not case-sensitive
+    </a>
+    <br>
 <li>
-           <a href="#procmail_uses_multi_line_matches" class="toc">
-               6.3 Procmail uses multi line matches
-           </a>
-           <br>
+    <a href="#procmail_uses_multi_line_matches" class="toc">
+	6.3 Procmail uses multi line matches
+    </a>
+    <br>
 <li>
-           <a href="#headers_are_unfolded_before_matching" class="toc">
-               6.4 Headers are unfolded before matching
-           </a>
-           <br>
+    <a href="#headers_are_unfolded_before_matching" class="toc">
+	6.4 Headers are unfolded before matching
+    </a>
+    <br>
 <li>
-           <a href="#improving_spacetab_syndrome" class="toc">
-               6.5 Improving Space-Tab syndrome
-           </a>
-           <br>
+    <a href="#improving_spacetab_syndrome" class="toc">
+	6.5 Improving Space-Tab syndrome
+    </a>
+    <br>
 <li>
-           <a href="#handling_exclamation_character" class="toc">
-               6.6 Handling exclamation character
-           </a>
-           <br>
+    <a href="#handling_exclamation_character" class="toc">
+	6.6 Handling exclamation character
+    </a>
+    <br>
 <li>
-           <a href="#rules_for_generating_a_character_class" class="toc">
-               6.7 Rules for generating a character class
-           </a>
-           <br>
+    <a href="#rules_for_generating_a_character_class" class="toc">
+	6.7 Rules for generating a character class
+    </a>
+    <br>
 <li>
-           <a href="#matching_space_at_the_end_of_condition" class="toc">
-               6.8 Matching space at the end of condition
-           </a>
-           <br>
+    <a href="#matching_space_at_the_end_of_condition" class="toc">
+	6.8 Matching space at the end of condition
+    </a>
+    <br>
 <li>
-           <a href="#beware_leading_backslash" class="toc">
-               6.9 Beware leading backslash
-           </a>
-           <br>
+    <a href="#beware_leading_backslash" class="toc">
+	6.9 Beware leading backslash
+    </a>
+    <br>
 <li>
-           <a href="#correct_use_of_to_macro" class="toc">
-               6.10 Correct use of TO Macro
-           </a>
-           <br>
+    <a href="#correct_use_of_to_macro" class="toc">
+	6.10 Correct use of TO Macro
+    </a>
+    <br>
 <li>
-           <a href="#procmails_regexp_engine" class="toc">
-               6.11 Procmail's regexp engine
-           </a>
-           <br>
+    <a href="#procmails_regexp_engine" class="toc">
+	6.11 Procmail's regexp engine
+    </a>
+    <br>
 <li>
-           <a href="#procmail_and_egrep_differences" class="toc">
-               6.12 Procmail and egrep differences
-           </a>
-           <br>
+    <a href="#procmail_and_egrep_differences" class="toc">
+	6.12 Procmail and egrep differences
+    </a>
+    <br>
 <li>
-           <a href="#understanding_procmails_minimal_matching_stingy_vs_greedy" class="toc">
-               6.13 Understanding procmail's minimal matching (stingy vs. greedy)
-           </a>
-           <br>
+    <a href="#understanding_procmails_minimal_matching_stingy_vs_greedy" class="toc">
+	6.13 Understanding procmail's minimal matching (stingy vs. greedy)
+    </a>
+    <br>
 <li>
-           <a href="#explaining_and" class="toc">
-               6.14 Explaining \/ and ()\/
-           </a>
-           <br>
+    <a href="#explaining_and" class="toc">
+	6.14 Explaining \/ and ()\/
+    </a>
+    <br>
 <li>
-           <a href="#explaining__and" class="toc">
-               6.15 Explaining  ^^ and ^
-           </a>
-           <br>
+    <a href="#explaining__and" class="toc">
+	6.15 Explaining  ^^ and ^
+    </a>
+    <br>
 <li>
-           <a href="#anding_traditionally" class="toc">
-               6.16 ANDing traditionally
-           </a>
-           <br>
+    <a href="#anding_traditionally" class="toc">
+	6.16 ANDing traditionally
+    </a>
+    <br>
 <li>
-           <a href="#oring_traditionally" class="toc">
-               6.17 ORing traditionally
-           </a>
-           <br>
+    <a href="#oring_traditionally" class="toc">
+	6.17 ORing traditionally
+    </a>
+    <br>
 <li>
-           <a href="#oring_and_score_recipe" class="toc">
-               6.18 ORing and score recipe
-           </a>
-           <br>
+    <a href="#oring_and_score_recipe" class="toc">
+	6.18 ORing and score recipe
+    </a>
+    <br>
 <li>
-           <a href="#oring_by_using_de_morgan_rules" class="toc">
-               6.19 ORing by using De Morgan rules
-           </a>
-           <br>
+    <a href="#oring_by_using_de_morgan_rules" class="toc">
+	6.19 ORing by using De Morgan rules
+    </a>
+    <br>
 </ul>
 <a href="#variables" class="toc">
-               7.0 Variables
-           </a>
-           <br>
+	7.0 Variables
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#setting_and_unsetting_variables" class="toc">
-               7.1 Setting and unsetting variables
-           </a>
-           <br>
+    <a href="#setting_and_unsetting_variables" class="toc">
+	7.1 Setting and unsetting variables
+    </a>
+    <br>
 <li>
-           <a href="#variable_initialization_and_sh_syntax" class="toc">
-               7.2 Variable initialization and sh syntax
-           </a>
-           <br>
+    <a href="#variable_initialization_and_sh_syntax" class="toc">
+	7.2 Variable initialization and sh syntax
+    </a>
+    <br>
 <li>
-           <a href="#testing_variables" class="toc">
-               7.3 Testing variables
-           </a>
-           <br>
+    <a href="#testing_variables" class="toc">
+	7.3 Testing variables
+    </a>
+    <br>
 <li>
-           <a href="#what_does" class="toc">
-               7.4 What does $\VAR mean?
-           </a>
-           <br>
+    <a href="#what_does" class="toc">
+	7.4 What does $\VAR mean?
+    </a>
+    <br>
 <li>
-           <a href="#common_pitfalls_when_using_variables" class="toc">
-               7.5 Common pitfalls when using variables
-           </a>
-           <br>
+    <a href="#common_pitfalls_when_using_variables" class="toc">
+	7.5 Common pitfalls when using variables
+    </a>
+    <br>
 <li>
-           <a href="#quoting_using_single_or_double_quotes" class="toc">
-               7.6 Quoting: Using single or double quotes
-           </a>
-           <br>
+    <a href="#quoting_using_single_or_double_quotes" class="toc">
+	7.6 Quoting: Using single or double quotes
+    </a>
+    <br>
 <li>
-           <a href="#quoting_passing_values_to_an_external_program" class="toc">
-               7.7 Quoting: Passing values to an external program
-           </a>
-           <br>
+    <a href="#quoting_passing_values_to_an_external_program" class="toc">
+	7.7 Quoting: Passing values to an external program
+    </a>
+    <br>
 <li>
-           <a href="#passing_values_from_an_external_program" class="toc">
-               7.8 Passing values from an external program
-           </a>
-           <br>
+    <a href="#passing_values_from_an_external_program" class="toc">
+	7.8 Passing values from an external program
+    </a>
+    <br>
 <li>
-           <a href="#incrementing_a_variable_by_a_value_n" class="toc">
-               7.9 Incrementing a variable by a value N
-           </a>
-           <br>
+    <a href="#incrementing_a_variable_by_a_value_n" class="toc">
+	7.9 Incrementing a variable by a value N
+    </a>
+    <br>
 <li>
-           <a href="#comparing_values" class="toc">
-               7.10 Comparing values
-           </a>
-           <br>
+    <a href="#comparing_values" class="toc">
+	7.10 Comparing values
+    </a>
+    <br>
 <li>
-           <a href="#strings_how_many_characters_are_there_in_a_given" class="toc">
-               7.11 Strings: How many characters are there in a given string?
-           </a>
-           <br>
+    <a href="#strings_how_many_characters_are_there_in_a_given" class="toc">
+	7.11 Strings: How many characters are there in a given string?
+    </a>
+    <br>
 <li>
-           <a href="#strings_how_to_strip_trailing_newline" class="toc">
-               7.12 Strings: How to strip trailing newline.
-           </a>
-           <br>
+    <a href="#strings_how_to_strip_trailing_newline" class="toc">
+	7.12 Strings: How to strip trailing newline.
+    </a>
+    <br>
 <li>
-           <a href="#strings_deriving_the_last_n_characters_of_a_string" class="toc">
-               7.13 Strings: deriving the last N characters of a string.
-           </a>
-           <br>
+    <a href="#strings_deriving_the_last_n_characters_of_a_string" class="toc">
+	7.13 Strings: deriving the last N characters of a string.
+    </a>
+    <br>
 <li>
-           <a href="#strings_getting_partial_matches_from_a_string" class="toc">
-               7.14 Strings: Getting partial matches from a string.
-           </a>
-           <br>
+    <a href="#strings_getting_partial_matches_from_a_string" class="toc">
+	7.14 Strings: Getting partial matches from a string.
+    </a>
+    <br>
 <li>
-           <a href="#strings_procmail_string_manipulation_example" class="toc">
-               7.15 Strings: Procmail string manipulation example
-           </a>
-           <br>
+    <a href="#strings_procmail_string_manipulation_example" class="toc">
+	7.15 Strings: Procmail string manipulation example
+    </a>
+    <br>
 <li>
-           <a href="#how_to_raise_a_flag_if_the_message_was" class="toc">
-               7.16 How to raise a flag if the message was filed
-           </a>
-           <br>
+    <a href="#how_to_raise_a_flag_if_the_message_was" class="toc">
+	7.16 How to raise a flag if the message was filed
+    </a>
+    <br>
 <li>
-           <a href="#dollar_sign_in_condition_lines" class="toc">
-               7.17 Dollar sign in condition lines.
-           </a>
-           <br>
+    <a href="#dollar_sign_in_condition_lines" class="toc">
+	7.17 Dollar sign in condition lines.
+    </a>
+    <br>
 <li>
-           <a href="#finding_mysterious_foo_variable" class="toc">
-               7.18 Finding mysterious foo variable
-           </a>
-           <br>
+    <a href="#finding_mysterious_foo_variable" class="toc">
+	7.18 Finding mysterious foo variable
+    </a>
+    <br>
 <li>
-           <a href="#storing_code_to_variable" class="toc">
-               7.19 Storing code to variable
-           </a>
-           <br>
+    <a href="#storing_code_to_variable" class="toc">
+	7.19 Storing code to variable
+    </a>
+    <br>
 <li>
-           <a href="#getting_headers_into_a_variable" class="toc">
-               7.20 Getting headers into a variable
-           </a>
-           <br>
+    <a href="#getting_headers_into_a_variable" class="toc">
+	7.20 Getting headers into a variable
+    </a>
+    <br>
 <li>
-           <a href="#converting_value_to_lowercase" class="toc">
-               7.21 Converting value to lowercase
-           </a>
-           <br>
+    <a href="#converting_value_to_lowercase" class="toc">
+	7.21 Converting value to lowercase
+    </a>
+    <br>
 </ul>
 <a href="#suggestions_and_miscellaneous" class="toc">
-               8.0 Suggestions and miscellaneous
-           </a>
-           <br>
+	8.0 Suggestions and miscellaneous
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#speeding_up_procmail" class="toc">
-               8.1 Speeding up procmail
-           </a>
-           <br>
+    <a href="#speeding_up_procmail" class="toc">
+	8.1 Speeding up procmail
+    </a>
+    <br>
 <li>
-           <a href="#see_the_procmail_installations_examples" class="toc">
-               8.2 See the procmail installation's examples
-           </a>
-           <br>
+    <a href="#see_the_procmail_installations_examples" class="toc">
+	8.2 See the procmail installation's examples
+    </a>
+    <br>
 <li>
-           <a href="#printing_statistics_of_your_incoming_mail" class="toc">
-               8.3 Printing statistics of your incoming mail
-           </a>
-           <br>
+    <a href="#printing_statistics_of_your_incoming_mail" class="toc">
+	8.3 Printing statistics of your incoming mail
+    </a>
+    <br>
 <li>
-           <a href="#storing_ube_mailboxes_outside_of_quota" class="toc">
-               8.4 Storing UBE mailboxes outside of quota
-           </a>
-           <br>
+    <a href="#storing_ube_mailboxes_outside_of_quota" class="toc">
+	8.4 Storing UBE mailboxes outside of quota
+    </a>
+    <br>
 <li>
-           <a href="#using_first_530_lines_from_the_message" class="toc">
-               8.5 Using first 5-30 lines from the message
-           </a>
-           <br>
+    <a href="#using_first_530_lines_from_the_message" class="toc">
+	8.5 Using first 5-30 lines from the message
+    </a>
+    <br>
 <li>
-           <a href="#using_cat_or_echo_in_scripts" class="toc">
-               8.6 Using cat or echo in scripts?
-           </a>
-           <br>
+    <a href="#using_cat_or_echo_in_scripts" class="toc">
+	8.6 Using cat or echo in scripts?
+    </a>
+    <br>
 <li>
-           <a href="#how_to_run_an_extra_shell_command_as_a" class="toc">
-               8.7 How to run an extra shell command as a side effect?
-           </a>
-           <br>
+    <a href="#how_to_run_an_extra_shell_command_as_a" class="toc">
+	8.7 How to run an extra shell command as a side effect?
+    </a>
+    <br>
 <li>
-           <a href="#forcing_ok_return_status_from_shell_script" class="toc">
-               8.8 Forcing &quot;ok&quot; return status from shell script
-           </a>
-           <br>
+    <a href="#forcing_ok_return_status_from_shell_script" class="toc">
+	8.8 Forcing &quot;ok&quot; return status from shell script
+    </a>
+    <br>
 <li>
-           <a href="#using_grep_with_file_lists_to_mach_messages" class="toc">
-               8.9 Using grep with file lists to mach messages
-           </a>
-           <br>
+    <a href="#using_grep_with_file_lists_to_mach_messages" class="toc">
+	8.9 Using grep with file lists to mach messages
+    </a>
+    <br>
 <li>
-           <a href="#keep_simple_header_log" class="toc">
-               9.1 Keep simple header log
-           </a>
-           <br>
+    <a href="#keep_simple_header_log" class="toc">
+	9.1 Keep simple header log
+    </a>
+    <br>
 <li>
-           <a href="#gzipping_messages" class="toc">
-               9.2 Gzipping messages
-           </a>
-           <br>
+    <a href="#gzipping_messages" class="toc">
+	9.2 Gzipping messages
+    </a>
+    <br>
 <li>
-           <a href="#emergency_stop_for_your_procmailrc" class="toc">
-               9.3 Emergency stop for your .procmailrc
-           </a>
-           <br>
+    <a href="#emergency_stop_for_your_procmailrc" class="toc">
+	9.3 Emergency stop for your .procmailrc
+    </a>
+    <br>
 </ul>
 <a href="#scoring" class="toc">
-               10.0 Scoring
-           </a>
-           <br>
+	10.0 Scoring
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#using_scores_by_an_example" class="toc">
-               10.1 Using scores by an example
-           </a>
-           <br>
+    <a href="#using_scores_by_an_example" class="toc">
+	10.1 Using scores by an example
+    </a>
+    <br>
 <li>
-           <a href="#brief_score_tutorial" class="toc">
-               10.2 Brief Score tutorial
-           </a>
-           <br>
+    <a href="#brief_score_tutorial" class="toc">
+	10.2 Brief Score tutorial
+    </a>
+    <br>
 <li>
-           <a href="#scores_scope" class="toc">
-               10.3 Score's scope
-           </a>
-           <br>
+    <a href="#scores_scope" class="toc">
+	10.3 Score's scope
+    </a>
+    <br>
 <li>
-           <a href="#counting_length_of_a_string" class="toc">
-               10.4 Counting length of a string
-           </a>
-           <br>
+    <a href="#counting_length_of_a_string" class="toc">
+	10.4 Counting length of a string
+    </a>
+    <br>
 <li>
-           <a href="#counting_lines_in_a_message_adding_lines_header" class="toc">
-               10.5 Counting lines in a message (Adding Lines: header)
-           </a>
-           <br>
+    <a href="#counting_lines_in_a_message_adding_lines_header" class="toc">
+	10.5 Counting lines in a message (Adding Lines: header)
+    </a>
+    <br>
 <li>
-           <a href="#determining_if_body_is_longer_than_header" class="toc">
-               10.6 Determining if body is longer than header
-           </a>
-           <br>
+    <a href="#determining_if_body_is_longer_than_header" class="toc">
+	10.6 Determining if body is longer than header
+    </a>
+    <br>
 <li>
-           <a href="#matching_last_received_header" class="toc">
-               10.7 Matching last Received header
-           </a>
-           <br>
+    <a href="#matching_last_received_header" class="toc">
+	10.7 Matching last Received header
+    </a>
+    <br>
 <li>
-           <a href="#testing_value_range_with_scoring_bogofilter" class="toc">
-               10.8 Testing value range with scoring (bogofilter)
-           </a>
-           <br>
+    <a href="#testing_value_range_with_scoring_bogofilter" class="toc">
+	10.8 Testing value range with scoring (bogofilter)
+    </a>
+    <br>
 <li>
-           <a href="#how_to_add_contentlength_header" class="toc">
-               10.9 How to add Content-Length header
-           </a>
-           <br>
+    <a href="#how_to_add_contentlength_header" class="toc">
+	10.9 How to add Content-Length header
+    </a>
+    <br>
 <li>
-           <a href="#testing_message_size_or_number_of_lines" class="toc">
-               10.10 Testing message size or number of lines
-           </a>
-           <br>
+    <a href="#testing_message_size_or_number_of_lines" class="toc">
+	10.10 Testing message size or number of lines
+    </a>
+    <br>
 <li>
-           <a href="#counting_commas_with_recursive_includerc" class="toc">
-               10.11 Counting commas with recursive includerc
-           </a>
-           <br>
+    <a href="#counting_commas_with_recursive_includerc" class="toc">
+	10.11 Counting commas with recursive includerc
+    </a>
+    <br>
 </ul>
 <a href="#formail_usage" class="toc">
-               11.0 Formail usage
-           </a>
-           <br>
+	11.0 Formail usage
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#fetching_fields_with_formail_x" class="toc">
-               11.1 Fetching fields with formail -x
-           </a>
-           <br>
+    <a href="#fetching_fields_with_formail_x" class="toc">
+	11.1 Fetching fields with formail -x
+    </a>
+    <br>
 <li>
-           <a href="#always_use_formails_rt_switch" class="toc">
-               11.2 Always use formail's -rt switch
-           </a>
-           <br>
+    <a href="#always_use_formails_rt_switch" class="toc">
+	11.2 Always use formail's -rt switch
+    </a>
+    <br>
 <li>
-           <a href="#using_rt_and_rewriting_the_from_address" class="toc">
-               11.3 Using -rt and rewriting the From address
-           </a>
-           <br>
+    <a href="#using_rt_and_rewriting_the_from_address" class="toc">
+	11.3 Using -rt and rewriting the From address
+    </a>
+    <br>
 <li>
-           <a href="#formail_rt_and_resentfrom_header" class="toc">
-               11.4 Formail -rt and Resent-From header
-           </a>
-           <br>
+    <a href="#formail_rt_and_resentfrom_header" class="toc">
+	11.4 Formail -rt and Resent-From header
+    </a>
+    <br>
 <li>
-           <a href="#quoting_the_message" class="toc">
-               11.5 Quoting the message
-           </a>
-           <br>
+    <a href="#quoting_the_message" class="toc">
+	11.5 Quoting the message
+    </a>
+    <br>
 <li>
-           <a href="#without_quoting_the_message" class="toc">
-               11.6 Without quoting the message
-           </a>
-           <br>
+    <a href="#without_quoting_the_message" class="toc">
+	11.6 Without quoting the message
+    </a>
+    <br>
 <li>
-           <a href="#how_to_include_headers_and_body_to_the_reply" class="toc">
-               11.7 How to include headers and body to the reply message
-           </a>
-           <br>
+    <a href="#how_to_include_headers_and_body_to_the_reply" class="toc">
+	11.7 How to include headers and body to the reply message
+    </a>
+    <br>
 <li>
-           <a href="#adding_text_to_the_beginning_of_message" class="toc">
-               11.8 Adding text to the beginning of message
-           </a>
-           <br>
+    <a href="#adding_text_to_the_beginning_of_message" class="toc">
+	11.8 Adding text to the beginning of message
+    </a>
+    <br>
 <li>
-           <a href="#adding_text_to_the_end_of_message" class="toc">
-               11.9 Adding text to the end of message
-           </a>
-           <br>
+    <a href="#adding_text_to_the_end_of_message" class="toc">
+	11.9 Adding text to the end of message
+    </a>
+    <br>
 <li>
-           <a href="#adding_text_before_quoted_message" class="toc">
-               11.10 Adding text before quoted message
-           </a>
-           <br>
+    <a href="#adding_text_before_quoted_message" class="toc">
+	11.10 Adding text before quoted message
+    </a>
+    <br>
 <li>
-           <a href="#adding_extra_headers_from_file" class="toc">
-               11.11 Adding extra headers from file
-           </a>
-           <br>
+    <a href="#adding_extra_headers_from_file" class="toc">
+	11.11 Adding extra headers from file
+    </a>
+    <br>
 <li>
-           <a href="#splitting_digest" class="toc">
-               11.12 Splitting digest
-           </a>
-           <br>
+    <a href="#splitting_digest" class="toc">
+	11.12 Splitting digest
+    </a>
+    <br>
 <li>
-           <a href="#mailbox_splitting_to_individual_files" class="toc">
-               11.13 Mailbox: Splitting to individual files
-           </a>
-           <br>
+    <a href="#mailbox_splitting_to_individual_files" class="toc">
+	11.13 Mailbox: Splitting to individual files
+    </a>
+    <br>
 <li>
-           <a href="#mailbox_extracting_all_from_addresses_from_mailbox" class="toc">
-               11.14 Mailbox: Extracting all From addresses from mailbox
-           </a>
-           <br>
+    <a href="#mailbox_extracting_all_from_addresses_from_mailbox" class="toc">
+	11.14 Mailbox: Extracting all From addresses from mailbox
+    </a>
+    <br>
 <li>
-           <a href="#mailbox_applying_procmail_recipe_on_whole_mailbox" class="toc">
-               11.15 Mailbox: Applying procmail recipe on whole mailbox
-           </a>
-           <br>
+    <a href="#mailbox_applying_procmail_recipe_on_whole_mailbox" class="toc">
+	11.15 Mailbox: Applying procmail recipe on whole mailbox
+    </a>
+    <br>
 <li>
-           <a href="#mailbox_run_series_of_commands_for_each_mail_split" class="toc">
-               11.16 Mailbox: run series of commands for each mail (split mailbox)
-           </a>
-           <br>
+    <a href="#mailbox_run_series_of_commands_for_each_mail_split" class="toc">
+	11.16 Mailbox: run series of commands for each mail (split mailbox)
+    </a>
+    <br>
 <li>
-           <a href="#option_d_and_cache" class="toc">
-               11.17 Option -D and cache
-           </a>
-           <br>
+    <a href="#option_d_and_cache" class="toc">
+	11.17 Option -D and cache
+    </a>
+    <br>
 <li>
-           <a href="#option_d_and_messageid_in_the_body" class="toc">
-               11.18 Option -D and message-id in the body
-           </a>
-           <br>
+    <a href="#option_d_and_messageid_in_the_body" class="toc">
+	11.18 Option -D and message-id in the body
+    </a>
+    <br>
 <li>
-           <a href="#reducing_formail_calls_conditionally_adding_fields" class="toc">
-               11.19 Reducing formail calls (conditionally adding fields)
-           </a>
-           <br>
+    <a href="#reducing_formail_calls_conditionally_adding_fields" class="toc">
+	11.19 Reducing formail calls (conditionally adding fields)
+    </a>
+    <br>
 <li>
-           <a href="#formail_a_a_options" class="toc">
-               11.20 Formail -A -a options
-           </a>
-           <br>
+    <a href="#formail_a_a_options" class="toc">
+	11.20 Formail -A -a options
+    </a>
+    <br>
 <li>
-           <a href="#formail_e_s_options" class="toc">
-               11.21 Formail -e -s options
-           </a>
-           <br>
+    <a href="#formail_e_s_options" class="toc">
+	11.21 Formail -e -s options
+    </a>
+    <br>
 </ul>
 <a href="#saving_mailing_list_messages" class="toc">
-               12.0 Saving mailing list messages
-           </a>
-           <br>
+	12.0 Saving mailing list messages
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#using_subroutine_pmjalist_rc_to_detect_mailing_lists" class="toc">
-               12.1 Using subroutine pm-jalist.rc to detect mailing lists
-           </a>
-           <br>
+    <a href="#using_subroutine_pmjalist_rc_to_detect_mailing_lists" class="toc">
+	12.1 Using subroutine pm-jalist.rc to detect mailing lists
+    </a>
+    <br>
 <li>
-           <a href="#using_plus_addressing_foobar" class="toc">
-               12.2 Using plus addressing foo+bar@address.com
-           </a>
-           <br>
+    <a href="#using_plus_addressing_foobar" class="toc">
+	12.2 Using plus addressing foo+bar@address.com
+    </a>
+    <br>
 <li>
-           <a href="#using_rfc_comment_trick_for_additional_information" class="toc">
-               12.3 Using RFC comment trick for additional information
-           </a>
-           <br>
+    <a href="#using_rfc_comment_trick_for_additional_information" class="toc">
+	12.3 Using RFC comment trick for additional information
+    </a>
+    <br>
 <li>
-           <a href="#simple_mailing_list_handling" class="toc">
-               12.4 Simple mailing list handling
-           </a>
-           <br>
+    <a href="#simple_mailing_list_handling" class="toc">
+	12.4 Simple mailing list handling
+    </a>
+    <br>
 <li>
-           <a href="#archiving_according_to_to" class="toc">
-               12.5 Archiving according to TO
-           </a>
-           <br>
+    <a href="#archiving_according_to_to" class="toc">
+	12.5 Archiving according to TO
+    </a>
+    <br>
 <li>
-           <a href="#using_returnpath_to_detect_mailing_lists" class="toc">
-               12.6 Using Return-Path to detect mailing lists
-           </a>
-           <br>
+    <a href="#using_returnpath_to_detect_mailing_lists" class="toc">
+	12.6 Using Return-Path to detect mailing lists
+    </a>
+    <br>
 </ul>
 <a href="#procmail_mime_and_html" class="toc">
-               13.0 Procmail, MIME and HTML
-           </a>
-           <br>
+	13.0 Procmail, MIME and HTML
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#mime_bibliography" class="toc">
-               13.1 Mime Bibliography
-           </a>
-           <br>
+    <a href="#mime_bibliography" class="toc">
+	13.1 Mime Bibliography
+    </a>
+    <br>
 <li>
-           <a href="#mime_content_type_applicationmstnef" class="toc">
-               13.2 Mime content type application/ms-tnef
-           </a>
-           <br>
+    <a href="#mime_content_type_applicationmstnef" class="toc">
+	13.2 Mime content type application/ms-tnef
+    </a>
+    <br>
 <li>
-           <a href="#trapping_html_mime_messages" class="toc">
-               13.3 Trapping HTML mime messages
-           </a>
-           <br>
+    <a href="#trapping_html_mime_messages" class="toc">
+	13.3 Trapping HTML mime messages
+    </a>
+    <br>
 <li>
-           <a href="#complaining_about_html_messages" class="toc">
-               13.4 Complaining about HTML messages
-           </a>
-           <br>
+    <a href="#complaining_about_html_messages" class="toc">
+	13.4 Complaining about HTML messages
+    </a>
+    <br>
 <li>
-           <a href="#converting_html_body_to_plain_text" class="toc">
-               13.5 Converting HTML body to plain text
-           </a>
-           <br>
+    <a href="#converting_html_body_to_plain_text" class="toc">
+	13.5 Converting HTML body to plain text
+    </a>
+    <br>
 <li>
-           <a href="#getting_rid_of_unwanted_mime_attachments_html_vcard" class="toc">
-               13.6 Getting rid of unwanted mime attachments (HTML, vcard)
-           </a>
-           <br>
+    <a href="#getting_rid_of_unwanted_mime_attachments_html_vcard" class="toc">
+	13.6 Getting rid of unwanted mime attachments (HTML, vcard)
+    </a>
+    <br>
 <li>
-           <a href="#sending_contents_of_a_html_page_in_plain_text" class="toc">
-               13.7 Sending contents of a HTML page in plain text to someone
-           </a>
-           <br>
+    <a href="#sending_contents_of_a_html_page_in_plain_text" class="toc">
+	13.7 Sending contents of a HTML page in plain text to someone
+    </a>
+    <br>
 </ul>
 <a href="#simple_recipe_examples" class="toc">
-               14.0 Simple recipe examples
-           </a>
-           <br>
+	14.0 Simple recipe examples
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#saving_mh_folders_numbered_messages" class="toc">
-               14.1 Saving: MH folders -- numbered messages
-           </a>
-           <br>
+    <a href="#saving_mh_folders_numbered_messages" class="toc">
+	14.1 Saving: MH folders -- numbered messages
+    </a>
+    <br>
 <li>
-           <a href="#saving_to_monthly_folders" class="toc">
-               14.2 Saving: to monthly folders
-           </a>
-           <br>
+    <a href="#saving_to_monthly_folders" class="toc">
+	14.2 Saving: to monthly folders
+    </a>
+    <br>
 <li>
-           <a href="#modifying_filtering_basics" class="toc">
-               14.3 Modifying: Filtering basics
-           </a>
-           <br>
+    <a href="#modifying_filtering_basics" class="toc">
+	14.3 Modifying: Filtering basics
+    </a>
+    <br>
 <li>
-           <a href="#modifying_squeezing_empty_lines_around_message_body" class="toc">
-               14.4 Modifying: Squeezing empty lines around message body
-           </a>
-           <br>
+    <a href="#modifying_squeezing_empty_lines_around_message_body" class="toc">
+	14.4 Modifying: Squeezing empty lines around message body
+    </a>
+    <br>
 <li>
-           <a href="#modifying_shuffling_headers_always_to_same_order" class="toc">
-               14.5 Modifying: shuffling headers always to same order
-           </a>
-           <br>
+    <a href="#modifying_shuffling_headers_always_to_same_order" class="toc">
+	14.5 Modifying: shuffling headers always to same order
+    </a>
+    <br>
 <li>
-           <a href="#service_auto_answerer_to_empty_messages" class="toc">
-               14.6 Service: Auto answerer to empty messages
-           </a>
-           <br>
+    <a href="#service_auto_answerer_to_empty_messages" class="toc">
+	14.6 Service: Auto answerer to empty messages
+    </a>
+    <br>
 <li>
-           <a href="#service_ping_responder" class="toc">
-               14.7 Service: Ping responder
-           </a>
-           <br>
+    <a href="#service_ping_responder" class="toc">
+	14.7 Service: Ping responder
+    </a>
+    <br>
 <li>
-           <a href="#service_simple_vacation_with_procmail" class="toc">
-               14.8 Service: simple vacation with procmail
-           </a>
-           <br>
+    <a href="#service_simple_vacation_with_procmail" class="toc">
+	14.8 Service: simple vacation with procmail
+    </a>
+    <br>
 <li>
-           <a href="#service_vacation_code_example" class="toc">
-               14.9 Service: vacation code example
-           </a>
-           <br>
+    <a href="#service_vacation_code_example" class="toc">
+	14.9 Service: vacation code example
+    </a>
+    <br>
 <li>
-           <a href="#service_autoforwarding" class="toc">
-               14.10 Service: Auto-forwarding
-           </a>
-           <br>
+    <a href="#service_autoforwarding" class="toc">
+	14.10 Service: Auto-forwarding
+    </a>
+    <br>
 <li>
-           <a href="#service_forward_only_specific_messages" class="toc">
-               14.11 Service: forward only specific messages
-           </a>
-           <br>
+    <a href="#service_forward_only_specific_messages" class="toc">
+	14.11 Service: forward only specific messages
+    </a>
+    <br>
 <li>
-           <a href="#service_making_digests" class="toc">
-               14.12 Service: Making digests
-           </a>
-           <br>
+    <a href="#service_making_digests" class="toc">
+	14.12 Service: Making digests
+    </a>
+    <br>
 <li>
-           <a href="#kill_killing_advertisement_headers_and_footers" class="toc">
-               14.13 Kill: killing advertisement headers and footers
-           </a>
-           <br>
+    <a href="#kill_killing_advertisement_headers_and_footers" class="toc">
+	14.13 Kill: killing advertisement headers and footers
+    </a>
+    <br>
 <li>
-           <a href="#kill_simple_kill_file_recipe_with_procmail" class="toc">
-               14.14 Kill: simple kill file recipe with procmail
-           </a>
-           <br>
+    <a href="#kill_simple_kill_file_recipe_with_procmail" class="toc">
+	14.14 Kill: simple kill file recipe with procmail
+    </a>
+    <br>
 <li>
-           <a href="#kill_duplicate_messages" class="toc">
-               14.15 Kill: duplicate messages
-           </a>
-           <br>
+    <a href="#kill_duplicate_messages" class="toc">
+	14.15 Kill: duplicate messages
+    </a>
+    <br>
 <li>
-           <a href="#kill_spam_filter_with_simple_recipes" class="toc">
-               14.16 Kill: spam filter with simple recipes
-           </a>
-           <br>
+    <a href="#kill_spam_filter_with_simple_recipes" class="toc">
+	14.16 Kill: spam filter with simple recipes
+    </a>
+    <br>
 <li>
-           <a href="#kill_unsubscribe_messages" class="toc">
-               14.17 Kill: (un)subscribe messages
-           </a>
-           <br>
+    <a href="#kill_unsubscribe_messages" class="toc">
+	14.17 Kill: (un)subscribe messages
+    </a>
+    <br>
 <li>
-           <a href="#time_once_a_day_cronlike_job" class="toc">
-               14.18 Time: Once a day cron-like job
-           </a>
-           <br>
+    <a href="#time_once_a_day_cronlike_job" class="toc">
+	14.18 Time: Once a day cron-like job
+    </a>
+    <br>
 <li>
-           <a href="#time_running_a_recipe_at_a_given_time" class="toc">
-               14.19 Time: Running a recipe at a given time
-           </a>
-           <br>
+    <a href="#time_running_a_recipe_at_a_given_time" class="toc">
+	14.19 Time: Running a recipe at a given time
+    </a>
+    <br>
 <li>
-           <a href="#time_triggering_mail_and_using_cron" class="toc">
-               14.20 Time: Triggering mail and using cron
-           </a>
-           <br>
+    <a href="#time_triggering_mail_and_using_cron" class="toc">
+	14.20 Time: Triggering mail and using cron
+    </a>
+    <br>
 <li>
-           <a href="#decoding_uudecode" class="toc">
-               14.21 Decoding: Uudecode
-           </a>
-           <br>
+    <a href="#decoding_uudecode" class="toc">
+	14.21 Decoding: Uudecode
+    </a>
+    <br>
 <li>
-           <a href="#decoding_mime" class="toc">
-               14.22 Decoding: MIME
-           </a>
-           <br>
+    <a href="#decoding_mime" class="toc">
+	14.22 Decoding: MIME
+    </a>
+    <br>
 <li>
-           <a href="#how_to_send_commands_in_the_messages_body" class="toc">
-               14.23 How to send commands in the message's body
-           </a>
-           <br>
+    <a href="#how_to_send_commands_in_the_messages_body" class="toc">
+	14.23 How to send commands in the message's body
+    </a>
+    <br>
 <li>
-           <a href="#matching_two_words_on_a_line_but_not_one" class="toc">
-               14.24 Matching two words on a line, but not one
-           </a>
-           <br>
+    <a href="#matching_two_words_on_a_line_but_not_one" class="toc">
+	14.24 Matching two words on a line, but not one
+    </a>
+    <br>
 <li>
-           <a href="#how_to_define_personal_xx_macros" class="toc">
-               14.25 How to define personal XX macros?
-           </a>
-           <br>
+    <a href="#how_to_define_personal_xx_macros" class="toc">
+	14.25 How to define personal XX macros?
+    </a>
+    <br>
 <li>
-           <a href="#how_to_change_subject_by_body_match" class="toc">
-               14.26 How to change subject by body match
-           </a>
-           <br>
+    <a href="#how_to_change_subject_by_body_match" class="toc">
+	14.26 How to change subject by body match
+    </a>
+    <br>
 <li>
-           <a href="#how_to_change_subject_according_to_some_other_header" class="toc">
-               14.27 How to change Subject according to some other header
-           </a>
-           <br>
+    <a href="#how_to_change_subject_according_to_some_other_header" class="toc">
+	14.27 How to change Subject according to some other header
+    </a>
+    <br>
 <li>
-           <a href="#how_to_call_program_with_parameters" class="toc">
-               14.28 How to call program with parameters
-           </a>
-           <br>
+    <a href="#how_to_call_program_with_parameters" class="toc">
+	14.28 How to call program with parameters
+    </a>
+    <br>
 </ul>
 <a href="#miscellaneous_recipes" class="toc">
-               15.0 Miscellaneous recipes
-           </a>
-           <br>
+	15.0 Miscellaneous recipes
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#matching_valid_messageid_header" class="toc">
-               15.1 Matching valid Message-Id header
-           </a>
-           <br>
+    <a href="#matching_valid_messageid_header" class="toc">
+	15.1 Matching valid Message-Id header
+    </a>
+    <br>
 <li>
-           <a href="#sending_two_files_in_a_message" class="toc">
-               15.2 Sending two files in a message
-           </a>
-           <br>
+    <a href="#sending_two_files_in_a_message" class="toc">
+	15.2 Sending two files in a message
+    </a>
+    <br>
 <li>
-           <a href="#excessive_quoting_of_message" class="toc">
-               15.3 Excessive quoting of message
-           </a>
-           <br>
+    <a href="#excessive_quoting_of_message" class="toc">
+	15.3 Excessive quoting of message
+    </a>
+    <br>
 <li>
-           <a href="#sending_message_to_pager_in_chunks" class="toc">
-               15.4 Sending message to pager in chunks
-           </a>
-           <br>
+    <a href="#sending_message_to_pager_in_chunks" class="toc">
+	15.4 Sending message to pager in chunks
+    </a>
+    <br>
 <li>
-           <a href="#playing_particular_sound_when_message_arrives" class="toc">
-               15.5 Playing particular sound when message arrives
-           </a>
-           <br>
+    <a href="#playing_particular_sound_when_message_arrives" class="toc">
+	15.5 Playing particular sound when message arrives
+    </a>
+    <br>
 <li>
-           <a href="#combining_multiple_originalcc_and_originalto_headers" class="toc">
-               15.6 Combining multiple Original-Cc and Original-To headers
-           </a>
-           <br>
+    <a href="#combining_multiple_originalcc_and_originalto_headers" class="toc">
+	15.6 Combining multiple Original-Cc and Original-To headers
+    </a>
+    <br>
 <li>
-           <a href="#forwarding_sensitive_messages_in_encrypted_format" class="toc">
-               15.7 Forwarding sensitive messages in encrypted format
-           </a>
-           <br>
+    <a href="#forwarding_sensitive_messages_in_encrypted_format" class="toc">
+	15.7 Forwarding sensitive messages in encrypted format
+    </a>
+    <br>
 </ul>
 <a href="#procmail_and_pgp" class="toc">
-               16.0 Procmail and PGP
-           </a>
-           <br>
+	16.0 Procmail and PGP
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#decrypt_pgp_messages_automatically" class="toc">
-               16.1 Decrypt pgp messages automatically
-           </a>
-           <br>
+    <a href="#decrypt_pgp_messages_automatically" class="toc">
+	16.1 Decrypt pgp messages automatically
+    </a>
+    <br>
 <li>
-           <a href="#getkeys_from_key_server" class="toc">
-               16.2 Getkeys from key server
-           </a>
-           <br>
+    <a href="#getkeys_from_key_server" class="toc">
+	16.2 Getkeys from key server
+    </a>
+    <br>
 <li>
-           <a href="#auto_grab_incoming_pgp_keys" class="toc">
-               16.3 Auto grab incoming pgp keys
-           </a>
-           <br>
+    <a href="#auto_grab_incoming_pgp_keys" class="toc">
+	16.3 Auto grab incoming pgp keys
+    </a>
+    <br>
 </ul>
 <a href="#includerc_usage" class="toc">
-               17.0 Includerc usage
-           </a>
-           <br>
+	17.0 Includerc usage
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#using_multiple_rc_files" class="toc">
-               17.1 Using: multiple rc files
-           </a>
-           <br>
+    <a href="#using_multiple_rc_files" class="toc">
+	17.1 Using: multiple rc files
+    </a>
+    <br>
 <li>
-           <a href="#using_call_rc_file_conditionally" class="toc">
-               17.2 Using: call rc file conditionally
-           </a>
-           <br>
+    <a href="#using_call_rc_file_conditionally" class="toc">
+	17.2 Using: call rc file conditionally
+    </a>
+    <br>
 <li>
-           <a href="#using_autoloading_an_rc_file" class="toc">
-               17.3 Using: autoloading an rc file
-           </a>
-           <br>
+    <a href="#using_autoloading_an_rc_file" class="toc">
+	17.3 Using: autoloading an rc file
+    </a>
+    <br>
 <li>
-           <a href="#making_naming_of_the_rc_file" class="toc">
-               17.4 Making: naming of the rc file
-           </a>
-           <br>
+    <a href="#making_naming_of_the_rc_file" class="toc">
+	17.4 Making: naming of the rc file
+    </a>
+    <br>
 <li>
-           <a href="#making_using_name_space_when_saving_procmail_variables" class="toc">
-               17.5 Making: Using name space when saving procmail variables
-           </a>
-           <br>
+    <a href="#making_using_name_space_when_saving_procmail_variables" class="toc">
+	17.5 Making: Using name space when saving procmail variables
+    </a>
+    <br>
 <li>
-           <a href="#making_public_and_private_variables_in_rc_file" class="toc">
-               17.6 Making: Public and private variables in rc file
-           </a>
-           <br>
+    <a href="#making_public_and_private_variables_in_rc_file" class="toc">
+	17.6 Making: Public and private variables in rc file
+    </a>
+    <br>
 <li>
-           <a href="#the_rules_of_thumb_for_constructing_general_purpose_rc" class="toc">
-               17.7 The rules of thumb for constructing general purpose rc file
-           </a>
-           <br>
+    <a href="#the_rules_of_thumb_for_constructing_general_purpose_rc" class="toc">
+	17.7 The rules of thumb for constructing general purpose rc file
+    </a>
+    <br>
 <li>
-           <a href="#an_includerc_skeleton" class="toc">
-               17.8 An includerc skeleton
-           </a>
-           <br>
+    <a href="#an_includerc_skeleton" class="toc">
+	17.8 An includerc skeleton
+    </a>
+    <br>
 </ul>
 <a href="#mailing_list_server" class="toc">
-               18.0 Mailing list server
-           </a>
-           <br>
+	18.0 Mailing list server
+    </a>
+    <br>
 <a href="#common_troubles" class="toc">
-               19.0 Common troubles
-           </a>
-           <br>
+	19.0 Common troubles
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#procmail_modes_normal_delivery_and_mail_filter" class="toc">
-               19.1 Procmail modes: normal, delivery, and mail filter.
-           </a>
-           <br>
+    <a href="#procmail_modes_normal_delivery_and_mail_filter" class="toc">
+	19.1 Procmail modes: normal, delivery, and mail filter.
+    </a>
+    <br>
 <li>
-           <a href="#procmail_as_sendmail_mlocal_mail_filtering_device" class="toc">
-               19.2 Procmail as sendmail Mlocal mail filtering device
-           </a>
-           <br>
+    <a href="#procmail_as_sendmail_mlocal_mail_filtering_device" class="toc">
+	19.2 Procmail as sendmail Mlocal mail filtering device
+    </a>
+    <br>
 <li>
-           <a href="#procmail_doesnt_pass_8bit_characters" class="toc">
-               19.3 Procmail doesn't pass 8bit characters
-           </a>
-           <br>
+    <a href="#procmail_doesnt_pass_8bit_characters" class="toc">
+	19.3 Procmail doesn't pass 8bit characters
+    </a>
+    <br>
 <li>
-           <a href="#my_isp_isnt_very_interested_in_installing_procmail" class="toc">
-               19.4 My ISP isn't very interested in installing procmail
-           </a>
-           <br>
+    <a href="#my_isp_isnt_very_interested_in_installing_procmail" class="toc">
+	19.4 My ISP isn't very interested in installing procmail
+    </a>
+    <br>
 <li>
-           <a href="#my_isp_has_systemwide_procmailrc_is_this_a_good" class="toc">
-               19.5 My ISP has systemwide procmailrc; is this a good idea?
-           </a>
-           <br>
+    <a href="#my_isp_has_systemwide_procmailrc_is_this_a_good" class="toc">
+	19.5 My ISP has systemwide procmailrc; is this a good idea?
+    </a>
+    <br>
 <li>
-           <a href="#procmail_changes_mailbox_and_directory_permissions" class="toc">
-               19.6 Procmail changes mailbox and directory permissions
-           </a>
-           <br>
+    <a href="#procmail_changes_mailbox_and_directory_permissions" class="toc">
+	19.6 Procmail changes mailbox and directory permissions
+    </a>
+    <br>
 <li>
-           <a href="#changing_mbox_permission_during_compilation_to_660" class="toc">
-               19.7 Changing mbox permission during compilation to 660
-           </a>
-           <br>
+    <a href="#changing_mbox_permission_during_compilation_to_660" class="toc">
+	19.7 Changing mbox permission during compilation to 660
+    </a>
+    <br>
 <li>
-           <a href="#the_forward_file_must_be_real_file" class="toc">
-               19.8 The .forward file must be real file
-           </a>
-           <br>
+    <a href="#the_forward_file_must_be_real_file" class="toc">
+	19.8 The .forward file must be real file
+    </a>
+    <br>
 <li>
-           <a href="#using_forward_if_procmail_already_is_lda" class="toc">
-               19.9 Using .forward if procmail already is LDA
-           </a>
-           <br>
+    <a href="#using_forward_if_procmail_already_is_lda" class="toc">
+	19.9 Using .forward if procmail already is LDA
+    </a>
+    <br>
 <li>
-           <a href="#mail_should_be_put_in_the_mailqueue_if_write" class="toc">
-               19.10 Mail should be put in the mailqueue if write fails
-           </a>
-           <br>
+    <a href="#mail_should_be_put_in_the_mailqueue_if_write" class="toc">
+	19.10 Mail should be put in the mailqueue if write fails
+    </a>
+    <br>
 <li>
-           <a href="#qmail_how_to_make_it_work_with_procmail" class="toc">
-               19.11 Qmail: how to make it work with procmail
-           </a>
-           <br>
+    <a href="#qmail_how_to_make_it_work_with_procmail" class="toc">
+	19.11 Qmail: how to make it work with procmail
+    </a>
+    <br>
 <li>
-           <a href="#qmail_procmail_looks_file_from_varspoolmail_only" class="toc">
-               19.12 Qmail: Procmail looks file from /var/spool/mail only
-           </a>
-           <br>
+    <a href="#qmail_procmail_looks_file_from_varspoolmail_only" class="toc">
+	19.12 Qmail: Procmail looks file from /var/spool/mail only
+    </a>
+    <br>
 <li>
-           <a href="#qmail_patch_to_procmail_3_11pre7_to_work_with" class="toc">
-               19.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
-           </a>
-           <br>
+    <a href="#qmail_patch_to_procmail_3_11pre7_to_work_with" class="toc">
+	19.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
+    </a>
+    <br>
 <li>
-           <a href="#afs_how_to_use_procmail_when_home_is_in" class="toc">
-               19.14 AFS: How to use Procmail when HOME is in AFS cell
-           </a>
-           <br>
+    <a href="#afs_how_to_use_procmail_when_home_is_in" class="toc">
+	19.14 AFS: How to use Procmail when HOME is in AFS cell
+    </a>
+    <br>
 <li>
-           <a href="#help_some_idiot_sent_my_address_to_30_mailing" class="toc">
-               19.15 Help, some idiot sent my address to 30 mailing lists
-           </a>
-           <br>
+    <a href="#help_some_idiot_sent_my_address_to_30_mailing" class="toc">
+	19.15 Help, some idiot sent my address to 30 mailing lists
+    </a>
+    <br>
 <li>
-           <a href="#help_procmail_beeps_and_prints_to_my_console" class="toc">
-               19.16 Help, Procmail beeps and prints to my console
-           </a>
-           <br>
+    <a href="#help_procmail_beeps_and_prints_to_my_console" class="toc">
+	19.16 Help, Procmail beeps and prints to my console
+    </a>
+    <br>
 <li>
-           <a href="#help_procmail_dumps_mail_to_console" class="toc">
-               19.17 Help, procmail dumps mail to console
-           </a>
-           <br>
+    <a href="#help_procmail_dumps_mail_to_console" class="toc">
+	19.17 Help, procmail dumps mail to console
+    </a>
+    <br>
 <li>
-           <a href="#help_corrupted_from_line_in_mailbox" class="toc">
-               19.18 Help, corrupted From_ line in mailbox
-           </a>
-           <br>
+    <a href="#help_corrupted_from_line_in_mailbox" class="toc">
+	19.18 Help, corrupted From_ line in mailbox
+    </a>
+    <br>
 <li>
-           <a href="#directing_users_mail_to_home_instead_of_varspool" class="toc">
-               19.19 Directing user's mail to HOME instead of /var/spool/
-           </a>
-           <br>
+    <a href="#directing_users_mail_to_home_instead_of_varspool" class="toc">
+	19.19 Directing user's mail to HOME instead of /var/spool/
+    </a>
+    <br>
 <li>
-           <a href="#nfs_mounting_varmail_is_a_good_way_to_get" class="toc">
-               19.20 NFS mounting /var/mail is a good way to get bad performance
-           </a>
-           <br>
+    <a href="#nfs_mounting_varmail_is_a_good_way_to_get" class="toc">
+	19.20 NFS mounting /var/mail is a good way to get bad performance
+    </a>
+    <br>
 <li>
-           <a href="#i_cant_see_the_sendmails_response_in_logfile" class="toc">
-               19.21 I can't see the sendmail's response in LOGFILE
-           </a>
-           <br>
+    <a href="#i_cant_see_the_sendmails_response_in_logfile" class="toc">
+	19.21 I can't see the sendmail's response in LOGFILE
+    </a>
+    <br>
 <li>
-           <a href="#compiling_procmail_and_choosing_locking_scheme" class="toc">
-               19.22 Compiling procmail and choosing locking scheme
-           </a>
-           <br>
+    <a href="#compiling_procmail_and_choosing_locking_scheme" class="toc">
+	19.22 Compiling procmail and choosing locking scheme
+    </a>
+    <br>
 <li>
-           <a href="#forwarding_lot_of_mail_causes_heavy_load" class="toc">
-               19.23 Forwarding lot of mail causes heavy load
-           </a>
-           <br>
+    <a href="#forwarding_lot_of_mail_causes_heavy_load" class="toc">
+	19.23 Forwarding lot of mail causes heavy load
+    </a>
+    <br>
 <li>
-           <a href="#what_happens_to_mail_if_mda_procmail_fails" class="toc">
-               19.24 What happens to mail if MDA Procmail fails
-           </a>
-           <br>
+    <a href="#what_happens_to_mail_if_mda_procmail_fails" class="toc">
+	19.24 What happens to mail if MDA Procmail fails
+    </a>
+    <br>
 <li>
-           <a href="#procmail_reads_entire_90mb_message_into_memory" class="toc">
-               19.25 Procmail reads entire 90Mb message into memory
-           </a>
-           <br>
+    <a href="#procmail_reads_entire_90mb_message_into_memory" class="toc">
+	19.25 Procmail reads entire 90Mb message into memory
+    </a>
+    <br>
 <li>
-           <a href="#procmail_signaled_out_of_memory_in_my_verbose_log" class="toc">
-               19.26 Procmail signaled out of memory in my verbose log
-           </a>
-           <br>
+    <a href="#procmail_signaled_out_of_memory_in_my_verbose_log" class="toc">
+	19.26 Procmail signaled out of memory in my verbose log
+    </a>
+    <br>
 <li>
-           <a href="#variables_default_and_orgmail" class="toc">
-               19.27 Variables DEFAULT and ORGMAIL
-           </a>
-           <br>
+    <a href="#variables_default_and_orgmail" class="toc">
+	19.27 Variables DEFAULT and ORGMAIL
+    </a>
+    <br>
 <li>
-           <a href="#when_default_cannot_be_mailed_to" class="toc">
-               19.28 When DEFAULT cannot be mailed to
-           </a>
-           <br>
+    <a href="#when_default_cannot_be_mailed_to" class="toc">
+	19.28 When DEFAULT cannot be mailed to
+    </a>
+    <br>
 <li>
-           <a href="#variable_dropprivs" class="toc">
-               19.29 Variable DROPPRIVS
-           </a>
-           <br>
+    <a href="#variable_dropprivs" class="toc">
+	19.29 Variable DROPPRIVS
+    </a>
+    <br>
 <li>
-           <a href="#variable_home" class="toc">
-               19.30 Variable HOME
-           </a>
-           <br>
+    <a href="#variable_home" class="toc">
+	19.30 Variable HOME
+    </a>
+    <br>
 <li>
-           <a href="#variable_host" class="toc">
-               19.31 Variable HOST
-           </a>
-           <br>
+    <a href="#variable_host" class="toc">
+	19.31 Variable HOST
+    </a>
+    <br>
 <li>
-           <a href="#variable_linebuf" class="toc">
-               19.32 Variable LINEBUF
-           </a>
-           <br>
+    <a href="#variable_linebuf" class="toc">
+	19.32 Variable LINEBUF
+    </a>
+    <br>
 <li>
-           <a href="#variable_log_and_logfile" class="toc">
-               19.33 Variable LOG and LOGFILE
-           </a>
-           <br>
+    <a href="#variable_log_and_logfile" class="toc">
+	19.33 Variable LOG and LOGFILE
+    </a>
+    <br>
 <li>
-           <a href="#variable_trap" class="toc">
-               19.34 Variable TRAP
-           </a>
-           <br>
+    <a href="#variable_trap" class="toc">
+	19.34 Variable TRAP
+    </a>
+    <br>
 <li>
-           <a href="#variable_umask" class="toc">
-               19.35 Variable UMASK
-           </a>
-           <br>
+    <a href="#variable_umask" class="toc">
+	19.35 Variable UMASK
+    </a>
+    <br>
 <li>
-           <a href="#umask_and_permissions" class="toc">
-               19.36 UMASK and permissions
-           </a>
-           <br>
+    <a href="#umask_and_permissions" class="toc">
+	19.36 UMASK and permissions
+    </a>
+    <br>
 <li>
-           <a href="#performance_difference_between_back_tick_and_recipe" class="toc">
-               19.37 Performance difference between back tick and &quot;|&quot; recipe
-           </a>
-           <br>
+    <a href="#performance_difference_between_back_tick_and_recipe" class="toc">
+	19.37 Performance difference between back tick and &quot;|&quot; recipe
+    </a>
+    <br>
 <li>
-           <a href="#procmails_temporary_file_names_while_writing_file_out" class="toc">
-               19.38 Procmail's temporary file names while writing file out
-           </a>
-           <br>
+    <a href="#procmails_temporary_file_names_while_writing_file_out" class="toc">
+	19.38 Procmail's temporary file names while writing file out
+    </a>
+    <br>
 <li>
-           <a href="#parameter" class="toc">
-               19.39 Parameter $@
-           </a>
-           <br>
+    <a href="#parameter" class="toc">
+	19.39 Parameter $@
+    </a>
+    <br>
 <li>
-           <a href="#procmail_variables_are_null_terminated_detecting_null_string" class="toc">
-               19.40 Procmail variables are null terminated (detecting null string)
-           </a>
-           <br>
+    <a href="#procmail_variables_are_null_terminated_detecting_null_string" class="toc">
+	19.40 Procmail variables are null terminated (detecting null string)
+    </a>
+    <br>
 <li>
-           <a href="#from_daemon_to_and_to_and_casesensitiveness" class="toc">
-               19.41 FROM_DAEMON TO and TO_ and case-sensitiveness
-           </a>
-           <br>
+    <a href="#from_daemon_to_and_to_and_casesensitiveness" class="toc">
+	19.41 FROM_DAEMON TO and TO_ and case-sensitiveness
+    </a>
+    <br>
 <li>
-           <a href="#to_macro_deciphered" class="toc">
-               19.42 TO_ macro deciphered
-           </a>
-           <br>
+    <a href="#to_macro_deciphered" class="toc">
+	19.42 TO_ macro deciphered
+    </a>
+    <br>
 <li>
-           <a href="#to_macro_and_rfc_822" class="toc">
-               19.43 TO_ macro and RFC 822
-           </a>
-           <br>
+    <a href="#to_macro_and_rfc_822" class="toc">
+	19.43 TO_ macro and RFC 822
+    </a>
+    <br>
 <li>
-           <a href="#from_daemon_deciphered" class="toc">
-               19.44 FROM_DAEMON deciphered
-           </a>
-           <br>
+    <a href="#from_daemon_deciphered" class="toc">
+	19.44 FROM_DAEMON deciphered
+    </a>
+    <br>
 </ul>
 <a href="#technical_matters" class="toc">
-               20.0 Technical matters
-           </a>
-           <br>
+	20.0 Technical matters
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#list_of_exit_codes" class="toc">
-               20.1 List of exit codes
-           </a>
-           <br>
+    <a href="#list_of_exit_codes" class="toc">
+	20.1 List of exit codes
+    </a>
+    <br>
 <li>
-           <a href="#list_of_precedence_codes" class="toc">
-               20.2 List of precedence codes
-           </a>
-           <br>
+    <a href="#list_of_precedence_codes" class="toc">
+	20.2 List of precedence codes
+    </a>
+    <br>
 <li>
-           <a href="#sendmail_and_t" class="toc">
-               20.3 Sendmail and -t
-           </a>
-           <br>
+    <a href="#sendmail_and_t" class="toc">
+	20.3 Sendmail and -t
+    </a>
+    <br>
 <li>
-           <a href="#rfc822_replyto_and_formail_problem_with_multiple_recipients" class="toc">
-               20.4 RFC822 Reply-To and formail problem with multiple recipients
-           </a>
-           <br>
+    <a href="#rfc822_replyto_and_formail_problem_with_multiple_recipients" class="toc">
+	20.4 RFC822 Reply-To and formail problem with multiple recipients
+    </a>
+    <br>
 <li>
-           <a href="#procmail_and_imap_server" class="toc">
-               20.5 Procmail and IMAP server
-           </a>
-           <br>
+    <a href="#procmail_and_imap_server" class="toc">
+	20.5 Procmail and IMAP server
+    </a>
+    <br>
 <li>
-           <a href="#machine_which_processes_mail" class="toc">
-               20.6 Machine which processes mail
-           </a>
-           <br>
+    <a href="#machine_which_processes_mail" class="toc">
+	20.6 Machine which processes mail
+    </a>
+    <br>
 <li>
-           <a href="#compiling_procmail_and_mailspoolhome" class="toc">
-               20.7 Compiling procmail and MAILSPOOLHOME
-           </a>
-           <br>
+    <a href="#compiling_procmail_and_mailspoolhome" class="toc">
+	20.7 Compiling procmail and MAILSPOOLHOME
+    </a>
+    <br>
 </ul>
 <a href="#procmail_software_for_emacs" class="toc">
-               21.0 Procmail software for Emacs
-           </a>
-           <br>
+	21.0 Procmail software for Emacs
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#what_is_emacs" class="toc">
-               21.1 What is Emacs
-           </a>
-           <br>
+    <a href="#what_is_emacs" class="toc">
+	21.1 What is Emacs
+    </a>
+    <br>
 <li>
-           <a href="#emacs_procmailmode_and_procmail_code_checking_lint" class="toc">
-               21.2 Emacs procmail-mode and Procmail code checking (Lint)
-           </a>
-           <br>
+    <a href="#emacs_procmailmode_and_procmail_code_checking_lint" class="toc">
+	21.2 Emacs procmail-mode and Procmail code checking (Lint)
+    </a>
+    <br>
 <li>
-           <a href="#why_use_procmail_with_gnus" class="toc">
-               21.3 Why use procmail with Gnus
-           </a>
-           <br>
+    <a href="#why_use_procmail_with_gnus" class="toc">
+	21.3 Why use procmail with Gnus
+    </a>
+    <br>
 <li>
-           <a href="#setting_up_gnus_for_procmail_basics" class="toc">
-               21.4 Setting up Gnus for procmail - Basics
-           </a>
-           <br>
+    <a href="#setting_up_gnus_for_procmail_basics" class="toc">
+	21.4 Setting up Gnus for procmail - Basics
+    </a>
+    <br>
 <li>
-           <a href="#gnus_for_procmail_more_about_it" class="toc">
-               21.5 Gnus for procmail - More about it
-           </a>
-           <br>
+    <a href="#gnus_for_procmail_more_about_it" class="toc">
+	21.5 Gnus for procmail - More about it
+    </a>
+    <br>
 <li>
-           <a href="#emacs_and_gnus_fiddling_with_spool_files" class="toc">
-               21.6 Emacs and Gnus -- Fiddling with spool files
-           </a>
-           <br>
+    <a href="#emacs_and_gnus_fiddling_with_spool_files" class="toc">
+	21.6 Emacs and Gnus -- Fiddling with spool files
+    </a>
+    <br>
 <li>
-           <a href="#gnus_article_snippets" class="toc">
-               21.7 Gnus article snippets
-           </a>
-           <br>
+    <a href="#gnus_article_snippets" class="toc">
+	21.7 Gnus article snippets
+    </a>
+    <br>
 </ul>
 <a href="#rfc_request_for_comments" class="toc">
-               22.0 RFC, Request for comments
-           </a>
-           <br>
+	22.0 RFC, Request for comments
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#rfcs_and_their_jurisdiction_munged_addresses" class="toc">
-               22.1 RFCs and their jurisdiction (munged Addresses)
-           </a>
-           <br>
+    <a href="#rfcs_and_their_jurisdiction_munged_addresses" class="toc">
+	22.1 RFCs and their jurisdiction (munged Addresses)
+    </a>
+    <br>
 <li>
-           <a href="#comments_about_addresses_munging" class="toc">
-               22.2 Comments about addresses munging
-           </a>
-           <br>
+    <a href="#comments_about_addresses_munging" class="toc">
+	22.2 Comments about addresses munging
+    </a>
+    <br>
 <li>
-           <a href="#rfc_and_valid_mail_address_characters" class="toc">
-               22.3 RFC and valid mail address characters
-           </a>
-           <br>
+    <a href="#rfc_and_valid_mail_address_characters" class="toc">
+	22.3 RFC and valid mail address characters
+    </a>
+    <br>
 <li>
-           <a href="#rfc_and_loginname" class="toc">
-               22.4 RFC and login-name@fdqn
-           </a>
-           <br>
+    <a href="#rfc_and_loginname" class="toc">
+	22.4 RFC and login-name@fdqn
+    </a>
+    <br>
 <li>
-           <a href="#rfcs_and_messages_signature" class="toc">
-               22.5 RFCs and messages signature
-           </a>
-           <br>
+    <a href="#rfcs_and_messages_signature" class="toc">
+	22.5 RFCs and messages signature
+    </a>
+    <br>
 <li>
-           <a href="#rfc_and_using_mime_in_usenet_newsgroups" class="toc">
-               22.6 RFC and using MIME in Usenet newsgroups
-           </a>
-           <br>
+    <a href="#rfc_and_using_mime_in_usenet_newsgroups" class="toc">
+	22.6 RFC and using MIME in Usenet newsgroups
+    </a>
+    <br>
 <li>
-           <a href="#some_rfc_pointers" class="toc">
-               22.7 Some RFC Pointers
-           </a>
-           <br>
+    <a href="#some_rfc_pointers" class="toc">
+	22.7 Some RFC Pointers
+    </a>
+    <br>
 </ul>
 <a href="#introduction_to_email_headers" class="toc">
-               23.0 Introduction to E-mail Headers
-           </a>
-           <br>
+	23.0 Introduction to E-mail Headers
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#to_find_out_more_about_mail" class="toc">
-               23.1 To find out more about mail
-           </a>
-           <br>
+    <a href="#to_find_out_more_about_mail" class="toc">
+	23.1 To find out more about mail
+    </a>
+    <br>
 <li>
-           <a href="#lecture_by_alan_stebbens" class="toc">
-               23.2 Lecture by Alan Stebbens
-           </a>
-           <br>
+    <a href="#lecture_by_alan_stebbens" class="toc">
+	23.2 Lecture by Alan Stebbens
+    </a>
+    <br>
 <li>
-           <a href="#applied_to_received_messages" class="toc">
-               23.3 Applied to received messages
-           </a>
-           <br>
+    <a href="#applied_to_received_messages" class="toc">
+	23.3 Applied to received messages
+    </a>
+    <br>
 <li>
-           <a href="#bcc_lecture_by_alan_stebbens" class="toc">
-               23.4 Bcc lecture by Alan Stebbens
-           </a>
-           <br>
+    <a href="#bcc_lecture_by_alan_stebbens" class="toc">
+	23.4 Bcc lecture by Alan Stebbens
+    </a>
+    <br>
 <li>
-           <a href="#bcc_lecture_by_philip_guenther" class="toc">
-               23.5 Bcc lecture by Philip Guenther
-           </a>
-           <br>
+    <a href="#bcc_lecture_by_philip_guenther" class="toc">
+	23.5 Bcc lecture by Philip Guenther
+    </a>
+    <br>
 </ul>
 <a href="#message_headers" class="toc">
-               24.0 Message headers
-           </a>
-           <br>
+	24.0 Message headers
+    </a>
+    <br>
 
 <ul>
 <li>
-           <a href="#what_is_correct_from_address_syntax" class="toc">
-               24.1 What is correct From address syntax
-           </a>
-           <br>
+    <a href="#what_is_correct_from_address_syntax" class="toc">
+	24.1 What is correct From address syntax
+    </a>
+    <br>
 <li>
-           <a href="#whats_that_xuidl_header" class="toc">
-               24.2 What's that X-UIDL header?
-           </a>
-           <br>
+    <a href="#whats_that_xuidl_header" class="toc">
+	24.2 What's that X-UIDL header?
+    </a>
+    <br>
 <li>
-           <a href="#what_is_that_first_from_header" class="toc">
-               24.3 What is that first From_ header?
-           </a>
-           <br>
+    <a href="#what_is_that_first_from_header" class="toc">
+	24.3 What is that first From_ header?
+    </a>
+    <br>
 <li>
-           <a href="#messageid_header" class="toc">
-               24.4 Message-Id header
-           </a>
-           <br>
+    <a href="#messageid_header" class="toc">
+	24.4 Message-Id header
+    </a>
+    <br>
 <li>
-           <a href="#received_header" class="toc">
-               24.5 Received header
-           </a>
-           <br>
+    <a href="#received_header" class="toc">
+	24.5 Received header
+    </a>
+    <br>
 <li>
-           <a href="#returnpath" class="toc">
-               24.6 Return-Path
-           </a>
-           <br>
+    <a href="#returnpath" class="toc">
+	24.6 Return-Path
+    </a>
+    <br>
 <li>
-           <a href="#errorsto" class="toc">
-               24.7 Errors-To
-           </a>
-           <br>
+    <a href="#errorsto" class="toc">
+	24.7 Errors-To
+    </a>
+    <br>
 <li>
-           <a href="#xsubscriptioninfo" class="toc">
-               24.8 X-Subscription-Info
-           </a>
-           <br>
+    <a href="#xsubscriptioninfo" class="toc">
+	24.8 X-Subscription-Info
+    </a>
+    <br>
 <li>
-           <a href="#replyto_header" class="toc">
-               24.9 Reply-To header
-           </a>
-           <br>
+    <a href="#replyto_header" class="toc">
+	24.9 Reply-To header
+    </a>
+    <br>
 <li>
-           <a href="#mailcopiesto_header" class="toc">
-               24.10 Mail-Copies-To header
-           </a>
-           <br>
+    <a href="#mailcopiesto_header" class="toc">
+	24.10 Mail-Copies-To header
+    </a>
+    <br>
 <li>
-           <a href="#mailfollowupto_and_replytopersonal_headers" class="toc">
-               24.11 Mail-Followup-To and Reply-To-Personal headers
-           </a>
-           <br>
+    <a href="#mailfollowupto_and_replytopersonal_headers" class="toc">
+	24.11 Mail-Followup-To and Reply-To-Personal headers
+    </a>
+    <br>
 <li>
-           <a href="#contentlength_header_and_from_specification" class="toc">
-               24.12 Content-Length header and From_ specification
-           </a>
-           <br>
+    <a href="#contentlength_header_and_from_specification" class="toc">
+	24.12 Content-Length header and From_ specification
+    </a>
+    <br>
 <li>
-           <a href="#moral_about_cc_copies_in_usenet" class="toc">
-               24.13 Moral about CC copies in Usenet
-           </a>
-           <br>
+    <a href="#moral_about_cc_copies_in_usenet" class="toc">
+	24.13 Moral about CC copies in Usenet
+    </a>
+    <br>
 </ul>
 
 </div>
 
 
-<!--    ......................................................................
-    TABLE OF CONTENT END
-    ......................................................................
--->
 
 <hr>
-               <a name="document_id"  id="document_id"></a>
-               <h1>
-               1.0 Document id
+	<a name="document_id"  id="document_id"></a>
+	<h1>
+	1.0 Document id
 
-               </h1>
+	</h1>
 
 
 
@@ -1623,9 +1599,16 @@ Procmail Tips
 
 <p>
 <p class="column8">
-        $Id: pm-tips.html,v 1.19 2008/03/09 14:12:30 jaalto Exp $<br>
+        Copyright &copy; 1997-2009 Jari Aalto<br>
         Homepage <a href="http://pm-doc.sourceforge.net/" >http://pm-doc.sourceforge.net/</A><br>
-        URLs last checked: 2007-10-02<br>
+        $Id: pm-tips.html,v 1.20 2008/09/21 22:45:46 jaalto Exp $<br>
+        URLs last checked: 2008-09-21<br>
+
+
+<p class="column8">
+        License: This material may be distributed only subject to the
+        terms and conditions set forth in GNU General Public License
+        v2 or, at your option, any later version.
 
 
 <p class="column8">
@@ -1870,8 +1853,6 @@ Procmail Tips
             technical formatting package (TOC, indentation control,
             fontifying) <em class="word">tinytf.el</em> from
             <a href="http://freshmeat.net/projects/emacs-tiny-tools" >http://freshmeat.net/projects/emacs-tiny-tools</A>
-<li>Text-to-HTML conversion program <em class="word">t2html.pl</em> from
-	            <a href="http://freshmeat.net/projects/perl-text2html" >http://freshmeat.net/projects/perl-text2html</A></li>
 </ul>
 
 
@@ -2341,11 +2322,11 @@ Procmail Tips
         doubled the cost.
 
 <hr>
-               <a name="procmail_pointers"  id="procmail_pointers"></a>
-               <h1>
-               2.0 Procmail pointers
+	<a name="procmail_pointers"  id="procmail_pointers"></a>
+	<h1>
+	2.0 Procmail pointers
 
-               </h1>
+	</h1>
 
 
 
@@ -2929,11 +2910,11 @@ Procmail Tips
 
 
 <hr>
-               <a name="dry_run_testing"  id="dry_run_testing"></a>
-               <h1>
-               3.0 Dry run testing
+	<a name="dry_run_testing"  id="dry_run_testing"></a>
+	<h1>
+	3.0 Dry run testing
 
-               </h1>
+	</h1>
 
 
 
@@ -3079,11 +3060,11 @@ Procmail Tips
         of $PATH (such as $HOME), they'll be expanded in the output.
 
 <hr>
-               <a name="things_to_remember"  id="things_to_remember"></a>
-               <h1>
-               4.0 Things to remember
+	<a name="things_to_remember"  id="things_to_remember"></a>
+	<h1>
+	4.0 Things to remember
 
-               </h1>
+	</h1>
 
 
 
@@ -4326,11 +4307,11 @@ Procmail Tips
         explaining that their mail relay has been hijacked.
 
 <hr>
-               <a name="procmail_flags"  id="procmail_flags"></a>
-               <h1>
-               5.0 Procmail flags
+	<a name="procmail_flags"  id="procmail_flags"></a>
+	<h1>
+	5.0 Procmail flags
 
-               </h1>
+	</h1>
 
 
 
@@ -5277,11 +5258,11 @@ Procmail Tips
         via nesting blocks. Pick your poison...
 
 <hr>
-               <a name="matching_and_regexps_regular_expressions"  id="matching_and_regexps_regular_expressions"></a>
-               <h1>
-               6.0 Matching and regexps (regular expressions)
+	<a name="matching_and_regexps_regular_expressions"  id="matching_and_regexps_regular_expressions"></a>
+	<h1>
+	6.0 Matching and regexps (regular expressions)
 
-               </h1>
+	</h1>
 
 
 
@@ -6620,11 +6601,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="variables"  id="variables"></a>
-               <h1>
-               7.0 Variables
+	<a name="variables"  id="variables"></a>
+	<h1>
+	7.0 Variables
 
-               </h1>
+	</h1>
 
 
 
@@ -8267,11 +8248,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="suggestions_and_miscellaneous"  id="suggestions_and_miscellaneous"></a>
-               <h1>
-               8.0 Suggestions and miscellaneous
+	<a name="suggestions_and_miscellaneous"  id="suggestions_and_miscellaneous"></a>
+	<h1>
+	8.0 Suggestions and miscellaneous
 
-               </h1>
+	</h1>
 
 
 
@@ -9315,11 +9296,11 @@ Procmail Tips
         not use dotted file names, but to use cp instead of mv.
 
 <hr>
-               <a name="scoring"  id="scoring"></a>
-               <h1>
-               10.0 Scoring
+	<a name="scoring"  id="scoring"></a>
+	<h1>
+	10.0 Scoring
 
-               </h1>
+	</h1>
 
 
 
@@ -10123,11 +10104,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="formail_usage"  id="formail_usage"></a>
-               <h1>
-               11.0 Formail usage
+	<a name="formail_usage"  id="formail_usage"></a>
+	<h1>
+	11.0 Formail usage
 
-               </h1>
+	</h1>
 
 
 
@@ -11446,11 +11427,11 @@ Procmail Tips
         message's head.
 
 <hr>
-               <a name="saving_mailing_list_messages"  id="saving_mailing_list_messages"></a>
-               <h1>
-               12.0 Saving mailing list messages
+	<a name="saving_mailing_list_messages"  id="saving_mailing_list_messages"></a>
+	<h1>
+	12.0 Saving mailing list messages
 
-               </h1>
+	</h1>
 
 
 
@@ -12082,11 +12063,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="procmail_mime_and_html"  id="procmail_mime_and_html"></a>
-               <h1>
-               13.0 Procmail, MIME and HTML
+	<a name="procmail_mime_and_html"  id="procmail_mime_and_html"></a>
+	<h1>
+	13.0 Procmail, MIME and HTML
 
-               </h1>
+	</h1>
 
 
 
@@ -12451,11 +12432,11 @@ Procmail Tips
         <a href="http://www.faqs.org/faqs/by-newsgroup/comp/comp.mail.mime.html" >http://www.faqs.org/faqs/by-newsgroup/comp/comp.mail.mime.html</A>
 
 <hr>
-               <a name="simple_recipe_examples"  id="simple_recipe_examples"></a>
-               <h1>
-               14.0 Simple recipe examples
+	<a name="simple_recipe_examples"  id="simple_recipe_examples"></a>
+	<h1>
+	14.0 Simple recipe examples
 
-               </h1>
+	</h1>
 
 
 
@@ -14247,11 +14228,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="miscellaneous_recipes"  id="miscellaneous_recipes"></a>
-               <h1>
-               15.0 Miscellaneous recipes
+	<a name="miscellaneous_recipes"  id="miscellaneous_recipes"></a>
+	<h1>
+	15.0 Miscellaneous recipes
 
-               </h1>
+	</h1>
 
 
 
@@ -14765,11 +14746,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="procmail_and_pgp"  id="procmail_and_pgp"></a>
-               <h1>
-               16.0 Procmail and PGP
+	<a name="procmail_and_pgp"  id="procmail_and_pgp"></a>
+	<h1>
+	16.0 Procmail and PGP
 
-               </h1>
+	</h1>
 
 
 
@@ -14925,11 +14906,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="includerc_usage"  id="includerc_usage"></a>
-               <h1>
-               17.0 Includerc usage
+	<a name="includerc_usage"  id="includerc_usage"></a>
+	<h1>
+	17.0 Includerc usage
 
-               </h1>
+	</h1>
 
 
 
@@ -15700,13 +15681,9 @@ Procmail Tips
       #
       #   File id
       #
-      #       .Copyright (C)  1997-98 Foo Bar
-      #       .$Created:      YYYY-MM $
-      #       .$keywords:     procmail [subroutine|recipe] whatItDoes $
+      #       Copyright (C)  1997-98 Foo Bar
       #
-      #       This code is free software in terms of GNU Gen. pub. Lic. v2 or later
-      #       You can get newest version by sending mail to maintainer with
-      #       subject &quot;send &lt;FILENAME&gt;&quot;
+      #       This code is free software in terms of GNU GPL v2 or later
       #
       #   Description
       #
@@ -15778,11 +15755,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="mailing_list_server"  id="mailing_list_server"></a>
-               <h1>
-               18.0 Mailing list server
+	<a name="mailing_list_server"  id="mailing_list_server"></a>
+	<h1>
+	18.0 Mailing list server
 
-               </h1>
+	</h1>
 
 <p>
 <table class="shade-note">
@@ -15859,11 +15836,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="common_troubles"  id="common_troubles"></a>
-               <h1>
-               19.0 Common troubles
+	<a name="common_troubles"  id="common_troubles"></a>
+	<h1>
+	19.0 Common troubles
 
-               </h1>
+	</h1>
 
 
 
@@ -16325,6 +16302,10 @@ Procmail Tips
 
 
 <p>
+<p class="column8">
+        <a href="http://www.math.fu-berlin.de/~guckes/mail/forwarding.html" >http://www.math.fu-berlin.de/~guckes/mail/forwarding.html</A>
+
+
 <p class="column10"><em class="quote10">
           ...I tried to make a softlink to ~/.forward, but then my
           procmail wouldn't run. When I made a real ~/.forward file, then it
@@ -18996,11 +18977,11 @@ Procmail Tips
 </table>
 
 <hr>
-               <a name="technical_matters"  id="technical_matters"></a>
-               <h1>
-               20.0 Technical matters
+	<a name="technical_matters"  id="technical_matters"></a>
+	<h1>
+	20.0 Technical matters
 
-               </h1>
+	</h1>
 
 
 
@@ -19428,11 +19409,11 @@ Procmail Tips
         'fat slow directory' problem.
 
 <hr>
-               <a name="procmail_software_for_emacs"  id="procmail_software_for_emacs"></a>
-               <h1>
-               21.0 Procmail software for Emacs
+	<a name="procmail_software_for_emacs"  id="procmail_software_for_emacs"></a>
+	<h1>
+	21.0 Procmail software for Emacs
 
-               </h1>
+	</h1>
 
 
 
@@ -20038,11 +20019,11 @@ Procmail Tips
         then?
 
 <hr>
-               <a name="rfc_request_for_comments"  id="rfc_request_for_comments"></a>
-               <h1>
-               22.0 RFC, Request for comments
+	<a name="rfc_request_for_comments"  id="rfc_request_for_comments"></a>
+	<h1>
+	22.0 RFC, Request for comments
 
-               </h1>
+	</h1>
 
 
 
@@ -20353,7 +20334,7 @@ Procmail Tips
     <tr>
     <td class="shade-normal-attrib" valign="top">
     <pre>
-      &gt;&gt;&gt;&gt;&gt; In article &lt;em&gt;<a href="mailto:x7g1hfu2sf.fsf@gkar.prescienttech.com" >x7g1hfu2sf.fsf@gkar.prescienttech.com</a>&lt;/em&gt;,
+      &gt;&gt;&gt;&gt;&gt; In article &lt;x7g1hfu2sf.fsf@gkar.prescienttech.com&gt;,
       &gt;&gt;&gt;&gt;&gt; Rich Pieri &lt;em&gt;<a href="mailto:rich.pieri@prescienttech.com" >rich.pieri@prescienttech.com</a>&lt;/em&gt; enscribed:
 
       &gt; -----BEGIN PGP SIGNED MESSAGE-----
@@ -20625,11 +20606,11 @@ Procmail Tips
 
 
 <hr>
-               <a name="introduction_to_email_headers"  id="introduction_to_email_headers"></a>
-               <h1>
-               23.0 Introduction to E-mail Headers
+	<a name="introduction_to_email_headers"  id="introduction_to_email_headers"></a>
+	<h1>
+	23.0 Introduction to E-mail Headers
 
-               </h1>
+	</h1>
 
 
 
@@ -21305,11 +21286,11 @@ Procmail Tips
         should suffice.
 
 <hr>
-               <a name="message_headers"  id="message_headers"></a>
-               <h1>
-               24.0 Message headers
+	<a name="message_headers"  id="message_headers"></a>
+	<h1>
+	24.0 Message headers
 
-               </h1>
+	</h1>
 
 
 
@@ -22643,19 +22624,12 @@ Procmail Tips
 
 
 
-<!--    ......................................................................
-    DOCUMENT END BLOCK
-    ......................................................................
--->
 
 <hr>
 <em    class="footer">
 <p>
-This file has been automatically generated from plain text file
-with
-<a href="http://freshmeat.net/projects/perl-text2html">t2html</a>
 <br>
-Last updated: 2008-03-09 15:55<br>
+Last updated: 2008-09-22 01:41<br>
 </em    class="footer">
 </body>
 </html>
