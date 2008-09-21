@@ -397,7 +397,7 @@ Table of contents
 
 	.Copyright (C) 1997-2009 Jari Aalto
         .Homepage http://pm-doc.sourceforge.net/
-        .$Id: pm-tips.txt,v 2.43 2008/09/21 22:45:45 jaalto Exp $
+        .$Id: pm-tips.txt,v 2.44 2008/09/21 22:52:53 jaalto Exp $
         .URLs last checked: 2008-09-21
 
         License: This material may be distributed only subject to the
@@ -507,55 +507,56 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
-            v2.42   2008-03-10  510  Add Gmane URL. Links checked.
-            v2.36   2007-10-02  519  New HTML/CSS layout. Links checked.
-            v2.30   2006-02-15  519  Sanitized all email addresses.
-            v2.27   2004-10-10  516  Spam related things removed.
-            v2.16   2002-08-31  596  Removed old UBE pointers.
-            v2.13   2002-08-13  596  Removed old UBE pointers.
-            v2.5    2002-02-01  608  Spelling checked with Emacs ispell
-            v2.2    2002-01-28  608  URL links checked and updated
-            v2.0    2001-08-09  608  http://pm-doc.sourceforge.net opened.
-            v1.77   1999-12-27  603  Netscape spam filters added
-            v1.76   1999-10-01  602  Mark Seiden's patch applied. Now under CVS.
-            v1.74   1999-04-26  599  document moved to www.procmail.org
-            v1.72   1999-04-21  597  Links corrected
-            v1.71   1999-03-29  597  Ricochet -- Perl script to fight UBE
-            v1.70   1999-02-26  592  procmail's Y2K compliance
-            v1.69   1999-02-23  590  RFC and using MIME in Usenet postings
-            v1.68   1998-01-29  587  Added "Lua" language pointer
-            v1.67   1998-01-07  579  Eli's procmail recipes in module section
-            v1.66   1998-12-14  578  Philip took care of bugs/patches listing
-            v1.64   1998-11-26  602  More Richard's comments integrated
-            v1.63   1998-10-30  595  Richard's english correction patch
-            v1.60   1998-10-21  591  UMASK, .forward if procmail already is LDA
-            v1.58   1998-10-12  583  SmartList and other MLM software discussed
-            v1.57   1998-10-06  575  PLUS addr. Convert HTML body to text
-            v1.55   1998-08-29  565  Fetching fields with formail -x
-            v1.53   1998-08-24  554  Procmail doesn't pass 8bit characters
-            v1.52   1998-08-24  553  Flag c forking study, procmail wish list
-            v1.51   1998-08-18  541  Small changes. MIME notes
-            v1.49   1998-08-10  529  Guido.Van.Hoeck's 55k patch applied
-            v1.46   1998-06-24  526  Added live urls to procmail archive
-            v1.45   1998-06-23  521  All recipes checked by eye. Many fixes.
-            v1.44   1998-06-19  516  Detecting mailing lists with pm-jalist.rc
-            v1.41   1998-06-17  510  How to disable recipe quickly with
-            v1.36   1998-04-03  493  Includerc rewritten, plus addressing
-            v1.34   1998-04-02  488  ORing and supreme scoring added
-            v1.32   1998-03-23  471  All recipes checked (by eye)
-            v1.31   1998-03-10  469  Better ordering: ORing rules discussed
-            v1.29   1998-01-30  429  "regexp" section rewrite.
-            v1.24   1997-12-30  415  up till 1996-12 is now included
-            v1.17   1997-12-09  343  up till archive 1996-07 now included
-            v1.14   1997-11-25  260
-            v1.13   1997-11-08  218  Era's correction suggestions.
-            v1.10   1997-10-13  181  archive file 1995-10's tips included
-            v1.9    1997-10-11  142
-            v1.8    1997-10-01  127
-            v1.6    1997-09-18  94
-            v1.5    1997-09-16  76
-            v1.05   1997-09-14  53
-            v1.01   1997-09-13  46 (k)
+            2008-09-21  510  Links checked.
+            2008-03-10  510  Add Gmane URL. Links checked.
+            2007-10-02  519  New HTML/CSS layout. Links checked.
+            2006-02-15  519  Sanitized all email addresses.
+            2004-10-10  516  Spam related things removed.
+            2002-08-31  596  Removed old UBE pointers.
+            2002-08-13  596  Removed old UBE pointers.
+            2002-02-01  608  Spelling checked with Emacs ispell
+            2002-01-28  608  URL links checked and updated
+            2001-08-09  608  http://pm-doc.sourceforge.net opened.
+            1999-12-27  603  Netscape spam filters added
+            1999-10-01  602  Mark Seiden's patch applied. Now under CVS.
+            1999-04-26  599  document moved to www.procmail.org
+            1999-04-21  597  Links corrected
+            1999-03-29  597  Ricochet -- Perl script to fight UBE
+            1999-02-26  592  procmail's Y2K compliance
+            1999-02-23  590  RFC and using MIME in Usenet postings
+            1998-01-29  587  Added "Lua" language pointer
+            1998-01-07  579  Eli's procmail recipes in module section
+            1998-12-14  578  Philip took care of bugs/patches listing
+            1998-11-26  602  More Richard's comments integrated
+            1998-10-30  595  Richard's english correction patch
+            1998-10-21  591  UMASK, .forward if procmail already is LDA
+            1998-10-12  583  SmartList and other MLM software discussed
+            1998-10-06  575  PLUS addr. Convert HTML body to text
+            1998-08-29  565  Fetching fields with formail -x
+            1998-08-24  554  Procmail doesn't pass 8bit characters
+            1998-08-24  553  Flag c forking study, procmail wish list
+            1998-08-18  541  Small changes. MIME notes
+            1998-08-10  529  Guido.Van.Hoeck's 55k patch applied
+            1998-06-24  526  Added live urls to procmail archive
+            1998-06-23  521  All recipes checked by eye. Many fixes.
+            1998-06-19  516  Detecting mailing lists with pm-jalist.rc
+            1998-06-17  510  How to disable recipe quickly with
+            1998-04-03  493  Includerc rewritten, plus addressing
+            1998-04-02  488  ORing and supreme scoring added
+            1998-03-23  471  All recipes checked (by eye)
+            1998-03-10  469  Better ordering: ORing rules discussed
+            1998-01-30  429  "regexp" section rewrite.
+            1997-12-30  415  up till 1996-12 is now included
+            1997-12-09  343  up till archive 1996-07 now included
+            1997-11-25  260
+            1997-11-08  218  Era's correction suggestions.
+            1997-10-13  181  archive file 1995-10's tips included
+            1997-10-11  142
+            1997-10-01  127
+            1997-09-18  94
+            1997-09-16  76
+            1997-09-14  53
+            1997-09-13  46 (k)
 
     1.5 Document layout and maintenance
 
