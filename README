@@ -9,17 +9,17 @@ README for Procmail documentation tips
         to share. Please send your favourite procmail related material
         to
 
-             jari aalto A T cante net
+            jari aalto A T cante net
 
-	 Alternatively, clone the github repository to suggest
-	 changes:
+        Alternatively, clone the github repository to suggest
+        changes:
 
-	     git clone git://github.com/jaalto/project--procmail-doc.git
+            git clone git://github.com/jaalto/project--procmail-doc.git
 
-	 The canonical homepage is at
+        The canonical homepage is at
 
-	     http://sf.net/project/pm-doc
-	     http://pm-doc.sourceforge.net
+            http://sf.net/project/pm-doc
+            http://pm-doc.sourceforge.net
 
     Directory doc/
 
