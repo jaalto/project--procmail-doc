@@ -458,7 +458,6 @@ Table of contents
         .[alan]       Alan K. Stebbens    alan.stebbens A T openwave com
         .[dan]        Daniel Smith        J.Daniel.Smith A T WriteMe dt com
         .[david]      David W. Tamkin     dattier A T panix com
-        .<<text>> Text has been rephrased or modified that does not exist in the original source.
         .[ed]         Edward J. Sabol     sabol A T alderaan gsfc nasa gov
         .[elijah]     Eli the Bearded     process A T qz little-neck ny us
         .[hal]        Hal Wine            hal A T dtor com
@@ -9391,10 +9390,10 @@ Table of contents
 
          [Recipe to record Subject lines on exit]
 
-        <<Some Message had doubled Subject lines>> [david] ...this will
-        list all subject lines in the log file upon exit if there are two
-        or more. The earliest would appear twice: once in the trap output
-        and once in the logabstract.
+        [Some Message had doubled Subject lines; david] ...this will
+        list all subject lines in the log file upon exit if there are
+        two or more. The earliest would appear twice: once in the trap
+        output and once in the logabstract.
 
             :0
             * ^Subject:.*$(.+$)*Subject:
@@ -10510,7 +10509,7 @@ Table of contents
 
        [M. Maxwell <drwho A T No-Spam-see.sig> 1998-03-26 gnus.emacs.gnus]
 
-        ...Believe me, I *don't* like having to do this <<header munging>>
+        ...Believe me, I *don't* like having to do this header munging
         at all. But it saves me *considerable* aggravation. I also don't
         have to download my mail from a POP3 server (my ISP has a shell
         account), but I prefer to read mail offline simply because I get so
