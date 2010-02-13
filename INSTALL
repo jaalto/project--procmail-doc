@@ -1,0 +1,12 @@
+INSTALL for procmail documentation (tips)
+-----------------------------------------
+
+To install in standard location /usr/share/doc/procmail-tips use
+comand below. Options -n can be used for testing.
+
+	make [-n] install
+
+For more fine grained install, see inside doc/Makefile and its
+variables.
+
+End of file
