@@ -9,6 +9,8 @@
 	(13.2 Mime content type application/ms-tnef): Update
 	Microsoft URL.
 	(23.1 To find out more about mail): Update URL.
+	(4.13 Gee, where do I put all those ! * $ ??): Fix
+	indentation in recipe example.
 
 2008-09-21  Jari Aalto  <jari.aalto@cante.net>
 

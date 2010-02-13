@@ -1565,7 +1565,7 @@ Table of contents
         if I variable expansion dollar in the line (leftmost).
 
             :0
-            *$       ^Subject:.*$VAR
+            *$        ^Subject:.*$VAR
             *  !      ^From:.*some
             *  ! B ?? match-the-string-in-body
             *$ ?      $IS_EXIST $FILE
