@@ -1,6 +1,6 @@
 Introduction
 
-	Copyright (C) 1997-2009 Jari Aalto
+	Copyright (C) 1997-2010 Jari Aalto
 
         Hi, here are couple of links to the world of the procmail, please
         select from the list below:
