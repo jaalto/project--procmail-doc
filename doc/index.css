@@ -128,7 +128,6 @@ span.quote7
     /* color: Green; */
     /* font-style: italic; */
     font-family: Verdana;
-    font-weigh: bold;
     font-size: 1em;
 }
 
@@ -291,7 +290,7 @@ p.column11
     font-family:    Georgia, Verdana, Helvetica, sans-serif;
     font-size:      0.9em;
 /*    font-style:           italic; */
-    letter-spacing: 0.7;
+    letter-spacing: 0.7em;
 /*    font-variant:   small-caps; */
     color:          #4682b4;
 }
@@ -302,7 +301,6 @@ p.column11 samp.word
     font-family:    "Courier New", courier, monospace, sans-serif;
     font-variant:   normal;
     font-size:      1em;
-    font-stretch:   wider;
     color:          #191970;
 }
 
@@ -313,8 +311,11 @@ table
 {
     border:             none;
     width:              100%;
-    cellpadding:        10px;
-    cellspacing:        0px;
+}
+
+table td
+{
+    padding:		10px;
 }
 
 table tr td pre
@@ -365,7 +366,6 @@ table.dashed
         border-left:    1px #00e6e8 solid;
         border-right:   1px #00c6c8 solid;
         border-bottom:  1px #00c6c8 solid;
-        border-width:   94%;
         border-style:   dashed; /* dotted */
 
         /* line-height: 105%; */

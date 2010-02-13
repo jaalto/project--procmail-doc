@@ -1,5 +1,7 @@
 2010-02-13 Sat  Jari Aalto  <jari.aalto@cante.net>
 
+	* index.css: Correct style issues to conform CSS 2.1
+
 	* index.txt:
 	(13.5 Converting HTML body to plain text): remove
 	lynx urls.
