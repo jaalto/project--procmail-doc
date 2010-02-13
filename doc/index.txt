@@ -396,7 +396,7 @@ Table of contents
 
 	.Copyright (C) 1997-2010 Jari Aalto
         .Homepage http://pm-doc.sourceforge.net
-        .URL links last checked: 2008-09-21
+        .URL links last checked: 2010-02-13
 
         License: This material may be distributed only subject to the
         terms and conditions set forth in GNU General Public License
@@ -1140,14 +1140,14 @@ Table of contents
             rules with no external files needed. The module is
             available in Procmail module library at
             <http://freshmeat.net/projects/procmail-lib>.
-       2.5.1 o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
+       o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
             The attached set of procmail recipes/filters, which I
             call The Spam Bouncer, are for users who are sick of spam
             (unsolicited junk mail) and want to filter it out of their
             mail as easily as possible. These recipes can be used as
             shared recipes for a whole system, or by an individual for
             their own mailbox only.
-        o   #URL<http://sourceforge.net/projects/junkfilter><Junkfilter>.
+        o   #URL<http://junkfilter.zer0.org/><Junkfilter>.
             by Gregory Sutter. Junkfilter is a user-configurable
             procmail-based filter system for electronic mail. Recipes
             include checks for forged headers, key words, common spam
@@ -5966,8 +5966,8 @@ Table of contents
         Exchange.
 
         The sender can turn off the RTF option for messages to you. For more
-        information, see: XCLN: Sending Messages In Rich-Text Format
-        http://support.microsoft.com/support/kb/articles/q136/2/04.asp
+        information, see: "XCLN: Sending Messages In Rich-Text Format" at
+        http://support.microsoft.com/kb/136204
 
     13.3 Trapping HTML mime messages
 
@@ -6021,10 +6021,6 @@ Table of contents
             }
 
     13.5 Converting HTML body to plain text
-
-          _Note:_ Older lynx has security holes:
-          http://ciac.llnl.gov/ciac/bulletins/h-82.shtml
-          http://lynx.browser.org/
 
         The most popular solution to convert HTML body into plain text is to
         use `lynx'. Another more straightforward method is to use a perl one
@@ -6121,7 +6117,7 @@ Table of contents
 
             GetFile: ~user/.login
 
-        We make the script safe here by forcing "http://$MATCH" and not
+        We make the script safe here by forcing -http://$MATCH and not
         simply using "$MATCH"
 
             :0
@@ -10723,8 +10719,8 @@ Table of contents
 
     23.1 To find out more about mail
 
-       "All about Email headers"
-        http://www.stopspam.org/email/headers/headers.html
+       "Reading Email Headers" - "All About Email Headers"
+        http://www.stopspam.org/index.php?option=com_content&id=45
         ...This document is intended to provide a comprehensive introduction
         to the behavior of mail headers. It is primarily intended to help
         victims of unsolicited mail ("mail spam") attempting to determine

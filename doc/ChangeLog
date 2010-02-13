@@ -1,3 +1,13 @@
+2010-02-13 Sat  Jari Aalto  <jari.aalto@cante.net>
+
+	* index.txt:
+	(13.5 Converting HTML body to plain text): remove
+	lynx urls.
+	(2.5 Procmail code to filter UBE): Update junkfilter URL.
+	(13.2 Mime content type application/ms-tnef): Update
+	Microsoft URL.
+	(23.1 To find out more about mail): Update URL.
+
 2008-09-21  Jari Aalto  <jari.aalto@cante.net>
 
 	* pm-tips.txt (1.5 Document layout and maintenance): Correct
