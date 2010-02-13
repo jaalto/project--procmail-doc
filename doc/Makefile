@@ -57,6 +57,7 @@ all: doc
 clean:
 	# clean
 	-rm -f *[#~] *.\#* $(OBJS)
+	rm -rf tmp/
 
 #  Delete files that are created by configuring or building the program.
 #  Leave only the files that were in the distribution.
