@@ -21,6 +21,8 @@ ifneq (,)
 This makefile requires GNU Make.
 endif
 
+OBJDIR = doc
+
 all: doc
 
 clean:
