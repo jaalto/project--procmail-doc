@@ -387,18 +387,16 @@ Table of contents
 
     1.1 General
 
-        #T2HTML-COMMENT scp pm-tips.html jaalto@shell.sf.net:/home/groups/p/pm/pm-doc/htdocs/
         #T2HTML-AUTHOR Jari Aalto
         #T2HTML-TITLE Procmail Tips
         #T2HTML-OPTION --css-code-bg
-        #T2HTML-OPTION --css-file=pm-tips.css
+        #T2HTML-OPTION --css-file=index.css
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-	.Copyright (C) 1997-2009 Jari Aalto
-        .Homepage http://pm-doc.sourceforge.net/
-        .$Id: pm-tips.txt,v 2.44 2008/09/21 22:52:53 jaalto Exp $
-        .URLs last checked: 2008-09-21
+	.Copyright (C) 1997-2010 Jari Aalto
+        .Homepage http://pm-doc.sourceforge.net
+        .URL links last checked: 2008-09-21
 
         License: This material may be distributed only subject to the
         terms and conditions set forth in GNU General Public License
@@ -424,8 +422,7 @@ Table of contents
         already. If you're using Windows operating system, procmail is
         available in Cygwin <http://www.cygwin.com/> distribution.
 
-        You may want to read *Nancy's* and *Era's* procmail FAQ pages
-        before this page.
+        See also *Nancy's* and *Era's* procmail FAQ pages.
 
         If you find errors or things to improve in this document,
         please send mail to this document's maintainer (see project
