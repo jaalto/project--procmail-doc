@@ -10782,13 +10782,13 @@ Table of contents
         ISBN: 0130929417
 
         Managing Mailing Lists: Majordomo, LISTSERV, Listproc,
-            and SmartList
+        and SmartList
         By Alan Schwartz
         O'Reilly & Assoc.
         1st Edition March 1998
         ISBN: 1-56592-259-X
         298 pages, $29.95
-        http://www.oreilly.com/catalog/mailing/
+        http://oreilly.com/catalog/mailing/
 
         sendmail, 2nd Edition
         By Bryan Costales & Eric Allman
@@ -10796,7 +10796,7 @@ Table of contents
         2nd Edition January 1997
         ISBN: 1-56592-222-0
         1050 pages, $39.95
-        <http://www.oreilly.com/>
+        <http://oreilly.com/>
 
     23.2 Lecture by Alan Stebbens
 
