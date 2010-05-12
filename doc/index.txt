@@ -6,7 +6,6 @@ Table of contents
            1.3 Abbreviations and thanks
            1.4 Version information
            1.5 Document layout and maintenance
-              1.5.1 Sending improvements
            1.6 About presented recipes
            1.7 Variables used in recipes
            1.8 About "useless use of cat award"
@@ -21,19 +20,21 @@ Table of contents
               2.4.3 Foreword to using modules
               2.4.4 Header file modules
               2.4.5 General modules
-              2.4.6 Low-level Date and time handling
-              2.4.7 Higher-level Date and time handling
-              2.4.8 Forwarding and account modules
-              2.4.9 Vacation modules
-              2.4.10 Message-id based modules
-              2.4.11 Cron modules
-              2.4.12 Backup modules
-              2.4.13 Confirmation modules
-              2.4.14 Mime modules
-              2.4.15 Filtering message body or headers
-              2.4.16 Miscellaneous modules
-              2.4.17 Mailing list modules
+              2.4.6 Spam modules
+              2.4.7 Mime modules
+              2.4.8 Filtering message body or headers
+              2.4.9 Mailing list modules
+              2.4.10 Miscellaneous modules
+              2.4.11 Low-level Date and time handling
+              2.4.12 Higher-level Date and time handling
+              2.4.13 Forwarding and account modules
+              2.4.14 Vacation modules
+              2.4.15 Message-id based modules
+              2.4.16 Cron modules
+              2.4.17 Backup modules
+              2.4.18 Confirmation modules
            2.5 Procmail code to filter UBE
+              2.5.1 o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
 
        3.0 Dry run testing
            3.1 What is dry run testing?
@@ -67,8 +68,8 @@ Table of contents
        5.0 Procmail flags
            5.1 The order of the flags
            5.2 Flags HB at top of recipe (warning)
-           5.3 Flag w and recipe with |
-           5.4 Flag w, lock file and recipe with |
+           5.3 Flag w and recipe with pipe(|)
+           5.4 Flag w, lock file and recipe with pipe(|)
            5.5 Flag f and w together
            5.6 Flags h and b
            5.7 Flag h and sinking to /dev/null
@@ -121,7 +122,7 @@ Table of contents
            7.17 Dollar sign in condition lines.
            7.18 Finding mysterious foo variable
            7.19 Storing code to variable
-           7.20 Getting headers into a variable.
+           7.20 Getting headers into a variable
            7.21 Converting value to lowercase
 
        8.0 Suggestions and miscellaneous
@@ -134,194 +135,186 @@ Table of contents
            8.7 How to run an extra shell command as a side effect?
            8.8 Forcing "ok" return status from shell script
            8.9 Using grep with file lists to mach messages
-           8.10 Make your own .procmailrc available to others
-           8.11 Using dates efficiently
-           8.12 Keep simple header log
-           8.13 Gzipping messages
-           8.14 Emergency stop for your .procmailrc
 
-       9.0 Scoring
-           9.1 Using scores by an example
-           9.2 Brief Score tutorial
-           9.3 Score's scope
-           9.4 Counting length of a string
-           9.5 Counting lines in a message (Adding Lines: header)
-           9.6 Determining if body is longer than header
-           9.7 Matching last Received header
-           9.8 How to add Content-Length header
-           9.9 Testing message size or number of lines
-           9.10 Counting commas with recursive includerc
+       9.0 x1    8.11 Using dates efficiently
+           9.1 Keep simple header log
+           9.2 Gzipping messages
+           9.3 Emergency stop for your .procmailrc
 
-       10.0 Formail usage
-           10.1 Fetching fields with formail -x
-           10.2 Always use formail's -rt switch
-              10.2.1 For procmail versions prior 3.14
-           10.3 Using -rt and rewriting the From address
-           10.4 Formail -rt and Resent-From header
-           10.5 Quoting the message
-           10.6 Without quoting the message
-           10.7 How to include headers and body to the reply message
-           10.8 Adding text to the beginning of message
-           10.9 Adding text to the end of message
-           10.10 Adding text before quoted message
-           10.11 Adding extra headers from file
-           10.12 Splitting digest
-           10.13 Mailbox: Splitting to individual files
-           10.14 Mailbox: Extracting all From addresses from mailbox
-           10.15 Mailbox: Applying procmail recipe on whole mailbox
-           10.16 Mailbox: run series of commands for each mail (split mailbox)
-           10.17 Option -D and cache
-           10.18 Option -D and message-id in the body
-           10.19 Reducing formail calls (conditionally adding fields)
-           10.20 Formail -A -a options
-           10.21 Formail -e -s options
+       10.0 Scoring
+           10.1 Using scores by an example
+           10.2 Brief Score tutorial
+           10.3 Score's scope
+           10.4 Counting length of a string
+           10.5 Counting lines in a message (Adding Lines: header)
+           10.6 Determining if body is longer than header
+           10.7 Matching last Received header
+           10.8 Testing value range with scoring (bogofilter)
+           10.9 How to add Content-Length header
+           10.10 Testing message size or number of lines
+           10.11 Counting commas with recursive includerc
 
-       11.0 Saving mailing list messages
-           11.1 Using subroutine pm-jalist.rc to detect mailing lists
-           11.2 Using plus addressing foo+bar@address.com
-           11.3 Using RFC comment trick for additional information
-           11.4 Simple mailing list handling
-           11.5 Archiving according to TO
-           11.6 Using Return-Path to detect mailing lists
+       11.0 Formail usage
+           11.1 Fetching fields with formail -x
+           11.2 Always use formail's -r switch
+              11.2.1 For procmail versions prior 3.14
+           11.3 Rewriting the From address
+           11.4 Formail -r and Resent-From header
+           11.5 Quoting the message
+           11.6 Without quoting the message
+           11.7 How to include headers and body to the reply message
+           11.8 Adding text to the beginning of message
+           11.9 Adding text to the end of message
+           11.10 Adding text before quoted message
+           11.11 How to truncate headers (save filing space)
+           11.12 Adding extra headers from file
+           11.13 Splitting digest
+           11.14 Mailbox: Splitting to individual files
+           11.15 Mailbox: Extracting all From addresses from mailbox
+           11.16 Mailbox: Applying procmail recipe on whole mailbox
+           11.17 Mailbox: run series of commands for each mail (split mailbox)
+           11.18 Option -D and cache
+           11.19 Option -D and message-id in the body
+           11.20 Reducing formail calls (conditionally adding fields)
+           11.21 Formail -A -a options
+           11.22 Formail -e -s options
 
-       12.0 Procmail, MIME and HTML
-           12.1 Mime Bibliography
-           12.2 Mime notes
-           12.3 Software to deal with mime or HTML
-           12.4 Mime content type application/ms-tnef
-           12.5 Trapping HTML mime messages
-           12.6 Complaining about HTML messages
-           12.7 Converting HTML body to plain text
-           12.8 Getting rid of unwanted mime attachments (HTML, vcard)
-           12.9 Sending contents of a HTML page in plain text to someone
+       12.0 Saving mailing list messages
+           12.1 Using subroutine pm-jalist.rc to detect mailing lists
+           12.2 Using plus addressing foo+bar@address.com
+           12.3 Using RFC comment trick for additional information
+           12.4 Simple mailing list handling
+           12.5 Archiving according to TO
+           12.6 Using Return-Path to detect mailing lists
 
-       13.0 Simple recipe examples
-           13.1 Saving: MH folders -- numbered messages
-           13.2 Saving: to monthly folders
-           13.3 Modifying: Filtering basics
-           13.4 Modifying: Squeezing empty lines around message body
-           13.5 Modifying: shuffling headers always to same order
-           13.6 Service: Auto answerer to empty messages
-           13.7 Service: Ping responder
-           13.8 Service: simple vacation with procmail
-           13.9 Service: vacation code example
-           13.10 Service: Auto-forwarding
-           13.11 Service: forward only specific messages
-           13.12 Service: Making digests
-           13.13 Kill: killing advertisement headers and footers
-           13.14 Kill: simple kill file recipe with procmail
-           13.15 Kill: duplicate messages
-           13.16 Kill: spam filter with simple recipes
-           13.17 Kill: (un)subscribe messages
-           13.18 Time: Once a day cron-like job
-           13.19 Time: Running a recipe at a given time
-           13.20 Time: Triggering mail and using cron
-           13.21 Decoding: Uudecode
-           13.22 Decoding: MIME
-           13.23 How to send commands in the message's body
-           13.24 Matching two words on a line, but not one
-           13.25 How to define personal XX macros?
-           13.26 How to change subject by body match
-           13.27 How to change Subject according to some other header
-           13.28 How to call program with parameters
+       13.0 Procmail, MIME and HTML
+           13.1 Mime Bibliography
+           13.2 Mime content type application/ms-tnef
+           13.3 Trapping HTML mime messages
+           13.4 Complaining about HTML messages
+           13.5 Converting HTML body to plain text
+           13.6 Getting rid of unwanted mime attachments (HTML, vcard)
+           13.7 Sending contents of a HTML page in plain text to someone
 
-       14.0 Miscellaneous recipes
-           14.1 Matching valid Message-Id header
-           14.2 Sending two files in a message
-           14.3 Excessive quoting of message
-           14.4 Sending message to pager in chunks
-           14.5 Playing particular sound when message arrives
-           14.6 Combining multiple Original-Cc and Original-To headers
-           14.7 Forwarding sensitive messages in encrypted format
+       14.0 Simple recipe examples
+           14.1 Saving: MH folders -- numbered messages
+           14.2 Saving: to monthly folders
+           14.3 Modifying: Filtering basics
+           14.4 Modifying: Squeezing empty lines around message body
+           14.5 Modifying: shuffling headers always to same order
+           14.6 Service: Auto answerer to empty messages
+           14.7 Service: Ping responder
+           14.8 Service: simple vacation with procmail
+           14.9 Service: vacation code example
+           14.10 Service: Auto-forwarding
+           14.11 Service: forward only specific messages
+           14.12 Service: Making digests
+           14.13 Kill: killing advertisement headers and footers
+           14.14 Kill: simple kill file recipe with procmail
+           14.15 Kill: duplicate messages
+           14.16 Kill: spam filter with simple recipes
+           14.17 Kill: (un)subscribe messages
+           14.18 Time: Once a day cron-like job
+           14.19 Time: Running a recipe at a given time
+           14.20 Time: Triggering mail and using cron
+           14.21 Decoding: Uudecode
+           14.22 Decoding: MIME
+           14.23 How to send commands in the message's body
+           14.24 Matching two words on a line, but not one
+           14.25 How to define personal XX macros?
+           14.26 How to change subject by body match
+           14.27 How to change Subject according to some other header
+           14.28 How to call program with parameters
 
-       15.0 Procmail and PGP
-           15.1 Decrypt pgp messages automatically
-           15.2 Getkeys from key server
-           15.3 Auto grab incoming pgp keys
+       15.0 Miscellaneous recipes
+           15.1 Matching valid Message-Id header
+           15.2 Sending two files in a message
+           15.3 Excessive quoting of message
+           15.4 Sending message to pager in chunks
+           15.5 Playing particular sound when message arrives
+           15.6 Combining multiple Original-Cc and Original-To headers
+           15.7 Forwarding sensitive messages in encrypted format
 
-       16.0 Includerc usage
-           16.1 Using: multiple rc files
-           16.2 Using: call rc file conditionally
-           16.3 Using: autoloading an rc file
-           16.4 Making: naming of the rc file
-           16.5 Making: Using name space when saving procmail variables
-           16.6 Making: Public and private variables in rc file
-           16.7 The rules of thumb for constructing general purpose rc file
-           16.8 An includerc skeleton
+       16.0 Procmail and PGP
+           16.1 Decrypt pgp messages automatically
+           16.2 Getkeys from key server
+           16.3 Auto grab incoming pgp keys
 
-       17.0 Mailing list server
+       17.0 Includerc usage
+           17.1 Using: multiple rc files
+           17.2 Using: call rc file conditionally
+           17.3 Using: autoloading an rc file
+           17.4 Making: naming of the rc file
+           17.5 Making: Using name space when saving procmail variables
+           17.6 Making: Public and private variables in rc file
+           17.7 The rules of thumb for constructing general purpose rc file
+           17.8 An includerc skeleton
 
-       18.0 Common troubles
-           18.1 Procmail modes: normal, delivery, and mail filter.
-           18.2 Procmail as sendmail Mlocal mail filtering device
-           18.3 Procmail doesn't pass 8bit characters
-           18.4 My ISP isn't very interested in installing procmail
-           18.5 My ISP has systemwide procmailrc; is this a good idea?
-           18.6 Procmail changes mailbox and directory permissions
-           18.7 Changing mbox permission during compilation to 660
-           18.8 The .forward file must be real file
-           18.9 Using .forward if procmail already is LDA
-           18.10 Mail should be put in the mailqueue if write fails
-           18.11 Qmail: how to make it work with procmail
-           18.12 Qmail: Procmail looks file from /var/spool/mail only
-           18.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
-           18.14 AFS: How to use Procmail when HOME is in AFS cell
-           18.15 Help, some idiot sent my address to 30 mailing lists
-           18.16 Help, Procmail beeps and prints to my console
-           18.17 Help, procmail dumps mail to console
-           18.18 Help, corrupted From_ line in mailbox
-           18.19 Directing user's mail to HOME instead of /var/spool/
-           18.20 NFS mounting /var/mail is a good way to get bad performance
-           18.21 I can't see the sendmail's response in LOGFILE
-           18.22 Compiling procmail and choosing locking scheme
-           18.23 Forwarding lot of mail causes heavy load
-           18.24 What happens to mail if MDA Procmail fails
-           18.25 Procmail reads entire 90Mb message into memory
-           18.26 Help, procmail uses occasionally huge chunk of memory
-           18.27 Procmail signaled out of memory in my verbose log
-           18.28 Variables DEFAULT and ORGMAIL
-           18.29 When DEFAULT cannot be mailed to
-           18.30 Variable DROPPRIVS
-           18.31 Variable HOME
-           18.32 Variable HOST
-           18.33 Variable LINEBUF
-           18.34 Variable LOG and LOGFILE
-           18.35 Variable TRAP
-           18.36 Variable UMASK
-           18.37 UMASK and permissions
-           18.38 Performance difference between back tick and "|" recipe
-           18.39 Procmail's temporary file names while writing file out
-           18.40 Parameter $@
-           18.41 Procmail variables are null terminated (detecting null string)
-           18.42 FROM_DAEMON TO and TO_ and case-sensitiveness
-           18.43 TO_ macro deciphered
-           18.44 TO_ macro and RFC 822
-           18.45 FROM_DAEMON deciphered
+       18.0 Mailing list server
 
-       19.0 Technical matters
-           19.1 List of exit codes
-           19.2 List of precedence codes
-           19.3 Sendmail and -t
-           19.4 RFC822 Reply-To and formail problem with multiple recipients
-           19.5 Procmail and IMAP server
-           19.6 Machine which processes mail
-           19.7 Compiling procmail and MAILSPOOLHOME
+       19.0 Common troubles
+           19.1 Procmail modes: normal, delivery, and mail filter.
+           19.2 Procmail as sendmail Mlocal mail filtering device
+           19.3 Procmail doesn't pass 8bit characters
+           19.4 My ISP isn't very interested in installing procmail
+           19.5 My ISP has systemwide procmailrc; is this a good idea?
+           19.6 Procmail changes mailbox and directory permissions
+           19.7 Changing mbox permission during compilation to 660
+           19.8 The .forward file must be real file
+           19.9 Using .forward if procmail already is LDA
+           19.10 Mail should be put in the mailqueue if write fails
+           19.11 Qmail: how to make it work with procmail
+           19.12 Qmail: Procmail looks file from /var/spool/mail only
+           19.13 Qmail: patch to procmail 3.11pre7 to work with Maildirs
+           19.14 AFS: How to use Procmail when HOME is in AFS cell
+           19.15 Help, some idiot sent my address to 30 mailing lists
+           19.16 Help, Procmail beeps and prints to my console
+           19.17 Help, procmail dumps mail to console
+           19.18 Help, corrupted From_ line in mailbox
+           19.19 Directing user's mail to HOME instead of /var/spool/
+           19.20 NFS mounting /var/mail is a good way to get bad performance
+           19.21 I can't see the sendmail's response in LOGFILE
+           19.22 Compiling procmail and choosing locking scheme
+           19.23 Forwarding lot of mail causes heavy load
+           19.24 What happens to mail if MDA Procmail fails
+           19.25 Procmail reads entire 90Mb message into memory
+           19.26 Procmail signaled out of memory in my verbose log
+           19.27 Variables DEFAULT and ORGMAIL
+           19.28 When DEFAULT cannot be mailed to
+           19.29 Variable DROPPRIVS
+           19.30 Variable HOME
+           19.31 Variable HOST
+           19.32 Variable LINEBUF
+           19.33 Variable LOG and LOGFILE
+           19.34 Variable TRAP
+           19.35 Variable UMASK
+           19.36 UMASK and permissions
+           19.37 Performance difference between back tick and "|" recipe
+           19.38 Procmail's temporary file names while writing file out
+           19.39 Parameter $@
+           19.40 Procmail variables are null terminated (detecting null string)
+           19.41 FROM_DAEMON TO and TO_ and case-sensitiveness
+           19.42 TO_ macro deciphered
+           19.43 TO_ macro and RFC 822
+           19.44 FROM_DAEMON deciphered
 
-       20.0 Procmail software for Emacs
-           20.1 What is Emacs
-           20.2 Emacs and procmail mode and Lint
-           20.3 Emacs and lining up backslashes
-           20.4 Emacs and browsing mailbox files
-           20.5 Emacs and font-lock.el
+       20.0 Technical matters
+           20.1 List of exit codes
+           20.2 List of precedence codes
+           20.3 Sendmail and -t
+           20.4 RFC822 Reply-To and formail problem with multiple recipients
+           20.5 Procmail and IMAP server
+           20.6 Machine which processes mail
+           20.7 Compiling procmail and MAILSPOOLHOME
 
-       21.0 Procmail and Emacs mail and newsreader Gnus
-           21.1 Gnus pointers
-           21.2 Why use procmail with Gnus
-           21.3 Setting up Gnus for procmail - Basics
-           21.4 Gnus for procmail - More about it
-           21.5 Emacs and Gnus -- Fiddling with spool files
-           21.6 Gnus article snippets
-           21.7 Emacs GNUS - POP - Procmail
+       21.0 Procmail software for Emacs
+           21.1 What is Emacs
+           21.2 Emacs procmail-mode and Procmail code checking (Lint)
+           21.3 Why use procmail with Gnus
+           21.4 Setting up Gnus for procmail - Basics
+           21.5 Gnus for procmail - More about it
+           21.6 Emacs and Gnus -- Fiddling with spool files
+           21.7 Gnus article snippets
 
        22.0 RFC, Request for comments
            22.1 RFCs and their jurisdiction (munged Addresses)
@@ -333,7 +326,7 @@ Table of contents
            22.7 Some RFC Pointers
 
        23.0 Introduction to E-mail Headers
-           23.1 To find out more about mail (Resources)
+           23.1 To find out more about mail
            23.2 Lecture by Alan Stebbens
            23.3 Applied to received messages
            23.4 Bcc lecture by Alan Stebbens
@@ -354,35 +347,6 @@ Table of contents
            24.12 Content-Length header and From_ specification
            24.13 Moral about CC copies in Usenet
 
-       25.0 UBE in Internet
-           25.1 Terms used and foreword
-           25.2 UBE strategies
-              25.2.1 4g. I asked to be "removed" - guess what? I got another U*E
-              25.2.2 4h. I asked to be "removed" - guess what? The message bounced
-           25.3 UBE and bouncing message back
-           25.4 UBE and "I don't mind" attitude
-           25.5 We need a law against UBE
-
-       26.0 Anti-UBE pointers
-           26.1 NoCEM, CAUCE and others
-           26.2 General Filtering pages (more than procmail)
-           26.3 Junk mail and spam
-           26.4 Comprehensive list of spammers
-           26.5 Misc pointers
-           26.6 UBE related newsgroups or mailing lists
-
-       27.0 Mail and Spam software
-           27.1 Adcomplain -- Perl junk mail report
-           27.2 Ricochet (Perl junk mail report)
-           27.3 RBL lookup tool (C language)
-           27.4 mapSoN
-           27.5 ASK - Active Spam Killer (opt-in whitelist)
-           27.6 Spamgard
-           27.7 Spam Be Gone
-           27.8 TinyGnus - Emacs Gnus plug-in
-           27.9 ProcLog - Procmail log reporting tool
-           27.10 Xbuffy -- A multi folder biff for X
-
 1.0 Document id
 
     1.1 General
@@ -396,7 +360,7 @@ Table of contents
 
 	.Copyright (C) 1997-2010 Jari Aalto
         .Homepage http://pm-doc.sourceforge.net
-        .URL links last checked: 2010-02-13
+        .URL links last checked: 2010-05-12
 
         License: This material may be distributed only subject to the
         terms and conditions set forth in GNU General Public License
@@ -1015,7 +979,7 @@ Table of contents
             relevant). Define variable BODY_EMPTY to "yes" or "no" if
             message is empty.
         o   *pm-janslookup.rc* -- Run nslookup on given address. If you
-            compose return address with "formail -rt -x To:" you can
+            compose return address with "formail -r -x To:" you can
             verify if domain is registered before sending reply. Uses cache
             for already looked up domains. This module is alos used
             by the *pm-jaube.rc* to verify the sender's domain.
@@ -1139,7 +1103,7 @@ Table of contents
             rules with no external files needed. The module is
             available in Procmail module library at
             <http://freshmeat.net/projects/procmail-lib>.
-       o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
+       2.5.1 o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
             The attached set of procmail recipes/filters, which I
             call The Spam Bouncer, are for users who are sick of spam
             (unsolicited junk mail) and want to filter it out of their
@@ -1202,7 +1166,7 @@ Table of contents
 
         Don't worry about this. It's a side-effect of running the
         message through formail after having generated any auto-reply
-        -- the auto-reply generated by "formail -rt" doesn't have a
+        -- the auto-reply generated by "formail -r" doesn't have a
         "From " header (it's pointless for outgoing messages), so the
         second formail adds one, not knowing that it'll just be
         ignored by sendmail later (well, sendmail will extract the
@@ -1752,7 +1716,7 @@ Table of contents
             DATE        = /bin/date
 
             :0 fhw
-            | $FORMAIL -rt
+            | $FORMAIL -r
 
         When you port your `.procmailrc' to different environment which
         has different paths, you could use this recipe in addition to one
@@ -3854,7 +3818,7 @@ Table of contents
 
             :0 hw
             * ! ^X-Loop: moo$
-            | ($FORMAIL -rt -A "$MYXLOOP"; echo "$MESSAGE") | $SENDMAIL
+            | ($FORMAIL -r -A "$MYXLOOP"; echo "$MESSAGE") | $SENDMAIL
 
     7.20 Getting headers into a variable
 
@@ -4943,23 +4907,24 @@ Table of contents
         RFC-compliant parser. The traditional way of deriving the
         address with `formail' is:
 
-            FROM = `$FORMAIL -rtzxFrom:`
+            FROM = `$FORMAIL -rzxFrom:`
 
         But you can still make this more efficient. Here is one example where
         you actually want to use "old" `=|' style variable assignment,
         make sure there are _no_ extra spaces:
 
             :0 hw
-            FROM=|$FORMAIL -rtzxFrom:
+            FROM=|$FORMAIL -rzxFrom:
 
         That way only the _header_ gets fed into formail, whereas the
         previous back tick fed the _whole_ message. Another benefit is,
         that you can then check the return code of formail with `a' or
         `A' recipe after this one.
 
-    11.2 Always use formail's -rt switch
+    11.2 Always use formail's -r switch
 
-        [Philip] As of version 3.14 you should now usually leave out the
+        [Philip] The `-r' option has been chnage in 3.14. In older
+        procmail version there was need for `-rt', but now on use only
         `-t'. To quote the formail manpage:
 
           By default, when generating an auto-reply header procmail selects
@@ -5058,7 +5023,7 @@ Table of contents
         respective mail-handling programs to decide what additional
         facilities will be provided.
 
-    11.3 Using -rt and rewriting the From address
+    11.3 Rewriting the From address
 
         Sendmail adds the `From' header which points to your account. But in
         some cases you may wish to rewrite the `From'.
@@ -5078,9 +5043,9 @@ Table of contents
         you have to rewrite From header, here is the command.
 
             :0 fhw
-            | $FORMAIL -rt -I "From: me@forever-lasting-address.example.com"
+            | $FORMAIL -r -I "From: me@forever-lasting-address.example.com"
 
-    11.4 Formail -rt and Resent-From header
+    11.4 Formail -r and Resent-From header
 
         Here is something that made me scratch my head a lot. Let's examine
         scenario first which explains how the mail travels.
@@ -5091,7 +5056,7 @@ Table of contents
         another address, the *virtual-address* delivers
         the mail to right local domain. There is only one problem with this
         picture. When a response is generated from *Local-address* with
-        `formail' `-rt', the generated address pointed back to
+        `formail' `-r', the generated address pointed back to
         *virtual-address*, which pointed back to *Local-address* of
         course. A loop back was ready, you could not get the route to travel to
         original address: *account*
@@ -5111,7 +5076,7 @@ Table of contents
             Message-Id: <199710151904.WAA05050@account-domain>
             From: <account-domain>
 
-        And now when the formail `-rt' command was used, it picked up the
+        And now when the formail `-r' command was used, it picked up the
         `Resent-From' added destination where the message should be returned.
         Surprising, but according to procmail, 100% correct. `Resent-From'
         has higher priority than `From'.
@@ -5129,7 +5094,7 @@ Table of contents
             * Resent-From: <our-domain>
             | $FORMAIL -IResent-From:
 
-        [edward] adds to this that: As you know, `formail' `-rt' is
+        [edward] adds to this that: As you know, `formail' `-r' is
         for composing a response to the address from which an e-mail was
         sent. Let's say you are on vacation and have set up a procmail
         recipe to auto respond to all e-mail you receive. Furthermore, let's
@@ -5141,11 +5106,10 @@ Table of contents
         confusion as to why you are sending him e-mail informing him that
         you are vacation.
 
-        formail `-rt' uses a heuristic algorithm to determine who it should
+        formail `-r' uses a heuristic algorithm to determine who it should
         respond to, based on the presence of various headers and their
         contents. If you look at the formail.c source code, you'll see a
-        graphical representation of this algorithm. It will also explain
-        difference between the results of `-r' and  `-rt'.
+        graphical representation of this algorithm.
 
         `Resent-Reply-To' has the highest relative importance/reliability of
         all header fields. Next is Resent-From and Resent-Sender, followed
@@ -5153,11 +5117,11 @@ Table of contents
 
     11.5 Quoting the message
 
-        Use formail -rtk
+        Use formail -rk
 
     11.6 Without quoting the message
 
-        Use formail -rkb or formail -rkt -p ''
+        Use formail -rkb or formail -rk -p ''
 
     11.7 How to include headers and body to the reply message
 
@@ -5176,7 +5140,7 @@ Table of contents
             }
 
             :0 fhw
-            | $FORMAIL -rt; ... now generate reply ...
+            | $FORMAIL -r; ... now generate reply ...
 
     11.8 Adding text to the beginning of message
 
@@ -5203,7 +5167,7 @@ Table of contents
             * condition
             {
                 :0 fhb
-                | $FORMAIL -rtk -p '>'   \
+                | $FORMAIL -rk -p '>'   \
                   -I "From: me@example.com" \
                   -I "$MYXLOOP"
 
@@ -5211,7 +5175,7 @@ Table of contents
                 | cat -; echo "added message at the start of body"
             }
 
-   12.10 How to truncate headers (save filing space)
+    11.11 How to truncate headers (save filing space)
 
         [Idea by Rodger Anderson <rodger A T hpbs2245.boi.hp.com>] As a last
         recipe, if you're tight of space, you could remove extraneous
@@ -5269,13 +5233,13 @@ Table of contents
             *   possible-condition-to-handle-only-certain-messages
             |   $FORMAIL -I Received:
 
-    11.11 Adding extra headers from file
+    11.12 Adding extra headers from file
 
         [stephen] Notice that the obvious solution won't do here:
 
             :0 fhw
             * condition
-            | $FORMAIL -rt | cat - $HOME/newHeaders
+            | $FORMAIL -r | cat - $HOME/newHeaders
 
         The problem here is that there will be a newline in the middle, which
         causes the header to be shortened (procmail determines the new
@@ -5284,7 +5248,7 @@ Table of contents
 
             :0 fhw
             * condition
-            | $FORMAIL -rt -X "" ; cat $HOME/pm-newHeaders.txt ; echo
+            | $FORMAIL -r -X "" ; cat $HOME/pm-newHeaders.txt ; echo
 
         [david] If $HOME/newHeaders ends in a blank line, you don't
         need the "; echo".  Under some circumstances procmail puts back the
@@ -5298,12 +5262,12 @@ Table of contents
 
             :0 fhw
             * whatever
-            | $FORMAIL -rtn
+            | $FORMAIL -rn
 
               :0 A fhw
               | sed "/^From:/r $HOME/newHeaders"
 
-    11.12 Splitting digest
+    11.13 Splitting digest
 
         [Idea by David Hunt] One interesting idea to handle digests
         automatically as single messages if that we call procmail
@@ -5322,7 +5286,7 @@ Table of contents
             *$ ! H ?? ^$MYXLOOP
             | $FORMAIL -A "$MYXLOOP" -m4s procmail
 
-    11.13 Mailbox: Splitting to individual files
+    11.14 Mailbox: Splitting to individual files
 
         [david] To split some old mail archives into individual
         files while stripping unimportant header fields, use following. The
@@ -5336,18 +5300,18 @@ Table of contents
                 procmail -p DEFAULT=`pwd`/'$FILENO.txt'                     \
                 /dev/null < inputfile
 
-    11.14 Mailbox: Extracting all From addresses from mailbox
+    11.15 Mailbox: Extracting all From addresses from mailbox
 
         The `-ns' option causes formail to split the mailbox and feed each
         mail separately to next process.
 
             % formail -ns formail -xFrom: < mailbox | sort -u
 
-    11.15 Mailbox: Applying procmail recipe on whole mailbox
+    11.16 Mailbox: Applying procmail recipe on whole mailbox
 
             % formail -ns procmail pm-experiments.rc < mailbox
 
-    11.16 Mailbox: run series of commands for each mail (split mailbox)
+    11.17 Mailbox: run series of commands for each mail (split mailbox)
 
           ...Maybe the heat has melted my brain, but I can't seem to get
           formail to perform a series of commands on each mail that it has
@@ -5404,7 +5368,7 @@ Table of contents
         is built it's a pleasingly quick way to root through big archives
         of messages.
 
-    11.17 Option -D and cache
+    11.18 Option -D and cache
 
         [Bob Weissman <b_weissm A T kla.com>] and [stephen] These files are
         self-limiting. The number after the `-D' is the size in bytes above
@@ -5436,7 +5400,7 @@ Table of contents
         New entries will be written after the first double-null, so that it
         implements a circular cache. Check out lines 319-322 of formail.c
 
-    11.18 Option -D and message-id in the body
+    11.19 Option -D and message-id in the body
 
           Some of my messages contain the original Message-ID in the body
           of the letter and not the Header. Is there an option for Formail to
@@ -5470,14 +5434,14 @@ Table of contents
             :0 hW
             | $FORMAIL -D $cache_size $cache_name
 
-    11.19 Reducing formail calls (conditionally adding fields)
+    11.20 Reducing formail calls (conditionally adding fields)
 
         #todo: url
 
         Suppose you want add fields to the message when some condition is met:
 
             :0              # compose initial reply
-            | $FORMAIL -rt
+            | $FORMAIL -r
 
             :0
             * condition1
@@ -5504,7 +5468,7 @@ Table of contents
             }
 
             :0 fhw
-            | $FORMAIL -rt  ${hdr1+"$hdr1"} ${hdr2+"$hdr2"}
+            | $FORMAIL -r  ${hdr1+"$hdr1"} ${hdr2+"$hdr2"}
 
         And if you want to stack all headers to only one variable, it is
         a bit of extra work. Below we use short variable names only because
@@ -5546,7 +5510,7 @@ Table of contents
                 field = "$field${NL}X-Header1: value"
             }
 
-    11.20 Formail -A -a options
+    11.21 Formail -A -a options
 
         You can't use option -A with -a or -I if the header name is the same.
         Like below where you try to keep only the last definition of X-1,
@@ -5567,7 +5531,7 @@ Table of contents
             -->
             X-1: 2
 
-    11.21 Formail -e -s options
+    11.22 Formail -e -s options
 
         [david] I had a file of alternating `From' and `Date' lines and
         wanted to convert it into an mbox.
@@ -6012,7 +5976,7 @@ Table of contents
 
                     :0
                     | ($FORMAIL                                             \
-                          -rtk                                              \
+                          -rk                                               \
                           -A "X-Mailer: Procmail Autoreply"                 \
                           -A "$XLOOP" ;                                     \
                         cat $TXT_NO_HTML                                    \
@@ -6123,7 +6087,7 @@ Table of contents
             *$   ^Subject:$s+GetPage:()\/.*
             *$ ! ^$MYXLOOP
             |   ($FORMAIL                                                   \
-                    -rt                                                     \
+                    -r                                                      \
                     -I "Precedence: junk"                                   \
                     -I "Subject: Requested page: $MATCH"                    \
                     -I "$MYXLOOP" ;                                         \
@@ -6350,7 +6314,7 @@ Table of contents
             * ^Subject: ping$
             {
                 :0 fh
-                | $FORMAIL -rt
+                | $FORMAIL -r
 
                 #   Remember, Don't send back anything that would be vital to
                 #   attacker. It doesn't matter if the `uptime` or other
@@ -7251,7 +7215,7 @@ Table of contents
                     #   body quoted
 
                     :0 fhw
-                    | $FORMAIL -rtk -A "Bcc: $COPY_ADDRESS"
+                    | $FORMAIL -rk -A "Bcc: $COPY_ADDRESS"
 
                     # Now "replace" the body with template text + body (In
                     # other words, add the template before the quoted body)

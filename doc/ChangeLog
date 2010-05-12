@@ -1,3 +1,11 @@
+2010-05-12 Wed  Jari Aalto  <jari.aalto@cante.net>
+
+	* index.txt:
+	(whole file): Change osolete "formail -rt" examples to "formail
+	-r" whcih is the correct way in recent procmail version. Renumber
+	headinging. Generate TOC.
+	(How to truncate headers): Fix heading position.
+
 2010-02-13 Sat  Jari Aalto  <jari.aalto@cante.net>
 
 	* index.css: Correct style issues to conform CSS 2.1
