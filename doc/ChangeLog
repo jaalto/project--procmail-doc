@@ -4,6 +4,7 @@
 	(whole file): Change osolete "formail -rt" examples to "formail
 	-r" whcih is the correct way in recent procmail version. Renumber
 	headinging. Generate TOC.
+	(Version information): Add latest changes. Check links.
 	(How to truncate headers): Fix heading position.
 
 2010-02-13 Sat  Jari Aalto  <jari.aalto@cante.net>
