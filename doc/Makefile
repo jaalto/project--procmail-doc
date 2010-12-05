@@ -72,8 +72,9 @@ maintainer-clean: realclean
 doc: index.html
 
 index.html: index.txt
-	perl -S t2html\
+	perl -S t2html \
 	--auto-detect \
+	--disclaimer-file disclaimer.txt \
 	--out $<
 
 install-doc: doc
