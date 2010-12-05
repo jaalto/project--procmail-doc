@@ -1,13 +1,21 @@
 2010-12-05 Sun  Jari Aalto  <jari.aalto@cante.net>
 
-	* Makefile (index.html): Correct program call options.
+	* Makefile (check): New target to check broken links.
 
-	* index.txt: (1.5 Document layout and maintenance): Add t2html
+	* doc/Makefile (index.html): Correct program call options.
+
+	* doc/index.txt:
+	(top level): Run link check.
+	(1.3 Abbreviations and thanks): Update my email address.
+	(1.5 Document layout and maintenance): Add t2html
 	URL. Update version control URL.
+	(2.2 Procmail resources): Remove broken URL.
+	(19.8 The .forward file must be real file): Remove Broken URL and
+	replace with more recent one by Neale Pickett <neale@woozle.org>.
 
 2010-05-12 Wed  Jari Aalto  <jari.aalto@cante.net>
 
-	* index.txt:
+	* doc/index.txt:
 	(whole file): Change osolete "formail -rt" examples to "formail
 	-r" whcih is the correct way in recent procmail version. Renumber
 	headinging. Generate TOC.
@@ -16,26 +24,26 @@
 
 2010-02-13 Sat  Jari Aalto  <jari.aalto@cante.net>
 
-	* index.css: Correct style issues to conform CSS 2.1
+	* doc/index.css: Correct style issues to conform CSS 2.1
 
-	* index.txt:
+	* doc/index.txt:
 	(13.5 Converting HTML body to plain text): remove
 	lynx urls.
 	(2.5 Procmail code to filter UBE): Update junkfilter URL.
 	(13.2 Mime content type application/ms-tnef): Update
 	Microsoft URL.
 	(23.1 To find out more about mail): Update URL.
-	(4.13 Gee, where do I put all those ! * $ ??): Fix
+	(4.13 Gee, where do I put all those ! * doc/$ ??): Fix
 	indentation in recipe example.
 
 2008-09-21  Jari Aalto  <jari.aalto@cante.net>
 
-	* pm-tips.txt (1.5 Document layout and maintenance): Correct
+	* doc/pm-tips.txt (1.5 Document layout and maintenance): Correct
 	www.gnu.org address.
 
 2008-03-09  Jari Aalto  <jari.aalto@cante.net>
 
-	* pm-tips.txt:
+	* doc/pm-tips.txt:
 	(1.5 Document layout and maintenance): Fix URL.
 	(2.2 Procmail resources): Add Gmane URL.
 	(2.3 Procmail mode for Emacs): Fix URL.
@@ -51,13 +59,13 @@
 
 2007-10-27  Jari Aalto  <jari.aalto@cante.net>
 
-	* pm-tips.txt: (1.8 About "useless use of cat award"):
+	* doc/pm-tips.txt: (1.8 About "useless use of cat award"):
 	Converted ksh script to plain Bourne shell sh-script and
 	presented the timing results.
 
 2007-10-04  Jari Aalto  <jari.aalto@cante.net>
 
-	* pm-tips.txt (2.2 Procmail resources):
+	* doc/pm-tips.txt (2.2 Procmail resources):
 	(2.2 Procmail resources): Reformatted.
 	(2.5 Procmail code to filter UBE): Reformatted.
 	(8.10 Make your own .procmailrc available to others): Topic and
@@ -66,7 +74,7 @@
 
 2007-10-02  Jari Aalto  <jari.aalto@cante.net>
 
-	* pm-tips.txt:
+	* doc/pm-tips.txt:
 	- Corrected all 'broken apart' links and removed URL: prefix.
 	- New CSS layout. Removed framed page with single page.
 	(1.1 General): Made more compact.
@@ -94,15 +102,15 @@
 
 2007-07-31  Jari Aalto  <jari.aalto@cante.net>
 
-	* pm-tips.txt: (13.18 Time: Once a day cron-like job):
+	* doc/pm-tips.txt: (13.18 Time: Once a day cron-like job):
 	Added missing '=' near INCLUDERC call. Error reported by
 	Stefan Weber <s.weber planet-interkom.de>. Thank you.
-	(4.13 Gee, where do I put all those ! * $ ??): Typo:
+	(4.13 Gee, where do I put all those ! * doc/$ ??): Typo:
 	sow => show.
 
 2006-02-16 Thu  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt: Obfusticated users' email addresses. Change all
+        * doc/pm-tips.txt: Obfusticated users' email addresses. Change all
         examples to use canonical example.com or example.net and removed
         @some.com, @foo.com etc.
         (1.1 General): 2.30 Wording changed a bit.
@@ -116,60 +124,60 @@
 
 2005-03-09 Wed  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (5.11 Flag c before nested block forks a child):
+        * doc/pm-tips.txt (5.11 Flag c before nested block forks a child):
         2.30 Added David's explanation of c-flag.
 
 2004-12-28  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube-prg-spamprobe.rc (JA_UBE_SPAMPROBE_FORCE):
+        * doc/pm-jaube-prg-spamprobe.rc (JA_UBE_SPAMPROBE_FORCE):
         Removed lockfile.
 
 2004-12-17  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-janslookup.rc (JA_NSLOOKUP_CACHE): Added anchor ^ in
+        * doc/pm-janslookup.rc (JA_NSLOOKUP_CACHE): Added anchor ^ in
         cache grep regexp. Use EGREP, not GREP. Tightened regexp.
 
 2004-12-16 Thu  Jari Aalto  <jari.aalto@cante.net>
 
-        * Makefile: 1.2 CODEDIR changed to DATADIR.
+        * doc/Makefile: 1.2 CODEDIR changed to DATADIR.
 
 2004-12-15 Wed  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube-prg-spamassassin.rc: New module.
+        * doc/pm-jaube-prg-spamassassin.rc: New module.
 
-        * pm-jaube-prg-bogofilter.rc: New module.
+        * doc/pm-jaube-prg-bogofilter.rc: New module.
 
-        * pm-jaube-prg-annoyance-filter.rc: 1.3
+        * doc/pm-jaube-prg-annoyance-filter.rc: 1.3
         (JA_UBE_ANNOYANCE_SPAM_DB_OPT):
         Fast dictonary option --fread is no longer the default.
 
-        * pm-javar.rc (RC_UBE_BOGOFILTER): New variable.
+        * doc/pm-javar.rc (RC_UBE_BOGOFILTER): New variable.
 
-        * pm-jaube-prg-runall.rc: 1.14 (spamasassin): Rmeoved
+        * doc/pm-jaube-prg-runall.rc: 1.14 (spamasassin): Rmeoved
         duplicate `JA_UBE_SPAMASSASSIN_PRG' variable test.
         Added 100 character test for SA.
         (bogofilter): Code removed and moved to separate file.
         (spamassassin): Code removed and moved to separate file.
 
-        * pm-jaube-prg-bmf.rc (Rearrange headers): 1.20 Typo
+        * doc/pm-jaube-prg-bmf.rc (Rearrange headers): 1.20 Typo
         in 'dummy' message: X-Spambmf => X-Spam-Bmf.
 
 2004-11-04 Thu  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jadaemon.rc: 2.9 (JA_DAEMON_SAVE). New user variable.
+        * doc/pm-jadaemon.rc: 2.9 (JA_DAEMON_SAVE). New user variable.
         Save old subject. Suggested by 'Balu'.
         (JA_DAEMON_REGEXP): Added missing newline. Fixed SF-pm-lib
         bug 1046370.
 
 2004-10-27  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube-keywords.rc (subjectKeywordsOnly): Added missing
+        * doc/pm-jaube-keywords.rc (subjectKeywordsOnly): Added missing
         backslash after 'keywords'.
         (keywords): Added missing backslash
 
 2004-10-24 Sun  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jasubject.rc: (top level) 2.6 Removed 'id' variable.
+        * doc/pm-jasubject.rc: (top level) 2.6 Removed 'id' variable.
         Removed 'NL' variables. Moved 'public' portion upward.
         Removed extra empty lines.
         (awk): Improved subject detection so that it can now take into
@@ -180,13 +188,13 @@
 
 2004-10-21  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube-keywords.rc (keywords): More mutable
+        * doc/pm-jaube-keywords.rc (keywords): More mutable
         Cialis and Viagra traps added. 'size matters'
         also improved. (like s|ze).
 
 2004-10-19  Jari Aalto <jari.aalto@cante.net>
 
-        * pm-jaube-keywords.rc: Added missing (#)
+        * doc/pm-jaube-keywords.rc: Added missing (#)
         to the 1st line.
         (Marketing-SelectedBigLetterWords): Removed some
         words that are likely to occur in email.
@@ -197,10 +205,10 @@
 
 2004-10-18  Jari Aalto  <jari.aalto@cante.net>
 
-        - In pm-jaube-* files ERROR variables are now
+        - In pm-jaube-* doc/files ERROR variables are now
           'killed', and not just set to empty strings.
 
-        * pm-jaube-keywords.rc
+        * doc/pm-jaube-keywords.rc
         (jaubeKwdLinebufOld): New. Save value of
         LINEBUG, increase it and restore it at the end.
         (ERROR_STATUS): No longer contains word 'Good'.
@@ -213,14 +221,14 @@
 
 2004-10-17  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube-keywords.rc (end of file): Display
+        * doc/pm-jaube-keywords.rc (end of file): Display
         ERROR and ERROR_STATUS on exit by assigning value
         to 'dummy'.
         (JA_UBE_KEYWORD_HEADER): Improved formail call.
         The header included 'Good  ' with two spaces
         at the end. Removed.
 
-        * pm-jaube.rc
+        * doc/pm-jaube.rc
         (doc::Return values) Added list of ERROR codes.
         (regexpBody): Put virus regexp
         variable definitions  inside recipe block, so that
@@ -228,7 +236,7 @@
 
 2004-10-16  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube.rc
+        * doc/pm-jaube.rc
         (HeaderCharacters-Illegal): Missing '$'
         from '${ERROR+:}'. Added.
         (HeaderMimeCharset-Illegal): Moved
@@ -238,7 +246,7 @@
 
 2004-10-15  Jari Aalto  <jari.aalto@poboxes.com>
 
-        * Makefile (exec_prefix): Change from /usr/share to
+        * doc/Makefile (exec_prefix): Change from /usr/share to
         /usr/local/share, because 3rd party packages that are not
         included with the OS, should install under /usr/local
         by default.
@@ -247,34 +255,34 @@
 
 2004-10-14  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube-keywords.rc (subjectKeywordsOnly): Added few more
+        * doc/pm-jaube-keywords.rc (subjectKeywordsOnly): Added few more
         keywords, like 'see.*this.*(web|site|page)' etc.
         (HeaderMimeCharset-Illegal): All charcter set tests are
         now run unconditionally, no matter if previous tests already
         set ERROR e.g. to BodyAttachment-FileIllegalAdditional. The
         charset error is simply appended to the previous error.
 
-        * pm-jaube.rc (regexpHeader): Added Virus message detection.
+        * doc/pm-jaube.rc (regexpHeader): Added Virus message detection.
         New rules: VirusHeader, VirusBody
 
 2004-10-07  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube.rc (Attachments): Moved rule to the top. They are more
+        * doc/pm-jaube.rc (Attachments): Moved rule to the top. They are more
         important than the AddrInvalid-To
 
-        * pm-jalist.rc
+        * doc/pm-jalist.rc
         (trigger): added words 'apps', like in mailing
         list cygwin-apps.
-        (cc): Added cc_* variables to check message sent to mailing
+        (cc): Added cc_* doc/variables to check message sent to mailing
         list with CC header.
 
 2004-10-06  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-jaube-prg-runall.rc (bsfilter): New. Now supported.
+        * doc/pm-jaube-prg-runall.rc (bsfilter): New. Now supported.
 
-        * pm-javar.rc (RC_UBE_BSFILTER): New.
+        * doc/pm-javar.rc (RC_UBE_BSFILTER): New.
 
-        * pm-tips.txt
+        * doc/pm-tips.txt
         - Document streamlined. Only more or less directly procmail related
           issues were left. The spam related sections were removed.
         (21.7 Emacs GNUS - POP - Procmail): 2.26 Section
@@ -302,7 +310,7 @@
 
 2004-08-25 Wed  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (9.8 Testing bogofilter value range with scoring):
+        * doc/pm-tips.txt (9.8 Testing bogofilter value range with scoring):
         2.25 New topic.
         (2.2 Procmail resources): 2.25 Added URL to
         Prof. Timo Salmi's 'Foiling Spam with an Email Password System'
@@ -311,10 +319,10 @@
 
 2004-08-23 Mon  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt
+        * doc/pm-tips.txt
         - Changed all recipes so that they won't trigger procmail 3.22 :0 HB
           bug.
-        - Small consistency fixes ('* $' => '*$').
+        - Small consistency fixes ('* doc/$' => '*$').
         (1.3 Abbreviations and thanks): 2.25 Removed
         Shartlist. Updated URL to point correct subscription web form page
         (Procmail module library project - 2.5.14 File Servers): Removed.
@@ -326,24 +334,24 @@
 
 2004-08-23  root  <jari.aalto@cante.net>
 
-        * pm-tips.txt: (5.1 Flags HB at top of recipe (warning)): New topic.
+        * doc/pm-tips.txt: (5.1 Flags HB at top of recipe (warning)): New topic.
         (Procmail resources): Moved ancy McGough's pointer here.
         (About procmail's Y2K compliance): Removed. outdated.
 
 2004-01-10 Sat  Jari Aalto  <jari aalto A T poboxes dt com>
 
-        * pm-tips.txt (26.5 Misc pointers): 2.21 Qmail web page updated.
+        * doc/pm-tips.txt (26.5 Misc pointers): 2.21 Qmail web page updated.
         Notified B. Johannessen <bob@db.org>
 
 2003-08-22 Fri  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (16.0 Includerc usage): 2.20 Wording corrections.
+        * doc/pm-tips.txt (16.0 Includerc usage): 2.20 Wording corrections.
         (20.0 Smartlist): 2.20 Removed. Not relevant any more.
         THe MLM manager Mailman etc. are much better.
 
 2003-06-29 Sun  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (26.2 Expire mail pointers): 2.19 Removed
+        * doc/pm-tips.txt (26.2 Expire mail pointers): 2.19 Removed
         whole topic. This is too old.
         (26.3 Code: Sh remove matching lines from file): 2.19 Removed.
         Too old to be useful.
@@ -354,18 +362,18 @@
 
 2003-06-02 Mon  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (22.0 Additional procmail software for Emacs):
+        * doc/pm-tips.txt (22.0 Additional procmail software for Emacs):
         2.19 Removed obsolete `live-mode.el'. Emacs comes now standard
         with `M-x global-autorevert-mode'
 
 2003-05-17 Sat  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (2.6 Procmail code to filter UBE): 2.18
+        * doc/pm-tips.txt (2.6 Procmail code to filter UBE): 2.18
         Removed `spamdunk', no URL http://www.waltdnes.org/email/spamdunk/
 
 2002-12-30 Mon    <jari.aalto@cante.net>
 
-        * pm-tips.txt (2.5 Procmail module library project): 2.16
+        * doc/pm-tips.txt (2.5 Procmail module library project): 2.16
         Removed David's Hunt's URL http://www.west.net/~dh which
         is invalid.
         Removed Alan Stebben's Procmail module note
@@ -388,7 +396,7 @@
 
 2002-09-01 Sun  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt
+        * doc/pm-tips.txt
         (27.4 Code: Perl Extract procmail man pages from 3.11pre7.tar.gz):
         Obsolete, removed.
         (27.3 Usenet News related pointers): 2.14 Obsolete. Removed.
@@ -402,38 +410,38 @@
 
 2002-08-13  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt: Added New #T2HTML directives.
+        * doc/pm-tips.txt: Added New #T2HTML directives.
 
 2002-07-24  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-index.txt (Introduction): Bullets rewritten.
+        * doc/pm-index.txt (Introduction): Bullets rewritten.
         Oleg Danilov <dov@sparc.spb.su> reported error in url
         www.prcomail.org => www.procmail.org
 
 2002-07-11  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (1.3 Abbreviations and thanks): FAQ-L
+        * doc/pm-tips.txt (1.3 Abbreviations and thanks): FAQ-L
         Moved to http://www.faqs.org/faq-maintainers
         (21.3 MH sites): Removed.
 
 2002-03-30  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (29.15 Software: Spam Be Gone): Updated information.
+        * doc/pm-tips.txt (29.15 Software: Spam Be Gone): Updated information.
         Now this is open source and now binary any more.
 
 2002-01-25 Fri  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (1.1 General): 2.3 Added <> arounf `mhonarc' URL.
+        * doc/pm-tips.txt (1.1 General): 2.3 Added <> arounf `mhonarc' URL.
         (1.1 General): 2.3 Removed `http://ftpsearch.ntnu.no/' which no
         longer responds.
 
-        * pm-index.txt (Jari's Procmail resources): 1.1 Updated
+        * doc/pm-index.txt (Jari's Procmail resources): 1.1 Updated
         Tiny Tools project link.
         (Jari's Procmail resources): 1.1 Misspelled procmail.org site.
 
 2002-01-01 Tue  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt (Where is procmail developed): 2.1 Removed
+        * doc/pm-tips.txt (Where is procmail developed): 2.1 Removed
         invalid link http://www.gac.edu/~guenther/procmail/.
         (Procmail resources): 'Catherine Hampton's Getting Started With Procmail'
         is no longer available. Removed.
@@ -504,7 +512,7 @@
         http://com.primenet.com/spamking/buyerbeware.html
         (29.3 Junk mail and spam): The Campaign to stop junk email web site
         - Removed http://www.mcs.com/~jcr/junkmail.html
-        (29.3 Junk mail and spam): news.admin.net-abuse.* Homepage - updated.
+        (29.3 Junk mail and spam): news.admin.net-abuse.* doc/Homepage - updated.
         (29.3 Junk mail and spam): The automated spamhandler beta information heap
         - Removed http://www.halcyon.com/natew/
         (29.3 Junk mail and spam): maildrop - updated.
@@ -516,7 +524,7 @@
 
 2001-08-09 Thu  Jari Aalto  <jari.aalto@cante.net>
 
-        * pm-tips.txt
+        * doc/pm-tips.txt
         Changed all references from www.procmail.org/jari =>
         pm-doc.sourceforge.net
         (A big Thank you goes all these people:): 2.0
