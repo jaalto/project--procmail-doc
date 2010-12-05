@@ -10,6 +10,7 @@
 	* doc/index.txt:
 	(top level): Run link check.
 	(1.3 Abbreviations and thanks): Update my email address.
+	(1.4 Version information): Add entry.
 	(1.5 Document layout and maintenance): Add t2html
 	URL. Update version control URL.
 	(2.2 Procmail resources): Remove broken URL.
