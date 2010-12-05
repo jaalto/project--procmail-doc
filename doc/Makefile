@@ -47,9 +47,9 @@ INSTALL_DIR	= $(INSTALL) -m 755 -d
 SRCS		= index.txt
 OBJS		= index.html
 
-INSTALL_OBJS_DOC_HTML   = $(OBJS) *.css
-INSTALL_OBJS_DOC_TXT    = $(SRCS)
-INSTALL_OBJS_DOC   	= ../README ChangeLog
+INSTALL_OBJS_DOC_HTML	= $(OBJS) *.css
+INSTALL_OBJS_DOC_TXT	= $(SRCS)
+INSTALL_OBJS_DOC	= ../README ChangeLog
 
 all: doc
 
@@ -72,9 +72,9 @@ maintainer-clean: realclean
 doc: index.html
 
 index.html: index.txt
-	perl -S t2html.pl    	\
-	--Auto-detect  		\
-	--Out $<
+	perl -S t2html\
+	--auto-detect \
+	--out $<
 
 install-doc: doc
 	# install-doc
