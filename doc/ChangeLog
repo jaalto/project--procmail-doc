@@ -1,3 +1,10 @@
+2010-12-05 Sun  Jari Aalto  <jari.aalto@cante.net>
+
+	* Makefile (index.html): Correct program call options.
+
+	* index.txt: (1.5 Document layout and maintenance): Add t2html
+	URL. Update version control URL.
+
 2010-05-12 Wed  Jari Aalto  <jari.aalto@cante.net>
 
 	* index.txt:
