@@ -467,6 +467,7 @@ Table of contents
         Here is version and file size log of the text file, which gives you
         some estimate how the document has evolved.
 
+            2010-12-15  508  Links checked. License at footer fixed.
             2010-05-12  508  Update formail -rt option to recommended
                              -t. Links checked.
             2008-09-21  510  Links checked.
