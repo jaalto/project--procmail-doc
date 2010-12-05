@@ -2,7 +2,10 @@
 
 	* Makefile (check): New target to check broken links.
 
-	* doc/Makefile (index.html): Correct program call options.
+	* doc/Makefile (index.html): Correct program call options. Add
+	--disclaimer-file to fix CC/GPL discrepancy in generated HTML footer.
+
+	* doc/disclaimer.txt: New.
 
 	* doc/index.txt:
 	(top level): Run link check.
