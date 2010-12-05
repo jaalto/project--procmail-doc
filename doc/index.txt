@@ -358,9 +358,9 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-	.Copyright (C) 1997-2010 Jari Aalto
+	.Copyright (C) 1997-2011 Jari Aalto
         .Homepage http://pm-doc.sourceforge.net
-        .URL links last checked: 2010-05-12
+        .URL links last checked: 2010-12-05
 
         License: This material may be distributed only subject to the
         terms and conditions set forth in GNU General Public License
@@ -425,7 +425,7 @@ Table of contents
         .[ed]         Edward J. Sabol     sabol A T alderaan gsfc nasa gov
         .[elijah]     Eli the Bearded     process A T qz little-neck ny us
         .[hal]        Hal Wine            hal A T dtor com
-        .[jari]       Jari Aalto          jari aalto A T poboxes dt com
+        .[jari]       Jari Aalto          jari aalto A T cante dt net
         .[philip]     Philip Guenther     guenther A T gac edu
         .[richard]    Richard Kabel       rkabel A T sequent com
         .[sean]       Sean B. Straw       PSE-L A T mail professional org
@@ -434,7 +434,7 @@ Table of contents
 
         .[FAQ]        Procmail FAQ        era A T iki.fi
         .[manual]     Quote from some procmail manual page
-        .[maintainer] As of 2000-09 the maintainer is [jari]
+        .[maintainer] As of 2010-12 the maintainer is [jari]
 
         A big thanks goes to all these people:
 
@@ -535,7 +535,10 @@ Table of contents
 
         Text version of this file is converted to HTML with:
 
-            perl -S <conversion program> --Auto-detect --Out pm-tips.txt
+            perl -S t2html --Auto-detect --Out pm-tips.txt
+
+	The t2html converter project is at
+	http://freshmeat.net/projects/perl-text2html
 
         SENDING IMPROVEMENTS
 
@@ -545,7 +548,7 @@ Table of contents
         corrections to this document is as `diff(1)' output. Here's
         how to make corrections send them forward. Please try to use
         unified diff `-u' option. The source is available at
-        http://pm-doc.cvs.sourceforge.net/pm-doc/pm-doc/doc/tips/
+        version control repository of http://sourceforge.net/projects/pm-doc
 
             cp pm-tips.txt pm-tips.txt.orig
 
@@ -796,7 +799,6 @@ Table of contents
         o   #URL<http://www.ii.com/internet/robots/procmail/qs/><Nancy McGough <nm A T noadsplease.ii.com> - Prcmail Quick start>
         o   #URL<http://www.iki.fi/~era/procmail><Era Eriksson's Procmail FAQ and link collection>
         o   #URL<http://www.uwasa.fi/~ts/info/proctips.html><Professor Timo Salmis's Procmail page>
-        o   #URL<http://directory.google.com/Top/Computers/Software/Internet/Clients/Mail/Unix/Procmail/><Google's procmail pointers>
         o   #URL<http://www.faqs.org/faqs/mail/addressing/><Eli the Bearded's addressing tips>
         o   #URL<http://alcor.concordia.ca/topics/email/auto/procmail/><Concordia University's procmail page>
             <webdoc A T alcor.concordia.ca>: "...People often ask how
@@ -8199,7 +8201,7 @@ Table of contents
             UMASK = 007
 
           Further note: the above `UMASK' suggestion in .procmailrc does not
-          work. See comment by Gjermund S�rseth <gjermund A T nextel.no>
+          work. See comment by Gjermund Sørseth <gjermund A T nextel.no>
 
         However the permissions on `DEFAULT' are handled before procmail
         even opens the .procmailrc, so changing the umask there will have
@@ -8301,8 +8303,6 @@ Table of contents
         of them).
 
     19.8 The .forward file must be real file
-
-        http://www.math.fu-berlin.de/~guckes/mail/forwarding.html
 
           ...I tried to make a softlink to ~/.forward, but then my
           procmail wouldn't run. When I made a real ~/.forward file, then it
@@ -11477,22 +11477,16 @@ Table of contents
         list, send it here instead." Again, it is more a matter of "do what I
         mean".
 
-       "ListAdmin: Don't play with Reply-To"
-        http://www.unicom.com/pw/reply-to-harmful.html
-        ... RFC-822 on reply-to is just almost hopeless. The reason people
-        do what they do is more likely because they saw someone else doing
-        that, and imagined it was correct, and copied - perhaps slightly
-        varying things along the way. ...If you use a reasonable mailer,
-        Reply-To munging does not provide any new functionality. It, in
-        fact, decreases functionality. Reply-To munging destroys the
-        reply-to-author. capability.
-
-       "Mail-Followup-To"
-
-         [Mail-Followup-To problems] Keith Moore <moore A T
-         cs.utk.edu> Wed, 11 Feb 1998 14:20:25 -0500 commented on the
-         nmh list. Keith is the IETF applications area director, and
-         used to chair the DRUMS working group.
+       "Reply-To” Munging Still Considered Harmful. Really."
+	http://woozle.org/~neale/papers/reply-to-still-harmful.html
+        Your list software is not "the author of the message", so it
+        must not set or in any way meddle with the Reply-To header
+        field. That field exists for the author and the author alone.
+        If your list munges it, you are violating the standard. These
+        standards are not written flippantly, they are carefully
+        crafted in such a way as to ensure everything on the Internet
+        works as smoothly as possible. Do the Internet a service and
+        leave Reply-To alone.
 
         Please don't implement support for Mail-Reply-To and Mail-Followup-To
         in nmh. Not only are they nonstandard, they're a poor fix for the
