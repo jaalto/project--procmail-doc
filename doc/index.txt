@@ -530,16 +530,16 @@ Table of contents
         o   #URL<http://www.gnu.org/software/emacs><Emacs> and
             technical formatting package (TOC, indentation control,
             fontifying) *tinytf.el* from
-            http://freshmeat.net/projects/emacs-tiny-tools
+            http://freecode.net/projects/emacs-tiny-tools
         o   Text-to-HTML conversion program *t2html.pl* from
-            http://freshmeat.net/projects/perl-text2html
+            http://freecode.net/projects/perl-text2html
 
         Text version of this file is converted to HTML with:
 
             perl -S t2html --Auto-detect --Out pm-tips.txt
 
 	The t2html converter project is at
-	http://freshmeat.net/projects/perl-text2html
+	http://freecode.net/projects/perl-text2html
 
         SENDING IMPROVEMENTS
 
@@ -812,7 +812,7 @@ Table of contents
 
         If you use #URL<http://www.gnu.org/software/emacs><Emacs>, See
         Procmail mode *tinypm.el* at
-        <http://freshmeat.net/projects/emacs-tiny-tools>. It can also
+        <http://freecode.net/projects/emacs-tiny-tools>. It can also
         be used to statically syntax check recipes. Here is an example
         of its output:
 
@@ -828,7 +828,7 @@ Table of contents
 
        2.4.1 Where to get various modules
 
-        o   #URL<http://freshmeat.net/projects/procmail-lib><Procmail module library>.
+        o   #URL<http://freecode.net/projects/procmail-lib><Procmail module library>.
 	    The idea of plug-in modules was originally coined by Alan
             Stebbens (<alan.stebbens A T software.com>, <alan.stebbens
             A T openwave.com>).
@@ -1099,7 +1099,7 @@ Table of contents
           such bogus addresses at the SMTP level before the message is
           received.
 
-        o   #URL<http://freshmeat.net/projects/procmail-lib><pm-jaube.rc -Procmail module library's UBE filter>
+        o   #URL<http://freecode.net/projects/procmail-lib><pm-jaube.rc -Procmail module library's UBE filter>
             After Daniel Smith
             posted his spam recipes to procmail mailing list, the code
             was adopted and more generalized to handle lot more UBE.
@@ -1107,7 +1107,7 @@ Table of contents
             simple INCLUDERC. All UBE detection happens using procmail
             rules with no external files needed. The module is
             available in Procmail module library at
-            <http://freshmeat.net/projects/procmail-lib>.
+            <http://freecode.net/projects/procmail-lib>.
        2.5.1 o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
             The attached set of procmail recipes/filters, which I
             call The Spam Bouncer, are for users who are sick of spam
@@ -10047,7 +10047,7 @@ Table of contents
         Procmail mode for Emacs (which can also lint procmail recipes) is
         available. People familiar with C-coding know lint, which is a
         rigorous code syntax checker. You can read about this Emacs mode
-        from http://freshmeat.net/projects/emacs-tiny-tools
+        from http://freecode.net/projects/emacs-tiny-tools
 
     21.3 Why use procmail with Gnus
 

@@ -26,7 +26,7 @@ README for Procmail documentation tips
         Directory contains procmail tips page in pure text format. The
         HTML is generated using Perl text-to-html program *t2html.pl*
         which is hosted project at
-        <http://freshmeat.net/projects/perl-text2html>.
+        <http://freecode.net/projects/perl-text2html>.
 
     Directory homepage/
 
