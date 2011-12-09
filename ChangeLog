@@ -1,5 +1,8 @@
 2011-12-09 Fri  Jari Aalto  <jari.aalto@cante.net>
 
+	* homepage/index.html (What is procmail documentation project?):
+	Update workding.
+
 	* doc/Makefile (link-check): New rule.
 	(clean): Add *.log
 
