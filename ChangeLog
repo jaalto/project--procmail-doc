@@ -5,9 +5,10 @@
 
 	* doc/index.txt:
 	(top level): Correct Freecode addresses from .net to .com.
-	Links checked.
+	Check links. Update Copyright year.
 	(4.13 Gee, where do I put all those): Correct sentences.
 	(13.1 Mime Bibliography): Delete. Non-existing link.
+	(1.4 Version information): Update.
 
 2010-12-05 Sun  Jari Aalto  <jari.aalto@cante.net>
 
