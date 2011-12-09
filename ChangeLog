@@ -1,3 +1,8 @@
+2011-12-09 Fri  Jari Aalto  <jari.aalto@cante.net>
+
+	* doc/index.txt:
+	(4.13 Gee, where do I put all those): Correct sentences.
+
 2010-12-05 Sun  Jari Aalto  <jari.aalto@cante.net>
 
 	* Makefile (check): New target to check broken links.

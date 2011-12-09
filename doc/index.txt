@@ -1519,7 +1519,7 @@ Table of contents
             *$ ! ? BH VAR ?? test
 
         That won't say much unless you see something to compare with. Here
-        is one perfectly valid rule, but like the above style.
+        is one perfectly valid rule, not following the above style:
 
             :0
             *$ ^Subject:.*$VAR
@@ -1528,10 +1528,13 @@ Table of contents
             *$? $IS_EXIST $FILE
             *VARIABLE ?? set
 
-        It might be better to line up things in condition lines. The first
-        column is reserved for dollar sign, the second for *not* operator
-        and so on. The key here is, that it is possible to see at a glance
-        if I variable expansion dollar in the line (leftmost).
+        It might be better to line up things in multiline condition
+        lines. The first place is reserved for dollar sign, the second
+        for *not* operator and so on. The key here is to be able to
+        comprehend the recipe easily. E.g. with the dollar put to the
+        left, one can tell at a glance if variable expansion is
+        happening on the whole line. The same with small formatting
+        changes:
 
             :0
             *$        ^Subject:.*$VAR
