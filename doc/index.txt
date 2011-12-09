@@ -530,16 +530,16 @@ Table of contents
         o   #URL<http://www.gnu.org/software/emacs><Emacs> and
             technical formatting package (TOC, indentation control,
             fontifying) *tinytf.el* from
-            http://freecode.net/projects/emacs-tiny-tools
+            http://freecode.com/projects/emacs-tiny-tools
         o   Text-to-HTML conversion program *t2html.pl* from
-            http://freecode.net/projects/perl-text2html
+            http://freecode.com/projects/perl-text2html
 
         Text version of this file is converted to HTML with:
 
             perl -S t2html --Auto-detect --Out pm-tips.txt
 
 	The t2html converter project is at
-	http://freecode.net/projects/perl-text2html
+	http://freecode.com/projects/perl-text2html
 
         SENDING IMPROVEMENTS
 
@@ -812,7 +812,7 @@ Table of contents
 
         If you use #URL<http://www.gnu.org/software/emacs><Emacs>, See
         Procmail mode *tinypm.el* at
-        <http://freecode.net/projects/emacs-tiny-tools>. It can also
+        <http://freecode.com/projects/emacs-tiny-tools>. It can also
         be used to statically syntax check recipes. Here is an example
         of its output:
 
@@ -828,7 +828,7 @@ Table of contents
 
        2.4.1 Where to get various modules
 
-        o   #URL<http://freecode.net/projects/procmail-lib><Procmail module library>.
+        o   #URL<http://freecode.com/projects/procmail-lib><Procmail module library>.
 	    The idea of plug-in modules was originally coined by Alan
             Stebbens (<alan.stebbens A T software.com>, <alan.stebbens
             A T openwave.com>).
@@ -1099,7 +1099,7 @@ Table of contents
           such bogus addresses at the SMTP level before the message is
           received.
 
-        o   #URL<http://freecode.net/projects/procmail-lib><pm-jaube.rc -Procmail module library's UBE filter>
+        o   #URL<http://freecode.com/projects/procmail-lib><pm-jaube.rc -Procmail module library's UBE filter>
             After Daniel Smith
             posted his spam recipes to procmail mailing list, the code
             was adopted and more generalized to handle lot more UBE.
@@ -1107,7 +1107,7 @@ Table of contents
             simple INCLUDERC. All UBE detection happens using procmail
             rules with no external files needed. The module is
             available in Procmail module library at
-            <http://freecode.net/projects/procmail-lib>.
+            <http://freecode.com/projects/procmail-lib>.
        2.5.1 o    #URL<http://www.spambouncer.org/><Catherine A. Hampton's Spambouncer">.
             The attached set of procmail recipes/filters, which I
             call The Spam Bouncer, are for users who are sick of spam
@@ -5913,14 +5913,7 @@ Table of contents
 
 13.0 Procmail, MIME and HTML
 
-    13.1 Mime Bibliography
-
-       "List of annoying things that various MIME implementations do."
-        ...The result is a sort of style guide for implementors of things that
-        generate MIME. Feel free to send comments or contributions.
-        http://www.cs.utk.edu/~moore/mime-style.html
-
-    13.2 Mime content type application/ms-tnef
+    13.1 Mime content type application/ms-tnef
 
           ...A member of one of my mailing lists appears to be using
           Microsoft Mail. His messages to the list are usually accompanied my
@@ -5940,7 +5933,7 @@ Table of contents
         information, see: "XCLN: Sending Messages In Rich-Text Format" at
         http://support.microsoft.com/kb/136204
 
-    13.3 Trapping HTML mime messages
+    13.2 Trapping HTML mime messages
 
         [era] Here's a simple filter to throw out unwanted HTML that is sent
         by using mime. [jari] This recipe detects if the message is
@@ -5957,7 +5950,7 @@ Table of contents
 
         Some more examples can be found from section: 'Explaning  ^^ and ^'
 
-    13.4 Complaining about HTML messages
+    13.3 Complaining about HTML messages
 
         [Marek Jedlinski <eristic A T gryzmak.lodz.pdi.net>]. This how I
         respond to HTML messages. In my `noHTML.txt' I politely explain
@@ -5991,7 +5984,7 @@ Table of contents
                         ) | $SENDMAIL
             }
 
-    13.5 Converting HTML body to plain text
+    13.4 Converting HTML body to plain text
 
         The most popular solution to convert HTML body into plain text is to
         use `lynx'. Another more straightforward method is to use a perl one
@@ -6044,7 +6037,7 @@ Table of contents
 
             }
 
-    13.6 Getting rid of unwanted mime attachments (HTML, vcard)
+    13.5 Getting rid of unwanted mime attachments (HTML, vcard)
 
         Microsoft and Netscape MUAs are conquering the PC world and it's
         likely that you will receive messages from people that use this
@@ -6079,7 +6072,7 @@ Table of contents
         `pm-code.zip'.
         (Note: #REF #procmail_module_list ;Procmail module list;)
 
-    13.7 Sending contents of a HTML page in plain text to someone
+    13.6 Sending contents of a HTML page in plain text to someone
 
         [timothy] Send an mail with the subject: "GetPage:
         some.url.here/". And it comes back. Kurt Thams <thams A T thams.com>
@@ -10050,7 +10043,7 @@ Table of contents
         Procmail mode for Emacs (which can also lint procmail recipes) is
         available. People familiar with C-coding know lint, which is a
         rigorous code syntax checker. You can read about this Emacs mode
-        from http://freecode.net/projects/emacs-tiny-tools
+        from http://freecode.com/projects/emacs-tiny-tools
 
     21.3 Why use procmail with Gnus
 

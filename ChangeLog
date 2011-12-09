@@ -1,7 +1,10 @@
 2011-12-09 Fri  Jari Aalto  <jari.aalto@cante.net>
 
 	* doc/index.txt:
+	(top level): Correct Freecode addresses from .net to .com.
+	Links checked.
 	(4.13 Gee, where do I put all those): Correct sentences.
+	(13.1 Mime Bibliography): Delete. Non-existing link.
 
 2010-12-05 Sun  Jari Aalto  <jari.aalto@cante.net>
 
