@@ -1,5 +1,7 @@
 2011-12-09 Fri  Jari Aalto  <jari.aalto@cante.net>
 
+	* README: Correct Freecode URL from .net to .com.
+
 	* homepage/index.html (What is procmail documentation project?):
 	Update workding.
 
@@ -7,7 +9,7 @@
 	(clean): Add *.log
 
 	* doc/index.txt:
-	(top level): Correct Freecode addresses from .net to .com.
+	(top level): Correct Freecode URL from .net to .com.
 	Check links. Update Copyright year.
 	(4.13 Gee, where do I put all those): Correct sentences.
 	(13.1 Mime Bibliography): Delete. Non-existing link.
