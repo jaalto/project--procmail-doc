@@ -71,6 +71,14 @@ maintainer-clean: realclean
 
 doc: index.html
 
+link-check:
+	perl -S t2html \
+	--quiet \
+	--link-check-single \
+	--link-cache ~/tmp/link.cache \
+	$$(pwd)/index.txt \
+	| tee link.log
+
 index.html: index.txt
 	perl -S t2html \
 	--auto-detect \

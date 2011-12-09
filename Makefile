@@ -47,6 +47,9 @@ realclean:
 doc:
 	$(MAKE) -C $(OBJDIR) doc
 
+link-check:
+	$(MAKE) -C $(OBJDIR) link-check
+
 install: all
 	$(MAKE) -C $(OBJDIR) install
 
