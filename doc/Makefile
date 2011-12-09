@@ -56,7 +56,7 @@ all: doc
 # Delete files fromt he build process.
 clean:
 	# clean
-	-rm -f *[#~] *.\#* $(OBJS)
+	-rm -f *[#~] *.\#* $(OBJS) *.log
 	rm -rf tmp/
 
 #  Delete files that are created by configuring or building the program.

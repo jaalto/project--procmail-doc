@@ -1,6 +1,7 @@
 2011-12-09 Fri  Jari Aalto  <jari.aalto@cante.net>
 
 	* doc/Makefile (link-check): New rule.
+	(clean): Add *.log
 
 	* doc/index.txt:
 	(top level): Correct Freecode addresses from .net to .com.
