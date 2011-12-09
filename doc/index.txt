@@ -358,7 +358,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-	.Copyright (C) 1997-2011 Jari Aalto
+	.Copyright (C) 1997-2012 Jari Aalto
         .Homepage http://pm-doc.sourceforge.net
         .URL links last checked: 2010-12-05
 
