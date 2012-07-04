@@ -1,13 +1,21 @@
 README for Procmail documentation tips
 --------------------------------------
 
+    Summary
+
+	Procmail Tips (Document)
+
+	Collection of procmail recipes, instructions, howtos. The
+	document also contains URL pointers to the procmail mailing
+	list and sites that fight against Internet spam.
+
     Preface
 
         Welcome! Procmail needs more experienced users and people that
-        help each others, so please join in if you have any procmail
-        code examples, tips, documentation or compiling instructions
-        to share. Please send your favourite procmail related material
-        to
+        help each others, so please join in if you have any
+        smallprocmail code examples, tips, documentation or compiling
+        instructions to share. Please send your favourite procmail
+        related material to
 
             jari aalto A T cante net
 
