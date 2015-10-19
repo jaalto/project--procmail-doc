@@ -7413,6 +7413,76 @@ Table of contents
 
             }
 
+    15.8 Printing attachment
+
+        [<Vladimir.Botka A T gmail.com>] For various reasons might be
+        useful to setup a server which automatically prints attachment
+        of an email sent to a specific account. The details of the
+        configuration are as follows
+
+	o   create a user account
+
+        o   forward emails to procmail
+
+        o   procmail calls a script to print the attachment
+
+	Let's describe an example configuration of Ubuntu 14.04
+	(srv.example.com) to print an attachment on these printers
+
+             # lpc status all
+
+             Dell-3100cn:
+		printer is on device 'socket' speed -1
+		queuing is enabled
+		printing is enabled
+		no entries
+		daemon present
+
+             hp-LaserJet-2300L:
+		printer is on device 'dnssd' speed -1
+		queuing is enabled
+		printing is enabled
+		no entries
+		daemon present
+
+
+	Let's create an user account "hp" for one particular printer and
+	forward all incoming emails to procmail
+
+             hp@srv:~$ cat .forward
+             "|exec /usr/bin/procmail"
+
+	Then create the .procmailrc file
+
+             hp@srv:~$ cat .procmailrc
+             VERBOSE=on
+             :0 c
+             | /home/hp/bin/print-attachment.sh
+
+        And create the /home/hp/bin/print-attachment.sh script to
+        print the attachment
+
+        o   on the printer specified in PRINTER
+
+	o   with a2ps parameters specified in A2PSPAR
+
+             hp@srv:~$ cat /home/hp/bin/print-attachment.sh
+	     #!/bin/bash
+	     # email is expected as standard input
+	     ATTDIR="/tmp"
+	     PRINTER="hp-LaserJet-2300L"
+	     MUNPACK="/usr/bin/munpack"
+	     A2PS="/usr/bin/a2ps"
+	     A2PSPAR="--portrait --columns=1 --rows=1 --no-header --medium=A4"
+	     FILE=`($MUNPACK -q -C $ATTDIR | awk '{print $1}')`
+	     # echo "printing $ATTDIR/$FILE"
+	     cat $ATTDIR/$FILE | $A2PS $A2PSPAR -P$PRINTER
+	     rm $ATTDIR/$FILE
+
+        Now the attachment of the email sent to the email address
+        hp@srv.example.com will be printed.
+
+
 16.0 Procmail and PGP
 
     16.1 Decrypt pgp messages automatically
