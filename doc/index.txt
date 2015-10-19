@@ -234,6 +234,7 @@ Table of contents
            15.5 Playing particular sound when message arrives
            15.6 Combining multiple Original-Cc and Original-To headers
            15.7 Forwarding sensitive messages in encrypted format
+           15.8 Printing attachment
 
        16.0 Procmail and PGP
            16.1 Decrypt pgp messages automatically
@@ -358,7 +359,7 @@ Table of contents
         #T2HTML-METAKEYWORDS procmail, sendmail, formail, mail, UBE, UCE, spam, filter
         #T2HTML-METADESCRIPTION Procmail documentation
 
-	.Copyright (C) 1997-2012 Jari Aalto
+        .Copyright (C) 1997-2012 Jari Aalto
         .Homepage http://pm-doc.sourceforge.net
         .URL links last checked: 2010-12-05
 
@@ -539,8 +540,8 @@ Table of contents
 
             perl -S t2html --Auto-detect --Out pm-tips.txt
 
-	The t2html converter project is at
-	http://freecode.com/projects/perl-text2html
+        The t2html converter project is at
+        http://freecode.com/projects/perl-text2html
 
         SENDING IMPROVEMENTS
 
@@ -795,8 +796,8 @@ Table of contents
     2.2 Procmail resources
 
         Procmail is discussed in Usenet newsgroup *comp.mail.misc* and
-	mailing list accessible at NNTP server
-	<http://news.gmane.org/gmane.mail.procmail>.
+        mailing list accessible at NNTP server
+        <http://news.gmane.org/gmane.mail.procmail>.
 
         o   #URL<http://www.ii.com/internet/robots/procmail/qs/><Nancy McGough <nm A T noadsplease.ii.com> - Prcmail Quick start>
         o   #URL<http://www.iki.fi/~era/procmail><Era Eriksson's Procmail FAQ and link collection>
@@ -830,7 +831,7 @@ Table of contents
        2.4.1 Where to get various modules
 
         o   #URL<http://freecode.com/projects/procmail-lib><Procmail module library>.
-	    The idea of plug-in modules was originally coined by Alan
+            The idea of plug-in modules was originally coined by Alan
             Stebbens (<alan.stebbens A T software.com>, <alan.stebbens
             A T openwave.com>).
 
@@ -844,7 +845,7 @@ Table of contents
         contained: It reads something from the message or does
         something according to matches in message. Recipe may be
         message-specific. Recipe is more free-form and does not
-	follow strict INPUT/OUTPUT methodology.
+        follow strict INPUT/OUTPUT methodology.
 
        2.4.3 Foreword to using modules
 
@@ -1205,7 +1206,7 @@ Table of contents
 
     4.2 Csh's tilde is not supported
 
-	Many shell users have accustomed to using tilde (~)
+        Many shell users have accustomed to using tilde (~)
         everywhere. Unfortunately procmail doesn't expand that to home
         directories; just use `$HOME'. When you write procmail
         recipes, think *sh* not *bash*. This mind set will
@@ -1302,20 +1303,20 @@ Table of contents
         IBM, Linux)
 
             PATH = \
-	    $HOME/bin:\
+            $HOME/bin:\
             /usr/local/gnu/bin:\
             /usr/contrib/bin:\
             /usr/local/bin:\
-	    /opt/local/bin:\
+            /opt/local/bin:\
             /bin:\
-	    /usr/bin:\
-	    /usr/lib:\
-	    /usr/ucb:\
-	    /usr/sbin:\
+            /usr/bin:\
+            /usr/lib:\
+            /usr/ucb:\
+            /usr/sbin:\
             /vol/bin:\
-	    /vol/lib:\
-	    /vol/local/bin:\
-	    ${PATH}
+            /vol/lib:\
+            /vol/local/bin:\
+            ${PATH}
 
     4.6 Keep the log on all the time
 
@@ -1364,10 +1365,10 @@ Table of contents
         example
 
             :0              #  comment ok
-	    * condition	    #  OUCH, ouch. This comment must not be here.
+            * condition     #  OUCH, ouch. This comment must not be here.
             #  Hm, Old procmail versions don't understand this
-	    #  Are you sure you want to put comments inside
-	    #  condition line?
+            #  Are you sure you want to put comments inside
+            #  condition line?
             * condition
             {               #  comment ok
                             #  comment ok
@@ -2403,7 +2404,7 @@ Table of contents
 
             [    ]<[    ]*("([^"\]|\\.)*"|[-!#-'*+/-9=?A-Z^-~]+)...  # "
 
-	They think:
+        They think:
 
         o   I'm not planning on "maintaining" that code, as the syntax for
             XXX will not ever change, it's RFC or something.
@@ -7413,6 +7414,71 @@ Table of contents
 
             }
 
+    15.8 Printing attachment
+
+        [<Vladimir.Botka A T gmail.com>] For various reasons might be
+        useful to setup a server which automatically prints attachment
+        of an email sent to a specific account. The details of the
+        configuration are as follows
+
+        o   create a user account
+        o   forward emails to procmail
+        o   procmail calls a script to print the attachment
+
+        Let's describe an example configuration of Ubuntu 14.04
+        (srv.example.com) to print an attachment on these printers
+
+             # lpc status all
+
+             Dell-3100cn:
+                printer is on device 'socket' speed -1
+                queuing is enabled
+                printing is enabled
+                no entries
+                daemon present
+
+             hp-LaserJet-2300L:
+                printer is on device 'dnssd' speed -1
+                queuing is enabled
+                printing is enabled
+                no entries
+                daemon present
+
+        Let's create an user account "hp" for one particular printer and
+        forward all incoming emails to procmail
+
+             $ cat ~/.forward
+             "|exec /usr/bin/procmail"
+
+        Then create the .procmailrc file
+
+             $ cat ~/.procmailrc
+             VERBOSE=on
+             :0 c
+             | /home/hp/bin/print-attachment.sh
+
+        And create the /home/hp/bin/print-attachment.sh script to
+        print the attachment:
+
+        o   on the printer specified in PRINTER
+        o   with a2ps parameters specified in A2PSPAR
+
+             $ cat /home/hp/bin/print-attachment.sh
+             #!/bin/bash
+             # email is expected as standard input
+             ATTDIR="/tmp"
+             PRINTER="hp-LaserJet-2300L"
+             MUNPACK="/usr/bin/munpack"
+             A2PS="/usr/bin/a2ps"
+             A2PSPAR="--portrait --columns=1 --rows=1 --no-header --medium=A4"
+             FILE=$($MUNPACK -q -C $ATTDIR | awk '{print $1}')
+             # echo "printing $ATTDIR/$FILE"
+             cat $ATTDIR/$FILE | $A2PS $A2PSPAR -P$PRINTER
+             rm $ATTDIR/$FILE
+
+        Now the attachment of the email sent to the email address
+        hp@srv.example.com will be printed.
+
 16.0 Procmail and PGP
 
     16.1 Decrypt pgp messages automatically
@@ -11476,7 +11542,7 @@ Table of contents
         mean".
 
        "Reply-To” Munging Still Considered Harmful. Really."
-	http://woozle.org/~neale/papers/reply-to-still-harmful.html
+        http://woozle.org/~neale/papers/reply-to-still-harmful.html
         Your list software is not "the author of the message", so it
         must not set or in any way meddle with the Reply-To header
         field. That field exists for the author and the author alone.
