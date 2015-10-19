@@ -1,3 +1,9 @@
+2015-10-19 Mon  Jari Aalto  <jari.aalto@cante.net>
+
+	* doc/index.txt: (15.8 Printing attachment): Merge new section by
+	<Vladimir.Botka A T gmail.com>.
+        https://github.com/jaalto/project--procmail-doc/commit/93eb8880ddd2d0f24e24189fa2199038e6326bd5
+
 2011-12-09 Fri  Jari Aalto  <jari.aalto@cante.net>
 
 	* README: Correct Freecode URL from .net to .com.
